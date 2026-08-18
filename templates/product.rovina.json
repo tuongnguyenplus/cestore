@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "ticker-announcement": {
@@ -6,19 +15,22 @@
         "p1": {
           "type": "marquee_item",
           "settings": {
-            "text": "90-DAY GUARANTEE"
+            "text": "90-DAY GUARANTEE",
+            "icon": ""
           }
         },
         "p2": {
           "type": "marquee_item",
           "settings": {
-            "text": "BUY 1 GET 1 FREE!"
+            "text": "BUY 1 GET 1 FREE!",
+            "icon": ""
           }
         },
         "p3": {
           "type": "marquee_item",
           "settings": {
-            "text": "67% Off"
+            "text": "67% Off",
+            "icon": ""
           }
         }
       },
@@ -48,7 +60,8 @@
           }
         },
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {}
         },
         "subtitle": {
           "type": "text",
@@ -100,7 +113,8 @@
           }
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {}
         },
         "app-price-slot": {
           "type": "ces_app_slot",
@@ -109,7 +123,8 @@
           }
         },
         "quantity_selector": {
-          "type": "quantity_selector"
+          "type": "quantity_selector",
+          "settings": {}
         },
         "shipping-estimate": {
           "type": "ces_shipping_estimate",
@@ -177,80 +192,90 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Description",
+            "icon": "none",
             "content": "<p>A daily softgel built around 12mg of natural astaxanthin from Haematococcus pluvialis microalgae, carried in oil so your body can absorb it. Replace this with your own product description.</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-2": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Why do I need Rovina Astaxanthin?",
+            "icon": "none",
             "content": "<p>Sun exposure, screen time, hard training and air pollution all generate free radicals faster than the body clears them. Astaxanthin sits inside the cell membrane and works on both of its surfaces.*</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-3": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Does it actually work?",
+            "icon": "none",
             "content": "<p>Consistency is what matters. Astaxanthin is one of the more extensively studied carotenoids, and the effect builds with daily use rather than arriving on the first dose.*</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-4": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Benefits",
+            "icon": "none",
             "content": "<p>Backed by 70+ researched clinical trials on astaxanthin. Add your benefit list here.</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-5": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Key ingredients",
+            "icon": "none",
             "content": "<p><strong>Astaxanthin 12mg</strong> from Haematococcus pluvialis microalgae.</p><p><strong>Oil base</strong> for absorption, because astaxanthin is fat soluble.</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-6": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "How do I take it for maximum benefits?",
+            "icon": "none",
             "content": "<p>Take with a meal that contains some fat. Split the daily amount across the day if that suits your routine better.</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-7": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Is the 12mg dose safe?",
+            "icon": "none",
             "content": "<p>12mg is a well-studied dose used across clinical research. Talk to your healthcare provider if you are pregnant, nursing or taking prescription medication.*</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-8": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "How long before I see results?",
+            "icon": "none",
             "content": "<p>Published research suggests changes build over weeks rather than days. Most people look at the eight to twelve week mark.*</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-9": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Do you offer a guarantee?",
+            "icon": "none",
             "content": "<p>If you are not satisfied within the first 90 days, contact us for a full refund.</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "acc-10": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping information",
+            "icon": "none",
             "content": "<p>Fast, tracked shipping across the U.S. Add your own delivery windows and rates here.</p>",
-            "icon": "none"
+            "page": ""
           }
         },
         "trust-panel": {
@@ -301,20 +326,20 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_position": "left",
-        "gallery_layout": "thumbnail",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "image_zoom": "lightbox",
+        "gallery_layout": "thumbnail",
         "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12,
         "ces_highlights_layout": "inline",
         "ces_highlights_columns_mobile": 2,
-        "ces_highlights_columns_desktop": 2,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "ces_highlights_columns_desktop": 2
       }
     },
     "video-testimonials": {
@@ -323,24 +348,28 @@
         "video-1": {
           "type": "video_item",
           "settings": {
+            "video_url": "",
             "label": "Maya, 34"
           }
         },
         "video-2": {
           "type": "video_item",
           "settings": {
+            "video_url": "",
             "label": "Daniel, 41"
           }
         },
         "video-3": {
           "type": "video_item",
           "settings": {
+            "video_url": "",
             "label": "Priya, 29"
           }
         },
         "video-4": {
           "type": "video_item",
           "settings": {
+            "video_url": "",
             "label": "Chris, 52"
           }
         }
@@ -405,29 +434,37 @@
         "icon-1": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "sparkle",
-            "heading": "Cellular Wellness Support*"
+            "heading": "Cellular Wellness Support*",
+            "text": ""
           }
         },
         "icon-2": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "lock",
-            "heading": "Comprehensive Protection*"
+            "heading": "Comprehensive Protection*",
+            "text": ""
           }
         },
         "icon-3": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "leaf",
-            "heading": "Antioxidant Support*"
+            "heading": "Antioxidant Support*",
+            "text": ""
           }
         },
         "icon-4": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "heart",
-            "heading": "Long-Term Well-Being*"
+            "heading": "Long-Term Well-Being*",
+            "text": ""
           }
         }
       },
@@ -439,6 +476,7 @@
       ],
       "settings": {
         "heading": "One Formula. Total Support.",
+        "subheading": "",
         "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-2",
@@ -452,8 +490,11 @@
         "layout": "overlay",
         "text_position": "center",
         "overlay_opacity": 40,
+        "eyebrow": "",
         "heading": "Research-backed wellness support",
         "text": "<p>Formulated to the dose used in published human trials, then tested again by an independent lab before it ships.</p>",
+        "button_label": "",
+        "button_link": "",
         "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
@@ -466,19 +507,22 @@
         "b1": {
           "type": "marquee_item",
           "settings": {
-            "text": "Non-GMO"
+            "text": "Non-GMO",
+            "icon": ""
           }
         },
         "b2": {
           "type": "marquee_item",
           "settings": {
-            "text": "Gluten-Free"
+            "text": "Gluten-Free",
+            "icon": ""
           }
         },
         "b3": {
           "type": "marquee_item",
           "settings": {
-            "text": "No additives"
+            "text": "No additives",
+            "icon": ""
           }
         }
       },
@@ -506,6 +550,7 @@
             "time_label": "WEEKS 1–2",
             "heading": "Cellular Foundation",
             "bullets": "Antioxidant activity begins working at the cellular level\nBody starts adapting to daily astaxanthin intake\nNo obvious change yet, which is normal",
+            "content": "",
             "open": true
           }
         },
@@ -515,6 +560,7 @@
             "time_label": "WEEK 3-4",
             "heading": "Early Changes Appear",
             "bullets": "Subtle improvements start becoming noticeable*\nMany people report looking and feeling healthier overall*\nRecovery after exertion gets easier*",
+            "content": "",
             "open": false
           }
         },
@@ -524,6 +570,7 @@
             "time_label": "WEEK 5-8",
             "heading": "Building Momentum",
             "bullets": "Noticeable improvements continue developing*\nBenefits reported across several areas at once*\nSkin tone and comfort keep improving*",
+            "content": "",
             "open": false
           }
         },
@@ -533,6 +580,7 @@
             "time_label": "WEEK 8+",
             "heading": "Long-Term Support",
             "bullets": "Results maintain with consistent daily use*\nBenefits continue building over time*\nCellular protection keeps working in the background*",
+            "content": "",
             "open": false
           }
         }
@@ -561,6 +609,8 @@
         "eyebrow": "Clinically Verified",
         "heading": "Tested twice before it reaches you",
         "text": "<p>Once at the manufacturer and once by an independent lab, for potency, heavy metals and microbials. Certificates of analysis available on request.</p>",
+        "button_label": "",
+        "button_link": "",
         "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
@@ -585,17 +635,21 @@
           "type": "tab_item",
           "settings": {
             "tab_label": "What's Inside",
+            "default_open": false,
             "heading": "One Pure Ingredient",
             "text": "<p>No proprietary blends and no filler list. Pure astaxanthin from microalgae, carried in oil so your body can absorb it.</p>",
-            "bullets": "Natural microalgae source\nOil-based for absorption\nNo fillers or unnecessary additives"
+            "bullets": "Natural microalgae source\nOil-based for absorption\nNo fillers or unnecessary additives",
+            "footnote": ""
           }
         },
         "tab3": {
           "type": "tab_item",
           "settings": {
             "tab_label": "Why It Works",
+            "default_open": false,
             "heading": "Backed by Research & Results",
             "text": "<p>Designed for long-term wellness, not quick fixes.</p>",
+            "bullets": "",
             "footnote": "Trusted by 100,000+ customers and backed by our 90-day money-back guarantee."
           }
         }
@@ -607,6 +661,7 @@
       ],
       "settings": {
         "heading": "Discover Why Experts Trust Rovina Astaxanthin",
+        "subheading": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -703,8 +758,10 @@
       ],
       "settings": {
         "heading": "What sets Rovina apart",
+        "subheading": "",
         "brand_label": "Rovina",
         "other_label": "Other Brands",
+        "footnote": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -727,66 +784,72 @@
       "type": "ces-testimonial-marquee",
       "blocks": {
         "avatar-1": {
-          "type": "avatar_item"
+          "type": "avatar_item",
+          "settings": {}
         },
         "avatar-2": {
-          "type": "avatar_item"
+          "type": "avatar_item",
+          "settings": {}
         },
         "avatar-3": {
-          "type": "avatar_item"
+          "type": "avatar_item",
+          "settings": {}
         },
         "avatar-4": {
-          "type": "avatar_item"
+          "type": "avatar_item",
+          "settings": {}
         },
         "avatar-5": {
-          "type": "avatar_item"
+          "type": "avatar_item",
+          "settings": {}
         },
         "avatar-6": {
-          "type": "avatar_item"
+          "type": "avatar_item",
+          "settings": {}
         },
         "review-1": {
           "type": "review_item",
           "settings": {
+            "review": "<p>So far so good — only a few weeks in and already feeling better.*</p>",
             "name": "Mikie",
             "meta": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>So far so good — only a few weeks in and already feeling better.*</p>"
+            "rating": 5
           }
         },
         "review-2": {
           "type": "review_item",
           "settings": {
+            "review": "<p>I have noticed a difference in the way I look, and my skin at 64 feels softer.*</p>",
             "name": "John A",
             "meta": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>I have noticed a difference in the way I look, and my skin at 64 feels softer.*</p>"
+            "rating": 5
           }
         },
         "review-3": {
           "type": "review_item",
           "settings": {
+            "review": "<p>I feel better, and I believe my skin tone is evening out. It is great.*</p>",
             "name": "Melissa L",
             "meta": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>I feel better, and I believe my skin tone is evening out. It is great.*</p>"
+            "rating": 5
           }
         },
         "review-4": {
           "type": "review_item",
           "settings": {
+            "review": "<p>Great product, works well and a generous amount per bottle.</p>",
             "name": "Reuben M.",
             "meta": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>Great product, works well and a generous amount per bottle.</p>"
+            "rating": 5
           }
         },
         "review-5": {
           "type": "review_item",
           "settings": {
+            "review": "<p>Received quickly and starting this morning. Customer service was excellent.</p>",
             "name": "Charity",
             "meta": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>Received quickly and starting this morning. Customer service was excellent.</p>"
+            "rating": 5
           }
         }
       },
@@ -820,91 +883,104 @@
           "type": "faq_item",
           "settings": {
             "question": "How long until I see results?",
-            "answer": "<p>Astaxanthin accumulates in tissue rather than acting immediately. Most people look at the eight to twelve week mark.*</p>"
+            "answer": "<p>Astaxanthin accumulates in tissue rather than acting immediately. Most people look at the eight to twelve week mark.*</p>",
+            "open": false
           }
         },
         "faq-2": {
           "type": "faq_item",
           "settings": {
             "question": "Where is Rovina made?",
-            "answer": "<p>In a GMP-certified, FDA-registered facility in the USA.</p>"
+            "answer": "<p>In a GMP-certified, FDA-registered facility in the USA.</p>",
+            "open": false
           }
         },
         "faq-3": {
           "type": "faq_item",
           "settings": {
             "question": "Is it safe for long-term use?",
-            "answer": "<p>Astaxanthin is well tolerated at this dose. Check with your healthcare provider if you take prescription medication.*</p>"
+            "answer": "<p>Astaxanthin is well tolerated at this dose. Check with your healthcare provider if you take prescription medication.*</p>",
+            "open": false
           }
         },
         "faq-4": {
           "type": "faq_item",
           "settings": {
             "question": "Can I take it with other supplements?",
-            "answer": "<p>Yes. It pairs well with omega-3s and vitamin D.</p>"
+            "answer": "<p>Yes. It pairs well with omega-3s and vitamin D.</p>",
+            "open": false
           }
         },
         "faq-5": {
           "type": "faq_item",
           "settings": {
             "question": "How and when should I take it?",
-            "answer": "<p>With a meal that contains some fat. Timing matters less than taking it every day.</p>"
+            "answer": "<p>With a meal that contains some fat. Timing matters less than taking it every day.</p>",
+            "open": false
           }
         },
         "faq-6": {
           "type": "faq_item",
           "settings": {
             "question": "Why more than one softgel per day?",
-            "answer": "<p>Astaxanthin is fat soluble and your body can only absorb so much at one time, so the daily amount is split.</p>"
+            "answer": "<p>Astaxanthin is fat soluble and your body can only absorb so much at one time, so the daily amount is split.</p>",
+            "open": false
           }
         },
         "faq-7": {
           "type": "faq_item",
           "settings": {
             "question": "Do I need to change my routine?",
-            "answer": "<p>No. Add it to a meal you already eat and carry on as normal.</p>"
+            "answer": "<p>No. Add it to a meal you already eat and carry on as normal.</p>",
+            "open": false
           }
         },
         "faq-8": {
           "type": "faq_item",
           "settings": {
             "question": "How is this different from other supplements?",
-            "answer": "<p>One studied ingredient at a studied dose, rather than a proprietary blend.</p>"
+            "answer": "<p>One studied ingredient at a studied dose, rather than a proprietary blend.</p>",
+            "open": false
           }
         },
         "faq-9": {
           "type": "faq_item",
           "settings": {
             "question": "How is this different from other antioxidants?*",
-            "answer": "<p>Astaxanthin works on both surfaces of the cell membrane, which most antioxidants do not.*</p>"
+            "answer": "<p>Astaxanthin works on both surfaces of the cell membrane, which most antioxidants do not.*</p>",
+            "open": false
           }
         },
         "faq-10": {
           "type": "faq_item",
           "settings": {
             "question": "Can I buy Rovina in stores?",
-            "answer": "<p>Not currently. It is sold direct so we can control storage and freshness.</p>"
+            "answer": "<p>Not currently. It is sold direct so we can control storage and freshness.</p>",
+            "open": false
           }
         },
         "faq-11": {
           "type": "faq_item",
           "settings": {
             "question": "Are there any age or health restrictions?*",
-            "answer": "<p>It is intended for adults. Speak to your provider first if you are pregnant, nursing or on medication.*</p>"
+            "answer": "<p>It is intended for adults. Speak to your provider first if you are pregnant, nursing or on medication.*</p>",
+            "open": false
           }
         },
         "faq-12": {
           "type": "faq_item",
           "settings": {
             "question": "How should I store it?",
-            "answer": "<p>In a cool, dry place away from direct sunlight. No refrigeration needed — keep the cap closed.</p>"
+            "answer": "<p>In a cool, dry place away from direct sunlight. No refrigeration needed — keep the cap closed.</p>",
+            "open": false
           }
         },
         "faq-13": {
           "type": "faq_item",
           "settings": {
             "question": "What if it does not work for me?",
-            "answer": "<p>Contact us within 90 days for a full refund. You do not need to send the bottles back.</p>"
+            "answer": "<p>Contact us within 90 days for a full refund. You do not need to send the bottles back.</p>",
+            "open": false
           }
         }
       },
@@ -925,6 +1001,7 @@
       ],
       "settings": {
         "heading": "Frequently Asked Questions",
+        "subheading": "",
         "exclusive": true,
         "footer_text": "<p>Still have a question? Email support@example.com and a real person will reply within one business day.</p>",
         "color_scheme": "scheme-1",
