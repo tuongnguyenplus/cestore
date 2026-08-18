@@ -768,7 +768,7 @@
                     # tick can be pinned to the last real one rather than to a
                     # gap left by a removed image.
                     assign ces_avatars = ''
-                    for i in (1..4)
+                    for i in (1..3)
                       assign ces_key = 'avatar_' | append: i
                       if block.settings[ces_key] != blank
                         assign ces_avatars = ces_avatars | append: ces_key | append: ','
@@ -897,6 +897,7 @@
                 {%- when 'ces_rating_bar' -%}
                   <div class="ces-main-product__rating quick-add-hidden" {{ block.shopify_attributes }}>
                     {%- if block.settings.stars > 0 -%}
+                      {%- assign ces_half_index = block.settings.stars | plus: 1 -%}
                       <span
                         class="ces-main-product__rating-stars"
                         role="img"
@@ -905,6 +906,8 @@
                         {%- for i in (1..5) -%}
                           {%- if i <= block.settings.stars -%}
                             {% render 'ces-icon', icon: 'star-filled', size: '1.5rem' %}
+                          {%- elsif block.settings.half_star and i == ces_half_index -%}
+                            {% render 'ces-icon', icon: 'star-half', size: '1.5rem' %}
                           {%- endif -%}
                         {%- endfor -%}
                       </span>
@@ -2628,11 +2631,6 @@
           "label": "Avatar 3"
         },
         {
-          "type": "image_picker",
-          "id": "avatar_4",
-          "label": "Avatar 4"
-        },
-        {
           "type": "inline_richtext",
           "id": "text",
           "label": "Text",
@@ -2868,6 +2866,13 @@
           "default": 4
         },
         {
+          "type": "checkbox",
+          "id": "half_star",
+          "label": "Add a half star",
+          "info": "Shows a half star after the filled ones, for a x.5 rating.",
+          "default": true
+        },
+        {
           "type": "inline_richtext",
           "id": "text",
           "label": "Text",
@@ -2898,8 +2903,8 @@
           "max": 21,
           "step": 1,
           "unit": "d",
-          "label": "Lead time",
-          "info": "Days from today. The date shown is always today plus this.",
+          "label": "Ships in (days from today)",
+          "info": "T+X. 0 = today, 3 = three days from now. The date is worked out automatically.",
           "default": 1
         },
         {

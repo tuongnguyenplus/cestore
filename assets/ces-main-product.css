@@ -183,11 +183,11 @@
 .ces-main-product__guarantee-heading {
   margin: 0 0 0.4rem;
   font-family: var(--font-heading-family);
-  font-weight: var(--font-heading-weight);
-  font-size: 1.7rem;
+  /* Heavier than the heading default and a touch smaller, matching the seal
+     card in the reference. */
+  font-weight: 700;
+  font-size: 1.5rem;
   line-height: 1.25;
-  /* Full-strength, not the muted tone the surrounding body copy uses — this is
-     the card's headline and the reference sets it as one. */
   color: rgb(var(--color-foreground));
 }
 
@@ -303,7 +303,22 @@
   align-items: center;
   gap: 0.6rem;
   font-size: 1.35rem;
+  line-height: 1.2;
   color: var(--ces-muted);
+}
+
+/* The numbers carry the weight, as the reference sets it. */
+.ces-main-product__rating-text strong {
+  color: rgb(var(--color-foreground));
+  font-weight: var(--font-body-weight-bold);
+}
+
+/* Keep it on one line where it fits; wrapping "100,000 / Sold" reads as broken. */
+@media screen and (min-width: 360px) {
+  .ces-main-product__rating {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
 }
 
 .ces-main-product__rating-stars {

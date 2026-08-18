@@ -57,7 +57,8 @@
           "type": "ces_rating_bar",
           "settings": {
             "stars": 4,
-            "text": "Rated 4.4 Excellent | Over 100,000 Sold"
+            "text": "Rated <strong>4.4 Excellent</strong> | Over <strong>100,000 Sold</strong>",
+            "half_star": true
           }
         },
         "title": {
@@ -195,7 +196,6 @@
             "avatar_1": "shopify://shop_images/360_F_645777959_fNnaNoeVO4qxCNPW9MWr3gQlPFSGA9yL.jpg",
             "avatar_2": "shopify://shop_images/images.jpg",
             "avatar_3": "shopify://shop_images/istockphoto-2162083710-612x612.jpg",
-            "avatar_4": "shopify://shop_images/9.webp",
             "text": "Trusted by 100k+ Customers",
             "subtext": "for clean, reliable support",
             "show_verified": true
@@ -481,7 +481,7 @@
         "icon-1": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "",
+            "icon_text": "blood_pressure",
             "icon": "sparkle",
             "heading": "Cellular Wellness Support*",
             "text": ""
@@ -490,7 +490,7 @@
         "icon-2": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "",
+            "icon_text": "self_improvement",
             "icon": "lock",
             "heading": "Comprehensive Protection*",
             "text": ""
@@ -499,7 +499,7 @@
         "icon-3": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "",
+            "icon_text": "face_4",
             "icon": "leaf",
             "heading": "Antioxidant Support*",
             "text": ""
@@ -508,7 +508,7 @@
         "icon-4": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "",
+            "icon_text": "trending_up",
             "icon": "heart",
             "heading": "Long-Term Well-Being*",
             "text": ""
@@ -528,7 +528,9 @@
         "columns_desktop": 4,
         "color_scheme": "scheme-ces-gradient",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "icon_frame": "bare",
+        "icon_size": 5.2
       }
     },
     "banner-research": {

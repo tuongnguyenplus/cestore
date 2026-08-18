@@ -2,6 +2,21 @@
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 {{ 'ces-icon-feature-grid.css' | asset_url | stylesheet_tag }}
 
+{%- assign ces_needs_symbols = false -%}
+{%- for block in section.blocks -%}
+  {%- if block.settings.icon_text != blank and block.settings.image == blank -%}
+    {%- assign ces_needs_symbols = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if ces_needs_symbols -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  >
+{%- endif -%}
+
 {% render 'ces-section-padding' %}
 
 <div

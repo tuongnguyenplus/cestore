@@ -26,7 +26,15 @@
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--ces-radius);
+  border-radius: var(--ces-radius-lg);
+}
+
+/* A fixed frame so a landscape or portrait source both render as the same clean
+   card the reference uses, rather than whatever aspect the file happens to be. */
+.ces-timeline-accordion__hero:not([style*='auto']) img {
+  aspect-ratio: var(--ces-hero-ratio, 3 / 4);
+  height: auto;
+  object-fit: cover;
 }
 
 /* Progress timeline ------------------------------------------------------- */
@@ -227,8 +235,8 @@
   }
 
   .ces-timeline-accordion__layout:not(.ces-timeline-accordion__layout--above):has(.ces-timeline-accordion__hero) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 4rem;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: 5rem;
     align-items: start;
   }
 

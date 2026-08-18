@@ -37,7 +37,7 @@
 
     <div class="ces-timeline-accordion__layout ces-timeline-accordion__layout--{{ section.settings.image_position }}">
     {%- if section.settings.image != blank -%}
-      <div class="ces-timeline-accordion__hero">
+      <div class="ces-timeline-accordion__hero" style="--ces-hero-ratio: {{ section.settings.image_ratio }};">
         {{
           section.settings.image
           | image_url: width: 1600
@@ -214,6 +214,30 @@
         }
       ],
       "default": "start"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image shape",
+      "options": [
+        {
+          "value": "3 / 4",
+          "label": "Portrait"
+        },
+        {
+          "value": "1 / 1",
+          "label": "Square"
+        },
+        {
+          "value": "4 / 3",
+          "label": "Landscape"
+        },
+        {
+          "value": "auto",
+          "label": "Original"
+        }
+      ],
+      "default": "3 / 4"
     },
     {
       "type": "text",

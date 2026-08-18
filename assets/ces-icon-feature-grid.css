@@ -8,7 +8,7 @@
 .ces-icon-feature-grid__grid {
   display: grid;
   grid-template-columns: repeat(var(--ces-icon-grid-columns-mobile, 2), minmax(0, 1fr));
-  gap: 2.4rem 1.6rem;
+  gap: 2.8rem 1.6rem;
 }
 
 .ces-icon-feature-grid__item {
@@ -46,9 +46,21 @@
   height: 50%;
 }
 
+/*
+ * A Material Symbols ligature (blood_pressure, self_improvement, …) as the
+ * reference uses. If the font has not loaded the raw word would show, so it is
+ * clipped to the frame and the settings keep it centred.
+ */
 .ces-icon-feature-grid__icon-text {
-  font-size: 3rem;
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-size: calc(var(--ces-icon-frame, 6.4rem) * 0.62);
   line-height: 1;
+  font-weight: normal;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .ces-icon-feature-grid__heading {

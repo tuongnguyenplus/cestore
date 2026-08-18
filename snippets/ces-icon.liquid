@@ -7,7 +7,7 @@
 
   Accepts:
   - icon: {String} Icon name. One of: check, check-circle, cross, cross-circle,
-      check-ring, shield, star, star-filled, caret, chevron-left, chevron-right, truck, lock, return, leaf,
+      check-ring, shield, star, star-filled, star-half, caret, chevron-left, chevron-right, truck, lock, return, leaf,
       plane, plant, recycle, heart, stopwatch, lightning, fire, info,
       question-mark, gluten-free, dairy-free, nut-free, play, pause.
   - size: {String} Optional CSS length for width/height. Default 2rem.
@@ -81,6 +81,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
           <circle cx="10" cy="10" r="10" fill="currentColor"/>
           <path class="ces-icon__mark" d="m5.8 10.3 2.6 2.6 5.8-5.8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'star-half' -%}
+        {%- comment -%} Left half solid, right half outlined — for a x.5 rating. {%- endcomment -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <defs><clipPath id="ces-half"><rect x="0" y="0" width="10" height="20"/></clipPath></defs>
+          <path fill="none" stroke="currentColor" stroke-width="1.3" d="M10 2.2l2.24 4.85 5.31.61-3.94 3.6 1.05 5.22L10 13.9l-4.66 2.58 1.05-5.22-3.94-3.6 5.31-.61z"/>
+          <path fill="currentColor" clip-path="url(#ces-half)" d="M10 1.4l2.47 5.35 5.85.67-4.34 3.98 1.16 5.76L10 14.3l-5.14 2.86 1.16-5.76L1.68 7.42l5.85-.67z"/>
         </svg>
       {%- when 'star-filled' -%}
         {%- comment -%}
