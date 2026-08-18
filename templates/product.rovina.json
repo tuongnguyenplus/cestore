@@ -155,32 +155,43 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "Refills every 4 weeks at $39.99/ea"
+            "text": "Refills every 4 weeks at $39.99/ea",
+            "standalone": false,
+            "align": "center"
           }
         },
         "ship-2": {
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "Skip, pause, or cancel anytime"
+            "text": "Skip, pause, or cancel anytime",
+            "standalone": false,
+            "align": "center"
           }
         },
         "ship-3": {
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "FREE items ship on first order"
+            "text": "FREE items ship on first order",
+            "standalone": false,
+            "align": "center"
           }
         },
         "payment-badges": {
           "type": "ces_payment_badges",
           "settings": {
+            "image": "shopify://shop_images/Payment-Badge_1.webp",
             "text": "Guaranteed safe checkout"
           }
         },
         "trust-row": {
           "type": "ces_trust_row",
           "settings": {
+            "avatar_1": "shopify://shop_images/360_F_645777959_fNnaNoeVO4qxCNPW9MWr3gQlPFSGA9yL.jpg",
+            "avatar_2": "shopify://shop_images/images.jpg",
+            "avatar_3": "shopify://shop_images/istockphoto-2162083710-612x612.jpg",
+            "avatar_4": "shopify://shop_images/9.webp",
             "text": "<strong>Trusted by 100k+ Customers</strong> for clean, reliable support"
           }
         },
@@ -287,12 +298,12 @@
           "type": "ces_media_panel",
           "settings": {
             "image": "shopify://shop_images/research.webp",
+            "image_opacity": 15,
             "overlay_opacity": 0,
             "heading": "Why Trust Rovina as Your Wellness Partner?",
             "icon": "check-circle",
             "items": "Non-GMO Ingredients\nGluten-Free Formula\nGentle on Stomach\nGMP & FDA Registered Facility\n3rd-Party Lab Tested\nNo Artificial Fillers",
             "footnote": "Clean, High-Quality Formula",
-            "image_opacity": 15,
             "text_alignment": "center"
           }
         }
@@ -410,6 +421,7 @@
         "loop": false,
         "show_controls": true,
         "aspect_ratio": "9 / 16",
+        "background_pattern": "none",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -631,7 +643,9 @@
         "display": "open",
         "heading": "What to expect, week by week",
         "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
+        "fill_speed": 900,
         "exclusive": true,
+        "background_pattern": "dots",
         "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
         "padding_bottom": 40
