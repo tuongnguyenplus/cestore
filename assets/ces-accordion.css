@@ -10,11 +10,11 @@
 
 .ces-accordion__item {
   display: block;
-  border-bottom: var(--ces-border);
+  border-bottom: 0.1rem dashed var(--ces-border-color);
 }
 
 .ces-accordion__item:first-child {
-  border-top: var(--ces-border);
+  border-top: 0.1rem dashed var(--ces-border-color);
 }
 
 .ces-accordion__details {
@@ -71,6 +71,7 @@
   font-weight: var(--font-heading-weight);
   font-size: 1.6rem;
   line-height: 1.35;
+  color: rgb(var(--color-foreground));
 }
 
 .ces-accordion__number {
@@ -89,13 +90,36 @@
 }
 
 .ces-accordion__toggle {
+  position: relative;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
-  transition: transform 0.2s ease;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
-.ces-accordion__details[open] .ces-accordion__toggle {
-  transform: rotate(180deg);
+/* Two crossed bars; the upright one fades on open so a plus becomes a minus. */
+.ces-accordion__plus,
+.ces-accordion__plus::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0.15rem;
+  margin-top: -0.075rem;
+  background-color: currentColor;
+}
+
+.ces-accordion__plus::before {
+  transform: rotate(90deg);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ces-accordion__details[open] .ces-accordion__plus::before {
+  opacity: 0;
+  transform: rotate(0deg);
 }
 
 .ces-accordion__content {

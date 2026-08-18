@@ -10,9 +10,14 @@
   flex-direction: column;
   align-items: center;
   padding: 2.8rem 2rem;
+  text-align: center;
+}
+
+/* Outlined card. Switched off, the section reads as a full-bleed colour band,
+   which is how the reference runs it on the accent scheme. */
+.ces-bullet-cta__panel--framed {
   border: var(--ces-border);
   border-radius: var(--ces-radius-lg);
-  text-align: center;
 }
 
 .ces-bullet-cta__heading {
@@ -43,7 +48,11 @@
   margin-bottom: 0;
 }
 
-/* A tick drawn from two borders, so the bullets need no icon markup. */
+/*
+ * A tick drawn from two borders, so the bullets need no icon markup. It is
+ * decoration rather than a status, so it follows the text colour and stays
+ * legible whichever scheme the section runs on.
+ */
 .ces-bullet-cta__bullets li::before {
   content: '';
   position: absolute;
@@ -51,7 +60,7 @@
   left: 0.4rem;
   width: 0.6rem;
   height: 1.1rem;
-  border: solid var(--ces-success);
+  border: solid currentColor;
   border-width: 0 0.2rem 0.2rem 0;
   transform: rotate(45deg);
 }

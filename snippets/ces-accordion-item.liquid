@@ -66,8 +66,13 @@
         </span>
       </span>
 
+      {%- comment -%}
+        Drawn from two bars rather than an icon: the vertical one fades out when
+        the row opens, turning the plus into a minus. Being CSS it also sidesteps
+        Dawn's `summary .icon-caret { position: absolute }` rule.
+      {%- endcomment -%}
       <span class="ces-accordion__toggle" aria-hidden="true">
-        {% render 'ces-icon', icon: 'caret', size: '1.2rem' %}
+        <span class="ces-accordion__plus"></span>
       </span>
     </summary>
 

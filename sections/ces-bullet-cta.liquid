@@ -6,7 +6,7 @@
 
 <div class="ces-section ces-bullet-cta ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
-    <div class="ces-bullet-cta__panel">
+    <div class="ces-bullet-cta__panel{% if section.settings.show_frame %} ces-bullet-cta__panel--framed{% endif %}">
       {%- if section.settings.heading != blank -%}
         <h2 class="ces-heading ces-bullet-cta__heading">{{ section.settings.heading }}</h2>
       {%- endif -%}
@@ -76,6 +76,13 @@
       "id": "button_footnote",
       "label": "Text below the button",
       "default": "90-day money back guarantee"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_frame",
+      "label": "Show outline around the panel",
+      "info": "Turn off on a coloured scheme so the section reads as a full-width band.",
+      "default": true
     },
     {
       "type": "color_scheme",

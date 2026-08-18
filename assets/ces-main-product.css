@@ -162,15 +162,19 @@
 
 /* Shipping checklist ------------------------------------------------------ */
 
+/* The reference runs these as a plain tight list under the buy button rather
+   than a bordered card, which keeps the eye moving down to the guarantee. */
 .ces-main-product__shipping {
-  gap: 0.9rem;
-  padding: 1.6rem;
-  border: var(--ces-border);
-  border-radius: var(--ces-radius);
+  gap: 0.6rem;
+}
+
+.ces-main-product__shipping .ces-checklist-item {
+  gap: 0.8rem;
 }
 
 .ces-main-product__shipping .ces-checklist-item__text {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
 }
 
 /* Payment badges ---------------------------------------------------------- */
