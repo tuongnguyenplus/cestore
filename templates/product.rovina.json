@@ -40,7 +40,7 @@
         "p3"
       ],
       "settings": {
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "speed": 60,
         "direction": "left",
         "pause_on_hover": true,
@@ -423,7 +423,7 @@
         "heading": "Comprehensive Wellness Benefits",
         "subheading": "",
         "image_ratio": "1 / 1",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -479,7 +479,7 @@
         "subheading": "",
         "columns_mobile": 2,
         "columns_desktop": 4,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -532,7 +532,7 @@
         "b3"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "speed": 40,
         "direction": "left",
         "pause_on_hover": true,
@@ -595,7 +595,7 @@
         "heading": "What to expect, week by week",
         "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
         "exclusive": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -603,6 +603,7 @@
     "banner-clinical": {
       "type": "ces-image-text-banner",
       "settings": {
+        "image": "shopify://shop_images/59.webp",
         "layout": "split",
         "text_position": "end",
         "overlay_opacity": 0,
@@ -625,6 +626,7 @@
           "settings": {
             "tab_label": "Antioxidant Strength",
             "default_open": true,
+            "image": "shopify://shop_images/ufvut.webp",
             "heading": "The Strongest Antioxidant",
             "text": "<p>Astaxanthin is recognised as one of the most powerful antioxidants available. Compared like for like at neutralising free radicals, it outperforms the vitamins most people already take.</p>",
             "bullets": "Far stronger than Vitamin C\nFar stronger than CoQ10\nFar stronger than Vitamin E\nFar stronger than Alpha Lipoic Acid",
@@ -662,7 +664,7 @@
       "settings": {
         "heading": "Discover Why Experts Trust Rovina Astaxanthin",
         "subheading": "",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -675,7 +677,7 @@
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -759,10 +761,11 @@
       "settings": {
         "heading": "What sets Rovina apart",
         "subheading": "",
+        "image": "shopify://shop_images/BP_UEC_1__1x1_transp.webp",
         "brand_label": "Rovina",
         "other_label": "Other Brands",
         "footnote": "",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -775,7 +778,7 @@
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -871,7 +874,7 @@
         "subheading": "Honest experiences with Rovina™ Astaxanthin",
         "avatar_speed": 35,
         "disclaimer": "<p>Testimonials reflect individual experiences. Results may vary.</p>",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -1004,7 +1007,7 @@
         "subheading": "",
         "exclusive": true,
         "footer_text": "<p>Still have a question? Email support@example.com and a real person will reply within one business day.</p>",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
         "padding_top": 40,
         "padding_bottom": 40
       }
