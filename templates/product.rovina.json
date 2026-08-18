@@ -118,6 +118,7 @@
         },
         "app-price-slot": {
           "type": "ces_app_slot",
+          "disabled": true,
           "settings": {
             "slot_id": "ces-app-price-slot"
           }
@@ -183,6 +184,7 @@
         "guarantee-card": {
           "type": "ces_guarantee_badge",
           "settings": {
+            "image": "shopify://shop_images/1733673742-image_7.webp",
             "badge_text": "90 DAY",
             "heading": "90-Day Money Back Guarantee",
             "text": "<p>Love your results within 90 days or get your money back.</p>"
