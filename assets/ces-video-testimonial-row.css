@@ -53,6 +53,16 @@
   object-fit: cover;
 }
 
+/*
+ * The clip itself takes no pointer input. On iOS a tap on a playing inline
+ * video can hand it to the native fullscreen player, which is easy to trigger
+ * by accident mid-swipe. The buttons over it own every interaction instead, and
+ * swipes pass through to the scrolling track.
+ */
+.ces-video-testimonial-row__video {
+  pointer-events: none;
+}
+
 .ces-video-testimonial-row__label {
   margin: 1rem 0 0;
   font-size: 1.3rem;

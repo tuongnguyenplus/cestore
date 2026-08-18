@@ -822,20 +822,36 @@
                   </div>
 
                 {%- when 'ces_shipping_item' -%}
-                  {%- unless ces_shipping_rendered -%}
-                    {%- assign ces_shipping_rendered = true -%}
-                    {%- assign ces_shipping_items = section.blocks | where: 'type', 'ces_shipping_item' -%}
-                    <ul class="ces-checklist ces-main-product__shipping quick-add-hidden" role="list">
-                      {%- for ces_item in ces_shipping_items -%}
-                        {% render 'ces-checklist-item',
-                          text: ces_item.settings.text,
-                          icon: ces_item.settings.icon,
-                          icon_size: '1.8rem',
-                          shopify_attributes: ces_item.shopify_attributes
-                        %}
-                      {%- endfor -%}
-                    </ul>
-                  {%- endunless -%}
+                  {%- if block.settings.standalone -%}
+                    {%- comment -%}
+                      A row on its own rather than part of the list — the
+                      guarantee line under the buy button reads as a statement,
+                      not as one more bullet in the shipping checklist.
+                    {%- endcomment -%}
+                    <p
+                      class="ces-main-product__note ces-main-product__note--{{ block.settings.align }} quick-add-hidden"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% render 'ces-icon', icon: block.settings.icon, size: '1.8rem' %}
+                      <span>{{ block.settings.text }}</span>
+                    </p>
+                  {%- else -%}
+                    {%- unless ces_shipping_rendered -%}
+                      {%- assign ces_shipping_rendered = true -%}
+                      <ul class="ces-checklist ces-main-product__shipping quick-add-hidden" role="list">
+                        {%- for ces_item in section.blocks -%}
+                          {%- if ces_item.type == 'ces_shipping_item' and ces_item.settings.standalone != true -%}
+                            {% render 'ces-checklist-item',
+                              text: ces_item.settings.text,
+                              icon: ces_item.settings.icon,
+                              icon_size: '1.8rem',
+                              shopify_attributes: ces_item.shopify_attributes
+                            %}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </ul>
+                    {%- endunless -%}
+                  {%- endif -%}
 
                 {%- when 'ces_payment_badges' -%}
                   <div class="ces-main-product__payment quick-add-hidden" {{ block.shopify_attributes }}>
@@ -894,8 +910,11 @@
 
                 {%- when 'ces_media_panel' -%}
                   <div
-                    class="ces-main-product__panel quick-add-hidden"
-                    style="--ces-panel-overlay: {{ block.settings.overlay_opacity | divided_by: 100.0 }};"
+                    class="ces-main-product__panel ces-main-product__panel--{{ block.settings.text_alignment | default: 'center' }} quick-add-hidden"
+                    style="
+                      --ces-panel-overlay: {{ block.settings.overlay_opacity | default: 0 | divided_by: 100.0 }};
+                      --ces-panel-image-opacity: {{ block.settings.image_opacity | default: 15 | divided_by: 100.0 }};
+                    "
                     {{ block.shopify_attributes }}
                   >
                     {%- if block.settings.image != blank -%}
@@ -2612,6 +2631,10 @@
               "label": "None"
             },
             {
+              "value": "shield",
+              "label": "Shield with a check"
+            },
+            {
               "value": "check-circle",
               "label": "Check in a circle"
             },
@@ -2695,6 +2718,30 @@
           "id": "text",
           "label": "Text",
           "default": "Ships from USA"
+        },
+        {
+          "type": "checkbox",
+          "id": "standalone",
+          "label": "Show on its own row",
+          "info": "Keeps this line out of the grouped checklist — use it for a single statement such as the guarantee.",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Alignment",
+          "info": "Own-row lines only.",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Centred"
+            }
+          ],
+          "default": "center"
         }
       ]
     },
@@ -2796,14 +2843,25 @@
         },
         {
           "type": "range",
+          "id": "image_opacity",
+          "min": 5,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Background image opacity",
+          "info": "The reference fades the photo right back so it reads as texture behind the text.",
+          "default": 15
+        },
+        {
+          "type": "range",
           "id": "overlay_opacity",
           "min": 0,
           "max": 90,
           "step": 5,
           "unit": "%",
-          "label": "Image overlay opacity",
-          "info": "Darkens the image so the text over it stays readable.",
-          "default": 55
+          "label": "Extra dark overlay",
+          "info": "Usually left at 0 — the image opacity below is what sets the mood.",
+          "default": 0
         },
         {
           "type": "text",
@@ -2911,6 +2969,22 @@
           "id": "footnote",
           "label": "Footnote",
           "default": "Clean, High-Quality Formula"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Centred"
+            }
+          ],
+          "default": "center"
         }
       ]
     }

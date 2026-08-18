@@ -85,20 +85,29 @@
   transition: transform var(--ces-timeline-fill, 0.7s) ease-out;
 }
 
-.ces-timeline__step--active .ces-timeline__marker::before {
+/*
+ * :not(:last-child) on the base rule above carries the weight of :last-child,
+ * so this has to match it. Without the :not() here the base scaleY(0) outweighs
+ * this rule and the rail never fills.
+ */
+.ces-timeline__step--active:not(:last-child) .ces-timeline__marker::before {
   transform: scaleY(1);
 }
 
+/*
+ * A filled disc holding a ringed tick, as the reference draws it. The ring is
+ * part of the icon, so the disc itself carries no border — one would read as a
+ * second, heavier ring around the first.
+ */
 .ces-timeline__dot {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
   width: 3.2rem;
   height: 3.2rem;
-  border: 0.2rem solid var(--ces-timeline-rail);
   border-radius: 50%;
   background-color: var(--ces-timeline-dot-bg);
   color: var(--ces-timeline-dot-fg);
@@ -177,8 +186,8 @@
 
 .ces-timeline__step--muted {
   --ces-timeline-rail: rgba(var(--color-foreground), 0.18);
-  --ces-timeline-dot-bg: transparent;
-  --ces-timeline-dot-fg: rgba(var(--color-foreground), 0.35);
+  --ces-timeline-dot-bg: rgba(var(--color-foreground), 0.08);
+  --ces-timeline-dot-fg: rgba(var(--color-foreground), 0.38);
   --ces-timeline-meta: rgba(var(--color-foreground), 0.45);
   --ces-timeline-heading: rgba(var(--color-foreground), 0.45);
   --ces-timeline-body: rgba(var(--color-foreground), 0.45);

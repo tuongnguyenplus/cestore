@@ -7,7 +7,7 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-video-testimonial-row ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-video-testimonial-row{% if section.settings.background_pattern == 'dots' %} ces-section--dotted{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -54,9 +54,17 @@
           <div class="ces-video-testimonial-row__item" data-ces-slider-slide role="listitem" {{ block.shopify_attributes }}>
             <div class="ces-video-testimonial-row__frame">
               {%- if has_hosted_video or block.settings.video_url != blank -%}
+                {%- comment -%}
+                  webkit-playsinline covers older iOS, and disablepictureinpicture
+                  keeps the clip out of PiP. Between those and the CSS that makes
+                  the element ignore pointer input, a tap while swiping can no
+                  longer hand the clip to the native fullscreen player.
+                {%- endcomment -%}
                 <video
                   class="ces-video-testimonial-row__video"
                   playsinline
+                  webkit-playsinline="true"
+                  disablepictureinpicture
                   muted
                   {% if section.settings.loop %}
                     loop
@@ -215,6 +223,22 @@
         }
       ],
       "default": "9 / 16"
+    },
+    {
+      "type": "select",
+      "id": "background_pattern",
+      "label": "Background pattern",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "dots",
+          "label": "Dot grid"
+        }
+      ],
+      "default": "dots"
     },
     {
       "type": "color_scheme",

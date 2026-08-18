@@ -286,7 +286,15 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--ces-radius-lg);
-  background-color: var(--ces-surface-strong, rgba(var(--color-foreground), 0.07));
+  background-color: #2b2b2b;
+}
+
+.ces-main-product__panel--center {
+  text-align: center;
+}
+
+.ces-main-product__panel--center .ces-main-product__panel-list {
+  text-align: left;
 }
 
 .ces-main-product__panel-media {
@@ -298,6 +306,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /*
+   * The reference fades the photo right back so it reads as texture behind the
+   * copy rather than as a picture with something laid over it. Fading the image
+   * itself, instead of covering it, keeps the panel's own colour showing
+   * through and the text on a stable ground.
+   */
+  opacity: var(--ces-panel-image-opacity, 0.15);
 }
 
 .ces-main-product__panel-media::after {
@@ -314,7 +329,7 @@
 
 /* The overlay fixes a dark backdrop behind this card, so its text is white
    whichever color scheme the section runs. Only applies once an image is set. */
-.ces-main-product__panel:has(.ces-main-product__panel-media) .ces-main-product__panel-content {
+.ces-main-product__panel-content {
   color: #fff;
 }
 
@@ -346,9 +361,7 @@
 }
 
 /* Without a background image the panel keeps the scheme's own border colour. */
-.ces-main-product__panel:not(:has(.ces-main-product__panel-media)) .ces-main-product__panel-footnote {
-  border-top-color: var(--ces-border-color);
-}
+
 
 /* Product accordion --------------------------------------------------------
  *
@@ -400,4 +413,27 @@
 .ces-main-product-section .accordion details[open] > summary::after {
   /* Upright bar dropped: the plus reads as a minus. */
   background: linear-gradient(currentColor, currentColor) center / 100% 0.15rem no-repeat;
+}
+
+
+/* Own-row note -------------------------------------------------------------
+   A single statement under the buy button, kept out of the shipping checklist
+   so it does not read as one more bullet. */
+
+.ces-main-product__note {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--ces-muted);
+}
+
+.ces-main-product__note--center {
+  justify-content: center;
+}
+
+.ces-main-product__note .ces-icon {
+  color: var(--ces-accent);
 }

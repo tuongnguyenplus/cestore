@@ -145,8 +145,10 @@
         "guarantee-line": {
           "type": "ces_shipping_item",
           "settings": {
-            "icon": "lock",
-            "text": "90-day money-back guarantee"
+            "icon": "shield",
+            "text": "90-day money-back guarantee",
+            "standalone": true,
+            "align": "center"
           }
         },
         "ship-1": {
@@ -285,11 +287,13 @@
           "type": "ces_media_panel",
           "settings": {
             "image": "shopify://shop_images/research.webp",
-            "overlay_opacity": 70,
+            "overlay_opacity": 0,
             "heading": "Why Trust Rovina as Your Wellness Partner?",
             "icon": "check-circle",
             "items": "Non-GMO Ingredients\nGluten-Free Formula\nGentle on Stomach\nGMP & FDA Registered Facility\n3rd-Party Lab Tested\nNo Artificial Fillers",
-            "footnote": "Clean, High-Quality Formula"
+            "footnote": "Clean, High-Quality Formula",
+            "image_opacity": 15,
+            "text_alignment": "center"
           }
         }
       },

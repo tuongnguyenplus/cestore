@@ -22,7 +22,7 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-timeline-accordion ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-timeline-accordion{% if section.settings.background_pattern == 'dots' %} ces-section--dotted{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.image != blank -%}
       <div class="ces-timeline-accordion__hero">
@@ -118,7 +118,7 @@
           >
             <div class="ces-timeline__marker" aria-hidden="true">
               <span class="ces-timeline__dot">
-                {% render 'ces-icon', icon: 'check', size: '1.3rem' %}
+                {% render 'ces-icon', icon: 'check-ring', size: '1.8rem' %}
               </span>
             </div>
 
@@ -218,6 +218,22 @@
       "label": "Only one step open at a time",
       "info": "Collapsible display only.",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "background_pattern",
+      "label": "Background pattern",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "dots",
+          "label": "Dot grid"
+        }
+      ],
+      "default": "dots"
     },
     {
       "type": "color_scheme",

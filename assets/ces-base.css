@@ -288,3 +288,30 @@
 .ces-checklist-item > .ces-icon {
   margin-top: 0.15em;
 }
+
+
+/* Dotted backdrop ----------------------------------------------------------
+ * A faint dot grid in the accent colour, matching the texture the reference
+ * runs behind some sections. Sits under the content and ignores pointer input.
+ */
+
+.ces-section--dotted {
+  position: relative;
+}
+
+.ces-section--dotted::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(var(--ces-accent) 2px, transparent 2px);
+  background-size: 14px 14px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.ces-section--dotted > .ces-section__inner {
+  position: relative;
+  z-index: 1;
+}
