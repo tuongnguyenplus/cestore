@@ -348,9 +348,18 @@
     "video-testimonials": {
       "type": "ces-video-testimonial-row",
       "blocks": {
+        "video_item_JceynK": {
+          "type": "video_item",
+          "settings": {
+            "video": "shopify://files/videos/a1.mp4",
+            "video_url": "",
+            "label": "Maya, 34"
+          }
+        },
         "video-1": {
           "type": "video_item",
           "settings": {
+            "video": "shopify://files/videos/a1.mp4",
             "video_url": "",
             "label": "Maya, 34"
           }
@@ -358,6 +367,7 @@
         "video-2": {
           "type": "video_item",
           "settings": {
+            "video": "shopify://files/videos/a1.mp4",
             "video_url": "",
             "label": "Daniel, 41"
           }
@@ -365,6 +375,7 @@
         "video-3": {
           "type": "video_item",
           "settings": {
+            "video": "shopify://files/videos/a1.mp4",
             "video_url": "",
             "label": "Priya, 29"
           }
@@ -372,12 +383,14 @@
         "video-4": {
           "type": "video_item",
           "settings": {
+            "video": "shopify://files/videos/a1.mp4",
             "video_url": "",
             "label": "Chris, 52"
           }
         }
       },
       "block_order": [
+        "video_item_JceynK",
         "video-1",
         "video-2",
         "video-3",
