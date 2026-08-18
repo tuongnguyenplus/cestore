@@ -1,0 +1,132 @@
+/* Section styles for sections/ces-video-testimonial-row.liquid. */
+
+.ces-video-testimonial-row {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+/*
+ * Mobile shows a swipeable, snapping row that bleeds to the screen edges;
+ * from 750px it becomes a plain grid.
+ */
+.ces-video-testimonial-row__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 62vw;
+  gap: 1.2rem;
+  margin-inline: -1.5rem;
+  padding-inline: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.ces-video-testimonial-row__list::-webkit-scrollbar {
+  display: none;
+}
+
+.ces-video-testimonial-row__item {
+  scroll-snap-align: center;
+}
+
+.ces-video-testimonial-row__frame {
+  position: relative;
+  aspect-ratio: var(--ces-video-ratio, 9 / 16);
+  overflow: hidden;
+  border-radius: var(--ces-radius-lg);
+  background-color: var(--ces-surface);
+}
+
+.ces-video-testimonial-row__video,
+.ces-video-testimonial-row__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ces-video-testimonial-row__label {
+  margin: 1rem 0 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--ces-muted);
+}
+
+/* Sound toggle ------------------------------------------------------------ */
+
+.ces-video-testimonial-row__sound {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+}
+
+.ces-video-testimonial-row__sound:focus-visible {
+  outline: 0.2rem solid #fff;
+  outline-offset: 0.2rem;
+}
+
+/*
+ * The icon is drawn from borders rather than an SVG: a speaker triangle plus a
+ * slash that is removed once sound is on.
+ */
+.ces-video-testimonial-row__sound-icon {
+  position: relative;
+  display: block;
+  width: 0.7rem;
+  height: 0.9rem;
+  background-color: currentColor;
+}
+
+.ces-video-testimonial-row__sound-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0.6rem;
+  width: 0;
+  height: 0;
+  border-top: 0.85rem solid transparent;
+  border-bottom: 0.85rem solid transparent;
+  border-left: 0.7rem solid currentColor;
+  transform: translateY(-50%);
+}
+
+.ces-video-testimonial-row__sound-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -0.4rem;
+  width: 2.4rem;
+  height: 0.2rem;
+  background-color: currentColor;
+  box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.55);
+  transform: translateY(-50%) rotate(-45deg);
+  transform-origin: center;
+}
+
+.ces-video-testimonial-row__sound--on .ces-video-testimonial-row__sound-icon::after {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-video-testimonial-row__list {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 2rem;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow-x: visible;
+  }
+}

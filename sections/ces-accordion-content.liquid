@@ -1,0 +1,217 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'ces-accordion-content.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-accordion.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  if section.settings.exclusive
+    assign accordion_group = 'ces-accordion-' | append: section.id
+  endif
+-%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-accordion-content ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner ces-section__inner--narrow">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header ces-section__header--{{ section.settings.text_alignment }}">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="ces-accordion">
+      {%- for block in section.blocks -%}
+        {% render 'ces-accordion-item',
+          id: block.id,
+          heading: block.settings.heading,
+          content: block.settings.content,
+          image: block.settings.image,
+          open: block.settings.open,
+          group: accordion_group,
+          shopify_attributes: block.shopify_attributes
+        %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Accordion content",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Long-form product copy split into collapsible rows. Each block is one row."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything you need to know"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Header alignment",
+      "options": [
+        { "value": "start", "label": "Left" },
+        { "value": "center", "label": "Centered" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "exclusive",
+      "label": "Only one row open at a time",
+      "info": "Opening a row closes the others.",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Add the copy for this row here.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Shown above the copy when the row is open. Optional."
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "presets": [
+    {
+      "name": "CES Accordion content",
+      "blocks": [
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Description",
+            "open": true,
+            "content": "<p>Rovina Sunglow delivers 12mg of natural astaxanthin in every softgel — one of the most powerful antioxidants found in nature. Sourced from Haematococcus pluvialis microalgae and paired with cold-pressed oil for absorption, it supports cellular defence, skin resilience and healthy inflammation response.*</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Why do I need astaxanthin?",
+            "content": "<p>Everyday stressors — sun exposure, screen time, hard training, air pollution — generate free radicals faster than the body can neutralise them. Astaxanthin sits inside the cell membrane and works on both its inner and outer surfaces, which is why it is studied so widely for cellular and skin support.*</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Does it actually work?",
+            "content": "<p>Astaxanthin is one of the better-studied carotenoids, with more than 70 published human clinical trials covering skin elasticity and moisture, eye fatigue, exercise recovery and cardiovascular markers. We formulated Sunglow at 12mg because that is the dose most of those trials used.*</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Key ingredients",
+            "content": "<p><strong>Natural astaxanthin (12mg)</strong> from Haematococcus pluvialis microalgae, grown in closed freshwater systems.</p><p><strong>Cold-pressed olive oil</strong> as a lipid carrier, because astaxanthin is fat soluble and absorbs poorly on its own.</p><p><strong>Vitamin E (as d-alpha tocopherol)</strong> to keep the formula stable without synthetic preservatives.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "How do I take it?",
+            "content": "<p>One softgel a day, with a meal that contains some fat. That is it. Consistency matters more than timing — most people notice the most after eight to twelve weeks of daily use.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Is it safe?",
+            "content": "<p>Sunglow is made in a cGMP-certified facility in the USA and third-party tested for heavy metals, microbials and potency. It is non-GMO, gluten free and free from artificial fillers. If you are pregnant, nursing, or taking prescription medication, talk to your healthcare provider first.*</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "When will I see results?",
+            "content": "<p>Astaxanthin builds up in tissue over time rather than acting on the first dose. Most customers report the first changes in skin feel and recovery around weeks three to four, with the fuller effect between weeks eight and twelve.*</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Guarantee",
+            "content": "<p>Take Sunglow daily for 90 days. If you are not happy with how you feel, contact us for a full refund — you do not need to send the bottles back.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p>Orders ship from our USA warehouse within one business day. Standard delivery is 3–5 business days, and shipping is free on orders over $50. Subscriptions refill every four weeks and can be skipped, paused or cancelled at any time from your account.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

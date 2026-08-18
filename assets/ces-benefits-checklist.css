@@ -1,0 +1,25 @@
+/* Section styles for sections/ces-benefits-checklist.liquid.
+   The row itself comes from snippets/ces-checklist-item.liquid, styled in
+   ces-base.css. */
+
+.ces-benefits-checklist {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-benefits-checklist__list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.4rem;
+}
+
+.ces-benefits-checklist .ces-disclaimer {
+  padding-top: 2.4rem;
+  border-top: var(--ces-border);
+}
+
+@media screen and (min-width: 750px) {
+  .ces-benefits-checklist__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem 3.2rem;
+  }
+}

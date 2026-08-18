@@ -1,0 +1,155 @@
+/* Section styles for sections/ces-image-text-banner.liquid.
+   The badge strip reuses ces-marquee.css. */
+
+.ces-image-text-banner {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-image-text-banner__panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ces-radius-lg);
+}
+
+.ces-image-text-banner__media {
+  position: relative;
+}
+
+.ces-image-text-banner__image,
+.ces-image-text-banner__media > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ces-image-text-banner__heading {
+  color: inherit;
+}
+
+.ces-image-text-banner__text {
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.ces-image-text-banner__button {
+  margin-top: 2.4rem;
+}
+
+/* Overlay layout ---------------------------------------------------------- */
+
+.ces-image-text-banner--overlay .ces-image-text-banner__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, var(--ces-banner-overlay, 0.4));
+}
+
+.ces-image-text-banner--overlay .ces-image-text-banner__media {
+  aspect-ratio: 4 / 5;
+}
+
+.ces-image-text-banner--overlay .ces-image-text-banner__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.4rem;
+  /* The overlay fixes the backdrop to a dark wash, so the copy on top is white
+     regardless of which color scheme the section is using. */
+  color: #fff;
+}
+
+.ces-image-text-banner--overlay .ces-image-text-banner__panel--center .ces-image-text-banner__content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ces-image-text-banner--overlay .ces-image-text-banner__panel--end .ces-image-text-banner__content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Split layout ------------------------------------------------------------ */
+
+.ces-image-text-banner--split .ces-image-text-banner__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.4rem;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.ces-image-text-banner--split .ces-image-text-banner__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--ces-radius-lg);
+}
+
+.ces-image-text-banner--split .ces-image-text-banner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Badge strip ------------------------------------------------------------- */
+
+.ces-image-text-banner__badges {
+  margin-top: 2.4rem;
+  --ces-marquee-gap: 1rem;
+}
+
+.ces-image-text-banner__badges .ces-marquee__item {
+  padding: 0.8rem 1.8rem;
+  border: var(--ces-border);
+  border-radius: var(--ces-radius-pill);
+  background-color: var(--ces-surface);
+}
+
+.ces-image-text-banner__badges .ces-marquee__text {
+  letter-spacing: 0.08rem;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-image-text-banner--overlay .ces-image-text-banner__media {
+    aspect-ratio: 21 / 9;
+  }
+
+  .ces-image-text-banner--overlay .ces-image-text-banner__content {
+    padding: 5.6rem;
+  }
+
+  .ces-image-text-banner--overlay .ces-image-text-banner__panel--start .ces-image-text-banner__content,
+  .ces-image-text-banner--overlay .ces-image-text-banner__panel--end .ces-image-text-banner__content {
+    justify-content: center;
+  }
+
+  .ces-image-text-banner--overlay .ces-image-text-banner__text,
+  .ces-image-text-banner--overlay .ces-image-text-banner__heading {
+    max-width: 62rem;
+  }
+
+  .ces-image-text-banner--split .ces-image-text-banner__panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 4.8rem;
+  }
+
+  /* The image comes first in the markup, so the copy already sits on the right.
+     Left-aligned copy is the case that needs the columns swapped. */
+  .ces-image-text-banner--split .ces-image-text-banner__panel--start .ces-image-text-banner__media {
+    order: 2;
+  }
+
+  .ces-image-text-banner__text {
+    font-size: 1.6rem;
+  }
+
+  .ces-image-text-banner__badges {
+    margin-top: 3.2rem;
+  }
+}

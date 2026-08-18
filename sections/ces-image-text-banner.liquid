@@ -1,0 +1,244 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-marquee.css' | asset_url | stylesheet_tag }}
+{{ 'ces-image-text-banner.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign badge_blocks = section.blocks | where: 'type', 'badge_marquee_item'
+  if badge_blocks.size > 0
+    assign has_badges = true
+  endif
+-%}
+
+{%- if has_badges -%}
+  <script src="{{ 'ces-marquee.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% render 'ces-section-padding' %}
+
+<div
+  class="ces-section ces-image-text-banner ces-image-text-banner--{{ section.settings.layout }} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  style="--ces-banner-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
+>
+  <div class="ces-section__inner">
+    <div class="ces-image-text-banner__panel ces-image-text-banner__panel--{{ section.settings.text_position }}">
+      <div class="ces-image-text-banner__media">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 2400
+            | image_tag:
+              loading: 'lazy',
+              width: section.settings.image.width,
+              height: section.settings.image.height,
+              widths: '450, 750, 1100, 1500, 1900, 2400',
+              sizes: '(min-width: 750px) 100vw, calc(100vw - 3rem)',
+              class: 'ces-image-text-banner__image',
+              alt: section.settings.image.alt | escape
+          }}
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'ces-placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <div class="ces-image-text-banner__content">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="ces-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading ces-image-text-banner__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="ces-image-text-banner__text rte ces-rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a
+            class="ces-button ces-image-text-banner__button"
+            {% if section.settings.button_link != blank %}
+              href="{{ section.settings.button_link }}"
+            {% else %}
+              href="#"
+              aria-disabled="true"
+            {% endif %}
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if has_badges -%}
+      {%- comment -%}
+        Shares the marquee component with ces-announcement-marquee, styled as a
+        row of pill badges rather than a ticker of phrases.
+      {%- endcomment -%}
+      {% render 'ces-marquee',
+        blocks: badge_blocks,
+        speed: section.settings.badge_speed,
+        direction: 'left',
+        pause_on_hover: true,
+        variant: 'text',
+        class: 'ces-image-text-banner__badges'
+      %}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Image text banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "A wide image with copy over or beside it, plus an optional scrolling badge strip underneath. Designed to be reused several times down the page."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "overlay", "label": "Text over the image" },
+        { "value": "split", "label": "Text beside the image" }
+      ],
+      "default": "overlay"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "info": "In the split layout, left and right place the copy on that side of the image.",
+      "options": [
+        { "value": "start", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "end", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Image overlay opacity",
+      "info": "Darkens the image so text over it stays readable. Ignored in the split layout.",
+      "default": 40
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Research-backed wellness support"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Every batch of Sunglow is made to the dose used in published human trials, then tested again by an independent lab before it reaches you.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Badge strip"
+    },
+    {
+      "type": "range",
+      "id": "badge_speed",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge scroll speed",
+      "info": "Pixels travelled per second.",
+      "default": 40
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge_marquee_item",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Non-GMO"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Leading icon",
+          "info": "An emoji or short glyph. Optional."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "CES Image text banner",
+      "blocks": [
+        { "type": "badge_marquee_item", "settings": { "text": "Non-GMO" } },
+        { "type": "badge_marquee_item", "settings": { "text": "Gluten-Free" } },
+        { "type": "badge_marquee_item", "settings": { "text": "No Additives" } },
+        { "type": "badge_marquee_item", "settings": { "text": "Third-Party Tested" } },
+        { "type": "badge_marquee_item", "settings": { "text": "Made in the USA" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

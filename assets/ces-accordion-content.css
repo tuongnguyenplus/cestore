@@ -1,0 +1,7 @@
+/* Section styles for sections/ces-accordion-content.liquid.
+   The row mechanics live in ces-accordion.css. */
+
+.ces-accordion-content {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}

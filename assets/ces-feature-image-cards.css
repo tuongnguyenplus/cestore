@@ -1,0 +1,58 @@
+/* Section styles for sections/ces-feature-image-cards.liquid. */
+
+.ces-feature-image-cards {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-feature-image-cards__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.4rem;
+}
+
+.ces-feature-image-cards__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: 100%;
+}
+
+.ces-feature-image-cards__media {
+  aspect-ratio: var(--ces-card-ratio, 1 / 1);
+  overflow: hidden;
+  border-radius: var(--ces-radius-lg);
+  background-color: var(--ces-surface);
+}
+
+.ces-feature-image-cards__image,
+.ces-feature-image-cards__media > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ces-feature-image-cards__heading {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.ces-feature-image-cards__text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--ces-muted);
+}
+
+@media screen and (min-width: 750px) {
+  .ces-feature-image-cards__grid {
+    /* Follows the block count, so a merchant dropping to two cards gets two
+       columns rather than a stretched three-column row with a hole in it. */
+    grid-template-columns: repeat(var(--ces-feature-cards-count, 3), minmax(0, 1fr));
+    gap: 3.2rem;
+  }
+}

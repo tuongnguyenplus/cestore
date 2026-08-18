@@ -1,0 +1,146 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-benefits-checklist.css' | asset_url | stylesheet_tag }}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-benefits-checklist ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner ces-section__inner--narrow">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="ces-checklist ces-benefits-checklist__list" role="list">
+        {%- for block in section.blocks -%}
+          {% render 'ces-checklist-item',
+            text: block.settings.text,
+            icon: section.settings.icon,
+            shopify_attributes: block.shopify_attributes
+          %}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="ces-disclaimer rte ces-rte">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Benefits checklist",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "A long tick list of benefits. Each block is one line."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Benefits"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Backed by 70+ researched clinical trials"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Row icon",
+      "options": [
+        { "value": "check-circle", "label": "Check in a circle" },
+        { "value": "check", "label": "Check" },
+        { "value": "star", "label": "Star" },
+        { "value": "leaf", "label": "Leaf" },
+        { "value": "sparkle", "label": "Sparkle" }
+      ],
+      "default": "check-circle"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "<p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_item",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Supports cellular and antioxidant defence*"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "CES Benefits checklist",
+      "blocks": [
+        { "type": "benefit_item", "settings": { "text": "Supports cellular and antioxidant defence*" } },
+        { "type": "benefit_item", "settings": { "text": "Helps the skin hold on to moisture and elasticity*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports a healthy inflammation response*" } },
+        { "type": "benefit_item", "settings": { "text": "Helps protect skin from everyday UV stress*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports eye comfort during long screen days*" } },
+        { "type": "benefit_item", "settings": { "text": "Helps muscles recover after hard training*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports healthy cholesterol already in range*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports steady energy through the afternoon*" } },
+        { "type": "benefit_item", "settings": { "text": "Helps defend cells against free-radical damage*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports joint comfort and mobility*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports brain and cognitive health*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports immune resilience*" } },
+        { "type": "benefit_item", "settings": { "text": "Supports cardiovascular health*" } },
+        { "type": "benefit_item", "settings": { "text": "Non-GMO, gluten free and third-party tested" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
