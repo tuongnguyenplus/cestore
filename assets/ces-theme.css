@@ -27,7 +27,7 @@
   --ces-border-color: rgba(var(--color-foreground), 0.1);
   --ces-surface: rgba(var(--color-foreground), 0.035);
   --ces-surface-strong: rgba(var(--color-foreground), 0.06);
-  --ces-muted: rgba(var(--color-foreground), 0.66);
+  --ces-muted: rgba(var(--color-foreground), 0.75);
 
   --ces-gap-lg: 3.2rem;
 }

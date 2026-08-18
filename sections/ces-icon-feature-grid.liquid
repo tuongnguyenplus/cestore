@@ -24,10 +24,10 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="ces-icon-feature-grid__grid">
+      <div class="ces-icon-feature-grid__grid" style="--ces-icon-frame: {{ section.settings.icon_size }}rem;">
         {%- for block in section.blocks -%}
           <div class="ces-icon-feature-grid__item" {{ block.shopify_attributes }}>
-            <span class="ces-icon-feature-grid__icon">
+            <span class="ces-icon-feature-grid__icon ces-icon-feature-grid__icon--{{ section.settings.icon_frame }}">
               {%- comment -%}
                 Three ways to supply the mark, most specific first: an uploaded
                 image, a literal glyph (an emoji, or an icon-font ligature if the
@@ -36,13 +36,13 @@
               {%- if block.settings.image != blank -%}
                 {{
                   block.settings.image
-                  | image_url: width: 160
+                  | image_url: width: 480
                   | image_tag:
                     loading: 'lazy',
-                    width: 80,
-                    height: 80,
-                    widths: '40, 60, 80, 120, 160',
-                    sizes: '4rem',
+                    width: 240,
+                    height: 240,
+                    widths: '80, 120, 180, 240, 360, 480',
+                    sizes: '10rem',
                     class: 'ces-icon-feature-grid__icon-image',
                     alt: ''
                 }}
@@ -85,6 +85,33 @@
       "type": "text",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "icon_frame",
+      "label": "Icon frame",
+      "info": "Turn the disc off for product shots on a transparent background.",
+      "options": [
+        {
+          "value": "disc",
+          "label": "Tinted disc"
+        },
+        {
+          "value": "bare",
+          "label": "None"
+        }
+      ],
+      "default": "disc"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 4,
+      "max": 16,
+      "step": 0.4,
+      "unit": "rem",
+      "label": "Icon size",
+      "default": 6.4
     },
     {
       "type": "range",
@@ -160,17 +187,50 @@
           "id": "icon",
           "label": "Built-in icon",
           "options": [
-            { "value": "none", "label": "None" },
-            { "value": "heart", "label": "Heart" },
-            { "value": "lightning", "label": "Lightning bolt" },
-            { "value": "sparkle", "label": "Sparkle" },
-            { "value": "leaf", "label": "Leaf" },
-            { "value": "plant", "label": "Plant" },
-            { "value": "star", "label": "Star" },
-            { "value": "stopwatch", "label": "Stopwatch" },
-            { "value": "fire", "label": "Flame" },
-            { "value": "check-circle", "label": "Check in a circle" },
-            { "value": "lock", "label": "Padlock" }
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "lightning",
+              "label": "Lightning bolt"
+            },
+            {
+              "value": "sparkle",
+              "label": "Sparkle"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "plant",
+              "label": "Plant"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "stopwatch",
+              "label": "Stopwatch"
+            },
+            {
+              "value": "fire",
+              "label": "Flame"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check in a circle"
+            },
+            {
+              "value": "lock",
+              "label": "Padlock"
+            }
           ],
           "default": "heart"
         },
@@ -194,10 +254,34 @@
     {
       "name": "CES Icon feature grid",
       "blocks": [
-        { "type": "icon_item", "settings": { "icon": "heart", "heading": "Heart health*" } },
-        { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Skin radiance*" } },
-        { "type": "icon_item", "settings": { "icon": "lightning", "heading": "Daily energy*" } },
-        { "type": "icon_item", "settings": { "icon": "stopwatch", "heading": "Faster recovery*" } }
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon": "heart",
+            "heading": "Heart health*"
+          }
+        },
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon": "sparkle",
+            "heading": "Skin radiance*"
+          }
+        },
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon": "lightning",
+            "heading": "Daily energy*"
+          }
+        },
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon": "stopwatch",
+            "heading": "Faster recovery*"
+          }
+        }
       ]
     }
   ]

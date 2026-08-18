@@ -23,17 +23,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6.4rem;
-  height: 6.4rem;
-  border-radius: 50%;
-  background-color: var(--ces-surface-strong);
+  width: var(--ces-icon-frame, 6.4rem);
+  height: var(--ces-icon-frame, 6.4rem);
   color: var(--ces-accent);
 }
 
+.ces-icon-feature-grid__icon--disc {
+  border-radius: 50%;
+  background-color: var(--ces-surface-strong);
+}
+
+/* A product shot on a transparent background wants the whole frame; a glyph in
+   a disc wants breathing room inside it. */
 .ces-icon-feature-grid__icon-image {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+.ces-icon-feature-grid__icon--disc .ces-icon-feature-grid__icon-image {
+  width: 50%;
+  height: 50%;
 }
 
 .ces-icon-feature-grid__icon-text {

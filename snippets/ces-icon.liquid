@@ -7,7 +7,7 @@
 
   Accepts:
   - icon: {String} Icon name. One of: check, check-circle, cross, cross-circle,
-      check-ring, shield, star, caret, chevron-left, chevron-right, truck, lock, return, leaf,
+      check-ring, shield, star, star-filled, caret, chevron-left, chevron-right, truck, lock, return, leaf,
       plane, plant, recycle, heart, stopwatch, lightning, fire, info,
       question-mark, gluten-free, dairy-free, nut-free, play, pause.
   - size: {String} Optional CSS length for width/height. Default 2rem.
@@ -81,6 +81,14 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
           <circle cx="10" cy="10" r="10" fill="currentColor"/>
           <path class="ces-icon__mark" d="m5.8 10.3 2.6 2.6 5.8-5.8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'star-filled' -%}
+        {%- comment -%}
+          Dawn's star is an outline. A rating reads as weaker than it is when the
+          stars are hollow, so this one is solid.
+        {%- endcomment -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path fill="currentColor" d="M10 1.4l2.47 5.35 5.85.67-4.34 3.98 1.16 5.76L10 14.3l-5.14 2.86 1.16-5.76L1.68 7.42l5.85-.67z"/>
         </svg>
       {%- when 'shield' -%}
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">

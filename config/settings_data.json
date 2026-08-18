@@ -252,6 +252,17 @@
           "secondary_button_label": "#FFFFFF",
           "shadow": "#121212"
         }
+      },
+      "scheme-ces-gradient": {
+        "settings": {
+          "background": "#690E0E",
+          "background_gradient": "radial-gradient(rgba(147, 51, 51, 1) 14%, rgba(105, 14, 14, 1) 85%)",
+          "text": "#FFFFFF",
+          "button": "#FFFFFF",
+          "button_label": "#933333",
+          "secondary_button_label": "#FFFFFF",
+          "shadow": "#121212"
+        }
       }
     }
   },

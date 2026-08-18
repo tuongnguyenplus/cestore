@@ -74,7 +74,7 @@
                   >
                     {%- for i in (1..5) -%}
                       {%- if i <= block.settings.rating -%}
-                        {% render 'ces-icon', icon: 'star', size: '1.6rem', class: 'ces-testimonial-marquee__star' %}
+                        {% render 'ces-icon', icon: 'star-filled', size: '1.5rem', class: 'ces-testimonial-marquee__star' %}
                       {%- endif -%}
                     {%- endfor -%}
                   </div>
@@ -102,7 +102,14 @@
                   <span class="ces-testimonial-marquee__author-name">
                     {{- block.settings.name -}}
                     {%- if block.settings.meta != blank -%}
-                      <span class="ces-testimonial-marquee__author-meta">{{ block.settings.meta }}</span>
+                      <span class="ces-testimonial-marquee__author-meta">
+                        {%- if block.settings.verified -%}
+                          <span class="ces-testimonial-marquee__verified">
+                            {% render 'ces-icon', icon: 'check', size: '0.9rem' %}
+                          </span>
+                        {%- endif -%}
+                        {{ block.settings.meta }}
+                      </span>
                     {%- endif -%}
                   </span>
                 </figcaption>
@@ -259,6 +266,12 @@
           "id": "meta",
           "label": "Customer detail",
           "info": "Shown under the name, e.g. Verified Buyer."
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Show a verified tick",
+          "default": true
         },
         {
           "type": "image_picker",

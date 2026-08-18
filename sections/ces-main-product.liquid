@@ -40,6 +40,13 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    /* Dawn scales the product title off the heading scale, which the reference
+       overrides to fit more of the page above the fold. */
+    #MainProduct-{{ section.id }} .product__title > * {
+      font-size: {{ section.settings.ces_title_size | default: 26 }}px;
+      line-height: 1.15;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -756,19 +763,24 @@
                   {%- endunless -%}
 
                 {%- when 'ces_trust_row' -%}
-                  {%- assign ces_avatar_keys = 'avatar_1,avatar_2,avatar_3,avatar_4' | split: ',' -%}
+                  {%- liquid
+                    # Collect the avatars that are actually set, so the verified
+                    # tick can be pinned to the last real one rather than to a
+                    # gap left by a removed image.
+                    assign ces_avatars = ''
+                    for i in (1..4)
+                      assign ces_key = 'avatar_' | append: i
+                      if block.settings[ces_key] != blank
+                        assign ces_avatars = ces_avatars | append: ces_key | append: ','
+                      endif
+                    endfor
+                    assign ces_avatars = ces_avatars | split: ','
+                  -%}
                   <div class="ces-main-product__trust quick-add-hidden" {{ block.shopify_attributes }}>
-                    {%- assign ces_has_avatar = false -%}
-                    {%- for ces_key in ces_avatar_keys -%}
-                      {%- if block.settings[ces_key] != blank -%}
-                        {%- assign ces_has_avatar = true -%}
-                      {%- endif -%}
-                    {%- endfor -%}
-
-                    {%- if ces_has_avatar -%}
+                    {%- if ces_avatars.size > 0 -%}
                       <div class="ces-main-product__trust-avatars" aria-hidden="true">
-                        {%- for ces_key in ces_avatar_keys -%}
-                          {%- if block.settings[ces_key] != blank -%}
+                        {%- for ces_key in ces_avatars -%}
+                          <span class="ces-main-product__trust-avatar-wrap">
                             {{
                               block.settings[ces_key]
                               | image_url: width: 120
@@ -777,25 +789,22 @@
                                 width: 60,
                                 height: 60,
                                 widths: '40, 60, 90, 120',
-                                sizes: '3.4rem',
+                                sizes: '3.6rem',
                                 class: 'ces-main-product__trust-avatar',
                                 alt: ''
                             }}
-                          {%- endif -%}
-                        {%- endfor -%}
-
-                        {%- if block.settings.show_verified -%}
-                          <span class="ces-main-product__trust-verified">
-                            {% render 'ces-icon', icon: 'check', size: '1rem' %}
+                            {%- if block.settings.show_verified and forloop.last -%}
+                              <span class="ces-main-product__trust-verified">
+                                {% render 'ces-icon', icon: 'check', size: '0.9rem' %}
+                              </span>
+                            {%- endif -%}
                           </span>
-                        {%- endif -%}
+                        {%- endfor -%}
                       </div>
                     {%- endif -%}
 
                     <div class="ces-main-product__trust-text">
-                      <span class="ces-main-product__trust-headline rte ces-rte">
-                        {{- block.settings.text -}}
-                      </span>
+                      <span class="ces-main-product__trust-headline">{{ block.settings.text }}</span>
                       {%- if block.settings.subtext != blank -%}
                         <span class="ces-main-product__trust-sub">{{ block.settings.subtext }}</span>
                       {%- endif -%}
@@ -895,7 +904,7 @@
                       >
                         {%- for i in (1..5) -%}
                           {%- if i <= block.settings.stars -%}
-                            {% render 'ces-icon', icon: 'star', size: '1.6rem' %}
+                            {% render 'ces-icon', icon: 'star-filled', size: '1.5rem' %}
                           {%- endif -%}
                         {%- endfor -%}
                       </span>
@@ -904,32 +913,50 @@
                   </div>
 
                 {%- when 'ces_shipping_estimate' -%}
+                  {%- liquid
+                    # The date is computed from today plus the merchant's lead
+                    # time, so it never goes stale the way a typed date does.
+                    assign ces_lead_seconds = block.settings.delivery_days | times: 86400
+                    assign ces_ship_date = 'now' | date: '%s' | plus: ces_lead_seconds | date: block.settings.date_format
+                  -%}
                   <div class="ces-main-product__estimate quick-add-hidden" {{ block.shopify_attributes }}>
-                    {%- comment -%}
-                      Each side takes an optional glyph. An emoji covers what the
-                      reference uses here — a status dot and a flag — without the
-                      theme needing to ship either as artwork.
-                    {%- endcomment -%}
                     {%- if block.settings.delivery_text != blank -%}
                       <span class="ces-main-product__estimate-item">
-                        {%- if block.settings.delivery_icon != blank -%}
+                        {%- if block.settings.delivery_image != blank -%}
+                          {{
+                            block.settings.delivery_image
+                            | image_url: width: 60
+                            | image_tag:
+                              loading: 'lazy', width: 30, height: 30, widths: '20, 30, 45, 60',
+                              sizes: '1.6rem', class: 'ces-main-product__estimate-image', alt: ''
+                          }}
+                        {%- elsif block.settings.delivery_icon != blank -%}
                           <span class="ces-main-product__estimate-glyph" aria-hidden="true">
                             {{- block.settings.delivery_icon -}}
                           </span>
                         {%- else -%}
-                          {% render 'ces-icon', icon: 'stopwatch', size: '1.8rem' %}
+                          {% render 'ces-icon', icon: 'stopwatch', size: '1.6rem' %}
                         {%- endif -%}
-                        <span>{{ block.settings.delivery_text }}</span>
+                        <span>{{ block.settings.delivery_text }} <strong>{{ ces_ship_date }}</strong></span>
                       </span>
                     {%- endif -%}
+
                     {%- if block.settings.origin_text != blank -%}
-                      <span class="ces-main-product__estimate-item">
-                        {%- if block.settings.origin_icon != blank -%}
+                      <span class="ces-main-product__estimate-item ces-main-product__estimate-item--end">
+                        {%- if block.settings.origin_image != blank -%}
+                          {{
+                            block.settings.origin_image
+                            | image_url: width: 60
+                            | image_tag:
+                              loading: 'lazy', width: 30, height: 30, widths: '20, 30, 45, 60',
+                              sizes: '1.6rem', class: 'ces-main-product__estimate-image', alt: ''
+                          }}
+                        {%- elsif block.settings.origin_icon != blank -%}
                           <span class="ces-main-product__estimate-glyph" aria-hidden="true">
                             {{- block.settings.origin_icon -}}
                           </span>
                         {%- else -%}
-                          {% render 'ces-icon', icon: 'truck', size: '1.8rem' %}
+                          {% render 'ces-icon', icon: 'truck', size: '1.6rem' %}
                         {%- endif -%}
                         <span>{{ block.settings.origin_text }}</span>
                       </span>
@@ -942,6 +969,9 @@
                     style="
                       --ces-panel-overlay: {{ block.settings.overlay_opacity | default: 0 | divided_by: 100.0 }};
                       --ces-panel-image-opacity: {{ block.settings.image_opacity | default: 15 | divided_by: 100.0 }};
+                      --ces-panel-from: {{ block.settings.gradient_from }};
+                      --ces-panel-to: {{ block.settings.gradient_to }};
+                      --ces-panel-angle: {{ block.settings.gradient_angle }}deg;
                     "
                     {{ block.shopify_attributes }}
                   >
@@ -2612,7 +2642,8 @@
           "type": "text",
           "id": "subtext",
           "label": "Second line",
-          "default": "for clean, reliable support"
+          "default": "",
+          "info": "Optional. Leave empty if the line above already says everything."
         },
         {
           "type": "checkbox",
@@ -2856,8 +2887,50 @@
         {
           "type": "text",
           "id": "delivery_text",
-          "label": "Delivery line",
-          "default": "Ships by Aug. 19"
+          "label": "Delivery label",
+          "default": "Ships by",
+          "info": "The date is appended automatically."
+        },
+        {
+          "type": "range",
+          "id": "delivery_days",
+          "min": 0,
+          "max": 21,
+          "step": 1,
+          "unit": "d",
+          "label": "Lead time",
+          "info": "Days from today. The date shown is always today plus this.",
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "date_format",
+          "label": "Date format",
+          "options": [
+            {
+              "value": "%b. %-d",
+              "label": "Aug. 19"
+            },
+            {
+              "value": "%b %-d",
+              "label": "Aug 19"
+            },
+            {
+              "value": "%A",
+              "label": "Tuesday"
+            },
+            {
+              "value": "%-d/%-m",
+              "label": "19/8"
+            }
+          ],
+          "default": "%b. %-d"
+        },
+        {
+          "type": "image_picker",
+          "id": "delivery_image",
+          "label": "Delivery icon image",
+          "info": "Takes priority over the glyph."
         },
         {
           "type": "text",
@@ -2878,6 +2951,12 @@
           "label": "Origin glyph",
           "info": "An emoji or character shown before the line. Leave empty for the built-in icon.",
           "default": "🇺🇸"
+        },
+        {
+          "type": "image_picker",
+          "id": "origin_image",
+          "label": "Origin icon image",
+          "info": "Use this for a flag — emoji flags do not render on Windows."
         }
       ]
     },
@@ -2894,6 +2973,28 @@
           "type": "image_picker",
           "id": "image",
           "label": "Background image"
+        },
+        {
+          "type": "color",
+          "id": "gradient_from",
+          "label": "Panel colour, from",
+          "default": "#933333"
+        },
+        {
+          "type": "color",
+          "id": "gradient_to",
+          "label": "Panel colour, to",
+          "default": "#1A1A1A"
+        },
+        {
+          "type": "range",
+          "id": "gradient_angle",
+          "min": 0,
+          "max": 360,
+          "step": 15,
+          "unit": "°",
+          "label": "Gradient angle",
+          "default": 135
         },
         {
           "type": "range",
@@ -3255,6 +3356,16 @@
       "step": 1,
       "label": "Highlight columns on desktop",
       "default": 2
+    },
+    {
+      "type": "range",
+      "id": "ces_title_size",
+      "min": 18,
+      "max": 44,
+      "step": 2,
+      "unit": "px",
+      "label": "CES Product title size",
+      "default": 26
     }
   ]
 }

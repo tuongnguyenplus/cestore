@@ -24,6 +24,18 @@
 
 <div class="ces-section ces-timeline-accordion{% if section.settings.background_pattern == 'dots' %} ces-section--dotted{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="ces-timeline-accordion__layout ces-timeline-accordion__layout--{{ section.settings.image_position }}">
     {%- if section.settings.image != blank -%}
       <div class="ces-timeline-accordion__hero">
         {{
@@ -34,20 +46,9 @@
             width: section.settings.image.width,
             height: section.settings.image.height,
             widths: '450, 750, 1100, 1400, 1600',
-            sizes: '(min-width: 750px) 78rem, calc(100vw - 3rem)',
+            sizes: '(min-width: 990px) 45vw, calc(100vw - 3rem)',
             alt: section.settings.image.alt | escape
         }}
-      </div>
-    {%- endif -%}
-
-    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
-      <div class="ces-section__header">
-        {%- if section.settings.heading != blank -%}
-          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
-        {%- endif -%}
-        {%- if section.settings.subheading != blank -%}
-          <p class="ces-subheading">{{ section.settings.subheading }}</p>
-        {%- endif -%}
       </div>
     {%- endif -%}
 
@@ -158,6 +159,7 @@
         </ol>
       </ces-timeline>
     {%- endif -%}
+    </div>
   </div>
 </div>
 
@@ -190,7 +192,28 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image above the timeline"
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "info": "On desktop. The image always sits above the steps on mobile.",
+      "options": [
+        {
+          "value": "start",
+          "label": "Beside the steps, on the left"
+        },
+        {
+          "value": "end",
+          "label": "Beside the steps, on the right"
+        },
+        {
+          "value": "above",
+          "label": "Above the steps, full width"
+        }
+      ],
+      "default": "start"
     },
     {
       "type": "text",

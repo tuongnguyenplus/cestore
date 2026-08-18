@@ -12,8 +12,14 @@
   background: var(--gradient-background);
 }
 
+.ces-timeline-accordion__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.4rem;
+}
+
 .ces-timeline-accordion__hero {
-  margin-bottom: 2.4rem;
+  align-self: start;
 }
 
 .ces-timeline-accordion__hero img {
@@ -62,8 +68,8 @@
  * recolouring it in place, which is what makes the fill read as travelling with
  * the reader instead of blinking on.
  */
-.ces-timeline__step:not(:last-child) .ces-timeline__marker::after,
-.ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
+.ces-timeline__step .ces-timeline__marker::after,
+.ces-timeline__step .ces-timeline__marker::before {
   content: '';
   position: absolute;
   top: 4.4rem;
@@ -73,11 +79,18 @@
   margin-left: -0.15rem;
 }
 
-.ces-timeline__step:not(:last-child) .ces-timeline__marker::after {
+.ces-timeline__step .ces-timeline__marker::after {
   background-color: rgba(var(--color-foreground), 0.18);
 }
 
-.ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
+/* The final segment has no successor to reach, so it runs only as far as its
+   own content and then stops rather than trailing into the next section. */
+.ces-timeline__step:last-child .ces-timeline__marker::after,
+.ces-timeline__step:last-child .ces-timeline__marker::before {
+  bottom: 0.4rem;
+}
+
+.ces-timeline__step .ces-timeline__marker::before {
   z-index: 1;
   background-color: var(--ces-accent);
   transform: scaleY(0);
@@ -90,7 +103,7 @@
  * so this has to match it. Without the :not() here the base scaleY(0) outweighs
  * this rule and the rail never fills.
  */
-.ces-timeline__step--active:not(:last-child) .ces-timeline__marker::before {
+.ces-timeline__step--active .ces-timeline__marker::before {
   transform: scaleY(1);
 }
 
@@ -199,17 +212,36 @@
     padding-bottom: 3.6rem;
   }
 
-  .ces-timeline__step:not(:last-child) .ces-timeline__marker::after,
-  .ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
+  .ces-timeline__step .ces-timeline__marker::after,
+  .ces-timeline__step .ces-timeline__marker::before {
     bottom: -3.6rem;
+  }
+
+  .ces-timeline__step:last-child .ces-timeline__marker::after,
+  .ces-timeline__step:last-child .ces-timeline__marker::before {
+    bottom: 0.4rem;
   }
 
   .ces-timeline__heading {
     font-size: 2.6rem;
   }
 
+  .ces-timeline-accordion__layout:not(.ces-timeline-accordion__layout--above):has(.ces-timeline-accordion__hero) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* Image on the right means the steps lead, so the columns swap. */
+  .ces-timeline-accordion__layout--end .ces-timeline-accordion__hero {
+    order: 2;
+  }
+
+  /* Sticks while the steps scroll past, which is what makes the two columns
+     feel like one unit rather than two lists of different lengths. */
   .ces-timeline-accordion__hero {
-    margin-bottom: 4rem;
+    position: sticky;
+    top: 8rem;
   }
 }
 

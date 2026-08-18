@@ -108,3 +108,26 @@
     grid-auto-columns: calc((100% - 4rem) / 3);
   }
 }
+
+/* A small confirmation mark beside the buyer label, so the claim carries the
+   same visual weight it does on the reference. */
+.ces-testimonial-marquee__author-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ces-testimonial-marquee__verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.ces-testimonial-marquee__star {
+  color: #f5b301;
+}

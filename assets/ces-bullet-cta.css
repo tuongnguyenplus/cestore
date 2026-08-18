@@ -86,3 +86,51 @@
     font-size: 1.6rem;
   }
 }
+
+/* With an image the panel becomes two columns on desktop and the copy stops
+   being centred, since centred text beside a picture reads as unanchored. */
+
+.ces-bullet-cta__panel--with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.ces-bullet-cta__media {
+  overflow: hidden;
+  border-radius: var(--ces-radius);
+}
+
+.ces-bullet-cta__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ces-bullet-cta__panel--with-image .ces-bullet-cta__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-bullet-cta__panel--with-image {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+    text-align: left;
+  }
+
+  .ces-bullet-cta__panel--image-end .ces-bullet-cta__media {
+    order: 2;
+  }
+
+  .ces-bullet-cta__panel--with-image .ces-bullet-cta__body {
+    align-items: flex-start;
+  }
+
+  .ces-bullet-cta__panel--with-image .ces-bullet-cta__heading,
+  .ces-bullet-cta__panel--with-image .ces-bullet-cta__footnote {
+    text-align: left;
+  }
+}
