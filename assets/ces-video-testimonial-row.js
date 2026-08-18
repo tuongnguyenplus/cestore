@@ -25,8 +25,10 @@ if (!customElements.get('ces-video-row')) {
 
       this.initialised = true;
       this.motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      this.autoplay = this.hasAttribute('data-autoplay');
 
       this.setupSoundToggles();
+      this.setupPlayToggles();
 
       if (typeof IntersectionObserver !== 'function') {
         // No observer: load everything up front rather than showing dead frames.
@@ -57,8 +59,9 @@ if (!customElements.get('ces-video-row')) {
 
         this.load(video);
 
-        // Autoplay is a motion effect; leave the poster in place and let the
-        // reader start it themselves when they have asked for less motion.
+        // Autoplay is a motion effect, and it is also a merchant choice. Either
+        // way the poster stays up and the play button remains the way in.
+        if (!this.autoplay) return;
         if (this.motionQuery.matches) return;
         if (entry.intersectionRatio < CesVideoRow.threshold) return;
 
@@ -82,6 +85,37 @@ if (!customElements.get('ces-video-row')) {
       });
 
       video.load();
+    }
+
+    setupPlayToggles() {
+      this.querySelectorAll('[data-ces-video-play]').forEach((button) => {
+        const frame = button.closest('.ces-video-testimonial-row__frame');
+        const video = frame && frame.querySelector('[data-ces-video]');
+        if (!video) return;
+
+        button.addEventListener('click', () => {
+          if (video.paused) {
+            this.load(video);
+            const played = video.play();
+            if (played && typeof played.catch === 'function') played.catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+
+        // Driven by the media element rather than the click, so the button
+        // stays honest when playback starts or stops for any other reason.
+        video.addEventListener('play', () => this.setPlayState(button, true));
+        video.addEventListener('pause', () => this.setPlayState(button, false));
+      });
+    }
+
+    setPlayState(button, playing) {
+      button.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      button.classList.toggle('ces-video-testimonial-row__play--playing', playing);
+
+      const label = button.querySelector('[data-ces-video-play-label]');
+      if (label) label.textContent = playing ? 'Pause video' : 'Play video';
     }
 
     setupSoundToggles() {

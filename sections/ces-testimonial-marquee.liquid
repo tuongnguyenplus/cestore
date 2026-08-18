@@ -1,6 +1,7 @@
 {{ 'ces-base.css' | asset_url | stylesheet_tag }}
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 {{ 'ces-marquee.css' | asset_url | stylesheet_tag }}
+{{ 'ces-slider.css' | asset_url | stylesheet_tag }}
 {{ 'ces-testimonial-marquee.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -12,7 +13,7 @@
   <script src="{{ 'ces-marquee.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {%- if review_blocks.size > 0 -%}
-  <script src="{{ 'ces-testimonial-marquee.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'ces-slider.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {% render 'ces-section-padding' %}
@@ -47,8 +48,9 @@
     {%- endif -%}
 
     {%- if review_blocks.size > 0 -%}
-      <ces-review-slider
+      <ces-slider
         class="ces-testimonial-marquee__slider"
+        data-dot-label="Go to review"
         role="region"
         aria-roledescription="carousel"
         aria-label="{{ section.settings.heading | default: 'Customer reviews' | escape }}"
@@ -109,9 +111,9 @@
           {%- endfor -%}
         </ul>
 
-        <div class="ces-testimonial-marquee__controls">
+        <div class="ces-slider__controls">
           <button
-            class="ces-testimonial-marquee__arrow"
+            class="ces-slider__arrow"
             type="button"
             data-ces-slider-prev
           >
@@ -119,10 +121,10 @@
             {% render 'ces-icon', icon: 'chevron-left', size: '1.8rem' %}
           </button>
 
-          <div class="ces-testimonial-marquee__dots" data-ces-slider-dots></div>
+          <div class="ces-slider__dots" data-ces-slider-dots></div>
 
           <button
-            class="ces-testimonial-marquee__arrow"
+            class="ces-slider__arrow"
             type="button"
             data-ces-slider-next
           >
@@ -130,7 +132,7 @@
             {% render 'ces-icon', icon: 'chevron-right', size: '1.8rem' %}
           </button>
         </div>
-      </ces-review-slider>
+      </ces-slider>
     {%- endif -%}
 
     {%- if section.settings.disclaimer != blank -%}

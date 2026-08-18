@@ -94,73 +94,6 @@
   color: var(--ces-muted);
 }
 
-/* Controls ---------------------------------------------------------------- */
-
-.ces-testimonial-marquee__controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  margin-top: 2rem;
-}
-
-/* Nothing to page through when there is a single review. */
-.ces-testimonial-marquee__slider--static .ces-testimonial-marquee__controls {
-  display: none;
-}
-
-.ces-testimonial-marquee__arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  padding: 0;
-  border: var(--ces-border);
-  border-radius: 50%;
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
-  cursor: pointer;
-  transition: opacity 0.15s ease;
-}
-
-.ces-testimonial-marquee__arrow:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-
-.ces-testimonial-marquee__arrow:focus-visible {
-  outline: var(--focused-base-outline);
-  outline-offset: 0.2rem;
-}
-
-.ces-testimonial-marquee__dots {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.ces-testimonial-marquee__dot {
-  width: 0.8rem;
-  height: 0.8rem;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background-color: rgba(var(--color-foreground), 0.25);
-  cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-.ces-testimonial-marquee__dot--active {
-  background-color: var(--ces-accent);
-  transform: scale(1.35);
-}
-
-.ces-testimonial-marquee__dot:focus-visible {
-  outline: var(--focused-base-outline);
-  outline-offset: 0.3rem;
-}
-
 @media screen and (min-width: 750px) {
   .ces-testimonial-marquee__track {
     grid-auto-columns: calc((100% - 3.2rem) / 2);
@@ -173,12 +106,5 @@
 @media screen and (min-width: 990px) {
   .ces-testimonial-marquee__track {
     grid-auto-columns: calc((100% - 4rem) / 3);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ces-testimonial-marquee__arrow,
-  .ces-testimonial-marquee__dot {
-    transition: none;
   }
 }

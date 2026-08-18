@@ -1,7 +1,7 @@
 /*
- * <ces-review-slider>
+ * <ces-slider>
  *
- * The review carousel in sections/ces-testimonial-marquee.liquid.
+ * A horizontal pager shared by the review carousel and the video row.
  *
  * Scrolling is the browser's own: the track is an overflow-x container with
  * scroll snapping, so swipe, trackpad and keyboard scrolling all work before
@@ -9,8 +9,8 @@
  * previous/next buttons, the dots, and keeping both in sync with wherever the
  * reader has scrolled to.
  */
-if (!customElements.get('ces-review-slider')) {
-  class CesReviewSlider extends HTMLElement {
+if (!customElements.get('ces-slider')) {
+  class CesSlider extends HTMLElement {
     connectedCallback() {
       if (this.initialised) return;
 
@@ -27,7 +27,7 @@ if (!customElements.get('ces-review-slider')) {
 
       // A single slide has nothing to page through.
       if (this.slides.length < 2) {
-        this.classList.add('ces-testimonial-marquee__slider--static');
+        this.classList.add('ces-slider--static');
         return;
       }
 
@@ -63,8 +63,8 @@ if (!customElements.get('ces-review-slider')) {
       this.dots = this.slides.map((slide, index) => {
         const dot = document.createElement('button');
         dot.type = 'button';
-        dot.className = 'ces-testimonial-marquee__dot';
-        dot.innerHTML = `<span class="ces-visually-hidden">Go to review ${index + 1}</span>`;
+        dot.className = 'ces-slider__dot';
+        dot.innerHTML = `<span class="ces-visually-hidden">${this.dataset.dotLabel || 'Go to item'} ${index + 1}</span>`;
         dot.addEventListener('click', () => this.go(index));
         this.dotsContainer.appendChild(dot);
         return dot;
@@ -121,11 +121,11 @@ if (!customElements.get('ces-review-slider')) {
 
       this.dots.forEach((dot, index) => {
         const current = index === this.index;
-        dot.classList.toggle('ces-testimonial-marquee__dot--active', current);
+        dot.classList.toggle('ces-slider__dot--active', current);
         dot.setAttribute('aria-current', current ? 'true' : 'false');
       });
     }
   }
 
-  customElements.define('ces-review-slider', CesReviewSlider);
+  customElements.define('ces-slider', CesSlider);
 }

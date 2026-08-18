@@ -16,6 +16,8 @@
 
 {%- if is_accordion -%}
   <script src="{{ 'ces-accordion.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+  <script src="{{ 'ces-timeline.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {% render 'ces-section-padding' %}
@@ -86,21 +88,34 @@
         and each one is either highlighted or muted so the sequence reads as a
         journey rather than a flat list.
       {%- endcomment -%}
-      <ol class="ces-timeline" role="list">
+      <ces-timeline>
+        <ol class="ces-timeline" role="list">
         {%- for block in section.blocks -%}
           {%- liquid
-            assign state = block.settings.state | default: 'auto'
-            if state == 'auto'
-              # Reads like the reference with no setup: the step in progress is
-              # highlighted and everything still ahead of it is muted.
+            assign chosen = block.settings.state | default: 'auto'
+            assign is_auto = false
+
+            if chosen == 'auto'
+              assign is_auto = true
+              # Without JavaScript this is the whole behaviour, and it is a
+              # sensible resting state: the first step reached, the rest ahead.
+              # ces-timeline.js then advances the others as the reader scrolls.
               if forloop.first
                 assign state = 'active'
               else
                 assign state = 'muted'
               endif
+            else
+              assign state = chosen
             endif
           -%}
-          <li class="ces-timeline__step ces-timeline__step--{{ state }}" {{ block.shopify_attributes }}>
+          <li
+            class="ces-timeline__step ces-timeline__step--{{ state }}"
+            {% if is_auto %}
+              data-ces-timeline-auto
+            {% endif %}
+            {{ block.shopify_attributes }}
+          >
             <div class="ces-timeline__marker" aria-hidden="true">
               <span class="ces-timeline__dot">
                 {% render 'ces-icon', icon: 'check', size: '1.3rem' %}
@@ -137,7 +152,8 @@
             </div>
           </li>
         {%- endfor -%}
-      </ol>
+        </ol>
+      </ces-timeline>
     {%- endif -%}
   </div>
 </div>

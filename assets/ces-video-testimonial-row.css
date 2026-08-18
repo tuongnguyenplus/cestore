@@ -6,18 +6,25 @@
 }
 
 /*
- * Mobile shows a swipeable, snapping row that bleeds to the screen edges;
- * from 750px it becomes a plain grid.
+ * A swipeable row paged by <ces-slider>. The column count is a merchant
+ * setting, so the slide width is derived from it rather than a fixed viewport
+ * fraction.
+ *
+ * Snapping is `proximity`, not `mandatory`: a video changes size the moment its
+ * metadata arrives, and under mandatory snapping the browser re-snaps to the
+ * nearest slide when that happens, which reads as the row scrolling itself.
+ * `overflow-anchor: none` stops the same thing happening via scroll anchoring.
  */
 .ces-video-testimonial-row__list {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 62vw;
+  grid-auto-columns: calc(
+    (100% - (var(--ces-video-columns, 2) - 1) * 1.2rem) / var(--ces-video-columns, 2)
+  );
   gap: 1.2rem;
-  margin-inline: -1.5rem;
-  padding-inline: 1.5rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  overflow-anchor: none;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
   overscroll-behavior-x: contain;
 }
@@ -121,12 +128,73 @@
 
 @media screen and (min-width: 750px) {
   .ces-video-testimonial-row__list {
-    grid-auto-flow: row;
-    grid-auto-columns: auto;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-auto-columns: calc(
+      (100% - (var(--ces-video-columns-desktop, 4) - 1) * 2rem) / var(--ces-video-columns-desktop, 4)
+    );
     gap: 2rem;
-    margin-inline: 0;
-    padding-inline: 0;
-    overflow-x: visible;
+  }
+}
+
+/* Play / pause -------------------------------------------------------------
+   Centred over the clip, unlike the sound toggle in the corner, because it is
+   the primary control when autoplay is switched off. */
+
+.ces-video-testimonial-row__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease;
+}
+
+.ces-video-testimonial-row__play:focus-visible {
+  outline: 0.2rem solid #fff;
+  outline-offset: 0.2rem;
+}
+
+/* Out of the way while playing, back on hover or keyboard focus. */
+.ces-video-testimonial-row__play--playing {
+  opacity: 0;
+}
+
+.ces-video-testimonial-row__frame:hover .ces-video-testimonial-row__play,
+.ces-video-testimonial-row__play:focus-visible {
+  opacity: 1;
+}
+
+/* A triangle that becomes two bars once playback starts. */
+.ces-video-testimonial-row__play-icon {
+  width: 0;
+  height: 0;
+  margin-left: 0.4rem;
+  border-top: 0.9rem solid transparent;
+  border-bottom: 0.9rem solid transparent;
+  border-left: 1.4rem solid currentColor;
+}
+
+.ces-video-testimonial-row__play--playing .ces-video-testimonial-row__play-icon {
+  width: 1.4rem;
+  height: 1.6rem;
+  margin-left: 0;
+  border: 0;
+  border-left: 0.45rem solid currentColor;
+  border-right: 0.45rem solid currentColor;
+  background-clip: content-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-video-testimonial-row__play {
+    transition: none;
   }
 }

@@ -182,3 +182,22 @@
     margin-bottom: 4rem;
   }
 }
+
+/*
+ * Steps activate as the reader scrolls (ces-timeline.js), so the colour change
+ * is eased rather than snapped. The rail and dot animate too, which is what
+ * makes the line appear to fill in behind the reader.
+ */
+.ces-timeline__step,
+.ces-timeline__dot,
+.ces-timeline__marker::after {
+  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-timeline__step,
+  .ces-timeline__dot,
+  .ces-timeline__marker::after {
+    transition: none;
+  }
+}

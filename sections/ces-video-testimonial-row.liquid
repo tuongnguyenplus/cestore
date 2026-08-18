@@ -1,6 +1,8 @@
 {{ 'ces-base.css' | asset_url | stylesheet_tag }}
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+{{ 'ces-slider.css' | asset_url | stylesheet_tag }}
 {{ 'ces-video-testimonial-row.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-slider.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'ces-video-testimonial-row.js' | asset_url }}" defer="defer"></script>
 
 {% render 'ces-section-padding' %}
@@ -19,9 +21,21 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
+      <ces-slider
+        class="ces-video-testimonial-row__slider"
+        data-dot-label="Go to video"
+      >
       <ces-video-row
         class="ces-video-testimonial-row__list"
-        style="--ces-video-ratio: {{ section.settings.aspect_ratio }};"
+        style="
+          --ces-video-ratio: {{ section.settings.aspect_ratio }};
+          --ces-video-columns: {{ section.settings.columns_mobile }};
+          --ces-video-columns-desktop: {{ section.settings.columns_desktop }};
+        "
+        data-ces-slider-track
+        {% if section.settings.autoplay %}
+          data-autoplay
+        {% endif %}
         role="list"
       >
         {%- for block in section.blocks -%}
@@ -37,14 +51,16 @@
             endif
           -%}
 
-          <div class="ces-video-testimonial-row__item" role="listitem" {{ block.shopify_attributes }}>
+          <div class="ces-video-testimonial-row__item" data-ces-slider-slide role="listitem" {{ block.shopify_attributes }}>
             <div class="ces-video-testimonial-row__frame">
               {%- if has_hosted_video or block.settings.video_url != blank -%}
                 <video
                   class="ces-video-testimonial-row__video"
                   playsinline
                   muted
-                  loop
+                  {% if section.settings.loop %}
+                    loop
+                  {% endif %}
                   preload="none"
                   {% if poster != blank %}
                     poster="{{ poster | image_url: width: 800 }}"
@@ -70,6 +86,18 @@
                   {%- endif -%}
                 </video>
 
+                {%- if section.settings.show_controls -%}
+                  <button
+                    class="ces-video-testimonial-row__play"
+                    type="button"
+                    aria-pressed="false"
+                    data-ces-video-play
+                  >
+                    <span class="ces-visually-hidden" data-ces-video-play-label>Play video</span>
+                    <span class="ces-video-testimonial-row__play-icon" aria-hidden="true"></span>
+                  </button>
+                {%- endif -%}
+
                 <button
                   class="ces-video-testimonial-row__sound"
                   type="button"
@@ -92,6 +120,19 @@
           </div>
         {%- endfor -%}
       </ces-video-row>
+
+        <div class="ces-slider__controls">
+          <button class="ces-slider__arrow" type="button" data-ces-slider-prev>
+            <span class="ces-visually-hidden">Previous video</span>
+            {% render 'ces-icon', icon: 'chevron-left', size: '1.8rem' %}
+          </button>
+          <div class="ces-slider__dots" data-ces-slider-dots></div>
+          <button class="ces-slider__arrow" type="button" data-ces-slider-next>
+            <span class="ces-visually-hidden">Next video</span>
+            {% render 'ces-icon', icon: 'chevron-right', size: '1.8rem' %}
+          </button>
+        </div>
+      </ces-slider>
     {%- endif -%}
   </div>
 </div>
@@ -119,13 +160,59 @@
       "default": "Real customers, real routines, filmed on their own phones."
     },
     {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Videos per view on mobile",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Videos per view on desktop",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Play automatically in view",
+      "info": "Off means each clip waits for its play button.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show a play / pause button",
+      "default": true
+    },
+    {
       "type": "select",
       "id": "aspect_ratio",
       "label": "Video shape",
       "options": [
-        { "value": "9 / 16", "label": "Story (9:16)" },
-        { "value": "4 / 5", "label": "Portrait (4:5)" },
-        { "value": "1 / 1", "label": "Square (1:1)" }
+        {
+          "value": "9 / 16",
+          "label": "Story (9:16)"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "value": "1 / 1",
+          "label": "Square (1:1)"
+        }
       ],
       "default": "9 / 16"
     },
@@ -197,10 +284,30 @@
     {
       "name": "CES Video testimonial row",
       "blocks": [
-        { "type": "video_item", "settings": { "label": "Maya, 34" } },
-        { "type": "video_item", "settings": { "label": "Daniel, 41" } },
-        { "type": "video_item", "settings": { "label": "Priya, 29" } },
-        { "type": "video_item", "settings": { "label": "Chris, 52" } }
+        {
+          "type": "video_item",
+          "settings": {
+            "label": "Maya, 34"
+          }
+        },
+        {
+          "type": "video_item",
+          "settings": {
+            "label": "Daniel, 41"
+          }
+        },
+        {
+          "type": "video_item",
+          "settings": {
+            "label": "Priya, 29"
+          }
+        },
+        {
+          "type": "video_item",
+          "settings": {
+            "label": "Chris, 52"
+          }
+        }
       ]
     }
   ]

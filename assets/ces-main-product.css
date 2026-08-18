@@ -349,3 +349,55 @@
 .ces-main-product__panel:not(:has(.ces-main-product__panel-media)) .ces-main-product__panel-footnote {
   border-top-color: var(--ces-border-color);
 }
+
+/* Product accordion --------------------------------------------------------
+ *
+ * The rows in the product column are Dawn's own collapsible_tab blocks, styled
+ * by component-accordion.css, so they do not pick up the ces- accordion styling
+ * used elsewhere on the page. These overrides bring them into line: dashed
+ * rules and a plus that becomes a minus, matching the reference and the other
+ * accordions on this template.
+ *
+ * Everything is scoped to the section class, so Dawn's accordions on any other
+ * template are untouched.
+ */
+
+.ces-main-product-section .accordion {
+  margin-top: 0;
+  border-top: 0.1rem dashed var(--ces-border-color);
+  border-bottom: 0.1rem dashed var(--ces-border-color);
+}
+
+/* Dawn already drops the top border on consecutive accordions, which keeps the
+   rules from doubling up; only the first row needs one. */
+
+.ces-main-product-section .accordion summary {
+  padding: 1.5rem 0;
+}
+
+.ces-main-product-section .accordion .accordion__title {
+  font-weight: var(--font-heading-weight);
+}
+
+/* Dawn's caret is replaced by a plus drawn from two gradient bars. */
+.ces-main-product-section .accordion summary .icon-caret {
+  display: none;
+}
+
+.ces-main-product-section .accordion summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.7rem;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 0.15rem no-repeat,
+    linear-gradient(currentColor, currentColor) center / 0.15rem 100% no-repeat;
+}
+
+.ces-main-product-section .accordion details[open] > summary::after {
+  /* Upright bar dropped: the plus reads as a minus. */
+  background: linear-gradient(currentColor, currentColor) center / 100% 0.15rem no-repeat;
+}
