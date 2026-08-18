@@ -411,6 +411,7 @@
         "card1": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/59.webp",
             "heading": "Natural Astaxanthin",
             "text": "<p>Sourced from Haematococcus pluvialis microalgae. A 12mg dose of one of nature's most potent antioxidants.*</p>"
           }
@@ -418,6 +419,7 @@
         "card2": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/ufvut.webp",
             "heading": "Enhanced Absorption",
             "text": "<p>Fat-soluble compounds need proper delivery, so the formula is oil based to maximise bioavailability.*</p>"
           }
@@ -425,6 +427,7 @@
         "card3": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/US.webp",
             "heading": "Clean & Lab Tested Quality",
             "text": "<p>Manufactured in a GMP-certified, FDA-registered facility. Non-GMO, gluten free and third-party tested.</p>"
           }
@@ -503,6 +506,7 @@
     "banner-research": {
       "type": "ces-image-text-banner",
       "settings": {
+        "image": "shopify://shop_images/ufvut.webp",
         "layout": "overlay",
         "text_position": "center",
         "overlay_opacity": 40,
