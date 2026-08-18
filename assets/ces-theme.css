@@ -1,0 +1,109 @@
+/*
+ * ces-theme.css — the visual skin.
+ *
+ * The ces- sections read their colour, type and shape from Dawn's own tokens so
+ * they follow whatever colour scheme the merchant picks. That keeps them
+ * editable, but it also means that out of the box they look like Dawn rather
+ * than like the reference design.
+ *
+ * This file closes that gap. It restyles only the ces- sections, using the
+ * shapes and accents of the reference page. Delete the file (and the
+ * stylesheet_tag in ces-base-loaded sections) and everything falls straight
+ * back to plain Dawn — nothing else depends on it.
+ *
+ * Colours and fonts belong in Theme settings, not here, so that the theme
+ * editor stays the source of truth. SETUP-LOOK.md lists the exact values to
+ * enter. What cannot be expressed as a theme setting lives below.
+ */
+
+.ces-section,
+.ces-main-product-section {
+  /* Rounder than Dawn: media 12px, panels 24px, matching the reference. */
+  --ces-radius-sm: 0.6rem;
+  --ces-radius: 1.2rem;
+  --ces-radius-lg: 2.4rem;
+
+  /* Warm, low-contrast dividers instead of Dawn's flat grey. */
+  --ces-border-color: rgba(var(--color-foreground), 0.1);
+  --ces-surface: rgba(var(--color-foreground), 0.035);
+  --ces-surface-strong: rgba(var(--color-foreground), 0.06);
+  --ces-muted: rgba(var(--color-foreground), 0.66);
+
+  --ces-gap-lg: 3.2rem;
+}
+
+/*
+ * Buttons: a 6px radius with a solid 2px border, not Dawn's pill. The border is
+ * drawn in the button's own colour so a filled button reads as one solid shape
+ * and an outline variant still lines up with it.
+ */
+.ces-section .ces-button {
+  min-height: 5.4rem;
+  padding: 1.4rem 3.6rem;
+  border: 0.2rem solid var(--ces-accent);
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.02rem;
+}
+
+.ces-section .ces-button:hover {
+  transform: none;
+  background-color: transparent;
+  color: var(--ces-accent);
+  box-shadow: none;
+}
+
+/* Headings: tighter leading and the slight tracking the reference uses. */
+.ces-section .ces-heading {
+  line-height: 1.15;
+  letter-spacing: 0.02rem;
+}
+
+.ces-section .ces-eyebrow {
+  letter-spacing: 0.16rem;
+}
+
+/* Section headers sit closer to their content than Dawn's default rhythm. */
+.ces-section .ces-subheading {
+  margin-top: 1rem;
+}
+
+/* Ticker: the reference sets it in caps at a small size with wide tracking. */
+.ces-announcement-marquee .ces-marquee__text {
+  letter-spacing: 0.1rem;
+}
+
+/* Cards and panels pick up the softer corner and a hairline rather than a
+   full-weight border. */
+.ces-feature-image-cards__media,
+.ces-content-tabs__media,
+.ces-video-testimonial-row__frame,
+.ces-image-text-banner__panel {
+  border-radius: var(--ces-radius);
+}
+
+.ces-comparison-table__column,
+.ces-bullet-cta__panel,
+.ces-testimonial-marquee__card,
+.ces-main-product__panel,
+.ces-main-product__guarantee,
+.ces-main-product__shipping {
+  border-radius: var(--ces-radius-lg);
+}
+
+/* Badge pills in the banner strip match the reference's small badge radius. */
+.ces-image-text-banner__badges .ces-marquee__item {
+  border-radius: 0.6rem;
+}
+
+/* The brand column of the comparison table is the one being argued for, so it
+   carries the accent rather than a neutral outline. */
+.ces-comparison-table__column--brand {
+  border-width: 0.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-section .ces-button:hover {
+    transform: none;
+  }
+}
