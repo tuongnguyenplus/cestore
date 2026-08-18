@@ -281,7 +281,8 @@
         "trust-panel": {
           "type": "ces_media_panel",
           "settings": {
-            "overlay_opacity": 55,
+            "image": "shopify://shop_images/research.webp",
+            "overlay_opacity": 70,
             "heading": "Why Trust Rovina as Your Wellness Partner?",
             "icon": "check-circle",
             "items": "Non-GMO Ingredients\nGluten-Free Formula\nGentle on Stomach\nGMP & FDA Registered Facility\n3rd-Party Lab Tested\nNo Artificial Fillers",
