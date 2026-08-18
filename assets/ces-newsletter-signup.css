@@ -1,0 +1,70 @@
+/* Section styles for sections/ces-newsletter-signup.liquid.
+   The form field and button come from Dawn's component-newsletter.css; this
+   file only handles the section's own layout and optional background image. */
+
+.ces-newsletter-signup {
+  position: relative;
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-newsletter-signup__background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ces-newsletter-signup__background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, var(--ces-newsletter-overlay, 0.5));
+}
+
+.ces-newsletter-signup__background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ces-newsletter-signup .ces-section__inner {
+  position: relative;
+}
+
+/* With an image behind it the backdrop is a dark wash rather than the section's
+   colour scheme, so the panel's text switches to white. */
+.ces-newsletter-signup--has-image .ces-newsletter-signup__panel {
+  color: #fff;
+}
+
+.ces-newsletter-signup__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ces-newsletter-signup__text {
+  max-width: 52rem;
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.ces-newsletter-signup__form {
+  width: 100%;
+  max-width: 44rem;
+  margin-top: 2.4rem;
+}
+
+.ces-newsletter-signup__footnote {
+  margin: 1.2rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-newsletter-signup__text {
+    font-size: 1.6rem;
+  }
+}

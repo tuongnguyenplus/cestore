@@ -1,0 +1,308 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-marquee.css' | asset_url | stylesheet_tag }}
+{{ 'ces-testimonial-marquee.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign avatar_blocks = section.blocks | where: 'type', 'avatar_item'
+  assign review_blocks = section.blocks | where: 'type', 'review_item'
+-%}
+
+{%- if avatar_blocks.size > 0 -%}
+  <script src="{{ 'ces-marquee.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+{%- if review_blocks.size > 0 -%}
+  <script src="{{ 'ces-testimonial-marquee.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-testimonial-marquee ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  {%- if avatar_blocks.size > 0 -%}
+    {%- comment -%}
+      The avatar strip runs full bleed, outside the page-width wrapper, so it
+      reads as a continuous band rather than a boxed row.
+    {%- endcomment -%}
+    {% render 'ces-marquee',
+      blocks: avatar_blocks,
+      speed: section.settings.avatar_speed,
+      direction: 'left',
+      pause_on_hover: true,
+      variant: 'image',
+      class: 'ces-testimonial-marquee__avatars'
+    %}
+  {%- endif -%}
+
+  <div class="ces-section__inner">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if review_blocks.size > 0 -%}
+      <ces-review-slider
+        class="ces-testimonial-marquee__slider"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="{{ section.settings.heading | default: 'Customer reviews' | escape }}"
+      >
+        <ul class="ces-testimonial-marquee__track" data-ces-slider-track role="list">
+          {%- for block in review_blocks -%}
+            <li
+              class="ces-testimonial-marquee__slide"
+              data-ces-slider-slide
+              role="listitem"
+              aria-roledescription="slide"
+              aria-label="{{ forloop.index }} of {{ review_blocks.size }}"
+              {{ block.shopify_attributes }}
+            >
+              <figure class="ces-testimonial-marquee__card">
+                {%- if block.settings.rating > 0 -%}
+                  <div
+                    class="ces-testimonial-marquee__rating"
+                    role="img"
+                    aria-label="{{ block.settings.rating }} out of 5 stars"
+                  >
+                    {%- for i in (1..5) -%}
+                      {%- if i <= block.settings.rating -%}
+                        {% render 'ces-icon', icon: 'star', size: '1.6rem', class: 'ces-testimonial-marquee__star' %}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+
+                <blockquote class="ces-testimonial-marquee__quote rte ces-rte">
+                  {{- block.settings.review -}}
+                </blockquote>
+
+                <figcaption class="ces-testimonial-marquee__author">
+                  {%- if block.settings.avatar != blank -%}
+                    {{
+                      block.settings.avatar
+                      | image_url: width: 120
+                      | image_tag:
+                        loading: 'lazy',
+                        width: 60,
+                        height: 60,
+                        widths: '40, 60, 90, 120',
+                        sizes: '4rem',
+                        class: 'ces-testimonial-marquee__author-avatar',
+                        alt: ''
+                    }}
+                  {%- endif -%}
+                  <span class="ces-testimonial-marquee__author-name">
+                    {{- block.settings.name -}}
+                    {%- if block.settings.meta != blank -%}
+                      <span class="ces-testimonial-marquee__author-meta">{{ block.settings.meta }}</span>
+                    {%- endif -%}
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <div class="ces-testimonial-marquee__controls">
+          <button
+            class="ces-testimonial-marquee__arrow"
+            type="button"
+            data-ces-slider-prev
+          >
+            <span class="ces-visually-hidden">Previous review</span>
+            {% render 'ces-icon', icon: 'chevron-left', size: '1.8rem' %}
+          </button>
+
+          <div class="ces-testimonial-marquee__dots" data-ces-slider-dots></div>
+
+          <button
+            class="ces-testimonial-marquee__arrow"
+            type="button"
+            data-ces-slider-next
+          >
+            <span class="ces-visually-hidden">Next review</span>
+            {% render 'ces-icon', icon: 'chevron-right', size: '1.8rem' %}
+          </button>
+        </div>
+      </ces-review-slider>
+    {%- endif -%}
+
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="ces-disclaimer rte ces-rte">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Testimonial marquee",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "A scrolling band of customer photos above a swipeable review carousel. Add 'Avatar' blocks for the band and 'Review' blocks for the carousel."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Some Customers Are Saying"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "avatar_speed",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Avatar band speed",
+      "info": "Pixels travelled per second.",
+      "default": 35
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "<p>*Results vary from person to person. These reviews describe individual experiences and are not a promise of any particular outcome.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "avatar_item",
+      "name": "Avatar",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        }
+      ]
+    },
+    {
+      "type": "review_item",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "review",
+          "label": "Review",
+          "default": "<p>Eight weeks in and my skin stopped feeling tight by the afternoon. I did not expect a supplement to be the thing that changed that.</p>"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name",
+          "default": "Maya R."
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Customer detail",
+          "info": "Shown under the name, e.g. Verified Buyer."
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Customer photo"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "info": "Set to 0 to hide the stars.",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "max_blocks": 30,
+  "presets": [
+    {
+      "name": "CES Testimonial marquee",
+      "blocks": [
+        { "type": "avatar_item" },
+        { "type": "avatar_item" },
+        { "type": "avatar_item" },
+        { "type": "avatar_item" },
+        { "type": "avatar_item" },
+        { "type": "avatar_item" },
+        {
+          "type": "review_item",
+          "settings": {
+            "name": "Maya R.",
+            "meta": "Verified Buyer",
+            "review": "<p>Eight weeks in and my skin stopped feeling tight by the afternoon. I did not expect a supplement to be the thing that changed that.*</p>"
+          }
+        },
+        {
+          "type": "review_item",
+          "settings": {
+            "name": "Daniel K.",
+            "meta": "Verified Buyer",
+            "review": "<p>I train five days a week and the day-after soreness is noticeably shorter. That alone is worth it.*</p>"
+          }
+        },
+        {
+          "type": "review_item",
+          "settings": {
+            "name": "Priya S.",
+            "meta": "Verified Buyer",
+            "review": "<p>I stare at screens for ten hours a day. My eyes are far less tired by evening than they used to be.*</p>"
+          }
+        },
+        {
+          "type": "review_item",
+          "settings": {
+            "name": "Chris M.",
+            "meta": "Verified Buyer",
+            "review": "<p>I have tried astaxanthin before and felt nothing. The difference here is the dose — 12mg, not 4mg.*</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

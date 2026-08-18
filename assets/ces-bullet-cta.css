@@ -1,0 +1,79 @@
+/* Section styles for sections/ces-bullet-cta.liquid. */
+
+.ces-bullet-cta {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-bullet-cta__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.8rem 2rem;
+  border: var(--ces-border);
+  border-radius: var(--ces-radius-lg);
+  text-align: center;
+}
+
+.ces-bullet-cta__heading {
+  margin-bottom: 2rem;
+}
+
+.ces-bullet-cta__bullets {
+  width: 100%;
+  max-width: 52rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.ces-bullet-cta__bullets ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.ces-bullet-cta__bullets li {
+  position: relative;
+  margin-bottom: 1.2rem;
+  padding-left: 2.8rem;
+}
+
+.ces-bullet-cta__bullets li:last-child {
+  margin-bottom: 0;
+}
+
+/* A tick drawn from two borders, so the bullets need no icon markup. */
+.ces-bullet-cta__bullets li::before {
+  content: '';
+  position: absolute;
+  top: 0.45em;
+  left: 0.4rem;
+  width: 0.6rem;
+  height: 1.1rem;
+  border: solid var(--ces-success);
+  border-width: 0 0.2rem 0.2rem 0;
+  transform: rotate(45deg);
+}
+
+.ces-bullet-cta__button {
+  margin-top: 2.8rem;
+  width: 100%;
+  max-width: 36rem;
+}
+
+.ces-bullet-cta__footnote {
+  margin: 1.2rem 0 0;
+  font-size: 1.3rem;
+  color: var(--ces-muted);
+}
+
+@media screen and (min-width: 750px) {
+  .ces-bullet-cta__panel {
+    padding: 4.8rem 4rem;
+  }
+
+  .ces-bullet-cta__bullets {
+    font-size: 1.6rem;
+  }
+}

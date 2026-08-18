@@ -1,0 +1,239 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'ces-faq-accordion.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-accordion.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  if section.settings.exclusive
+    assign accordion_group = 'ces-faq-' | append: section.id
+  endif
+-%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-faq-accordion ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner ces-section__inner--narrow">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="ces-accordion">
+      {%- for block in section.blocks -%}
+        {% render 'ces-accordion-item',
+          id: block.id,
+          heading: block.settings.question,
+          content: block.settings.answer,
+          open: block.settings.open,
+          group: accordion_group,
+          shopify_attributes: block.shopify_attributes
+        %}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.footer_text != blank -%}
+      <div class="ces-faq-accordion__footer rte ces-rte">{{ section.settings.footer_text }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES FAQ accordion",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "checkbox",
+      "id": "exclusive",
+      "label": "Only one answer open at a time",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "footer_text",
+      "label": "Text below the questions",
+      "default": "<p>Still have a question? Email us at support@example.com and a real person will get back to you within one business day.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How long until I notice something?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Add the answer here.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "CES FAQ accordion",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is astaxanthin?",
+            "answer": "<p>A red carotenoid produced by the microalgae Haematococcus pluvialis. It is what makes salmon and flamingos pink, and it is one of the most studied antioxidants available as a supplement.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why 12mg and not a lower dose?",
+            "answer": "<p>Most published human trials on skin, eye and recovery outcomes used 6mg to 12mg per day. We formulated at the top of that range so you are taking the dose the research actually studied.*</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long until I notice something?",
+            "answer": "<p>Astaxanthin accumulates in tissue rather than acting immediately. Most people report the first changes between weeks three and four, and the fuller effect between weeks eight and twelve.*</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "When should I take it?",
+            "answer": "<p>One softgel a day with a meal that contains some fat. Timing does not matter much; consistency does.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take it with other supplements?",
+            "answer": "<p>Yes. Astaxanthin pairs well with omega-3s and vitamin D. If you take prescription medication, check with your healthcare provider first.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it vegan?",
+            "answer": "<p>The astaxanthin is algae-derived, but the softgel casing is not vegan. A vegan capsule is on our roadmap.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there any side effects?",
+            "answer": "<p>Astaxanthin is well tolerated at this dose. A small number of people notice a slight orange tint to the skin at very high intakes, which is harmless and reverses when you stop.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it third-party tested?",
+            "answer": "<p>Every batch is tested by an independent lab for potency, heavy metals and microbials. Certificates of analysis are available on request.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Where do you ship from?",
+            "answer": "<p>Our own warehouse in the USA. Orders placed before 2pm ET ship the same business day.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much is shipping?",
+            "answer": "<p>Free on orders over $50. Below that it is a flat $4.95 for standard delivery in 3 to 5 business days.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the subscription work?",
+            "answer": "<p>Your refill ships every four weeks at the subscriber price. You can skip a delivery, change the interval, pause or cancel at any time from your account — no phone call and no cancellation fee.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I cancel my subscription?",
+            "answer": "<p>Yes, at any time and without penalty. Cancel before your next billing date and you will not be charged again.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the guarantee?",
+            "answer": "<p>Take Sunglow daily for 90 days. If you are not happy, contact us for a full refund. You do not need to return the bottles.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take it while pregnant or nursing?",
+            "answer": "<p>There is not enough research to say, so we recommend talking to your healthcare provider before starting any supplement while pregnant or nursing.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

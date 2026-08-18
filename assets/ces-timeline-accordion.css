@@ -1,0 +1,31 @@
+/* Section styles for sections/ces-timeline-accordion.liquid.
+   The row mechanics come from ces-accordion.css; this file adds the connecting
+   line that turns the numbered rows into a timeline. */
+
+.ces-timeline-accordion {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-timeline-accordion__steps .ces-accordion__item {
+  position: relative;
+}
+
+/*
+ * A vertical rule running from each step's number down to the next one. The
+ * last step has no successor, so it does not get a tail.
+ */
+.ces-timeline-accordion__steps .ces-accordion__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 5rem;
+  bottom: 0;
+  left: 1.5rem;
+  width: 0.2rem;
+  background-color: var(--ces-border-color);
+}
+
+.ces-timeline-accordion__steps .ces-accordion__number {
+  position: relative;
+  z-index: 1;
+}
