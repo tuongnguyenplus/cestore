@@ -131,10 +131,12 @@
         "shipping-estimate": {
           "type": "ces_shipping_estimate",
           "settings": {
-            "delivery_text": "Ships by Aug. 19",
+            "delivery_text": "Ships by",
             "delivery_icon": "🟢",
             "origin_text": "Ships from USA",
-            "origin_icon": "🇺🇸"
+            "origin_icon": "🇺🇸",
+            "delivery_days": 3,
+            "date_format": "%b. %-d"
           }
         },
         "buy_buttons": {
