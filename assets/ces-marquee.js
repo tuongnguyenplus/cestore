@@ -21,6 +21,14 @@ if (!customElements.get('ces-marquee')) {
       if (!this.track || !this.source) return;
 
       this.initialised = true;
+
+      // The snippet renders a second, identical group so the CSS loop is
+      // seamless without JavaScript. It arrives carrying the same theme-editor
+      // attributes as the original, so clean it before anything else runs.
+      this.querySelectorAll('[data-ces-marquee-clone]').forEach((clone) => {
+        CesMarquee.stripEditorAttributes(clone);
+      });
+
       this.motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
       this.onMotionChange = this.layout.bind(this);
       this.motionQuery.addEventListener('change', this.onMotionChange);
@@ -97,13 +105,19 @@ if (!customElements.get('ces-marquee')) {
       clone.setAttribute('data-ces-marquee-clone', '');
       clone.removeAttribute('data-ces-marquee-group');
 
-      // Duplicated blocks must not answer to the theme editor, or clicking an
-      // item in the editor would highlight a copy instead of the real block.
-      clone.querySelectorAll('[data-shopify-editor-block]').forEach((node) => {
-        node.removeAttribute('data-shopify-editor-block');
-      });
+      CesMarquee.stripEditorAttributes(clone);
 
       return clone;
+    }
+
+    /*
+     * Duplicated blocks must not answer to the theme editor, or clicking an
+     * item in the editor would select a copy instead of the real block.
+     */
+    static stripEditorAttributes(root) {
+      root.querySelectorAll('[data-shopify-editor-block]').forEach((node) => {
+        node.removeAttribute('data-shopify-editor-block');
+      });
     }
   }
 

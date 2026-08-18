@@ -1,0 +1,680 @@
+{
+  "sections": {
+    "ces-announcement-marquee": {
+      "type": "ces-announcement-marquee",
+      "blocks": {
+        "phrase-1": { "type": "marquee_item", "settings": { "text": "90-DAY GUARANTEE" } },
+        "phrase-2": { "type": "marquee_item", "settings": { "text": "BUY 1 GET 1 FREE!" } },
+        "phrase-3": { "type": "marquee_item", "settings": { "text": "67% OFF" } },
+        "phrase-4": { "type": "marquee_item", "settings": { "text": "FREE SHIPPING OVER $50" } },
+        "phrase-5": { "type": "marquee_item", "settings": { "text": "TRUSTED BY 100K+ CUSTOMERS" } }
+      },
+      "block_order": ["phrase-1", "phrase-2", "phrase-3", "phrase-4", "phrase-5"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "speed": 60,
+        "direction": "left",
+        "pause_on_hover": true,
+        "separator": "✦",
+        "font_size": 13,
+        "padding": 10
+      }
+    },
+    "main": {
+      "type": "ces-main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" }
+        },
+        "title": { "type": "title" },
+        "highlight-1": {
+          "type": "ces_highlight",
+          "settings": { "icon": "sparkle", "text": "Cellular & Antioxidant Defense*" }
+        },
+        "highlight-2": {
+          "type": "ces_highlight",
+          "settings": { "icon": "leaf", "text": "Inflammation Support*" }
+        },
+        "highlight-3": {
+          "type": "ces_highlight",
+          "settings": { "icon": "heart", "text": "Heart Health*" }
+        },
+        "highlight-4": {
+          "type": "ces_highlight",
+          "settings": { "icon": "lightning", "text": "Daily Energy*" }
+        },
+        "highlight-5": {
+          "type": "ces_highlight",
+          "settings": { "icon": "stopwatch", "text": "Exercise Recovery*" }
+        },
+        "highlight-6": {
+          "type": "ces_highlight",
+          "settings": { "icon": "star", "text": "Skin Radiance*" }
+        },
+        "trust-row": {
+          "type": "ces_trust_row",
+          "settings": {
+            "text": "<strong>Trusted by 100k+ Customers</strong> – for clean, reliable support"
+          }
+        },
+        "price": { "type": "price" },
+        "app-price-slot": {
+          "type": "ces_app_slot",
+          "settings": { "slot_id": "ces-app-price-slot" }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": { "picker_type": "button", "swatch_shape": "circle" }
+        },
+        "quantity_selector": { "type": "quantity_selector" },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true }
+        },
+        "shipping-1": {
+          "type": "ces_shipping_item",
+          "settings": { "icon": "truck", "text": "Ships from USA" }
+        },
+        "shipping-2": {
+          "type": "ces_shipping_item",
+          "settings": { "icon": "check-circle", "text": "Refills every 4 weeks at $39/ea" }
+        },
+        "shipping-3": {
+          "type": "ces_shipping_item",
+          "settings": { "icon": "check-circle", "text": "Skip, pause, or cancel anytime" }
+        },
+        "shipping-4": {
+          "type": "ces_shipping_item",
+          "settings": { "icon": "check-circle", "text": "FREE items ship on first order" }
+        },
+        "guarantee": {
+          "type": "ces_guarantee_badge",
+          "settings": {
+            "badge_text": "90 DAY",
+            "heading": "90-Day Money Back Guarantee",
+            "text": "<p>Try it for a full 90 days. If you don't feel the difference, send it back for a full refund — no questions asked.</p>"
+          }
+        },
+        "payment-badges": {
+          "type": "ces_payment_badges",
+          "settings": { "text": "Guaranteed safe checkout" }
+        },
+        "description": { "type": "description" }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "highlight-1",
+        "highlight-2",
+        "highlight-3",
+        "highlight-4",
+        "highlight-5",
+        "highlight-6",
+        "trust-row",
+        "price",
+        "app-price-slot",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "shipping-1",
+        "shipping-2",
+        "shipping-3",
+        "shipping-4",
+        "guarantee",
+        "payment-badges",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_position": "left",
+        "gallery_layout": "thumbnail",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "accordion-content": {
+      "type": "ces-accordion-content",
+      "blocks": {
+        "row-description": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Description",
+            "open": true,
+            "content": "<p>Rovina Sunglow delivers 12mg of natural astaxanthin in every softgel — one of the most powerful antioxidants found in nature. Sourced from Haematococcus pluvialis microalgae and paired with cold-pressed oil for absorption, it supports cellular defence, skin resilience and healthy inflammation response.*</p>"
+          }
+        },
+        "row-why": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Why do I need astaxanthin?",
+            "content": "<p>Everyday stressors — sun exposure, screen time, hard training, air pollution — generate free radicals faster than the body can neutralise them. Astaxanthin sits inside the cell membrane and works on both its inner and outer surfaces, which is why it is studied so widely for cellular and skin support.*</p>"
+          }
+        },
+        "row-does-it-work": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Does it actually work?",
+            "content": "<p>Astaxanthin is one of the better-studied carotenoids, with more than 70 published human clinical trials covering skin elasticity and moisture, eye fatigue, exercise recovery and cardiovascular markers. We formulated Sunglow at 12mg because that is the dose most of those trials used.*</p>"
+          }
+        },
+        "row-ingredients": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Key ingredients",
+            "content": "<p><strong>Natural astaxanthin (12mg)</strong> from Haematococcus pluvialis microalgae, grown in closed freshwater systems.</p><p><strong>Cold-pressed olive oil</strong> as a lipid carrier, because astaxanthin is fat soluble and absorbs poorly on its own.</p><p><strong>Vitamin E (as d-alpha tocopherol)</strong> to keep the formula stable without synthetic preservatives.</p>"
+          }
+        },
+        "row-how-to-take": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "How do I take it?",
+            "content": "<p>One softgel a day, with a meal that contains some fat. That is it. Consistency matters more than timing — most people notice the most after eight to twelve weeks of daily use.</p>"
+          }
+        },
+        "row-safety": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Is it safe?",
+            "content": "<p>Sunglow is made in a cGMP-certified facility in the USA and third-party tested for heavy metals, microbials and potency. It is non-GMO, gluten free and free from artificial fillers. If you are pregnant, nursing, or taking prescription medication, talk to your healthcare provider first.*</p>"
+          }
+        },
+        "row-results": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "When will I see results?",
+            "content": "<p>Astaxanthin builds up in tissue over time rather than acting on the first dose. Most customers report the first changes in skin feel and recovery around weeks three to four, with the fuller effect between weeks eight and twelve.*</p>"
+          }
+        },
+        "row-guarantee": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Guarantee",
+            "content": "<p>Take Sunglow daily for 90 days. If you are not happy with how you feel, contact us for a full refund — you do not need to send the bottles back.</p>"
+          }
+        },
+        "row-shipping": {
+          "type": "accordion_item",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p>Orders ship from our USA warehouse within one business day. Standard delivery is 3–5 business days, and shipping is free on orders over $50. Subscriptions refill every four weeks and can be skipped, paused or cancelled at any time from your account.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "row-description",
+        "row-why",
+        "row-does-it-work",
+        "row-ingredients",
+        "row-how-to-take",
+        "row-safety",
+        "row-results",
+        "row-guarantee",
+        "row-shipping"
+      ],
+      "settings": {
+        "heading": "Everything you need to know",
+        "text_alignment": "center",
+        "exclusive": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "benefits-checklist": {
+      "type": "ces-benefits-checklist",
+      "blocks": {
+        "benefit-1": { "type": "benefit_item", "settings": { "text": "Supports cellular and antioxidant defence*" } },
+        "benefit-2": { "type": "benefit_item", "settings": { "text": "Helps the skin hold on to moisture and elasticity*" } },
+        "benefit-3": { "type": "benefit_item", "settings": { "text": "Supports a healthy inflammation response*" } },
+        "benefit-4": { "type": "benefit_item", "settings": { "text": "Helps protect skin from everyday UV stress*" } },
+        "benefit-5": { "type": "benefit_item", "settings": { "text": "Supports eye comfort during long screen days*" } },
+        "benefit-6": { "type": "benefit_item", "settings": { "text": "Helps muscles recover after hard training*" } },
+        "benefit-7": { "type": "benefit_item", "settings": { "text": "Supports healthy cholesterol already in range*" } },
+        "benefit-8": { "type": "benefit_item", "settings": { "text": "Supports steady energy through the afternoon*" } },
+        "benefit-9": { "type": "benefit_item", "settings": { "text": "Helps defend cells against free-radical damage*" } },
+        "benefit-10": { "type": "benefit_item", "settings": { "text": "Supports joint comfort and mobility*" } },
+        "benefit-11": { "type": "benefit_item", "settings": { "text": "Supports brain and cognitive health*" } },
+        "benefit-12": { "type": "benefit_item", "settings": { "text": "Supports immune resilience*" } },
+        "benefit-13": { "type": "benefit_item", "settings": { "text": "Supports cardiovascular health*" } },
+        "benefit-14": { "type": "benefit_item", "settings": { "text": "Non-GMO, gluten free and third-party tested" } }
+      },
+      "block_order": [
+        "benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5",
+        "benefit-6", "benefit-7", "benefit-8", "benefit-9", "benefit-10",
+        "benefit-11", "benefit-12", "benefit-13", "benefit-14"
+      ],
+      "settings": {
+        "heading": "Benefits",
+        "subheading": "Backed by 70+ researched clinical trials",
+        "icon": "check-circle",
+        "disclaimer": "<p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "video-testimonials": {
+      "type": "ces-video-testimonial-row",
+      "blocks": {
+        "video-1": { "type": "video_item", "settings": { "label": "Maya, 34" } },
+        "video-2": { "type": "video_item", "settings": { "label": "Daniel, 41" } },
+        "video-3": { "type": "video_item", "settings": { "label": "Priya, 29" } },
+        "video-4": { "type": "video_item", "settings": { "label": "Chris, 52" } }
+      },
+      "block_order": ["video-1", "video-2", "video-3", "video-4"],
+      "settings": {
+        "heading": "See How Rovina Transforms Real Lives",
+        "subheading": "Real customers, real routines, filmed on their own phones.",
+        "aspect_ratio": "9 / 16",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "feature-cards": {
+      "type": "ces-feature-image-cards",
+      "blocks": {
+        "card-1": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Natural Astaxanthin",
+            "text": "<p>Grown from Haematococcus pluvialis microalgae in closed freshwater systems — never synthesised from petrochemicals.</p>"
+          }
+        },
+        "card-2": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Enhanced Absorption",
+            "text": "<p>Astaxanthin is fat soluble, so every softgel carries it in cold-pressed olive oil instead of dry powder.</p>"
+          }
+        },
+        "card-3": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Clean & Lab Tested Quality",
+            "text": "<p>Made in a cGMP-certified USA facility and third-party tested for potency, heavy metals and microbials.</p>"
+          }
+        }
+      },
+      "block_order": ["card-1", "card-2", "card-3"],
+      "settings": {
+        "heading": "Comprehensive Wellness Benefits",
+        "subheading": "Three things we would not compromise on.",
+        "image_ratio": "1 / 1",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "icon-grid": {
+      "type": "ces-icon-feature-grid",
+      "blocks": {
+        "icon-1": { "type": "icon_item", "settings": { "icon": "heart", "heading": "Heart health*" } },
+        "icon-2": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Skin radiance*" } },
+        "icon-3": { "type": "icon_item", "settings": { "icon": "lightning", "heading": "Daily energy*" } },
+        "icon-4": { "type": "icon_item", "settings": { "icon": "stopwatch", "heading": "Faster recovery*" } }
+      },
+      "block_order": ["icon-1", "icon-2", "icon-3", "icon-4"],
+      "settings": {
+        "heading": "One Formula. Total Support.",
+        "columns_mobile": 2,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "banner-research": {
+      "type": "ces-image-text-banner",
+      "blocks": {
+        "badge-1": { "type": "badge_marquee_item", "settings": { "text": "Non-GMO" } },
+        "badge-2": { "type": "badge_marquee_item", "settings": { "text": "Gluten-Free" } },
+        "badge-3": { "type": "badge_marquee_item", "settings": { "text": "No Additives" } },
+        "badge-4": { "type": "badge_marquee_item", "settings": { "text": "Third-Party Tested" } },
+        "badge-5": { "type": "badge_marquee_item", "settings": { "text": "Made in the USA" } }
+      },
+      "block_order": ["badge-1", "badge-2", "badge-3", "badge-4", "badge-5"],
+      "settings": {
+        "layout": "overlay",
+        "text_position": "center",
+        "overlay_opacity": 40,
+        "heading": "Research-backed wellness support",
+        "text": "<p>Every batch of Sunglow is made to the dose used in published human trials, then tested again by an independent lab before it reaches you.</p>",
+        "badge_speed": 40,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "timeline": {
+      "type": "ces-timeline-accordion",
+      "blocks": {
+        "step-1": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Weeks 1-2",
+            "heading": "Loading phase",
+            "open": true,
+            "bullets": "Astaxanthin begins saturating cell membranes\nAntioxidant reserves start to rebuild\nMost people feel no obvious change yet — this is normal"
+          }
+        },
+        "step-2": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Weeks 3-4",
+            "heading": "First signs",
+            "bullets": "Skin starts holding moisture better*\nLess afternoon flatness*\nEasier recovery the day after training*"
+          }
+        },
+        "step-3": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Weeks 5-8",
+            "heading": "Building momentum",
+            "bullets": "Visible improvement in skin tone and elasticity*\nEyes feel less tired after long screen days*\nSteadier energy across the whole day*"
+          }
+        },
+        "step-4": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Week 8+",
+            "heading": "Full effect",
+            "bullets": "Antioxidant support at its peak*\nJoint comfort and mobility hold up under load*\nThe results compound the longer you stay consistent*"
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "settings": {
+        "heading": "What to expect, week by week",
+        "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
+        "exclusive": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "comparison": {
+      "type": "ces-comparison-table",
+      "blocks": {
+        "ours-1": { "type": "rovina_point", "settings": { "text": "12mg natural astaxanthin per softgel" } },
+        "ours-2": { "type": "rovina_point", "settings": { "text": "Sourced from microalgae, never synthetic" } },
+        "ours-3": { "type": "rovina_point", "settings": { "text": "Carried in cold-pressed oil for absorption" } },
+        "ours-4": { "type": "rovina_point", "settings": { "text": "Third-party tested, every batch" } },
+        "ours-5": { "type": "rovina_point", "settings": { "text": "90-day money back guarantee" } },
+        "theirs-1": { "type": "other_brand_point", "settings": { "text": "Under-dosed at 4mg or less" } },
+        "theirs-2": { "type": "other_brand_point", "settings": { "text": "Synthetic astaxanthin from petrochemicals" } },
+        "theirs-3": { "type": "other_brand_point", "settings": { "text": "Dry powder that absorbs poorly" } },
+        "theirs-4": { "type": "other_brand_point", "settings": { "text": "Tested in-house, if at all" } },
+        "theirs-5": { "type": "other_brand_point", "settings": { "text": "14-day returns on unopened bottles only" } }
+      },
+      "block_order": [
+        "ours-1", "ours-2", "ours-3", "ours-4", "ours-5",
+        "theirs-1", "theirs-2", "theirs-3", "theirs-4", "theirs-5"
+      ],
+      "settings": {
+        "heading": "What sets Rovina apart",
+        "brand_label": "Rovina",
+        "other_label": "Other Brands",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "bullet-cta": {
+      "type": "ces-bullet-cta",
+      "settings": {
+        "heading": "What sets Rovina apart",
+        "bullets": "<ul><li>12mg of natural astaxanthin — the dose used in published trials</li><li>Grown from microalgae, never synthesised</li><li>Carried in cold-pressed oil so your body can actually absorb it</li><li>Third-party tested for potency and purity, every batch</li></ul>",
+        "button_label": "Get Rovina Sunglow",
+        "button_link": "#ces-app-price-slot",
+        "button_footnote": "90-day money back guarantee",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "banner-clinical": {
+      "type": "ces-image-text-banner",
+      "blocks": {
+        "badge-1": { "type": "badge_marquee_item", "settings": { "text": "70+ Clinical Trials" } },
+        "badge-2": { "type": "badge_marquee_item", "settings": { "text": "cGMP Certified" } },
+        "badge-3": { "type": "badge_marquee_item", "settings": { "text": "Independently Assayed" } },
+        "badge-4": { "type": "badge_marquee_item", "settings": { "text": "Heavy Metal Tested" } }
+      },
+      "block_order": ["badge-1", "badge-2", "badge-3", "badge-4"],
+      "settings": {
+        "layout": "split",
+        "text_position": "end",
+        "overlay_opacity": 0,
+        "eyebrow": "Clinically Verified",
+        "heading": "Tested twice before it reaches you",
+        "text": "<p>Once at the manufacturer and once by an independent lab, for potency, heavy metals and microbials. Certificates of analysis are available for every batch on request.</p>",
+        "badge_speed": 40,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "testimonials": {
+      "type": "ces-testimonial-marquee",
+      "blocks": {
+        "avatar-1": { "type": "avatar_item" },
+        "avatar-2": { "type": "avatar_item" },
+        "avatar-3": { "type": "avatar_item" },
+        "avatar-4": { "type": "avatar_item" },
+        "avatar-5": { "type": "avatar_item" },
+        "avatar-6": { "type": "avatar_item" },
+        "review-1": {
+          "type": "review_item",
+          "settings": {
+            "name": "Maya R.",
+            "meta": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>Eight weeks in and my skin stopped feeling tight by the afternoon. I did not expect a supplement to be the thing that changed that.*</p>"
+          }
+        },
+        "review-2": {
+          "type": "review_item",
+          "settings": {
+            "name": "Daniel K.",
+            "meta": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>I train five days a week and the day-after soreness is noticeably shorter. That alone is worth it.*</p>"
+          }
+        },
+        "review-3": {
+          "type": "review_item",
+          "settings": {
+            "name": "Priya S.",
+            "meta": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>I stare at screens for ten hours a day. My eyes are far less tired by evening than they used to be.*</p>"
+          }
+        },
+        "review-4": {
+          "type": "review_item",
+          "settings": {
+            "name": "Chris M.",
+            "meta": "Verified Buyer",
+            "rating": 4,
+            "review": "<p>I have tried astaxanthin before and felt nothing. The difference here is the dose — 12mg, not 4mg.*</p>"
+          }
+        },
+        "review-5": {
+          "type": "review_item",
+          "settings": {
+            "name": "Elena T.",
+            "meta": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>Simple routine, one softgel with breakfast. Three months in and I am not stopping.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "avatar-1", "avatar-2", "avatar-3", "avatar-4", "avatar-5", "avatar-6",
+        "review-1", "review-2", "review-3", "review-4", "review-5"
+      ],
+      "settings": {
+        "heading": "What Some Customers Are Saying",
+        "avatar_speed": 35,
+        "disclaimer": "<p>*Results vary from person to person. These reviews describe individual experiences and are not a promise of any particular outcome.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "ces-faq-accordion",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is astaxanthin?",
+            "answer": "<p>A red carotenoid produced by the microalgae Haematococcus pluvialis. It is what makes salmon and flamingos pink, and it is one of the most studied antioxidants available as a supplement.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why 12mg and not a lower dose?",
+            "answer": "<p>Most published human trials on skin, eye and recovery outcomes used 6mg to 12mg per day. We formulated at the top of that range so you are taking the dose the research actually studied.*</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long until I notice something?",
+            "answer": "<p>Astaxanthin accumulates in tissue rather than acting immediately. Most people report the first changes between weeks three and four, and the fuller effect between weeks eight and twelve.*</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When should I take it?",
+            "answer": "<p>One softgel a day with a meal that contains some fat. Timing does not matter much; consistency does.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take it with other supplements?",
+            "answer": "<p>Yes. Astaxanthin pairs well with omega-3s and vitamin D. If you take prescription medication, check with your healthcare provider first.</p>"
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it vegan?",
+            "answer": "<p>The astaxanthin is algae-derived, but the softgel casing is not vegan. A vegan capsule is on our roadmap.</p>"
+          }
+        },
+        "faq-7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there any side effects?",
+            "answer": "<p>Astaxanthin is well tolerated at this dose. A small number of people notice a slight orange tint to the skin at very high intakes, which is harmless and reverses when you stop.</p>"
+          }
+        },
+        "faq-8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it third-party tested?",
+            "answer": "<p>Every batch is tested by an independent lab for potency, heavy metals and microbials. Certificates of analysis are available on request.</p>"
+          }
+        },
+        "faq-9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Where do you ship from?",
+            "answer": "<p>Our own warehouse in the USA. Orders placed before 2pm ET ship the same business day.</p>"
+          }
+        },
+        "faq-10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much is shipping?",
+            "answer": "<p>Free on orders over $50. Below that it is a flat $4.95 for standard delivery in 3 to 5 business days.</p>"
+          }
+        },
+        "faq-11": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the subscription work?",
+            "answer": "<p>Your refill ships every four weeks at the subscriber price. You can skip a delivery, change the interval, pause or cancel at any time from your account — no phone call and no cancellation fee.</p>"
+          }
+        },
+        "faq-12": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I cancel my subscription?",
+            "answer": "<p>Yes, at any time and without penalty. Cancel before your next billing date and you will not be charged again.</p>"
+          }
+        },
+        "faq-13": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the guarantee?",
+            "answer": "<p>Take Sunglow daily for 90 days. If you are not happy, contact us for a full refund. You do not need to return the bottles.</p>"
+          }
+        },
+        "faq-14": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take it while pregnant or nursing?",
+            "answer": "<p>There is not enough research to say, so we recommend talking to your healthcare provider before starting any supplement while pregnant or nursing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-1", "faq-2", "faq-3", "faq-4", "faq-5", "faq-6", "faq-7",
+        "faq-8", "faq-9", "faq-10", "faq-11", "faq-12", "faq-13", "faq-14"
+      ],
+      "settings": {
+        "heading": "Frequently asked questions",
+        "exclusive": true,
+        "footer_text": "<p>Still have a question? Email us at support@example.com and a real person will get back to you within one business day.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "settings": {
+        "heading": "Join The Rovina Community",
+        "text": "<p>Research summaries, honest product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>",
+        "footnote": "No spam. Unsubscribe in one click.",
+        "overlay_opacity": 50,
+        "color_scheme": "scheme-3",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "ces-announcement-marquee",
+    "main",
+    "accordion-content",
+    "benefits-checklist",
+    "video-testimonials",
+    "feature-cards",
+    "icon-grid",
+    "banner-research",
+    "timeline",
+    "comparison",
+    "bullet-cta",
+    "banner-clinical",
+    "testimonials",
+    "faq",
+    "newsletter"
+  ]
+}

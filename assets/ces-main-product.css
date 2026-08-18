@@ -224,3 +224,8 @@
   text-transform: uppercase;
   color: var(--ces-muted);
 }
+
+/* An anchor link aimed at the slot must not land underneath a sticky header. */
+.ces-app-price-slot {
+  scroll-margin-top: 10rem;
+}
