@@ -6,9 +6,12 @@
  * frozen on step one.
  *
  * Only steps left on the automatic setting take part; a step a merchant has
- * pinned to highlighted or muted keeps whatever they chose. Activation is
- * one-way — a step already reached stays reached when scrolling back up, which
- * is what makes it read as progress rather than a hover effect.
+ * pinned to highlighted or muted keeps whatever they chose.
+ *
+ * State tracks the scroll position in both directions: everything above the
+ * reader is lit, everything below is still muted. Scrolling back up therefore
+ * unwinds the fill, so the highlight always says "you are here" rather than
+ * "here is how far you once got".
  */
 if (!customElements.get('ces-timeline')) {
   class CesTimeline extends HTMLElement {
@@ -28,10 +31,11 @@ if (!customElements.get('ces-timeline')) {
         return;
       }
 
+      // A narrow band across the lower middle of the screen, roughly where the
+      // reader's attention sits. A step is lit from the moment it reaches the
+      // band and stays lit while it is anywhere above it.
       this.observer = new IntersectionObserver(this.onIntersect.bind(this), {
-        // Fires once a step has climbed into the lower-middle of the screen,
-        // roughly where the reader is looking.
-        rootMargin: '-45% 0px -25% 0px',
+        rootMargin: '-55% 0px -25% 0px',
         threshold: 0,
       });
 
@@ -44,16 +48,29 @@ if (!customElements.get('ces-timeline')) {
 
     onIntersect(entries) {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        this.activate(entry.target);
-        // Reached steps stay reached, so nothing needs watching twice.
-        if (this.observer) this.observer.unobserve(entry.target);
+        if (entry.isIntersecting) {
+          this.activate(entry.target);
+          return;
+        }
+
+        // Left the band — but which way? Above it means the reader has already
+        // passed the step, so it stays lit; below means they have not reached
+        // it yet. rootBounds is null in a few edge cases, and leaving the step
+        // as it is beats guessing.
+        const root = entry.rootBounds;
+        if (!root) return;
+
+        this.setState(entry.target, entry.boundingClientRect.top < root.top);
       });
     }
 
     activate(step) {
-      step.classList.remove('ces-timeline__step--muted');
-      step.classList.add('ces-timeline__step--active');
+      this.setState(step, true);
+    }
+
+    setState(step, lit) {
+      step.classList.toggle('ces-timeline__step--active', lit);
+      step.classList.toggle('ces-timeline__step--muted', !lit);
     }
   }
 

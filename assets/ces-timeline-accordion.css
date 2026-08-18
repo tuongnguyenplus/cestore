@@ -54,11 +54,16 @@
 }
 
 /*
- * The rail runs from just under this step's dot to the top of the next one.
- * It is drawn on the step rather than the list so each segment can take its own
- * state colour, and the last step has no successor to reach.
+ * The rail runs from just under this step's dot to the top of the next one, and
+ * the last step has no successor to reach.
+ *
+ * It is two layers: ::after is the grey track, ::before the accent that grows
+ * over it. Scaling the accent from the top down draws the line rather than
+ * recolouring it in place, which is what makes the fill read as travelling with
+ * the reader instead of blinking on.
  */
-.ces-timeline__step:not(:last-child) .ces-timeline__marker::after {
+.ces-timeline__step:not(:last-child) .ces-timeline__marker::after,
+.ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
   content: '';
   position: absolute;
   top: 3.6rem;
@@ -66,7 +71,22 @@
   left: 50%;
   width: 0.2rem;
   margin-left: -0.1rem;
-  background-color: var(--ces-timeline-rail);
+}
+
+.ces-timeline__step:not(:last-child) .ces-timeline__marker::after {
+  background-color: rgba(var(--color-foreground), 0.18);
+}
+
+.ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
+  z-index: 1;
+  background-color: var(--ces-accent);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform var(--ces-timeline-fill, 0.7s) ease-out;
+}
+
+.ces-timeline__step--active .ces-timeline__marker::before {
+  transform: scaleY(1);
 }
 
 .ces-timeline__dot {
@@ -146,6 +166,7 @@
  */
 .ces-timeline__step--active {
   --ces-timeline-rail: var(--ces-accent);
+
   --ces-timeline-dot-bg: var(--ces-accent);
   --ces-timeline-dot-fg: var(--ces-accent-contrast);
   --ces-timeline-meta: rgba(var(--color-foreground), 0.7);
@@ -184,20 +205,30 @@
 }
 
 /*
- * Steps activate as the reader scrolls (ces-timeline.js), so the colour change
- * is eased rather than snapped. The rail and dot animate too, which is what
- * makes the line appear to fill in behind the reader.
+ * Text and dot ease between states over the same duration as the rail, so the
+ * step lights up as one movement rather than in two stages.
  */
 .ces-timeline__step,
-.ces-timeline__dot,
-.ces-timeline__marker::after {
-  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+.ces-timeline__meta,
+.ces-timeline__heading,
+.ces-timeline__list-item,
+.ces-timeline__tick,
+.ces-timeline__text,
+.ces-timeline__dot {
+  transition: color var(--ces-timeline-fill, 0.7s) ease-out,
+    background-color var(--ces-timeline-fill, 0.7s) ease-out,
+    border-color var(--ces-timeline-fill, 0.7s) ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ces-timeline__step,
+  .ces-timeline__meta,
+  .ces-timeline__heading,
+  .ces-timeline__list-item,
+  .ces-timeline__tick,
+  .ces-timeline__text,
   .ces-timeline__dot,
-  .ces-timeline__marker::after {
+  .ces-timeline__marker::before {
     transition: none;
   }
 }
