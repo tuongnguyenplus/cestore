@@ -130,6 +130,7 @@
 /* Icons ------------------------------------------------------------------- */
 
 .ces-icon {
+  position: relative;
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
@@ -140,6 +141,15 @@
 }
 
 .ces-icon svg {
+  /*
+   * Dawn absolutely positions any .icon-caret inside a <summary>
+   * (base.css: `summary .icon-caret { position: absolute }`), and several of
+   * the icons inlined here carry that class. Left alone, the 100% sizing below
+   * would resolve against the <summary> instead of this wrapper and blow the
+   * icon up to the full width of the accordion row, so the position is reset
+   * before anything else.
+   */
+  position: static;
   width: 100%;
   height: 100%;
   fill: currentColor;
