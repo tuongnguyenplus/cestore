@@ -137,10 +137,13 @@
                   {%- for line in bullet_lines -%}
                     {%- assign bullet = line | strip -%}
                     {%- if bullet != blank -%}
-                      <li class="ces-timeline__list-item">
-                        {% render 'ces-icon', icon: 'check', size: '1.4rem', class: 'ces-timeline__tick' %}
-                        <span>{{ bullet }}</span>
-                      </li>
+                      {%- comment -%}
+                        The tick is a text glyph inside the paragraph rather than
+                        a column beside it, so a wrapped line returns to the left
+                        margin instead of hanging under the first word. That is
+                        what gives the reference's list its solid left edge.
+                      {%- endcomment -%}
+                      <li class="ces-timeline__list-item">{{ bullet }}</li>
                     {%- endif -%}
                   {%- endfor -%}
                 </ul>

@@ -132,7 +132,9 @@
           "type": "ces_shipping_estimate",
           "settings": {
             "delivery_text": "Ships by Aug. 19",
-            "origin_text": "Ships from USA"
+            "origin_text": "Ships from USA",
+            "delivery_icon": "🟢",
+            "origin_icon": "🇺🇸"
           }
         },
         "buy_buttons": {
@@ -192,7 +194,9 @@
             "avatar_2": "shopify://shop_images/images.jpg",
             "avatar_3": "shopify://shop_images/istockphoto-2162083710-612x612.jpg",
             "avatar_4": "shopify://shop_images/9.webp",
-            "text": "<strong>Trusted by 100k+ Customers</strong> for clean, reliable support"
+            "text": "Trusted by 100k+ Customers",
+            "subtext": "for clean, reliable support",
+            "show_verified": true
           }
         },
         "guarantee-card": {
@@ -201,7 +205,7 @@
             "image": "shopify://shop_images/1733673742-image_7.webp",
             "badge_text": "90 DAY",
             "heading": "90-Day Money Back Guarantee",
-            "text": "<p>Love your results within 90 days or get your money back.</p>"
+            "text": "<p>Love your results within 90 days or get 100% of your money back.</p>"
           }
         },
         "acc-1": {

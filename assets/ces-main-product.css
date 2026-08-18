@@ -74,18 +74,39 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  padding: 0.6rem 1.6rem 0.6rem 0.6rem;
+  border-radius: var(--ces-radius-pill);
+  background-color: var(--ces-surface);
 }
 
 .ces-main-product__trust-avatars {
+  position: relative;
   display: flex;
   flex: 0 0 auto;
   /* Overlap the avatars into a stack. */
   padding-left: 0.9rem;
 }
 
+/* A confirmation tick pinned to the corner of the stack, as the reference has.
+   It marks the group, so it sits on the stack rather than on one avatar. */
+.ces-main-product__trust-verified {
+  position: absolute;
+  right: -0.3rem;
+  top: -0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0.2rem solid rgb(var(--color-background));
+  border-radius: 50%;
+  background-color: var(--ces-success);
+  color: #fff;
+}
+
 .ces-main-product__trust-avatar {
-  width: 3rem;
-  height: 3rem;
+  width: 3.4rem;
+  height: 3.4rem;
   margin-left: -0.9rem;
   border-radius: 50%;
   border: 0.2rem solid rgb(var(--color-background));
@@ -93,9 +114,16 @@
 }
 
 .ces-main-product__trust-text {
+  display: flex;
+  flex-direction: column;
   font-size: 1.3rem;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--ces-muted);
+}
+
+.ces-main-product__trust-headline {
+  font-weight: var(--font-body-weight-bold);
+  color: rgb(var(--color-foreground));
 }
 
 .ces-main-product__trust-text strong {
@@ -114,6 +142,11 @@
   background-color: var(--ces-surface);
 }
 
+/*
+ * Only the text fallback is a coloured disc. A badge image keeps its own shape
+ * and transparency — cropping it to a circle would flatten the scalloped edge
+ * that makes a seal read as a seal.
+ */
 .ces-main-product__guarantee-badge {
   display: flex;
   align-items: center;
@@ -121,6 +154,9 @@
   flex: 0 0 auto;
   width: 7.2rem;
   height: 7.2rem;
+}
+
+.ces-main-product__guarantee-badge:not(:has(img)) {
   border-radius: 50%;
   overflow: hidden;
   background-color: var(--ces-accent);
@@ -130,7 +166,7 @@
 .ces-main-product__guarantee-badge img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .ces-main-product__guarantee-badge-text {
@@ -146,8 +182,11 @@
   margin: 0 0 0.4rem;
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
-  font-size: 1.5rem;
-  line-height: 1.3;
+  font-size: 1.7rem;
+  line-height: 1.25;
+  /* Full-strength, not the muted tone the surrounding body copy uses — this is
+     the card's headline and the reference sets it as one. */
+  color: rgb(var(--color-foreground));
 }
 
 .ces-main-product__guarantee-copy .rte {
@@ -165,7 +204,16 @@
 /* The reference runs these as a plain tight list under the buy button rather
    than a bordered card, which keeps the eye moving down to the guarantee. */
 .ces-main-product__shipping {
-  gap: 0.6rem;
+  gap: 0.5rem;
+}
+
+/* These read as fine print under the button, not as a feature list, so the
+   ticks are small and take the accent rather than the success green. */
+.ces-main-product__shipping .ces-icon {
+  --ces-icon-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--ces-accent);
 }
 
 .ces-main-product__shipping .ces-checklist-item {
@@ -175,6 +223,12 @@
 .ces-main-product__shipping .ces-checklist-item__text {
   font-size: 1.3rem;
   line-height: 1.4;
+}
+
+/* Dawn spaces siblings evenly, which leaves the standalone guarantee line
+   sitting right on top of the list below it. */
+.product__info-container > .ces-main-product__note + .ces-main-product__shipping {
+  margin-top: 1.2rem;
 }
 
 /* Payment badges ---------------------------------------------------------- */
@@ -278,6 +332,11 @@
 
 .ces-main-product__estimate-item .ces-icon {
   color: var(--ces-accent);
+}
+
+.ces-main-product__estimate-glyph {
+  font-size: 1.3rem;
+  line-height: 1;
 }
 
 /* Trust panel ------------------------------------------------------------- */

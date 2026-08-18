@@ -50,7 +50,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 3.2rem;
+  width: 4rem;
 }
 
 /*
@@ -66,11 +66,11 @@
 .ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
   content: '';
   position: absolute;
-  top: 3.6rem;
+  top: 4.4rem;
   bottom: -2.8rem;
   left: 50%;
-  width: 0.2rem;
-  margin-left: -0.1rem;
+  width: 0.3rem;
+  margin-left: -0.15rem;
 }
 
 .ces-timeline__step:not(:last-child) .ces-timeline__marker::after {
@@ -106,8 +106,8 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background-color: var(--ces-timeline-dot-bg);
   color: var(--ces-timeline-dot-fg);
@@ -131,8 +131,8 @@
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  font-size: 2rem;
-  line-height: 1.25;
+  font-size: 2.2rem;
+  line-height: 1.2;
   color: var(--ces-timeline-heading);
 }
 
@@ -141,21 +141,20 @@
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.8rem;
+  gap: 0.5rem;
 }
 
 .ces-timeline__list-item {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.9rem;
-  align-items: start;
   font-size: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--ces-timeline-body);
 }
 
-.ces-timeline__tick {
-  margin-top: 0.25em;
+/* A heavy tick set into the text flow, so wrapped lines keep the left edge. */
+.ces-timeline__list-item::before {
+  content: '✔';
+  margin-right: 0.6rem;
+  font-weight: 700;
   color: var(--ces-timeline-tick);
 }
 
@@ -200,12 +199,13 @@
     padding-bottom: 3.6rem;
   }
 
-  .ces-timeline__step:not(:last-child) .ces-timeline__marker::after {
+  .ces-timeline__step:not(:last-child) .ces-timeline__marker::after,
+  .ces-timeline__step:not(:last-child) .ces-timeline__marker::before {
     bottom: -3.6rem;
   }
 
   .ces-timeline__heading {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
 
   .ces-timeline-accordion__hero {

@@ -777,17 +777,28 @@
                                 width: 60,
                                 height: 60,
                                 widths: '40, 60, 90, 120',
-                                sizes: '3rem',
+                                sizes: '3.4rem',
                                 class: 'ces-main-product__trust-avatar',
                                 alt: ''
                             }}
                           {%- endif -%}
                         {%- endfor -%}
+
+                        {%- if block.settings.show_verified -%}
+                          <span class="ces-main-product__trust-verified">
+                            {% render 'ces-icon', icon: 'check', size: '1rem' %}
+                          </span>
+                        {%- endif -%}
                       </div>
                     {%- endif -%}
 
-                    <div class="ces-main-product__trust-text rte ces-rte">
-                      {{- block.settings.text -}}
+                    <div class="ces-main-product__trust-text">
+                      <span class="ces-main-product__trust-headline rte ces-rte">
+                        {{- block.settings.text -}}
+                      </span>
+                      {%- if block.settings.subtext != blank -%}
+                        <span class="ces-main-product__trust-sub">{{ block.settings.subtext }}</span>
+                      {%- endif -%}
                     </div>
                   </div>
 
@@ -894,15 +905,32 @@
 
                 {%- when 'ces_shipping_estimate' -%}
                   <div class="ces-main-product__estimate quick-add-hidden" {{ block.shopify_attributes }}>
+                    {%- comment -%}
+                      Each side takes an optional glyph. An emoji covers what the
+                      reference uses here — a status dot and a flag — without the
+                      theme needing to ship either as artwork.
+                    {%- endcomment -%}
                     {%- if block.settings.delivery_text != blank -%}
                       <span class="ces-main-product__estimate-item">
-                        {% render 'ces-icon', icon: 'stopwatch', size: '1.8rem' %}
+                        {%- if block.settings.delivery_icon != blank -%}
+                          <span class="ces-main-product__estimate-glyph" aria-hidden="true">
+                            {{- block.settings.delivery_icon -}}
+                          </span>
+                        {%- else -%}
+                          {% render 'ces-icon', icon: 'stopwatch', size: '1.8rem' %}
+                        {%- endif -%}
                         <span>{{ block.settings.delivery_text }}</span>
                       </span>
                     {%- endif -%}
                     {%- if block.settings.origin_text != blank -%}
                       <span class="ces-main-product__estimate-item">
-                        {% render 'ces-icon', icon: 'truck', size: '1.8rem' %}
+                        {%- if block.settings.origin_icon != blank -%}
+                          <span class="ces-main-product__estimate-glyph" aria-hidden="true">
+                            {{- block.settings.origin_icon -}}
+                          </span>
+                        {%- else -%}
+                          {% render 'ces-icon', icon: 'truck', size: '1.8rem' %}
+                        {%- endif -%}
                         <span>{{ block.settings.origin_text }}</span>
                       </span>
                     {%- endif -%}
@@ -2579,6 +2607,18 @@
           "id": "text",
           "label": "Text",
           "default": "<strong>Trusted by 100k+ Customers</strong> – for clean, reliable support"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Second line",
+          "default": "for clean, reliable support"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_verified",
+          "label": "Verified tick on the last avatar",
+          "default": true
         }
       ]
     },
@@ -2821,9 +2861,23 @@
         },
         {
           "type": "text",
+          "id": "delivery_icon",
+          "label": "Delivery glyph",
+          "info": "An emoji or character shown before the line. Leave empty for the built-in icon.",
+          "default": "🟢"
+        },
+        {
+          "type": "text",
           "id": "origin_text",
           "label": "Origin line",
           "default": "Ships from USA"
+        },
+        {
+          "type": "text",
+          "id": "origin_icon",
+          "label": "Origin glyph",
+          "info": "An emoji or character shown before the line. Leave empty for the built-in icon.",
+          "default": "🇺🇸"
         }
       ]
     },
