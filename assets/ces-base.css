@@ -160,6 +160,17 @@
   fill: none;
 }
 
+/*
+ * The tick inside a circled check (and the X inside a circled cross) is cut out
+ * of the disc, so it has to be painted in the section's own background colour
+ * rather than a fixed white. That way the icon still reads when the disc turns
+ * light on a dark colour scheme.
+ */
+.ces-icon__mark {
+  fill: none;
+  stroke: rgb(var(--color-background));
+}
+
 .ces-icon--success {
   color: var(--ces-success);
 }

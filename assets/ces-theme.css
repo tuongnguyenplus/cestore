@@ -107,3 +107,23 @@
     transform: none;
   }
 }
+
+/*
+ * Status colours that follow the scheme.
+ *
+ * A green tick reads fine on white and almost disappears on a dark background,
+ * and the section's scheme is chosen by the merchant, so it cannot be predicted
+ * here. Blending each status colour toward the scheme's own text colour solves
+ * it without naming any scheme: on a light scheme the text is dark and the disc
+ * deepens, on a dark scheme the text is light and the disc lifts.
+ *
+ * The plain value is declared first as the fallback; browsers without
+ * color-mix() keep it and simply lose the adaptation.
+ */
+.ces-section,
+.ces-main-product-section {
+  --ces-success: #1c7a4f;
+  --ces-success: color-mix(in srgb, #1c7a4f 60%, rgb(var(--color-foreground)));
+  --ces-danger: #c0392b;
+  --ces-danger: color-mix(in srgb, #c0392b 60%, rgb(var(--color-foreground)));
+}
