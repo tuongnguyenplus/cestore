@@ -400,6 +400,11 @@
       "settings": {
         "heading": "See How Rovina™ Transforms Real Lives",
         "subheading": "",
+        "columns_mobile": 2,
+        "columns_desktop": 4,
+        "autoplay": false,
+        "loop": false,
+        "show_controls": true,
         "aspect_ratio": "9 / 16",
         "color_scheme": "scheme-1",
         "padding_top": 40,
