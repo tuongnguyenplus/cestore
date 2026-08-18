@@ -338,8 +338,8 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "ces_highlights_layout": "inline",
         "ces_highlights_columns_mobile": 2,
         "ces_highlights_columns_desktop": 2
