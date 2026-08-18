@@ -132,8 +132,8 @@
           "type": "ces_shipping_estimate",
           "settings": {
             "delivery_text": "Ships by Aug. 19",
-            "origin_text": "Ships from USA",
             "delivery_icon": "🟢",
+            "origin_text": "Ships from USA",
             "origin_icon": "🇺🇸"
           }
         },
@@ -645,6 +645,7 @@
       ],
       "settings": {
         "display": "open",
+        "image": "shopify://shop_images/47.webp",
         "heading": "What to expect, week by week",
         "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
         "fill_speed": 900,
