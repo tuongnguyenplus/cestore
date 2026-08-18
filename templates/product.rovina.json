@@ -41,10 +41,11 @@
       ],
       "settings": {
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
-        "speed": 60,
+        "speed": 35,
         "direction": "left",
         "pause_on_hover": true,
         "separator": "✦",
+        "icon_style": "none",
         "font_size": 13,
         "padding": 10
       }
@@ -511,6 +512,7 @@
         "text_position": "center",
         "overlay_opacity": 40,
         "eyebrow": "",
+        "heading_accent": "Research-backed",
         "heading": "wellness support",
         "text": "<p>Formulated to the dose used in published human trials, then tested again by an independent lab before it ships.</p>",
         "button_label": "",
@@ -518,8 +520,7 @@
         "badge_speed": 40,
         "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "heading_accent": "Research-backed"
+        "padding_bottom": 40
       }
     },
     "ticker-badges": {
@@ -558,9 +559,9 @@
         "direction": "left",
         "pause_on_hover": true,
         "separator": "",
+        "icon_style": "circle",
         "font_size": 13,
-        "padding": 14,
-        "icon_style": "circle"
+        "padding": 14
       }
     },
     "timeline": {
@@ -569,6 +570,7 @@
         "step-1": {
           "type": "timeline_step",
           "settings": {
+            "state": "auto",
             "time_label": "WEEKS 1–2",
             "heading": "Cellular Foundation",
             "bullets": "Antioxidant activity begins working at the cellular level\nBody starts adapting to daily astaxanthin intake\nNo obvious change yet, which is normal",
@@ -579,6 +581,7 @@
         "step-2": {
           "type": "timeline_step",
           "settings": {
+            "state": "auto",
             "time_label": "WEEK 3-4",
             "heading": "Early Changes Appear",
             "bullets": "Subtle improvements start becoming noticeable*\nMany people report looking and feeling healthier overall*\nRecovery after exertion gets easier*",
@@ -589,6 +592,7 @@
         "step-3": {
           "type": "timeline_step",
           "settings": {
+            "state": "auto",
             "time_label": "WEEK 5-8",
             "heading": "Building Momentum",
             "bullets": "Noticeable improvements continue developing*\nBenefits reported across several areas at once*\nSkin tone and comfort keep improving*",
@@ -599,6 +603,7 @@
         "step-4": {
           "type": "timeline_step",
           "settings": {
+            "state": "auto",
             "time_label": "WEEK 8+",
             "heading": "Long-Term Support",
             "bullets": "Results maintain with consistent daily use*\nBenefits continue building over time*\nCellular protection keeps working in the background*",
@@ -614,6 +619,7 @@
         "step-4"
       ],
       "settings": {
+        "display": "open",
         "heading": "What to expect, week by week",
         "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
         "exclusive": true,
@@ -630,6 +636,7 @@
         "text_position": "end",
         "overlay_opacity": 0,
         "eyebrow": "Clinically Verified",
+        "heading_accent": "Research-backed",
         "heading": "Tested twice before it reaches you",
         "text": "<p>Once at the manufacturer and once by an independent lab, for potency, heavy metals and microbials. Certificates of analysis available on request.</p>",
         "button_label": "",
@@ -699,6 +706,7 @@
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
+        "show_frame": true,
         "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
         "padding_bottom": 40
@@ -800,10 +808,10 @@
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
+        "show_frame": false,
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "show_frame": false
+        "padding_bottom": 40
       }
     },
     "testimonials": {
@@ -895,12 +903,12 @@
       "settings": {
         "heading": "What Some Customers Are Saying",
         "subheading": "Honest experiences with Rovina™ Astaxanthin",
+        "avatar_shape": "tile",
         "avatar_speed": 35,
         "disclaimer": "<p>Testimonials reflect individual experiences. Results may vary.</p>",
         "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "avatar_shape": "tile"
+        "padding_bottom": 40
       }
     },
     "faq": {
@@ -1054,6 +1062,7 @@
         "target_id": "ces-app-price-slot",
         "button_label": "ADD TO CART",
         "show_image": true,
+        "title": "",
         "stars": 4,
         "rating_text": "Rated 4.4 Excellent | Over 100,000 Sold",
         "hide_on_desktop": false,
