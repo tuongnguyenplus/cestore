@@ -22,19 +22,20 @@
 
 .ces-main-product__highlights {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.6rem 0.8rem;
+  grid-template-columns: repeat(var(--ces-highlights-columns-mobile, 2), minmax(0, 1fr));
+  gap: 1.2rem 1.6rem;
   padding: 1.6rem 0;
   border-top: var(--ces-border);
   border-bottom: var(--ces-border);
 }
 
+/* Two-up rows read as a label list, so the icon sits beside the text; once the
+   grid gets narrow columns the icon stacks above it instead. */
 .ces-main-product__highlight {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  text-align: center;
+  gap: 0.8rem;
+  text-align: left;
 }
 
 .ces-main-product__highlight-icon {
@@ -52,9 +53,14 @@
   text-wrap: balance;
 }
 
+.ces-main-product__highlights--stacked .ces-main-product__highlight {
+  flex-direction: column;
+  text-align: center;
+}
+
 @media screen and (min-width: 990px) {
   .ces-main-product__highlights {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(var(--ces-highlights-columns-desktop, 2), minmax(0, 1fr));
   }
 
   .ces-main-product__highlight-label {
@@ -228,4 +234,114 @@
 /* An anchor link aimed at the slot must not land underneath a sticky header. */
 .ces-app-price-slot {
   scroll-margin-top: 10rem;
+}
+
+/* Rating bar -------------------------------------------------------------- */
+
+.ces-main-product__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  color: var(--ces-muted);
+}
+
+.ces-main-product__rating-stars {
+  display: inline-flex;
+  gap: 0.1rem;
+  color: var(--ces-star, #f5a623);
+}
+
+.ces-main-product__rating-text strong {
+  color: rgb(var(--color-foreground));
+}
+
+/* Shipping estimate ------------------------------------------------------- */
+
+.ces-main-product__estimate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  font-size: 1.3rem;
+  color: var(--ces-muted);
+}
+
+.ces-main-product__estimate-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ces-main-product__estimate-item .ces-icon {
+  color: var(--ces-accent);
+}
+
+/* Trust panel ------------------------------------------------------------- */
+
+.ces-main-product__panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ces-radius-lg);
+  background-color: var(--ces-surface-strong, rgba(var(--color-foreground), 0.07));
+}
+
+.ces-main-product__panel-media {
+  position: absolute;
+  inset: 0;
+}
+
+.ces-main-product__panel-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ces-main-product__panel-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, var(--ces-panel-overlay, 0.55));
+}
+
+.ces-main-product__panel-content {
+  position: relative;
+  padding: 2rem 1.8rem;
+}
+
+/* The overlay fixes a dark backdrop behind this card, so its text is white
+   whichever color scheme the section runs. Only applies once an image is set. */
+.ces-main-product__panel:has(.ces-main-product__panel-media) .ces-main-product__panel-content {
+  color: #fff;
+}
+
+.ces-main-product__panel-heading {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+.ces-main-product__panel-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.4rem;
+}
+
+.ces-main-product__panel-list .ces-checklist-item__text {
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.ces-main-product__panel-footnote {
+  margin: 1.4rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
+  font-size: 1.3rem;
+  font-weight: var(--font-body-weight-bold);
+}
+
+/* Without a background image the panel keeps the scheme's own border colour. */
+.ces-main-product__panel:not(:has(.ces-main-product__panel-media)) .ces-main-product__panel-footnote {
+  border-top-color: var(--ces-border-color);
 }

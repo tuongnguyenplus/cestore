@@ -1,0 +1,249 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-content-tabs.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-content-tabs.js' | asset_url }}" defer="defer"></script>
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-content-tabs ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      {%- comment -%}
+        Every panel renders visible and un-hidden. ces-content-tabs.js turns the
+        stack into a tablist; without it the reader still gets all the content as
+        a plain sequence of headed blocks.
+      {%- endcomment -%}
+      <ces-tabs class="ces-content-tabs__tabs">
+        <div class="ces-content-tabs__tablist" role="tablist" aria-label="{{ section.settings.heading | default: 'Content tabs' | escape }}">
+          {%- for block in section.blocks -%}
+            <button
+              class="ces-content-tabs__tab"
+              type="button"
+              role="tab"
+              id="CesTab-{{ block.id }}"
+              aria-controls="CesTabPanel-{{ block.id }}"
+              aria-selected="false"
+              data-ces-tab
+              {% if block.settings.default_open %}
+                data-ces-tab-default
+              {% endif %}
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.tab_label }}
+            </button>
+          {%- endfor -%}
+        </div>
+
+        {%- for block in section.blocks -%}
+          <div
+            class="ces-content-tabs__panel"
+            role="tabpanel"
+            id="CesTabPanel-{{ block.id }}"
+            aria-labelledby="CesTab-{{ block.id }}"
+            tabindex="0"
+            data-ces-tab-panel
+          >
+            <div class="ces-content-tabs__panel-inner">
+              {%- if block.settings.image != blank -%}
+                <div class="ces-content-tabs__media">
+                  {{
+                    block.settings.image
+                    | image_url: width: 1200
+                    | image_tag:
+                      loading: 'lazy',
+                      width: block.settings.image.width,
+                      height: block.settings.image.height,
+                      widths: '300, 450, 600, 900, 1200',
+                      sizes: '(min-width: 750px) 45vw, calc(100vw - 3rem)',
+                      class: 'ces-content-tabs__image',
+                      alt: block.settings.image.alt | escape
+                  }}
+                </div>
+              {%- endif -%}
+
+              <div class="ces-content-tabs__body">
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="ces-content-tabs__heading">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <div class="ces-content-tabs__text rte ces-rte">{{ block.settings.text }}</div>
+                {%- endif -%}
+
+                {%- if block.settings.bullets != blank -%}
+                  {%- comment -%}
+                    Authored one per line, which is quicker to edit than list
+                    markup, and turned into a real list here.
+                  {%- endcomment -%}
+                  <ul class="ces-checklist ces-content-tabs__list" role="list">
+                    {%- assign bullet_lines = block.settings.bullets | strip | newline_to_br | split: '<br />' -%}
+                    {%- for line in bullet_lines -%}
+                      {%- assign bullet = line | strip -%}
+                      {%- if bullet != blank -%}
+                        {% render 'ces-checklist-item', text: bullet, icon_size: '1.8rem' %}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+
+                {%- if block.settings.footnote != blank -%}
+                  <p class="ces-content-tabs__footnote">{{ block.settings.footnote }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </ces-tabs>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Content tabs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Each block is one tab. Tabs fall back to a plain stack of headed blocks if JavaScript is unavailable."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Discover Why Experts Trust Rovina Astaxanthin"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab_item",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab label",
+          "default": "Antioxidant Strength"
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "Open by default",
+          "info": "If several tabs are ticked, the first one wins.",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "The Strongest Antioxidant"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "textarea",
+          "id": "bullets",
+          "label": "Bullets",
+          "info": "One bullet per line."
+        },
+        {
+          "type": "text",
+          "id": "footnote",
+          "label": "Footnote"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "CES Content tabs",
+      "blocks": [
+        {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "Antioxidant Strength",
+            "default_open": true,
+            "heading": "The Strongest Antioxidant",
+            "text": "<p>Astaxanthin is among the most potent antioxidants studied. Compared like for like at neutralising free radicals, it outperforms the vitamins most people already take.</p>",
+            "bullets": "Far stronger than Vitamin C\nFar stronger than CoQ10\nFar stronger than Vitamin E\nFar stronger than Alpha Lipoic Acid",
+            "footnote": "This is why the benefits build over time rather than fading.*"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "What's Inside",
+            "heading": "One Pure Ingredient",
+            "text": "<p>No proprietary blends and no filler list. Pure astaxanthin from microalgae, carried in oil so your body can absorb it.</p>",
+            "bullets": "Natural microalgae source\nOil-based for absorption\nNo fillers or unnecessary additives"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "Why It Works",
+            "heading": "Backed by Research & Results",
+            "text": "<p>Formulated for long-term wellness rather than a quick hit, at the dose used in published human trials.</p>",
+            "footnote": "Trusted by 100,000+ customers and backed by our 90-day money-back guarantee."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

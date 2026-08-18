@@ -717,7 +717,13 @@
                   {%- unless ces_highlights_rendered -%}
                     {%- assign ces_highlights_rendered = true -%}
                     {%- assign ces_highlights = section.blocks | where: 'type', 'ces_highlight' -%}
-                    <div class="ces-main-product__highlights quick-add-hidden">
+                    <div
+                      class="ces-main-product__highlights ces-main-product__highlights--{{ section.settings.ces_highlights_layout }} quick-add-hidden"
+                      style="
+                        --ces-highlights-columns-mobile: {{ section.settings.ces_highlights_columns_mobile }};
+                        --ces-highlights-columns-desktop: {{ section.settings.ces_highlights_columns_desktop }};
+                      "
+                    >
                       {%- for ces_highlight in ces_highlights -%}
                         <div class="ces-main-product__highlight" {{ ces_highlight.shopify_attributes }}>
                           {%- if ces_highlight.settings.image != blank -%}
@@ -849,6 +855,93 @@
                           alt: block.settings.image.alt | escape
                       }}
                     {%- endif -%}
+                  </div>
+
+                {%- when 'ces_rating_bar' -%}
+                  <div class="ces-main-product__rating quick-add-hidden" {{ block.shopify_attributes }}>
+                    {%- if block.settings.stars > 0 -%}
+                      <span
+                        class="ces-main-product__rating-stars"
+                        role="img"
+                        aria-label="{{ block.settings.stars }} out of 5 stars"
+                      >
+                        {%- for i in (1..5) -%}
+                          {%- if i <= block.settings.stars -%}
+                            {% render 'ces-icon', icon: 'star', size: '1.6rem' %}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </span>
+                    {%- endif -%}
+                    <span class="ces-main-product__rating-text">{{ block.settings.text }}</span>
+                  </div>
+
+                {%- when 'ces_shipping_estimate' -%}
+                  <div class="ces-main-product__estimate quick-add-hidden" {{ block.shopify_attributes }}>
+                    {%- if block.settings.delivery_text != blank -%}
+                      <span class="ces-main-product__estimate-item">
+                        {% render 'ces-icon', icon: 'stopwatch', size: '1.8rem' %}
+                        <span>{{ block.settings.delivery_text }}</span>
+                      </span>
+                    {%- endif -%}
+                    {%- if block.settings.origin_text != blank -%}
+                      <span class="ces-main-product__estimate-item">
+                        {% render 'ces-icon', icon: 'truck', size: '1.8rem' %}
+                        <span>{{ block.settings.origin_text }}</span>
+                      </span>
+                    {%- endif -%}
+                  </div>
+
+                {%- when 'ces_media_panel' -%}
+                  <div
+                    class="ces-main-product__panel quick-add-hidden"
+                    style="--ces-panel-overlay: {{ block.settings.overlay_opacity | divided_by: 100.0 }};"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- if block.settings.image != blank -%}
+                      <div class="ces-main-product__panel-media">
+                        {{
+                          block.settings.image
+                          | image_url: width: 1400
+                          | image_tag:
+                            loading: 'lazy',
+                            width: block.settings.image.width,
+                            height: block.settings.image.height,
+                            widths: '400, 600, 900, 1200, 1400',
+                            sizes: '(min-width: 990px) 60rem, calc(100vw - 3rem)',
+                            alt: ''
+                        }}
+                      </div>
+                    {%- endif -%}
+
+                    <div class="ces-main-product__panel-content">
+                      {%- if block.settings.heading != blank -%}
+                        <p class="ces-main-product__panel-heading">{{ block.settings.heading }}</p>
+                      {%- endif -%}
+
+                      {%- if block.settings.items != blank -%}
+                        {%- comment -%}
+                          Authored one per line so the merchant is not hand-writing
+                          list markup for what is really just a set of labels.
+                        {%- endcomment -%}
+                        <ul class="ces-checklist ces-main-product__panel-list" role="list">
+                          {%- assign ces_panel_lines = block.settings.items | strip | newline_to_br | split: '<br />' -%}
+                          {%- for ces_line in ces_panel_lines -%}
+                            {%- assign ces_item = ces_line | strip -%}
+                            {%- if ces_item != blank -%}
+                              {% render 'ces-checklist-item',
+                                text: ces_item,
+                                icon: block.settings.icon,
+                                icon_size: '1.6rem'
+                              %}
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+
+                      {%- if block.settings.footnote != blank -%}
+                        <p class="ces-main-product__panel-footnote">{{ block.settings.footnote }}</p>
+                      {%- endif -%}
+                    </div>
                   </div>
 
                 {%- when 'ces_app_slot' -%}
@@ -2639,6 +2732,186 @@
           "default": "ces-app-price-slot"
         }
       ]
+    },
+    {
+      "type": "ces_rating_bar",
+      "name": "CES Rating bar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Stars",
+          "info": "Set to 0 to hide the stars.",
+          "default": 4
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Rated 4.4 Excellent | Over 100,000 Sold"
+        }
+      ]
+    },
+    {
+      "type": "ces_shipping_estimate",
+      "name": "CES Shipping estimate",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "A short two-part delivery line, usually placed just above the add-to-cart button."
+        },
+        {
+          "type": "text",
+          "id": "delivery_text",
+          "label": "Delivery line",
+          "default": "Ships by Aug. 19"
+        },
+        {
+          "type": "text",
+          "id": "origin_text",
+          "label": "Origin line",
+          "default": "Ships from USA"
+        }
+      ]
+    },
+    {
+      "type": "ces_media_panel",
+      "name": "CES Trust panel",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "A card with a background image and a list of short trust claims, one per line."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 90,
+          "step": 5,
+          "unit": "%",
+          "label": "Image overlay opacity",
+          "info": "Darkens the image so the text over it stays readable.",
+          "default": 55
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Why Trust Rovina as Your Wellness Partner?"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Item icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check in a circle"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "plant",
+              "label": "Plant"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "lightning",
+              "label": "Lightning bolt"
+            },
+            {
+              "value": "fire",
+              "label": "Flame"
+            },
+            {
+              "value": "stopwatch",
+              "label": "Stopwatch"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "lock",
+              "label": "Padlock"
+            },
+            {
+              "value": "return",
+              "label": "Returns"
+            },
+            {
+              "value": "recycle",
+              "label": "Recycle"
+            },
+            {
+              "value": "gluten-free",
+              "label": "Gluten free"
+            },
+            {
+              "value": "dairy-free",
+              "label": "Dairy free"
+            },
+            {
+              "value": "nut-free",
+              "label": "Nut free"
+            },
+            {
+              "value": "sparkle",
+              "label": "Sparkle"
+            },
+            {
+              "value": "info",
+              "label": "Info"
+            }
+          ],
+          "default": "check-circle"
+        },
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Items",
+          "info": "One per line.",
+          "default": "Non-GMO Ingredients\nGluten-Free Formula\nGentle on Stomach\nGMP & FDA Registered Facility\n3rd-Party Lab Tested\nNo Artificial Fillers"
+        },
+        {
+          "type": "text",
+          "id": "footnote",
+          "label": "Footnote",
+          "default": "Clean, High-Quality Formula"
+        }
+      ]
     }
   ],
   "settings": [
@@ -2815,6 +3088,44 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "CES Highlights grid"
+    },
+    {
+      "type": "select",
+      "id": "ces_highlights_layout",
+      "label": "Highlight layout",
+      "options": [
+        {
+          "value": "inline",
+          "label": "Icon beside the label"
+        },
+        {
+          "value": "stacked",
+          "label": "Icon above the label"
+        }
+      ],
+      "default": "inline"
+    },
+    {
+      "type": "range",
+      "id": "ces_highlights_columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Highlight columns on mobile",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "ces_highlights_columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Highlight columns on desktop",
+      "default": 2
     }
   ]
 }

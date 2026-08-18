@@ -1,0 +1,144 @@
+/* Section styles for sections/ces-content-tabs.liquid. */
+
+.ces-content-tabs {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+/* Tab list ---------------------------------------------------------------- */
+
+.ces-content-tabs__tablist {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0 -1.5rem 2.4rem;
+  padding: 0 1.5rem 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ces-content-tabs__tablist::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * Until the custom element upgrades, the tab buttons do nothing, so they are
+ * hidden and the panels read as a plain stack. The element adds this class once
+ * it has taken over.
+ */
+.ces-content-tabs__tabs:not(.ces-content-tabs--enhanced) .ces-content-tabs__tablist {
+  display: none;
+}
+
+.ces-content-tabs__tab {
+  flex: 0 0 auto;
+  padding: 1rem 2rem;
+  border: var(--ces-border);
+  border-radius: var(--ces-radius-pill);
+  background-color: transparent;
+  color: var(--ces-muted);
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight-bold);
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.ces-content-tabs__tab--active {
+  border-color: var(--ces-accent);
+  background-color: var(--ces-accent);
+  color: var(--ces-accent-contrast);
+}
+
+.ces-content-tabs__tab:focus-visible {
+  outline: var(--focused-base-outline);
+  outline-offset: 0.2rem;
+}
+
+/* Panels ------------------------------------------------------------------ */
+
+.ces-content-tabs__panel:focus-visible {
+  outline: var(--focused-base-outline);
+  outline-offset: 0.4rem;
+}
+
+/* Separates the panels when they are stacked as a no-JavaScript fallback. */
+.ces-content-tabs__tabs:not(.ces-content-tabs--enhanced) .ces-content-tabs__panel + .ces-content-tabs__panel {
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  border-top: var(--ces-border);
+}
+
+.ces-content-tabs__panel-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.ces-content-tabs__media {
+  overflow: hidden;
+  border-radius: var(--ces-radius-lg);
+  background-color: var(--ces-surface);
+}
+
+.ces-content-tabs__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ces-content-tabs__heading {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.ces-content-tabs__text {
+  font-size: 1.5rem;
+  line-height: 1.65;
+  color: var(--ces-muted);
+}
+
+.ces-content-tabs__list {
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.ces-content-tabs__footnote {
+  margin: 1.6rem 0 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--ces-muted);
+}
+
+@media screen and (min-width: 750px) {
+  .ces-content-tabs__tablist {
+    justify-content: center;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .ces-content-tabs__panel-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+  }
+
+  .ces-content-tabs__heading {
+    font-size: 2.4rem;
+  }
+
+  .ces-content-tabs__text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-content-tabs__tab {
+    transition: none;
+  }
+}
