@@ -14,13 +14,13 @@
     "heading_scale": 100,
     "type_body_font": "poppins_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1400,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "none",
-    "buttons_border_thickness": 1,
+    "buttons_border_thickness": 2,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
     "buttons_shadow_opacity": 0,
@@ -203,9 +203,9 @@
           "background": "#FFFFFF",
           "background_gradient": "",
           "text": "#2E2A39",
-          "button": "#DD1D1D",
+          "button": "#933333",
           "button_label": "#FFFFFF",
-          "secondary_button_label": "#DD1D1D",
+          "secondary_button_label": "#933333",
           "shadow": "#121212"
         }
       },
@@ -214,19 +214,19 @@
           "background": "#F9FAFB",
           "background_gradient": "",
           "text": "#2E2A39",
-          "button": "#DD1D1D",
+          "button": "#933333",
           "button_label": "#ffffff",
-          "secondary_button_label": "#DD1D1D",
+          "secondary_button_label": "#933333",
           "shadow": "#2E2A39"
         }
       },
       "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e": {
         "settings": {
-          "background": "#DD1D1D",
+          "background": "#933333",
           "background_gradient": "",
           "text": "#FFFFFF",
           "button": "#FFFFFF",
-          "button_label": "#DD1D1D",
+          "button_label": "#933333",
           "secondary_button_label": "#FFFFFF",
           "shadow": "#121212"
         }
@@ -236,9 +236,9 @@
           "background": "#FFF4F4",
           "background_gradient": "",
           "text": "#2E2A39",
-          "button": "#DD1D1D",
+          "button": "#933333",
           "button_label": "#ffffff",
-          "secondary_button_label": "#DD1D1D",
+          "secondary_button_label": "#933333",
           "shadow": "#121212"
         }
       },
@@ -247,7 +247,7 @@
           "background": "#363636",
           "background_gradient": "",
           "text": "#FFFFFF",
-          "button": "#DD1D1D",
+          "button": "#933333",
           "button_label": "#ffffff",
           "secondary_button_label": "#FFFFFF",
           "shadow": "#121212"
