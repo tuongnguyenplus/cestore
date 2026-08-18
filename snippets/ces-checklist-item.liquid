@@ -1,0 +1,63 @@
+{% comment %}
+  Renders one icon + text row. Shared by ces-main-product (shipping info),
+  ces-benefits-checklist and ces-comparison-table.
+
+  Accepts:
+  - text: {String} Row label. Inline rich text is allowed.
+  - variant: {String} 'check' (default) or 'cross'. Picks both the icon and its
+      semantic colour.
+  - icon: {String} Optional icon name understood by ces-icon, overriding the
+      variant's default icon (e.g. 'truck', 'lock').
+  - icon_image: {Image} Optional image that replaces the SVG icon entirely.
+  - icon_size: {String} Optional CSS length for the icon. Default 2rem.
+  - shopify_attributes: {String} Pass block.shopify_attributes when the row is
+      rendered from a block so it stays selectable in the theme editor.
+  - class: {String} Optional extra class names.
+
+  Usage:
+  {% render 'ces-checklist-item', text: block.settings.text, variant: 'check' %}
+{% endcomment %}
+
+{%- liquid
+  assign row_variant = variant | default: 'check'
+
+  if icon != blank
+    assign icon_name = icon
+  elsif row_variant == 'cross'
+    assign icon_name = 'cross-circle'
+  else
+    assign icon_name = 'check-circle'
+  endif
+
+  if row_variant == 'cross'
+    assign icon_class = 'ces-icon--danger'
+  else
+    assign icon_class = 'ces-icon--success'
+  endif
+
+  assign resolved_icon_size = icon_size | default: '2rem'
+-%}
+
+<li
+  class="ces-checklist-item ces-checklist-item--{{ row_variant }}{% if class != blank %} {{ class }}{% endif %}"
+  {{ shopify_attributes }}
+>
+  {%- if icon_image != blank -%}
+    <span class="ces-icon ces-checklist-item__image" style="--ces-icon-size: {{ resolved_icon_size }};">
+      {{
+        icon_image
+        | image_url: width: 96
+        | image_tag:
+          loading: 'lazy',
+          width: 48,
+          height: 48,
+          widths: '24, 32, 48, 64, 96',
+          sizes: resolved_icon_size,
+          alt: ''
+      }}
+    </span>
+  {%- else -%}
+    {% render 'ces-icon', icon: icon_name, size: resolved_icon_size, class: icon_class %}
+  {%- endif -%}
+  <span class="ces-checklist-item__text">{{ text }}</span>
+</li>

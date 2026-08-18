@@ -1,0 +1,275 @@
+/*
+ * ces-base.css
+ *
+ * Shared primitives for every ces-* section. Loaded by each section that needs
+ * it, never globally, so pages without ces- sections stay untouched.
+ *
+ * Everything here is derived from Dawn's own design tokens, which means these
+ * sections re-colour themselves automatically when a different color scheme is
+ * picked in the theme editor. Dawn stores colours as RGB triplets, so they must
+ * be consumed as rgb(var(--token)) / rgba(var(--token), alpha).
+ *
+ * Note: Dawn 16 has no --color-base-accent-1; per-scheme --color-button is the
+ * equivalent accent token and is what the ces- sections use.
+ */
+
+.ces-section {
+  --ces-radius-sm: 0.8rem;
+  --ces-radius: 1.2rem;
+  --ces-radius-lg: 2rem;
+  --ces-radius-pill: 999rem;
+
+  --ces-border-color: rgba(var(--color-foreground), 0.12);
+  --ces-border: 0.1rem solid var(--ces-border-color);
+  --ces-surface: rgba(var(--color-foreground), 0.04);
+  --ces-surface-strong: rgba(var(--color-foreground), 0.07);
+  --ces-muted: rgba(var(--color-foreground), 0.62);
+  --ces-accent: rgb(var(--color-button));
+  --ces-accent-contrast: rgb(var(--color-button-text));
+
+  /* Semantic status colours. These carry meaning (a green tick vs a red cross)
+     rather than brand identity, so they are fixed rather than scheme-derived.
+     Sections that expose them as settings override these on their own root. */
+  --ces-success: #1c7a4f;
+  --ces-danger: #c0392b;
+  --ces-star: #f5a623;
+
+  --ces-gap-sm: 0.8rem;
+  --ces-gap: 1.6rem;
+  --ces-gap-lg: 2.4rem;
+}
+
+/* Section shell ----------------------------------------------------------- */
+
+.ces-section__inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.ces-section__inner--narrow {
+  max-width: 78rem;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-section__inner {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+/* Typography -------------------------------------------------------------- */
+
+.ces-section__header {
+  margin-bottom: 2.4rem;
+  text-align: center;
+}
+
+.ces-section__header--start {
+  text-align: left;
+}
+
+.ces-heading {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.2;
+  letter-spacing: calc(var(--font-heading-scale) * 0.02rem);
+  font-size: calc(var(--font-heading-scale) * 2.4rem);
+  text-wrap: balance;
+}
+
+.ces-subheading {
+  margin: 0.8rem 0 0;
+  color: var(--ces-muted);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.ces-eyebrow {
+  display: block;
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+  font-weight: var(--font-body-weight-bold);
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--ces-accent);
+}
+
+.ces-rte > :first-child {
+  margin-top: 0;
+}
+
+.ces-rte > :last-child {
+  margin-bottom: 0;
+}
+
+.ces-disclaimer {
+  margin: 2.4rem 0 0;
+  color: var(--ces-muted);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-heading {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+  }
+
+  .ces-subheading {
+    font-size: 1.6rem;
+  }
+
+  .ces-section__header {
+    margin-bottom: 4rem;
+  }
+}
+
+/* Icons ------------------------------------------------------------------- */
+
+.ces-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: var(--ces-icon-size, 2rem);
+  height: var(--ces-icon-size, 2rem);
+  color: currentColor;
+}
+
+.ces-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Dawn ships some icons with an explicit `none` fill and a stroked path. */
+.ces-icon svg[fill='none'] {
+  fill: none;
+}
+
+.ces-icon--badge {
+  border-radius: 50%;
+  padding: 0.4rem;
+  box-sizing: content-box;
+}
+
+.ces-icon--success {
+  color: var(--ces-success);
+}
+
+.ces-icon--danger {
+  color: var(--ces-danger);
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.ces-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 4.8rem;
+  padding: 1.2rem 3.2rem;
+  border: 0;
+  border-radius: var(--buttons-radius, var(--ces-radius-pill));
+  background-color: var(--ces-accent);
+  color: var(--ces-accent-contrast);
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: var(--font-body-weight-bold);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ces-button:hover {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.6rem 1.6rem rgba(var(--color-shadow), 0.25);
+}
+
+.ces-button:focus-visible {
+  outline: var(--focused-base-outline);
+  outline-offset: 0.3rem;
+}
+
+/* Visually hidden --------------------------------------------------------- */
+
+.ces-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Placeholder media ------------------------------------------------------- */
+
+.ces-placeholder-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background-color: var(--ces-surface);
+  fill: rgba(var(--color-foreground), 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-button {
+    transition: none;
+  }
+
+  .ces-button:hover {
+    transform: none;
+  }
+}
+
+/* Checklist rows ---------------------------------------------------------- */
+/* Styles for snippets/ces-checklist-item.liquid. Shared by ces-main-product,
+   ces-benefits-checklist and ces-comparison-table. */
+
+.ces-checklist {
+  display: grid;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ces-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ces-checklist-item__text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.ces-checklist-item__text > p {
+  margin: 0;
+}
+
+.ces-checklist-item__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Nudge the icon onto the optical centre line of the first line of text. */
+.ces-checklist-item > .ces-icon {
+  margin-top: 0.15em;
+}

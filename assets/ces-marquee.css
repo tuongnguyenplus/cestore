@@ -1,0 +1,131 @@
+/*
+ * Styles for snippets/ces-marquee.liquid.
+ * Shared by ces-announcement-marquee, ces-image-text-banner and
+ * ces-testimonial-marquee.
+ */
+
+.ces-marquee {
+  display: block;
+  overflow: hidden;
+  /* Refined by ces-marquee.js from the data-speed attribute. This fallback
+     keeps the strip moving at a sane pace when JavaScript is unavailable. */
+  --ces-marquee-duration: 30s;
+}
+
+.ces-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: ces-marquee-scroll var(--ces-marquee-duration) linear infinite;
+  will-change: transform;
+}
+
+.ces-marquee[data-direction='right'] .ces-marquee__track {
+  animation-direction: reverse;
+}
+
+.ces-marquee--pausable:hover .ces-marquee__track,
+.ces-marquee--pausable:focus-within .ces-marquee__track {
+  animation-play-state: paused;
+}
+
+.ces-marquee__group {
+  display: flex;
+  align-items: center;
+  gap: var(--ces-marquee-gap, 2.4rem);
+  margin: 0;
+  padding: 0 0 0 var(--ces-marquee-gap, 2.4rem);
+  list-style: none;
+  flex: 0 0 auto;
+}
+
+.ces-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Text variant ------------------------------------------------------------ */
+
+.ces-marquee__text {
+  font-size: var(--ces-marquee-font-size, 1.3rem);
+  font-weight: var(--font-body-weight-bold);
+  letter-spacing: 0.06rem;
+  line-height: 1;
+  text-transform: var(--ces-marquee-text-transform, uppercase);
+}
+
+.ces-marquee__icon,
+.ces-marquee__separator {
+  font-size: var(--ces-marquee-font-size, 1.3rem);
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.ces-marquee__separator {
+  margin-left: 0.8rem;
+}
+
+/* Image variant ----------------------------------------------------------- */
+
+.ces-marquee--image .ces-marquee__item {
+  width: var(--ces-marquee-image-size, 5.6rem);
+  height: var(--ces-marquee-image-size, 5.6rem);
+}
+
+.ces-marquee__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.2rem solid rgb(var(--color-background));
+  box-shadow: 0 0.2rem 0.8rem rgba(var(--color-shadow), 0.15);
+}
+
+.ces-marquee__image--placeholder {
+  overflow: hidden;
+  background-color: var(--ces-surface);
+}
+
+@media screen and (min-width: 750px) {
+  .ces-marquee__text,
+  .ces-marquee__icon,
+  .ces-marquee__separator {
+    font-size: var(--ces-marquee-font-size-desktop, 1.4rem);
+  }
+
+  .ces-marquee--image .ces-marquee__item {
+    width: var(--ces-marquee-image-size-desktop, 7.2rem);
+    height: var(--ces-marquee-image-size-desktop, 7.2rem);
+  }
+}
+
+@keyframes ces-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    /* One group width. The track always holds an even number of identical
+       groups, so -50% lands on a pixel-identical frame. */
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-marquee {
+    /* Nothing scrolls on its own, so let the reader pan the strip by hand. */
+    overflow-x: auto;
+  }
+
+  .ces-marquee__track {
+    animation: none;
+  }
+
+  /* Only the first group carries meaning; the duplicates exist purely to make
+     the loop seamless and are dead weight once the loop is switched off. */
+  .ces-marquee [data-ces-marquee-clone] {
+    display: none;
+  }
+}

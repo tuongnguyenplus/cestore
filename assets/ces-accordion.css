@@ -1,0 +1,179 @@
+/*
+ * Styles for snippets/ces-accordion-item.liquid.
+ * Shared by ces-accordion-content, ces-timeline-accordion and ces-faq-accordion.
+ */
+
+.ces-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.ces-accordion__item {
+  display: block;
+  border-bottom: var(--ces-border);
+}
+
+.ces-accordion__item:first-child {
+  border-top: var(--ces-border);
+}
+
+.ces-accordion__details {
+  display: block;
+}
+
+/* Hide the native marker so the caret in the markup is the only affordance. */
+.ces-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.ces-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1.8rem 0;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ces-accordion__summary:focus-visible {
+  outline: var(--focused-base-outline);
+  outline-offset: -0.3rem;
+}
+
+.ces-accordion__summary-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  min-width: 0;
+}
+
+.ces-accordion__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.ces-accordion__meta {
+  font-size: 1.2rem;
+  font-weight: var(--font-body-weight-bold);
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--ces-accent);
+}
+
+.ces-accordion__title {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.6rem;
+  line-height: 1.35;
+}
+
+.ces-accordion__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: var(--ces-accent);
+  color: var(--ces-accent-contrast);
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+.ces-accordion__toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+}
+
+.ces-accordion__details[open] .ces-accordion__toggle {
+  transform: rotate(180deg);
+}
+
+.ces-accordion__content {
+  /* Height is animated by ces-accordion.js; nothing here may add box spacing
+     or the measured height and the rendered height drift apart. */
+  padding: 0;
+  margin: 0;
+}
+
+.ces-accordion__content-inner {
+  padding: 0 0 2.4rem;
+}
+
+.ces-accordion__item--numbered .ces-accordion__content-inner {
+  padding-left: 4.6rem;
+}
+
+.ces-accordion__body {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--ces-muted);
+}
+
+.ces-accordion__body a {
+  color: rgb(var(--color-link));
+}
+
+.ces-accordion__body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ces-accordion__body ul li {
+  position: relative;
+  padding-left: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.ces-accordion__body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: var(--ces-accent);
+  transform: translateY(-50%);
+}
+
+.ces-accordion__image {
+  margin-bottom: 1.6rem;
+}
+
+.ces-accordion__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--ces-radius);
+}
+
+@media screen and (min-width: 750px) {
+  .ces-accordion__summary {
+    padding: 2.2rem 0;
+  }
+
+  .ces-accordion__title {
+    font-size: 1.8rem;
+  }
+
+  .ces-accordion__body {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-accordion__toggle {
+    transition: none;
+  }
+}

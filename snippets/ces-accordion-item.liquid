@@ -1,0 +1,102 @@
+{% comment %}
+  Renders one collapsible row. Shared by ces-accordion-content,
+  ces-timeline-accordion and ces-faq-accordion.
+
+  Built on a native <details>/<summary> so it works with JavaScript disabled and
+  is keyboard/screen-reader accessible out of the box. The <ces-accordion-item>
+  custom element in ces-accordion.js only layers a height transition on top and
+  keeps aria-expanded in sync, following Dawn's <details-disclosure> pattern.
+
+  Accepts:
+  - id: {String} Unique id fragment for the summary/content pair. Required.
+  - heading: {String} Row title.
+  - content: {String} Row body. Rich text or pre-rendered markup.
+  - variant: {String} 'plain' (default) or 'numbered'.
+  - number: {Number} Step number shown by the 'numbered' variant.
+  - meta: {String} Optional small label above the heading (e.g. "Weeks 1-2").
+  - image: {Image} Optional image rendered above the body copy.
+  - open: {Boolean} Whether the row starts expanded.
+  - group: {String} Optional shared name. Rows sharing a name behave as an
+      exclusive accordion (native <details name> behaviour).
+  - heading_tag: {String} Heading element wrapping the title. Default 'h3'.
+  - shopify_attributes: {String} Pass block.shopify_attributes.
+
+  Usage:
+  {% render 'ces-accordion-item',
+       id: block.id,
+       heading: block.settings.heading,
+       content: block.settings.content,
+       open: block.settings.open %}
+{% endcomment %}
+
+{%- liquid
+  assign item_variant = variant | default: 'plain'
+  assign title_tag = heading_tag | default: 'h3'
+-%}
+
+<ces-accordion-item
+  class="ces-accordion__item ces-accordion__item--{{ item_variant }}"
+  {{ shopify_attributes }}
+>
+  <details
+    id="CesAccordion-{{ id }}"
+    class="ces-accordion__details"
+    {% if group != blank %}
+      name="{{ group }}"
+    {% endif %}
+    {% if open %}
+      open
+    {% endif %}
+  >
+    <summary
+      class="ces-accordion__summary"
+      aria-controls="CesAccordionPanel-{{ id }}"
+      aria-expanded="{% if open %}true{% else %}false{% endif %}"
+    >
+      <span class="ces-accordion__summary-inner">
+        {%- if item_variant == 'numbered' -%}
+          <span class="ces-accordion__number" aria-hidden="true">{{ number }}</span>
+        {%- endif -%}
+
+        <span class="ces-accordion__titles">
+          {%- if meta != blank -%}
+            <span class="ces-accordion__meta">{{ meta }}</span>
+          {%- endif -%}
+          <{{ title_tag }} class="ces-accordion__title">{{ heading }}</{{ title_tag }}>
+        </span>
+      </span>
+
+      <span class="ces-accordion__toggle" aria-hidden="true">
+        {% render 'ces-icon', icon: 'caret', size: '1.2rem' %}
+      </span>
+    </summary>
+
+    <div
+      class="ces-accordion__content"
+      id="CesAccordionPanel-{{ id }}"
+      data-ces-accordion-content
+    >
+      <div class="ces-accordion__content-inner">
+        {%- if image != blank -%}
+          <div class="ces-accordion__image">
+            {{
+              image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'lazy',
+                width: image.width,
+                height: image.height,
+                widths: '350, 550, 750, 1100, 1400',
+                sizes: '(min-width: 750px) 70rem, calc(100vw - 3rem)',
+                alt: image.alt | escape
+            }}
+          </div>
+        {%- endif -%}
+
+        <div class="ces-accordion__body rte ces-rte">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </details>
+</ces-accordion-item>

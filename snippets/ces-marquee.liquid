@@ -1,0 +1,97 @@
+{% comment %}
+  Renders an infinitely scrolling marquee. Shared by ces-announcement-marquee
+  (text ticker), ces-image-text-banner (badge strip) and ces-testimonial-marquee
+  (avatar strip).
+
+  The loop is pure CSS: the item group is rendered twice and the track is
+  translated by exactly one group width, so it works with JavaScript disabled.
+  ces-marquee.js only tops the track up with extra clones when the content is
+  narrower than the viewport, and converts the speed setting into a duration so
+  that a short strip and a long strip scroll at the same pace.
+
+  Accepts:
+  - blocks: {Array} Section blocks. Each block may carry settings.text,
+      settings.icon (emoji or short string) and/or settings.image.
+  - speed: {Number} Scroll speed in pixels per second. Default 60.
+  - direction: {String} 'left' (default) or 'right'.
+  - pause_on_hover: {Boolean} Pause the animation while hovered or focused.
+  - variant: {String} 'text' (default) or 'image'.
+  - separator: {String} Optional glyph rendered between text items.
+  - gap: {String} Optional CSS length between items. Defaults per variant.
+  - class: {String} Optional extra class names.
+
+  Usage:
+  {% render 'ces-marquee',
+       blocks: section.blocks,
+       speed: section.settings.speed,
+       separator: '✦' %}
+{% endcomment %}
+
+{%- liquid
+  assign marquee_variant = variant | default: 'text'
+  assign marquee_speed = speed | default: 60
+  assign marquee_direction = direction | default: 'left'
+
+  if gap != blank
+    assign marquee_gap = gap
+  elsif marquee_variant == 'image'
+    assign marquee_gap = '1.2rem'
+  else
+    assign marquee_gap = '2.4rem'
+  endif
+-%}
+
+{%- capture marquee_group -%}
+  {%- for block in blocks -%}
+    <li class="ces-marquee__item" {{ block.shopify_attributes }}>
+      {%- if marquee_variant == 'image' -%}
+        {%- if block.settings.image != blank -%}
+          {{
+            block.settings.image
+            | image_url: width: 200
+            | image_tag:
+              loading: 'lazy',
+              width: 100,
+              height: 100,
+              widths: '50, 80, 100, 150, 200',
+              sizes: 'var(--ces-marquee-image-size, 5.6rem)',
+              class: 'ces-marquee__image',
+              alt: block.settings.image.alt | escape
+          }}
+        {%- else -%}
+          <span class="ces-marquee__image ces-marquee__image--placeholder">
+            {{- 'image' | placeholder_svg_tag: 'ces-placeholder-svg' -}}
+          </span>
+        {%- endif -%}
+      {%- else -%}
+        {%- if block.settings.icon != blank -%}
+          <span class="ces-marquee__icon" aria-hidden="true">{{ block.settings.icon }}</span>
+        {%- endif -%}
+        <span class="ces-marquee__text">{{ block.settings.text }}</span>
+        {%- if separator != blank -%}
+          <span class="ces-marquee__separator" aria-hidden="true">{{ separator }}</span>
+        {%- endif -%}
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<ces-marquee
+  class="ces-marquee ces-marquee--{{ marquee_variant }}{% if pause_on_hover %} ces-marquee--pausable{% endif %}{% if class != blank %} {{ class }}{% endif %}"
+  data-speed="{{ marquee_speed }}"
+  data-direction="{{ marquee_direction }}"
+  style="--ces-marquee-gap: {{ marquee_gap }};"
+>
+  <div class="ces-marquee__track" data-ces-marquee-track>
+    <ul class="ces-marquee__group" data-ces-marquee-group role="list">
+      {{- marquee_group -}}
+    </ul>
+    {%- comment -%}
+      Second copy sits immediately after the first so the -50% translate lands
+      on an identical frame. Hidden from assistive tech to avoid a double read.
+    {%- endcomment -%}
+    <ul class="ces-marquee__group" role="list" aria-hidden="true" data-ces-marquee-clone>
+      {{- marquee_group -}}
+    </ul>
+  </div>
+</ces-marquee>

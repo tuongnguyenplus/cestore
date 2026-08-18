@@ -1,0 +1,226 @@
+/*
+ * Styles for the ces- blocks added to sections/ces-main-product.liquid.
+ * Dawn's own product styles come from section-main-product.css and are not
+ * touched here; everything below is scoped to .ces-main-product__* classes.
+ *
+ * Dawn already spaces direct children of .product__info-container
+ * (`> * + * { margin: 1.5rem 0 }`), so these rules only handle internal layout.
+ */
+
+.ces-main-product-section {
+  --ces-radius: 1.2rem;
+  --ces-border-color: rgba(var(--color-foreground), 0.12);
+  --ces-border: 0.1rem solid var(--ces-border-color);
+  --ces-surface: rgba(var(--color-foreground), 0.04);
+  --ces-muted: rgba(var(--color-foreground), 0.62);
+  --ces-accent: rgb(var(--color-button));
+  --ces-accent-contrast: rgb(var(--color-button-text));
+  --ces-success: #1c7a4f;
+}
+
+/* Highlights -------------------------------------------------------------- */
+
+.ces-main-product__highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem 0.8rem;
+  padding: 1.6rem 0;
+  border-top: var(--ces-border);
+  border-bottom: var(--ces-border);
+}
+
+.ces-main-product__highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.ces-main-product__highlight-icon {
+  --ces-icon-size: 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  color: var(--ces-accent);
+  object-fit: contain;
+}
+
+.ces-main-product__highlight-label {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--ces-muted);
+  text-wrap: balance;
+}
+
+@media screen and (min-width: 990px) {
+  .ces-main-product__highlights {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .ces-main-product__highlight-label {
+    font-size: 1.2rem;
+  }
+}
+
+/* Trust row --------------------------------------------------------------- */
+
+.ces-main-product__trust {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.ces-main-product__trust-avatars {
+  display: flex;
+  flex: 0 0 auto;
+  /* Overlap the avatars into a stack. */
+  padding-left: 0.9rem;
+}
+
+.ces-main-product__trust-avatar {
+  width: 3rem;
+  height: 3rem;
+  margin-left: -0.9rem;
+  border-radius: 50%;
+  border: 0.2rem solid rgb(var(--color-background));
+  object-fit: cover;
+}
+
+.ces-main-product__trust-text {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--ces-muted);
+}
+
+.ces-main-product__trust-text strong {
+  color: rgb(var(--color-foreground));
+}
+
+/* Guarantee badge --------------------------------------------------------- */
+
+.ces-main-product__guarantee {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.6rem;
+  border: var(--ces-border);
+  border-radius: var(--ces-radius);
+  background-color: var(--ces-surface);
+}
+
+.ces-main-product__guarantee-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--ces-accent);
+  color: var(--ces-accent-contrast);
+}
+
+.ces-main-product__guarantee-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ces-main-product__guarantee-badge-text {
+  padding: 0.4rem;
+  font-size: 1.3rem;
+  font-weight: var(--font-body-weight-bold);
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ces-main-product__guarantee-heading {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.ces-main-product__guarantee-copy .rte {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--ces-muted);
+}
+
+.ces-main-product__guarantee-copy .rte > p {
+  margin: 0;
+}
+
+/* Shipping checklist ------------------------------------------------------ */
+
+.ces-main-product__shipping {
+  gap: 0.9rem;
+  padding: 1.6rem;
+  border: var(--ces-border);
+  border-radius: var(--ces-radius);
+}
+
+.ces-main-product__shipping .ces-checklist-item__text {
+  font-size: 1.4rem;
+}
+
+/* Payment badges ---------------------------------------------------------- */
+
+.ces-main-product__payment {
+  text-align: center;
+}
+
+.ces-main-product__payment-label {
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  color: var(--ces-muted);
+}
+
+.ces-main-product__payment-image {
+  display: block;
+  width: 100%;
+  max-width: 38rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* App slot ---------------------------------------------------------------- */
+
+/*
+ * Reserved space for an external pricing / subscription app. While the app has
+ * not mounted anything the slot must take up no room at all, so the page does
+ * not show a mystery gap; Dawn's `> * + *` margin is cancelled for that case.
+ */
+.ces-app-price-slot {
+  display: block;
+  width: 100%;
+}
+
+.product__info-container > .ces-app-price-slot:empty {
+  margin: 0;
+}
+
+.ces-app-price-slot:not(:empty) {
+  margin-block: 1.5rem;
+}
+
+/* In the theme editor the slot would otherwise be an invisible, unclickable
+   element, so give it a visible outline and label there only. */
+.ces-app-price-slot__hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.8rem;
+  padding: 1.2rem;
+  border: 0.1rem dashed var(--ces-border-color);
+  border-radius: var(--ces-radius);
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  color: var(--ces-muted);
+}

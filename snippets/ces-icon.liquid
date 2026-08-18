@@ -1,0 +1,104 @@
+{% comment %}
+  Renders an inline SVG icon for the ces-* sections.
+
+  Where Dawn already ships a suitable icon it is inlined from the theme assets
+  so there is one source of truth; the handful Dawn has no equivalent for are
+  defined here. All icons inherit the current text colour.
+
+  Accepts:
+  - icon: {String} Icon name. One of: check, check-circle, cross, cross-circle,
+      star, caret, chevron-left, chevron-right, truck, lock, return, leaf,
+      plane, plant, recycle, heart, stopwatch, lightning, fire, info,
+      question-mark, gluten-free, dairy-free, nut-free, play, pause.
+  - size: {String} Optional CSS length for width/height. Default 2rem.
+  - class: {String} Optional extra class names on the wrapper.
+
+  Usage:
+  {% render 'ces-icon', icon: 'check-circle', size: '2.4rem', class: 'ces-icon--success' %}
+{% endcomment %}
+
+{%- liquid
+  case icon
+    when 'check'
+      assign asset_file = 'icon-checkmark.svg'
+    when 'cross'
+      assign asset_file = 'icon-close.svg'
+    when 'star'
+      assign asset_file = 'icon-star.svg'
+    when 'caret'
+      assign asset_file = 'icon-caret.svg'
+    when 'truck'
+      assign asset_file = 'icon-truck.svg'
+    when 'lock'
+      assign asset_file = 'icon-padlock.svg'
+    when 'return'
+      assign asset_file = 'icon-return.svg'
+    when 'leaf'
+      assign asset_file = 'icon-leaf.svg'
+    when 'plane'
+      assign asset_file = 'icon-plane.svg'
+    when 'plant'
+      assign asset_file = 'icon-plant.svg'
+    when 'recycle'
+      assign asset_file = 'icon-recycle.svg'
+    when 'heart'
+      assign asset_file = 'icon-heart.svg'
+    when 'stopwatch'
+      assign asset_file = 'icon-stopwatch.svg'
+    when 'lightning'
+      assign asset_file = 'icon-lightning-bolt.svg'
+    when 'fire'
+      assign asset_file = 'icon-fire.svg'
+    when 'info'
+      assign asset_file = 'icon-info.svg'
+    when 'question-mark'
+      assign asset_file = 'icon-question-mark.svg'
+    when 'gluten-free'
+      assign asset_file = 'icon-gluten-free.svg'
+    when 'dairy-free'
+      assign asset_file = 'icon-dairy-free.svg'
+    when 'nut-free'
+      assign asset_file = 'icon-nut-free.svg'
+    when 'play'
+      assign asset_file = 'icon-play.svg'
+    when 'pause'
+      assign asset_file = 'icon-pause.svg'
+  endcase
+-%}
+
+<span
+  class="ces-icon{% if class != blank %} {{ class }}{% endif %}"
+  {% if size != blank %}
+    style="--ces-icon-size: {{ size }};"
+  {% endif %}
+  aria-hidden="true"
+>
+  {%- if asset_file != blank -%}
+    {{- asset_file | inline_asset_content -}}
+  {%- else -%}
+    {%- case icon -%}
+      {%- when 'check-circle' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="10" fill="currentColor"/>
+          <path d="m5.8 10.3 2.6 2.6 5.8-5.8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'cross-circle' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="10" fill="currentColor"/>
+          <path d="m6.8 6.8 6.4 6.4M13.2 6.8l-6.4 6.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      {%- when 'chevron-left' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+          <path d="M12.5 3.5 6 10l6.5 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'chevron-right' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+          <path d="M7.5 3.5 14 10l-6.5 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'sparkle' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path fill="currentColor" d="M10 0c.5 3.9 1.6 6.5 3.2 8.1C14.8 9.7 17 10 20 10c-3 0-5.2.3-6.8 1.9C11.6 13.5 10.5 16.1 10 20c-.5-3.9-1.6-6.5-3.2-8.1C5.2 10.3 3 10 0 10c3 0 5.2-.3 6.8-1.9C8.4 6.5 9.5 3.9 10 0Z"/>
+        </svg>
+    {%- endcase -%}
+  {%- endif -%}
+</span>

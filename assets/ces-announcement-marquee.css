@@ -1,0 +1,13 @@
+/* Section styles for sections/ces-announcement-marquee.liquid.
+   The scrolling behaviour itself lives in ces-marquee.css. */
+
+.ces-announcement-marquee {
+  position: relative;
+  z-index: 3;
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-announcement-marquee__strip {
+  padding-block: var(--ces-announcement-marquee-padding, 10px);
+}

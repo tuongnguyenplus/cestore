@@ -1,0 +1,132 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-marquee.css' | asset_url | stylesheet_tag }}
+{{ 'ces-announcement-marquee.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-marquee.js' | asset_url }}" defer="defer"></script>
+
+{%- if section.blocks.size > 0 -%}
+  <div
+    class="ces-section ces-announcement-marquee color-{{ section.settings.color_scheme }} gradient"
+    style="
+      --ces-marquee-font-size: {{ section.settings.font_size | times: 0.1 }}rem;
+      --ces-marquee-font-size-desktop: {{ section.settings.font_size | plus: 1 | times: 0.1 }}rem;
+      --ces-announcement-marquee-padding: {{ section.settings.padding }}px;
+    "
+  >
+    {% render 'ces-marquee',
+      blocks: section.blocks,
+      speed: section.settings.speed,
+      direction: section.settings.direction,
+      pause_on_hover: section.settings.pause_on_hover,
+      separator: section.settings.separator,
+      variant: 'text',
+      class: 'ces-announcement-marquee__strip'
+    %}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CES Announcement marquee",
+  "tag": "section",
+  "class": "ces-announcement-marquee-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "An infinite scrolling ticker. Add one block per phrase. Add it to the Header group to sit above the header, or to a template to place it inline with the page content."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-3"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Scroll speed",
+      "info": "Pixels travelled per second. The pace stays the same however many blocks you add.",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "value": "left", "label": "Right to left" },
+        { "value": "right", "label": "Left to right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Separator",
+      "info": "Shown between phrases. Leave empty for none.",
+      "default": "✦"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "marquee_item",
+      "name": "Phrase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "90-DAY GUARANTEE"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Leading icon",
+          "info": "An emoji or short glyph shown before the text. Optional."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "CES Announcement marquee",
+      "blocks": [
+        { "type": "marquee_item", "settings": { "text": "90-DAY GUARANTEE" } },
+        { "type": "marquee_item", "settings": { "text": "BUY 1 GET 1 FREE!" } },
+        { "type": "marquee_item", "settings": { "text": "67% OFF" } },
+        { "type": "marquee_item", "settings": { "text": "FREE SHIPPING OVER $50" } },
+        { "type": "marquee_item", "settings": { "text": "TRUSTED BY 100K+ CUSTOMERS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
