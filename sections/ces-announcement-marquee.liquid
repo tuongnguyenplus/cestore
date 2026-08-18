@@ -19,6 +19,7 @@
       direction: section.settings.direction,
       pause_on_hover: section.settings.pause_on_hover,
       separator: section.settings.separator,
+      icon_style: section.settings.icon_style,
       variant: 'text',
       class: 'ces-announcement-marquee__strip'
     %}
@@ -57,8 +58,14 @@
       "id": "direction",
       "label": "Direction",
       "options": [
-        { "value": "left", "label": "Right to left" },
-        { "value": "right", "label": "Left to right" }
+        {
+          "value": "left",
+          "label": "Right to left"
+        },
+        {
+          "value": "right",
+          "label": "Left to right"
+        }
       ],
       "default": "left"
     },
@@ -74,6 +81,22 @@
       "label": "Separator",
       "info": "Shown between phrases. Leave empty for none.",
       "default": "✦"
+    },
+    {
+      "type": "select",
+      "id": "icon_style",
+      "label": "Icon style",
+      "options": [
+        {
+          "value": "none",
+          "label": "Plain"
+        },
+        {
+          "value": "circle",
+          "label": "Inside an outlined circle"
+        }
+      ],
+      "default": "none"
     },
     {
       "type": "range",
@@ -108,6 +131,12 @@
           "default": "90-DAY GUARANTEE"
         },
         {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Leading icon image",
+          "info": "Takes priority over the glyph below."
+        },
+        {
           "type": "text",
           "id": "icon",
           "label": "Leading icon",
@@ -121,11 +150,36 @@
     {
       "name": "CES Announcement marquee",
       "blocks": [
-        { "type": "marquee_item", "settings": { "text": "90-DAY GUARANTEE" } },
-        { "type": "marquee_item", "settings": { "text": "BUY 1 GET 1 FREE!" } },
-        { "type": "marquee_item", "settings": { "text": "67% OFF" } },
-        { "type": "marquee_item", "settings": { "text": "FREE SHIPPING OVER $50" } },
-        { "type": "marquee_item", "settings": { "text": "TRUSTED BY 100K+ CUSTOMERS" } }
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "90-DAY GUARANTEE"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "BUY 1 GET 1 FREE!"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "67% OFF"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "FREE SHIPPING OVER $50"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "TRUSTED BY 100K+ CUSTOMERS"
+          }
+        }
       ]
     }
   ]

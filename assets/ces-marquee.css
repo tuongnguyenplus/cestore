@@ -63,6 +63,24 @@
   opacity: 0.7;
 }
 
+/* An outlined disc around the icon, as the badge strip uses. */
+.ces-marquee__icon--circled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.ces-marquee__icon-image {
+  width: 1.4rem;
+  height: 1.4rem;
+  object-fit: contain;
+}
+
 .ces-marquee__separator {
   margin-left: 0.8rem;
 }
@@ -72,6 +90,26 @@
 .ces-marquee--image .ces-marquee__item {
   width: var(--ces-marquee-image-size, 5.6rem);
   height: var(--ces-marquee-image-size, 5.6rem);
+}
+
+/*
+ * Tile shape: rectangular photos butted edge to edge, so the strip reads as one
+ * continuous band of customers rather than a row of separate portraits.
+ */
+.ces-marquee--shape-tile .ces-marquee__group {
+  gap: 0;
+  padding-left: 0;
+}
+
+.ces-marquee--shape-tile.ces-marquee--image .ces-marquee__item {
+  width: var(--ces-marquee-tile-width, 12rem);
+  height: var(--ces-marquee-tile-height, 12rem);
+}
+
+.ces-marquee--shape-tile .ces-marquee__image {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .ces-marquee__image {
@@ -99,6 +137,11 @@
   .ces-marquee--image .ces-marquee__item {
     width: var(--ces-marquee-image-size-desktop, 7.2rem);
     height: var(--ces-marquee-image-size-desktop, 7.2rem);
+  }
+
+  .ces-marquee--shape-tile.ces-marquee--image .ces-marquee__item {
+    width: var(--ces-marquee-tile-width-desktop, 18rem);
+    height: var(--ces-marquee-tile-height-desktop, 16rem);
   }
 }
 

@@ -29,6 +29,7 @@
       direction: 'left',
       pause_on_hover: true,
       variant: 'image',
+      image_shape: section.settings.avatar_shape,
       class: 'ces-testimonial-marquee__avatars'
     %}
   {%- endif -%}
@@ -160,6 +161,22 @@
       "label": "Subheading"
     },
     {
+      "type": "select",
+      "id": "avatar_shape",
+      "label": "Photo band shape",
+      "options": [
+        {
+          "value": "circle",
+          "label": "Round avatars, spaced"
+        },
+        {
+          "value": "tile",
+          "label": "Rectangular photos, edge to edge"
+        }
+      ],
+      "default": "tile"
+    },
+    {
       "type": "range",
       "id": "avatar_speed",
       "min": 10,
@@ -264,12 +281,24 @@
     {
       "name": "CES Testimonial marquee",
       "blocks": [
-        { "type": "avatar_item" },
-        { "type": "avatar_item" },
-        { "type": "avatar_item" },
-        { "type": "avatar_item" },
-        { "type": "avatar_item" },
-        { "type": "avatar_item" },
+        {
+          "type": "avatar_item"
+        },
+        {
+          "type": "avatar_item"
+        },
+        {
+          "type": "avatar_item"
+        },
+        {
+          "type": "avatar_item"
+        },
+        {
+          "type": "avatar_item"
+        },
+        {
+          "type": "avatar_item"
+        },
         {
           "type": "review_item",
           "settings": {

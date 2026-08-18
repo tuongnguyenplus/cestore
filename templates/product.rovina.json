@@ -507,18 +507,19 @@
       "type": "ces-image-text-banner",
       "settings": {
         "image": "shopify://shop_images/ufvut.webp",
-        "layout": "overlay",
+        "layout": "band",
         "text_position": "center",
         "overlay_opacity": 40,
         "eyebrow": "",
-        "heading": "Research-backed wellness support",
+        "heading": "wellness support",
         "text": "<p>Formulated to the dose used in published human trials, then tested again by an independent lab before it ships.</p>",
         "button_label": "",
         "button_link": "",
         "badge_speed": 40,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "heading_accent": "Research-backed"
       }
     },
     "ticker-badges": {
@@ -558,7 +559,8 @@
         "pause_on_hover": true,
         "separator": "",
         "font_size": 13,
-        "padding": 14
+        "padding": 14,
+        "icon_style": "circle"
       }
     },
     "timeline": {
@@ -800,7 +802,8 @@
         "button_footnote": "90-day money back guarantee",
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "show_frame": false
       }
     },
     "testimonials": {
@@ -896,7 +899,8 @@
         "disclaimer": "<p>Testimonials reflect individual experiences. Results may vary.</p>",
         "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "avatar_shape": "tile"
       }
     },
     "faq": {
@@ -1043,6 +1047,18 @@
         "padding_top": 52,
         "padding_bottom": 52
       }
+    },
+    "sticky-atc": {
+      "type": "ces-sticky-atc",
+      "settings": {
+        "target_id": "ces-app-price-slot",
+        "button_label": "ADD TO CART",
+        "show_image": true,
+        "stars": 4,
+        "rating_text": "Rated 4.4 Excellent | Over 100,000 Sold",
+        "hide_on_desktop": false,
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
@@ -1061,6 +1077,7 @@
     "bullet-cta",
     "testimonials",
     "faq",
-    "newsletter"
+    "newsletter",
+    "sticky-atc"
   ]
 }

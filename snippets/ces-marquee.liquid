@@ -16,6 +16,10 @@
   - direction: {String} 'left' (default) or 'right'.
   - pause_on_hover: {Boolean} Pause the animation while hovered or focused.
   - variant: {String} 'text' (default) or 'image'.
+  - icon_style: {String} 'none' (default) or 'circle'. Wraps a text item's icon
+      in an outlined disc.
+  - image_shape: {String} 'circle' (default) or 'tile'. Tiles sit edge to edge
+      and are rectangular, for a continuous band of photos.
   - separator: {String} Optional glyph rendered between text items.
   - gap: {String} Optional CSS length between items. Defaults per variant.
   - class: {String} Optional extra class names.
@@ -64,8 +68,28 @@
           </span>
         {%- endif -%}
       {%- else -%}
-        {%- if block.settings.icon != blank -%}
-          <span class="ces-marquee__icon" aria-hidden="true">{{ block.settings.icon }}</span>
+        {%- if block.settings.icon_image != blank or block.settings.icon != blank -%}
+          <span
+            class="ces-marquee__icon{% if icon_style == 'circle' %} ces-marquee__icon--circled{% endif %}"
+            aria-hidden="true"
+          >
+            {%- if block.settings.icon_image != blank -%}
+              {{
+                block.settings.icon_image
+                | image_url: width: 96
+                | image_tag:
+                  loading: 'lazy',
+                  width: 48,
+                  height: 48,
+                  widths: '24, 32, 48, 64, 96',
+                  sizes: '1.6rem',
+                  class: 'ces-marquee__icon-image',
+                  alt: ''
+              }}
+            {%- else -%}
+              {{- block.settings.icon -}}
+            {%- endif -%}
+          </span>
         {%- endif -%}
         <span class="ces-marquee__text">{{ block.settings.text }}</span>
         {%- if separator != blank -%}
@@ -77,7 +101,7 @@
 {%- endcapture -%}
 
 <ces-marquee
-  class="ces-marquee ces-marquee--{{ marquee_variant }}{% if pause_on_hover %} ces-marquee--pausable{% endif %}{% if class != blank %} {{ class }}{% endif %}"
+  class="ces-marquee ces-marquee--{{ marquee_variant }} ces-marquee--shape-{{ image_shape | default: 'circle' }}{% if pause_on_hover %} ces-marquee--pausable{% endif %}{% if class != blank %} {{ class }}{% endif %}"
   data-speed="{{ marquee_speed }}"
   data-direction="{{ marquee_direction }}"
   style="--ces-marquee-gap: {{ marquee_gap }};"

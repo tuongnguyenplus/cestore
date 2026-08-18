@@ -22,6 +22,11 @@
 >
   <div class="ces-section__inner">
     <div class="ces-image-text-banner__panel ces-image-text-banner__panel--{{ section.settings.text_position }}">
+      {%- comment -%}
+        The band layout is copy only, so it skips the media entirely rather than
+        rendering an empty frame or a placeholder.
+      {%- endcomment -%}
+      {%- unless section.settings.layout == 'band' -%}
       <div class="ces-image-text-banner__media">
         {%- if section.settings.image != blank -%}
           {{
@@ -40,14 +45,22 @@
           {{ 'image' | placeholder_svg_tag: 'ces-placeholder-svg' }}
         {%- endif -%}
       </div>
+      {%- endunless -%}
 
       <div class="ces-image-text-banner__content">
         {%- if section.settings.eyebrow != blank -%}
           <span class="ces-eyebrow">{{ section.settings.eyebrow }}</span>
         {%- endif -%}
 
-        {%- if section.settings.heading != blank -%}
-          <h2 class="ces-heading ces-image-text-banner__heading">{{ section.settings.heading }}</h2>
+        {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+          <h2 class="ces-heading ces-image-text-banner__heading">
+            {%- if section.settings.heading_accent != blank -%}
+              <span class="ces-image-text-banner__heading-accent">{{ section.settings.heading_accent }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading != blank -%}
+              {{ ' ' }}{{ section.settings.heading }}
+            {%- endif -%}
+          </h2>
         {%- endif -%}
 
         {%- if section.settings.text != blank -%}
@@ -107,8 +120,18 @@
       "id": "layout",
       "label": "Layout",
       "options": [
-        { "value": "overlay", "label": "Text over the image" },
-        { "value": "split", "label": "Text beside the image" }
+        {
+          "value": "band",
+          "label": "Text band (no image)"
+        },
+        {
+          "value": "overlay",
+          "label": "Text over the image"
+        },
+        {
+          "value": "split",
+          "label": "Text beside the image"
+        }
       ],
       "default": "overlay"
     },
@@ -118,9 +141,18 @@
       "label": "Text position",
       "info": "In the split layout, left and right place the copy on that side of the image.",
       "options": [
-        { "value": "start", "label": "Left" },
-        { "value": "center", "label": "Centre" },
-        { "value": "end", "label": "Right" }
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
       ],
       "default": "center"
     },
@@ -139,6 +171,13 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading, accent words",
+      "info": "Rendered in the scheme's button colour, immediately before the heading below.",
+      "default": "Research-backed"
     },
     {
       "type": "text",
@@ -233,11 +272,36 @@
     {
       "name": "CES Image text banner",
       "blocks": [
-        { "type": "badge_marquee_item", "settings": { "text": "Non-GMO" } },
-        { "type": "badge_marquee_item", "settings": { "text": "Gluten-Free" } },
-        { "type": "badge_marquee_item", "settings": { "text": "No Additives" } },
-        { "type": "badge_marquee_item", "settings": { "text": "Third-Party Tested" } },
-        { "type": "badge_marquee_item", "settings": { "text": "Made in the USA" } }
+        {
+          "type": "badge_marquee_item",
+          "settings": {
+            "text": "Non-GMO"
+          }
+        },
+        {
+          "type": "badge_marquee_item",
+          "settings": {
+            "text": "Gluten-Free"
+          }
+        },
+        {
+          "type": "badge_marquee_item",
+          "settings": {
+            "text": "No Additives"
+          }
+        },
+        {
+          "type": "badge_marquee_item",
+          "settings": {
+            "text": "Third-Party Tested"
+          }
+        },
+        {
+          "type": "badge_marquee_item",
+          "settings": {
+            "text": "Made in the USA"
+          }
+        }
       ]
     }
   ]

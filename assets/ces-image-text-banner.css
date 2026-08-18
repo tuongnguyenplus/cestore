@@ -153,3 +153,56 @@
     margin-top: 3.2rem;
   }
 }
+
+/* Accent heading ---------------------------------------------------------- */
+
+.ces-image-text-banner__heading-accent {
+  color: var(--ces-accent);
+}
+
+/* Over a photo the backdrop is a dark wash, so the accent run would disappear;
+   there the whole heading stays white. */
+.ces-image-text-banner--overlay .ces-image-text-banner__heading-accent {
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* Band layout ------------------------------------------------------------- */
+
+/*
+ * Copy only, centred, on the section's own scheme background. Used for the
+ * short statement bands that break up the long-form page.
+ */
+.ces-image-text-banner--band .ces-image-text-banner__panel {
+  display: block;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.ces-image-text-banner--band .ces-image-text-banner__content {
+  max-width: 68rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ces-image-text-banner--band .ces-image-text-banner__heading {
+  font-size: calc(var(--font-heading-scale) * 2.2rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+}
+
+.ces-image-text-banner--band .ces-image-text-banner__text {
+  margin-top: 1.6rem;
+  color: var(--ces-muted);
+}
+
+.ces-image-text-banner--band .ces-image-text-banner__button {
+  margin-top: 2.4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-image-text-banner--band .ces-image-text-banner__heading {
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
+  }
+}
