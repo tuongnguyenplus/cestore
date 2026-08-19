@@ -56,8 +56,8 @@
         "rating-bar": {
           "type": "ces_rating_bar",
           "settings": {
-            "text": "Rated <strong>4.4 Excellent</strong> | Over <strong>100,000 Sold</strong>",
-            "rating": 4.5
+            "stars": 3,
+            "text": "Rated <strong>4.4 Excellent</strong> | Over <strong>100,000 Sold</strong>"
           }
         },
         "title": {
@@ -134,9 +134,7 @@
             "delivery_text": "Ships by",
             "delivery_icon": "🟢",
             "origin_text": "Ships from USA",
-            "origin_icon": "🇺🇸",
-            "delivery_days": 3,
-            "date_format": "%b. %-d"
+            "origin_icon": "🇺🇸"
           }
         },
         "buy_buttons": {
@@ -523,13 +521,13 @@
       "settings": {
         "heading": "One Formula. Total Support.",
         "subheading": "",
+        "icon_frame": "bare",
+        "icon_size": 5.2,
         "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-ces-gradient",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "icon_frame": "bare",
-        "icon_size": 5.2
+        "padding_bottom": 40
       }
     },
     "banner-research": {
@@ -649,6 +647,8 @@
       "settings": {
         "display": "open",
         "image": "shopify://shop_images/47.webp",
+        "image_position": "start",
+        "image_ratio": "3 / 4",
         "heading": "What to expect, week by week",
         "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
         "fill_speed": 900,
@@ -732,6 +732,7 @@
     "guarantee-cta": {
       "type": "ces-bullet-cta",
       "settings": {
+        "image_position": "start",
         "heading": "Money-back Guarantee.",
         "bullets": "<ul><li>Try it for a full 90 days</li><li>Keep the bottles if it is not for you</li><li>No restocking fees and no phone calls</li></ul>",
         "button_label": "Try Risk-Free Today",
@@ -834,6 +835,7 @@
     "bullet-cta": {
       "type": "ces-bullet-cta",
       "settings": {
+        "image_position": "start",
         "heading": "What sets Rovina apart",
         "bullets": "<ul><li>Built for comprehensive daily wellness</li><li>Visible results in weeks, not months*</li><li>Long-term cellular protection*</li><li>Clean, high-quality formula</li></ul>",
         "button_label": "Try Risk-Free Today",
@@ -878,6 +880,7 @@
             "review": "<p>So far so good — only a few weeks in and already feeling better.*</p>",
             "name": "Mikie",
             "meta": "Verified Buyer",
+            "verified": true,
             "rating": 5
           }
         },
@@ -887,6 +890,7 @@
             "review": "<p>I have noticed a difference in the way I look, and my skin at 64 feels softer.*</p>",
             "name": "John A",
             "meta": "Verified Buyer",
+            "verified": true,
             "rating": 5
           }
         },
@@ -896,6 +900,7 @@
             "review": "<p>I feel better, and I believe my skin tone is evening out. It is great.*</p>",
             "name": "Melissa L",
             "meta": "Verified Buyer",
+            "verified": true,
             "rating": 5
           }
         },
@@ -905,6 +910,7 @@
             "review": "<p>Great product, works well and a generous amount per bottle.</p>",
             "name": "Reuben M.",
             "meta": "Verified Buyer",
+            "verified": true,
             "rating": 5
           }
         },
@@ -914,6 +920,7 @@
             "review": "<p>Received quickly and starting this morning. Customer service was excellent.</p>",
             "name": "Charity",
             "meta": "Verified Buyer",
+            "verified": true,
             "rating": 5
           }
         }
