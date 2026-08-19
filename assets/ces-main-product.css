@@ -256,6 +256,20 @@
   margin: 0 auto;
 }
 
+/* Tighten the gaps around the reassurance blocks -------------------------- */
+
+/*
+ * Dawn puts a flat 1.5rem between every direct child of the info column, which
+ * leaves the guarantee line, the trust pill and the guarantee card floating too
+ * far apart. The reference keeps these reassurance blocks close, so pull their
+ * top margin in. Scoped to direct children so only these blocks are affected.
+ */
+.product__info-container > .ces-main-product__note,
+.product__info-container > .ces-main-product__trust,
+.product__info-container > .ces-main-product__guarantee {
+  margin-top: 0.8rem;
+}
+
 /* App slot ---------------------------------------------------------------- */
 
 /*
