@@ -186,7 +186,7 @@
           "type": "ces_payment_badges",
           "settings": {
             "image": "shopify://shop_images/Payment-Badge_1.webp",
-            "text": "Guaranteed safe checkout"
+            "text": ""
           }
         },
         "trust-row": {
