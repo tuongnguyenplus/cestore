@@ -57,13 +57,13 @@
           "type": "ces_rating_bar",
           "settings": {
             "rating_tenths": 45,
-            "text": "Rated <strong>4.4 Excellent</strong> | Over ",
+            "text": "Rated <strong>4.4 Excellent</strong> | Over",
             "enable_counter": true,
-            "sold_count": 100000,
-            "sold_suffix": " Sold",
+            "sold_count": 255127,
+            "sold_suffix": "Sold",
             "count_step_1": 1,
-            "count_step_2": 1,
-            "count_step_3": 2
+            "count_step_2": 3,
+            "count_step_3": 4
           }
         },
         "title": {
@@ -373,7 +373,12 @@
         "ces_highlights_layout": "inline",
         "ces_highlights_columns_mobile": 2,
         "ces_highlights_columns_desktop": 2,
-        "ces_title_size": 26
+        "ces_title_size": 26,
+        "atc_label": "",
+        "atc_bg": "",
+        "atc_text": "",
+        "atc_hover_bg": "",
+        "atc_hover_text": ""
       }
     },
     "video-testimonials": {
@@ -429,6 +434,7 @@
       ],
       "settings": {
         "heading": "See How Rovina™ Transforms Real Lives",
+        "highlight": "Rovina™",
         "subheading": "",
         "columns_mobile": 2,
         "columns_desktop": 3,
@@ -477,6 +483,7 @@
       ],
       "settings": {
         "heading": "Comprehensive Wellness Benefits",
+        "heading_color": "#933333",
         "subheading": "",
         "image_ratio": "1 / 1",
         "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
@@ -532,11 +539,9 @@
       ],
       "settings": {
         "heading": "One Formula. Total Support.",
-        "highlight_words": "",
         "subheading": "",
         "icon_frame": "bare",
         "icon_size": 5,
-        "icon_color": "#FFFFFF",
         "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-ces-gradient",
@@ -666,6 +671,7 @@
         "heading": "What to expect, week by week",
         "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
         "fill_speed": 900,
+        "meta_opacity": 100,
         "exclusive": true,
         "background_pattern": "dots",
         "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
