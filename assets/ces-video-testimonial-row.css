@@ -149,6 +149,35 @@
   transition: opacity 0.15s ease, background-color 0.15s ease;
 }
 
+/* A soft ring that pulses outward from the button, drawing the eye the way the
+   reference does. It sits behind the button and is purely decorative. */
+.ces-video-testimonial-row__play::before {
+  content: '';
+  position: absolute;
+  inset: -0.4rem;
+  border-radius: 50%;
+  border: 0.2rem solid rgba(var(--color-button), 0.55);
+  animation: ces-video-play-pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ces-video-play-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+/* The pulse belongs to the paused, "tap me" state; drop it while playing. */
+.ces-video-testimonial-row__play--playing::before {
+  animation: none;
+  opacity: 0;
+}
+
 .ces-video-testimonial-row__frame:hover .ces-video-testimonial-row__play {
   background-color: rgb(var(--color-button));
 }
@@ -191,5 +220,10 @@
 @media (prefers-reduced-motion: reduce) {
   .ces-video-testimonial-row__play {
     transition: none;
+  }
+
+  .ces-video-testimonial-row__play::before {
+    animation: none;
+    opacity: 0;
   }
 }

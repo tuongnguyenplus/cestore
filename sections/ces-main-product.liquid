@@ -48,7 +48,46 @@
       font-size: {{ section.settings.ces_title_size | default: 26 }}px;
       line-height: 1.15;
     }
+
+    {%- comment -%}
+      Add-to-cart button overrides. Only emitted when the merchant sets a value,
+      so Dawn's default button is left untouched otherwise.
+    {%- endcomment -%}
+    {%- if section.settings.atc_bg != blank or section.settings.atc_text != blank -%}
+      #MainProduct-{{ section.id }} .product-form__submit {
+        {% if section.settings.atc_bg != blank %}background: {{ section.settings.atc_bg }};{% endif %}
+        {% if section.settings.atc_text != blank %}color: {{ section.settings.atc_text }};{% endif %}
+        {% if section.settings.atc_bg != blank %}box-shadow: none;{% endif %}
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      #MainProduct-{{ section.id }} .product-form__submit::after {
+        display: none;
+      }
+    {%- endif -%}
+    {%- if section.settings.atc_hover_bg != blank or section.settings.atc_hover_text != blank -%}
+      #MainProduct-{{ section.id }} .product-form__submit:hover {
+        {% if section.settings.atc_hover_bg != blank %}background: {{ section.settings.atc_hover_bg }};{% endif %}
+        {% if section.settings.atc_hover_text != blank %}color: {{ section.settings.atc_hover_text }};{% endif %}
+      }
+    {%- endif -%}
   {%- endstyle -%}
+
+  {%- if section.settings.atc_label != blank -%}
+    <script>
+      (function () {
+        var root = document.getElementById('MainProduct-{{ section.id }}');
+        function apply() {
+          if (!root) return;
+          var button = root.querySelector('.product-form__submit');
+          if (!button || button.hasAttribute('disabled')) return;
+          var span = button.querySelector('span');
+          if (span) span.textContent = {{ section.settings.atc_label | json }};
+        }
+        if (document.readyState !== 'loading') apply();
+        else document.addEventListener('DOMContentLoaded', apply);
+      })();
+    </script>
+  {%- endif -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -920,7 +959,20 @@
                         </span>
                       </span>
                     {%- endif -%}
-                    <span class="ces-main-product__rating-text">{{ block.settings.text }}</span>
+                    <span class="ces-main-product__rating-text">
+                      {{ block.settings.text }}
+                      {%- if block.settings.sold_count and block.settings.sold_count > 0 -%}
+                        <script src="{{ 'ces-sold-counter.js' | asset_url }}" defer="defer"></script>
+                        <ces-sold-counter
+                          class="ces-main-product__sold"
+                          data-base="{{ block.settings.sold_count }}"
+                          data-step1="{{ block.settings.count_step_1 | default: 0 }}"
+                          data-step2="{{ block.settings.count_step_2 | default: 0 }}"
+                          data-step3="{{ block.settings.count_step_3 | default: 0 }}"
+                          {% unless block.settings.enable_counter %}data-static{% endunless %}
+                        >{{ block.settings.sold_count }}</ces-sold-counter><strong class="ces-main-product__sold-suffix">{{ block.settings.sold_suffix }}</strong>
+                      {%- endif -%}
+                    </span>
                   </div>
 
                 {%- when 'ces_shipping_estimate' -%}
@@ -2887,8 +2939,50 @@
         {
           "type": "inline_richtext",
           "id": "text",
-          "label": "Text",
-          "default": "Rated 4.4 Excellent | Over 100,000 Sold"
+          "label": "Lead text",
+          "info": "Shown before the sold counter, e.g. \"Rated 4.4 Excellent | Over \".",
+          "default": "Rated 4.4 Excellent | Over "
+        },
+        {
+          "type": "header",
+          "content": "Units sold counter"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_counter",
+          "label": "Animate the number upward",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "sold_count",
+          "label": "Starting number",
+          "info": "Set to 0 to hide the counter entirely.",
+          "default": 100000
+        },
+        {
+          "type": "text",
+          "id": "sold_suffix",
+          "label": "Text after the number",
+          "default": " Sold"
+        },
+        {
+          "type": "number",
+          "id": "count_step_1",
+          "label": "Add every 1 second",
+          "default": 1
+        },
+        {
+          "type": "number",
+          "id": "count_step_2",
+          "label": "Add every 2 seconds",
+          "default": 1
+        },
+        {
+          "type": "number",
+          "id": "count_step_3",
+          "label": "Add every 3 seconds",
+          "default": 2
         }
       ]
     },
@@ -3387,6 +3481,36 @@
       "unit": "px",
       "label": "CES Product title size",
       "default": 26
+    },
+    {
+      "type": "header",
+      "content": "CES Add to cart button"
+    },
+    {
+      "type": "text",
+      "id": "atc_label",
+      "label": "Button text",
+      "info": "Overrides the default \"Add to cart\" label. Leave empty to keep the theme default."
+    },
+    {
+      "type": "color",
+      "id": "atc_bg",
+      "label": "Button colour"
+    },
+    {
+      "type": "color",
+      "id": "atc_text",
+      "label": "Text colour"
+    },
+    {
+      "type": "color",
+      "id": "atc_hover_bg",
+      "label": "Button colour on hover"
+    },
+    {
+      "type": "color",
+      "id": "atc_hover_text",
+      "label": "Text colour on hover"
     }
   ]
 }

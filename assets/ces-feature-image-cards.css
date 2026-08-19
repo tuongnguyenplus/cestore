@@ -33,6 +33,12 @@
   object-fit: cover;
 }
 
+/* Section title: bold, and in a merchant-chosen colour (accent by default). */
+.ces-feature-image-cards__title {
+  font-weight: 700;
+  color: var(--ces-fic-heading-color, rgb(var(--color-foreground)));
+}
+
 .ces-feature-image-cards__heading {
   margin: 0 0 0.8rem;
   font-family: var(--font-heading-family);

@@ -4,12 +4,15 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-feature-image-cards ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div
+  class="ces-section ces-feature-image-cards ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  {% if section.settings.heading_color != blank %}style="--ces-fic-heading-color: {{ section.settings.heading_color }};"{% endif %}
+>
   <div class="ces-section__inner">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
         {%- if section.settings.heading != blank -%}
-          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+          <h2 class="ces-heading ces-feature-image-cards__title">{{ section.settings.heading }}</h2>
         {%- endif -%}
         {%- if section.settings.subheading != blank -%}
           <p class="ces-subheading">{{ section.settings.subheading }}</p>
@@ -69,6 +72,13 @@
       "id": "heading",
       "label": "Heading",
       "default": "Comprehensive Wellness Benefits"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour",
+      "info": "Leave empty to use the colour scheme's text colour.",
+      "default": "#933333"
     },
     {
       "type": "text",

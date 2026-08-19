@@ -418,6 +418,13 @@
   color: rgb(var(--color-foreground));
 }
 
+/* The live counter and its suffix read as one bold figure ("100,000 Sold"). */
+.ces-main-product__sold,
+.ces-main-product__sold-suffix {
+  font-weight: var(--font-body-weight-bold);
+  color: rgb(var(--color-foreground));
+}
+
 /* Shipping estimate ------------------------------------------------------- */
 
 .ces-main-product__estimate {
