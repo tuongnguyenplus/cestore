@@ -24,13 +24,32 @@
   style="
     --ces-icon-grid-columns-mobile: {{ section.settings.columns_mobile }};
     --ces-icon-grid-columns-desktop: {{ section.settings.columns_desktop }};
+    {% if section.settings.icon_color != blank %}--ces-icon-color: {{ section.settings.icon_color }};{% endif %}
   "
 >
   <div class="ces-section__inner">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
         {%- if section.settings.heading != blank -%}
-          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+          {%- liquid
+            assign ces_heading = section.settings.heading
+            if section.settings.highlight_words != blank
+              assign ces_words = section.settings.highlight_words | split: ','
+              for ces_word in ces_words
+                assign ces_word = ces_word | strip
+                if ces_word == blank
+                  continue
+                endif
+                capture ces_hl
+                  echo '<span class="ces-icon-feature-grid__heading-accent">'
+                  echo ces_word
+                  echo '</span>'
+                endcapture
+                assign ces_heading = ces_heading | replace: ces_word, ces_hl
+              endfor
+            endif
+          -%}
+          <h2 class="ces-heading">{{ ces_heading }}</h2>
         {%- endif -%}
         {%- if section.settings.subheading != blank -%}
           <p class="ces-subheading">{{ section.settings.subheading }}</p>
@@ -98,8 +117,22 @@
     },
     {
       "type": "text",
+      "id": "highlight_words",
+      "label": "Highlighted words",
+      "info": "Comma-separated words or phrases inside the heading to show in the icon colour, e.g. Rovina, Antioxidant, Cellular.",
+      "default": ""
+    },
+    {
+      "type": "text",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon colour",
+      "info": "Used for the built-in icons and the highlighted heading words.",
+      "default": "#933333"
     },
     {
       "type": "select",
@@ -245,9 +278,33 @@
             {
               "value": "lock",
               "label": "Padlock"
+            },
+            {
+              "value": "cell-defense",
+              "label": "Cell (antioxidant defense)"
+            },
+            {
+              "value": "molecule",
+              "label": "Molecule (oxidative stress)"
+            },
+            {
+              "value": "vitality",
+              "label": "Vitality (energy)"
+            },
+            {
+              "value": "inflammation",
+              "label": "Inflammation"
+            },
+            {
+              "value": "heart-plus",
+              "label": "Heart plus (cardiovascular)"
+            },
+            {
+              "value": "skin-aging",
+              "label": "Skin & aging"
             }
           ],
-          "default": "heart"
+          "default": "cell-defense"
         },
         {
           "type": "text",

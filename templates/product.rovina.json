@@ -484,8 +484,8 @@
         "icon-1": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "blood_pressure",
-            "icon": "sparkle",
+            "icon_text": "",
+            "icon": "cell-defense",
             "heading": "Cellular Wellness Support*",
             "text": ""
           }
@@ -493,8 +493,8 @@
         "icon-2": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "self_improvement",
-            "icon": "lock",
+            "icon_text": "",
+            "icon": "shield",
             "heading": "Comprehensive Protection*",
             "text": ""
           }
@@ -502,8 +502,8 @@
         "icon-3": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "face_4",
-            "icon": "leaf",
+            "icon_text": "",
+            "icon": "molecule",
             "heading": "Antioxidant Support*",
             "text": ""
           }
@@ -511,8 +511,8 @@
         "icon-4": {
           "type": "icon_item",
           "settings": {
-            "icon_text": "trending_up",
-            "icon": "heart",
+            "icon_text": "",
+            "icon": "vitality",
             "heading": "Long-Term Well-Being*",
             "text": ""
           }
@@ -526,12 +526,14 @@
       ],
       "settings": {
         "heading": "One Formula. Total Support.",
+        "highlight_words": "Total Support",
         "subheading": "",
         "icon_frame": "bare",
         "icon_size": 5,
+        "icon_color": "#933333",
         "columns_mobile": 2,
         "columns_desktop": 4,
-        "color_scheme": "scheme-ces-gradient",
+        "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
       }

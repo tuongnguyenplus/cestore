@@ -25,7 +25,14 @@
   justify-content: center;
   width: var(--ces-icon-frame, 6.4rem);
   height: var(--ces-icon-frame, 6.4rem);
-  color: var(--ces-accent);
+  /* A fixed brand colour by default so the icons read as burgundy on any colour
+     scheme, instead of following the scheme's near-black button colour. */
+  color: var(--ces-icon-color, var(--ces-accent));
+}
+
+/* The highlighted words in the heading pick up the same icon colour. */
+.ces-icon-feature-grid__heading-accent {
+  color: var(--ces-icon-color, var(--ces-accent));
 }
 
 .ces-icon-feature-grid__icon--disc {
