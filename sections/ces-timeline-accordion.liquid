@@ -162,6 +162,17 @@
         </ol>
       </ces-timeline>
     {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="ces-timeline-accordion__cta">
+        <a
+          class="ces-button ces-timeline-accordion__cta-button"
+          {% if section.settings.button_link != blank %}href="{{ section.settings.button_link }}"{% else %}href="#"{% endif %}
+        >
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {%- endif -%}
     </div>
   </div>
 </div>
@@ -286,6 +297,21 @@
       ],
       "info": "The bar style fills each step's heading like a coloured pill, matching the reference timeline.",
       "default": "plain"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "info": "Shown centred below the timeline. Leave empty to hide."
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
     },
     {
       "type": "checkbox",

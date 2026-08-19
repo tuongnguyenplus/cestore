@@ -157,6 +157,17 @@
   color: var(--ces-timeline-heading);
 }
 
+/* Button below the timeline ----------------------------------------------- */
+
+.ces-timeline-accordion__cta {
+  margin-top: 3.2rem;
+  text-align: center;
+}
+
+.ces-timeline-accordion__cta-button {
+  min-width: 24rem;
+}
+
 /* Filled-bar heading variant --------------------------------------------- */
 
 /*
