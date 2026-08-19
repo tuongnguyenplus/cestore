@@ -1,0 +1,328 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+{{ 'ces-listicle.css' | asset_url | stylesheet_tag }}
+
+{% render 'ces-section-padding' %}
+
+<div
+  class="ces-section ces-listicle ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  {% if section.settings.accent_color != blank %}style="--ces-listicle-accent: {{ section.settings.accent_color }};"{% endif %}
+>
+  <div class="ces-section__inner ces-section__inner--narrow">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="ces-listicle__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.headline != blank -%}
+      {%- liquid
+        assign ces_headline = section.settings.headline
+        if section.settings.highlight_words != blank
+          assign ces_words = section.settings.highlight_words | split: ','
+          for ces_word in ces_words
+            assign ces_word = ces_word | strip
+            if ces_word == blank
+              continue
+            endif
+            capture ces_hl
+              echo '<span class="ces-listicle__accent">'
+              echo ces_word
+              echo '</span>'
+            endcapture
+            assign ces_headline = ces_headline | replace: ces_word, ces_hl
+          endfor
+        endif
+      -%}
+      <h1 class="ces-listicle__headline">{{ ces_headline }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.byline != blank or section.settings.date_text != blank -%}
+      <p class="ces-listicle__byline">
+        {%- if section.settings.byline != blank -%}<span class="ces-listicle__byline-author">{{ section.settings.byline }}</span>{%- endif -%}
+        {%- if section.settings.date_text != blank -%}<span class="ces-listicle__byline-date">{{ section.settings.date_text }}</span>{%- endif -%}
+      </p>
+    {%- endif -%}
+
+    {%- if section.settings.intro != blank -%}
+      <div class="ces-listicle__intro rte ces-rte">{{ section.settings.intro }}</div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="ces-listicle__list" role="list">
+        {%- assign ces_number = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'reason' -%}
+              {%- assign ces_number = ces_number | plus: 1 -%}
+              <li
+                class="ces-listicle__item ces-listicle__item--media-{{ block.settings.image_position }}"
+                {{ block.shopify_attributes }}
+              >
+                {%- if section.settings.show_numbers -%}
+                  <span class="ces-listicle__number" aria-hidden="true">{{ ces_number }}</span>
+                {%- endif -%}
+                <div class="ces-listicle__item-body">
+                  {%- if block.settings.heading != blank -%}
+                    <h2 class="ces-listicle__item-heading">
+                      {%- if section.settings.show_numbers -%}<span class="ces-listicle__item-index">{{ ces_number }}.</span> {% endif -%}
+                      {{ block.settings.heading }}
+                    </h2>
+                  {%- endif -%}
+
+                  {%- if block.settings.image != blank -%}
+                    <div class="ces-listicle__item-media">
+                      {{
+                        block.settings.image
+                        | image_url: width: 1200
+                        | image_tag:
+                          loading: 'lazy',
+                          width: block.settings.image.width,
+                          height: block.settings.image.height,
+                          widths: '400, 600, 800, 1000, 1200',
+                          sizes: '(min-width: 750px) 60rem, calc(100vw - 3rem)',
+                          class: 'ces-listicle__item-image',
+                          alt: block.settings.image.alt | default: block.settings.heading | escape
+                      }}
+                      {%- if block.settings.caption != blank -%}
+                        <p class="ces-listicle__item-caption">{{ block.settings.caption }}</p>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if block.settings.body != blank -%}
+                    <div class="ces-listicle__item-text rte ces-rte">{{ block.settings.body }}</div>
+                  {%- endif -%}
+
+                  {%- if block.settings.cta_label != blank and block.settings.cta_link != blank -%}
+                    <a class="ces-button ces-listicle__item-cta" href="{{ block.settings.cta_link }}">
+                      {{ block.settings.cta_label }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </li>
+
+            {%- when 'quote' -%}
+              <li class="ces-listicle__quote" {{ block.shopify_attributes }}>
+                <blockquote class="ces-listicle__quote-text">{{ block.settings.quote }}</blockquote>
+                {%- if block.settings.attribution != blank -%}
+                  <p class="ces-listicle__quote-by">{{ block.settings.attribution }}</p>
+                {%- endif -%}
+              </li>
+
+            {%- when 'callout' -%}
+              <li class="ces-listicle__callout" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <p class="ces-listicle__callout-heading">{{ block.settings.heading }}</p>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <div class="ces-listicle__callout-body rte ces-rte">{{ block.settings.body }}</div>
+                {%- endif -%}
+                {%- if block.settings.cta_label != blank and block.settings.cta_link != blank -%}
+                  <a class="ces-button ces-listicle__callout-cta" href="{{ block.settings.cta_link }}">
+                    {{ block.settings.cta_label }}
+                  </a>
+                {%- endif -%}
+              </li>
+          {%- endcase -%}
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Listicle",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "HEALTH & WELLNESS"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "7 Reasons Women Over 40 Are Switching to This Daily Softgel"
+    },
+    {
+      "type": "text",
+      "id": "highlight_words",
+      "label": "Highlighted words",
+      "info": "Comma-separated words in the headline to show in the accent colour."
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour",
+      "default": "#933333"
+    },
+    {
+      "type": "text",
+      "id": "byline",
+      "label": "Author line",
+      "default": "By The Editorial Team"
+    },
+    {
+      "type": "text",
+      "id": "date_text",
+      "label": "Date",
+      "default": "Updated this week"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro paragraph",
+      "default": "<p>If you have noticed the little changes that come with getting older, you are not alone — and there is a simple daily habit thousands have added to their routine. Here is why.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_numbers",
+      "label": "Show number badges",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "It targets the root cause, not just the symptom"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position",
+          "options": [
+            { "value": "top", "label": "Above the text" },
+            { "value": "left", "label": "Left of the text (desktop)" },
+            { "value": "right", "label": "Right of the text (desktop)" }
+          ],
+          "default": "top"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Image caption"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button link"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Customer quote",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote",
+          "default": "<p>I did not expect to feel a difference this quickly. I am telling all my friends.</p>"
+        },
+        {
+          "type": "text",
+          "id": "attribution",
+          "label": "Attribution",
+          "default": "— Sarah M., verified buyer"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "name": "CTA callout",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Ready to try it risk-free?"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Backed by a 90-day money-back guarantee. If you do not love it, you do not pay.</p>"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Button label",
+          "default": "Get yours today"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CES Listicle",
+      "blocks": [
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "quote" },
+        { "type": "reason" },
+        { "type": "callout" }
+      ]
+    }
+  ]
+}
+{% endschema %}

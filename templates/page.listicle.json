@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "image_position": "top" } },
+        "r2": { "type": "reason", "settings": { "image_position": "top" } },
+        "q1": { "type": "quote", "settings": {} },
+        "r3": { "type": "reason", "settings": { "image_position": "top" } },
+        "r4": { "type": "reason", "settings": { "image_position": "top" } },
+        "c1": { "type": "callout", "settings": {} },
+        "r5": { "type": "reason", "settings": { "image_position": "top" } },
+        "r6": { "type": "reason", "settings": { "image_position": "top" } },
+        "r7": { "type": "reason", "settings": { "image_position": "top" } }
+      },
+      "block_order": ["r1", "r2", "q1", "r3", "r4", "c1", "r5", "r6", "r7"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 24
+      }
+    },
+    "cta": {
+      "type": "ces-bullet-cta",
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "ces-faq-accordion",
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": ["listicle", "cta", "faq"]
+}

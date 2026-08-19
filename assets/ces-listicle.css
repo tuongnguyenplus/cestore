@@ -1,0 +1,207 @@
+/* Section styles for sections/ces-listicle.liquid.
+   A long-form advertorial "N reasons" page: an editorial header, then a
+   numbered list of reasons, quotes and CTA callouts. */
+
+.ces-listicle {
+  --ces-listicle-accent: var(--ces-accent);
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+/* Header ------------------------------------------------------------------ */
+
+.ces-listicle__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: var(--font-body-weight-bold);
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--ces-listicle-accent);
+}
+
+.ces-listicle__headline {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.ces-listicle__accent {
+  color: var(--ces-listicle-accent);
+}
+
+.ces-listicle__byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 1.4rem 0 0;
+  font-size: 1.3rem;
+  color: var(--ces-muted);
+}
+
+.ces-listicle__byline-author {
+  font-weight: var(--font-body-weight-bold);
+  color: rgb(var(--color-foreground));
+}
+
+.ces-listicle__intro {
+  margin-top: 1.6rem;
+  font-size: 1.7rem;
+  line-height: 1.6;
+  color: rgba(var(--color-foreground), 0.9);
+}
+
+/* List -------------------------------------------------------------------- */
+
+.ces-listicle__list {
+  margin: 3.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 3.6rem;
+}
+
+.ces-listicle__item {
+  position: relative;
+}
+
+/* A big faded number sitting behind the heading, editorial-style. */
+.ces-listicle__number {
+  display: block;
+  font-family: var(--font-heading-family);
+  font-weight: 800;
+  font-size: 4.4rem;
+  line-height: 1;
+  color: var(--ces-listicle-accent);
+  opacity: 0.25;
+  margin-bottom: 0.4rem;
+}
+
+.ces-listicle__item-heading {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.25;
+}
+
+.ces-listicle__item-index {
+  color: var(--ces-listicle-accent);
+}
+
+.ces-listicle__item-media {
+  margin: 0 0 1.4rem;
+}
+
+.ces-listicle__item-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--ces-radius, 1.2rem);
+}
+
+.ces-listicle__item-caption {
+  margin: 0.6rem 0 0;
+  font-size: 1.2rem;
+  color: var(--ces-muted);
+  text-align: center;
+}
+
+.ces-listicle__item-text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.9);
+}
+
+.ces-listicle__item-cta {
+  margin-top: 1.6rem;
+}
+
+/* Quote ------------------------------------------------------------------- */
+
+.ces-listicle__quote {
+  padding: 2rem 2.4rem;
+  border-left: 0.4rem solid var(--ces-listicle-accent);
+  background-color: var(--ces-surface);
+  border-radius: 0 var(--ces-radius, 1.2rem) var(--ces-radius, 1.2rem) 0;
+}
+
+.ces-listicle__quote-text {
+  margin: 0;
+  font-size: 1.9rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.ces-listicle__quote-text > p {
+  margin: 0;
+}
+
+.ces-listicle__quote-by {
+  margin: 1rem 0 0;
+  font-size: 1.3rem;
+  font-weight: var(--font-body-weight-bold);
+  color: var(--ces-muted);
+}
+
+/* CTA callout ------------------------------------------------------------- */
+
+.ces-listicle__callout {
+  padding: 2.8rem;
+  text-align: center;
+  border-radius: var(--ces-radius, 1.2rem);
+  background-color: var(--ces-surface-strong, var(--ces-surface));
+}
+
+.ces-listicle__callout-heading {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.ces-listicle__callout-body {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: rgba(var(--color-foreground), 0.85);
+}
+
+.ces-listicle__callout-cta {
+  margin-top: 1.6rem;
+}
+
+/* Desktop: side-by-side image/text for reasons that ask for it ------------- */
+
+@media screen and (min-width: 750px) {
+  .ces-listicle__headline {
+    font-size: 4rem;
+  }
+
+  .ces-listicle__item--media-left .ces-listicle__item-body,
+  .ces-listicle__item--media-right .ces-listicle__item-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+    align-items: center;
+  }
+
+  /* The heading spans the full row above the two columns. */
+  .ces-listicle__item--media-left .ces-listicle__item-heading,
+  .ces-listicle__item--media-right .ces-listicle__item-heading {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .ces-listicle__item--media-left .ces-listicle__item-media {
+    order: -1;
+    margin: 0;
+  }
+
+  .ces-listicle__item--media-right .ces-listicle__item-media {
+    margin: 0;
+  }
+}
