@@ -20,6 +20,7 @@
   <ces-sticky-atc
     class="ces-section ces-sticky-atc color-{{ section.settings.color_scheme }} gradient"
     data-target="{{ target }}"
+    {% if section.settings.reveal_id != blank %}data-reveal="{{ section.settings.reveal_id | handleize }}"{% endif %}
     {% if section.settings.hide_on_desktop %}
       data-mobile-only
     {% endif %}
@@ -46,23 +47,43 @@
         <div class="ces-sticky-atc__text">
           <p class="ces-sticky-atc__title">{{ section.settings.title | default: product.title }}</p>
 
-          {%- if section.settings.rating_text != blank or section.settings.stars > 0 -%}
+          {%- assign ces_srating = section.settings.rating_tenths | default: 44 | divided_by: 10.0 -%}
+          {%- if section.settings.rating_text != blank or ces_srating > 0 -%}
             <p class="ces-sticky-atc__rating">
-              {%- if section.settings.stars > 0 -%}
+              {%- if ces_srating > 0 -%}
+                {%- assign ces_srating_pct = section.settings.rating_tenths | default: 44 | times: 2 -%}
                 <span
                   class="ces-sticky-atc__stars"
+                  style="--ces-rating-pct: {{ ces_srating_pct }}%;"
                   role="img"
-                  aria-label="{{ section.settings.stars }} out of 5 stars"
+                  aria-label="{{ ces_srating }} out of 5 stars"
                 >
-                  {%- for i in (1..5) -%}
-                    {%- if i <= section.settings.stars -%}
-                      {% render 'ces-icon', icon: 'star', size: '1.2rem' %}
-                    {%- endif -%}
-                  {%- endfor -%}
+                  <span class="ces-sticky-atc__stars-track" aria-hidden="true">
+                    {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.3rem' %}{%- endfor -%}
+                  </span>
+                  <span class="ces-sticky-atc__stars-fill" aria-hidden="true">
+                    {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.3rem' %}{%- endfor -%}
+                  </span>
                 </span>
               {%- endif -%}
               {%- if section.settings.rating_text != blank -%}
-                <span>{{ section.settings.rating_text }}</span>
+                <span class="ces-sticky-atc__rating-text">{{ section.settings.rating_text | strip }}
+                  {%- if section.settings.sold_count and section.settings.sold_count > 0 -%}
+                    <script src="{{ 'ces-sold-counter.js' | asset_url }}" defer="defer"></script>
+                    {{- ' ' -}}
+                    <ces-sold-counter
+                      class="ces-sticky-atc__sold"
+                      data-base="{{ section.settings.sold_count }}"
+                      data-step1="{{ section.settings.count_step_1 | default: 0 }}"
+                      data-step2="{{ section.settings.count_step_2 | default: 0 }}"
+                      data-step3="{{ section.settings.count_step_3 | default: 0 }}"
+                      {% unless section.settings.enable_counter %}data-static{% endunless %}
+                    >{{ section.settings.sold_count }}</ces-sold-counter>
+                    {%- if section.settings.sold_suffix != blank -%}
+                      {{- ' ' -}}<strong>{{ section.settings.sold_suffix | strip }}</strong>
+                    {%- endif -%}
+                  {%- endif -%}
+                </span>
               {%- endif -%}
             </p>
           {%- endif -%}
@@ -93,8 +114,14 @@
       "type": "text",
       "id": "target_id",
       "label": "Scroll target element ID",
-      "info": "Usually the CES App slot's ID from the product section.",
+      "info": "Where the button scrolls to. Usually the CES App slot's ID.",
       "default": "ces-app-price-slot"
+    },
+    {
+      "type": "text",
+      "id": "reveal_id",
+      "label": "Reveal after element ID",
+      "info": "The bar appears once this element scrolls out of view above. Leave empty to use the scroll target. Give the element an ID in its block/section settings, e.g. try-risk-free."
     },
     {
       "type": "text",
@@ -122,19 +149,61 @@
     },
     {
       "type": "range",
-      "id": "stars",
+      "id": "rating_tenths",
       "min": 0,
-      "max": 5,
+      "max": 50,
       "step": 1,
-      "label": "Stars",
-      "info": "Set to 0 to hide them.",
-      "default": 4
+      "label": "Rating (tenths)",
+      "info": "In tenths of a star: 44 = 4.4, 48 = 4.8. Set to 0 to hide the stars.",
+      "default": 44
     },
     {
       "type": "text",
       "id": "rating_text",
-      "label": "Rating text",
-      "default": "Rated 4.4 Excellent | Over 100,000 Sold"
+      "label": "Rating lead text",
+      "info": "Shown before the sold counter, e.g. \"Rated 4.4 Excellent | Over \".",
+      "default": "Rated 4.4 Excellent | Over "
+    },
+    {
+      "type": "header",
+      "content": "Units sold counter"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_counter",
+      "label": "Animate the number upward",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "sold_count",
+      "label": "Starting number",
+      "info": "Set to 0 to hide the counter.",
+      "default": 100000
+    },
+    {
+      "type": "text",
+      "id": "sold_suffix",
+      "label": "Text after the number",
+      "default": " Sold"
+    },
+    {
+      "type": "number",
+      "id": "count_step_1",
+      "label": "Add every 1 second",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "count_step_2",
+      "label": "Add every 2 seconds",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "count_step_3",
+      "label": "Add every 3 seconds",
+      "default": 2
     },
     {
       "type": "checkbox",

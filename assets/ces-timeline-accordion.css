@@ -157,6 +157,29 @@
   color: var(--ces-timeline-heading);
 }
 
+/* Filled-bar heading variant --------------------------------------------- */
+
+/*
+ * With the "bar" style each step's heading becomes a full-width coloured pill,
+ * like the reference. The bar colours follow the step state (active vs muted)
+ * through the --ces-timeline-bar-* variables set in the States block below.
+ */
+.ces-timeline-accordion--head-bar .ces-timeline__head {
+  padding: 1rem 1.6rem;
+  border-radius: var(--ces-radius, 0.8rem);
+  background-color: var(--ces-timeline-bar-bg, rgba(var(--color-foreground), 0.06));
+  transition: background-color var(--ces-timeline-fill, 0.7s) ease-out;
+}
+
+.ces-timeline-accordion--head-bar .ces-timeline__head .ces-timeline__meta,
+.ces-timeline-accordion--head-bar .ces-timeline__head .ces-timeline__heading {
+  color: var(--ces-timeline-bar-fg, rgb(var(--color-foreground)));
+}
+
+.ces-timeline-accordion--head-bar .ces-timeline__heading {
+  font-size: 1.9rem;
+}
+
 .ces-timeline__list {
   margin: 1.2rem 0 0;
   padding: 0;
@@ -204,6 +227,8 @@
   --ces-timeline-heading: rgb(var(--color-foreground));
   --ces-timeline-body: rgba(var(--color-foreground), 0.85);
   --ces-timeline-tick: rgb(var(--color-foreground));
+  --ces-timeline-bar-bg: var(--ces-accent);
+  --ces-timeline-bar-fg: var(--ces-accent-contrast);
 }
 
 .ces-timeline__step--muted {
@@ -214,6 +239,8 @@
   --ces-timeline-heading: rgba(var(--color-foreground), 0.45);
   --ces-timeline-body: rgba(var(--color-foreground), 0.45);
   --ces-timeline-tick: rgba(var(--color-foreground), 0.4);
+  --ces-timeline-bar-bg: rgba(var(--color-foreground), 0.06);
+  --ces-timeline-bar-fg: rgba(var(--color-foreground), 0.55);
 }
 
 @media screen and (min-width: 750px) {

@@ -76,10 +76,38 @@
   color: var(--ces-muted);
 }
 
+/* Two-layer fractional stars, matching the CES Rating bar: a grey track with a
+   gold layer clipped to the rating percentage. */
 .ces-sticky-atc__stars {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.ces-sticky-atc__stars-track,
+.ces-sticky-atc__stars-fill {
   display: inline-flex;
-  gap: 0.1rem;
-  color: var(--ces-star, #f5a623);
+}
+
+.ces-sticky-atc__stars-track {
+  color: rgba(var(--color-foreground), 0.2);
+}
+
+.ces-sticky-atc__stars-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--ces-rating-pct, 100%);
+  overflow: hidden;
+  color: #f5b301;
+}
+
+.ces-sticky-atc__sold,
+.ces-sticky-atc__rating-text strong {
+  font-weight: var(--font-body-weight-bold);
+  color: rgb(var(--color-foreground));
 }
 
 .ces-sticky-atc__button {

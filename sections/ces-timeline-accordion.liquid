@@ -22,7 +22,7 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-timeline-accordion{% if section.settings.background_pattern == 'dots' %} ces-section--dotted{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-timeline-accordion ces-timeline-accordion--head-{{ section.settings.heading_style | default: 'plain' }}{% if section.settings.background_pattern == 'dots' %} ces-section--dotted{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -124,12 +124,15 @@
             </div>
 
             <div class="ces-timeline__body">
-              {%- if block.settings.time_label != blank -%}
-                <p class="ces-timeline__meta">{{ block.settings.time_label }}</p>
-              {%- endif -%}
-
-              {%- if block.settings.heading != blank -%}
-                <h3 class="ces-timeline__heading">{{ block.settings.heading }}</h3>
+              {%- if block.settings.time_label != blank or block.settings.heading != blank -%}
+                <div class="ces-timeline__head">
+                  {%- if block.settings.time_label != blank -%}
+                    <p class="ces-timeline__meta">{{ block.settings.time_label }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="ces-timeline__heading">{{ block.settings.heading }}</h3>
+                  {%- endif -%}
+                </div>
               {%- endif -%}
 
               {%- if block.settings.bullets != blank -%}
@@ -272,6 +275,17 @@
       "label": "Milestone label strength",
       "info": "Opacity of the WEEK labels, which use the timeline accent colour.",
       "default": 100
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "Step heading style",
+      "options": [
+        { "value": "plain", "label": "Plain text" },
+        { "value": "bar", "label": "Filled colour bar" }
+      ],
+      "info": "The bar style fills each step's heading like a coloured pill, matching the reference timeline.",
+      "default": "plain"
     },
     {
       "type": "checkbox",

@@ -13,20 +13,29 @@ if (!customElements.get('ces-sticky-atc')) {
     connectedCallback() {
       if (this.initialised) return;
 
-      const id = this.dataset.target;
-      this.target = id ? document.getElementById(id) : null;
+      // The bar always scrolls back to the buy box (data-target). What makes it
+      // appear can be a different element (data-reveal) — e.g. a "Try risk-free"
+      // button — so a merchant can choose exactly how far down the bar kicks in.
+      const targetId = this.dataset.target;
+      this.target = targetId ? document.getElementById(targetId) : null;
 
-      // Without a buy box to track there is nothing to scroll back to, so the
-      // bar stays hidden rather than pointing at a dead anchor.
-      if (!this.target || typeof IntersectionObserver !== 'function') return;
+      const revealId = this.dataset.reveal;
+      const revealTarget = (revealId && document.getElementById(revealId)) || this.target;
+
+      if (!revealTarget || typeof IntersectionObserver !== 'function') return;
 
       this.initialised = true;
 
       this.observer = new IntersectionObserver(
-        ([entry]) => this.toggle(!entry.isIntersecting),
+        ([entry]) => {
+          // Show once the trigger has been scrolled up out of the viewport, not
+          // while it is still below the fold on the way down.
+          const scrolledPast = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+          this.toggle(scrolledPast);
+        },
         { threshold: 0 }
       );
-      this.observer.observe(this.target);
+      this.observer.observe(revealTarget);
     }
 
     disconnectedCallback() {
