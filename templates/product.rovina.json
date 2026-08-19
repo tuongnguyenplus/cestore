@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "ticker-announcement": {
@@ -47,8 +56,8 @@
         "rating-bar": {
           "type": "ces_rating_bar",
           "settings": {
-            "text": "Rated <strong>4.4 Excellent</strong> | Over <strong>100,000 Sold</strong>",
-            "rating_tenths": 45
+            "rating_tenths": 45,
+            "text": "Rated <strong>4.4 Excellent</strong> | Over <strong>100,000 Sold</strong>"
           }
         },
         "title": {
@@ -123,6 +132,8 @@
           "type": "ces_shipping_estimate",
           "settings": {
             "delivery_text": "Ships by",
+            "delivery_days": 1,
+            "date_format": "%b. %-d",
             "delivery_icon": "🟢",
             "origin_text": "Ships from USA",
             "origin_icon": "🇺🇸"
@@ -292,6 +303,9 @@
           "type": "ces_media_panel",
           "settings": {
             "image": "shopify://shop_images/research.webp",
+            "gradient_from": "#933333",
+            "gradient_to": "#1a1a1a",
+            "gradient_angle": 135,
             "image_opacity": 15,
             "overlay_opacity": 0,
             "heading": "Why Trust Rovina as Your Wellness Partner?",
@@ -352,7 +366,8 @@
         "padding_bottom": 0,
         "ces_highlights_layout": "inline",
         "ces_highlights_columns_mobile": 2,
-        "ces_highlights_columns_desktop": 2
+        "ces_highlights_columns_desktop": 2,
+        "ces_title_size": 26
       }
     },
     "video-testimonials": {
@@ -410,13 +425,13 @@
         "heading": "See How Rovina™ Transforms Real Lives",
         "subheading": "",
         "columns_mobile": 2,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "autoplay": false,
         "loop": false,
         "show_controls": true,
         "aspect_ratio": "9 / 16",
         "background_pattern": "none",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
         "padding_top": 40,
         "padding_bottom": 40
       }
