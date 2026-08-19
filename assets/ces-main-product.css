@@ -76,29 +76,29 @@
   gap: 1rem;
   /* Padding matches the avatar's own inset so the pill hugs the stack, and the
      radius follows the avatar rather than a fixed corner size. */
-  padding: 0.4rem 1.8rem 0.4rem 0.4rem;
-  border-radius: 2.2rem;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  border-radius: 3rem;
   background-color: var(--ces-surface);
 }
 
 .ces-main-product__trust-avatars {
   display: flex;
   flex: 0 0 auto;
-  padding-left: 1rem;
+  padding-left: 1.4rem;
 }
 
 .ces-main-product__trust-avatar-wrap {
   position: relative;
   display: block;
-  margin-left: -1rem;
+  margin-left: -1.4rem;
 }
 
 .ces-main-product__trust-avatar {
   display: block;
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 4.6rem;
+  height: 4.6rem;
   border-radius: 50%;
-  border: 0.2rem solid rgb(var(--color-background));
+  border: 0.3rem solid rgb(var(--color-background));
   object-fit: cover;
 }
 
@@ -106,14 +106,14 @@
    the tick along with it instead of leaving it hanging over a gap. */
 .ces-main-product__trust-verified {
   position: absolute;
-  right: -0.2rem;
-  top: -0.2rem;
+  right: -0.1rem;
+  top: -0.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.2rem solid rgb(var(--color-background));
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0.25rem solid rgb(var(--color-background));
   border-radius: 50%;
   background-color: #16a34a;
   color: #fff;
