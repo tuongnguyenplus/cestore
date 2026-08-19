@@ -319,6 +319,22 @@
   display: none !important;
 }
 
+/*
+ * Some apps inject the badge *inside* the text run instead — between the number
+ * and the word after it. The rating text is only words and <strong>, so any
+ * image, svg or badge element inside it is the app's and is hidden too. The
+ * theme's own stars live in .rating-stars, never here, so they are untouched.
+ */
+.ces-main-product__rating-text img,
+.ces-main-product__rating-text svg,
+.ces-main-product__rating-text [class*='verified'],
+.ces-main-product__rating-text [class*='badge'],
+.ces-main-product__rating-text [class*='jdgm'],
+.ces-main-product__rating-text [class*='loox'],
+.ces-main-product__rating-text [class*='stamped'] {
+  display: none !important;
+}
+
 /* The numbers carry the weight, as the reference sets it. */
 .ces-main-product__rating-text strong {
   color: rgb(var(--color-foreground));
