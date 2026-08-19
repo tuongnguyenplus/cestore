@@ -307,6 +307,18 @@
   color: var(--ces-muted);
 }
 
+/*
+ * A reviews app (Judge.me, Loox, and the like) can inject a verified badge into
+ * the closest rating element it finds, which lands as an extra child of this
+ * row and shows up as a lone green tick at the end. The theme renders only the
+ * stars and the text here, so anything else in this row is not ours and is
+ * hidden. It does not touch the app's own reviews widget elsewhere on the page.
+ */
+.ces-main-product__rating
+  > :not(.ces-main-product__rating-stars):not(.ces-main-product__rating-text) {
+  display: none !important;
+}
+
 /* The numbers carry the weight, as the reference sets it. */
 .ces-main-product__rating-text strong {
   color: rgb(var(--color-foreground));
