@@ -896,7 +896,7 @@
 
                 {%- when 'ces_rating_bar' -%}
                   <div class="ces-main-product__rating quick-add-hidden" {{ block.shopify_attributes }}>
-                    {%- assign ces_rating = block.settings.rating | default: 4.5 -%}
+                    {%- assign ces_rating = block.settings.rating_tenths | default: 45 | divided_by: 10.0 -%}
                     {%- if ces_rating > 0 -%}
                       {%- comment -%}
                         Two identical rows of five stars: a grey track, and a gold
@@ -904,7 +904,7 @@
                         4.5, 4.8 — fills to exactly its fraction, which a per-star
                         full/half approach cannot do.
                       {%- endcomment -%}
-                      {%- assign ces_rating_pct = ces_rating | times: 20 -%}
+                      {%- assign ces_rating_pct = block.settings.rating_tenths | default: 45 | times: 2 -%}
                       <span
                         class="ces-main-product__rating-stars"
                         style="--ces-rating-pct: {{ ces_rating_pct }}%;"
@@ -2876,13 +2876,13 @@
       "settings": [
         {
           "type": "range",
-          "id": "rating",
+          "id": "rating_tenths",
           "min": 0,
-          "max": 5,
-          "step": 0.1,
-          "label": "Rating",
-          "info": "Any value — 4.5, 4.8 — fills the stars to that fraction.",
-          "default": 4.5
+          "max": 50,
+          "step": 1,
+          "label": "Rating (tenths)",
+          "info": "In tenths of a star: 48 = 4.8, 45 = 4.5. Integer step keeps Shopify happy.",
+          "default": 45
         },
         {
           "type": "inline_richtext",
