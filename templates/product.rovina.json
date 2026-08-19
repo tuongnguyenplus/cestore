@@ -526,14 +526,14 @@
       ],
       "settings": {
         "heading": "One Formula. Total Support.",
-        "highlight_words": "Total Support",
+        "highlight_words": "",
         "subheading": "",
         "icon_frame": "bare",
         "icon_size": 5,
-        "icon_color": "#933333",
+        "icon_color": "#FFFFFF",
         "columns_mobile": 2,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-ces-gradient",
         "padding_top": 40,
         "padding_bottom": 40
       }

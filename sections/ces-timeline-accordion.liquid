@@ -89,7 +89,7 @@
         and each one is either highlighted or muted so the sequence reads as a
         journey rather than a flat list.
       {%- endcomment -%}
-      <ces-timeline style="--ces-timeline-fill: {{ section.settings.fill_speed }}ms;">
+      <ces-timeline style="--ces-timeline-fill: {{ section.settings.fill_speed }}ms; --ces-meta-opacity: {{ section.settings.meta_opacity | default: 100 | divided_by: 100.0 }};">
         <ol class="ces-timeline" role="list">
         {%- for block in section.blocks -%}
           {%- liquid
@@ -261,6 +261,17 @@
       "label": "Fill speed",
       "info": "How long a step takes to light up as it is reached. Higher is slower and calmer.",
       "default": 900
+    },
+    {
+      "type": "range",
+      "id": "meta_opacity",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Milestone label strength",
+      "info": "Opacity of the WEEK labels, which use the timeline accent colour.",
+      "default": 100
     },
     {
       "type": "checkbox",

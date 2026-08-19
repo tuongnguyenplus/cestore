@@ -22,8 +22,10 @@
 
 .ces-sticky-atc__inner {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
   max-width: var(--page-width);
   margin: 0 auto;
 }
@@ -81,10 +83,28 @@
 }
 
 .ces-sticky-atc__button {
-  width: 100%;
+  flex: 0 0 auto;
   min-height: 4.8rem;
+  padding-inline: 2.4rem;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* On the narrowest phones give the button room by letting it take the row width
+   below the info, rather than squeezing the title to nothing. */
+@media screen and (max-width: 419px) {
+  .ces-sticky-atc__inner {
+    flex-wrap: wrap;
+  }
+
+  .ces-sticky-atc__info {
+    flex: 1 1 100%;
+  }
+
+  .ces-sticky-atc__button {
+    flex: 1 1 100%;
+  }
 }
 
 /* Hidden on desktop when the section is set to mobile only. */

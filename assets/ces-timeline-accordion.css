@@ -198,7 +198,9 @@
 
   --ces-timeline-dot-bg: var(--ces-accent);
   --ces-timeline-dot-fg: var(--ces-accent-contrast);
-  --ces-timeline-meta: rgba(var(--color-foreground), 0.7);
+  /* The milestone label carries the timeline's own accent colour; its strength
+     is a merchant setting via --ces-meta-opacity. */
+  --ces-timeline-meta: rgba(var(--color-button), var(--ces-meta-opacity, 1));
   --ces-timeline-heading: rgb(var(--color-foreground));
   --ces-timeline-body: rgba(var(--color-foreground), 0.85);
   --ces-timeline-tick: rgb(var(--color-foreground));
