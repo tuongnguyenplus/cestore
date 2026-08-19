@@ -1,75 +1,138 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "ticker": {
+      "type": "ces-announcement-marquee",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
+        "t1": { "type": "marquee_item", "settings": { "text": "FREE SHIPPING OVER $50" } },
+        "t2": { "type": "marquee_item", "settings": { "text": "90-DAY MONEY-BACK GUARANTEE" } },
+        "t3": { "type": "marquee_item", "settings": { "text": "OVER 100,000 HAPPY CUSTOMERS" } }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["t1", "t2", "t3"],
+      "settings": { "font_size": 13, "padding": 10 }
+    },
+    "hero": {
+      "type": "ces-image-text-banner",
+      "blocks": {
+        "b1": { "type": "badge_marquee_item", "settings": { "text": "Non-GMO" } },
+        "b2": { "type": "badge_marquee_item", "settings": { "text": "Gluten-Free" } },
+        "b3": { "type": "badge_marquee_item", "settings": { "text": "Lab Tested" } }
+      },
+      "block_order": ["b1", "b2", "b3"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "NATURE'S MOST POWERFUL ANTIOXIDANT",
+        "heading": "Whole-Body Support in One Daily Softgel",
+        "heading_accent": "One Daily Softgel",
+        "text": "<p>12mg of triple-strength astaxanthin from microalgae — for cellular defense, skin, and healthy aging.*</p>",
+        "button_label": "Shop now",
+        "button_link": "/collections/all",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "benefits": {
+      "type": "ces-icon-feature-grid",
+      "blocks": {
+        "i1": { "type": "icon_item", "settings": { "icon": "cell-defense", "heading": "Cellular & Antioxidant Defense*" } },
+        "i2": { "type": "icon_item", "settings": { "icon": "molecule", "heading": "Oxidative Stress Support*" } },
+        "i3": { "type": "icon_item", "settings": { "icon": "heart-plus", "heading": "Cardiovascular Support*" } },
+        "i4": { "type": "icon_item", "settings": { "icon": "skin-aging", "heading": "Skin & Healthy Aging*" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4"],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
+        "heading": "One Formula. Total Support.",
+        "icon_frame": "bare",
+        "icon_color": "#933333",
+        "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "features": {
+      "type": "ces-feature-image-cards",
+      "blocks": {
+        "f1": { "type": "feature_card", "settings": { "heading": "Natural Astaxanthin", "text": "Sourced from Haematococcus pluvialis microalgae — one of nature's most potent antioxidants.*" } },
+        "f2": { "type": "feature_card", "settings": { "heading": "Enhanced Absorption", "text": "Oil-based softgel so the fat-soluble compound is absorbed the way your body expects.*" } },
+        "f3": { "type": "feature_card", "settings": { "heading": "Clean & Lab Tested", "text": "Made in a GMP-certified, FDA-registered facility. Non-GMO, gluten free, third-party tested." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "heading": "Comprehensive Wellness Benefits",
+        "heading_color": "#933333",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "reviews": {
+      "type": "ces-testimonial-marquee",
+      "blocks": {
+        "rv1": { "type": "review_item", "settings": { "review": "I did not expect to feel a difference this quickly. Telling all my friends.", "name": "Maya, 34", "verified": true, "rating": 5 } },
+        "rv2": { "type": "review_item", "settings": { "review": "My skin feels firmer and I have more energy through the afternoon.", "name": "Daniel, 41", "verified": true, "rating": 5 } },
+        "rv3": { "type": "review_item", "settings": { "review": "Simple daily habit, real results. Worth every penny.", "name": "Priya, 29", "verified": true, "rating": 5 } }
+      },
+      "block_order": ["rv1", "rv2", "rv3"],
+      "settings": {
+        "heading": "Loved by Over 100,000 Customers",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "how": {
+      "type": "ces-timeline-accordion",
+      "blocks": {
+        "s1": { "type": "timeline_step", "settings": { "time_label": "WEEKS 1-2", "heading": "Cellular Foundation", "bullets": "Antioxidant activity begins at the cellular level.\nYour body starts adapting to daily astaxanthin.\nNo obvious change yet, which is normal." } },
+        "s2": { "type": "timeline_step", "settings": { "time_label": "WEEKS 3-4", "heading": "Early Changes Appear", "bullets": "Subtle improvements start becoming noticeable.*\nMany people report looking and feeling healthier.*\nRecovery after exertion gets easier.*" } },
+        "s3": { "type": "timeline_step", "settings": { "time_label": "WEEKS 5-8", "heading": "Building Momentum", "bullets": "Noticeable improvements continue developing.*\nBenefits reported across several areas at once.*\nSkin tone and comfort keep improving.*" } },
+        "s4": { "type": "timeline_step", "settings": { "time_label": "WEEK 8+", "heading": "Long-Term Support", "bullets": "Results maintain with consistent daily use.*\nBenefits continue building over time.*" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {
+        "heading": "What to Expect, Week by Week",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cta": {
+      "type": "ces-bullet-cta",
+      "settings": {
+        "heading": "Start Your Whole-Body Support Today",
+        "bullets": "12mg triple-strength astaxanthin\nNon-GMO, gluten free, lab tested\n90-day money-back guarantee",
+        "button_label": "Shop now",
+        "button_link": "/collections/all",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "ces-faq-accordion",
+      "blocks": {
+        "q1": { "type": "faq_item", "settings": { "question": "How do I take it?", "answer": "<p>One softgel daily with a meal that contains some fat, for best absorption.</p>", "open": true } },
+        "q2": { "type": "faq_item", "settings": { "question": "How long before I see results?", "answer": "<p>Most people notice changes between weeks 3 and 8 with consistent daily use.*</p>" } },
+        "q3": { "type": "faq_item", "settings": { "question": "Is the 12mg dose safe?", "answer": "<p>Yes — it is formulated to the dose used in published human trials and third-party tested.</p>" } },
+        "q4": { "type": "faq_item", "settings": { "question": "What is your guarantee?", "answer": "<p>Love your results within 90 days or get 100% of your money back.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
-  "order": [
-    "image_banner",
-    "featured_collection"
-  ]
+  "order": ["ticker", "hero", "benefits", "features", "reviews", "how", "cta", "faq", "newsletter"]
 }

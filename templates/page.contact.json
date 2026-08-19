@@ -4,22 +4,34 @@
       "type": "main-page",
       "settings": {
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 12
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
+        "heading": "Get in touch",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
+        "padding_top": 12,
         "padding_bottom": 36
+      }
+    },
+    "faq": {
+      "type": "ces-faq-accordion",
+      "blocks": {
+        "q1": { "type": "faq_item", "settings": { "question": "Where is my order?", "answer": "<p>Orders ship within 1 business day. You will receive a tracking link by email as soon as it leaves our facility.</p>", "open": true } },
+        "q2": { "type": "faq_item", "settings": { "question": "What is your return policy?", "answer": "<p>Love your results within 90 days or get 100% of your money back — just reach out to the team.</p>" } },
+        "q3": { "type": "faq_item", "settings": { "question": "How can I reach support?", "answer": "<p>Use the form above, or email our team. We reply within one business day.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "heading": "Before you write — quick answers",
+        "color_scheme": "scheme-1",
+        "padding_top": 12,
+        "padding_bottom": 40
       }
     }
   },
-  "order": [
-    "main",
-    "form"
-  ]
+  "order": ["main", "form", "faq"]
 }
