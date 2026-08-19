@@ -89,7 +89,7 @@
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "check-circle",
+            "icon": "shield",
             "text": "Oxidative Stress Support*"
           }
         },
