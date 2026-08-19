@@ -5,6 +5,12 @@
   background: var(--gradient-background);
 }
 
+/* The brand word inside the heading picks up the accent colour, matching the
+   reference where "Rovina™" stands out in burgundy. */
+.ces-video-testimonial-row__heading-accent {
+  color: var(--ces-accent);
+}
+
 /*
  * A swipeable row paged by <ces-slider>. The column count is a merchant
  * setting, so the slide width is derived from it rather than a fixed viewport
@@ -94,46 +100,21 @@
   outline-offset: 0.2rem;
 }
 
-/*
- * The icon is drawn from borders rather than an SVG: a speaker triangle plus a
- * slash that is removed once sound is on.
- */
-.ces-video-testimonial-row__sound-icon {
-  position: relative;
+/* Two clean SVG speakers: the muted (slashed) one shows by default and the
+   waves one takes over once sound is on. */
+.ces-video-testimonial-row__sound-svg {
   display: block;
-  width: 0.7rem;
-  height: 0.9rem;
-  background-color: currentColor;
+  width: 2rem;
+  height: 2rem;
 }
 
-.ces-video-testimonial-row__sound-icon::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0.6rem;
-  width: 0;
-  height: 0;
-  border-top: 0.85rem solid transparent;
-  border-bottom: 0.85rem solid transparent;
-  border-left: 0.7rem solid currentColor;
-  transform: translateY(-50%);
-}
-
-.ces-video-testimonial-row__sound-icon::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -0.4rem;
-  width: 2.4rem;
-  height: 0.2rem;
-  background-color: currentColor;
-  box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.55);
-  transform: translateY(-50%) rotate(-45deg);
-  transform-origin: center;
-}
-
-.ces-video-testimonial-row__sound--on .ces-video-testimonial-row__sound-icon::after {
+.ces-video-testimonial-row__sound-svg--on,
+.ces-video-testimonial-row__sound--on .ces-video-testimonial-row__sound-svg--off {
   display: none;
+}
+
+.ces-video-testimonial-row__sound--on .ces-video-testimonial-row__sound-svg--on {
+  display: block;
 }
 
 @media screen and (min-width: 750px) {
@@ -161,11 +142,15 @@
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(var(--color-button), 0.9);
   color: #fff;
   cursor: pointer;
   transform: translate(-50%, -50%);
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.ces-video-testimonial-row__frame:hover .ces-video-testimonial-row__play {
+  background-color: rgb(var(--color-button));
 }
 
 .ces-video-testimonial-row__play:focus-visible {
