@@ -959,10 +959,10 @@
                         </span>
                       </span>
                     {%- endif -%}
-                    <span class="ces-main-product__rating-text">
-                      {{ block.settings.text }}
+                    <span class="ces-main-product__rating-text">{{ block.settings.text | strip }}
                       {%- if block.settings.sold_count and block.settings.sold_count > 0 -%}
                         <script src="{{ 'ces-sold-counter.js' | asset_url }}" defer="defer"></script>
+                        {{- ' ' -}}
                         <ces-sold-counter
                           class="ces-main-product__sold"
                           data-base="{{ block.settings.sold_count }}"
@@ -970,7 +970,10 @@
                           data-step2="{{ block.settings.count_step_2 | default: 0 }}"
                           data-step3="{{ block.settings.count_step_3 | default: 0 }}"
                           {% unless block.settings.enable_counter %}data-static{% endunless %}
-                        >{{ block.settings.sold_count }}</ces-sold-counter><strong class="ces-main-product__sold-suffix">{{ block.settings.sold_suffix }}</strong>
+                        >{{ block.settings.sold_count }}</ces-sold-counter>
+                        {%- if block.settings.sold_suffix != blank -%}
+                          {{- ' ' -}}<strong class="ces-main-product__sold-suffix">{{ block.settings.sold_suffix | strip }}</strong>
+                        {%- endif -%}
                       {%- endif -%}
                     </span>
                   </div>
