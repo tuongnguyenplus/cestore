@@ -56,9 +56,8 @@
         "rating-bar": {
           "type": "ces_rating_bar",
           "settings": {
-            "stars": 4,
             "text": "Rated <strong>4.4 Excellent</strong> | Over <strong>100,000 Sold</strong>",
-            "half_star": true
+            "rating": 4.5
           }
         },
         "title": {

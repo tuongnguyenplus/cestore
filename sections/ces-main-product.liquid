@@ -896,20 +896,27 @@
 
                 {%- when 'ces_rating_bar' -%}
                   <div class="ces-main-product__rating quick-add-hidden" {{ block.shopify_attributes }}>
-                    {%- if block.settings.stars > 0 -%}
-                      {%- assign ces_half_index = block.settings.stars | plus: 1 -%}
+                    {%- assign ces_rating = block.settings.rating | default: 4.5 -%}
+                    {%- if ces_rating > 0 -%}
+                      {%- comment -%}
+                        Two identical rows of five stars: a grey track, and a gold
+                        layer clipped to (rating / 5) of the width. Any decimal —
+                        4.5, 4.8 — fills to exactly its fraction, which a per-star
+                        full/half approach cannot do.
+                      {%- endcomment -%}
+                      {%- assign ces_rating_pct = ces_rating | times: 20 -%}
                       <span
                         class="ces-main-product__rating-stars"
+                        style="--ces-rating-pct: {{ ces_rating_pct }}%;"
                         role="img"
-                        aria-label="{{ block.settings.stars }} out of 5 stars"
+                        aria-label="{{ ces_rating }} out of 5 stars"
                       >
-                        {%- for i in (1..5) -%}
-                          {%- if i <= block.settings.stars -%}
-                            {% render 'ces-icon', icon: 'star-filled', size: '1.5rem' %}
-                          {%- elsif block.settings.half_star and i == ces_half_index -%}
-                            {% render 'ces-icon', icon: 'star-half', size: '1.5rem' %}
-                          {%- endif -%}
-                        {%- endfor -%}
+                        <span class="ces-main-product__rating-track" aria-hidden="true">
+                          {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.6rem' %}{%- endfor -%}
+                        </span>
+                        <span class="ces-main-product__rating-fill" aria-hidden="true">
+                          {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.6rem' %}{%- endfor -%}
+                        </span>
                       </span>
                     {%- endif -%}
                     <span class="ces-main-product__rating-text">{{ block.settings.text }}</span>
@@ -2869,20 +2876,14 @@
       "settings": [
         {
           "type": "range",
-          "id": "stars",
+          "id": "rating",
           "min": 0,
           "max": 5,
-          "step": 1,
-          "label": "Stars",
-          "info": "Set to 0 to hide the stars.",
-          "default": 4
-        },
-        {
-          "type": "checkbox",
-          "id": "half_star",
-          "label": "Add a half star",
-          "info": "Shows a half star after the filled ones, for a x.5 rating.",
-          "default": true
+          "step": 0.1,
+          "unit": "★",
+          "label": "Rating",
+          "info": "Any value — 4.5, 4.8 — fills the stars to that fraction.",
+          "default": 4.5
         },
         {
           "type": "inline_richtext",

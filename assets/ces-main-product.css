@@ -321,10 +321,40 @@
   }
 }
 
+/*
+ * Fractional star rating. The track and fill hold the same five stars; the fill
+ * is clipped to the rating percentage, so 4.8 shows four gold stars and one
+ * four-fifths gold. The gap is baked into each star's own box (no flex gap), so
+ * the clip lands at the same place in both layers.
+ */
 .ces-main-product__rating-stars {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.ces-main-product__rating-track,
+.ces-main-product__rating-fill {
   display: inline-flex;
-  gap: 0.15rem;
+}
+
+.ces-main-product__rating-track {
+  color: rgba(var(--color-foreground), 0.2);
+}
+
+.ces-main-product__rating-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--ces-rating-pct, 100%);
+  overflow: hidden;
   color: #f5b301;
+}
+
+.ces-main-product__rating-track .ces-icon,
+.ces-main-product__rating-fill .ces-icon {
+  margin-right: 0.15rem;
 }
 
 .ces-main-product__rating-text strong {
