@@ -19,6 +19,20 @@
   --ces-success: #1c7a4f;
 }
 
+/* Media gallery ----------------------------------------------------------- */
+
+/* Pull the thumbnail strip closer to the main image than Dawn's default, so the
+   gallery reads as one unit. Scoped to this section so other templates keep
+   Dawn's spacing. */
+.ces-main-product-section .product__media-list {
+  margin-bottom: 0.8rem;
+}
+
+.ces-main-product-section .thumbnail-slider,
+.ces-main-product-section .product__media-gallery .slider-buttons {
+  margin-top: 0.6rem;
+}
+
 /* Highlights -------------------------------------------------------------- */
 
 .ces-main-product__highlights {
@@ -566,7 +580,8 @@
 }
 
 .ces-main-product-section .accordion .accordion__title {
-  font-weight: var(--font-heading-weight);
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
 }
 
 /* Dawn's caret is replaced by a plus drawn from two gradient bars. */
