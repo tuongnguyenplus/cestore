@@ -375,10 +375,10 @@
         "ces_highlights_columns_desktop": 2,
         "ces_title_size": 26,
         "atc_label": "GET YOUR NOW",
-        "atc_bg": "#1D5C5C",
+        "atc_bg": "#264050",
         "atc_text": "#FCFDFD",
         "atc_hover_bg": "#FCFDFD",
-        "atc_hover_text": "#1D5C5C"
+        "atc_hover_text": "#264050"
       }
     },
     "video-testimonials": {
