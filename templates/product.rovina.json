@@ -358,7 +358,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
+        "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -376,8 +376,8 @@
         "ces_title_size": 26,
         "atc_label": "GET YOUR NOW",
         "atc_bg": "#1d5c5c",
-        "atc_text": "#FCFDFD",
-        "atc_hover_bg": "#FCFDFD",
+        "atc_text": "#fcfdfd",
+        "atc_hover_bg": "#fcfdfd",
         "atc_hover_text": "#1d5c5c"
       }
     },
