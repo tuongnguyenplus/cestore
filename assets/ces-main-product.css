@@ -47,7 +47,12 @@
    flex layout so nothing collapses. */
 .ces-main-product-section .thumbnail-list {
   grid-gap: 0.6rem;
-  margin-top: 0.6rem;
+  margin-top: 0;
+}
+
+/* Pull the thumbnail strip right up under the main image. */
+.ces-main-product-section .thumbnail-slider {
+  margin-top: 0;
 }
 
 .ces-main-product-section .thumbnail-list .thumbnail {
@@ -78,7 +83,7 @@
 
   /* Reset the peek slider's scroll mechanics so every slide snaps flush. */
   .ces-main-product-section .product__media-list {
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 0.4rem !important;
     gap: 0 !important;
     column-gap: 0 !important;
     scroll-padding: 0 !important;
@@ -123,7 +128,7 @@
   }
 
   .ces-main-product-section .thumbnail-list.slider--mobile .thumbnail-list__item.slider__slide {
-    width: calc((100% - 3rem - 4 * 0.6rem) / 5);
+    width: calc((100% - 3rem - 3 * 0.6rem) / 4);
     min-width: 0;
   }
 }
