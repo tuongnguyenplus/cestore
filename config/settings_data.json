@@ -256,7 +256,7 @@
       "scheme-ces-gradient": {
         "settings": {
           "background": "#1D5C5C",
-          "background_gradient": "radial-gradient(rgba(29, 92, 92, 1) 14%, rgba(19, 129, 129, 1) 85%)",
+          "background_gradient": "radial-gradient(rgba(40, 161, 161, 1) 14%, rgba(19, 129, 129, 1) 85%)",
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#1D5C5C",
