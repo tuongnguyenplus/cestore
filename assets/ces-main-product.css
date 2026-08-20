@@ -61,11 +61,12 @@
      gutter, media-list -2.5rem/+4rem, per-image peek widths) so the image is
      one clean full-bleed frame flush to both edges. */
   .ces-main-product-section .product__media-wrapper {
-    margin-left: -1.5rem !important;
-    margin-right: -1.5rem !important;
-    width: calc(100% + 3rem) !important;
-    max-width: none !important;
-    margin-top: -1rem;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    /* Bulletproof full-bleed: exactly the viewport width, positioned at the
+       screen's left edge no matter the page padding. */
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
   }
 
   .ces-main-product-section .product__media-wrapper slider-component,
