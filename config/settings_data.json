@@ -203,9 +203,9 @@
           "background": "#ffffff",
           "background_gradient": "",
           "text": "#2e2a39",
-          "button": "#1D5C5C",
+          "button": "#264050",
           "button_label": "#ffffff",
-          "secondary_button_label": "#1D5C5C",
+          "secondary_button_label": "#264050",
           "shadow": "#121212"
         }
       },
@@ -214,7 +214,7 @@
           "background": "#f9fafb",
           "background_gradient": "",
           "text": "#2e2a39",
-          "button": "#1D5C5C",
+          "button": "#264050",
           "button_label": "#ffffff",
           "secondary_button_label": "#1D5C5C",
           "shadow": "#2e2a39"
@@ -222,11 +222,11 @@
       },
       "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e": {
         "settings": {
-          "background": "#1D5C5C",
+          "background": "#264050",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#1D5C5C",
+          "button_label": "#264050",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
@@ -236,9 +236,9 @@
           "background": "#fff4f4",
           "background_gradient": "",
           "text": "#2e2a39",
-          "button": "#1D5C5C",
+          "button": "#264050",
           "button_label": "#ffffff",
-          "secondary_button_label": "#1D5C5C",
+          "secondary_button_label": "#264050",
           "shadow": "#121212"
         }
       },
@@ -247,7 +247,7 @@
           "background": "#363636",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#1D5C5C",
+          "button": "#264050",
           "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
@@ -256,7 +256,7 @@
       "scheme-ces-gradient": {
         "settings": {
           "background": "#1D5C5C",
-          "background_gradient": "radial-gradient(rgba(41, 161, 161, 1) 14%, rgba(19, 129, 129, 1) 85%)",
+          "background_gradient": "radial-gradient(rgba(38, 64, 80, 1) 14%, rgba(14, 52, 75, 1) 85%)",
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#1D5C5C",
