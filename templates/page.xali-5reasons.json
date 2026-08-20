@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "No More $200+ Monthly Lash Appointments", "body": "<p>Skip the $150–300 touch-ups every 2–3 weeks. Xali's new and improved formula — now powered by 4 targeted lash peptides plus clinically studied botanicals — gives you naturally gorgeous lashes 24/7, at home.</p>" } },
+        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "Your Natural Lashes Get STRONGER (Not Weaker)", "body": "<p>Extensions weaken natural lashes through glue and chemicals. Xali's new formula strengthens from the follicle up with amino acids and peptides — the opposite of damage.</p>" } },
+        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "No More Daily Mascara or Lash Curling", "body": "<p>Wake up with perfect lashes every morning. Xali's new formula makes your natural lashes so full and long that flaky, smudgy mascara becomes a thing of the past.</p>" } },
+        "q1": { "type": "quote", "settings": { "quote": "<p>Amazing results! I've been using this serum for a few weeks and I'm genuinely impressed — my lashes look longer and fuller.</p>", "attribution": "— Verified buyer" } },
+        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "Proudly Made in Australia", "body": "<p>While most lash serums are manufactured overseas with little transparency, Xali is formulated and produced right here in Australia — low-tox, vegan, and with absolutely no prostaglandin analogues.</p>" } },
+        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "Extension-Level Results for 95% Less Cost", "body": "<p>One bottle lasts 3+ months and costs less than a single extension appointment — delivering superior results, backed by a 60-day money-back guarantee.</p>" } },
+        "offer": { "type": "callout", "settings": { "heading": "The Smarter Choice for Naturally Longer Lashes", "body": "<p>New &amp; improved formula. All-natural ingredients. 100% money-back guarantee. Your best lashes are already yours.</p>", "cta_label": "Shop the lash serum", "cta_link": "/collections/all" } }
+      },
+      "block_order": ["r1", "r2", "r3", "q1", "r4", "r5", "offer"],
+      "settings": {
+        "eyebrow": "XALI ORGANICS",
+        "headline": "5 Reasons Why Xali's NEW Formula Is Better Than Ever",
+        "highlight_words": "Better Than Ever",
+        "accent_color": "#4a5d4f",
+        "byline": "By The Xali Team",
+        "date_text": "Updated this week",
+        "intro": "<p>Big news: we've upgraded our formula. The same Xali you know and love is now powered by 4 lash peptides and clinically studied botanicals — the new &amp; improved lash growth serum that's replacing fake lashes &amp; extensions.</p>",
+        "show_numbers": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+  },
+  "order": ["listicle", "newsletter"]
+}

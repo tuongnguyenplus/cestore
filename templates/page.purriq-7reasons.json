@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "It Cleans Teeth — Without Brushing or Stress", "body": "<p>Purriq Natural Silvervine Dental Sticks act like a toothbrush your cat actually wants to use. The fibrous silvervine wood gently scrapes away plaque with every chew, strengthening gums and freshening breath. Your cat thinks it's playtime — you get peace of mind.</p>" } },
+        "q1": { "type": "quote", "settings": { "quote": "<p>Brushing my cat's teeth is like cleaning a garbage disposal while it's running. With Purriq Sticks, his breath is fresh and his gums look healthy.</p>", "attribution": "— Sarah K." } },
+        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "Over 95% of Cats Go WILD for Silvervine", "body": "<p>Catnip only works on 30–40% of cats. Silvervine taps into the same response but far stronger — over 95% of cats react. When they smell it, the chewing instinct kicks in and they actually stay interested.</p>" } },
+        "q2": { "type": "quote", "settings": { "quote": "<p>I wasted over $200 on toys my cat never touched. These sticks are the first thing she actually plays with every single day.</p>", "attribution": "— Kevin J." } },
+        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "Protects Your Cat's Teeth and Saves You From $1,000 Vet Bills", "body": "<p>Plaque hardens into tartar, weakens gums, and can lead to painful extractions costing hundreds. Every Purriq chew is a natural cleaning session that keeps trouble from starting.</p>" } },
+        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "Calms Stress and Stops Bad Habits", "body": "<p>Scratching furniture, chewing cords, 3AM zoomies — that's pent-up energy. The silvervine scent stimulates their brain while chewing acts as a natural stress reliever. Fewer claw marks, calmer cat.</p>" } },
+        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "Safer Than Plastic Bags, Cords, and Chargers", "body": "<p>Cats love to chew — too often the wrong things. Purriq gives them the same satisfaction without the risk: natural silvervine wood that's safe to chew and tough enough to last.</p>" } },
+        "q3": { "type": "quote", "settings": { "quote": "<p>My cat used to chew phone cords, plastic, hair ties — I was terrified she'd swallow something. Purriq gave her a safe outlet.</p>", "attribution": "— Emily C." } },
+        "r6": { "type": "reason", "settings": { "image_position": "top", "heading": "Lasts Longer Than Toys That End Up in the Trash", "body": "<p>Most toys break in a day or get ignored forever. Purriq Sticks don't get boring — your cat keeps coming back, so one pack lasts weeks.</p>" } },
+        "r7": { "type": "reason", "settings": { "image_position": "top", "heading": "Cat Parents Can't Stop Talking About It", "body": "<p>With thousands of happy customers and five-star reviews, Purriq is quickly becoming the go-to dental and play solution — from fresher breath and healthier gums to calmer, happier kitties.</p>" } },
+        "offer": { "type": "callout", "settings": { "heading": "Limited Time Summer Sale — 100% Risk Free", "body": "<p>Over 95% of cats go wild for silvervine, making Purriq one of the safest bets for your cat's dental health and happiness. The Summer Sale ends soon — don't miss it.</p>", "cta_label": "See the offer", "cta_link": "/collections/all" } }
+      },
+      "block_order": ["r1", "q1", "r2", "q2", "r3", "r4", "r5", "q3", "r6", "r7", "offer"],
+      "settings": {
+        "eyebrow": "PURRIQ · FELINE DENTAL HEALTH",
+        "headline": "7 Reasons Why Purriq Sticks Are Keeping Cats Obsessed (And Secretly Cleaning Their Teeth)",
+        "highlight_words": "Obsessed",
+        "accent_color": "#c9762f",
+        "byline": "By a Certified Feline Dental Health Specialist",
+        "date_text": "Updated this week",
+        "intro": "<p>Most cat toys look cute to humans but cats couldn't care less. Purriq Natural Silvervine Dental Sticks are different — they tap into a cat's deepest chewing instinct while cleaning teeth at the same time. Here's why cat parents are obsessed.</p>",
+        "show_numbers": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+  },
+  "order": ["listicle", "newsletter"]
+}
