@@ -255,11 +255,11 @@
       },
       "scheme-ces-gradient": {
         "settings": {
-          "background": "#1D5C5C",
+          "background": "#264050",
           "background_gradient": "radial-gradient(rgba(38, 64, 80, 1) 14%, rgba(14, 52, 75, 1) 85%)",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#1D5C5C",
+          "button_label": "#264050",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
