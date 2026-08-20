@@ -59,13 +59,23 @@
 }
 
 @media screen and (max-width: 749px) {
-  /* Bleed the main image viewer to the exact screen width regardless of the
-     page's side padding; the thumbnails below keep their normal inset. */
+  /* Bleed the main image viewer to the screen edges (cancels the page's
+     1.5rem side padding); thumbnails below keep their normal inset. */
   .ces-main-product-section .slider-mobile-gutter {
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  /* Turn Dawn's peek carousel into one clean full-width image: each slide fills
+     the viewport and the first slide loses the 1.5rem peek inset that was
+     leaving a gap on the left. */
+  .ces-main-product-section .product__media-list.grid--peek .grid__item {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .ces-main-product-section .product__media-list.grid--peek .grid__item:first-of-type {
+    margin-left: 0;
   }
 
   /* Size each thumbnail so five fit across the row (Dawn shows about three). */
