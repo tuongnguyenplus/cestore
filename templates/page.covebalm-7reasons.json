@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": {
+          "type": "reason",
+          "settings": {
+            "heading": "The First Skin Tint Balm That Truly Works for Mature Skin",
+            "image_position": "top",
+            "body": "<p>Most makeup makes aging skin look worse. It sinks into lines, sticks to dry spots, and looks heavy and cakey — showing every flaw.</p><p><strong>CoveBalm Skin Tint Balm does the opposite.</strong> Our formula is made to blur lines, smooth skin, and even tone — without drying or weighing you down.</p><p>It doesn't sit on your face like makeup. It melts in like skincare. No creases. No flakes. Just soft, glowing skin that moves with you.</p>"
+          }
+        },
+        "r2": {
+          "type": "reason",
+          "settings": {
+            "heading": "The \"Real-Life Filter\" Balm Women Over 50 Are Obsessed With",
+            "image_position": "top",
+            "body": "<p>Most makeup just sits on your skin. <strong>CoveBalm becomes part of it.</strong></p><p>Tap it on and see the change: fine lines fade, dullness brightens, and redness blurs. This is your skin — just softer, smoother, glowing from within.</p><p>No filters. No fuss. Just a real glow that moves with you.</p>"
+          }
+        },
+        "r3": {
+          "type": "reason",
+          "settings": {
+            "heading": "Made for Skin That's Changed (Not for Teenagers on TikTok)",
+            "image_position": "top",
+            "body": "<p>Most makeup is made for 20-year-olds with perfect, oily skin. <strong>CoveBalm is different.</strong></p><p>It's made for real skin — the kind that's drier, more sensitive, and needs extra care after 50. That's why CoveBalm is packed with skin-loving ingredients that plump and refresh, don't cling to fine lines, and melt in and adjust as you apply.</p><p>No flaking. No tightness. Just soft, dewy skin that looks younger and feels comfortable all day.</p>"
+          }
+        },
+        "r4": {
+          "type": "reason",
+          "settings": {
+            "heading": "Just One Minute a Day to Feel Like Yourself Again",
+            "image_position": "top",
+            "body": "<p>Using CoveBalm takes less than a minute — but the confidence lasts all day.</p><p>Whether you're heading to work, running errands, or just want to look fresh at home, this formula works. For busy mornings or late nights, CoveBalm gives you that \"put-together\" look without the extra effort.</p>"
+          }
+        },
+        "r5": {
+          "type": "reason",
+          "settings": {
+            "heading": "Kind to Sensitive, Mature Skin",
+            "image_position": "top",
+            "body": "<p>With age, skin gets more delicate — and most makeup can't handle it. <strong>CoveBalm can.</strong></p><p>We left out fragrance, alcohol, and harsh fillers that cause irritation. Instead we use skin-loving actives that calm, hydrate, smooth, and protect: <strong>Hyaluronic Acid, Peptides, Sweet Almond Oil, Jojoba Oil, Aloe Vera, and Cactus Extract</strong> — plus <strong>SPF 30</strong> to defend against sun damage.</p>"
+          }
+        },
+        "r6": {
+          "type": "reason",
+          "settings": {
+            "heading": "Zero Risk. 30 Days to Decide.",
+            "image_position": "top",
+            "body": "<p>Try CoveBalm completely risk-free. If you don't feel more confident in your skin after using it, we'll give you every penny back. No hassle. No fine print.</p>"
+          }
+        },
+        "q1": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Finally — a skin tint balm that doesn't make me look older! It goes on smooth, covers my spots, and feels so light I forget I'm wearing it.</p>",
+            "attribution": "— Ash S., verified buyer"
+          }
+        },
+        "q2": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I've never had makeup match my deep skin tone so well — no more ashy vibes! It blends like a dream and keeps my skin hydrated.</p>",
+            "attribution": "— Ellie S., verified buyer"
+          }
+        },
+        "q3": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Finally, a product that gets me! It's cut my routine down to seconds, and my skin looks better every day.</p>",
+            "attribution": "— Shannon G., verified buyer"
+          }
+        },
+        "offer": {
+          "type": "callout",
+          "settings": {
+            "heading": "Enjoy Up To 64% Off — Today Only",
+            "body": "<p>☆ Smooths fine lines &amp; blurs texture ☆ Won't cake, crease, or dry you out ☆ Glides on in seconds. Try it at a special price today — if it doesn't feel amazing on your skin, you get every penny back.</p>",
+            "cta_label": "Try it now — find your perfect color match",
+            "cta_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6", "q1", "q2", "q3", "offer"],
+      "settings": {
+        "eyebrow": "COVEBALM · SKIN TINT BALM",
+        "headline": "7 Reasons Why Women Over 50 Are Aging Backwards With This Skin Tint Balm",
+        "highlight_words": "Aging Backwards",
+        "accent_color": "#8a6f5c",
+        "byline": "By The CoveBalm Editorial Team",
+        "date_text": "Updated this week",
+        "intro": "<p>In just one year, CoveBalm Skin Tint Balm has become the secret for women over 50 who want skin that looks fresh, smooth and naturally radiant — no heavy makeup, no cracks, no dryness. With over 97,000 happy customers and glowing reviews, women everywhere are calling it \"the first skin tint balm that finally works for mature skin.\" So what makes it different? Let's break it down.</p>",
+        "show_numbers": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": ["listicle", "newsletter"]
+}
