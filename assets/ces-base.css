@@ -85,11 +85,19 @@
   margin: 0;
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
-  font-weight: var(--font-heading-weight);
-  line-height: 1.15;
-  letter-spacing: 0.02rem;
+  /* Heavier and tighter than Dawn's default so headings read strong and
+     confident, matching the reference. */
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02rem;
   font-size: calc(var(--font-heading-scale) * 1.9rem);
   text-wrap: balance;
+}
+
+/* Block-level and card headings across the ces sections share the same strong
+   weight so nothing reads thin next to the section titles. */
+.ces-section :is([class$='__heading'], [class$='__item-heading'], [class$='__title']) {
+  font-weight: 700;
 }
 
 .ces-subheading {

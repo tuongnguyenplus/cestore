@@ -154,17 +154,18 @@
 }
 
 .ces-main-product__highlight-icon {
-  --ces-icon-size: 2.8rem;
-  width: 2.8rem;
-  height: 2.8rem;
+  --ces-icon-size: 2.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   color: var(--ces-accent);
   object-fit: contain;
 }
 
 .ces-main-product__highlight-label {
-  font-size: 1.1rem;
-  line-height: 1.3;
-  color: var(--ces-muted);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
   text-wrap: balance;
 }
 
@@ -179,7 +180,7 @@
   }
 
   .ces-main-product__highlight-label {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
   }
 }
 

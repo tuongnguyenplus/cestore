@@ -46,7 +46,17 @@
        overrides to fit more of the page above the fold. */
     #MainProduct-{{ section.id }} .product__title > * {
       font-size: {{ section.settings.ces_title_size | default: 26 }}px;
-      line-height: 1.15;
+      line-height: 1.12;
+      /* Strong, thick title with a gradient of the brand colour, as in the
+         reference. Solid colour first as a fallback where background-clip:text
+         is unsupported. */
+      font-weight: 800;
+      letter-spacing: -0.03rem;
+      color: rgb(var(--color-button));
+      background-image: linear-gradient(94deg, rgb(var(--color-button)) 0%, color-mix(in srgb, rgb(var(--color-button)) 62%, #000) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     {%- comment -%}
