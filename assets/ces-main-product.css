@@ -89,6 +89,17 @@
     content: none !important;
   }
 
+  /* Dawn constrains the media container's width to (height x aspect) and
+     centres it, which is what left the equal side gaps. Force it to fill. */
+  .ces-main-product-section .product-media-container,
+  .ces-main-product-section .product-media-container.constrain-height,
+  .ces-main-product-section .product-media-container.constrain-height.media-fit-contain {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   /* Each slide is exactly one viewport wide, so image 1 has no side gaps and
      every later slide snaps to the same left edge. */
   .ces-main-product-section .product__media-list .product__media-item,
