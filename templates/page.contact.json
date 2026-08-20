@@ -1,37 +1,39 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 12
-      }
-    },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "Get in touch",
+        "heading": "We're here to help.",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
-        "padding_top": 12,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 24
       }
     },
-    "faq": {
-      "type": "ces-faq-accordion",
+    "skip": {
+      "type": "ces-icon-feature-grid",
       "blocks": {
-        "q1": { "type": "faq_item", "settings": { "question": "Where is my order?", "answer": "<p>Orders ship within 1 business day. You will receive a tracking link by email as soon as it leaves our facility.</p>", "open": true } },
-        "q2": { "type": "faq_item", "settings": { "question": "What is your return policy?", "answer": "<p>Love your results within 90 days or get 100% of your money back — just reach out to the team.</p>" } },
-        "q3": { "type": "faq_item", "settings": { "question": "How can I reach support?", "answer": "<p>Use the form above, or email our team. We reply within one business day.</p>" } }
+        "c1": { "type": "icon_item", "settings": { "icon": "question-mark", "heading": "Read the FAQ", "text": "Dosage, shipping, returns and ingredient details all in one place." } },
+        "c2": { "type": "icon_item", "settings": { "icon": "truck", "heading": "Where is my order?", "text": "Track your shipment in real time with your order number." } },
+        "c3": { "type": "icon_item", "settings": { "icon": "info", "heading": "Email directly", "text": "Prefer email? Reach our care team at info@tryrovina.com." } }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": ["c1", "c2", "c3"],
       "settings": {
-        "heading": "Before you write — quick answers",
+        "heading": "Or skip the form.",
+        "subheading": "A lot of answers live one click away.",
+        "icon_frame": "disc",
+        "icon_color": "#933333",
+        "columns_mobile": 1,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
-        "padding_top": 12,
+        "padding_top": 24,
         "padding_bottom": 40
       }
+    },
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 }
     }
   },
-  "order": ["main", "form", "faq"]
+  "order": ["form", "skip", "newsletter"]
 }

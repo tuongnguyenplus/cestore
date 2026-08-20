@@ -3,26 +3,20 @@
     "ticker": {
       "type": "ces-announcement-marquee",
       "blocks": {
-        "t1": { "type": "marquee_item", "settings": { "text": "FREE SHIPPING OVER $50" } },
-        "t2": { "type": "marquee_item", "settings": { "text": "90-DAY MONEY-BACK GUARANTEE" } },
-        "t3": { "type": "marquee_item", "settings": { "text": "OVER 100,000 HAPPY CUSTOMERS" } }
+        "t1": { "type": "marquee_item", "settings": { "text": "OVER 13,000 GLOWING REVIEWS" } },
+        "t2": { "type": "marquee_item", "settings": { "text": "FREE SHIPPING TODAY" } },
+        "t3": { "type": "marquee_item", "settings": { "text": "30-DAY MONEY-BACK GUARANTEE" } }
       },
       "block_order": ["t1", "t2", "t3"],
       "settings": { "font_size": 13, "padding": 10 }
     },
     "hero": {
       "type": "ces-image-text-banner",
-      "blocks": {
-        "b1": { "type": "badge_marquee_item", "settings": { "text": "Non-GMO" } },
-        "b2": { "type": "badge_marquee_item", "settings": { "text": "Gluten-Free" } },
-        "b3": { "type": "badge_marquee_item", "settings": { "text": "Lab Tested" } }
-      },
-      "block_order": ["b1", "b2", "b3"],
       "settings": {
-        "eyebrow": "NATURE'S MOST POWERFUL ANTIOXIDANT",
-        "heading": "Whole-Body Support in One Daily Softgel",
-        "heading_accent": "One Daily Softgel",
-        "text": "<p>12mg of triple-strength astaxanthin from microalgae — for cellular defense, skin, and healthy aging.*</p>",
+        "eyebrow": "OVER 13,000 GLOWING REVIEWS",
+        "heading": "Serum-Boosted Skin Tint Balm For A No-Makeup Look",
+        "heading_accent": "No-Makeup Look",
+        "text": "<p>“I recommend it to patients who want real results without heavy makeup. It soothes, smooths and evens tone in one simple step.”</p>",
         "button_label": "Shop now",
         "button_link": "/collections/all",
         "color_scheme": "scheme-1",
@@ -30,19 +24,20 @@
         "padding_bottom": 40
       }
     },
-    "benefits": {
+    "wins": {
       "type": "ces-icon-feature-grid",
       "blocks": {
-        "i1": { "type": "icon_item", "settings": { "icon": "cell-defense", "heading": "Cellular & Antioxidant Defense*" } },
-        "i2": { "type": "icon_item", "settings": { "icon": "molecule", "heading": "Oxidative Stress Support*" } },
-        "i3": { "type": "icon_item", "settings": { "icon": "heart-plus", "heading": "Cardiovascular Support*" } },
-        "i4": { "type": "icon_item", "settings": { "icon": "skin-aging", "heading": "Skin & Healthy Aging*" } }
+        "w1": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Dark Spots & Hyperpigmentation" } },
+        "w2": { "type": "icon_item", "settings": { "icon": "check-circle", "heading": "Acne Scars & Blemishes" } },
+        "w3": { "type": "icon_item", "settings": { "icon": "vitality", "heading": "Dull, Tired-Looking Skin" } },
+        "w4": { "type": "icon_item", "settings": { "icon": "skin-aging", "heading": "Texture & Fine Lines" } }
       },
-      "block_order": ["i1", "i2", "i3", "i4"],
+      "block_order": ["w1", "w2", "w3", "w4"],
       "settings": {
-        "heading": "One Formula. Total Support.",
+        "heading": "One Balm. So Many Wins",
+        "subheading": "From blemishes to dullness, this stick does it all.",
         "icon_frame": "bare",
-        "icon_color": "#933333",
+        "icon_color": "#8a6f5c",
         "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -50,60 +45,61 @@
         "padding_bottom": 40
       }
     },
-    "features": {
-      "type": "ces-feature-image-cards",
-      "blocks": {
-        "f1": { "type": "feature_card", "settings": { "heading": "Natural Astaxanthin", "text": "Sourced from Haematococcus pluvialis microalgae — one of nature's most potent antioxidants.*" } },
-        "f2": { "type": "feature_card", "settings": { "heading": "Enhanced Absorption", "text": "Oil-based softgel so the fat-soluble compound is absorbed the way your body expects.*" } },
-        "f3": { "type": "feature_card", "settings": { "heading": "Clean & Lab Tested", "text": "Made in a GMP-certified, FDA-registered facility. Non-GMO, gluten free, third-party tested." } }
-      },
-      "block_order": ["f1", "f2", "f3"],
-      "settings": {
-        "heading": "Comprehensive Wellness Benefits",
-        "heading_color": "#933333",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "reviews": {
-      "type": "ces-testimonial-marquee",
-      "blocks": {
-        "rv1": { "type": "review_item", "settings": { "review": "I did not expect to feel a difference this quickly. Telling all my friends.", "name": "Maya, 34", "verified": true, "rating": 5 } },
-        "rv2": { "type": "review_item", "settings": { "review": "My skin feels firmer and I have more energy through the afternoon.", "name": "Daniel, 41", "verified": true, "rating": 5 } },
-        "rv3": { "type": "review_item", "settings": { "review": "Simple daily habit, real results. Worth every penny.", "name": "Priya, 29", "verified": true, "rating": 5 } }
-      },
-      "block_order": ["rv1", "rv2", "rv3"],
-      "settings": {
-        "heading": "Loved by Over 100,000 Customers",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "how": {
-      "type": "ces-timeline-accordion",
-      "blocks": {
-        "s1": { "type": "timeline_step", "settings": { "time_label": "WEEKS 1-2", "heading": "Cellular Foundation", "bullets": "Antioxidant activity begins at the cellular level.\nYour body starts adapting to daily astaxanthin.\nNo obvious change yet, which is normal." } },
-        "s2": { "type": "timeline_step", "settings": { "time_label": "WEEKS 3-4", "heading": "Early Changes Appear", "bullets": "Subtle improvements start becoming noticeable.*\nMany people report looking and feeling healthier.*\nRecovery after exertion gets easier.*" } },
-        "s3": { "type": "timeline_step", "settings": { "time_label": "WEEKS 5-8", "heading": "Building Momentum", "bullets": "Noticeable improvements continue developing.*\nBenefits reported across several areas at once.*\nSkin tone and comfort keep improving.*" } },
-        "s4": { "type": "timeline_step", "settings": { "time_label": "WEEK 8+", "heading": "Long-Term Support", "bullets": "Results maintain with consistent daily use.*\nBenefits continue building over time.*" } }
-      },
-      "block_order": ["s1", "s2", "s3", "s4"],
-      "settings": {
-        "heading": "What to Expect, Week by Week",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "cta": {
+    "allinone": {
       "type": "ces-bullet-cta",
       "settings": {
-        "heading": "Start Your Whole-Body Support Today",
-        "bullets": "12mg triple-strength astaxanthin\nNon-GMO, gluten free, lab tested\n90-day money-back guarantee",
-        "button_label": "Shop now",
+        "heading": "The All-In-One Balm",
+        "bullets": "Dullness\nUneven tone\nAcne scars\nTexture\nHyperpigmentation",
+        "button_label": "Shop the balm",
         "button_link": "/collections/all",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "ingredients": {
+      "type": "ces-icon-feature-grid",
+      "blocks": {
+        "g1": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Niacinamide", "text": "Fades dark spots and evens tone." } },
+        "g2": { "type": "icon_item", "settings": { "icon": "molecule", "heading": "Hyaluronic Acid", "text": "Deep, lasting hydration." } },
+        "g3": { "type": "icon_item", "settings": { "icon": "leaf", "heading": "Centella Asiatica", "text": "Calms and soothes redness." } },
+        "g4": { "type": "icon_item", "settings": { "icon": "shield", "heading": "Beeswax", "text": "Locks in a soft, protective glow." } },
+        "g5": { "type": "icon_item", "settings": { "icon": "cell-defense", "heading": "HA+ Technology", "text": "Boosted moisture delivery." } },
+        "g6": { "type": "icon_item", "settings": { "icon": "heart-plus", "heading": "Hydrolyzed Collagen", "text": "Supports firmer-looking skin." } },
+        "g7": { "type": "icon_item", "settings": { "icon": "leaf", "heading": "Jojoba Seed Oil", "text": "Balances and nourishes." } },
+        "g8": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Vitamin E", "text": "Antioxidant protection." } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8"],
+      "settings": {
+        "heading": "8 Active Ingredients. 1 Glowing Result.",
+        "subheading": "Formulated with ingredients your skin will thank you for.",
+        "icon_frame": "disc",
+        "icon_color": "#8a6f5c",
+        "columns_mobile": 2,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "compare": {
+      "type": "ces-comparison-table",
+      "blocks": {
+        "b1": { "type": "rovina_point", "settings": { "text": "Lets your skin breathe" } },
+        "o1": { "type": "other_brand_point", "settings": { "text": "Just covers it up" } },
+        "b2": { "type": "rovina_point", "settings": { "text": "Treats and blurs in one step" } },
+        "o2": { "type": "other_brand_point", "settings": { "text": "Sits on top, cakes into lines" } },
+        "b3": { "type": "rovina_point", "settings": { "text": "Non-comedogenic, skin-loving actives" } },
+        "o3": { "type": "other_brand_point", "settings": { "text": "Clogs pores, can irritate" } },
+        "b4": { "type": "rovina_point", "settings": { "text": "One simple step" } },
+        "o4": { "type": "other_brand_point", "settings": { "text": "Primer + foundation + concealer" } }
+      },
+      "block_order": ["b1", "o1", "b2", "o2", "b3", "o3", "b4", "o4"],
+      "settings": {
+        "heading": "Why Thousands of Women Are Switching From Foundation to This Balm",
+        "subheading": "One lets your skin breathe. The other just covers it up.",
+        "brand_label": "CoveBalm",
+        "other_label": "Foundation",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -112,14 +108,14 @@
     "faq": {
       "type": "ces-faq-accordion",
       "blocks": {
-        "q1": { "type": "faq_item", "settings": { "question": "How do I take it?", "answer": "<p>One softgel daily with a meal that contains some fat, for best absorption.</p>", "open": true } },
-        "q2": { "type": "faq_item", "settings": { "question": "How long before I see results?", "answer": "<p>Most people notice changes between weeks 3 and 8 with consistent daily use.*</p>" } },
-        "q3": { "type": "faq_item", "settings": { "question": "Is the 12mg dose safe?", "answer": "<p>Yes — it is formulated to the dose used in published human trials and third-party tested.</p>" } },
-        "q4": { "type": "faq_item", "settings": { "question": "What is your guarantee?", "answer": "<p>Love your results within 90 days or get 100% of your money back.</p>" } }
+        "q1": { "type": "faq_item", "settings": { "question": "What if I choose the wrong shade?", "answer": "<p>Use our shade finder to pick the perfect shade. If it doesn't match, we'll make it right.</p>", "open": true } },
+        "q2": { "type": "faq_item", "settings": { "question": "Is this okay for oily or sensitive skin?", "answer": "<p>Yes. It is non-comedogenic, lightweight and suitable for sensitive skin. As with any product, patch test first.</p>" } },
+        "q3": { "type": "faq_item", "settings": { "question": "Does it cover dark spots?", "answer": "<p>Yes — it gives natural, buildable coverage that helps visibly blur dark spots while treating skin over time.</p>" } }
       },
-      "block_order": ["q1", "q2", "q3", "q4"],
+      "block_order": ["q1", "q2", "q3"],
       "settings": {
-        "heading": "Frequently Asked Questions",
+        "heading": "FAQ",
+        "subheading": "Everything you're wondering — answered simply.",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -127,12 +123,8 @@
     },
     "newsletter": {
       "type": "ces-newsletter-signup",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
+      "settings": { "color_scheme": "scheme-1", "padding_top": 40, "padding_bottom": 40 }
     }
   },
-  "order": ["ticker", "hero", "benefits", "features", "reviews", "how", "cta", "faq", "newsletter"]
+  "order": ["ticker", "hero", "wins", "allinone", "ingredients", "compare", "faq", "newsletter"]
 }
