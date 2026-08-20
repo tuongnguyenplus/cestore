@@ -59,11 +59,13 @@
 }
 
 @media screen and (max-width: 749px) {
-  /* Bleed only the main image viewer to the screen edges; the thumbnails below
-     keep the page's normal side padding. */
+  /* Bleed the main image viewer to the exact screen width regardless of the
+     page's side padding; the thumbnails below keep their normal inset. */
   .ces-main-product-section .slider-mobile-gutter {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
   /* Size each thumbnail so five fit across the row (Dawn shows about three). */
