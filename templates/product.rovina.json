@@ -309,7 +309,7 @@
           "type": "ces_media_panel",
           "settings": {
             "image": "shopify://shop_images/research.webp",
-            "gradient_from": "#933333",
+            "gradient_from": "#264050",
             "gradient_to": "#1a1a1a",
             "gradient_angle": 135,
             "image_opacity": 15,
@@ -483,7 +483,7 @@
       ],
       "settings": {
         "heading": "Comprehensive Wellness Benefits",
-        "heading_color": "#933333",
+        "heading_color": "#264050",
         "subheading": "",
         "image_ratio": "1 / 1",
         "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
@@ -541,7 +541,7 @@
         "heading": "One Formula. Total Support.",
         "highlight_words": "",
         "subheading": "",
-        "icon_color": "#933333",
+        "icon_color": "#264050",
         "icon_frame": "bare",
         "icon_size": 5,
         "columns_mobile": 2,
