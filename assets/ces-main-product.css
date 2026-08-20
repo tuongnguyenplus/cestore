@@ -56,15 +56,26 @@
 }
 
 @media screen and (max-width: 749px) {
-  /* Dawn's mobile gallery over-extends the media list (-2.5rem margin, +4rem
-     width), sizes each image below full width for a peek, and adds a 3rem
-     bottom gap. Override all of it so the image is one clean full-bleed frame
-     flush to both edges, with a tight gap to the thumbnails. The slider
-     component already carries Dawn's -1.5rem gutter, which does the bleed. */
+  /* Bleed the whole media column to the screen edges by cancelling the page's
+     1.5rem side padding, then reset every inner offset Dawn adds (slider
+     gutter, media-list -2.5rem/+4rem, per-image peek widths) so the image is
+     one clean full-bleed frame flush to both edges. */
+  .ces-main-product-section .product__media-wrapper {
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
+    width: calc(100% + 3rem) !important;
+    max-width: none !important;
+    margin-top: -1rem;
+  }
+
+  .ces-main-product-section .product__media-wrapper slider-component,
   .ces-main-product-section .product__media-list {
     margin-left: 0 !important;
     margin-right: 0 !important;
     width: 100% !important;
+  }
+
+  .ces-main-product-section .product__media-list {
     margin-bottom: 0.6rem !important;
   }
 
@@ -73,21 +84,21 @@
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     box-sizing: border-box;
   }
 
-  /* Close the small gap between the announcement ticker and the image. */
-  .ces-main-product-section .product__media-wrapper {
-    margin-top: -1.4rem;
+  /* The media column is now full-bleed, so re-inset the thumbnails to the
+     page's normal side padding and size them so five fit per row. */
+  .ces-main-product-section .thumbnail-slider,
+  .ces-main-product-section .thumbnail-list {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 
-  /* Size each thumbnail so five fit across the row (Dawn shows about three). */
   .ces-main-product-section .thumbnail-list.slider--mobile .thumbnail-list__item.slider__slide {
-    width: calc((100% - 4 * 0.6rem) / 5);
+    width: calc((100% - 3rem - 4 * 0.6rem) / 5);
     min-width: 0;
   }
 }
