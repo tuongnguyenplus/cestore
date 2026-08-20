@@ -21,16 +21,69 @@
 
 /* Media gallery ----------------------------------------------------------- */
 
-/* Pull the thumbnail strip closer to the main image than Dawn's default, so the
-   gallery reads as one unit. Scoped to this section so other templates keep
-   Dawn's spacing. */
-.ces-main-product-section .product__media-list {
-  margin-bottom: 0.8rem;
+/* Match the reference: a full-bleed main image with no rounded card, a tight
+   gap, and a row of five small thumbnails. Scoped to this section only. */
+
+/* No zoom affordance — the reference has none. */
+.ces-main-product-section .product__media-toggle,
+.ces-main-product-section .product__media-icon,
+.ces-main-product-section button[aria-label*='Zoom'],
+.ces-main-product-section button[aria-label*='zoom'] {
+  display: none !important;
 }
 
-.ces-main-product-section .thumbnail-slider,
-.ces-main-product-section .product__media-gallery .slider-buttons {
+/* Main image: square off the corners and drop the border so it reads as one
+   clean full image rather than a framed card. */
+.ces-main-product-section .product__media-list .global-media-settings,
+.ces-main-product-section .product__media-item .global-media-settings,
+.ces-main-product-section .product__media-item > .media {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.ces-main-product-section .product__media-list {
+  margin-bottom: 0.6rem;
+}
+
+/* Thumbnails: five across, tight, square, no frame. */
+.ces-main-product-section .thumbnail-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6rem;
+  overflow: visible;
   margin-top: 0.6rem;
+}
+
+.ces-main-product-section .thumbnail-list__item {
+  width: auto;
+  scroll-snap-align: none;
+}
+
+.ces-main-product-section .thumbnail-list .thumbnail {
+  border-radius: 0.6rem;
+  border: 0;
+}
+
+/* All thumbnails show at once in the grid, so the slider arrows are redundant. */
+.ces-main-product-section .thumbnail-slider > .slider-button {
+  display: none;
+}
+
+/* On phones, let the main image run edge to edge like the reference by
+   cancelling the page's side padding just for the gallery. */
+@media screen and (max-width: 749px) {
+  .ces-main-product-section .product__media-wrapper,
+  .ces-main-product-section media-gallery {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  /* Keep the thumbnails inset from the edges even though the main image is
+     full-bleed. */
+  .ces-main-product-section .thumbnail-list {
+    padding-inline: 1.5rem;
+  }
 }
 
 /* Highlights -------------------------------------------------------------- */
