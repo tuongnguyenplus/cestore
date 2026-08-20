@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "Instant Pain Relief", "body": "<p>The advanced arch support and cushioning system work together to reduce pressure on your feet and joints — helping relieve pain from plantar fasciitis, neuropathy, flat feet, diabetic feet, and bunions.</p>" } },
+        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "Roomy Wide Toe Box", "body": "<p>The spacious design reduces pressure on the toes and forefoot — a relief for bunions, arthritis and diabetes — and lets your toes spread out naturally to improve balance and stability.</p>" } },
+        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "Lasting Relief for Over 12 Hours", "body": "<p>The advanced cushioning and support system keep your feet comfortable and pain-free no matter how long or challenging your day is.</p>" } },
+        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "Holistic, Full-Body Comfort", "body": "<p>Specifically designed to address discomfort in your ankles, knees, and lower back — every step is a step toward soothing comfort, so you move through your day with well-supported confidence.</p>" } },
+        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "Prevents Blisters and Calluses", "body": "<p>By reducing pressure and friction, the shoes help prevent blisters and calluses — particularly important for individuals with diabetes and reduced sensation in their feet.</p>" } },
+        "r6": { "type": "reason", "settings": { "image_position": "top", "heading": "Anti-Slip Safety", "body": "<p>Engineered to keep you safe and secure on any surface. The anti-slip insole provides unparalleled traction and stability, so you never have to worry about slipping or falling again.</p>" } },
+        "r7": { "type": "reason", "settings": { "image_position": "top", "heading": "ORTHO-CUSH™ Impact Technology", "body": "<p>Absorbs shock at the exact point of impact, so you stay stable and cushioned — comfortable on aging feet, without pain shooting up your legs.</p>" } },
+        "r8": { "type": "reason", "settings": { "image_position": "top", "heading": "Built for 12-Hour Shifts", "body": "<p>Engineered for people who stand and walk on hard, slippery floors all day. If your feet hurt halfway through your shift, you're wearing the wrong shoes.</p>" } },
+        "q1": { "type": "quote", "settings": { "quote": "<p>I'm a nurse on 12-hour shifts, and these shoes completely stopped the heel pain I used to feel by lunchtime. Finally, I can focus on my patients.</p>", "attribution": "— Margaret K., Retired Teacher" } },
+        "r9": { "type": "reason", "settings": { "image_position": "top", "heading": "Loved by 500,000+ Customers", "body": "<p>Over 500,000 customers enjoy Orthora for the shoes' superior support, cushioning, and cloud-like comfort — rated 4.9/5.0 across 17,920+ reviews.</p>" } },
+        "r10": { "type": "reason", "settings": { "image_position": "top", "heading": "45-Day Risk-Free Wear Test", "body": "<p>Try Orthora risk-free with our 45-Day Wear Test and a 100% no-questions-asked money-back guarantee. Wrong size? We'll happily ship the correct one or refund you.</p>" } },
+        "offer": { "type": "callout", "settings": { "heading": "Orthora™ Pro — 12-Hour Shift Shoes", "body": "<p>Free shipping and easy returns. Secure, SSL-protected checkout. Trusted by 500,000+ customers. Clearance pricing while stock lasts.</p>", "cta_label": "Check availability", "cta_link": "/collections/all" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8", "q1", "r9", "r10", "offer"],
+      "settings": {
+        "eyebrow": "ORTHORA FOOTWEAR",
+        "headline": "10 Reasons Why Women All Over the US Are Switching to These Orthopedic Shoes (and Not Going Back)",
+        "highlight_words": "Not Going Back",
+        "accent_color": "#2d6a4f",
+        "byline": "By The Orthora Team",
+        "date_text": "Updated this week",
+        "intro": "<p>Over 113 million Americans experience foot pain. These orthopedic shoes help relieve pain caused by conditions such as plantar fasciitis, neuropathy, flat feet, diabetic feet and bunions — so you can move freely again. Here are ten reasons women are switching and not going back.</p>",
+        "show_numbers": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+  },
+  "order": ["listicle", "newsletter"]
+}

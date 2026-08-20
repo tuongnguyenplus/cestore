@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "Joint and Knee Relief in 15 Minutes (That Keeps Working for Days)", "body": "<p>Most post-run recovery methods either take too long to kick in or stop working the second you stop using them. One 15-minute Recovery Labs soak delivers relief that keeps working long after you step out.</p>" } },
+        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "One Soak Carries You for 48+ Hours", "body": "<p>Ice packs numb you for 20 minutes. NSAIDs wear off by morning. One Recovery Labs soak keeps working for at least 48 hours — right through your next training day.</p>" } },
+        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "It Reaches the Tissue Your Foam Roller Can't Touch", "body": "<p>Topical creams sit on your skin. Ice bags compress the surface. Oral supplements lose potency in digestion. These 9 ingredients absorb through warm water directly to the joints and connective tissue.</p>" } },
+        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "It Targets Joint Inflammation — Not Just the Pain Signal", "body": "<p>Ibuprofen blocks the pain signal while the inflammation destroying your knees stays exactly where it was. That's why runner's knee keeps coming back. This targets the inflammation itself.</p>" } },
+        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "The Natural Alternative to Ibuprofen", "body": "<p>57% of runners take ibuprofen before, during, or after runs — it damages the gut lining with regular use and only masks inflammation. Your joints and kidneys are begging you to stop.</p>" } },
+        "q1": { "type": "quote", "settings": { "quote": "<p>One soak and my knees felt better through my whole long-run week. Nothing else has done that.</p>", "attribution": "— Verified customer" } },
+        "r6": { "type": "reason", "settings": { "image_position": "top", "heading": "Backed by Doctors and Trainers — Not Just Marketing Hype", "body": "<p>No other bath soak on the market contains omega-3 fatty acids — this is a first-to-market formulation, recommended by doctors of chiropractic and physical therapy.</p>" } },
+        "r7": { "type": "reason", "settings": { "image_position": "top", "heading": "It Helps You Bounce Back Like You're 20 Again", "body": "<p>Remember doing your long runs on Saturday and feeling fine on Sunday? That was optimal mineral levels. This soak restores them so recovery feels effortless again.</p>" } },
+        "r8": { "type": "reason", "settings": { "image_position": "top", "heading": "100% Natural — Zero Weird Chemicals or Fragrances", "body": "<p>No synthetic fragrances giving you headaches. No mystery chemicals you can't pronounce. Just 100% natural minerals made to accelerate recovery.</p>" } },
+        "r9": { "type": "reason", "settings": { "image_position": "top", "heading": "It Replaces Your Entire Post-Run Recovery Routine", "body": "<p>No more 30-minute ice sessions, foam-rolling marathons, expensive weekly massages, or juggling four supplements. One simple 15-minute step.</p>" } },
+        "offer": { "type": "callout", "settings": { "heading": "Lock In Your 30% Off — For a Limited Time", "body": "<p>Join 40,000+ runners and cyclists who found a better way to protect their joints. This limited-time deal is in high demand and stock keeps selling out. Try it today with a 60-Day Money-Back Guarantee.</p>", "cta_label": "Get joint relief in 15 minutes", "cta_link": "/collections/all" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "q1", "r6", "r7", "r8", "r9", "offer"],
+      "settings": {
+        "eyebrow": "RECOVERY LABS · JOINT RECOVERY",
+        "headline": "10 Reasons Runners With Achey Joints Are Obsessed With This 'Wonder' Soak",
+        "highlight_words": "Obsessed",
+        "accent_color": "#1f6f8b",
+        "byline": "By Dr. Michael D., DPT",
+        "date_text": "Last updated March 7, 2026",
+        "intro": "<p>Read this if joint or knee pain is costing you miles. One 15-minute Recovery Labs soak delivers game-changing benefits for your joints — fast relief and long-lasting results, without the ibuprofen your body is begging you to stop taking.</p>",
+        "show_numbers": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+  },
+  "order": ["listicle", "newsletter"]
+}
