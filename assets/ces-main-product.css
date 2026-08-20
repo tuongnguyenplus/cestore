@@ -34,16 +34,13 @@
 
 /* Main image: square off the corners and drop the border so it reads as one
    clean full image rather than a framed card. */
-.ces-main-product-section .product__media-list .global-media-settings,
+.ces-main-product-section .product__media-item,
 .ces-main-product-section .product__media-item .global-media-settings,
-.ces-main-product-section .product__media-item > .media {
-  border-radius: 0;
-  border: 0;
-  box-shadow: none;
-}
-
-.ces-main-product-section .product__media-list {
-  margin-bottom: 0.6rem;
+.ces-main-product-section .product__media-item > .media,
+.ces-main-product-section .product__media-item img {
+  border-radius: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Thumbnails: tighter gap and lighter corners than Dawn, keeping Dawn's own
@@ -59,23 +56,33 @@
 }
 
 @media screen and (max-width: 749px) {
-  /* Bleed the main image viewer to the screen edges (cancels the page's
-     1.5rem side padding); thumbnails below keep their normal inset. */
-  .ces-main-product-section .slider-mobile-gutter {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+  /* Dawn's mobile gallery over-extends the media list (-2.5rem margin, +4rem
+     width), sizes each image below full width for a peek, and adds a 3rem
+     bottom gap. Override all of it so the image is one clean full-bleed frame
+     flush to both edges, with a tight gap to the thumbnails. The slider
+     component already carries Dawn's -1.5rem gutter, which does the bleed. */
+  .ces-main-product-section .product__media-list {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    margin-bottom: 0.6rem !important;
   }
 
-  /* Turn Dawn's peek carousel into one clean full-width image: each slide fills
-     the viewport and the first slide loses the 1.5rem peek inset that was
-     leaving a gap on the left. */
-  .ces-main-product-section .product__media-list.grid--peek .grid__item {
-    min-width: 100%;
-    width: 100%;
+  .ces-main-product-section .product__media-list .product__media-item,
+  .ces-main-product-section .product__media-list .grid__item {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
   }
 
-  .ces-main-product-section .product__media-list.grid--peek .grid__item:first-of-type {
-    margin-left: 0;
+  /* Close the small gap between the announcement ticker and the image. */
+  .ces-main-product-section .product__media-wrapper {
+    margin-top: -1.4rem;
   }
 
   /* Size each thumbnail so five fit across the row (Dawn shows about three). */
