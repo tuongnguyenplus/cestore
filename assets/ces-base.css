@@ -27,6 +27,10 @@
   --ces-accent: rgb(var(--color-button));
   --ces-accent-contrast: rgb(var(--color-button-text));
 
+  /* Secondary brand accent (bronze), used sparingly — eyebrows and highlighted
+     headline words — so it stays under ~10% of the page. */
+  --ces-gold: #A8845C;
+
   /* Semantic status colours. These carry meaning (a green tick vs a red cross)
      rather than brand identity, so they are fixed rather than scheme-derived.
      Sections that expose them as settings override these on their own root. */

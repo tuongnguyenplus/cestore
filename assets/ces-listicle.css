@@ -16,7 +16,7 @@
   font-weight: var(--font-body-weight-bold);
   letter-spacing: 0.12rem;
   text-transform: uppercase;
-  color: var(--ces-listicle-accent);
+  color: var(--ces-gold);
 }
 
 .ces-listicle__headline {
@@ -30,7 +30,7 @@
 }
 
 .ces-listicle__accent {
-  color: var(--ces-listicle-accent);
+  color: var(--ces-gold);
 }
 
 .ces-listicle__byline {

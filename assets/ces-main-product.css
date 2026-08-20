@@ -482,7 +482,7 @@
   background-color: var(--ces-panel-to, #1a1a1a);
   background-image: linear-gradient(
     var(--ces-panel-angle, 135deg),
-    var(--ces-panel-from, #264050),
+    var(--ces-panel-from, #1d5c5c),
     var(--ces-panel-to, #1a1a1a)
   );
 }

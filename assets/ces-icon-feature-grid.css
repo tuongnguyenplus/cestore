@@ -32,7 +32,7 @@
 
 /* The highlighted words in the heading pick up the same icon colour. */
 .ces-icon-feature-grid__heading-accent {
-  color: var(--ces-icon-color, var(--ces-accent));
+  color: var(--ces-gold);
 }
 
 .ces-icon-feature-grid__icon--disc {

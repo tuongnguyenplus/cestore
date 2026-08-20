@@ -157,7 +157,7 @@
 /* Accent heading ---------------------------------------------------------- */
 
 .ces-image-text-banner__heading-accent {
-  color: var(--ces-accent);
+  color: var(--ces-gold);
 }
 
 /* Over a photo the backdrop is a dark wash, so the accent run would disappear;
