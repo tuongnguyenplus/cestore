@@ -46,18 +46,11 @@
   margin-bottom: 0.6rem;
 }
 
-/* Thumbnails: five across, tight, square, no frame. */
+/* Thumbnails: tighter gap and lighter corners than Dawn, keeping Dawn's own
+   flex layout so nothing collapses. */
 .ces-main-product-section .thumbnail-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.6rem;
-  overflow: visible;
+  grid-gap: 0.6rem;
   margin-top: 0.6rem;
-}
-
-.ces-main-product-section .thumbnail-list__item {
-  width: auto;
-  scroll-snap-align: none;
 }
 
 .ces-main-product-section .thumbnail-list .thumbnail {
@@ -65,24 +58,18 @@
   border: 0;
 }
 
-/* All thumbnails show at once in the grid, so the slider arrows are redundant. */
-.ces-main-product-section .thumbnail-slider > .slider-button {
-  display: none;
-}
-
-/* On phones, let the main image run edge to edge like the reference by
-   cancelling the page's side padding just for the gallery. */
 @media screen and (max-width: 749px) {
-  .ces-main-product-section .product__media-wrapper,
-  .ces-main-product-section media-gallery {
+  /* Bleed only the main image viewer to the screen edges; the thumbnails below
+     keep the page's normal side padding. */
+  .ces-main-product-section .slider-mobile-gutter {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 
-  /* Keep the thumbnails inset from the edges even though the main image is
-     full-bleed. */
-  .ces-main-product-section .thumbnail-list {
-    padding-inline: 1.5rem;
+  /* Size each thumbnail so five fit across the row (Dawn shows about three). */
+  .ces-main-product-section .thumbnail-list.slider--mobile .thumbnail-list__item.slider__slide {
+    width: calc((100% - 4 * 0.6rem) / 5);
+    min-width: 0;
   }
 }
 
