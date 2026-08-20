@@ -49,7 +49,7 @@
       "type": "ces-bullet-cta",
       "settings": {
         "heading": "The All-In-One Balm",
-        "bullets": "Dullness\nUneven tone\nAcne scars\nTexture\nHyperpigmentation",
+        "bullets": "<ul><li>Dullness</li><li>Uneven tone</li><li>Acne scars</li><li>Texture</li><li>Hyperpigmentation</li></ul>",
         "button_label": "Shop the balm",
         "button_link": "/collections/all",
         "color_scheme": "scheme-1",
