@@ -12,22 +12,57 @@
     "ticker": {
       "type": "ces-announcement-marquee",
       "blocks": {
-        "t1": { "type": "marquee_item", "settings": { "text": "OVER 13,000 GLOWING REVIEWS" } },
-        "t2": { "type": "marquee_item", "settings": { "text": "FREE SHIPPING TODAY" } },
-        "t3": { "type": "marquee_item", "settings": { "text": "30-DAY MONEY-BACK GUARANTEE" } }
+        "t1": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "OVER 13,000 GLOWING REVIEWS",
+            "icon": ""
+          }
+        },
+        "t2": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "FREE SHIPPING TODAY",
+            "icon": ""
+          }
+        },
+        "t3": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "30-DAY MONEY-BACK GUARANTEE",
+            "icon": ""
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3"],
-      "settings": { "font_size": 13, "padding": 10 }
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-ces-gradient",
+        "speed": 60,
+        "direction": "left",
+        "pause_on_hover": true,
+        "separator": "✦",
+        "icon_style": "none",
+        "font_size": 13,
+        "padding": 10
+      }
     },
     "hero": {
       "type": "ces-image-text-banner",
       "settings": {
+        "layout": "overlay",
+        "text_position": "center",
+        "overlay_opacity": 40,
         "eyebrow": "OVER 13,000 GLOWING REVIEWS",
-        "heading": "Serum-Boosted Skin Tint Balm For A No-Makeup Look",
         "heading_accent": "No-Makeup Look",
+        "heading": "Serum-Boosted Skin Tint Balm For A No-Makeup Look",
         "text": "<p>“I recommend it to patients who want real results without heavy makeup. It soothes, smooths and evens tone in one simple step.”</p>",
         "button_label": "Shop now",
         "button_link": "/collections/all",
+        "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 40
@@ -36,17 +71,56 @@
     "wins": {
       "type": "ces-icon-feature-grid",
       "blocks": {
-        "w1": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Dark Spots & Hyperpigmentation" } },
-        "w2": { "type": "icon_item", "settings": { "icon": "check-circle", "heading": "Acne Scars & Blemishes" } },
-        "w3": { "type": "icon_item", "settings": { "icon": "vitality", "heading": "Dull, Tired-Looking Skin" } },
-        "w4": { "type": "icon_item", "settings": { "icon": "skin-aging", "heading": "Texture & Fine Lines" } }
+        "w1": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "sparkle",
+            "heading": "Dark Spots & Hyperpigmentation",
+            "text": ""
+          }
+        },
+        "w2": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "check-circle",
+            "heading": "Acne Scars & Blemishes",
+            "text": ""
+          }
+        },
+        "w3": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "vitality",
+            "heading": "Dull, Tired-Looking Skin",
+            "text": ""
+          }
+        },
+        "w4": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "skin-aging",
+            "heading": "Texture & Fine Lines",
+            "text": ""
+          }
+        }
       },
-      "block_order": ["w1", "w2", "w3", "w4"],
+      "block_order": [
+        "w1",
+        "w2",
+        "w3",
+        "w4"
+      ],
       "settings": {
         "heading": "One Balm. So Many Wins",
+        "highlight_words": "",
         "subheading": "From blemishes to dullness, this stick does it all.",
-        "icon_frame": "bare",
         "icon_color": "#1d5c5c",
+        "icon_frame": "bare",
+        "icon_size": 6,
         "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -57,10 +131,13 @@
     "allinone": {
       "type": "ces-bullet-cta",
       "settings": {
+        "image_position": "start",
         "heading": "The All-In-One Balm",
         "bullets": "<ul><li>Dullness</li><li>Uneven tone</li><li>Acne scars</li><li>Texture</li><li>Hyperpigmentation</li></ul>",
         "button_label": "Shop the balm",
         "button_link": "/collections/all",
+        "button_footnote": "90-day money back guarantee",
+        "show_frame": true,
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -69,21 +146,96 @@
     "ingredients": {
       "type": "ces-icon-feature-grid",
       "blocks": {
-        "g1": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Niacinamide", "text": "Fades dark spots and evens tone." } },
-        "g2": { "type": "icon_item", "settings": { "icon": "molecule", "heading": "Hyaluronic Acid", "text": "Deep, lasting hydration." } },
-        "g3": { "type": "icon_item", "settings": { "icon": "leaf", "heading": "Centella Asiatica", "text": "Calms and soothes redness." } },
-        "g4": { "type": "icon_item", "settings": { "icon": "shield", "heading": "Beeswax", "text": "Locks in a soft, protective glow." } },
-        "g5": { "type": "icon_item", "settings": { "icon": "cell-defense", "heading": "HA+ Technology", "text": "Boosted moisture delivery." } },
-        "g6": { "type": "icon_item", "settings": { "icon": "heart-plus", "heading": "Hydrolyzed Collagen", "text": "Supports firmer-looking skin." } },
-        "g7": { "type": "icon_item", "settings": { "icon": "leaf", "heading": "Jojoba Seed Oil", "text": "Balances and nourishes." } },
-        "g8": { "type": "icon_item", "settings": { "icon": "sparkle", "heading": "Vitamin E", "text": "Antioxidant protection." } }
+        "g1": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "sparkle",
+            "heading": "Niacinamide",
+            "text": "Fades dark spots and evens tone."
+          }
+        },
+        "g2": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "molecule",
+            "heading": "Hyaluronic Acid",
+            "text": "Deep, lasting hydration."
+          }
+        },
+        "g3": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "leaf",
+            "heading": "Centella Asiatica",
+            "text": "Calms and soothes redness."
+          }
+        },
+        "g4": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "shield",
+            "heading": "Beeswax",
+            "text": "Locks in a soft, protective glow."
+          }
+        },
+        "g5": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "cell-defense",
+            "heading": "HA+ Technology",
+            "text": "Boosted moisture delivery."
+          }
+        },
+        "g6": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "heart-plus",
+            "heading": "Hydrolyzed Collagen",
+            "text": "Supports firmer-looking skin."
+          }
+        },
+        "g7": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "leaf",
+            "heading": "Jojoba Seed Oil",
+            "text": "Balances and nourishes."
+          }
+        },
+        "g8": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "sparkle",
+            "heading": "Vitamin E",
+            "text": "Antioxidant protection."
+          }
+        }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8"],
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g7",
+        "g8"
+      ],
       "settings": {
         "heading": "8 Active Ingredients. 1 Glowing Result.",
+        "highlight_words": "",
         "subheading": "Formulated with ingredients your skin will thank you for.",
-        "icon_frame": "disc",
         "icon_color": "#1d5c5c",
+        "icon_frame": "disc",
+        "icon_size": 6,
         "columns_mobile": 2,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -94,21 +246,71 @@
     "compare": {
       "type": "ces-comparison-table",
       "blocks": {
-        "b1": { "type": "rovina_point", "settings": { "text": "Lets your skin breathe" } },
-        "o1": { "type": "other_brand_point", "settings": { "text": "Just covers it up" } },
-        "b2": { "type": "rovina_point", "settings": { "text": "Treats and blurs in one step" } },
-        "o2": { "type": "other_brand_point", "settings": { "text": "Sits on top, cakes into lines" } },
-        "b3": { "type": "rovina_point", "settings": { "text": "Non-comedogenic, skin-loving actives" } },
-        "o3": { "type": "other_brand_point", "settings": { "text": "Clogs pores, can irritate" } },
-        "b4": { "type": "rovina_point", "settings": { "text": "One simple step" } },
-        "o4": { "type": "other_brand_point", "settings": { "text": "Primer + foundation + concealer" } }
+        "b1": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Lets your skin breathe"
+          }
+        },
+        "o1": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Just covers it up"
+          }
+        },
+        "b2": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Treats and blurs in one step"
+          }
+        },
+        "o2": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Sits on top, cakes into lines"
+          }
+        },
+        "b3": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Non-comedogenic, skin-loving actives"
+          }
+        },
+        "o3": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Clogs pores, can irritate"
+          }
+        },
+        "b4": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "One simple step"
+          }
+        },
+        "o4": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Primer + foundation + concealer"
+          }
+        }
       },
-      "block_order": ["b1", "o1", "b2", "o2", "b3", "o3", "b4", "o4"],
+      "block_order": [
+        "b1",
+        "o1",
+        "b2",
+        "o2",
+        "b3",
+        "o3",
+        "b4",
+        "o4"
+      ],
       "settings": {
         "heading": "Why Thousands of Women Are Switching From Foundation to This Balm",
         "subheading": "One lets your skin breathe. The other just covers it up.",
         "brand_label": "CoveBalm",
         "other_label": "Foundation",
+        "footnote": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -117,14 +319,41 @@
     "faq": {
       "type": "ces-faq-accordion",
       "blocks": {
-        "q1": { "type": "faq_item", "settings": { "question": "What if I choose the wrong shade?", "answer": "<p>Use our shade finder to pick the perfect shade. If it doesn't match, we'll make it right.</p>", "open": true } },
-        "q2": { "type": "faq_item", "settings": { "question": "Is this okay for oily or sensitive skin?", "answer": "<p>Yes. It is non-comedogenic, lightweight and suitable for sensitive skin. As with any product, patch test first.</p>" } },
-        "q3": { "type": "faq_item", "settings": { "question": "Does it cover dark spots?", "answer": "<p>Yes — it gives natural, buildable coverage that helps visibly blur dark spots while treating skin over time.</p>" } }
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I choose the wrong shade?",
+            "answer": "<p>Use our shade finder to pick the perfect shade. If it doesn't match, we'll make it right.</p>",
+            "open": true
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this okay for oily or sensitive skin?",
+            "answer": "<p>Yes. It is non-comedogenic, lightweight and suitable for sensitive skin. As with any product, patch test first.</p>",
+            "open": false
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it cover dark spots?",
+            "answer": "<p>Yes — it gives natural, buildable coverage that helps visibly blur dark spots while treating skin over time.</p>",
+            "open": false
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
       "settings": {
         "heading": "FAQ",
         "subheading": "Everything you're wondering — answered simply.",
+        "exclusive": true,
+        "footer_text": "<p>Still have a question? Email us at support@example.com and a real person will get back to you within one business day.</p>",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -132,8 +361,25 @@
     },
     "newsletter": {
       "type": "ces-newsletter-signup",
-      "settings": { "color_scheme": "scheme-1", "padding_top": 40, "padding_bottom": 40 }
+      "settings": {
+        "heading": "Join The Rovina Community",
+        "text": "<p>Research summaries, honest product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>",
+        "footnote": "No spam. Unsubscribe in one click.",
+        "overlay_opacity": 50,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
-  "order": ["ticker", "hero", "wins", "allinone", "ingredients", "compare", "faq", "newsletter"]
+  "order": [
+    "ticker",
+    "hero",
+    "wins",
+    "allinone",
+    "ingredients",
+    "compare",
+    "faq",
+    "newsletter"
+  ]
 }

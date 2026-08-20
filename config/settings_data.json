@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/BC0EF9F3-BEBB-4434-B417-154AF8D602DA.png",
     "logo_width": 90,
     "type_header_font": "poppins_n4",
     "heading_scale": 100,
@@ -145,9 +146,9 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#EDE8E0",
+          "background": "#ede8e0",
           "background_gradient": "",
-          "text": "#14161A",
+          "text": "#14161a",
           "button": "#1d5c5c",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",
@@ -156,9 +157,9 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#E4DDD1",
+          "background": "#e4ddd1",
           "background_gradient": "",
-          "text": "#14161A",
+          "text": "#14161a",
           "button": "#1d5c5c",
           "button_label": "#f3f3f3",
           "secondary_button_label": "#121212",
@@ -200,9 +201,9 @@
       },
       "scheme-01dbb994-800e-4f19-912f-b642b020e43c": {
         "settings": {
-          "background": "#EDE8E0",
+          "background": "#ede8e0",
           "background_gradient": "",
-          "text": "#14161A",
+          "text": "#14161a",
           "button": "#1d5c5c",
           "button_label": "#ffffff",
           "secondary_button_label": "#1d5c5c",
@@ -213,10 +214,10 @@
         "settings": {
           "background": "#f9fafb",
           "background_gradient": "",
-          "text": "#14161A",
+          "text": "#14161a",
           "button": "#1d5c5c",
           "button_label": "#ffffff",
-          "secondary_button_label": "#1D5C5C",
+          "secondary_button_label": "#1d5c5c",
           "shadow": "#2e2a39"
         }
       },
@@ -233,9 +234,9 @@
       },
       "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0": {
         "settings": {
-          "background": "#EDE8E0",
+          "background": "#ede8e0",
           "background_gradient": "",
-          "text": "#14161A",
+          "text": "#14161a",
           "button": "#1d5c5c",
           "button_label": "#ffffff",
           "secondary_button_label": "#1d5c5c",
