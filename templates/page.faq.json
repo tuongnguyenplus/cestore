@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "faq": {
@@ -327,9 +336,26 @@
         "disclosure": "<p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug and is not intended to diagnose, treat, cure, or prevent any disease or medical condition, including any condition affecting the eye itself.</p><p>Individual results vary. Nothing on this page is medical advice. If you have a skin or eye condition, are pregnant or nursing, or are using prescription topicals, speak to a qualified healthcare professional before use.</p><p><strong>[REPLACE — registered company name, full business address, contact phone]</strong></p>",
         "color_scheme": "scheme-1"
       }
+    },
+    "ces_bullet_cta_rtxBRQ": {
+      "type": "ces-bullet-cta",
+      "name": "CES Bullet CTA",
+      "settings": {
+        "image_position": "start",
+        "heading": "CEBEAM™ Microneedle Patches | New Generation",
+        "bullets": "<ul><li>Eliminates dark circles & under-eye bags</li><li>Smooths fine lines</li><li>Boosts firmness</li><li>Gentle & painless</li></ul>",
+        "button_label": "Get Microneedle Patches Now!",
+        "button_link": "#ces-app-price-slot",
+        "button_footnote": "90-day money back guarantee",
+        "show_frame": true,
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
-    "faq"
+    "faq",
+    "ces_bullet_cta_rtxBRQ"
   ]
 }
