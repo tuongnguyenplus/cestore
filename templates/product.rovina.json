@@ -73,7 +73,7 @@
         "subtitle": {
           "type": "text",
           "settings": {
-            "text": "The daily softgel your whole-body wellness deserves.",
+            "text": "Clinical-Grade Dermal Micro-Delivery System",
             "text_style": "body"
           }
         },
@@ -81,7 +81,7 @@
           "type": "ces_highlight",
           "settings": {
             "icon": "sparkle",
-            "text": "Cellular & Antioxidant Defense*"
+            "text": "Painless 2-Hour or Overnight Dissolution"
           }
         },
         "highlight-2": {
@@ -95,14 +95,14 @@
           "type": "ces_highlight",
           "settings": {
             "icon": "shield",
-            "text": "Oxidative Stress Support*"
+            "text": "Dermatologist Formulated for Sensitive Mature Skin"
           }
         },
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
             "icon": "heart",
-            "text": "Cardiovascular Support*"
+            "text": "60-Day Empty Box Money-Back Guarantee"
           }
         },
         "highlight-5": {
