@@ -149,14 +149,14 @@
           "type": "qa",
           "settings": {
             "question": "What's actually in them?",
-            "answer": "<p><mark>[REPLACE — full INCI ingredient list, in order]</mark></p><p>The complete list is printed on the box and shown on the product page before you check out. If anything here is a problem for your skin, we'd rather you knew before ordering than after.</p>"
+            "answer": "<p><strong>[REPLACE — full INCI ingredient list, in order]</strong></p><p>The complete list is printed on the box and shown on the product page before you check out. If anything here is a problem for your skin, we'd rather you knew before ordering than after.</p>"
           }
         },
         "c3q6": {
           "type": "qa",
           "settings": {
             "question": "Where are they made, and are they tested?",
-            "answer": "<p><mark>[REPLACE — manufacturing country, facility certifications, and what per-batch testing you genuinely do]</mark></p><p>Don't write anything here you can't produce a document for.</p>"
+            "answer": "<p><strong>[REPLACE — manufacturing country, facility certifications, and what per-batch testing you genuinely do]</strong></p><p>Don't write anything here you can't produce a document for.</p>"
           }
         },
         "c4": {
@@ -173,21 +173,21 @@
           "type": "qa",
           "settings": {
             "question": "When does my order ship?",
-            "answer": "<p>Orders placed before <mark>[cut-off time]</mark> on a business day leave the same day. Everything else goes out the next business day.</p><p>You'll get a tracking number by email as soon as it does — from a real carrier, with a link that works.</p>"
+            "answer": "<p>Orders placed before <strong>[cut-off time]</strong> on a business day leave the same day. Everything else goes out the next business day.</p><p>You'll get a tracking number by email as soon as it does — from a real carrier, with a link that works.</p>"
           }
         },
         "c4q2": {
           "type": "qa",
           "settings": {
             "question": "How long does delivery take?",
-            "answer": "<p><mark>[REPLACE — real US delivery windows by shipping method]</mark></p><p>These are the carrier's working-day estimates, not a promise. Weather and holidays add days.</p>"
+            "answer": "<p><strong>[REPLACE — real US delivery windows by shipping method]</strong></p><p>These are the carrier's working-day estimates, not a promise. Weather and holidays add days.</p>"
           }
         },
         "c4q3": {
           "type": "qa",
           "settings": {
             "question": "Where does it ship from?",
-            "answer": "<p><mark>[REPLACE — actual warehouse location]</mark></p><p>If your tracking shows an origin that surprises you, email us and we'll explain it rather than leave you guessing.</p>"
+            "answer": "<p><strong>[REPLACE — actual warehouse location]</strong></p><p>If your tracking shows an origin that surprises you, email us and we'll explain it rather than leave you guessing.</p>"
           }
         },
         "c4q4": {
@@ -208,7 +208,7 @@
           "type": "qa",
           "settings": {
             "question": "Do you ship outside the US?",
-            "answer": "<p><mark>[REPLACE — yes/no, which countries, and who pays customs]</mark></p>"
+            "answer": "<p><strong>[REPLACE — yes/no, which countries, and who pays customs]</strong></p>"
           }
         },
         "c5": {
@@ -225,7 +225,7 @@
           "type": "qa",
           "settings": {
             "question": "What's the guarantee?",
-            "answer": "<p><mark>[REPLACE — your real guarantee window]</mark> days from delivery. If it hasn't done what you hoped, email us and we'll refund you.</p><p>You can have opened and used the box. That's rather the point — you can't judge it unopened.</p>"
+            "answer": "<p><strong>[REPLACE — your real guarantee window]</strong> days from delivery. If it hasn't done what you hoped, email us and we'll refund you.</p><p>You can have opened and used the box. That's rather the point — you can't judge it unopened.</p>"
           }
         },
         "c5q2": {
@@ -267,7 +267,7 @@
           "type": "qa",
           "settings": {
             "question": "How do I reach a person?",
-            "answer": "<p>Email <a href=\"mailto:support@cebeam.com\">support@cebeam.com</a>. A human on our team answers every message, usually within one business day.</p><p><mark>[REPLACE — add phone number and registered company name; US buyers over 50 check for these before they trust a new brand]</mark></p>"
+            "answer": "<p>Email <a href=\"mailto:support@cebeam.com\">support@cebeam.com</a>. A human on our team answers every message, usually within one business day.</p><p><strong>[REPLACE — add phone number and registered company name; US buyers over 50 check for these before they trust a new brand]</strong></p>"
           }
         }
       },
@@ -324,7 +324,7 @@
         "help_button_label": "Email support@cebeam.com",
         "help_button_link": "mailto:support@cebeam.com",
         "help_meta": "Replies within one business day",
-        "disclosure": "<p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug and is not intended to diagnose, treat, cure, or prevent any disease or medical condition, including any condition affecting the eye itself.</p><p>Individual results vary. Nothing on this page is medical advice. If you have a skin or eye condition, are pregnant or nursing, or are using prescription topicals, speak to a qualified healthcare professional before use.</p><p><mark>[REPLACE — registered company name, full business address, contact phone]</mark></p>",
+        "disclosure": "<p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug and is not intended to diagnose, treat, cure, or prevent any disease or medical condition, including any condition affecting the eye itself.</p><p>Individual results vary. Nothing on this page is medical advice. If you have a skin or eye condition, are pregnant or nursing, or are using prescription topicals, speak to a qualified healthcare professional before use.</p><p><strong>[REPLACE — registered company name, full business address, contact phone]</strong></p>",
         "color_scheme": "scheme-1"
       }
     }
