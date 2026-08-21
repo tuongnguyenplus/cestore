@@ -1,0 +1,357 @@
+/* Section styles for sections/ces-faq-page.liquid.
+   Ported from the supplied FAQ design: editorial serif display, mono labels,
+   search + category filter + accordion. Colours map to the theme tokens so the
+   page follows the store palette. */
+
+.ces-faqp {
+  --teal: rgb(var(--color-button));
+  --teal-deep: color-mix(in srgb, rgb(var(--color-button)) 74%, #000);
+  --bone: rgb(var(--color-background));
+  --bone-warm: color-mix(in srgb, rgb(var(--color-background)) 88%, #fff);
+  --bronze: var(--ces-gold, #a8845c);
+  --ink: rgb(var(--color-foreground));
+  --ink-soft: rgba(var(--color-foreground), 0.68);
+  --rule: rgba(var(--color-foreground), 0.16);
+  --white: color-mix(in srgb, rgb(var(--color-background)) 40%, #fff);
+  --faqp-display: 'Fraunces', Georgia, serif;
+  --faqp-body: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --faqp-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--faqp-body);
+  font-size: 1.65rem;
+  line-height: 1.65;
+}
+
+.ces-faqp__wrap {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+/* Hero -------------------------------------------------------------------- */
+.ces-faqp__hero {
+  padding: 6rem 0 4.2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ces-faqp__eyebrow {
+  font-family: var(--faqp-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin: 0 0 1.8rem;
+}
+
+.ces-faqp__title {
+  font-family: var(--faqp-display);
+  font-weight: 400;
+  font-size: clamp(3.4rem, 6.2vw, 5.8rem);
+  line-height: 1.06;
+  margin: 0 0 2rem;
+  letter-spacing: -0.015em;
+}
+
+.ces-faqp__title em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.ces-faqp__lede {
+  font-size: 1.8rem;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* Search ------------------------------------------------------------------ */
+.ces-faqp__search {
+  margin: 3.2rem 0 0;
+  position: relative;
+  max-width: 56rem;
+}
+
+.ces-faqp__input {
+  width: 100%;
+  padding: 1.5rem 4.4rem 1.5rem 1.7rem;
+  font-family: var(--faqp-body);
+  font-size: 1.65rem;
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--rule);
+  border-radius: 2px;
+}
+
+.ces-faqp__input:focus {
+  outline: 2.5px solid var(--teal);
+  outline-offset: 2px;
+  border-color: var(--teal);
+}
+
+.ces-faqp__clear {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  padding: 0.6rem 1rem;
+  display: none;
+}
+
+/* Chips ------------------------------------------------------------------- */
+.ces-faqp__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2.8rem 0 0;
+}
+
+.ces-faqp__chip {
+  font-family: var(--faqp-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1.5px solid var(--rule);
+  color: var(--ink-soft);
+  padding: 0.9rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.16s;
+}
+
+.ces-faqp__chip:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.ces-faqp__chip[aria-pressed='true'] {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--bone-warm);
+}
+
+/* Sections ---------------------------------------------------------------- */
+.ces-faqp__sec {
+  padding: 5.2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ces-faqp__sec-head {
+  display: grid;
+  grid-template-columns: 7.8rem 1fr;
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.ces-faqp__step {
+  font-family: var(--faqp-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: var(--bronze);
+  padding-top: 0.9rem;
+}
+
+.ces-faqp__sec-title {
+  font-family: var(--faqp-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 3.4vw, 3.1rem);
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+.ces-faqp__sec-note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.6rem;
+  max-width: 56ch;
+}
+
+/* Accordion --------------------------------------------------------------- */
+.ces-faqp__qa {
+  border-top: 1px solid var(--rule);
+}
+
+.ces-faqp__qa:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.ces-faqp__q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--faqp-body);
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 2rem 4.4rem 2rem 0;
+  position: relative;
+  line-height: 1.45;
+}
+
+.ces-faqp__q:hover {
+  color: var(--teal);
+}
+
+.ces-faqp__q::after {
+  content: '';
+  position: absolute;
+  right: 1.2rem;
+  top: 2.7rem;
+  width: 1rem;
+  height: 1rem;
+  border-right: 1.8px solid var(--teal);
+  border-bottom: 1.8px solid var(--teal);
+  transform: rotate(45deg);
+  transition: transform 0.22s ease;
+}
+
+.ces-faqp__qa.is-open .ces-faqp__q::after {
+  transform: rotate(-135deg);
+}
+
+.ces-faqp__a {
+  display: none;
+  padding: 0 5.4rem 2.4rem 0;
+  color: var(--ink-soft);
+  font-size: 1.65rem;
+  max-width: 68ch;
+}
+
+.ces-faqp__qa.is-open .ces-faqp__a {
+  display: block;
+}
+
+.ces-faqp__a p {
+  margin: 0 0 1.3rem;
+}
+
+.ces-faqp__a p:last-child {
+  margin-bottom: 0;
+}
+
+.ces-faqp__a a {
+  color: var(--teal);
+  text-underline-offset: 3px;
+}
+
+.ces-faqp__a strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ces-faqp__a mark {
+  background: color-mix(in srgb, var(--bronze) 32%, #fff);
+  color: var(--ink);
+  padding: 0 2px;
+}
+
+/* Empty state ------------------------------------------------------------- */
+.ces-faqp__empty {
+  display: none;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.ces-faqp__empty p {
+  margin: 0 0 1rem;
+  font-family: var(--faqp-display);
+  font-size: 2.4rem;
+}
+
+.ces-faqp__empty span {
+  color: var(--ink-soft);
+  font-size: 1.65rem;
+}
+
+/* Help block -------------------------------------------------------------- */
+.ces-faqp__help {
+  background: var(--teal);
+  color: var(--bone-warm);
+  padding: 7rem 0;
+}
+
+.ces-faqp__help h2 {
+  font-family: var(--faqp-display);
+  font-weight: 400;
+  font-size: clamp(3rem, 4.4vw, 4.2rem);
+  margin: 0 0 1.6rem;
+  line-height: 1.12;
+}
+
+.ces-faqp__help p {
+  margin: 0 0 2.8rem;
+  max-width: 46ch;
+  opacity: 0.88;
+  font-size: 1.75rem;
+}
+
+.ces-faqp__btn {
+  display: inline-block;
+  background: var(--bone-warm);
+  color: var(--teal);
+  padding: 1.5rem 3rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.65rem;
+  border: 1.5px solid var(--bone-warm);
+}
+
+.ces-faqp__btn:hover {
+  background: transparent;
+  color: var(--bone-warm);
+}
+
+.ces-faqp__help-meta {
+  font-family: var(--faqp-mono);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 2.4rem 0 0;
+}
+
+/* Disclosure -------------------------------------------------------------- */
+.ces-faqp__foot {
+  background: var(--bone-warm);
+  padding: 5.2rem 0 3.4rem;
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+}
+
+.ces-faqp__disclose {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  max-width: 80ch;
+}
+
+.ces-faqp__disclose strong {
+  color: var(--ink);
+}
+
+@media (max-width: 620px) {
+  .ces-faqp__sec-head {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .ces-faqp__step {
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-faqp__q::after {
+    transition: none;
+  }
+}

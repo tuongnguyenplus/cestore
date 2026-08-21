@@ -1,0 +1,335 @@
+{
+  "sections": {
+    "faq": {
+      "type": "ces-faq-page",
+      "blocks": {
+        "c1": {
+          "type": "category",
+          "settings": {
+            "key": "buy",
+            "step": "STEP 01",
+            "title": "Before you buy",
+            "chip_label": "Before you buy",
+            "note": "What the patches are, what they realistically do, and who should skip them."
+          }
+        },
+        "c1q1": {
+          "type": "qa",
+          "settings": {
+            "question": "What exactly is a microdart patch?",
+            "answer": "<p>It's a small crescent-shaped patch that sits under your eye. The underside is covered in hundreds of tiny cones made from dried, concentrated actives — not metal, not needles in the medical sense. They're shorter than a grain of salt.</p><p>When you press the patch on, the cones sit just inside the top layer of skin and dissolve over the next few hours, releasing what's in them where a cream can't easily go.</p>"
+          }
+        },
+        "c1q2": {
+          "type": "qa",
+          "settings": {
+            "question": "How is this different from the eye creams I've already tried?",
+            "answer": "<p>A cream has to get through the outer barrier of your skin, which is the layer specifically designed to keep things out. Most of it doesn't make it far.</p><p>The dissolving cones start below that barrier. Same idea as the difference between rubbing something on a sealed surface and putting it just under the seal.</p><p>That's a delivery difference, not magic. If a cream failed you because the ingredient was wrong for your problem, a patch with the same wrong ingredient will also fail.</p>"
+          }
+        },
+        "c1q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Will this work on bags I've had my whole life?",
+            "answer": "<p>Honest answer: partly, and it depends what's actually under there.</p><p>If your under-eye looks heavy because of fluid, thin skin, or lost firmness, that's the kind of thing a topical can visibly improve. If it's inherited fat pads that push forward — the kind you can see in photos of you at seventeen — no patch, cream, or serum moves those. Only a surgeon does.</p><p>Most people are some mix of both. We'd rather tell you that now than take your money and let you find out in week six.</p>"
+          }
+        },
+        "c1q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Is it an alternative to surgery or filler?",
+            "answer": "<p>No, and we won't claim it is. Blepharoplasty removes or repositions tissue. Filler adds volume underneath. Cebeam does neither.</p><p>What it can do is improve the look of the skin sitting on top — smoothness, firmness, tone. For plenty of people that's the difference between looking tired and looking rested. For some it isn't enough, and surgery is the honest answer.</p>"
+          }
+        },
+        "c1q5": {
+          "type": "qa",
+          "settings": {
+            "question": "Does it hurt?",
+            "answer": "<p>You'll feel a light prickle or tingle for the first minute or two as the cones soften. After that you stop noticing the patch is there.</p><p>Sharp pain isn't normal. If you feel that, take the patch off.</p>"
+          }
+        },
+        "c1q6": {
+          "type": "qa",
+          "settings": {
+            "question": "I'm a man and I don't do skincare. Is this going to be a whole routine?",
+            "answer": "<p>No. Press two patches on, leave them, remove them. There's no cream, no order of steps, no bathroom shelf involved.</p><p>Plenty of our customers wear them while they're asleep and never think about it again.</p>"
+          }
+        },
+        "c1q7": {
+          "type": "qa",
+          "settings": {
+            "question": "Who shouldn't use these?",
+            "answer": "<p>Skip them if you have broken, irritated, or sunburned skin around the eye, an active eye infection, or eczema or dermatitis in the area.</p><p>If you're pregnant or nursing, on prescription retinoids, or recovering from any procedure around the eyes, ask your doctor first. Not for anyone under 18.</p>"
+          }
+        },
+        "c2": {
+          "type": "category",
+          "settings": {
+            "key": "start",
+            "step": "STEP 02",
+            "title": "Your first 14 days",
+            "chip_label": "First 14 days",
+            "note": "How to apply them properly, what's normal early on, and when to expect anything visible."
+          }
+        },
+        "c2q1": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I apply them?",
+            "answer": "<p>Start with clean, completely dry skin — no serum, oil, or moisturiser underneath. Damp skin is the single most common reason a patch won't stick.</p><p>Place one under each eye, then press firmly with your fingertip for about 10 seconds. You want real pressure, not a pat. Leave on for at least 2 hours; overnight is better.</p><p>Remove slowly, and gently press whatever's left on the skin in. Don't wash it off.</p>"
+          }
+        },
+        "c2q2": {
+          "type": "qa",
+          "settings": {
+            "question": "My patch keeps falling off.",
+            "answer": "<p>Almost always moisture. Give your under-eye a full two minutes to air-dry after cleansing before you apply.</p><p>The other cause is not pressing hard enough. A light touch leaves the cones sitting on the surface instead of anchored in.</p>"
+          }
+        },
+        "c2q3": {
+          "type": "qa",
+          "settings": {
+            "question": "How often should I use them?",
+            "answer": "<p>Every other night for the first two weeks, then two to three nights a week to maintain.</p><p>Using them every single night won't speed anything up — your skin needs the off-nights.</p>"
+          }
+        },
+        "c2q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Some redness after I take them off — is that a problem?",
+            "answer": "<p>Mild pink that fades within an hour is expected, especially the first few times. So is a slight grid pattern where the cones were.</p><p>What isn't expected: swelling, itching, burning, or redness still there the next morning. Stop using them and email us.</p>"
+          }
+        },
+        "c2q5": {
+          "type": "qa",
+          "settings": {
+            "question": "When will I actually see something?",
+            "answer": "<p>A short-term smoothing effect is often visible the morning after — that's mostly hydration, and it comes and goes.</p><p>Changes that hold generally take four to eight weeks of consistent use, because that's how long skin takes to turn over. If you're buying for a specific date, start at least six weeks out.</p><p>Results vary from person to person, and some people won't see a change they consider worth it. That's what the guarantee is for.</p>"
+          }
+        },
+        "c3": {
+          "type": "category",
+          "settings": {
+            "key": "use",
+            "step": "STEP 03",
+            "title": "Living with it",
+            "chip_label": "Ongoing use",
+            "note": "Makeup, other products, storage, and the questions that come up around month two."
+          }
+        },
+        "c3q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Can I wear makeup over the area?",
+            "answer": "<p>Yes — after you remove the patch, not with it on. Wait about 20 minutes so the skin isn't tacky, then apply concealer as normal.</p><p>A lot of people tell us concealer sits better on the days after, because it's sitting on smoother skin. That's the realistic version of the \"my concealer creases\" problem: you're not hiding the texture, you're changing it.</p>"
+          }
+        },
+        "c3q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Can I use these with retinol or acids?",
+            "answer": "<p>Not on the same night, and not on the same area. Both do their work in the same layer of skin, and stacking them is how people end up irritated.</p><p>Alternate nights works fine. If you're on prescription tretinoin, talk to whoever prescribed it first.</p>"
+          }
+        },
+        "c3q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Can I use them on smile lines or my forehead?",
+            "answer": "<p>The shape is cut for the under-eye curve, so it'll fit awkwardly elsewhere, but the formula itself is fine on other facial skin.</p><p>Don't put them on the eyelid itself, or anywhere the skin is broken.</p>"
+          }
+        },
+        "c3q4": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I store them?",
+            "answer": "<p>Sealed, somewhere cool and dry, out of direct sun. No fridge needed — and don't refrigerate, because condensation ruins the cones.</p><p>Once a patch is out of its pouch, use it. It starts absorbing moisture from the air right away.</p>"
+          }
+        },
+        "c3q5": {
+          "type": "qa",
+          "settings": {
+            "question": "What's actually in them?",
+            "answer": "<p><mark>[REPLACE — full INCI ingredient list, in order]</mark></p><p>The complete list is printed on the box and shown on the product page before you check out. If anything here is a problem for your skin, we'd rather you knew before ordering than after.</p>"
+          }
+        },
+        "c3q6": {
+          "type": "qa",
+          "settings": {
+            "question": "Where are they made, and are they tested?",
+            "answer": "<p><mark>[REPLACE — manufacturing country, facility certifications, and what per-batch testing you genuinely do]</mark></p><p>Don't write anything here you can't produce a document for.</p>"
+          }
+        },
+        "c4": {
+          "type": "category",
+          "settings": {
+            "key": "order",
+            "step": "STEP 04",
+            "title": "Your order",
+            "chip_label": "Your order",
+            "note": "Shipping windows, tracking, changes, and what happens if a parcel goes missing."
+          }
+        },
+        "c4q1": {
+          "type": "qa",
+          "settings": {
+            "question": "When does my order ship?",
+            "answer": "<p>Orders placed before <mark>[cut-off time]</mark> on a business day leave the same day. Everything else goes out the next business day.</p><p>You'll get a tracking number by email as soon as it does — from a real carrier, with a link that works.</p>"
+          }
+        },
+        "c4q2": {
+          "type": "qa",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p><mark>[REPLACE — real US delivery windows by shipping method]</mark></p><p>These are the carrier's working-day estimates, not a promise. Weather and holidays add days.</p>"
+          }
+        },
+        "c4q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Where does it ship from?",
+            "answer": "<p><mark>[REPLACE — actual warehouse location]</mark></p><p>If your tracking shows an origin that surprises you, email us and we'll explain it rather than leave you guessing.</p>"
+          }
+        },
+        "c4q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Can I change my address after ordering?",
+            "answer": "<p>Yes, within 60 minutes — use the link in your confirmation email. After that the order is packed and locked.</p><p>Missed the window? Email us straight away. If it hasn't physically left, we'll fix it.</p>"
+          }
+        },
+        "c4q5": {
+          "type": "qa",
+          "settings": {
+            "question": "My order is late, or it never arrived.",
+            "answer": "<p>Email us your order number and we'll replace it. No return required, no waiting period, no investigation you have to sit through.</p><p>If it arrived damaged, send a photo and we'll do the same.</p>"
+          }
+        },
+        "c4q6": {
+          "type": "qa",
+          "settings": {
+            "question": "Do you ship outside the US?",
+            "answer": "<p><mark>[REPLACE — yes/no, which countries, and who pays customs]</mark></p>"
+          }
+        },
+        "c5": {
+          "type": "category",
+          "settings": {
+            "key": "money",
+            "step": "STEP 05",
+            "title": "Money back",
+            "chip_label": "Money back",
+            "note": "The guarantee, how refunds actually work, and how to stop a subscription in one step."
+          }
+        },
+        "c5q1": {
+          "type": "qa",
+          "settings": {
+            "question": "What's the guarantee?",
+            "answer": "<p><mark>[REPLACE — your real guarantee window]</mark> days from delivery. If it hasn't done what you hoped, email us and we'll refund you.</p><p>You can have opened and used the box. That's rather the point — you can't judge it unopened.</p>"
+          }
+        },
+        "c5q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Do I have to ship the box back?",
+            "answer": "<p>No. We're not going to make you pay postage to return a half-used box. Keep it or bin it.</p>"
+          }
+        },
+        "c5q3": {
+          "type": "qa",
+          "settings": {
+            "question": "How long does a refund take?",
+            "answer": "<p>We approve refund requests within one business day. After that your bank controls the timing — usually 5–10 business days to leave our side, and sometimes another few days before it shows on your statement.</p><p>If it's been longer than two weeks, chase us. Something's gone wrong and we'd like to know.</p>"
+          }
+        },
+        "c5q4": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I cancel a subscription?",
+            "answer": "<p>One click in your account, any time, with no phone call and no retention questions. Or email us and we'll do it for you — include the order number or the email you checked out with.</p><p>We'd rather lose the subscription than trap you in it.</p>"
+          }
+        },
+        "c5q5": {
+          "type": "qa",
+          "settings": {
+            "question": "I'm being charged but I don't remember subscribing.",
+            "answer": "<p>Email us and we'll find the account, stop the billing, and refund the most recent charge. Usually it's a different email address than the one you're logged in with.</p>"
+          }
+        },
+        "c5q6": {
+          "type": "qa",
+          "settings": {
+            "question": "The price on the ad was lower than the site.",
+            "answer": "<p>Ads sometimes keep running after a promotion ends. The site price is the live one — but send us a screenshot and we'll honour what you saw.</p>"
+          }
+        },
+        "c5q7": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I reach a person?",
+            "answer": "<p>Email <a href=\"mailto:support@cebeam.com\">support@cebeam.com</a>. A human on our team answers every message, usually within one business day.</p><p><mark>[REPLACE — add phone number and registered company name; US buyers over 50 check for these before they trust a new brand]</mark></p>"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c1q1",
+        "c1q2",
+        "c1q3",
+        "c1q4",
+        "c1q5",
+        "c1q6",
+        "c1q7",
+        "c2",
+        "c2q1",
+        "c2q2",
+        "c2q3",
+        "c2q4",
+        "c2q5",
+        "c3",
+        "c3q1",
+        "c3q2",
+        "c3q3",
+        "c3q4",
+        "c3q5",
+        "c3q6",
+        "c4",
+        "c4q1",
+        "c4q2",
+        "c4q3",
+        "c4q4",
+        "c4q5",
+        "c4q6",
+        "c5",
+        "c5q1",
+        "c5q2",
+        "c5q3",
+        "c5q4",
+        "c5q5",
+        "c5q6",
+        "c5q7"
+      ],
+      "settings": {
+        "eyebrow": "Support / Frequently asked",
+        "heading_lead": "Straight answers,",
+        "heading_em": "in the order you'll ask them.",
+        "lede": "<p>Most eye-care questions arrive in a predictable order — so that's how this page is arranged. Start at the top, or search for the one thing you came here for.</p>",
+        "show_search": true,
+        "search_placeholder": "Search — refund, sensitive skin, shipping…",
+        "show_chips": true,
+        "empty_heading": "Nothing matched that.",
+        "empty_text": "<p>Try a shorter word, or email us the question — we'll answer and add it here.</p>",
+        "help_heading": "Still stuck? Ask us directly.",
+        "help_text": "<p>Send your order number and the question. You'll get a real reply from someone who can actually fix it — not a ticket number.</p>",
+        "help_button_label": "Email support@cebeam.com",
+        "help_button_link": "mailto:support@cebeam.com",
+        "help_meta": "Replies within one business day",
+        "disclosure": "<p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug and is not intended to diagnose, treat, cure, or prevent any disease or medical condition, including any condition affecting the eye itself.</p><p>Individual results vary. Nothing on this page is medical advice. If you have a skin or eye condition, are pregnant or nursing, or are using prescription topicals, speak to a qualified healthcare professional before use.</p><p><mark>[REPLACE — registered company name, full business address, contact phone]</mark></p>",
+        "color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "faq"
+  ]
+}

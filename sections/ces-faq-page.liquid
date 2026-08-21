@@ -1,0 +1,195 @@
+{{ 'ces-faq-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-faq-page.js' | asset_url }}" defer="defer"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+>
+
+<ces-faq-page class="ces-faqp color-{{ section.settings.color_scheme }}">
+  <section class="ces-faqp__hero">
+    <div class="ces-faqp__wrap">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ces-faqp__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      <h1 class="ces-faqp__title">
+        {{- section.settings.heading_lead -}}
+        {%- if section.settings.heading_em != blank -%}
+          <br><em>{{ section.settings.heading_em }}</em>
+        {%- endif -%}
+      </h1>
+
+      {%- if section.settings.lede != blank -%}
+        <p class="ces-faqp__lede">{{ section.settings.lede }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.show_search -%}
+        <div class="ces-faqp__search">
+          <label for="ces-faqp-q-{{ section.id }}" class="ces-visually-hidden">Search questions</label>
+          <input
+            id="ces-faqp-q-{{ section.id }}"
+            class="ces-faqp__input"
+            type="search"
+            placeholder="{{ section.settings.search_placeholder | escape }}"
+            autocomplete="off"
+          >
+          <button class="ces-faqp__clear" type="button" aria-label="Clear search">&times;</button>
+        </div>
+      {%- endif -%}
+
+      {%- assign category_count = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'category' -%}{%- assign category_count = category_count | plus: 1 -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if section.settings.show_chips and category_count > 0 -%}
+        <div class="ces-faqp__chips">
+          <button class="ces-faqp__chip" type="button" aria-pressed="false" data-t="all">All</button>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'category' -%}
+              <button class="ces-faqp__chip" type="button" aria-pressed="false" data-t="{{ block.settings.key | handleize }}">
+                {{- block.settings.chip_label | default: block.settings.title -}}
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <div class="ces-faqp__wrap ces-faqp__list">
+    {%- assign open_sec = false -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'category' -%}
+          {%- if open_sec -%}
+            </div>
+            </section>
+          {%- endif -%}
+          <section class="ces-faqp__sec" data-t="{{ block.settings.key | handleize }}" {{ block.shopify_attributes }}>
+            <div class="ces-faqp__sec-head">
+              {%- if block.settings.step != blank -%}
+                <div class="ces-faqp__step">{{ block.settings.step }}</div>
+              {%- else -%}
+                <div class="ces-faqp__step"></div>
+              {%- endif -%}
+              <div>
+                <h2 class="ces-faqp__sec-title">{{ block.settings.title }}</h2>
+                {%- if block.settings.note != blank -%}
+                  <p class="ces-faqp__sec-note">{{ block.settings.note }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="ces-faqp__qas">
+          {%- assign open_sec = true -%}
+
+        {%- when 'qa' -%}
+          <div class="ces-faqp__qa" {{ block.shopify_attributes }}>
+            <button class="ces-faqp__q" type="button">{{ block.settings.question }}</button>
+            <div class="ces-faqp__a rte">{{ block.settings.answer }}</div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+    {%- if open_sec -%}
+      </div>
+      </section>
+    {%- endif -%}
+
+    <div class="ces-faqp__empty">
+      <p>{{ section.settings.empty_heading }}</p>
+      <span>{{ section.settings.empty_text }}</span>
+    </div>
+  </div>
+
+  {%- if section.settings.help_heading != blank or section.settings.help_button_label != blank -%}
+    <section class="ces-faqp__help">
+      <div class="ces-faqp__wrap">
+        {%- if section.settings.help_heading != blank -%}
+          <h2>{{ section.settings.help_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.help_text != blank -%}
+          <p>{{ section.settings.help_text }}</p>
+        {%- endif -%}
+        {%- if section.settings.help_button_label != blank -%}
+          <a class="ces-faqp__btn" href="{{ section.settings.help_button_link | default: '#' }}">
+            {{ section.settings.help_button_label }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.help_meta != blank -%}
+          <p class="ces-faqp__help-meta">{{ section.settings.help_meta }}</p>
+        {%- endif -%}
+      </div>
+    </section>
+  {%- endif -%}
+
+  {%- if section.settings.disclosure != blank -%}
+    <div class="ces-faqp__foot">
+      <div class="ces-faqp__wrap">
+        <div class="ces-faqp__disclose rte">{{ section.settings.disclosure }}</div>
+      </div>
+    </div>
+  {%- endif -%}
+</ces-faq-page>
+
+{% schema %}
+{
+  "name": "CES FAQ page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Support / Frequently asked" },
+    { "type": "text", "id": "heading_lead", "label": "Heading (first line)", "default": "Straight answers," },
+    { "type": "text", "id": "heading_em", "label": "Heading (italic accent line)", "default": "in the order you'll ask them." },
+    { "type": "richtext", "id": "lede", "label": "Intro", "default": "<p>Most eye-care questions arrive in a predictable order — so that's how this page is arranged. Start at the top, or search for the one thing you came here for.</p>" },
+    { "type": "checkbox", "id": "show_search", "label": "Show search box", "default": true },
+    { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "Search — refund, sensitive skin, shipping…" },
+    { "type": "checkbox", "id": "show_chips", "label": "Show category filter chips", "default": true },
+    { "type": "header", "content": "No-results message" },
+    { "type": "text", "id": "empty_heading", "label": "Heading", "default": "Nothing matched that." },
+    { "type": "richtext", "id": "empty_text", "label": "Text", "default": "<p>Try a shorter word, or email us the question — we'll answer and add it here.</p>" },
+    { "type": "header", "content": "Help block" },
+    { "type": "text", "id": "help_heading", "label": "Heading", "default": "Still stuck? Ask us directly." },
+    { "type": "richtext", "id": "help_text", "label": "Text", "default": "<p>Send your order number and the question. You'll get a real reply from someone who can actually fix it — not a ticket number.</p>" },
+    { "type": "text", "id": "help_button_label", "label": "Button label", "default": "Email support@cebeam.com" },
+    { "type": "url", "id": "help_button_link", "label": "Button link" },
+    { "type": "text", "id": "help_meta", "label": "Button footnote", "default": "Replies within one business day" },
+    { "type": "header", "content": "Disclosure" },
+    { "type": "richtext", "id": "disclosure", "label": "Footer disclosure" },
+    { "type": "header", "content": "t:sections.all.colors.label" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "text", "id": "key", "label": "Filter key", "info": "A short unique tag used by the chips, e.g. buy, start, use.", "default": "category" },
+        { "type": "text", "id": "step", "label": "Step label", "default": "STEP 01" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Before you buy" },
+        { "type": "text", "id": "chip_label", "label": "Chip label", "info": "Defaults to the title." },
+        { "type": "text", "id": "note", "label": "Note" }
+      ]
+    },
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Your question here?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Your answer here.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CES FAQ page",
+      "blocks": [
+        { "type": "category" },
+        { "type": "qa" },
+        { "type": "qa" }
+      ]
+    }
+  ]
+}
+{% endschema %}
