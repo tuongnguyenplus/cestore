@@ -73,7 +73,7 @@
         "subtitle": {
           "type": "text",
           "settings": {
-            "text": "Clinical-Grade Dermal Micro-Delivery System",
+            "text": "Dissolving microneedle patches that deliver actives beneath the skin — for visibly fewer bags, dark circles and fine lines.",
             "text_style": "body"
           }
         },
@@ -81,42 +81,42 @@
           "type": "ces_highlight",
           "settings": {
             "icon": "sparkle",
-            "text": "Painless 2-Hour or Overnight Dissolution"
+            "text": "Fades Dark Circles & Puffiness*"
           }
         },
         "highlight-2": {
           "type": "ces_highlight",
           "settings": {
             "icon": "leaf",
-            "text": "Inflammation Support*"
+            "text": "De-Puffs Tired Eye Bags*"
           }
         },
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
             "icon": "shield",
-            "text": "Dermatologist Formulated for Sensitive Mature Skin"
+            "text": "Smooths Fine Lines & Crepey Skin*"
           }
         },
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
             "icon": "heart",
-            "text": "60-Day Empty Box Money-Back Guarantee"
+            "text": "Deep Hydration & Plumping*"
           }
         },
         "highlight-5": {
           "type": "ces_highlight",
           "settings": {
             "icon": "lightning",
-            "text": "Daily Energy & Vitality*"
+            "text": "Painless Micro-Delivery — No Needles*"
           }
         },
         "highlight-6": {
           "type": "ces_highlight",
           "settings": {
             "icon": "star",
-            "text": "Skin & Healthy Aging*"
+            "text": "Firmer, Brighter Under-Eyes*"
           }
         },
         "price": {
@@ -165,7 +165,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "Refills every 4 weeks at $39.99/ea",
+            "text": "Just 2 patches, 2 nights a week",
             "standalone": false,
             "align": "center"
           }
@@ -174,7 +174,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "Skip, pause, or cancel anytime",
+            "text": "Painless — no needles, no downtime",
             "standalone": false,
             "align": "center"
           }
@@ -183,7 +183,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "FREE items ship on first order",
+            "text": "Works overnight while you sleep",
             "standalone": false,
             "align": "center"
           }
@@ -201,8 +201,8 @@
             "avatar_1": "shopify://shop_images/360_F_645777959_fNnaNoeVO4qxCNPW9MWr3gQlPFSGA9yL.jpg",
             "avatar_2": "shopify://shop_images/images.jpg",
             "avatar_3": "shopify://shop_images/istockphoto-2162083710-612x612.jpg",
-            "text": "Trusted by 100k+ Customers",
-            "subtext": "for clean, reliable support",
+            "text": "Loved by 100k+ Tired Eyes",
+            "subtext": "for real, visible under-eye results",
             "show_verified": true
           }
         },
@@ -220,16 +220,16 @@
           "settings": {
             "heading": "Description",
             "icon": "none",
-            "content": "<p>A daily softgel built around 12mg of natural astaxanthin from Haematococcus pluvialis microalgae, carried in oil so your body can absorb it. Replace this with your own product description.</p>",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. Two patches, two nights a week, for visibly fresher, smoother, brighter under-eyes.</p>",
             "page": ""
           }
         },
         "acc-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Why do I need Rovina Astaxanthin?",
+            "heading": "How are these different from eye creams?",
             "icon": "none",
-            "content": "<p>Sun exposure, screen time, hard training and air pollution all generate free radicals faster than the body clears them. Astaxanthin sits inside the cell membrane and works on both of its surfaces.*</p>",
+            "content": "<p>A cream has to fight through the skin’s outer barrier, the layer built to keep things out, so most of it never gets far. The dissolving micro-cones start <strong>below</strong> that barrier and deliver the actives where they can actually work. That’s a delivery difference, not magic.</p>",
             "page": ""
           }
         },
@@ -238,16 +238,16 @@
           "settings": {
             "heading": "Does it actually work?",
             "icon": "none",
-            "content": "<p>Consistency is what matters. Astaxanthin is one of the more extensively studied carotenoids, and the effect builds with daily use rather than arriving on the first dose.*</p>",
+            "content": "<p>Hydration and a plumping effect are often visible from the very first uses. Deeper changes to dark circles, bags and fine lines typically build over 1–2 weeks of regular use. Consistency — two nights a week — is what matters most.*</p>",
             "page": ""
           }
         },
         "acc-4": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Benefits",
+            "heading": "Who is it for?",
             "icon": "none",
-            "content": "<p>Backed by 70+ researched clinical trials on astaxanthin. Add your benefit list here.</p>",
+            "content": "<p>Adults dealing with under-eye bags, dark circles, puffiness or fine lines — whether they’re hereditary, from screen time and late nights, or simply from getting older. Gentle enough for men and women with sensitive, mature skin.</p>",
             "page": ""
           }
         },
@@ -256,25 +256,25 @@
           "settings": {
             "heading": "Key ingredients",
             "icon": "none",
-            "content": "<p><strong>Astaxanthin 12mg</strong> from Haematococcus pluvialis microalgae.</p><p><strong>Oil base</strong> for absorption, because astaxanthin is fat soluble.</p>",
+            "content": "<p><strong>Hyaluronic Acid</strong> — deep hydration and a plumping effect.</p><p><strong>Niacinamide</strong> — brightens tone and calms the eye area.</p><p><strong>Peptides &amp; Collagen</strong> — support firmness.</p><p><strong>Vitamin C &amp; Retinol</strong> — smooth fine lines and revive radiance.*</p>",
             "page": ""
           }
         },
         "acc-6": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How do I take it for maximum benefits?",
+            "heading": "How do I apply them?",
             "icon": "none",
-            "content": "<p>Take with a meal that contains some fat. Split the daily amount across the day if that suits your routine better.</p>",
+            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use 2–3 nights a week.</p>",
             "page": ""
           }
         },
         "acc-7": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Is the 12mg dose safe?",
+            "heading": "Do the patches hurt?",
             "icon": "none",
-            "content": "<p>12mg is a well-studied dose used across clinical research. Talk to your healthcare provider if you are pregnant, nursing or taking prescription medication.*</p>",
+            "content": "<p>No. You may feel a light tingle for a minute or two as the micro-cones soften and get to work — that fades quickly. Sharp pain isn’t normal; if you feel it, take the patch off.</p>",
             "page": ""
           }
         },
@@ -283,7 +283,7 @@
           "settings": {
             "heading": "How long before I see results?",
             "icon": "none",
-            "content": "<p>Published research suggests changes build over weeks rather than days. Most people look at the eight to twelve week mark.*</p>",
+            "content": "<p>Many people notice a fresher, smoother look the very next morning — that’s mostly hydration. Changes that hold to bags, dark circles and lines usually appear after 1–2 weeks of consistent use. Buying for an event? Start at least a few weeks out.*</p>",
             "page": ""
           }
         },
@@ -292,7 +292,7 @@
           "settings": {
             "heading": "Do you offer a guarantee?",
             "icon": "none",
-            "content": "<p>If you are not satisfied within the first 90 days, contact us for a full refund.</p>",
+            "content": "<p>Yes — a 90-day money-back guarantee. If you don’t see a noticeable improvement, contact us for a full refund. You can have opened and used the box.</p>",
             "page": ""
           }
         },
@@ -301,7 +301,7 @@
           "settings": {
             "heading": "Shipping information",
             "icon": "none",
-            "content": "<p>Fast, tracked shipping across the U.S. Add your own delivery windows and rates here.</p>",
+            "content": "<p>Fast, tracked shipping across the U.S. You’ll get a tracking link by email as soon as your order leaves our facility.</p>",
             "page": ""
           }
         },
@@ -314,10 +314,10 @@
             "gradient_angle": 135,
             "image_opacity": 15,
             "overlay_opacity": 0,
-            "heading": "Why Trust Rovina as Your Wellness Partner?",
+            "heading": "Why Trust Cebeam for Your Under-Eyes?",
             "icon": "check-circle",
             "items": "Non-GMO Ingredients\nGluten-Free Formula\nGentle on Stomach\nGMP & FDA Registered Facility\n3rd-Party Lab Tested\nNo Artificial Fillers",
-            "footnote": "Clean, High-Quality Formula",
+            "footnote": "Dermatologist-Tested, Clean Formula",
             "text_alignment": "center"
           }
         }
@@ -433,8 +433,8 @@
         "video-4"
       ],
       "settings": {
-        "heading": "See How Rovina™ Transforms Real Lives",
-        "highlight": "Rovina™",
+        "heading": "See How Cebeam Transforms Tired Eyes",
+        "highlight": "Cebeam",
         "subheading": "",
         "columns_mobile": 2,
         "columns_desktop": 3,
@@ -455,24 +455,24 @@
           "type": "feature_card",
           "settings": {
             "image": "shopify://shop_images/59.webp",
-            "heading": "Natural Astaxanthin",
-            "text": "<p>Sourced from Haematococcus pluvialis microalgae. A 12mg dose of one of nature's most potent antioxidants.*</p>"
+            "heading": "Dissolving Micro-Cones",
+            "text": "<p>Hundreds of painless micro-cones dissolve into the skin, delivering actives just below the surface — where creams can’t reach.*</p>"
           }
         },
         "card2": {
           "type": "feature_card",
           "settings": {
             "image": "shopify://shop_images/ufvut.webp",
-            "heading": "Enhanced Absorption",
-            "text": "<p>Fat-soluble compounds need proper delivery, so the formula is oil based to maximise bioavailability.*</p>"
+            "heading": "Works While You Sleep",
+            "text": "<p>Press two patches on before bed and leave them overnight. The actives keep working for hours — no routine, no mess, no downtime.</p>"
           }
         },
         "card3": {
           "type": "feature_card",
           "settings": {
             "image": "shopify://shop_images/US.webp",
-            "heading": "Clean & Lab Tested Quality",
-            "text": "<p>Manufactured in a GMP-certified, FDA-registered facility. Non-GMO, gluten free and third-party tested.</p>"
+            "heading": "Clean & Dermatologist-Tested",
+            "text": "<p>Made in a GMP-certified facility and dermatologist-tested. Fragrance-free and gentle enough for delicate, mature eye skin.</p>"
           }
         }
       },
@@ -482,7 +482,7 @@
         "card3"
       ],
       "settings": {
-        "heading": "Comprehensive Wellness Benefits",
+        "heading": "Why Microneedle Patches Beat Creams",
         "heading_color": "#1d5c5c",
         "subheading": "",
         "image_ratio": "1 / 1",
@@ -499,7 +499,7 @@
           "settings": {
             "icon_text": "",
             "icon": "cell-defense",
-            "heading": "Cellular Wellness Support*",
+            "heading": "Dark Circles & Bags*",
             "text": ""
           }
         },
@@ -508,7 +508,7 @@
           "settings": {
             "icon_text": "",
             "icon": "shield",
-            "heading": "Comprehensive Protection*",
+            "heading": "Puffiness & Under-Eye Fatigue*",
             "text": ""
           }
         },
@@ -517,7 +517,7 @@
           "settings": {
             "icon_text": "",
             "icon": "molecule",
-            "heading": "Antioxidant Support*",
+            "heading": "Fine Lines & Crepey Texture*",
             "text": ""
           }
         },
@@ -526,7 +526,7 @@
           "settings": {
             "icon_text": "",
             "icon": "vitality",
-            "heading": "Long-Term Well-Being*",
+            "heading": "Firmness & Hydration*",
             "text": ""
           }
         }
@@ -538,7 +538,7 @@
         "icon-4"
       ],
       "settings": {
-        "heading": "One Formula. Total Support.",
+        "heading": "One Patch. Everything Your Eyes Need.",
         "highlight_words": "",
         "subheading": "",
         "icon_color": "#1d5c5c",
@@ -559,9 +559,9 @@
         "text_position": "center",
         "overlay_opacity": 40,
         "eyebrow": "",
-        "heading_accent": "Research-backed",
-        "heading": "wellness support",
-        "text": "<p>Formulated to the dose used in published human trials, then tested again by an independent lab before it ships.</p>",
+        "heading_accent": "Micro-delivery",
+        "heading": "that reaches the root",
+        "text": "<p>Painless dissolving micro-cones carry the actives beneath the skin barrier — precision delivery exactly where puffiness and dark circles start.*</p>",
         "button_label": "",
         "button_link": "",
         "badge_speed": 40,
@@ -576,21 +576,21 @@
         "b1": {
           "type": "marquee_item",
           "settings": {
-            "text": "Non-GMO",
+            "text": "Painless",
             "icon": ""
           }
         },
         "b2": {
           "type": "marquee_item",
           "settings": {
-            "text": "Gluten-Free",
+            "text": "No Downtime",
             "icon": ""
           }
         },
         "b3": {
           "type": "marquee_item",
           "settings": {
-            "text": "No additives",
+            "text": "Dermatologist-Tested",
             "icon": ""
           }
         }
@@ -618,9 +618,9 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEKS 1–2",
-            "heading": "Cellular Foundation",
-            "bullets": "Antioxidant activity begins working at the cellular level\nBody starts adapting to daily astaxanthin intake\nNo obvious change yet, which is normal",
+            "time_label": "NIGHT 1",
+            "heading": "The First Application",
+            "bullets": "A light tingle as the micro-cones get to work\nActives release beneath the skin overnight\nWake up to a fresher, more hydrated look*",
             "content": "",
             "open": true
           }
@@ -629,9 +629,9 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEK 3-4",
-            "heading": "Early Changes Appear",
-            "bullets": "Subtle improvements start becoming noticeable*\nMany people report looking and feeling healthier overall*\nRecovery after exertion gets easier*",
+            "time_label": "WEEK 1",
+            "heading": "Fresher, Brighter Mornings",
+            "bullets": "Puffiness looks visibly reduced in the morning*\nUnder-eye area feels smoother and plumper*\nConcealer starts sitting better, not creasing*",
             "content": "",
             "open": false
           }
@@ -640,9 +640,9 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEK 5-8",
-            "heading": "Building Momentum",
-            "bullets": "Noticeable improvements continue developing*\nBenefits reported across several areas at once*\nSkin tone and comfort keep improving*",
+            "time_label": "WEEKS 2-4",
+            "heading": "Dark Circles Fade",
+            "bullets": "Dark circles and bags look noticeably lighter*\nFine lines and crepey texture soften*\nEyes look rested — even when you’re not*",
             "content": "",
             "open": false
           }
@@ -651,9 +651,9 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEK 8+",
-            "heading": "Long-Term Support",
-            "bullets": "Results maintain with consistent daily use*\nBenefits continue building over time*\nCellular protection keeps working in the background*",
+            "time_label": "ONGOING",
+            "heading": "Keep It Up, 2 Nights a Week",
+            "bullets": "Results hold with just two patches a week*\nFirmness and brightness keep improving*\nNo routine, no downtime — it fits your life*",
             "content": "",
             "open": false
           }
@@ -670,8 +670,8 @@
         "image": "shopify://shop_images/47.webp",
         "image_position": "start",
         "image_ratio": "3 / 4",
-        "heading": "What to expect, week by week",
-        "subheading": "Astaxanthin builds up in your tissue, so the changes arrive in stages.*",
+        "heading": "What to expect, use by use",
+        "subheading": "Micro-delivery works below the surface, so results build with consistent use.*",
         "fill_speed": 900,
         "meta_opacity": 100,
         "heading_style": "plain",
@@ -691,10 +691,10 @@
         "layout": "split",
         "text_position": "end",
         "overlay_opacity": 0,
-        "eyebrow": "Clinically Verified",
-        "heading_accent": "Research-backed",
-        "heading": "Tested twice before it reaches you",
-        "text": "<p>Once at the manufacturer and once by an independent lab, for potency, heavy metals and microbials. Certificates of analysis available on request.</p>",
+        "eyebrow": "Dermatologist-Tested",
+        "heading_accent": "Painless",
+        "heading": "micro-delivery, zero downtime",
+        "text": "<p>Made in a GMP-certified facility and dermatologist-tested for the delicate eye area. No needles in the medical sense, no procedure, no recovery time.</p>",
         "button_label": "",
         "button_link": "",
         "badge_speed": 40,
@@ -712,10 +712,10 @@
             "tab_label": "Antioxidant Strength",
             "default_open": true,
             "image": "shopify://shop_images/ufvut.webp",
-            "heading": "The Strongest Antioxidant",
-            "text": "<p>Astaxanthin is recognised as one of the most powerful antioxidants available. Compared like for like at neutralising free radicals, it outperforms the vitamins most people already take.</p>",
-            "bullets": "Far stronger than Vitamin C\nFar stronger than CoQ10\nFar stronger than Vitamin E\nFar stronger than Alpha Lipoic Acid",
-            "footnote": "This is why the benefits build over time instead of fading.*"
+            "heading": "Delivered Below the Surface",
+            "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.*</p>",
+            "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo needles, no procedure\nNo downtime",
+            "footnote": "This is why the difference builds instead of washing off.*"
           }
         },
         "tab2": {
@@ -723,9 +723,9 @@
           "settings": {
             "tab_label": "What's Inside",
             "default_open": false,
-            "heading": "One Pure Ingredient",
-            "text": "<p>No proprietary blends and no filler list. Pure astaxanthin from microalgae, carried in oil so your body can absorb it.</p>",
-            "bullets": "Natural microalgae source\nOil-based for absorption\nNo fillers or unnecessary additives",
+            "heading": "A Formula Made for Eyes",
+            "text": "<p>Hyaluronic acid, niacinamide, peptides, vitamin C and retinol — chosen for the delicate under-eye area and free from fragrance and harsh fillers.</p>",
+            "bullets": "Hyaluronic acid for hydration & plumping\nNiacinamide to brighten tone\nPeptides & retinol to smooth lines",
             "footnote": ""
           }
         },
@@ -734,10 +734,10 @@
           "settings": {
             "tab_label": "Why It Works",
             "default_open": false,
-            "heading": "Backed by Research & Results",
-            "text": "<p>Designed for long-term wellness, not quick fixes.</p>",
+            "heading": "Backed by Results",
+            "text": "<p>Designed for visible under-eye results, not overnight miracles.</p>",
             "bullets": "",
-            "footnote": "Trusted by 100,000+ customers and backed by our 90-day money-back guarantee."
+            "footnote": "Loved by 100,000+ customers and backed by our 90-day money-back guarantee."
           }
         }
       },
@@ -747,7 +747,7 @@
         "tab3"
       ],
       "settings": {
-        "heading": "Discover Why Experts Trust Rovina Astaxanthin",
+        "heading": "Why Microneedle Patches Work",
         "subheading": "",
         "color_scheme": "scheme-ces-gradient",
         "padding_top": 40,
@@ -758,8 +758,8 @@
       "type": "ces-bullet-cta",
       "settings": {
         "image_position": "start",
-        "heading": "Money-back Guarantee.",
-        "bullets": "<ul><li>Try it for a full 90 days</li><li>Keep the bottles if it is not for you</li><li>No restocking fees and no phone calls</li></ul>",
+        "heading": "90-Day Money-Back Guarantee.",
+        "bullets": "<ul><li>Try it for a full 90 days</li><li>Keep the box even if it is not for you</li><li>No return shipping and no hassle</li></ul>",
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
@@ -775,61 +775,61 @@
         "ours-1": {
           "type": "rovina_point",
           "settings": {
-            "text": "Supported by 70+ peer-reviewed studies"
+            "text": "Delivers actives below the skin barrier"
           }
         },
         "ours-2": {
           "type": "rovina_point",
           "settings": {
-            "text": "3rd-Party Tested"
+            "text": "Painless dissolving micro-cones"
           }
         },
         "ours-3": {
           "type": "rovina_point",
           "settings": {
-            "text": "Allergen-Free & Clean"
+            "text": "Dermatologist-tested & fragrance-free"
           }
         },
         "ours-4": {
           "type": "rovina_point",
           "settings": {
-            "text": "Global Certified Facilities"
+            "text": "Works in 2 nights a week"
           }
         },
         "ours-5": {
           "type": "rovina_point",
           "settings": {
-            "text": "Gluten-Free"
+            "text": "90-day money-back guarantee"
           }
         },
         "theirs-1": {
           "type": "other_brand_point",
           "settings": {
-            "text": "Trend-Based Blends"
+            "text": "Sits on top of the skin"
           }
         },
         "theirs-2": {
           "type": "other_brand_point",
           "settings": {
-            "text": "No Test Proof"
+            "text": "Needles, pain or downtime"
           }
         },
         "theirs-3": {
           "type": "other_brand_point",
           "settings": {
-            "text": "Fillers & Additives"
+            "text": "Fragrance & harsh fillers"
           }
         },
         "theirs-4": {
           "type": "other_brand_point",
           "settings": {
-            "text": "Low-Quality Manufacturing"
+            "text": "Daily routine required"
           }
         },
         "theirs-5": {
           "type": "other_brand_point",
           "settings": {
-            "text": "No independent testing"
+            "text": "No real guarantee"
           }
         }
       },
@@ -846,10 +846,10 @@
         "theirs-5"
       ],
       "settings": {
-        "heading": "What sets Rovina apart",
+        "heading": "What sets Cebeam apart",
         "subheading": "",
         "image": "shopify://shop_images/BP_UEC_1__1x1_transp.webp",
-        "brand_label": "Rovina",
+        "brand_label": "Cebeam",
         "other_label": "Other Brands",
         "footnote": "",
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
@@ -861,8 +861,8 @@
       "type": "ces-bullet-cta",
       "settings": {
         "image_position": "start",
-        "heading": "What sets Rovina apart",
-        "bullets": "<ul><li>Built for comprehensive daily wellness</li><li>Visible results in weeks, not months*</li><li>Long-term cellular protection*</li><li>Clean, high-quality formula</li></ul>",
+        "heading": "What sets Cebeam apart",
+        "bullets": "<ul><li>Reaches beneath the skin, unlike creams*</li><li>Visible results in 1–2 weeks*</li><li>Painless, no needles, no downtime</li></ul>",
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
@@ -902,8 +902,8 @@
         "review-1": {
           "type": "review_item",
           "settings": {
-            "review": "<p>So far so good — only a few weeks in and already feeling better.*</p>",
-            "name": "Mikie",
+            "review": "<p>The difference was visible from the first few nights. Two weeks in and my bags have really gone down.*</p>",
+            "name": "Richard H.",
             "meta": "Verified Buyer",
             "verified": true,
             "rating": 5
@@ -912,8 +912,8 @@
         "review-2": {
           "type": "review_item",
           "settings": {
-            "review": "<p>I have noticed a difference in the way I look, and my skin at 64 feels softer.*</p>",
-            "name": "John A",
+            "review": "<p>I tried everything and nothing worked — until these. My under-eyes finally look rested.*</p>",
+            "name": "Michael R.",
             "meta": "Verified Buyer",
             "verified": true,
             "rating": 5
@@ -922,8 +922,8 @@
         "review-3": {
           "type": "review_item",
           "settings": {
-            "review": "<p>I feel better, and I believe my skin tone is evening out. It is great.*</p>",
-            "name": "Melissa L",
+            "review": "<p>So painless and effective. My concealer sits so much better now, no creasing.*</p>",
+            "name": "Denise K.",
             "meta": "Verified Buyer",
             "verified": true,
             "rating": 5
@@ -932,8 +932,8 @@
         "review-4": {
           "type": "review_item",
           "settings": {
-            "review": "<p>Great product, works well and a generous amount per bottle.</p>",
-            "name": "Reuben M.",
+            "review": "<p>My eyes were making me look years older. After a month I’ve got my confidence back.*</p>",
+            "name": "Susan A.",
             "meta": "Verified Buyer",
             "verified": true,
             "rating": 5
@@ -942,7 +942,7 @@
         "review-5": {
           "type": "review_item",
           "settings": {
-            "review": "<p>Received quickly and starting this morning. Customer service was excellent.</p>",
+            "review": "<p>Melts right in, no sticky residue, skin feels hydrated and smooth. Highly recommend.</p>",
             "name": "Charity",
             "meta": "Verified Buyer",
             "verified": true,
@@ -964,8 +964,8 @@
         "review-5"
       ],
       "settings": {
-        "heading": "What Some Customers Are Saying",
-        "subheading": "Honest experiences with Rovina™ Astaxanthin",
+        "heading": "What Customers Are Saying",
+        "subheading": "Honest experiences with Cebeam Microneedle Patches",
         "avatar_shape": "tile",
         "avatar_speed": 35,
         "disclaimer": "<p>Testimonials reflect individual experiences. Results may vary.</p>",
@@ -981,103 +981,103 @@
           "type": "faq_item",
           "settings": {
             "question": "How long until I see results?",
-            "answer": "<p>Astaxanthin accumulates in tissue rather than acting immediately. Most people look at the eight to twelve week mark.*</p>",
+            "answer": "<p>Hydration and a smoother look are often visible the next morning. Changes to bags, dark circles and lines usually build over 1–2 weeks of regular use.*</p>",
             "open": false
           }
         },
         "faq-2": {
           "type": "faq_item",
           "settings": {
-            "question": "Where is Rovina made?",
-            "answer": "<p>In a GMP-certified, FDA-registered facility in the USA.</p>",
+            "question": "Do the patches hurt?",
+            "answer": "<p>No. You may feel a light tingle for a minute or two as the painless micro-cones make contact and soften. The sensation fades quickly.</p>",
             "open": false
           }
         },
         "faq-3": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe for long-term use?",
-            "answer": "<p>Astaxanthin is well tolerated at this dose. Check with your healthcare provider if you take prescription medication.*</p>",
+            "question": "How often should I use them?",
+            "answer": "<p>Two to three nights a week is all you need. The actives keep working between uses, so there’s no need to apply every night.</p>",
             "open": false
           }
         },
         "faq-4": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I take it with other supplements?",
-            "answer": "<p>Yes. It pairs well with omega-3s and vitamin D.</p>",
+            "question": "Are they safe for sensitive skin?",
+            "answer": "<p>Yes. The formula is dermatologist-tested and made for the delicate eye area. If your skin is very reactive, do a small patch test first.</p>",
             "open": false
           }
         },
         "faq-5": {
           "type": "faq_item",
           "settings": {
-            "question": "How and when should I take it?",
-            "answer": "<p>With a meal that contains some fat. Timing matters less than taking it every day.</p>",
+            "question": "How do I apply them?",
+            "answer": "<p>On clean, dry skin, place one under each eye and press firmly for 5–10 seconds. Leave on at least 2 hours, or overnight, then remove in the morning.</p>",
             "open": false
           }
         },
         "faq-6": {
           "type": "faq_item",
           "settings": {
-            "question": "Why more than one softgel per day?",
-            "answer": "<p>Astaxanthin is fat soluble and your body can only absorb so much at one time, so the daily amount is split.</p>",
+            "question": "Why do the patches feel dry to the touch?",
+            "answer": "<p>That’s normal. The micro-cones are crystallised, solidified actives — not a soaked serum — so there’s no visible liquid. The dry feel is part of how they work.</p>",
             "open": false
           }
         },
         "faq-7": {
           "type": "faq_item",
           "settings": {
-            "question": "Do I need to change my routine?",
-            "answer": "<p>No. Add it to a meal you already eat and carry on as normal.</p>",
+            "question": "A little redness after use — is that normal?",
+            "answer": "<p>Yes, and it’s a good sign. It means the micro-cones delivered the actives where they’re needed. It usually settles within 15–30 minutes.</p>",
             "open": false
           }
         },
         "faq-8": {
           "type": "faq_item",
           "settings": {
-            "question": "How is this different from other supplements?",
-            "answer": "<p>One studied ingredient at a studied dose, rather than a proprietary blend.</p>",
+            "question": "Can I wear makeup afterwards?",
+            "answer": "<p>Yes — after removing the patch, wait about 20 minutes, then apply concealer as normal. Many people find it sits smoother on the days after.</p>",
             "open": false
           }
         },
         "faq-9": {
           "type": "faq_item",
           "settings": {
-            "question": "How is this different from other antioxidants?*",
-            "answer": "<p>Astaxanthin works on both surfaces of the cell membrane, which most antioxidants do not.*</p>",
+            "question": "Will this work on bags I’ve had for years?",
+            "answer": "<p>Often, partly — it depends what’s under there. Fluid, thin skin and lost firmness respond well. Inherited fat pads that push forward are a surgical issue no topical can move.*</p>",
             "open": false
           }
         },
         "faq-10": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I buy Rovina in stores?",
-            "answer": "<p>Not currently. It is sold direct so we can control storage and freshness.</p>",
+            "question": "Can I buy Cebeam in stores?",
+            "answer": "<p>Not currently. It’s sold direct so we can control storage and freshness.</p>",
             "open": false
           }
         },
         "faq-11": {
           "type": "faq_item",
           "settings": {
-            "question": "Are there any age or health restrictions?*",
-            "answer": "<p>It is intended for adults. Speak to your provider first if you are pregnant, nursing or on medication.*</p>",
+            "question": "Who should not use these?",
+            "answer": "<p>Skip them on broken, irritated or sunburned skin, or with an active eye infection. If you’re pregnant, nursing or on prescription retinoids, ask your doctor first.*</p>",
             "open": false
           }
         },
         "faq-12": {
           "type": "faq_item",
           "settings": {
-            "question": "How should I store it?",
-            "answer": "<p>In a cool, dry place away from direct sunlight. No refrigeration needed — keep the cap closed.</p>",
+            "question": "How should I store them?",
+            "answer": "<p>Sealed, somewhere cool and dry, out of direct sun. Don’t refrigerate — condensation ruins the micro-cones. Once a patch is out of its pouch, use it.</p>",
             "open": false
           }
         },
         "faq-13": {
           "type": "faq_item",
           "settings": {
-            "question": "What if it does not work for me?",
-            "answer": "<p>Contact us within 90 days for a full refund. You do not need to send the bottles back.</p>",
+            "question": "What if it doesn’t work for me?",
+            "answer": "<p>Contact us within 90 days for a full refund. You don’t need to send the box back.</p>",
             "open": false
           }
         }
@@ -1110,8 +1110,8 @@
     "newsletter": {
       "type": "ces-newsletter-signup",
       "settings": {
-        "heading": "Join The Rovina Community",
-        "text": "<p>Research summaries, product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>",
+        "heading": "Join The Cebeam Community",
+        "text": "<p>Under-eye tips, product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>",
         "footnote": "No spam. Unsubscribe in one click.",
         "overlay_opacity": 50,
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
@@ -1128,7 +1128,7 @@
         "show_image": true,
         "title": "",
         "rating_tenths": 44,
-        "rating_text": "Rated 4.4 Excellent | Over 100,000 Sold",
+        "rating_text": "Rated 4.4 Excellent | Over 255,000 Sold",
         "enable_counter": true,
         "sold_count": 100000,
         "sold_suffix": "Sold",
