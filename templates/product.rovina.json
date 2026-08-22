@@ -443,7 +443,7 @@
         "show_controls": true,
         "aspect_ratio": "9 / 16",
         "background_pattern": "none",
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -1105,7 +1105,7 @@
         "heading": "Frequently Asked Questions",
         "subheading": "",
         "exclusive": true,
-        "footer_text": "<p>Still have a question? Email support@example.com and a real person will reply within one business day.</p>",
+        "footer_text": "<p>Still have a question? Email support@cebeam.com and a real person will reply within one business day.</p>",
         "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
         "padding_top": 40,
         "padding_bottom": 40
