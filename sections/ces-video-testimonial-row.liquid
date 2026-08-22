@@ -15,8 +15,36 @@
           {%- liquid
             assign ces_heading = section.settings.heading
             if section.settings.highlight != blank and ces_heading contains section.settings.highlight
+              assign ces_hl_style = ''
+              if section.settings.highlight_style == 'gradient'
+                assign ces_hl_from = section.settings.highlight_color | default: '#1d5c5c'
+                assign ces_hl_to = section.settings.highlight_color_to | default: '#a8845c'
+                capture ces_hl_style
+                  echo 'background-image:linear-gradient('
+                  echo section.settings.highlight_gradient_angle
+                  echo 'deg,'
+                  echo ces_hl_from
+                  echo ' 0%,'
+                  echo ces_hl_to
+                  echo ' 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:'
+                  echo ces_hl_from
+                  echo ';'
+                endcapture
+              elsif section.settings.highlight_color != blank
+                capture ces_hl_style
+                  echo 'color:'
+                  echo section.settings.highlight_color
+                  echo ';'
+                endcapture
+              endif
               capture ces_hl
-                echo '<span class="ces-video-testimonial-row__heading-accent">'
+                echo '<span class="ces-video-testimonial-row__heading-accent"'
+                if ces_hl_style != blank
+                  echo ' style="'
+                  echo ces_hl_style
+                  echo '"'
+                endif
+                echo '>'
                 echo section.settings.highlight
                 echo '</span>'
               endcapture
@@ -185,6 +213,46 @@
       "label": "Highlighted word",
       "info": "This word inside the heading is shown in the accent colour. Leave empty for none.",
       "default": "Rovina™"
+    },
+    {
+      "type": "select",
+      "id": "highlight_style",
+      "label": "Highlighted word style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid colour"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight colour",
+      "info": "Solid colour, or the start of the gradient. Leave blank to use the theme accent.",
+      "default": "#1d5c5c"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_to",
+      "label": "Gradient end colour",
+      "info": "Used only when style is Gradient.",
+      "default": "#a8845c"
+    },
+    {
+      "type": "range",
+      "id": "highlight_gradient_angle",
+      "min": 0,
+      "max": 360,
+      "step": 5,
+      "unit": "deg",
+      "label": "Gradient angle",
+      "default": 94
     },
     {
       "type": "text",
