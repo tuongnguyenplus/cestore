@@ -1,0 +1,373 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+{{ 'ces-offer-bundle.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-offer-bundle.js' | asset_url }}" defer="defer"></script>
+
+{% render 'ces-section-padding' %}
+
+{%- liquid
+  assign benefits = section.blocks | where: 'type', 'benefit'
+  assign tiers = section.blocks | where: 'type', 'tier'
+  assign accent = section.settings.accent_color
+  assign sale = section.settings.sale_color
+-%}
+
+<div
+  class="ces-section ces-offer ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  style="--ces-offer-accent: {{ accent }}; --ces-offer-sale: {{ sale }};"
+>
+  <ces-offer-bundle class="ces-offer__inner" data-open-drawer="{{ section.settings.open_cart_drawer }}">
+    {%- if benefits.size > 0 -%}
+      <ul class="ces-offer__benefits" role="list">
+        {%- for block in benefits -%}
+          <li class="ces-offer__benefit" {{ block.shopify_attributes }}>
+            <span class="ces-offer__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" fill="currentColor" />
+                <path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="ces-offer__benefit-text">{{ block.settings.text }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if section.settings.sale_text != blank or section.settings.sale_badge != blank -%}
+      <div class="ces-offer__sale">
+        {%- if section.settings.sale_badge != blank -%}
+          <span class="ces-offer__sale-badge">{{ section.settings.sale_badge }}</span>
+        {%- endif -%}
+        {%- if section.settings.sale_text != blank -%}
+          <div class="ces-offer__sale-text">{{ section.settings.sale_text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if tiers.size > 0 -%}
+      <div
+        class="ces-offer__tiers"
+        role="radiogroup"
+        aria-label="{{ section.settings.heading | default: 'Choose your offer' | escape }}"
+        style="--ces-offer-cols: {{ tiers.size }};"
+      >
+        {%- assign has_selected = false -%}
+        {%- for block in tiers -%}
+          {%- if block.settings.selected -%}
+            {%- assign has_selected = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- for block in tiers -%}
+          {%- liquid
+            assign tier_product = block.settings.product | default: product
+            assign tier_variant = tier_product.selected_or_first_available_variant
+            assign is_selected = block.settings.selected
+            if has_selected == false and forloop.first
+              assign is_selected = true
+            endif
+
+            assign price_display = block.settings.price
+            if price_display == blank and tier_variant
+              assign price_display = tier_variant.price | times: block.settings.quantity | money
+            endif
+            assign compare_display = block.settings.compare_price
+          -%}
+          <label
+            class="ces-offer__tier{% if block.settings.highlight %} ces-offer__tier--best{% endif %}{% if is_selected %} is-selected{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <input
+              type="radio"
+              name="ces-offer-{{ section.id }}"
+              class="ces-offer__radio visually-hidden"
+              value="{{ forloop.index0 }}"
+              data-variant-id="{{ tier_variant.id }}"
+              data-quantity="{{ block.settings.quantity | default: 1 }}"
+              {% if is_selected %}checked{% endif %}
+              {% unless tier_variant and tier_variant.available %}data-unavailable="true"{% endunless %}
+            >
+            {%- if block.settings.badge != blank -%}
+              <span class="ces-offer__tier-badge">{{ block.settings.badge }}</span>
+            {%- endif -%}
+            <span class="ces-offer__tier-body">
+              {%- if block.settings.image != blank or tier_product.featured_image != blank -%}
+                {%- assign tier_image = block.settings.image | default: tier_product.featured_image -%}
+                <span class="ces-offer__tier-media">
+                  {{
+                    tier_image
+                    | image_url: width: 240
+                    | image_tag: loading: 'lazy', widths: '120, 180, 240, 360', sizes: '120px', alt: ''
+                  }}
+                </span>
+              {%- endif -%}
+              <span class="ces-offer__tier-title">{{ block.settings.label }}</span>
+              {%- if block.settings.save_label != blank -%}
+                <span class="ces-offer__tier-save">{{ block.settings.save_label }}</span>
+              {%- endif -%}
+              <span class="ces-offer__tier-prices">
+                {%- if price_display != blank -%}
+                  <span class="ces-offer__tier-price">{{ price_display }}</span>
+                {%- endif -%}
+                {%- if compare_display != blank -%}
+                  <s class="ces-offer__tier-compare">{{ compare_display }}</s>
+                {%- endif -%}
+              </span>
+            </span>
+          </label>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.stock_text != blank -%}
+      <p class="ces-offer__stock">
+        <span class="ces-offer__stock-dot" aria-hidden="true"></span>
+        {{ section.settings.stock_text }}
+      </p>
+    {%- endif -%}
+
+    <button type="button" class="ces-offer__add" data-ces-offer-add>
+      <span class="svg-wrapper ces-offer__add-icon" aria-hidden="true">
+        {{- 'icon-cart.svg' | inline_asset_content -}}
+      </span>
+      <span data-ces-offer-add-label>{{ section.settings.button_label | default: 'Add to cart' }}</span>
+    </button>
+
+    <p class="ces-offer__error" role="alert" hidden></p>
+  </ces-offer-bundle>
+</div>
+
+{% schema %}
+{
+  "name": "CES Offer bundle",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Accessible label",
+      "info": "Read by screen readers for the offer group.",
+      "default": "Choose your offer"
+    },
+    {
+      "type": "header",
+      "content": "Sale banner"
+    },
+    {
+      "type": "text",
+      "id": "sale_badge",
+      "label": "Sale badge",
+      "default": "SUMMER SALE"
+    },
+    {
+      "type": "richtext",
+      "id": "sale_text",
+      "label": "Sale message",
+      "default": "<p>Sale ends today at midnight. <strong>Last chance</strong> at this price.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Stock line"
+    },
+    {
+      "type": "text",
+      "id": "stock_text",
+      "label": "Stock text",
+      "info": "Leave blank to hide. Only use a real number.",
+      "default": "Limited stock : only 43 left"
+    },
+    {
+      "type": "header",
+      "content": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Add to cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_cart_drawer",
+      "label": "Open cart drawer after adding",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Emphasis colour",
+      "info": "Best-seller header, selected border and the Add to cart button.",
+      "default": "#20303f"
+    },
+    {
+      "type": "color",
+      "id": "sale_color",
+      "label": "Sale colour",
+      "default": "#e23b3b"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit",
+          "default": "Eliminates dark circles & under-eye bags"
+        }
+      ]
+    },
+    {
+      "type": "tier",
+      "name": "Offer tier",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "The product/variant this tier adds to cart. Defaults to the page's product."
+        },
+        {
+          "type": "range",
+          "id": "quantity",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "label": "Quantity added",
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Title",
+          "default": "3+1 FREE"
+        },
+        {
+          "type": "text",
+          "id": "save_label",
+          "label": "Save label",
+          "default": "Save 20%"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "info": "Shown as-is. Leave blank to use the variant price × quantity."
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Compare-at price",
+          "info": "Struck-through. Leave blank to hide."
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "info": "e.g. BEST SELLER. Leave blank for none."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Defaults to the product image."
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight",
+          "label": "Highlight (best-seller styling)",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "selected",
+          "label": "Selected by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "CES Offer bundle",
+      "blocks": [
+        { "type": "benefit", "settings": { "text": "Eliminates dark circles & under-eye bags" } },
+        { "type": "benefit", "settings": { "text": "Smooths fine lines" } },
+        { "type": "benefit", "settings": { "text": "Boosts firmness" } },
+        { "type": "benefit", "settings": { "text": "Gentle & painless" } },
+        {
+          "type": "tier",
+          "settings": {
+            "label": "3+1 FREE",
+            "save_label": "Save 20%",
+            "price": "$39.95",
+            "compare_price": "$49.90",
+            "quantity": 4
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "label": "6+2 FREE",
+            "save_label": "Save 40%",
+            "price": "$59.90",
+            "compare_price": "$99.80",
+            "badge": "BEST SELLER",
+            "quantity": 8,
+            "highlight": true,
+            "selected": true
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "label": "12+4 FREE",
+            "save_label": "Save 55%",
+            "price": "$89.95",
+            "compare_price": "$199.60",
+            "quantity": 16
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

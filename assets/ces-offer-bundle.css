@@ -1,0 +1,255 @@
+/* =========================================================
+   CES Offer bundle — tiered offer selector (Orena-style)
+   ========================================================= */
+.ces-offer__inner {
+  display: block;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+/* ---------- Benefits ---------- */
+.ces-offer__benefits {
+  list-style: none;
+  margin: 0 0 2.4rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.ces-offer__benefit {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.ces-offer__check {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--ces-offer-accent);
+}
+.ces-offer__check svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- Sale banner ---------- */
+.ces-offer__sale {
+  position: relative;
+  margin: 2.4rem 0;
+  padding: 2rem 1.6rem 1.4rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid color-mix(in srgb, var(--ces-offer-sale) 35%, transparent);
+  background: color-mix(in srgb, var(--ces-offer-sale) 8%, #fff);
+  text-align: center;
+}
+.ces-offer__sale-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.6rem 1.6rem;
+  border-radius: 0.4rem;
+  background: var(--ces-offer-sale);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ces-offer__sale-text {
+  font-size: 1.55rem;
+  line-height: 1.5;
+}
+.ces-offer__sale-text > * {
+  margin: 0;
+}
+
+/* ---------- Tiers ---------- */
+.ces-offer__tiers {
+  display: grid;
+  grid-template-columns: repeat(var(--ces-offer-cols, 3), 1fr);
+  align-items: end;
+  gap: 1.2rem;
+  margin: 2.4rem 0 1.6rem;
+}
+.ces-offer__tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 0.9rem;
+  border: 0.2rem solid transparent;
+  background: color-mix(in srgb, var(--ces-offer-accent) 6%, #eef1fa);
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.ces-offer__tier:hover {
+  border-color: color-mix(in srgb, var(--ces-offer-accent) 45%, transparent);
+}
+.ces-offer__tier.is-selected {
+  border-color: var(--ces-offer-accent);
+}
+.ces-offer__tier--best {
+  background: rgb(var(--color-background, 255 255 255));
+  border-color: var(--ces-offer-accent);
+}
+
+.ces-offer__tier-badge {
+  display: block;
+  padding: 0.7rem 0.4rem;
+  background: var(--ces-offer-accent);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ces-offer__tier-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.6rem 1rem 1.8rem;
+  text-align: center;
+}
+.ces-offer__tier-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.2rem;
+  height: 7.2rem;
+  margin-bottom: 0.4rem;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  background: #fff;
+}
+.ces-offer__tier-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.ces-offer__tier-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.ces-offer__tier-save {
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+.ces-offer__tier-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  margin-top: 0.4rem;
+  line-height: 1.15;
+}
+.ces-offer__tier-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.ces-offer__tier-compare {
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.5);
+}
+
+/* ---------- Stock line ---------- */
+.ces-offer__stock {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.4rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--ces-offer-sale);
+}
+.ces-offer__stock-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--ces-offer-sale);
+  animation: ces-offer-pulse 1.6s ease-in-out infinite;
+}
+@keyframes ces-offer-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+
+/* ---------- Add to cart ---------- */
+.ces-offer__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.8rem 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  background: var(--ces-offer-accent);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.ces-offer__add:hover {
+  opacity: 0.9;
+}
+.ces-offer__add:disabled,
+.ces-offer__add.loading {
+  opacity: 0.6;
+  cursor: default;
+}
+.ces-offer__add-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.ces-offer__error {
+  margin: 1rem 0 0;
+  color: var(--ces-offer-sale);
+  font-size: 1.4rem;
+  text-align: center;
+}
+.ces-offer__error[hidden] {
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 480px) {
+  .ces-offer__tier-title {
+    font-size: 1.6rem;
+  }
+  .ces-offer__tier-price {
+    font-size: 1.55rem;
+  }
+  .ces-offer__tier-media {
+    width: 5.8rem;
+    height: 5.8rem;
+  }
+  .ces-offer__benefit {
+    font-size: 1.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-offer__stock-dot {
+    animation: none;
+  }
+}
