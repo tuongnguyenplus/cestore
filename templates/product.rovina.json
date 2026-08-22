@@ -497,6 +497,7 @@
         "icon-1": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/dark-circles-1512848711.webp",
             "icon_text": "",
             "icon": "cell-defense",
             "heading": "Dark Circles & Bags*",
@@ -506,6 +507,7 @@
         "icon-2": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/3824885.png",
             "icon_text": "",
             "icon": "shield",
             "heading": "Puffiness & Under-Eye Fatigue*",
@@ -515,6 +517,7 @@
         "icon-3": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/tired-lifeless-or-unconsious-eye-with-eye-bags-or-dark-circles-colored-icon-illustration-outlined-isolated-on-square-white-background-simple-flat-cartoon-art-styled-drawing-free-vecto.webp",
             "icon_text": "",
             "icon": "molecule",
             "heading": "Fine Lines & Crepey Texture*",
