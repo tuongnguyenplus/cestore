@@ -14,6 +14,8 @@
   {{ 'ces-base.css' | asset_url | stylesheet_tag }}
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
   {{ 'ces-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'ces-offer-bundle.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ces-offer-bundle.js' | asset_url }}" defer="defer"></script>
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -1116,6 +1118,163 @@
                       </span>
                     {%- endif -%}
                   </div>
+
+                {%- when 'ces_offer_bundle' -%}
+                  <ces-offer-bundle
+                    class="ces-offer ces-offer--block quick-add-hidden"
+                    data-open-drawer="{{ block.settings.open_cart_drawer }}"
+                    style="--ces-offer-accent: {{ block.settings.accent_color }}; --ces-offer-sale: {{ block.settings.sale_color }};"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- assign ces_ob_benefits = '' -%}
+                    {%- for n in (1..4) -%}
+                      {%- assign bkey = 'benefit_' | append: n -%}
+                      {%- if block.settings[bkey] != blank -%}
+                        {%- assign ces_ob_benefits = ces_ob_benefits | append: block.settings[bkey] | append: '||' -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                    {%- assign ces_ob_benefit_list = ces_ob_benefits | split: '||' -%}
+                    {%- if ces_ob_benefit_list.size > 0 -%}
+                      <ul class="ces-offer__benefits" role="list">
+                        {%- for ces_ob_b in ces_ob_benefit_list -%}
+                          <li class="ces-offer__benefit">
+                            <span class="ces-offer__check" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="currentColor" />
+                                <path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                            </span>
+                            <span class="ces-offer__benefit-text">{{ ces_ob_b }}</span>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+
+                    {%- if block.settings.sale_badge != blank or block.settings.sale_text != blank -%}
+                      <div class="ces-offer__sale">
+                        {%- if block.settings.sale_badge != blank -%}
+                          <span class="ces-offer__sale-badge">{{ block.settings.sale_badge }}</span>
+                        {%- endif -%}
+                        {%- if block.settings.sale_text != blank -%}
+                          <div class="ces-offer__sale-text">{{ block.settings.sale_text }}</div>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+
+                    {%- assign ces_ob_idx = '1,2,3' | split: ',' -%}
+                    {%- assign ces_ob_any_selected = false -%}
+                    {%- assign ces_ob_cols = 0 -%}
+                    {%- for i in ces_ob_idx -%}
+                      {%- assign lkey = 'tier' | append: i | append: '_label' -%}
+                      {%- assign skey = 'tier' | append: i | append: '_selected' -%}
+                      {%- if block.settings[lkey] != blank -%}
+                        {%- assign ces_ob_cols = ces_ob_cols | plus: 1 -%}
+                        {%- if block.settings[skey] -%}
+                          {%- assign ces_ob_any_selected = true -%}
+                        {%- endif -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+
+                    {%- if ces_ob_cols > 0 -%}
+                      <div
+                        class="ces-offer__tiers"
+                        role="radiogroup"
+                        aria-label="{{ 'products.product.choose_options' | t | default: 'Choose your offer' }}"
+                        style="--ces-offer-cols: {{ ces_ob_cols }};"
+                      >
+                        {%- assign ces_ob_rendered = 0 -%}
+                        {%- for i in ces_ob_idx -%}
+                          {%- assign lkey = 'tier' | append: i | append: '_label' -%}
+                          {%- assign ces_ob_label = block.settings[lkey] -%}
+                          {%- if ces_ob_label == blank -%}{%- continue -%}{%- endif -%}
+                          {%- assign ces_ob_rendered = ces_ob_rendered | plus: 1 -%}
+                          {%- liquid
+                            assign pkey = 'tier' | append: i | append: '_product'
+                            assign qkey = 'tier' | append: i | append: '_quantity'
+                            assign savekey = 'tier' | append: i | append: '_save'
+                            assign prkey = 'tier' | append: i | append: '_price'
+                            assign cmpkey = 'tier' | append: i | append: '_compare'
+                            assign bdgkey = 'tier' | append: i | append: '_badge'
+                            assign imgkey = 'tier' | append: i | append: '_image'
+                            assign hlkey = 'tier' | append: i | append: '_highlight'
+                            assign selkey = 'tier' | append: i | append: '_selected'
+
+                            assign ces_ob_product = block.settings[pkey] | default: product
+                            assign ces_ob_variant = ces_ob_product.selected_or_first_available_variant
+                            assign ces_ob_qty = block.settings[qkey] | default: 1
+
+                            assign ces_ob_is_selected = block.settings[selkey]
+                            if ces_ob_any_selected == false and ces_ob_rendered == 1
+                              assign ces_ob_is_selected = true
+                            endif
+
+                            assign ces_ob_price = block.settings[prkey]
+                            if ces_ob_price == blank and ces_ob_variant
+                              assign ces_ob_price = ces_ob_variant.price | times: ces_ob_qty | money
+                            endif
+                            assign ces_ob_compare = block.settings[cmpkey]
+                            assign ces_ob_image = block.settings[imgkey] | default: ces_ob_product.featured_image
+                          -%}
+                          <label
+                            class="ces-offer__tier{% if block.settings[hlkey] %} ces-offer__tier--best{% endif %}{% if ces_ob_is_selected %} is-selected{% endif %}"
+                          >
+                            <input
+                              type="radio"
+                              name="ces-offer-{{ block.id }}"
+                              class="ces-offer__radio visually-hidden"
+                              value="{{ i }}"
+                              data-variant-id="{{ ces_ob_variant.id }}"
+                              data-quantity="{{ ces_ob_qty }}"
+                              {% if ces_ob_is_selected %}checked{% endif %}
+                              {% unless ces_ob_variant and ces_ob_variant.available %}data-unavailable="true"{% endunless %}
+                            >
+                            {%- if block.settings[bdgkey] != blank -%}
+                              <span class="ces-offer__tier-badge">{{ block.settings[bdgkey] }}</span>
+                            {%- endif -%}
+                            <span class="ces-offer__tier-body">
+                              {%- if ces_ob_image != blank -%}
+                                <span class="ces-offer__tier-media">
+                                  {{
+                                    ces_ob_image
+                                    | image_url: width: 240
+                                    | image_tag: loading: 'lazy', widths: '120, 180, 240, 360', sizes: '96px', alt: ''
+                                  }}
+                                </span>
+                              {%- endif -%}
+                              <span class="ces-offer__tier-title">{{ ces_ob_label }}</span>
+                              {%- if block.settings[savekey] != blank -%}
+                                <span class="ces-offer__tier-save">{{ block.settings[savekey] }}</span>
+                              {%- endif -%}
+                              <span class="ces-offer__tier-prices">
+                                {%- if ces_ob_price != blank -%}
+                                  <span class="ces-offer__tier-price">{{ ces_ob_price }}</span>
+                                {%- endif -%}
+                                {%- if ces_ob_compare != blank -%}
+                                  <s class="ces-offer__tier-compare">{{ ces_ob_compare }}</s>
+                                {%- endif -%}
+                              </span>
+                            </span>
+                          </label>
+                        {%- endfor -%}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.stock_text != blank -%}
+                      <p class="ces-offer__stock">
+                        <span class="ces-offer__stock-dot" aria-hidden="true"></span>
+                        {{ block.settings.stock_text }}
+                      </p>
+                    {%- endif -%}
+
+                    <button type="button" class="ces-offer__add" data-ces-offer-add>
+                      <span class="svg-wrapper ces-offer__add-icon" aria-hidden="true">
+                        {{- 'icon-cart.svg' | inline_asset_content -}}
+                      </span>
+                      <span data-ces-offer-add-label>{{ block.settings.button_label | default: 'Add to cart' }}</span>
+                    </button>
+
+                    <p class="ces-offer__error" role="alert" hidden></p>
+                  </ces-offer-bundle>
 
               {%- endcase -%}
             {%- endfor -%}
@@ -3268,6 +3427,304 @@
             }
           ],
           "default": "center"
+        }
+      ]
+    },
+    {
+      "type": "ces_offer_bundle",
+      "name": "CES Offer bundle",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "A tiered offer selector (e.g. 3+1 / 6+2 / 12+4) with its own Add to cart."
+        },
+        {
+          "type": "header",
+          "content": "Benefits"
+        },
+        {
+          "type": "text",
+          "id": "benefit_1",
+          "label": "Benefit 1",
+          "default": "Eliminates dark circles & under-eye bags"
+        },
+        {
+          "type": "text",
+          "id": "benefit_2",
+          "label": "Benefit 2",
+          "default": "Smooths fine lines"
+        },
+        {
+          "type": "text",
+          "id": "benefit_3",
+          "label": "Benefit 3",
+          "default": "Boosts firmness"
+        },
+        {
+          "type": "text",
+          "id": "benefit_4",
+          "label": "Benefit 4",
+          "default": "Gentle & painless"
+        },
+        {
+          "type": "header",
+          "content": "Sale banner"
+        },
+        {
+          "type": "text",
+          "id": "sale_badge",
+          "label": "Sale badge",
+          "default": "SUMMER SALE"
+        },
+        {
+          "type": "richtext",
+          "id": "sale_text",
+          "label": "Sale message",
+          "default": "<p>Sale ends today at midnight. <strong>Last chance</strong> at this price.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Stock line"
+        },
+        {
+          "type": "text",
+          "id": "stock_text",
+          "label": "Stock text",
+          "info": "Leave blank to hide. Only use a real number.",
+          "default": "Limited stock : only 43 left"
+        },
+        {
+          "type": "header",
+          "content": "Add to cart"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Add to cart"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_cart_drawer",
+          "label": "Open cart drawer after adding",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Colours"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Emphasis colour",
+          "info": "Best-seller header, selected border and the Add to cart button.",
+          "default": "#20303f"
+        },
+        {
+          "type": "color",
+          "id": "sale_color",
+          "label": "Sale colour",
+          "default": "#e23b3b"
+        },
+        {
+          "type": "header",
+          "content": "Tier 1"
+        },
+        {
+          "type": "product",
+          "id": "tier1_product",
+          "label": "Product",
+          "info": "Defaults to this page's product."
+        },
+        {
+          "type": "range",
+          "id": "tier1_quantity",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "label": "Quantity added",
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tier1_label",
+          "label": "Title",
+          "default": "3+1 FREE"
+        },
+        {
+          "type": "text",
+          "id": "tier1_save",
+          "label": "Save label",
+          "default": "Save 20%"
+        },
+        {
+          "type": "text",
+          "id": "tier1_price",
+          "label": "Price",
+          "info": "Shown as-is. Leave blank to use variant price × quantity.",
+          "default": "$39.95"
+        },
+        {
+          "type": "text",
+          "id": "tier1_compare",
+          "label": "Compare-at price",
+          "default": "$49.90"
+        },
+        {
+          "type": "text",
+          "id": "tier1_badge",
+          "label": "Badge"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier1_image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "tier1_highlight",
+          "label": "Best-seller styling",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tier1_selected",
+          "label": "Selected by default",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Tier 2"
+        },
+        {
+          "type": "product",
+          "id": "tier2_product",
+          "label": "Product",
+          "info": "Defaults to this page's product."
+        },
+        {
+          "type": "range",
+          "id": "tier2_quantity",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "label": "Quantity added",
+          "default": 8
+        },
+        {
+          "type": "text",
+          "id": "tier2_label",
+          "label": "Title",
+          "default": "6+2 FREE"
+        },
+        {
+          "type": "text",
+          "id": "tier2_save",
+          "label": "Save label",
+          "default": "Save 40%"
+        },
+        {
+          "type": "text",
+          "id": "tier2_price",
+          "label": "Price",
+          "info": "Shown as-is. Leave blank to use variant price × quantity.",
+          "default": "$59.90"
+        },
+        {
+          "type": "text",
+          "id": "tier2_compare",
+          "label": "Compare-at price",
+          "default": "$99.80"
+        },
+        {
+          "type": "text",
+          "id": "tier2_badge",
+          "label": "Badge",
+          "default": "BEST SELLER"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier2_image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "tier2_highlight",
+          "label": "Best-seller styling",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "tier2_selected",
+          "label": "Selected by default",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Tier 3"
+        },
+        {
+          "type": "product",
+          "id": "tier3_product",
+          "label": "Product",
+          "info": "Defaults to this page's product."
+        },
+        {
+          "type": "range",
+          "id": "tier3_quantity",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "label": "Quantity added",
+          "default": 16
+        },
+        {
+          "type": "text",
+          "id": "tier3_label",
+          "label": "Title",
+          "default": "12+4 FREE"
+        },
+        {
+          "type": "text",
+          "id": "tier3_save",
+          "label": "Save label",
+          "default": "Save 55%"
+        },
+        {
+          "type": "text",
+          "id": "tier3_price",
+          "label": "Price",
+          "info": "Shown as-is. Leave blank to use variant price × quantity.",
+          "default": "$89.95"
+        },
+        {
+          "type": "text",
+          "id": "tier3_compare",
+          "label": "Compare-at price",
+          "default": "$199.60"
+        },
+        {
+          "type": "text",
+          "id": "tier3_badge",
+          "label": "Badge"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier3_image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "tier3_highlight",
+          "label": "Best-seller styling",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tier3_selected",
+          "label": "Selected by default",
+          "default": false
         }
       ]
     }
