@@ -620,7 +620,7 @@
             "state": "auto",
             "time_label": "NIGHT 1",
             "heading": "The First Application",
-            "bullets": "A light tingle as the micro-cones get to work\nActives release beneath the skin overnight\nWake up to a fresher, more hydrated look*",
+            "bullets": "Initial smoothing of morning puffiness. \nActives release beneath the skin overnight\nThe \"Concealer Trap\" begins to fade as skin texture hydrates from within.\nWake up to a fresher, more hydrated look",
             "content": "",
             "open": true
           }
@@ -630,8 +630,8 @@
           "settings": {
             "state": "auto",
             "time_label": "WEEK 1",
-            "heading": "Fresher, Brighter Mornings",
-            "bullets": "Puffiness looks visibly reduced in the morning*\nUnder-eye area feels smoother and plumper*\nConcealer starts sitting better, not creasing*",
+            "heading": "Volume Restoration",
+            "bullets": "Deep hollows and dark shadows begin to brighten as dermal density increases.\nPuffiness looks visibly reduced in the morning\nUnder-eye area feels smoother and plumper",
             "content": "",
             "open": false
           }
@@ -641,8 +641,8 @@
           "settings": {
             "state": "auto",
             "time_label": "WEEKS 2-4",
-            "heading": "Dark Circles Fade",
-            "bullets": "Dark circles and bags look noticeably lighter*\nFine lines and crepey texture soften*\nEyes look rested — even when you’re not*",
+            "heading": "Structural Lift",
+            "bullets": "Fine lines and \"crepey\" texture are visibly minimized. The orbital area looks firmer and more resilient.\nDark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you’re not",
             "content": "",
             "open": false
           }
