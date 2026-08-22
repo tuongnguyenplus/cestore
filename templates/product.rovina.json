@@ -497,7 +497,7 @@
         "icon-1": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/dark-circles-1512848711.webp",
+            "image": "shopify://shop_images/C5B14712-E351-4CD4-92A6-F50A547B6377_1.webp",
             "icon_text": "",
             "icon": "cell-defense",
             "heading": "Dark Circles & Bags*",
@@ -507,7 +507,7 @@
         "icon-2": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/3824885.png",
+            "image": "shopify://shop_images/image-1-e1780984910353-1024x399.webp",
             "icon_text": "",
             "icon": "shield",
             "heading": "Puffiness & Under-Eye Fatigue*",
@@ -517,7 +517,7 @@
         "icon-3": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/tired-lifeless-or-unconsious-eye-with-eye-bags-or-dark-circles-colored-icon-illustration-outlined-isolated-on-square-white-background-simple-flat-cartoon-art-styled-drawing-free-vecto.webp",
+            "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.png",
             "icon_text": "",
             "icon": "molecule",
             "heading": "Fine Lines & Crepey Texture*",
@@ -527,6 +527,7 @@
         "icon-4": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.webp",
             "icon_text": "",
             "icon": "vitality",
             "heading": "Firmness & Hydration*",
