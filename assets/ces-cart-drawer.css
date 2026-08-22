@@ -1,0 +1,300 @@
+/* =========================================================
+   CES cart drawer — mockup polish
+   Scoped to #CartDrawer / .cart-drawer so the cart page is
+   untouched. Reuses Dawn colour tokens; adds a soft green for
+   sale/discount badges.
+   ========================================================= */
+#CartDrawer {
+  --ces-cd-green: #1f8a54;
+  --ces-cd-green-bg: #e7f4ec;
+  --ces-cd-rule: rgba(var(--color-foreground), 0.09);
+  --ces-cd-muted: rgba(var(--color-foreground), 0.55);
+  --ces-cd-card: rgba(var(--color-foreground), 0.04);
+}
+
+/* ---------- Header count ---------- */
+#CartDrawer .drawer__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+#CartDrawer .cart-drawer__count {
+  font-weight: 500;
+  color: var(--ces-cd-muted);
+}
+
+/* ---------- Line item ---------- */
+/* The per-unit price is redundant next to the line total in the drawer. */
+#CartDrawer .cart-item__unit-price {
+  display: none;
+}
+
+/* Sale badge under the product title (from line-level discounts). */
+#CartDrawer .discounts--badges {
+  margin: 0.4rem 0 0;
+}
+#CartDrawer .discounts__discount--badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.4rem;
+  background: var(--ces-cd-green-bg);
+  color: var(--ces-cd-green);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+#CartDrawer .discounts__discount--badge .icon,
+#CartDrawer .discounts__discount--badge svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: currentColor;
+}
+
+/* Right column price stack: struck compare above, bold price below. */
+#CartDrawer .cart-item__totals {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+#CartDrawer .cart-item__totals .cart-item__discounted-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  line-height: 1.2;
+}
+#CartDrawer .cart-item__totals .cart-item__old-price {
+  color: var(--ces-cd-muted);
+  font-size: 1.3rem;
+}
+#CartDrawer .cart-item__totals .price--end {
+  font-weight: 700;
+}
+#CartDrawer .cart-item__save-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  background: var(--ces-cd-green-bg);
+  color: var(--ces-cd-green);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---------- Special offers (upsell) ---------- */
+.cart-drawer__offers {
+  display: block;
+  padding: 1.6rem 0 0.4rem;
+  margin: 0.4rem 0 0;
+  border-top: 0.1rem solid var(--ces-cd-rule);
+}
+.cart-drawer__offers-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01rem;
+}
+.cart-drawer__offers-viewport {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.cart-drawer__offers-track {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex: 1 1 auto;
+  padding: 0.2rem;
+}
+.cart-drawer__offers-track::-webkit-scrollbar {
+  display: none;
+}
+.cart-drawer__offer {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  background: var(--ces-cd-card);
+  box-sizing: border-box;
+}
+.cart-drawer__offer-img {
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  background: rgb(var(--color-background));
+  flex: 0 0 auto;
+}
+.cart-drawer__offer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.cart-drawer__offer-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.cart-drawer__offer-price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  line-height: 1;
+}
+.cart-drawer__offer-now {
+  font-weight: 700;
+}
+.cart-drawer__offer-was {
+  color: var(--ces-cd-muted);
+  font-size: 1.3rem;
+}
+.cart-drawer__offer-save {
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.4rem;
+  background: var(--ces-cd-green-bg);
+  color: var(--ces-cd-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.cart-drawer__offer-add {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.cart-drawer__offer-add:hover {
+  opacity: 0.88;
+}
+.cart-drawer__offer-add[aria-disabled='true'],
+.cart-drawer__offer-add.loading {
+  opacity: 0.6;
+  cursor: default;
+}
+.cart-drawer__offer-add:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.cart-drawer__offers-nav {
+  flex: 0 0 auto;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid var(--ces-cd-rule);
+  border-radius: 50%;
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  padding: 0;
+}
+.cart-drawer__offers-nav[hidden] {
+  display: none;
+}
+.cart-drawer__offers-nav svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.cart-drawer__offers-nav--prev svg {
+  transform: rotate(90deg);
+}
+.cart-drawer__offers-nav--next svg {
+  transform: rotate(-90deg);
+}
+
+/* ---------- Discount + subtotal ---------- */
+#CartDrawer .cart-drawer__discount-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0 1rem;
+  font-size: 1.4rem;
+}
+#CartDrawer .cart-drawer__discount-label {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: rgb(var(--color-foreground));
+}
+#CartDrawer .cart-drawer__discount-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.4rem;
+  background: var(--ces-cd-green-bg);
+  color: var(--ces-cd-green);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+  line-height: 1;
+}
+#CartDrawer .cart-drawer__discount-tag .icon,
+#CartDrawer .cart-drawer__discount-tag svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+#CartDrawer .cart-drawer__discount-amount {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#CartDrawer .totals__total {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+#CartDrawer .totals__total-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ---------- Checkout button total ---------- */
+#CartDrawer .cart__checkout-total {
+  margin-left: 0.4rem;
+  font-weight: 700;
+}
+
+/* ---------- Payment icons ---------- */
+.cart-drawer__payment-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+.cart-drawer__payment-icon {
+  display: inline-flex;
+}
+.cart-drawer__payment-icon svg {
+  width: 3.8rem;
+  height: 2.4rem;
+  border-radius: 0.3rem;
+}

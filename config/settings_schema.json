@@ -1445,6 +1445,57 @@
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
       },
       {
+        "type": "header",
+        "content": "Cart drawer extras"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_item_count",
+        "label": "Show item count in title (My cart • N)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_savings_badge",
+        "label": "Show sale badge & \"Save\" pill on line items",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_checkout_show_total",
+        "label": "Show total on checkout button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_payment_icons",
+        "label": "Show payment icons under checkout",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Special offers (cart upsell)"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_upsell_enabled",
+        "label": "Show \"Special offers\" in cart drawer",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_heading",
+        "label": "Special offers heading",
+        "default": "Special offers for your order"
+      },
+      {
+        "type": "product_list",
+        "id": "cart_upsell_products",
+        "label": "Upsell products",
+        "limit": 6,
+        "info": "Pick the products to offer in the cart drawer. Products already in the cart are hidden automatically."
+      },
+      {
         "type": "color_scheme",
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",

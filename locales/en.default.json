@@ -274,7 +274,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -284,7 +283,7 @@
       }
     },
     "cart": {
-      "title": "Your cart",
+      "title": "My cart",
       "caption": "Cart items",
       "remove_title": "Remove {{ title }}",
       "estimated_total": "Estimated total",
@@ -315,7 +314,9 @@
       "login": {
         "title": "Have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
-      }
+      },
+      "subtotal": "Subtotal",
+      "discounts": "Discounts"
     },
     "footer": {
       "payment": "Payment methods"

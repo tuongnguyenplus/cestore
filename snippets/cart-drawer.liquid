@@ -11,6 +11,9 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
+{{ 'ces-cart-drawer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-cart-upsell.js' | asset_url }}" defer="defer"></script>
+
 <style>
   .drawer {
     visibility: hidden;
@@ -62,7 +65,12 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+        <h2 class="drawer__heading">
+          {{ 'sections.cart.title' | t }}
+          {%- if settings.cart_show_item_count and cart.item_count > 0 -%}
+            <span class="cart-drawer__count">&bull; {{ cart.item_count }}</span>
+          {%- endif -%}
+        </h2>
         <button
           class="drawer__close"
           type="button"
@@ -163,8 +171,23 @@
                             -%}
                           </div>
 
+                          {%- if item.line_level_discount_allocations.size > 0 -%}
+                            <ul
+                              class="discounts discounts--badges list-unstyled"
+                              role="list"
+                              aria-label="{{ 'customer.order.discount' | t }}"
+                            >
+                              {%- for discount in item.line_level_discount_allocations -%}
+                                <li class="discounts__discount discounts__discount--badge">
+                                  {{- 'icon-discount.svg' | inline_asset_content -}}
+                                  {{ discount.discount_application.title }}
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+
                           {%- if item.original_price != item.final_price -%}
-                            <div class="cart-item__discounted-prices">
+                            <div class="cart-item__discounted-prices cart-item__unit-price">
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </span>
@@ -179,7 +202,7 @@
                               </strong>
                             </div>
                           {%- else -%}
-                            <div class="product-option">
+                            <div class="product-option cart-item__unit-price">
                               {{ item.original_price | money }}
                             </div>
                           {%- endif -%}
@@ -227,19 +250,6 @@
 
                             <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                           {%- endif -%}
-
-                          <ul
-                            class="discounts list-unstyled"
-                            role="list"
-                            aria-label="{{ 'customer.order.discount' | t }}"
-                          >
-                            {%- for discount in item.line_level_discount_allocations -%}
-                              <li class="discounts__discount">
-                                {{- 'icon-discount.svg' | inline_asset_content -}}
-                                {{ discount.discount_application.title }}
-                              </li>
-                            {%- endfor -%}
-                          </ul>
                         </td>
 
                         <td class="cart-item__totals right" role="cell" headers="CartDrawer-ColumnTotal">
@@ -271,6 +281,12 @@
                                 price: item.unit_price,
                                 measurement: item.unit_price_measurement
                               %}
+                            {%- endif -%}
+
+                            {%- if settings.cart_show_savings_badge and item.original_line_price > item.final_line_price -%}
+                              <span class="cart-item__save-badge">
+                                Save {{ item.original_line_price | minus: item.final_line_price | money -}}
+                              </span>
                             {%- endif -%}
                           </div>
                         </td>
@@ -487,6 +503,92 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
+
+      {%- if settings.cart_upsell_enabled and settings.cart_upsell_products.size > 0 and cart != empty -%}
+        {%- assign ces_upsell_count = 0 -%}
+        {%- capture ces_upsell_cards -%}
+          {%- for ces_up_product in settings.cart_upsell_products -%}
+            {%- assign ces_in_cart = false -%}
+            {%- for ces_line in cart.items -%}
+              {%- if ces_line.product_id == ces_up_product.id -%}
+                {%- assign ces_in_cart = true -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if ces_in_cart or ces_up_product.available == false -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- assign ces_up_variant = ces_up_product.selected_or_first_available_variant -%}
+            {%- assign ces_upsell_count = ces_upsell_count | plus: 1 -%}
+            <div class="cart-drawer__offer">
+              {%- if ces_up_product.featured_image -%}
+                <img
+                  class="cart-drawer__offer-img"
+                  src="{{ ces_up_product.featured_image | image_url: width: 160 }}"
+                  alt="{{ ces_up_product.featured_image.alt | escape }}"
+                  width="72"
+                  height="72"
+                  loading="lazy"
+                >
+              {%- endif -%}
+              <div class="cart-drawer__offer-info">
+                <p class="cart-drawer__offer-name">{{ ces_up_product.title | escape }}</p>
+                <div class="cart-drawer__offer-price">
+                  <span class="cart-drawer__offer-now">{{ ces_up_variant.price | money }}</span>
+                  {%- if ces_up_variant.compare_at_price > ces_up_variant.price -%}
+                    <s class="cart-drawer__offer-was">{{ ces_up_variant.compare_at_price | money }}</s>
+                    {%- assign ces_up_pct = ces_up_variant.compare_at_price
+                      | minus: ces_up_variant.price
+                      | times: 100.0
+                      | divided_by: ces_up_variant.compare_at_price
+                      | round
+                    -%}
+                    <span class="cart-drawer__offer-save">Save {{ ces_up_pct }}%</span>
+                  {%- endif -%}
+                </div>
+                <button
+                  type="button"
+                  class="cart-drawer__offer-add"
+                  data-variant-id="{{ ces_up_variant.id }}"
+                  {% unless ces_up_variant.available %}
+                    disabled
+                  {% endunless %}
+                >
+                  {{ 'products.product.add_to_cart' | t }}
+                </button>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- if ces_upsell_count > 0 -%}
+          <ces-cart-upsell class="cart-drawer__offers">
+            <p class="cart-drawer__offers-title">{{ settings.cart_upsell_heading }}</p>
+            <div class="cart-drawer__offers-viewport">
+              <button
+                type="button"
+                class="cart-drawer__offers-nav cart-drawer__offers-nav--prev"
+                data-dir="prev"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+                {% if ces_upsell_count < 2 %}hidden{% endif %}
+              >
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </button>
+              <div class="cart-drawer__offers-track">
+                {{ ces_upsell_cards }}
+              </div>
+              <button
+                type="button"
+                class="cart-drawer__offers-nav cart-drawer__offers-nav--next"
+                data-dir="next"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+                {% if ces_upsell_count < 2 %}hidden{% endif %}
+              >
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </button>
+            </div>
+          </ces-cart-upsell>
+        {%- endif -%}
+      {%- endif -%}
+
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
@@ -512,23 +614,40 @@
         <!-- Subtotals -->
 
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
-          <div>
-            {%- if cart.cart_level_discount_applications.size > 0 -%}
-              <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                {%- for discount in cart.cart_level_discount_applications -%}
-                  <li class="discounts__discount discounts__discount--end">
-                    {{- 'icon-discount.svg' | inline_asset_content -}}
-                    {{ discount.title | escape }}
-                    (-{{ discount.total_allocated_amount | money }})
-                  </li>
+          {%- assign ces_cart_savings = cart.original_total_price | minus: cart.total_price -%}
+          {%- if ces_cart_savings > 0 -%}
+            {%- assign ces_disc_titles = '' -%}
+            {%- for discount in cart.cart_level_discount_applications -%}
+              {%- assign ces_disc_titles = ces_disc_titles | append: discount.title | append: '|' -%}
+            {%- endfor -%}
+            {%- for ces_line in cart.items -%}
+              {%- for allocation in ces_line.line_level_discount_allocations -%}
+                {%- assign ces_disc_titles = ces_disc_titles
+                  | append: allocation.discount_application.title
+                  | append: '|'
+                -%}
+              {%- endfor -%}
+            {%- endfor -%}
+            {%- assign ces_disc_list = ces_disc_titles | split: '|' | uniq -%}
+            <div class="cart-drawer__discount-row">
+              <span class="cart-drawer__discount-label">
+                {{ 'sections.cart.discounts' | t }}
+                {%- for ces_dt in ces_disc_list -%}
+                  {%- if ces_dt != blank -%}
+                    <span class="cart-drawer__discount-tag">
+                      {{- 'icon-discount.svg' | inline_asset_content -}}
+                      {{ ces_dt | escape }}
+                    </span>
+                  {%- endif -%}
                 {%- endfor -%}
-              </ul>
-            {%- endif -%}
-          </div>
+              </span>
+              <span class="cart-drawer__discount-amount">-{{ ces_cart_savings | money }}</span>
+            </div>
+          {%- endif -%}
 
           <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+            <h2 class="totals__total">{{ 'sections.cart.subtotal' | t }}</h2>
+            <p class="totals__total-value">{{ cart.total_price | money }}</p>
           </div>
 
           <small class="tax-note caption-large rte">
@@ -586,7 +705,20 @@
             {% endif %}
           >
             {{ 'sections.cart.checkout' | t }}
+            {%- if settings.cart_checkout_show_total and cart != empty -%}
+              <span class="cart__checkout-total">&bull; {{ cart.total_price | money }}</span>
+            {%- endif -%}
           </button>
+
+          {%- if settings.cart_show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+            <div class="cart-drawer__payment-icons" role="list" aria-label="{{ 'sections.footer.payment' | t }}">
+              {%- for type in shop.enabled_payment_types -%}
+                <span class="cart-drawer__payment-icon" role="listitem">
+                  {{- type | payment_type_svg_tag: class: 'icon icon--full-color' -}}
+                </span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
         </div>
       </div>
     </div>
