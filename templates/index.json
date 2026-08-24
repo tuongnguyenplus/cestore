@@ -53,9 +53,10 @@
     "hero": {
       "type": "ces-image-text-banner",
       "settings": {
-        "layout": "overlay",
-        "text_position": "center",
-        "overlay_opacity": 40,
+        "image": "shopify://shop_images/4fd34b97-6ec3-4ec4-82de-4e2f4d6f124a.png",
+        "layout": "split",
+        "text_position": "start",
+        "overlay_opacity": 55,
         "eyebrow": "OVER 13,000 GLOWING REVIEWS",
         "heading_accent": "No-Makeup Look",
         "heading": "Serum-Boosted Skin Tint Balm For A No-Makeup Look",
