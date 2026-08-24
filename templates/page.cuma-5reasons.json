@@ -1,0 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "listicle": {
+      "type": "ces-listicle",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "It Treats What's Actually Causing the Puffiness — Not Just the Skin", "body": "<p>Most eye creams only work on the surface — hydrating, cooling, or temporarily firming the outer layer. CumaBalm™ is different: it supports the body's natural drainage system to clear puffiness from beneath. The result? Less pressure, less swelling, a dramatically smoother under-eye area.</p>" } },
+        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "Visible Improvements Start Fast — And Only Get Better With Time", "body": "<p>Many women see a difference within minutes as swelling begins to ease. But the real transformation happens with time — most notice dramatically less puffiness and firmer-looking eyes after 2–3 months of daily use.</p>" } },
+        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "A Doctor-Approved Formula Designed for Mature Skin", "body": "<p>Professionally formulated to target puffiness and firm mature skin: <strong>Turmeric</strong> (anti-inflammatory that supports lymphatic drainage), <strong>Retinol</strong> (firms crepey under-eye skin) and <strong>Hyaluronic Acid</strong> (deep hydration). No parabens, no fragrance, no greasy residue.</p>" } },
+        "q1": { "type": "quote", "settings": { "quote": "<p>I'm 64 and I've tried everything — serums, rollers, even lymphatic facials. This is the first thing that actually stuck.</p>", "attribution": "— Betty H., Austin TX" } },
+        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "100,000+ Women Over 40 Are Calling It a Game-Changer", "body": "<p>From women who stopped hiding behind concealer to those who \"look like themselves again,\" the reviews keep coming — gentle enough for sensitive skin, effective enough to visibly reduce puffiness.</p>" } },
+        "q2": { "type": "quote", "settings": { "quote": "<p>For years I thought under-eye bags were just something I had to live with. This balm changed things — the swelling went down and I stopped hiding behind concealer.</p>", "attribution": "— Brooke L., New Orleans" } },
+        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "Try It 100% Risk-Free — Even If You Finish the Stick", "body": "<p>CumaBalm™ comes with a 90-day, no-questions-asked money-back guarantee. Use it every morning for 90 days — and if you're not thrilled, you get every penny back. No forms, no return shipping, you don't even send the stick back.</p>" } },
+        "offer": { "type": "callout", "settings": { "heading": "Up To 50% Off — For a Limited Time Only", "body": "<p>This limited-time deal is in high demand and stock keeps selling out. Try it today with a 90-Day Money-Back Guarantee.</p>", "cta_label": "Try it risk-free today", "cta_link": "/collections/all" } }
+      },
+      "block_order": ["r1", "r2", "r3", "q1", "r4", "q2", "r5", "offer"],
+      "settings": {
+        "eyebrow": "CUMA SKINCARE · UNDER-EYE",
+        "headline": "5 Reasons Why CumaBalm™ Is Replacing Every Under-Eye Cream",
+        "highlight_words": "CumaBalm™",
+        "accent_color": "#1d5c5c",
+        "byline": "Posted by Donna Winslow",
+        "date_text": "Updated this week",
+        "intro": "<p>According to Dr. Blane Schilling, M.D., most women are looking in the wrong place when it comes to eye bags. \"The real issue isn't your skin — it's fluid. Specifically, lymphatic fluid that gets trapped beneath the eyes.\" After 40, the body's drainage system slows and that fluid pools, creating swelling. Most creams treat the surface, not what's happening underneath. That's why more women are switching to CumaBalm™.</p>",
+        "show_numbers": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+  },
+  "order": ["listicle", "newsletter"]
+}
