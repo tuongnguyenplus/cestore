@@ -13,6 +13,26 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_information_z7EcbF": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "image_wPjmVy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG-0064.png",
+            "image_width": 235,
+            "alignment": "right"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_z7EcbF",
+        "image_wPjmVy"
+      ],
       "settings": {
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "newsletter_enable": false,
