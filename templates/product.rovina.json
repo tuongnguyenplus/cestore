@@ -320,12 +320,22 @@
             "footnote": "Dermatologist-Tested, Clean Formula",
             "text_alignment": "center"
           }
+        },
+        "clinicians": {
+          "type": "ces_clinicians",
+          "settings": {
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
+            "link_label": "View clinicians & learn more",
+            "link_url": ""
+          }
         }
       },
       "block_order": [
         "rating-bar",
         "title",
         "subtitle",
+        "clinicians",
         "highlight-1",
         "highlight-2",
         "highlight-3",
