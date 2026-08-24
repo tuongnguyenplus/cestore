@@ -12,34 +12,135 @@
     "listicle": {
       "type": "ces-listicle",
       "blocks": {
-        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "Joint and Knee Relief in 15 Minutes (That Keeps Working for Days)", "body": "<p>Most post-run recovery methods either take too long to kick in or stop working the second you stop using them. One 15-minute Recovery Labs soak delivers relief that keeps working long after you step out.</p>" } },
-        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "One Soak Carries You for 48+ Hours", "body": "<p>Ice packs numb you for 20 minutes. NSAIDs wear off by morning. One Recovery Labs soak keeps working for at least 48 hours — right through your next training day.</p>" } },
-        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "It Reaches the Tissue Your Foam Roller Can't Touch", "body": "<p>Topical creams sit on your skin. Ice bags compress the surface. Oral supplements lose potency in digestion. These 9 ingredients absorb through warm water directly to the joints and connective tissue.</p>" } },
-        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "It Targets Joint Inflammation — Not Just the Pain Signal", "body": "<p>Ibuprofen blocks the pain signal while the inflammation destroying your knees stays exactly where it was. That's why runner's knee keeps coming back. This targets the inflammation itself.</p>" } },
-        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "The Natural Alternative to Ibuprofen", "body": "<p>57% of runners take ibuprofen before, during, or after runs — it damages the gut lining with regular use and only masks inflammation. Your joints and kidneys are begging you to stop.</p>" } },
-        "q1": { "type": "quote", "settings": { "quote": "<p>One soak and my knees felt better through my whole long-run week. Nothing else has done that.</p>", "attribution": "— Verified customer" } },
-        "r6": { "type": "reason", "settings": { "image_position": "top", "heading": "Backed by Doctors and Trainers — Not Just Marketing Hype", "body": "<p>No other bath soak on the market contains omega-3 fatty acids — this is a first-to-market formulation, recommended by doctors of chiropractic and physical therapy.</p>" } },
-        "r7": { "type": "reason", "settings": { "image_position": "top", "heading": "It Helps You Bounce Back Like You're 20 Again", "body": "<p>Remember doing your long runs on Saturday and feeling fine on Sunday? That was optimal mineral levels. This soak restores them so recovery feels effortless again.</p>" } },
-        "r8": { "type": "reason", "settings": { "image_position": "top", "heading": "100% Natural — Zero Weird Chemicals or Fragrances", "body": "<p>No synthetic fragrances giving you headaches. No mystery chemicals you can't pronounce. Just 100% natural minerals made to accelerate recovery.</p>" } },
-        "r9": { "type": "reason", "settings": { "image_position": "top", "heading": "It Replaces Your Entire Post-Run Recovery Routine", "body": "<p>No more 30-minute ice sessions, foam-rolling marathons, expensive weekly massages, or juggling four supplements. One simple 15-minute step.</p>" } },
-        "offer": { "type": "callout", "settings": { "heading": "Lock In Your 30% Off — For a Limited Time", "body": "<p>Join 40,000+ runners and cyclists who found a better way to protect their joints. This limited-time deal is in high demand and stock keeps selling out. Try it today with a 60-Day Money-Back Guarantee.</p>", "cta_label": "Get joint relief in 15 minutes", "cta_link": "/collections/all" } }
+        "r1": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "It did not happen overnight. That is what made it so hard to fight.",
+            "body": "<p>It started as a morning thing — puffy on waking, settled by ten. Then it stopped settling by ten. Then it stopped settling at all. The concealer went first: sinking into lines I did not know I had, going patchy by lunch, making the whole area look worse than if I had left it alone. So I added a primer, and a setting powder, and my morning went from four minutes to twenty. Twenty minutes every morning spent hiding.</p><p>Then it started arriving in other people’s mouths. A colleague asked if I was sleeping alright. My sister asked, gently, whether everything was okay at work. And there was a wedding coming, and photographs — the kind that end up framed for thirty years — in which I found the shadow under my eyes before I found my own face.</p>"
+          }
+        },
+        "r2": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "I tried everything. I want to tell you exactly what, and exactly what it cost.",
+            "body": "<p><strong>Eye creams.</strong> Nine jars, up to an <strong>$80</strong> one a counter promised “actually worked on mature skin.” Each hydrated for a few hours; not one changed anything still there the following week. Conservatively, <strong>over $400</strong>. <strong>Cooling patches,</strong> lovely at 6am, gone by lunch. <strong>Sleep,</strong> eight hours for months — helped the puffiness a little, nothing for the texture or shadow.</p><p>Then I priced up the alternative. Tear-trough filler near me: <strong>$900 a session</strong>, not permanent. Lower eyelid surgery: <strong>$4,500</strong>, plus recovery, plus a result I could not undo if I hated it. I sat in the car park with a quote in my handbag and thought: I am fifty-two, seriously considering surgery because of a shadow.</p>"
+          }
+        },
+        "r3": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "A dermatologist’s assistant explained it in about ninety seconds",
+            "body": "<p>The outer layer of your skin — the stratum corneum — is a barrier, and its entire purpose is to keep things out. So when you apply a cream, most of the active never gets past it. “And the skin under the eye is the thinnest on the body,” she said, “so brands formulate eye products gently, at low concentrations, because anything strong enough to push through would sting. A weak formula against a barrier built to block it.”</p><p>Then the line that reframed four years and four hundred dollars: “Your creams didn’t fail because you picked the wrong ones. They failed because almost none of what was in them ever arrived.” The problem was never the ingredient. It was the delivery.</p>"
+          }
+        },
+        "r4": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "I went home and looked it up myself",
+            "body": "<p>I wanted to see it written down by people with no product to sell me. The barrier blocks most topically applied actives [CITATION 1]. Lower-eyelid skin is the thinnest on the body [CITATION 2]. Dissolving microneedles deliver substantially more active into skin than the same active on top — the load-bearing finding [CITATION 3]. They fully dissolve with an established safety profile [CITATION 4]. And visible change takes roughly six to eight weeks because of skin turnover [CITATION 5].</p><p>This is not new science, and that was the part I found reassuring. Established-and-overlooked reads far safer than brand-new-and-unproven.</p>"
+          }
+        },
+        "r5": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "There is. And it does not work the way I assumed.",
+            "body": "<p>When she said “microneedle,” I pictured a dermaroller — the spiky wheel that draws blood. That is not this. A dissolving microneedle patch has no metal; the cones are made from the actives themselves, freeze-dried and compressed, shorter than a grain of salt. You press the patch on, and over a few hours the cones dissolve completely on the far side of the barrier that stopped every cream you ever bought.</p><p>Inside: hyaluronic acid (the immediate plumping), niacinamide (tone and brightness over weeks), peptides and collagen (firmness, the week-six work), vitamin C (dullness, dried so it does not oxidise) and ceramides (rebuild the barrier that thins with age). A fresh patch is dry — the patch is the dose, not a serum on an adhesive.</p>"
+          }
+        },
+        "q1": {
+          "type": "quote",
+          "settings": {
+            "quote": "“Are you feeling okay? You look tired.” I had slept eight hours. I had slept eight hours for a week.",
+            "attribution": "— Verified customer"
+          }
+        },
+        "r6": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "What actually happened over eight weeks",
+            "body": "<p><strong>Night 1:</strong> a light prickle, then nothing; the morning looked smoother and I told myself I was imagining it. <strong>Week 3:</strong> my concealer stopped disappearing — on at 7:30, still working at 2pm, and I had stopped needing the primer. <strong>Week 5:</strong> the morning puffiness resolved faster. <strong>Week 8:</strong> I left the camera on for an entire meeting and did not think about it once.</p><p>I want to be precise: I do not have the under-eyes I had at thirty, and I still have a slight morning fullness that is inherited. But it stopped being the first thing I see — and the surgical quote is out of the drawer.</p>"
+          }
+        },
+        "r7": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "The questions I asked before I ordered",
+            "body": "<p><strong>Does it hurt?</strong> A light prickle for a minute or two, then you stop noticing; the cones are far too short to reach a nerve. <strong>Is this just an expensive hydrogel patch?</strong> No — a hydrogel patch holds a serum against the surface, where the barrier stops most of it; these place the actives below that barrier. <strong>Very sensitive skin?</strong> Patch test on the forearm and wait 24 hours; skip it over active eczema, dermatitis or rosacea near the eye.</p><p><strong>Bags I’ve had since I was young?</strong> Fluid, thin skin and lost firmness respond; inherited fat pads do not move for any topical — only surgery. Most people are a mix, which is why two women the same age get different results.</p>"
+          }
+        },
+        "r8": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "What I had already spent, before I spent this",
+            "body": "<p><strong>Over $400</strong> on eye creams that never got past the barrier. <strong>$900 per session</strong> quoted for filler, not permanent. <strong>$4,500</strong> quoted for surgery. Four years of twenty-minute mornings spent hiding.</p><p>Against that, Cebeam is <strong>[XX]</strong> — [X pairs, roughly X weeks at two nights a week]. Less than one clinic consultation fee. Less than the single jar a counter promised would be different.</p>"
+          }
+        },
+        "r9": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "The part that made it an easy decision",
+            "body": "<p><strong>[XX] days</strong>, and you can have used the box. That mattered more than any claim on the page, because the honest timeline is six to eight weeks — a thirty-day window on something that takes eight weeks to judge is a technicality, not a guarantee.</p><p>You do not ship anything back. There is no form asking you to prove it did not work. The only thing you are actually risking is eight weeks of two-nights-a-week — and finding out.</p>"
+          }
+        },
+        "offer": {
+          "type": "callout",
+          "settings": {
+            "heading": "You are at a fork, and one road is disguised as no decision at all",
+            "body": "<p>Close this page and buy the tenth jar in a few months, keep the twenty-minute mornings, keep the camera off. Or try it for eight weeks, twice a week, and find out what your under-eyes look like when something actually reaches them. If nothing changes, you get your money back and you have lost nothing but the wondering.</p>",
+            "cta_label": "Check availability →",
+            "cta_link": "/collections/all"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4", "r5", "q1", "r6", "r7", "r8", "r9", "offer"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "q1",
+        "r6",
+        "r7",
+        "r8",
+        "r9",
+        "offer"
+      ],
       "settings": {
-        "eyebrow": "RECOVERY LABS · JOINT RECOVERY",
-        "headline": "10 Reasons Runners With Achey Joints Are Obsessed With This 'Wonder' Soak",
-        "highlight_words": "Obsessed",
+        "eyebrow": "CEBEAM · SKIN & AGEING",
+        "headline": "The Real Reason Eye Cream Never Fixed Your Under-Eyes (It Isn’t The Cream)",
+        "highlight_words": "(It Isn’t The Cream)",
         "accent_color": "#1d5c5c",
-        "byline": "By Dr. Michael D., DPT",
-        "date_text": "Last updated March 7, 2026",
-        "intro": "<p>Read this if joint or knee pain is costing you miles. One 15-minute Recovery Labs soak delivers game-changing benefits for your joints — fast relief and long-lasting results, without the ibuprofen your body is begging you to stop taking.</p>",
-        "show_numbers": true,
+        "byline": "By the Skin & Ageing Desk",
+        "date_text": "[month, year] · 9 min read",
+        "intro": "I stopped looking at myself on video calls about two years ago. The camera “wasn’t working.” Small, reasonable-sounding lies I told twice a week until they became a habit nobody questioned. The truth was that I had seen a recording of myself under office lighting and did not recognise the woman on the screen. She looked exhausted. She was fifty-two — which was the part that stopped me cold, because so was I.",
+        "show_numbers": false,
         "color_scheme": "scheme-1",
         "padding_top": 32,
         "padding_bottom": 24
       }
     },
-    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 40,
+        "heading": "Join The Cebeam Community",
+        "text": "<p>Under-eye tips, honest product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>"
+      }
+    }
   },
-  "order": ["listicle", "newsletter"]
+  "order": [
+    "listicle",
+    "newsletter"
+  ]
 }

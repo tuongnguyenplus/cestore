@@ -12,35 +12,144 @@
     "listicle": {
       "type": "ces-listicle",
       "blocks": {
-        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "Instant Pain Relief", "body": "<p>The advanced arch support and cushioning system work together to reduce pressure on your feet and joints — helping relieve pain from plantar fasciitis, neuropathy, flat feet, diabetic feet, and bunions.</p>" } },
-        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "Roomy Wide Toe Box", "body": "<p>The spacious design reduces pressure on the toes and forefoot — a relief for bunions, arthritis and diabetes — and lets your toes spread out naturally to improve balance and stability.</p>" } },
-        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "Lasting Relief for Over 12 Hours", "body": "<p>The advanced cushioning and support system keep your feet comfortable and pain-free no matter how long or challenging your day is.</p>" } },
-        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "Holistic, Full-Body Comfort", "body": "<p>Specifically designed to address discomfort in your ankles, knees, and lower back — every step is a step toward soothing comfort, so you move through your day with well-supported confidence.</p>" } },
-        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "Prevents Blisters and Calluses", "body": "<p>By reducing pressure and friction, the shoes help prevent blisters and calluses — particularly important for individuals with diabetes and reduced sensation in their feet.</p>" } },
-        "r6": { "type": "reason", "settings": { "image_position": "top", "heading": "Anti-Slip Safety", "body": "<p>Engineered to keep you safe and secure on any surface. The anti-slip insole provides unparalleled traction and stability, so you never have to worry about slipping or falling again.</p>" } },
-        "r7": { "type": "reason", "settings": { "image_position": "top", "heading": "ORTHO-CUSH™ Impact Technology", "body": "<p>Absorbs shock at the exact point of impact, so you stay stable and cushioned — comfortable on aging feet, without pain shooting up your legs.</p>" } },
-        "r8": { "type": "reason", "settings": { "image_position": "top", "heading": "Built for 12-Hour Shifts", "body": "<p>Engineered for people who stand and walk on hard, slippery floors all day. If your feet hurt halfway through your shift, you're wearing the wrong shoes.</p>" } },
-        "q1": { "type": "quote", "settings": { "quote": "<p>I'm a nurse on 12-hour shifts, and these shoes completely stopped the heel pain I used to feel by lunchtime. Finally, I can focus on my patients.</p>", "attribution": "— Margaret K., Retired Teacher" } },
-        "r9": { "type": "reason", "settings": { "image_position": "top", "heading": "Loved by 500,000+ Customers", "body": "<p>Over 500,000 customers enjoy Orthora for the shoes' superior support, cushioning, and cloud-like comfort — rated 4.9/5.0 across 17,920+ reviews.</p>" } },
-        "r10": { "type": "reason", "settings": { "image_position": "top", "heading": "45-Day Risk-Free Wear Test", "body": "<p>Try Orthora risk-free with our 45-Day Wear Test and a 100% no-questions-asked money-back guarantee. Wrong size? We'll happily ship the correct one or refund you.</p>" } },
-        "offer": { "type": "callout", "settings": { "heading": "Orthora™ Pro — 12-Hour Shift Shoes", "body": "<p>Free shipping and easy returns. Secure, SSL-protected checkout. Trusted by 500,000+ customers. Clearance pricing while stock lasts.</p>", "cta_label": "Check availability", "cta_link": "/collections/all" } }
+        "r1": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "It arrives as other people’s opinions about you",
+            "body": "<p>You do not notice this happening to your face. You notice it happening in other people’s mouths. “Late night?” — from a colleague at 9am, after eight hours of sleep. “Everything alright at home?” — from a brother-in-law, genuinely concerned.</p><p>At work, people conclude things about your energy before you open your mouth. On video calls the overhead lighting makes it dramatically worse. At home you get read as checked-out or annoyed when you are neither — and underneath it there is a thing you cannot say out loud: I looked in the mirror and did not recognise the person looking back. He looked worn down. I was not.</p>"
+          }
+        },
+        "r2": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "What I tried, in order, and what it cost",
+            "body": "<p><strong>Sleep.</strong> Eight hours a night for two months. It helped the morning puffiness slightly and did nothing about the shadow or the texture. <strong>Water and cutting back on drinking.</strong> Good for other reasons; did not touch this. <strong>An eye cream marketed at men</strong> — <strong>$45</strong>, black bottle, exactly the same amount of nothing. <strong>A metal roller</strong> — <strong>$22</strong>, forgotten in a drawer within a fortnight.</p><p>Then I looked at what the actual fix costs. Lower eyelid surgery: <strong>$3,000 to $6,000</strong>, general anaesthetic, and a week to ten days you cannot go to work looking like that. So I did what men do, which is nothing, for another eighteen months — because there was no in-between option.</p>"
+          }
+        },
+        "r3": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "The answer, from a dermatologist’s assistant, in about ninety seconds",
+            "body": "<p>The outer layer of your skin — the stratum corneum — is a barrier, and keeping things out is its entire job. So when you rub a cream on, most of the active never gets through. Under the eye it is worse, because that skin is the thinnest on the body, so eye products get formulated weak on purpose.</p><p>Weak formula. Strong barrier. Thinnest skin on the body. “You didn’t buy the wrong product,” she said. “Almost nothing in any of them ever arrived.” The problem was never what was in the bottle. It was that it never got in.</p>"
+          }
+        },
+        "r4": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "I looked it up myself that night",
+            "body": "<p>Because I was not going to take a corridor conversation as fact. There is published research on each part of this: that the skin barrier blocks most topically applied actives [CITATION 1 — barrier function]; that lower-eyelid skin is the thinnest on the body [CITATION 2 — skin thickness]; and — the load-bearing one — that dissolving microneedles deliver substantially more active into skin than the same active applied on top [CITATION 3 — microneedle vs topical].</p><p>Also that the microneedles fully dissolve with an established tolerability profile [CITATION 4], and that visible change takes roughly six to eight weeks because of skin turnover [CITATION 5]. Not new science — which was the part I found reassuring.</p>"
+          }
+        },
+        "r5": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "What it is, and what it is not",
+            "body": "<p>When she said “microneedle” I pictured the spiked roller that draws blood. That is not this. A dissolving microneedle patch contains no metal — the cones on the underside are made from the actives themselves, freeze-dried and compressed into solid points shorter than a grain of salt. They do not reach nerve endings, they do not draw blood, and over a few hours they dissolve completely on the far side of the barrier that stopped every bottle you ever bought.</p><p>Inside the cones: hyaluronic acid (the immediate effect), niacinamide (tone and barrier over weeks), peptides and collagen (firmness, the slow work), vitamin C (dullness) and ceramides (rebuild the barrier that thins with age). A fresh patch is dry to the touch, because the patch is the dose — not a serum on an adhesive.</p>"
+          }
+        },
+        "r6": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "Eight weeks, written down as it happened",
+            "body": "<p><strong>Night 1:</strong> a slight prickle for a minute, then nothing; the morning looked flatter and I assumed I was seeing what I wanted to. <strong>Week 1:</strong> real but inconsistent. <strong>Week 3:</strong> the puffiness cleared earlier in the morning than it used to. <strong>Week 5:</strong> a colleague asked if I had been on holiday. <strong>Week 7:</strong> I had stopped angling my laptop up before calls.</p><p>Precision matters: I do not have the eyes I had at thirty-five, and I still have some morning fullness that is structural. What changed is the reading. Nobody has asked me if I was up late in four months. The face stopped filing reports I did not authorise.</p>"
+          }
+        },
+        "r7": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "What I wanted to know before I ordered",
+            "body": "<p><strong>Is anyone going to be able to tell?</strong> No — there is no colour in it and nothing sits on your face during the day. <strong>Is this going to turn into a routine?</strong> Two nights a week, on before bed, off in the morning; nothing to layer. <strong>Does it hurt?</strong> A prickle for the first minute, then you stop noticing.</p><p><strong>My bags are genetic.</strong> Then read this carefully: inherited fat pads only surgery shifts. What responds is fluid, thinning skin, lost firmness and texture. Most men are a mix. <strong>Why has no doctor mentioned this?</strong> Appointments are short and triaged toward medical problems — it is a fifteen-minute conversation, not a conspiracy.</p>"
+          }
+        },
+        "r8": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "What I had already spent, before I spent this",
+            "body": "<p><strong>$45</strong> on the black bottle. <strong>$22</strong> on the roller in the drawer. <strong>$3,000–$6,000</strong> quoted for surgery, plus <strong>7–10 days</strong> off work. Two years of being read as tired, annoyed, or slowing down.</p><p>Cebeam is <strong>[XX]</strong> — [X pairs, roughly X weeks at two nights a week]. Less than one round of drinks with clients, and no days off work.</p>"
+          }
+        },
+        "q1": {
+          "type": "quote",
+          "settings": {
+            "quote": "I am not taking two weeks off and coming back with a different face. There is no version of that conversation I want to have with my team.",
+            "attribution": "— Margaret K., Retired Teacher"
+          }
+        },
+        "r9": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "The bit that made it a low-stakes decision",
+            "body": "<p><strong>[XX] days</strong>, box open, used. That matters because the honest timeline here is six to eight weeks — a thirty-day window on something that takes eight weeks to judge is a technicality, not a guarantee.</p><p>Nothing goes back in the post. No form asking you to prove it did not work. So the only thing you are actually out is eight weeks of two nights a week.</p>"
+          }
+        },
+        "r10": {
+          "type": "reason",
+          "settings": {
+            "image_position": "top",
+            "heading": "Two options, and one of them is disguised as not deciding",
+            "body": "<p><strong>Option one:</strong> close this, keep getting asked about your sleep, keep angling the laptop, keep letting your face brief the room before you have said anything. That is a choice — it just doesn’t feel like one, which is exactly why it’s lasted this long.</p><p><strong>Option two:</strong> eight weeks, two nights a week. Find out what your face says about you when something actually reaches the skin. If it changes nothing, you get your money back and you are out the eight weeks.</p>"
+          }
+        },
+        "offer": {
+          "type": "callout",
+          "settings": {
+            "heading": "Eight weeks. Two nights a week. Then decide.",
+            "body": "<p>Still using them twice a week — it takes about fifteen seconds and I have never once described it as a routine. If there is something in the calendar — a wedding, a reunion, a round of interviews — count backwards. Eight weeks minimum.</p>",
+            "cta_label": "Check availability →",
+            "cta_link": "/collections/all"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8", "q1", "r9", "r10", "offer"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8",
+        "q1",
+        "r9",
+        "r10",
+        "offer"
+      ],
       "settings": {
-        "eyebrow": "ORTHORA FOOTWEAR",
-        "headline": "10 Reasons Why Women All Over the US Are Switching to These Orthopedic Shoes (and Not Going Back)",
-        "highlight_words": "Not Going Back",
+        "eyebrow": "CEBEAM · HEALTH & PERFORMANCE",
+        "headline": "You’re Not Tired. You Just Look It. And After 45, That Costs You More Than You Think",
+        "highlight_words": "You Just Look It.",
         "accent_color": "#1d5c5c",
-        "byline": "By The Orthora Team",
-        "date_text": "Updated this week",
-        "intro": "<p>Over 113 million Americans experience foot pain. These orthopedic shoes help relieve pain caused by conditions such as plantar fasciitis, neuropathy, flat feet, diabetic feet and bunions — so you can move freely again. Here are ten reasons women are switching and not going back.</p>",
-        "show_numbers": true,
+        "byline": "By the Health & Performance Desk",
+        "date_text": "[month, year] · 9 min read",
+        "intro": "The feedback was three words long and I have not stopped thinking about it since. “Energy seemed low.” It was in a performance summary, about a presentation I had prepared two weeks for, and I had slept seven hours the night before. Nobody in that room had assessed my energy. They had looked at my face and drawn a conclusion.",
+        "show_numbers": false,
         "color_scheme": "scheme-1",
         "padding_top": 32,
         "padding_bottom": 24
       }
     },
-    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 40,
+        "heading": "Join The Cebeam Community",
+        "text": "<p>Under-eye tips, honest product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>"
+      }
+    }
   },
-  "order": ["listicle", "newsletter"]
+  "order": [
+    "listicle",
+    "newsletter"
+  ]
 }
