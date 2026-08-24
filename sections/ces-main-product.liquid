@@ -1276,6 +1276,60 @@
                     <p class="ces-offer__error" role="alert" hidden></p>
                   </ces-offer-bundle>
 
+                {%- when 'ces_clinicians' -%}
+                  <div class="ces-clinicians quick-add-hidden" {{ block.shopify_attributes }}>
+                    {%- if block.settings.eyebrow != blank -%}
+                      <p class="ces-clinicians__eyebrow">
+                        <span class="ces-clinicians__flourish" aria-hidden="true">&#10086;</span>
+                        <span class="ces-clinicians__caduceus" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2c-1.2 1.2-1.2 2.6 0 3.8 1.2-1.2 1.2-2.6 0-3.8Z" fill="currentColor"/>
+                            <path d="M12 5.5v15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                            <path d="M8 7c1.4 1.6 6.6 1.6 8 0M7.6 9.6c1.8 1.8 7 1.8 8.8 0M8 12c1.4 1.4 6.6 1.4 8 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M8 7c-1 2-1 4 0 5M16 7c1 2 1 4 0 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <circle cx="9.4" cy="20.4" r="1.1" fill="currentColor"/>
+                            <circle cx="14.6" cy="20.4" r="1.1" fill="currentColor"/>
+                          </svg>
+                        </span>
+                        <span class="ces-clinicians__eyebrow-text">{{ block.settings.eyebrow }}</span>
+                        <span class="ces-clinicians__flourish ces-clinicians__flourish--end" aria-hidden="true">&#10087;</span>
+                      </p>
+                    {%- endif -%}
+
+                    {%- if block.settings.text != blank -%}
+                      <div class="ces-clinicians__text">{{ block.settings.text }}</div>
+                    {%- endif -%}
+
+                    <div class="ces-clinicians__row">
+                      {%- assign ces_clin_avatars = block.settings.avatar_1 | default: block.settings.avatar_2 -%}
+                      {%- if block.settings.avatar_1 != blank or block.settings.avatar_2 != blank or block.settings.avatar_3 != blank -%}
+                        <span class="ces-clinicians__avatars" aria-hidden="true">
+                          {%- for ces_clin_i in (1..3) -%}
+                            {%- assign ces_clin_key = 'avatar_' | append: ces_clin_i -%}
+                            {%- assign ces_clin_img = block.settings[ces_clin_key] -%}
+                            {%- if ces_clin_img != blank -%}
+                              <span class="ces-clinicians__avatar">
+                                {{
+                                  ces_clin_img
+                                  | image_url: width: 96
+                                  | image_tag: loading: 'lazy', widths: '48, 72, 96', sizes: '48px', alt: ''
+                                }}
+                              </span>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </span>
+                      {%- endif -%}
+
+                      {%- if block.settings.link_label != blank -%}
+                        {%- if block.settings.link_url != blank -%}
+                          <a class="ces-clinicians__link" href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>
+                        {%- else -%}
+                          <span class="ces-clinicians__link ces-clinicians__link--static">{{ block.settings.link_label }}</span>
+                        {%- endif -%}
+                      {%- endif -%}
+                    </div>
+                  </div>
+
               {%- endcase -%}
             {%- endfor -%}
             <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -3725,6 +3779,63 @@
           "id": "tier3_selected",
           "label": "Selected by default",
           "default": false
+        }
+      ]
+    },
+    {
+      "type": "ces_clinicians",
+      "name": "CES Clinicians' choice",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "A clinician social-proof strip: an eyebrow with a caduceus, a sentence, overlapping avatars and a link."
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Clinicians' Choice"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Sentence",
+          "default": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Avatars"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_1",
+          "label": "Avatar 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_2",
+          "label": "Avatar 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_3",
+          "label": "Avatar 3"
+        },
+        {
+          "type": "header",
+          "content": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": "View clinicians & learn more"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link"
         }
       ]
     }

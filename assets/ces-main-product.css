@@ -737,3 +737,89 @@
 .ces-main-product__note .ces-icon {
   color: var(--ces-accent);
 }
+
+/* =========================================================
+   CES Clinicians' choice — clinician social-proof strip
+   ========================================================= */
+.ces-clinicians {
+  margin: 1.2rem 0;
+}
+.ces-clinicians__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+  font-family: var(--font-heading-family, serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(var(--color-foreground));
+}
+.ces-clinicians__caduceus {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  color: rgb(var(--color-foreground));
+}
+.ces-clinicians__caduceus svg {
+  width: 100%;
+  height: 100%;
+}
+.ces-clinicians__flourish {
+  color: rgba(var(--color-foreground), 0.4);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.ces-clinicians__flourish--end {
+  margin-left: auto;
+}
+.ces-clinicians__eyebrow-text {
+  letter-spacing: 0.01em;
+}
+.ces-clinicians__text {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+  line-height: 1.55;
+}
+.ces-clinicians__text > * {
+  margin: 0;
+}
+.ces-clinicians__row {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+.ces-clinicians__avatars {
+  display: inline-flex;
+  align-items: center;
+}
+.ces-clinicians__avatar {
+  display: inline-block;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.2rem solid rgb(var(--color-background));
+  background: rgba(var(--color-foreground), 0.08);
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.08);
+}
+.ces-clinicians__avatar:not(:first-child) {
+  margin-left: -1.1rem;
+}
+.ces-clinicians__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ces-clinicians__link {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.ces-clinicians__link--static {
+  text-decoration: underline;
+  cursor: default;
+}
