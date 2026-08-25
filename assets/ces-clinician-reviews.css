@@ -435,13 +435,14 @@ button.ces-clinreviews__name {
   padding: 1.6rem;
 }
 .ces-clinreviews__faq {
-  background: #fefefe;
+  background: #f5f5f5;
   border-radius: 1.2rem;
-  border: 0.1rem solid #eee;
+  border: none;
+  padding: 0.4rem 2rem;
 }
 .ces-clinreviews__faq-item {
-  padding: 0 2rem;
-  border-bottom: 0.1rem solid #eee;
+  padding: 0;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.06);
 }
 .ces-clinreviews__faq-item:last-child {
   border-bottom: none;
@@ -453,8 +454,8 @@ button.ces-clinreviews__name {
   gap: 1rem;
   list-style: none;
   cursor: pointer;
-  padding: 1.6rem 0;
-  font-size: 1.7rem;
+  padding: 1.8rem 0;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 .ces-clinreviews__faq-q::-webkit-details-marker {
