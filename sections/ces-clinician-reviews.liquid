@@ -1,12 +1,16 @@
 {{ 'ces-base.css' | asset_url | stylesheet_tag }}
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 {{ 'ces-clinician-reviews.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-clinician-reviews.js' | asset_url }}" defer="defer"></script>
 
 {% render 'ces-section-padding' %}
 
 {%- liquid
   assign reviews = section.blocks | where: 'type', 'review'
 -%}
+
+{%- capture ces_shield -%}<svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none"><path d="M6.5 1L1 3.1V8C1 10.8 2.83333 13.1333 6.5 15C10.1667 13.1333 12 10.8 12 8V3.1L6.5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>{%- endcapture -%}
+{%- capture ces_book -%}<svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none"><path d="M1.5 10.5C1.08333 10.5 0.729167 10.3542 0.4375 10.0625C0.145833 9.77083 0 9.41667 0 9V2C0 1.58333 0.145833 1.22917 0.4375 0.9375C0.729167 0.645833 1.08333 0.5 1.5 0.5H7V8.5H1.5C1.35833 8.5 1.23958 8.54792 1.14375 8.64375C1.04792 8.73958 1 8.85833 1 9C1 9.14167 1.04792 9.26042 1.14375 9.35625C1.23958 9.45208 1.35833 9.5 1.5 9.5H7V10.5H1.5Z" fill="currentColor"></path></svg>{%- endcapture -%}
 
 <div
   class="ces-section ces-clinreviews ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
@@ -31,11 +35,20 @@
       {%- endif -%}
 
       {%- if section.settings.title != blank -%}
-        <h2 class="ces-clinreviews__title ces-heading">{{ section.settings.title }}</h2>
+        <h2 class="ces-clinreviews__title">{{ section.settings.title }}</h2>
       {%- endif -%}
 
       {%- if section.settings.subtitle != blank -%}
-        <div class="ces-clinreviews__subtitle">{{ section.settings.subtitle }}</div>
+        <div class="ces-clinreviews__subtitle">
+          {{ section.settings.subtitle }}
+          {%- if section.settings.learn_more_label != blank -%}
+            {%- if section.settings.learn_more_link != blank -%}
+              <a class="ces-clinreviews__learn-more" href="{{ section.settings.learn_more_link }}">{{ section.settings.learn_more_label }}</a>
+            {%- else -%}
+              <span class="ces-clinreviews__learn-more ces-clinreviews__learn-more--static">{{ section.settings.learn_more_label }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
       {%- endif -%}
     </div>
 
@@ -49,7 +62,7 @@
                   {{
                     block.settings.image
                     | image_url: width: 120
-                    | image_tag: loading: 'lazy', widths: '60, 90, 120', sizes: '48px', class: 'ces-clinreviews__avatar', alt: block.settings.name
+                    | image_tag: loading: 'lazy', widths: '48, 96, 120', sizes: '48px', class: 'ces-clinreviews__avatar', alt: block.settings.name
                   }}
                 {%- else -%}
                   <span class="ces-clinreviews__avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
@@ -93,8 +106,60 @@
               {%- if block.settings.summary != blank -%}
                 <p class="ces-clinreviews__summary">{{ block.settings.summary }}</p>
               {%- endif -%}
+
               {%- if block.settings.message != blank -%}
-                <div class="ces-clinreviews__message">{{ block.settings.message }}</div>
+                <div class="ces-clinreviews__message ces-clinreviews__message--clamp" data-ces-clamp>
+                  {{ block.settings.message }}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.citation_pill != blank -%}
+                <span class="ces-clinreviews__citation">
+                  <span class="ces-clinreviews__citation-pill" tabindex="0">
+                    {{ ces_book }}
+                    <span>{{ block.settings.citation_pill }}</span>
+                  </span>
+                  {%- if block.settings.citations != blank -%}
+                    {%- assign ces_cits = block.settings.citations | newline_to_br | split: '<br />' -%}
+                    <span class="ces-clinreviews__citation-tip" role="tooltip">
+                      <span class="ces-clinreviews__citation-tip-head">{{ ces_cits.size }} Sources</span>
+                      {%- for ces_cit in ces_cits -%}
+                        {%- assign ces_cit = ces_cit | strip -%}
+                        {%- if ces_cit != blank -%}
+                          {%- assign ces_cit_parts = ces_cit | split: '|' -%}
+                          <span class="ces-clinreviews__citation-item">
+                            <span class="ces-clinreviews__citation-title">{{ ces_cit_parts[0] | strip }}</span>
+                            {%- if ces_cit_parts[1] != blank -%}
+                              <span class="ces-clinreviews__citation-src">{{ ces_cit_parts[1] | strip }}</span>
+                            {%- endif -%}
+                          </span>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </span>
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+
+              {%- if block.settings.message != blank -%}
+                <button type="button" class="ces-clinreviews__show-more" data-ces-showmore hidden>
+                  {{ block.settings.show_more_label | default: 'Show more' }}
+                </button>
+              {%- endif -%}
+
+              {%- if block.settings.highlights != blank -%}
+                {%- assign ces_hls = block.settings.highlights | newline_to_br | split: '<br />' -%}
+                <div class="ces-clinreviews__highlights">
+                  <span class="ces-clinreviews__highlights-head">{{ block.settings.highlights_label | default: 'Highlights:' }}</span>
+                  {%- for ces_hl in ces_hls -%}
+                    {%- assign ces_hl = ces_hl | strip -%}
+                    {%- if ces_hl != blank -%}
+                      <span class="ces-clinreviews__highlight">
+                        {{ ces_shield }}
+                        <span>{{ ces_hl }}</span>
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
               {%- endif -%}
             </div>
           </article>
@@ -126,7 +191,18 @@
       "type": "richtext",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>"
+      "default": "<p>Clinicians can receive product samples and are <em>never compensated</em> to submit evaluations.</p>"
+    },
+    {
+      "type": "text",
+      "id": "learn_more_label",
+      "label": "Learn more label",
+      "default": "Learn more"
+    },
+    {
+      "type": "url",
+      "id": "learn_more_link",
+      "label": "Learn more link"
     },
     {
       "type": "color_scheme",
@@ -146,7 +222,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 40
     },
     {
       "type": "range",
@@ -156,7 +232,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 40
     }
   ],
   "blocks": [
@@ -209,7 +285,48 @@
           "type": "richtext",
           "id": "message",
           "label": "Review",
-          "default": "<p>A well-formulated astaxanthin softgel at a meaningful dose. I point patients with heavy screen time toward this kind of antioxidant support alongside the usual eye-health basics.*</p>"
+          "default": "<p>If you spend most of your workday staring at screens, you may have noticed your eyes sometimes feel tired or strained by evening. When patients deal with this kind of eye discomfort, I recommend an astaxanthin supplement like this one from Rovina because it may ease the oxidative load on the eyes. One human trial has even shown that this active ingredient may help maintain visual sharpness during heavy screen work. The astaxanthin here comes from microalgae and may have antioxidant properties, which research suggests could have positive effects on markers of inflammation more broadly.*</p>"
+        },
+        {
+          "type": "header",
+          "content": "Citation pill"
+        },
+        {
+          "type": "text",
+          "id": "citation_pill",
+          "label": "Pill text",
+          "info": "e.g. Journal of Clinical … +1. Leave blank to hide.",
+          "default": "Journal of Clinical … +1"
+        },
+        {
+          "type": "textarea",
+          "id": "citations",
+          "label": "Sources (tooltip)",
+          "info": "One per line, format: Title | Journal, Year",
+          "default": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010"
+        },
+        {
+          "type": "header",
+          "content": "Highlights"
+        },
+        {
+          "type": "text",
+          "id": "highlights_label",
+          "label": "Highlights label",
+          "default": "Highlights:"
+        },
+        {
+          "type": "textarea",
+          "id": "highlights",
+          "label": "Highlights",
+          "info": "One per line.",
+          "default": "Screen fatigue\nOxidative defense\nAll-around support"
+        },
+        {
+          "type": "text",
+          "id": "show_more_label",
+          "label": "Show more label",
+          "default": "Show more"
         }
       ]
     }
@@ -227,7 +344,9 @@
             "specialty": "Family medicine",
             "years": "22",
             "summary": "A sensible antioxidant option for eye and skin support",
-            "message": "<p>The dose here is clinically relevant, and the softgel format aids absorption. A reasonable daily addition for patients asking about antioxidant support.*</p>"
+            "message": "<p>The dose here is clinically relevant, and the softgel format aids absorption. A reasonable daily addition for patients asking about antioxidant support.*</p>",
+            "citation_pill": "Nutrients … +1",
+            "highlights": "Skin resilience\nAntioxidant support\nDaily use"
           }
         },
         {
@@ -237,7 +356,9 @@
             "specialty": "Ophthalmology",
             "years": "15",
             "summary": "Reasonable support for patients with high screen exposure",
-            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>"
+            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>",
+            "citation_pill": "",
+            "highlights": "Screen exposure\nEye comfort"
           }
         }
       ]

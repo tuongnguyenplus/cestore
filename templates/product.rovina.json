@@ -1164,18 +1164,24 @@
             "years": "19",
             "verified": true,
             "summary": "Supports eye comfort during screen time and antioxidant balance",
-            "message": "<p>A well-formulated astaxanthin softgel at a meaningful dose. I point patients with heavy screen time toward this kind of antioxidant support alongside the usual eye-health basics.*</p>"
+            "message": "<p>If you spend most of your workday staring at screens, you may have noticed your eyes sometimes feel tired or strained by evening. When patients deal with this kind of eye discomfort, I recommend an astaxanthin supplement like this one from Rovina because it may ease the oxidative load on the eyes. One human trial has even shown that this active ingredient may help maintain visual sharpness during heavy screen work. The astaxanthin here comes from microalgae and may have antioxidant properties, which research suggests could have positive effects on markers of inflammation more broadly.*</p>",
+            "citation_pill": "Journal of Clinical … +1",
+            "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
+            "highlights": "Screen fatigue\nOxidative defense\nAll-around support"
           }
         },
         "r2": {
           "type": "review",
           "settings": {
-            "name": "Dr. Linda Harper, MD",
+            "name": "Dr. Anila Khan, DO",
             "specialty": "Family medicine",
-            "years": "22",
+            "years": "31",
             "verified": true,
-            "summary": "A sensible antioxidant option for eye and skin support",
-            "message": "<p>The dose here is clinically relevant, and the softgel format aids absorption. A reasonable daily addition for patients asking about antioxidant support.*</p>"
+            "summary": "Potent antioxidant supports daily skin health and resilience",
+            "message": "<p>I’d gladly recommend Rovina’s softgels to patients who want to support their skin as it ages. The primary ingredient is an antioxidant called astaxanthin, included here at 12 mg, which is similar to what’s been studied in research. Antioxidants like astaxanthin can provide support for the skin against everyday stress that can otherwise wear it down.*</p>",
+            "citation_pill": "Nutrients … +1",
+            "citations": "Astaxanthin and skin health | Marine Drugs, 2018\nDietary astaxanthin and skin condition | Journal of Cosmetic Dermatology, 2021",
+            "highlights": "Skin resilience\nAntioxidant support\nDaily use"
           }
         },
         "r3": {
@@ -1186,7 +1192,8 @@
             "years": "15",
             "verified": true,
             "summary": "Reasonable support for patients with high screen exposure",
-            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>"
+            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>",
+            "highlights": "Screen exposure\nEye comfort"
           }
         }
       },
