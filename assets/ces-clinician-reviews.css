@@ -519,3 +519,44 @@ button.ces-clinreviews__name {
 }
 
 clinician-reviews { display: block; }
+
+/* verified seal — reference-style scalloped badge (grey) */
+.ces-clinreviews__verified-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: #9e9e9e;
+}
+/* modal: multiple clinician profiles */
+.ces-clinreviews__profiles {
+  margin-top: 0.4rem;
+}
+.ces-clinreviews__profile {
+  padding: 2rem 0.4rem;
+  border-top: 0.1rem solid #eee;
+  scroll-margin-top: 1rem;
+  border-radius: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+.ces-clinreviews__profile.is-highlight {
+  background: #fff7e6;
+}
+.ces-clinreviews__profile-head {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.ces-clinreviews__profile .ces-clinreviews__name--plain {
+  margin: 0;
+  color: #2f6bd8;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.ces-clinreviews__profile .ces-clinreviews__summary {
+  margin-top: 1.6rem;
+}
+.ces-clinreviews__profile .ces-clinreviews__extra {
+  margin-top: 1.2rem;
+}

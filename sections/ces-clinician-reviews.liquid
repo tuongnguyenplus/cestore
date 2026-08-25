@@ -14,7 +14,7 @@
 
 {%- capture ces_shield -%}<svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none"><path d="M6.5 1L1 3.1V8C1 10.8 2.83333 13.1333 6.5 15C10.1667 13.1333 12 10.8 12 8V3.1L6.5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>{%- endcapture -%}
 {%- capture ces_book -%}<svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none"><path d="M1.5 10.5C1.08333 10.5 0.729167 10.3542 0.4375 10.0625C0.145833 9.77083 0 9.41667 0 9V2C0 1.58333 0.145833 1.22917 0.4375 0.9375C0.729167 0.645833 1.08333 0.5 1.5 0.5H7V8.5H1.5C1.35833 8.5 1.23958 8.54792 1.14375 8.64375C1.04792 8.73958 1 8.85833 1 9C1 9.14167 1.04792 9.26042 1.14375 9.35625C1.23958 9.45208 1.35833 9.5 1.5 9.5H7V10.5H1.5Z" fill="currentColor"></path></svg>{%- endcapture -%}
-{%- capture ces_verified -%}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M6 10.3l2.6 2.6L14 7.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>{%- endcapture -%}
+{%- capture ces_verified -%}<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m23 12-2.44-2.79.34-3.69-3.61-.82L15.4 1.5 12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg>{%- endcapture -%}
 
 <clinician-reviews
   class="ces-section ces-clinreviews ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
@@ -76,14 +76,7 @@
                       type="button"
                       class="ces-clinreviews__name"
                       data-ces-clin-open
-                      data-name="{{ block.settings.name | escape }}"
-                      data-verified="{{ block.settings.verified }}"
-                      data-verified-label="{{ block.settings.verified_label | default: 'Verified clinician' | escape }}"
-                      data-specialty="{{ block.settings.specialty | escape }}"
-                      data-years="{{ block.settings.years | escape }}"
-                      data-summary="{{ block.settings.summary | escape }}"
-                      data-message="{{ block.settings.message | escape }}"
-                      data-image="{{ ces_prov_img }}"
+                      data-target="ClinProf-{{ section.id }}-{{ block.id }}"
                     >{{ block.settings.name }}</button>
                   {%- endif -%}
                   {%- if block.settings.verified -%}
@@ -208,7 +201,53 @@
           {%- endfor -%}
         </div>
 
-        <div class="ces-clinreviews__profile" data-ces-profile hidden></div>
+        {%- if reviews.size > 0 -%}
+          <div class="ces-clinreviews__profiles">
+            {%- for block in reviews -%}
+              <div class="ces-clinreviews__profile" id="ClinProf-{{ section.id }}-{{ block.id }}">
+                <div class="ces-clinreviews__profile-head">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 120 | image_tag: loading: 'lazy', widths: '48, 96, 120', sizes: '48px', class: 'ces-clinreviews__avatar', alt: block.settings.name }}
+                  {%- else -%}
+                    <span class="ces-clinreviews__avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
+                  {%- endif -%}
+                  <div class="ces-clinreviews__provider">
+                    {%- if block.settings.name != blank -%}
+                      <p class="ces-clinreviews__name ces-clinreviews__name--plain">{{ block.settings.name }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.verified -%}
+                      <span class="ces-clinreviews__verified">
+                        {{ block.settings.verified_label | default: 'Verified clinician' }}
+                        <span class="ces-clinreviews__verified-icon" aria-hidden="true">{{ ces_verified }}</span>
+                      </span>
+                    {%- endif -%}
+                  </div>
+                </div>
+                {%- if block.settings.specialty != blank or block.settings.years != blank -%}
+                  <div class="ces-clinreviews__extra">
+                    {%- if block.settings.specialty != blank -%}
+                      <div class="ces-clinreviews__dd">Specialty</div>
+                      <div class="ces-clinreviews__dt">{{ block.settings.specialty }}</div>
+                    {%- endif -%}
+                    {%- if block.settings.specialty != blank and block.settings.years != blank -%}
+                      <hr class="ces-clinreviews__rule">
+                    {%- endif -%}
+                    {%- if block.settings.years != blank -%}
+                      <div class="ces-clinreviews__dd">Years in practice</div>
+                      <div class="ces-clinreviews__dt">{{ block.settings.years }}</div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.summary != blank -%}
+                  <p class="ces-clinreviews__summary">{{ block.settings.summary }}</p>
+                {%- endif -%}
+                {%- if block.settings.message != blank -%}
+                  <div class="ces-clinreviews__message">{{ block.settings.message }}</div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
       </div>
       {%- if section.settings.modal_disclaimer != blank -%}
         <div class="ces-clinreviews__dialog-foot">
