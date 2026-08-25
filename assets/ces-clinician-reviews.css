@@ -2,9 +2,14 @@
    CES Clinician reviews — FrontrowMD "Independent Clinician
    Evaluations" widget, matched to the reference.
    ========================================================= */
+.ces-clinreviews {
+  color: #212121;
+  font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
+}
 .ces-clinreviews__inner {
-  max-width: 96rem;
+  max-width: 120rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* ---------- Header ---------- */
