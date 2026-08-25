@@ -1167,7 +1167,12 @@
             "message": "<p>If you spend most of your workday staring at screens, you may have noticed your eyes sometimes feel tired or strained by evening. When patients deal with this kind of eye discomfort, I recommend an astaxanthin supplement like this one from Rovina because it may ease the oxidative load on the eyes. One human trial has even shown that this active ingredient may help maintain visual sharpness during heavy screen work. The astaxanthin here comes from microalgae and may have antioxidant properties, which research suggests could have positive effects on markers of inflammation more broadly.*</p>",
             "citation_pill": "Journal of Clinical … +1",
             "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
-            "highlights": "Screen fatigue\nOxidative defense\nAll-around support"
+            "highlights": "Screen fatigue\nOxidative defense\nAll-around support",
+            "website": "https://example.com",
+            "npi": "1427202845",
+            "practice_type": "Private practice",
+            "joined": "2025",
+            "location": "Houston, TX"
           }
         },
         "r2": {
@@ -1181,7 +1186,12 @@
             "message": "<p>I’d gladly recommend Rovina’s softgels to patients who want to support their skin as it ages. The primary ingredient is an antioxidant called astaxanthin, included here at 12 mg, which is similar to what’s been studied in research. Antioxidants like astaxanthin can provide support for the skin against everyday stress that can otherwise wear it down.*</p>",
             "citation_pill": "Nutrients … +1",
             "citations": "Astaxanthin and skin health | Marine Drugs, 2018\nDietary astaxanthin and skin condition | Journal of Cosmetic Dermatology, 2021",
-            "highlights": "Skin resilience\nAntioxidant support\nDaily use"
+            "highlights": "Skin resilience\nAntioxidant support\nDaily use",
+            "website": "https://example.com",
+            "npi": "1568392011",
+            "practice_type": "Private practice",
+            "joined": "2024",
+            "location": "Naples, FL"
           }
         },
         "r3": {
@@ -1193,7 +1203,12 @@
             "verified": true,
             "summary": "Reasonable support for patients with high screen exposure",
             "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>",
-            "highlights": "Screen exposure\nEye comfort"
+            "highlights": "Screen exposure\nEye comfort",
+            "website": "https://example.com",
+            "npi": "1295301927",
+            "practice_type": "Private practice",
+            "joined": "2026",
+            "location": "Chicago, IL"
           }
         }
       },

@@ -200,6 +200,9 @@
     <div class="ces-clinreviews__modal-overlay" data-ces-modal-close></div>
     <div class="ces-clinreviews__dialog" role="dialog" aria-modal="true" aria-label="{{ section.settings.modal_title | default: 'Clinician Reviews' | escape }}">
       <div class="ces-clinreviews__dialog-head">
+        <button type="button" class="ces-clinreviews__dialog-back" data-ces-back aria-label="Back" hidden>
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1 3 7l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
         <span class="ces-clinreviews__dialog-brand">
           <span class="ces-clinreviews__caduceus" aria-hidden="true">{{ 'ces-clin-caduceus.svg' | inline_asset_content }}</span>
           {{ section.settings.modal_title | default: 'Clinician Reviews' }}
@@ -209,95 +212,101 @@
         </button>
       </div>
       <div class="ces-clinreviews__dialog-body">
-        <div class="ces-clinreviews__faq">
-          {%- for i in (1..4) -%}
-            {%- assign qk = 'faq' | append: i | append: '_q' -%}
-            {%- assign ak = 'faq' | append: i | append: '_a' -%}
-            {%- if section.settings[qk] != blank -%}
-              <details class="ces-clinreviews__faq-item"{% if i == 1 %} open{% endif %}>
-                <summary class="ces-clinreviews__faq-q">
-                  {{ section.settings[qk] }}
-                  <span class="ces-clinreviews__faq-caret" aria-hidden="true"></span>
-                </summary>
-                <div class="ces-clinreviews__faq-a">{{ section.settings[ak] }}</div>
-              </details>
-            {%- endif -%}
-          {%- endfor -%}
+        <div class="ces-clinreviews__view ces-clinreviews__view--main" data-ces-view="main">
+          <div class="ces-clinreviews__faq">
+            {%- for i in (1..4) -%}
+              {%- assign qk = 'faq' | append: i | append: '_q' -%}
+              {%- assign ak = 'faq' | append: i | append: '_a' -%}
+              {%- if section.settings[qk] != blank -%}
+                <details class="ces-clinreviews__faq-item"{% if i == 1 %} open{% endif %}>
+                  <summary class="ces-clinreviews__faq-q">
+                    {{ section.settings[qk] }}
+                    <span class="ces-clinreviews__faq-caret" aria-hidden="true"></span>
+                  </summary>
+                  <div class="ces-clinreviews__faq-a">{{ section.settings[ak] }}</div>
+                </details>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if reviews.size > 0 -%}
+            <div class="ces-clinreviews__shared">
+              {%- if section.settings.clinicians_heading != blank -%}
+                <p class="ces-clinreviews__shared-head">{{ section.settings.clinicians_heading }}</p>
+              {%- endif -%}
+              {%- if section.settings.clinicians_intro != blank -%}
+                <div class="ces-clinreviews__shared-intro">{{ section.settings.clinicians_intro }}</div>
+              {%- endif -%}
+              <ul class="ces-clinreviews__shared-list" role="list">
+                {%- for block in reviews -%}
+                  <li class="ces-clinreviews__shared-item">
+                    {%- if block.settings.image != blank -%}
+                      {{ block.settings.image | image_url: width: 96 | image_tag: loading: 'lazy', widths: '40, 80, 96', sizes: '40px', class: 'ces-clinreviews__shared-avatar', alt: block.settings.name }}
+                    {%- else -%}
+                      <span class="ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
+                    {%- endif -%}
+                    <span class="ces-clinreviews__shared-info">
+                      <button type="button" class="ces-clinreviews__shared-name" data-ces-clin-open data-target="ClinProf-{{ section.id }}-{{ block.id }}">{{ block.settings.name }}</button>
+                      {%- if block.settings.location != blank -%}
+                        <span class="ces-clinreviews__shared-loc">{{ block.settings.location }}</span>
+                      {%- endif -%}
+                    </span>
+                    <button type="button" class="ces-clinreviews__preview" data-ces-clin-open data-target="ClinProf-{{ section.id }}-{{ block.id }}">
+                      {{ block.settings.preview_label | default: 'Preview' }}
+                      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M11 9v4H3V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
         </div>
 
         {%- if reviews.size > 0 -%}
-          <div class="ces-clinreviews__shared">
-            {%- if section.settings.clinicians_heading != blank -%}
-              <p class="ces-clinreviews__shared-head">{{ section.settings.clinicians_heading }}</p>
-            {%- endif -%}
-            {%- if section.settings.clinicians_intro != blank -%}
-              <div class="ces-clinreviews__shared-intro">{{ section.settings.clinicians_intro }}</div>
-            {%- endif -%}
-            <ul class="ces-clinreviews__shared-list" role="list">
-              {%- for block in reviews -%}
-                <li class="ces-clinreviews__shared-item">
-                  {%- if block.settings.image != blank -%}
-                    {{ block.settings.image | image_url: width: 96 | image_tag: loading: 'lazy', widths: '40, 80, 96', sizes: '40px', class: 'ces-clinreviews__shared-avatar', alt: block.settings.name }}
-                  {%- else -%}
-                    <span class="ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
-                  {%- endif -%}
-                  <span class="ces-clinreviews__shared-info">
-                    <button type="button" class="ces-clinreviews__shared-name" data-ces-clin-open data-target="ClinProf-{{ section.id }}-{{ block.id }}">{{ block.settings.name }}</button>
-                    {%- if block.settings.location != blank -%}
-                      <span class="ces-clinreviews__shared-loc">{{ block.settings.location }}</span>
-                    {%- endif -%}
-                  </span>
-                  <button type="button" class="ces-clinreviews__preview" data-ces-clin-open data-target="ClinProf-{{ section.id }}-{{ block.id }}">
-                    {{ block.settings.preview_label | default: 'Preview' }}
-                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M11 9v4H3V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-
-          <div class="ces-clinreviews__profiles">
+          <div class="ces-clinreviews__view ces-clinreviews__view--profile" data-ces-view="profile" hidden>
             {%- for block in reviews -%}
               <div class="ces-clinreviews__profile" id="ClinProf-{{ section.id }}-{{ block.id }}" hidden>
                 <div class="ces-clinreviews__profile-head">
                   {%- if block.settings.image != blank -%}
-                    {{ block.settings.image | image_url: width: 120 | image_tag: loading: 'lazy', widths: '48, 96, 120', sizes: '48px', class: 'ces-clinreviews__avatar', alt: block.settings.name }}
+                    {{ block.settings.image | image_url: width: 160 | image_tag: loading: 'lazy', widths: '72, 120, 160', sizes: '72px', class: 'ces-clinreviews__profile-avatar', alt: block.settings.name }}
                   {%- else -%}
-                    <span class="ces-clinreviews__avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
+                    <span class="ces-clinreviews__profile-avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
                   {%- endif -%}
-                  <div class="ces-clinreviews__provider">
-                    {%- if block.settings.name != blank -%}
-                      <p class="ces-clinreviews__name ces-clinreviews__name--plain">{{ block.settings.name }}</p>
-                    {%- endif -%}
-                    {%- if block.settings.verified -%}
-                      <span class="ces-clinreviews__verified">
-                        {{ block.settings.verified_label | default: 'Verified clinician' }}
-                        <span class="ces-clinreviews__verified-icon" aria-hidden="true">{{ ces_verified }}</span>
-                      </span>
-                    {%- endif -%}
-                  </div>
+                  {%- if block.settings.name != blank -%}
+                    <p class="ces-clinreviews__profile-name">{{ block.settings.name }}</p>
+                  {%- endif -%}
                 </div>
-                {%- if block.settings.specialty != blank or block.settings.years != blank -%}
-                  <div class="ces-clinreviews__extra">
-                    {%- if block.settings.specialty != blank -%}
-                      <div class="ces-clinreviews__dd">Specialty</div>
-                      <div class="ces-clinreviews__dt">{{ block.settings.specialty }}</div>
-                    {%- endif -%}
-                    {%- if block.settings.specialty != blank and block.settings.years != blank -%}
-                      <hr class="ces-clinreviews__rule">
-                    {%- endif -%}
-                    {%- if block.settings.years != blank -%}
-                      <div class="ces-clinreviews__dd">Years in practice</div>
-                      <div class="ces-clinreviews__dt">{{ block.settings.years }}</div>
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
-                {%- if block.settings.summary != blank -%}
-                  <p class="ces-clinreviews__summary">{{ block.settings.summary }}</p>
-                {%- endif -%}
-                {%- if block.settings.message != blank -%}
-                  <div class="ces-clinreviews__message">{{ block.settings.message }}</div>
-                {%- endif -%}
+                <dl class="ces-clinreviews__info">
+                  {%- if block.settings.website != blank -%}
+                    <div class="ces-clinreviews__info-row">
+                      <dt>Website</dt>
+                      <dd>
+                        <a href="{{ block.settings.website }}" target="_blank" rel="noopener" class="ces-clinreviews__info-link">
+                          {{ block.settings.website_label | default: 'Go to clinician website' }}
+                          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M11 9v4H3V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                      </dd>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.specialty != blank -%}
+                    <div class="ces-clinreviews__info-row"><dt>Expertise</dt><dd>{{ block.settings.specialty }}</dd></div>
+                  {%- endif -%}
+                  {%- if block.settings.location != blank -%}
+                    <div class="ces-clinreviews__info-row"><dt>Location</dt><dd>{{ block.settings.location }}</dd></div>
+                  {%- endif -%}
+                  {%- if block.settings.npi != blank -%}
+                    <div class="ces-clinreviews__info-row"><dt>NPI Number</dt><dd>{{ block.settings.npi }}</dd></div>
+                  {%- endif -%}
+                  {%- if block.settings.practice_type != blank -%}
+                    <div class="ces-clinreviews__info-row"><dt>Practice Type</dt><dd>{{ block.settings.practice_type }}</dd></div>
+                  {%- endif -%}
+                  {%- if block.settings.joined != blank -%}
+                    <div class="ces-clinreviews__info-row"><dt>Joined {{ section.settings.modal_title | default: 'FrontrowMD' }}</dt><dd>{{ block.settings.joined }}</dd></div>
+                  {%- endif -%}
+                  {%- if block.settings.years != blank -%}
+                    <div class="ces-clinreviews__info-row"><dt>Years in practice</dt><dd>{{ block.settings.years }}</dd></div>
+                  {%- endif -%}
+                </dl>
               </div>
             {%- endfor -%}
           </div>
@@ -513,6 +522,12 @@
         { "type": "text", "id": "years", "label": "Years in practice", "default": "19" },
         { "type": "text", "id": "location", "label": "Location", "default": "Houston, TX" },
         { "type": "text", "id": "preview_label", "label": "Preview button label", "default": "Preview" },
+        { "type": "header", "content": "Profile popup (info panel)" },
+        { "type": "url", "id": "website", "label": "Clinician website" },
+        { "type": "text", "id": "website_label", "label": "Website link label", "default": "Go to clinician website" },
+        { "type": "text", "id": "npi", "label": "NPI number" },
+        { "type": "text", "id": "practice_type", "label": "Practice type", "default": "Private practice" },
+        { "type": "text", "id": "joined", "label": "Joined (year)", "default": "2026" },
         { "type": "text", "id": "summary", "label": "Summary headline", "default": "Supports eye comfort during screen time and antioxidant balance" },
         { "type": "richtext", "id": "message", "label": "Review", "default": "<p>If you spend most of your workday staring at screens, you may have noticed your eyes sometimes feel tired or strained by evening. When patients deal with this kind of eye discomfort, I recommend an astaxanthin supplement like this one from Rovina because it may ease the oxidative load on the eyes. One human trial has even shown that this active ingredient may help maintain visual sharpness during heavy screen work.*</p>" },
         { "type": "header", "content": "Citation pill" },

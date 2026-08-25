@@ -494,7 +494,7 @@ button.ces-clinreviews__name {
   margin-bottom: 1.2rem;
 }
 .ces-clinreviews__profile .ces-clinreviews__name--plain {
-  color: #2f6bd8;
+  color: #212121;
 }
 .ces-clinreviews__profile .ces-clinreviews__summary {
   margin-top: 1.6rem;
@@ -554,7 +554,7 @@ clinician-reviews { display: block; }
 }
 .ces-clinreviews__profile .ces-clinreviews__name--plain {
   margin: 0;
-  color: #2f6bd8;
+  color: #212121;
   font-size: 1.6rem;
   font-weight: 700;
   text-decoration: underline;
@@ -705,3 +705,82 @@ clinician-reviews { display: block; }
   color: #757575;
 }
 .ces-clinreviews__footer-note > * { margin: 0; }
+
+/* modal: back button (shown only in profile view) */
+.ces-clinreviews__dialog-back {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.6rem;
+  height: 3.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  color: #212121;
+  cursor: pointer;
+}
+.ces-clinreviews__dialog-back[hidden] { display: none; }
+.ces-clinreviews__dialog-back:hover { background: #e0e0e0; }
+.ces-clinreviews__dialog-back svg { width: 1.4rem; height: 1.4rem; }
+
+/* modal: clinician info panel (Website / Expertise / NPI ...) */
+.ces-clinreviews__view--profile {
+  padding: 0.4rem;
+}
+.ces-clinreviews__profile-head {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem 0 2.4rem;
+}
+.ces-clinreviews__profile-avatar {
+  width: 7.2rem;
+  height: 7.2rem;
+  flex: 0 0 auto;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 0.1rem solid #eee;
+  background: linear-gradient(180deg, #fff 0%, #eee 100%);
+}
+.ces-clinreviews__profile-name {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212121;
+}
+.ces-clinreviews__info {
+  margin: 0;
+}
+.ces-clinreviews__info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1.6rem 0;
+  border-top: 0.1rem solid #eee;
+  font-size: 1.6rem;
+}
+.ces-clinreviews__info-row dt {
+  color: #212121;
+  font-weight: 400;
+}
+.ces-clinreviews__info-row dd {
+  margin: 0;
+  color: #212121;
+  font-weight: 600;
+  text-align: right;
+}
+.ces-clinreviews__info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #212121;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.ces-clinreviews__info-link svg { width: 1.4rem; height: 1.4rem; }
