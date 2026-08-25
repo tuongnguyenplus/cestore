@@ -461,16 +461,31 @@ button.ces-clinreviews__name {
   display: none;
 }
 .ces-clinreviews__faq-caret {
+  position: relative;
   flex: 0 0 auto;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-right: 0.2rem solid #212121;
-  border-bottom: 0.2rem solid #212121;
-  transform: rotate(45deg);
-  transition: transform 0.15s ease;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: #f0f0f0;
 }
-.ces-clinreviews__faq-item[open] .ces-clinreviews__faq-caret {
-  transform: rotate(-135deg);
+.ces-clinreviews__faq-caret::before,
+.ces-clinreviews__faq-caret::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.2rem;
+  height: 0.2rem;
+  background: #212121;
+  border-radius: 0.1rem;
+  transform: translate(-50%, -50%);
+}
+.ces-clinreviews__faq-caret::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: opacity 0.15s ease;
+}
+.ces-clinreviews__faq-item[open] .ces-clinreviews__faq-caret::after {
+  opacity: 0;
 }
 .ces-clinreviews__faq-a {
   padding: 0 0 1.6rem;
