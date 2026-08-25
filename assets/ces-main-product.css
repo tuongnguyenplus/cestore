@@ -894,3 +894,146 @@
   width: 0.8rem;
   height: 1.2rem;
 }
+
+/* ------------------------------------------------------------------ */
+/* "Above gallery" floating card (FrontrowMD style)                    */
+/* ------------------------------------------------------------------ */
+.ces-clinicians--top {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: min(100%, 52rem);
+  margin: 0 0 2rem;
+  padding: 1.4rem 3.4rem 1.4rem 1.8rem;
+  background: #fff;
+  border: 0.1rem solid #ececec;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.ces-clinicians__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #9e9e9e;
+  cursor: pointer;
+}
+.ces-clinicians__close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.ces-clinicians__close:hover {
+  color: #616161;
+}
+
+.ces-clinicians__expanded {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/* Laurel-wrapped "Clinicians' Choice" mark */
+.ces-clinicians__badge-mark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+  flex: 0 0 auto;
+}
+.ces-clinicians__badge-mark .ces-clinicians__laurel,
+.ces-clinicians__badge-mark .ces-clinicians__laurel svg {
+  height: 3.4rem;
+}
+.ces-clinicians__badge-mark .ces-clinicians__title {
+  max-width: 7.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.85rem;
+}
+
+.ces-clinicians__badge-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-left: 1.6rem;
+  border-left: 0.1rem solid #ececec;
+}
+.ces-clinicians--top .ces-clinicians__copy {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+}
+.ces-clinicians--top .ces-clinicians__cta {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+}
+.ces-clinicians--top .ces-clinicians__inline-link {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-underline-offset: 0.3rem;
+}
+
+/* Collapsed pill */
+.ces-clinicians__collapsed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.4rem;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: #212121;
+}
+.ces-clinicians__collapsed .ces-clinicians__badge-mark {
+  gap: 0.2rem;
+}
+.ces-clinicians__collapsed .ces-clinicians__laurel,
+.ces-clinicians__collapsed .ces-clinicians__laurel svg {
+  height: 3rem;
+}
+.ces-clinicians__collapsed .ces-clinicians__title {
+  max-width: 7rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+.ces-clinicians__collapsed-text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  color: #616161;
+  padding-left: 1.4rem;
+  border-left: 0.1rem solid #ececec;
+}
+.ces-clinicians--top.is-collapsed {
+  padding-right: 1.8rem;
+}
+
+@media screen and (max-width: 749px) {
+  .ces-clinicians--top {
+    max-width: 100%;
+    padding: 1.2rem 3rem 1.2rem 1.4rem;
+  }
+  .ces-clinicians__expanded {
+    gap: 1.2rem;
+  }
+  .ces-clinicians__badge-body {
+    padding-left: 1.2rem;
+  }
+  .ces-clinicians--top .ces-clinicians__cta {
+    flex-wrap: wrap;
+  }
+}
