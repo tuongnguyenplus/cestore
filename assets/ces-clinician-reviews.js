@@ -38,12 +38,15 @@
       if (body) body.scrollTop = 0;
       if (targetId) {
         const el = modal.querySelector('#' + (window.CSS && CSS.escape ? CSS.escape(targetId) : targetId));
-        if (el && body) {
-          requestAnimationFrame(() => {
-            body.scrollTop = el.offsetTop - body.offsetTop - 8;
-            el.classList.add('is-highlight');
-            setTimeout(() => el.classList.remove('is-highlight'), 1600);
-          });
+        if (el) {
+          el.hidden = false;
+          if (body) {
+            requestAnimationFrame(() => {
+              body.scrollTop = el.offsetTop - body.offsetTop - 8;
+              el.classList.add('is-highlight');
+              setTimeout(() => el.classList.remove('is-highlight'), 1600);
+            });
+          }
         }
       }
     };
