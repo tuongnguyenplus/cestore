@@ -325,3 +325,197 @@
     flex: 1 1 auto;
   }
 }
+
+/* ---------- Name as button ---------- */
+button.ces-clinreviews__name {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: #212121;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.ces-clinreviews__name--plain {
+  text-decoration: underline;
+}
+
+/* ---------- Modal ---------- */
+.ces-clinreviews__modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
+}
+.ces-clinreviews__modal[hidden] {
+  display: none;
+}
+.ces-clinreviews__modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.ces-clinreviews__dialog {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 53rem;
+  margin: 8rem auto;
+  max-height: calc(100vh - 16rem);
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  color: #212121;
+  border-radius: 1.2rem;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.ces-clinreviews__dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1.2rem 2rem;
+  background: #fefefe;
+  border-bottom: 0.1rem solid #eee;
+}
+.ces-clinreviews__dialog-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.ces-clinreviews__dialog-brand .ces-clinreviews__caduceus {
+  height: 1.8rem;
+}
+.ces-clinreviews__dialog-brand .ces-clinreviews__caduceus svg {
+  height: 1.8rem;
+}
+.ces-clinreviews__dialog-close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.6rem;
+  height: 3.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  color: #212121;
+  cursor: pointer;
+}
+.ces-clinreviews__dialog-close:hover {
+  background: #e0e0e0;
+}
+.ces-clinreviews__dialog-close svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.ces-clinreviews__dialog-body {
+  overflow-y: auto;
+  padding: 1.6rem;
+}
+.ces-clinreviews__faq {
+  background: #fefefe;
+  border-radius: 1.2rem;
+  border: 0.1rem solid #eee;
+}
+.ces-clinreviews__faq-item {
+  padding: 0 2rem;
+  border-bottom: 0.1rem solid #eee;
+}
+.ces-clinreviews__faq-item:last-child {
+  border-bottom: none;
+}
+.ces-clinreviews__faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  cursor: pointer;
+  padding: 1.6rem 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.ces-clinreviews__faq-q::-webkit-details-marker {
+  display: none;
+}
+.ces-clinreviews__faq-caret {
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-right: 0.2rem solid #212121;
+  border-bottom: 0.2rem solid #212121;
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.ces-clinreviews__faq-item[open] .ces-clinreviews__faq-caret {
+  transform: rotate(-135deg);
+}
+.ces-clinreviews__faq-a {
+  padding: 0 0 1.6rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #424242;
+}
+.ces-clinreviews__faq-a > * {
+  margin: 0 0 1.2rem;
+}
+.ces-clinreviews__faq-a > *:last-child {
+  margin-bottom: 0;
+}
+.ces-clinreviews__profile {
+  padding: 2rem 0.4rem 0.4rem;
+}
+.ces-clinreviews__profile-head {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.ces-clinreviews__profile .ces-clinreviews__name--plain {
+  color: #2f6bd8;
+}
+.ces-clinreviews__profile .ces-clinreviews__summary {
+  margin-top: 1.6rem;
+}
+.ces-clinreviews__dialog-foot {
+  padding: 1.2rem 2rem 1.6rem;
+  border-top: 0.1rem solid #eee;
+  background: #fefefe;
+  text-align: center;
+}
+.ces-clinreviews__disclaimer {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #757575;
+  line-height: 1.5;
+}
+.ces-clinreviews__disclaimer > * {
+  margin: 0;
+}
+.ces-clinreviews__foot-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #212121;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+clinician-reviews { display: block; }
