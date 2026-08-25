@@ -1152,6 +1152,54 @@
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
       }
+    },
+    "clinician-reviews": {
+      "type": "ces-clinician-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Anand Balasubramanian, MD",
+            "specialty": "Internal medicine",
+            "years": "19",
+            "verified": true,
+            "summary": "Supports eye comfort during screen time and antioxidant balance",
+            "message": "<p>A well-formulated astaxanthin softgel at a meaningful dose. I point patients with heavy screen time toward this kind of antioxidant support alongside the usual eye-health basics.*</p>"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Linda Harper, MD",
+            "specialty": "Family medicine",
+            "years": "22",
+            "verified": true,
+            "summary": "A sensible antioxidant option for eye and skin support",
+            "message": "<p>The dose here is clinically relevant, and the softgel format aids absorption. A reasonable daily addition for patients asking about antioxidant support.*</p>"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. James Henderson, MD",
+            "specialty": "Ophthalmology",
+            "years": "15",
+            "verified": true,
+            "summary": "Reasonable support for patients with high screen exposure",
+            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Clinician Reviews",
+        "title": "Independent Clinician Evaluations",
+        "subtitle": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>"
+      }
     }
   },
   "order": [
@@ -1169,6 +1217,7 @@
     "comparison",
     "bullet-cta",
     "testimonials",
+    "clinician-reviews",
     "faq",
     "newsletter",
     "sticky-atc"

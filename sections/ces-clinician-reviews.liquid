@@ -1,0 +1,247 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+{{ 'ces-clinician-reviews.css' | asset_url | stylesheet_tag }}
+
+{% render 'ces-section-padding' %}
+
+{%- liquid
+  assign reviews = section.blocks | where: 'type', 'review'
+-%}
+
+<div
+  class="ces-section ces-clinreviews ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+>
+  <div class="ces-clinreviews__inner">
+    <div class="ces-clinreviews__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="ces-clinreviews__cc-row">
+          <span class="ces-clinreviews__divider"></span>
+          <span class="ces-clinreviews__laurel" aria-hidden="true">
+            {{- 'ces-clin-laurel-left.svg' | inline_asset_content -}}
+          </span>
+          <span class="ces-clinreviews__caduceus" aria-hidden="true">
+            {{- 'ces-clin-caduceus.svg' | inline_asset_content -}}
+          </span>
+          <p class="ces-clinreviews__eyebrow">{{ section.settings.eyebrow }}</p>
+          <span class="ces-clinreviews__laurel ces-clinreviews__laurel--right" aria-hidden="true">
+            {{- 'ces-clin-laurel-right.svg' | inline_asset_content -}}
+          </span>
+          <span class="ces-clinreviews__divider"></span>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="ces-clinreviews__title ces-heading">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <div class="ces-clinreviews__subtitle">{{ section.settings.subtitle }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if reviews.size > 0 -%}
+      <div class="ces-clinreviews__list">
+        {%- for block in reviews -%}
+          <article class="ces-clinreviews__note" {{ block.shopify_attributes }}>
+            <div class="ces-clinreviews__provider-col">
+              <div class="ces-clinreviews__provider-summary">
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 120
+                    | image_tag: loading: 'lazy', widths: '60, 90, 120', sizes: '48px', class: 'ces-clinreviews__avatar', alt: block.settings.name
+                  }}
+                {%- else -%}
+                  <span class="ces-clinreviews__avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
+                {%- endif -%}
+                <div class="ces-clinreviews__provider">
+                  {%- if block.settings.name != blank -%}
+                    <p class="ces-clinreviews__name">{{ block.settings.name }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.verified -%}
+                    <span class="ces-clinreviews__verified">
+                      {{ block.settings.verified_label | default: 'Verified clinician' }}
+                      <span class="ces-clinreviews__verified-icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                          <path d="M6 10.3l2.6 2.6L14 7.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </span>
+                  {%- endif -%}
+                </div>
+              </div>
+
+              {%- if block.settings.specialty != blank or block.settings.years != blank -%}
+                <div class="ces-clinreviews__extra">
+                  {%- if block.settings.specialty != blank -%}
+                    <div class="ces-clinreviews__dd">Specialty</div>
+                    <div class="ces-clinreviews__dt">{{ block.settings.specialty }}</div>
+                  {%- endif -%}
+                  {%- if block.settings.specialty != blank and block.settings.years != blank -%}
+                    <hr class="ces-clinreviews__rule">
+                  {%- endif -%}
+                  {%- if block.settings.years != blank -%}
+                    <div class="ces-clinreviews__dd">Years in practice</div>
+                    <div class="ces-clinreviews__dt">{{ block.settings.years }}</div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="ces-clinreviews__content">
+              {%- if block.settings.summary != blank -%}
+                <p class="ces-clinreviews__summary">{{ block.settings.summary }}</p>
+              {%- endif -%}
+              {%- if block.settings.message != blank -%}
+                <div class="ces-clinreviews__message">{{ block.settings.message }}</div>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Clinician reviews",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Clinician Reviews"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Independent Clinician Evaluations"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Clinician review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Clinician photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name & credentials",
+          "default": "Dr. Anand Balasubramanian, MD"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Show \"Verified clinician\"",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "verified_label",
+          "label": "Verified label",
+          "default": "Verified clinician"
+        },
+        {
+          "type": "text",
+          "id": "specialty",
+          "label": "Specialty",
+          "default": "Internal medicine"
+        },
+        {
+          "type": "text",
+          "id": "years",
+          "label": "Years in practice",
+          "default": "19"
+        },
+        {
+          "type": "text",
+          "id": "summary",
+          "label": "Summary headline",
+          "default": "Supports eye comfort during screen time and antioxidant balance"
+        },
+        {
+          "type": "richtext",
+          "id": "message",
+          "label": "Review",
+          "default": "<p>A well-formulated astaxanthin softgel at a meaningful dose. I point patients with heavy screen time toward this kind of antioxidant support alongside the usual eye-health basics.*</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "CES Clinician reviews",
+      "blocks": [
+        { "type": "review" },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Linda Harper, MD",
+            "specialty": "Family medicine",
+            "years": "22",
+            "summary": "A sensible antioxidant option for eye and skin support",
+            "message": "<p>The dose here is clinically relevant, and the softgel format aids absorption. A reasonable daily addition for patients asking about antioxidant support.*</p>"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Dr. James Henderson, MD",
+            "specialty": "Ophthalmology",
+            "years": "15",
+            "summary": "Reasonable support for patients with high screen exposure",
+            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
