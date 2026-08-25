@@ -26,43 +26,64 @@
     const modal = root.querySelector('[data-ces-modal]');
     if (!modal) return;
     const body = modal.querySelector('.ces-clinreviews__dialog-body');
+    const faq = modal.querySelector('[data-ces-faq]');
     const viewMain = modal.querySelector('[data-ces-view="main"]');
+    const viewReviews = modal.querySelector('[data-ces-view="reviews"]');
     const viewProfile = modal.querySelector('[data-ces-view="profile"]');
     const backBtn = modal.querySelector('[data-ces-back]');
     let lastFocus = null;
+    let lastList = 'main';
 
-    const showMain = () => {
-      if (viewMain) viewMain.hidden = false;
+    const hideAll = () => {
+      [viewMain, viewReviews, viewProfile].forEach((v) => {
+        if (v) v.hidden = true;
+      });
       if (viewProfile) {
-        viewProfile.hidden = true;
         viewProfile.querySelectorAll('.ces-clinreviews__profile').forEach((p) => (p.hidden = true));
       }
+    };
+
+    // which: 'main' | 'reviews'
+    const showList = (which) => {
+      hideAll();
+      lastList = which === 'reviews' ? 'reviews' : 'main';
+      if (faq) faq.hidden = false;
+      const v = lastList === 'reviews' ? viewReviews : viewMain;
+      if (v) v.hidden = false;
       if (backBtn) backBtn.hidden = true;
       if (body) body.scrollTop = 0;
     };
 
     const showProfile = (targetId) => {
       if (!viewProfile) return;
-      viewProfile.querySelectorAll('.ces-clinreviews__profile').forEach((p) => (p.hidden = true));
       const el = targetId
         ? modal.querySelector('#' + (window.CSS && CSS.escape ? CSS.escape(targetId) : targetId))
         : null;
-      if (!el) return;
-      if (viewMain) viewMain.hidden = true;
+      if (!el) {
+        showList(lastList);
+        return;
+      }
+      hideAll();
+      if (faq) faq.hidden = true;
       viewProfile.hidden = false;
       el.hidden = false;
       if (backBtn) backBtn.hidden = false;
       if (body) body.scrollTop = 0;
     };
 
-    const open = (targetId) => {
+    // opts: {view:'main'|'reviews'} or {target:'ClinProf-..'} or a target string
+    const open = (opts) => {
       lastFocus = document.activeElement;
       modal.hidden = false;
       document.body.classList.add('overflow-hidden');
-      if (targetId) {
-        showProfile(targetId);
+      if (typeof opts === 'string') {
+        showProfile(opts);
+      } else if (opts && opts.target) {
+        showProfile(opts.target);
+      } else if (opts && opts.view === 'reviews') {
+        showList('reviews');
       } else {
-        showMain();
+        showList('main');
       }
       const focusEl = modal.querySelector('[data-ces-modal-close]');
       if (focusEl) focusEl.focus();
@@ -70,7 +91,7 @@
     const close = () => {
       modal.hidden = true;
       document.body.classList.remove('overflow-hidden');
-      showMain();
+      showList('main');
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     };
 
@@ -79,12 +100,15 @@
     modal._cesOpen = open;
 
     root.querySelectorAll('[data-ces-clin-modal]').forEach((b) =>
-      b.addEventListener('click', () => open())
+      b.addEventListener('click', () => open({ view: 'main' }))
+    );
+    root.querySelectorAll('[data-ces-clin-reviews]').forEach((b) =>
+      b.addEventListener('click', () => open({ view: 'reviews' }))
     );
     root.querySelectorAll('[data-ces-clin-open]').forEach((b) =>
-      b.addEventListener('click', () => open(b.dataset.target))
+      b.addEventListener('click', () => open({ target: b.dataset.target }))
     );
-    if (backBtn) backBtn.addEventListener('click', showMain);
+    if (backBtn) backBtn.addEventListener('click', () => showList(lastList));
     modal.querySelectorAll('[data-ces-modal-close]').forEach((b) => b.addEventListener('click', close));
     document.addEventListener('keyup', (e) => {
       if (e.key === 'Escape' && !modal.hidden) close();
@@ -109,7 +133,7 @@
   document.addEventListener('ces:open-clinreviews', (e) => {
     const modal = document.querySelector('.ces-clinreviews__modal');
     if (modal && typeof modal._cesOpen === 'function') {
-      modal._cesOpen(e && e.detail && e.detail.target);
+      modal._cesOpen((e && e.detail) || { view: 'main' });
     }
   });
 })();

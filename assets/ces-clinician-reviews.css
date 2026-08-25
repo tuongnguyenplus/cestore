@@ -784,3 +784,34 @@ clinician-reviews { display: block; }
   text-underline-offset: 0.3rem;
 }
 .ces-clinreviews__info-link svg { width: 1.4rem; height: 1.4rem; }
+
+/* modal: reviews view (Read their reviews) */
+.ces-clinreviews__view--reviews {
+  padding: 0.4rem;
+}
+.ces-clinreviews__modal-review {
+  padding: 2rem 0;
+  border-top: 0.1rem solid #eee;
+}
+.ces-clinreviews__modal-review:first-child {
+  border-top: none;
+}
+.ces-clinreviews__profile-head--sm {
+  gap: 1.2rem;
+  padding: 0 0 1.2rem;
+}
+.ces-clinreviews__name--btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: #212121;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}

@@ -212,24 +212,25 @@
         </button>
       </div>
       <div class="ces-clinreviews__dialog-body">
-        <div class="ces-clinreviews__view ces-clinreviews__view--main" data-ces-view="main">
-          <div class="ces-clinreviews__faq">
-            {%- for i in (1..4) -%}
-              {%- assign qk = 'faq' | append: i | append: '_q' -%}
-              {%- assign ak = 'faq' | append: i | append: '_a' -%}
-              {%- if section.settings[qk] != blank -%}
-                <details class="ces-clinreviews__faq-item"{% if i == 1 %} open{% endif %}>
-                  <summary class="ces-clinreviews__faq-q">
-                    {{ section.settings[qk] }}
-                    <span class="ces-clinreviews__faq-caret" aria-hidden="true"></span>
-                  </summary>
-                  <div class="ces-clinreviews__faq-a">{{ section.settings[ak] }}</div>
-                </details>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
+        <div class="ces-clinreviews__faq" data-ces-faq>
+          {%- for i in (1..4) -%}
+            {%- assign qk = 'faq' | append: i | append: '_q' -%}
+            {%- assign ak = 'faq' | append: i | append: '_a' -%}
+            {%- if section.settings[qk] != blank -%}
+              <details class="ces-clinreviews__faq-item">
+                <summary class="ces-clinreviews__faq-q">
+                  {{ section.settings[qk] }}
+                  <span class="ces-clinreviews__faq-caret" aria-hidden="true"></span>
+                </summary>
+                <div class="ces-clinreviews__faq-a">{{ section.settings[ak] }}</div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
 
-          {%- if reviews.size > 0 -%}
+        {%- if reviews.size > 0 -%}
+          {%- comment -%} MAIN view — clinicians list (opened by "Learn more") {%- endcomment -%}
+          <div class="ces-clinreviews__view ces-clinreviews__view--main" data-ces-view="main">
             <div class="ces-clinreviews__shared">
               {%- if section.settings.clinicians_heading != blank -%}
                 <p class="ces-clinreviews__shared-head">{{ section.settings.clinicians_heading }}</p>
@@ -259,10 +260,54 @@
                 {%- endfor -%}
               </ul>
             </div>
-          {%- endif -%}
-        </div>
+          </div>
 
-        {%- if reviews.size > 0 -%}
+          {%- comment -%} REVIEWS view — review content (opened by "Read their reviews") {%- endcomment -%}
+          <div class="ces-clinreviews__view ces-clinreviews__view--reviews" data-ces-view="reviews" hidden>
+            {%- for block in reviews -%}
+              <div class="ces-clinreviews__modal-review">
+                <div class="ces-clinreviews__profile-head ces-clinreviews__profile-head--sm">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 120 | image_tag: loading: 'lazy', widths: '48, 96, 120', sizes: '48px', class: 'ces-clinreviews__avatar', alt: block.settings.name }}
+                  {%- else -%}
+                    <span class="ces-clinreviews__avatar ces-clinreviews__avatar--placeholder" aria-hidden="true"></span>
+                  {%- endif -%}
+                  <div class="ces-clinreviews__provider">
+                    {%- if block.settings.name != blank -%}
+                      <button type="button" class="ces-clinreviews__name ces-clinreviews__name--btn" data-ces-clin-open data-target="ClinProf-{{ section.id }}-{{ block.id }}">{{ block.settings.name }}</button>
+                    {%- endif -%}
+                    {%- if block.settings.verified -%}
+                      <span class="ces-clinreviews__verified">
+                        {{ block.settings.verified_label | default: 'Verified clinician' }}
+                        <span class="ces-clinreviews__verified-icon" aria-hidden="true">{{ ces_verified }}</span>
+                      </span>
+                    {%- endif -%}
+                  </div>
+                </div>
+                {%- if block.settings.specialty != blank or block.settings.years != blank -%}
+                  <div class="ces-clinreviews__extra">
+                    {%- if block.settings.specialty != blank -%}
+                      <div class="ces-clinreviews__dd">Specialty</div>
+                      <div class="ces-clinreviews__dt">{{ block.settings.specialty }}</div>
+                    {%- endif -%}
+                    {%- if block.settings.specialty != blank and block.settings.years != blank -%}
+                      <hr class="ces-clinreviews__rule">
+                    {%- endif -%}
+                    {%- if block.settings.years != blank -%}
+                      <div class="ces-clinreviews__dd">Years in practice</div>
+                      <div class="ces-clinreviews__dt">{{ block.settings.years }}</div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.summary != blank -%}
+                  <p class="ces-clinreviews__summary">{{ block.settings.summary }}</p>
+                {%- endif -%}
+                {%- if block.settings.message != blank -%}
+                  <div class="ces-clinreviews__message">{{ block.settings.message }}</div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
           <div class="ces-clinreviews__view ces-clinreviews__view--profile" data-ces-view="profile" hidden>
             {%- for block in reviews -%}
               <div class="ces-clinreviews__profile" id="ClinProf-{{ section.id }}-{{ block.id }}" hidden>
