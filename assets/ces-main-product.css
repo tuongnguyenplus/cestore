@@ -898,17 +898,28 @@
 /* ------------------------------------------------------------------ */
 /* "Above gallery" floating card (FrontrowMD style)                    */
 /* ------------------------------------------------------------------ */
-.ces-clinicians--top {
+.product__media-wrapper.ces-has-clin-badge {
   position: relative;
+}
+.ces-clinicians--top {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  z-index: 3;
   display: block;
   width: fit-content;
-  max-width: min(100%, 52rem);
-  margin: 0 0 2rem;
+  max-width: min(calc(100% - 3.2rem), 42rem);
+  margin: 0;
   padding: 1.4rem 3.4rem 1.4rem 1.8rem;
   background: #fff;
   border: 0.1rem solid #ececec;
   border-radius: 1.2rem;
-  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.12);
+}
+/* Only one state is visible at a time; [hidden] must beat the flex rules. */
+.ces-clinicians__expanded[hidden],
+.ces-clinicians__collapsed[hidden] {
+  display: none !important;
 }
 
 .ces-clinicians__close {
@@ -1024,14 +1035,29 @@
 
 @media screen and (max-width: 749px) {
   .ces-clinicians--top {
-    max-width: 100%;
+    top: 1rem;
+    left: 1rem;
+    max-width: calc(100% - 2rem);
     padding: 1.2rem 3rem 1.2rem 1.4rem;
   }
   .ces-clinicians__expanded {
     gap: 1.2rem;
   }
+  .ces-clinicians__badge-mark .ces-clinicians__laurel,
+  .ces-clinicians__badge-mark .ces-clinicians__laurel svg {
+    height: 3rem;
+  }
+  .ces-clinicians__badge-mark .ces-clinicians__title {
+    max-width: 6.5rem;
+    font-size: 1.4rem;
+    line-height: 1.65rem;
+  }
   .ces-clinicians__badge-body {
     padding-left: 1.2rem;
+  }
+  .ces-clinicians--top .ces-clinicians__copy {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
   }
   .ces-clinicians--top .ces-clinicians__cta {
     flex-wrap: wrap;

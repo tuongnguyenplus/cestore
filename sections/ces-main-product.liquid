@@ -142,18 +142,20 @@
   <product-component view-event-payload="{{ product | standard_event_data: 'view', context: 'page' | escape }}">
     <div class="page-width">
       {%- comment -%}
-        Floating "Clinicians' Choice" badge, hoisted above the media gallery.
-        Renders the first ces_clinicians block whose position is "Above gallery".
+        Find the first ces_clinicians block set to "Above gallery" so it can be
+        rendered as a floating card overlaying the top-left of the media gallery.
       {%- endcomment -%}
-      {%- assign ces_clin_top_id = null -%}
+      {%- assign ces_clin_top = null -%}
       {%- for block in section.blocks -%}
-        {%- if block.type == 'ces_clinicians' and block.settings.position == 'top_gallery' and ces_clin_top_id == null -%}
-          {%- render 'ces-clinicians-badge', block: block, variant: 'top' -%}
-          {%- assign ces_clin_top_id = block.id -%}
+        {%- if block.type == 'ces_clinicians' and block.settings.position == 'top_gallery' and ces_clin_top == null -%}
+          {%- assign ces_clin_top = block -%}
         {%- endif -%}
       {%- endfor -%}
       <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-        <div class="grid__item product__media-wrapper">
+        <div class="grid__item product__media-wrapper{% if ces_clin_top %} ces-has-clin-badge{% endif %}">
+          {%- if ces_clin_top -%}
+            {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
+          {%- endif -%}
           {% render 'product-media-gallery', variant_images: variant_images %}
         </div>
         <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
