@@ -75,11 +75,18 @@
   font-style: italic;
 }
 .ces-clinreviews__learn-more {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+  font: inherit;
   color: inherit;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-  margin-left: 0.4rem;
+  cursor: pointer;
 }
 
 /* ---------- List / note ---------- */
@@ -310,19 +317,18 @@
   color: rgba(var(--color-foreground), 0.5);
 }
 
-/* ---------- Desktop: provider column beside content ---------- */
+/* Review cards stay stacked (provider row on top, review row below) at
+   every width, matching the reference. */
+.ces-clinreviews__note {
+  flex-direction: column;
+  gap: 1.6rem;
+}
 @media screen and (min-width: 750px) {
-  .ces-clinreviews__note {
-    flex-direction: row;
-    gap: 4rem;
-    align-items: flex-start;
+  .ces-clinreviews__provider-summary {
+    max-width: 46rem;
   }
-  .ces-clinreviews__provider-col {
-    flex: 0 0 26.5rem;
-    width: 26.5rem;
-  }
-  .ces-clinreviews__content {
-    flex: 1 1 auto;
+  .ces-clinreviews__extra {
+    max-width: 46rem;
   }
 }
 
