@@ -77,6 +77,18 @@
             "text_style": "body"
           }
         },
+        "clinicians": {
+          "type": "ces_clinicians",
+          "settings": {
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
+            "avatar_1": "shopify://shop_images/360_F_645777959_fNnaNoeVO4qxCNPW9MWr3gQlPFSGA9yL.jpg",
+            "avatar_2": "shopify://shop_images/research.webp",
+            "avatar_3": "shopify://shop_images/9.webp",
+            "link_label": "View clinicians & learn more",
+            "link_url": ""
+          }
+        },
         "highlight-1": {
           "type": "ces_highlight",
           "settings": {
@@ -319,15 +331,6 @@
             "items": "Dissolving Microneedle Technology\n2–3 Treatment Nights / Week\n2+ Hours or Overnight\nMade for Mature Under-Eyes\nNo Injections. No Downtime.\n90-Day Money-Back Guarantee",
             "footnote": "Dermatologist-Tested · No Needles · No Downtime",
             "text_alignment": "center"
-          }
-        },
-        "clinicians": {
-          "type": "ces_clinicians",
-          "settings": {
-            "eyebrow": "Clinicians' Choice",
-            "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
-            "link_label": "View clinicians & learn more",
-            "link_url": ""
           }
         }
       },
