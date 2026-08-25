@@ -793,6 +793,11 @@
 .ces-clinicians__copy > * {
   margin: 0;
 }
+/* keep the sentence and inline "Learn more" on the same flow */
+.ces-clinicians__copy p {
+  display: inline;
+  margin: 0;
+}
 .ces-clinicians__copy strong {
   font-weight: 600;
 }
