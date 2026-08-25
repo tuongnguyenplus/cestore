@@ -1321,7 +1321,11 @@
                         {%- if block.settings.link_url != blank -%}
                           <a class="ces-clinicians__link" href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>
                         {%- else -%}
-                          <span class="ces-clinicians__link ces-clinicians__link--static">{{ block.settings.link_label }}</span>
+                          <button
+                            type="button"
+                            class="ces-clinicians__link ces-clinicians__link--button"
+                            onclick="document.dispatchEvent(new CustomEvent('ces:open-clinreviews',{bubbles:true}))"
+                          >{{ block.settings.link_label }}</button>
                         {%- endif -%}
                       {%- endif -%}
                     </div>

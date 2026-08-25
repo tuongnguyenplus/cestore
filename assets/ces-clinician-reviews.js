@@ -56,6 +56,10 @@
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     };
 
+    // Expose so other sections (e.g. the product-info "Clinicians' Choice"
+    // badge) can open this modal.
+    modal._cesOpen = open;
+
     root.querySelectorAll('[data-ces-clin-modal]').forEach((b) =>
       b.addEventListener('click', () => open())
     );
@@ -81,4 +85,12 @@
     init();
   }
   document.addEventListener('shopify:section:load', (e) => init(e.target));
+
+  // Let other sections open the (first) reviews modal on the page.
+  document.addEventListener('ces:open-clinreviews', (e) => {
+    const modal = document.querySelector('.ces-clinreviews__modal');
+    if (modal && typeof modal._cesOpen === 'function') {
+      modal._cesOpen(e && e.detail && e.detail.target);
+    }
+  });
 })();
