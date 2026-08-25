@@ -140,22 +140,24 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <product-component view-event-payload="{{ product | standard_event_data: 'view', context: 'page' | escape }}">
-    <div class="page-width">
-      {%- comment -%}
-        Find the first ces_clinicians block set to "Above gallery" so it can be
-        rendered as a floating card overlaying the top-left of the media gallery.
-      {%- endcomment -%}
-      {%- assign ces_clin_top = null -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'ces_clinicians' and block.settings.position == 'top_gallery' and ces_clin_top == null -%}
-          {%- assign ces_clin_top = block -%}
-        {%- endif -%}
-      {%- endfor -%}
+    {%- comment -%}
+      Find the first ces_clinicians block set to "Above gallery" so it can be
+      rendered as a floating card overlaying the top-left of the media gallery.
+      It is rendered OUTSIDE the gallery DOM (absolutely positioned against the
+      page-width wrapper) so it can never affect the gallery's own layout.
+    {%- endcomment -%}
+    {%- assign ces_clin_top = null -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'ces_clinicians' and block.settings.position == 'top_gallery' and ces_clin_top == null -%}
+        {%- assign ces_clin_top = block -%}
+      {%- endif -%}
+    {%- endfor -%}
+    <div class="page-width{% if ces_clin_top %} ces-clin-anchor{% endif %}">
+      {%- if ces_clin_top -%}
+        {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
+      {%- endif -%}
       <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-        <div class="grid__item product__media-wrapper{% if ces_clin_top %} ces-has-clin-badge{% endif %}">
-          {%- if ces_clin_top -%}
-            {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
-          {%- endif -%}
+        <div class="grid__item product__media-wrapper">
           {% render 'product-media-gallery', variant_images: variant_images %}
         </div>
         <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
