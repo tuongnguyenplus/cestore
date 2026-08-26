@@ -1037,13 +1037,13 @@ body {
 }
 .ces-clinicians__badge-mark .ces-clinicians__laurel,
 .ces-clinicians__badge-mark .ces-clinicians__laurel svg {
-  height: 2.6rem;
+  height: 3.6rem;
 }
 .ces-clinicians__badge-mark .ces-clinicians__title {
-  max-width: 6.4rem;
+  max-width: 8rem;
   text-align: center;
-  font-size: 1.35rem;
-  line-height: 1.55rem;
+  font-size: 1.7rem;
+  line-height: 1.9rem;
 }
 
 .ces-clinicians__badge-body {
@@ -1051,7 +1051,6 @@ body {
   flex-direction: column;
   gap: 0.4rem;
   padding-left: 1rem;
-  border-left: 0.1rem solid #e6dede;
 }
 .ces-clinicians--top .ces-clinicians__copy {
   font-size: 1.25rem;
