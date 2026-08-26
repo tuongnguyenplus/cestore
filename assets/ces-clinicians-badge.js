@@ -1,46 +1,60 @@
 /*
  * ces-clinicians-badge
- * The "Above gallery" Clinicians' Choice card:
- *   - Shows only while the FIRST gallery image is active (Dawn keeps `is-active`
- *     on the shown `.product__media-item`; mirror it).
- *   - The (x) button dismisses the whole card for the current visit
- *     (sessionStorage), so it comes back on the next visit.
+ * The "Above gallery" Clinicians' Choice card (FrontrowMD-style ribbon):
+ *   - The (x) button MINIMIZES to a small ribbon card (just the mark);
+ *     clicking that small card maximizes it again. The state is remembered.
+ *   - The whole card shows only while the FIRST gallery image is active
+ *     (Dawn keeps `is-active` on the shown `.product__media-item`).
  */
 (function () {
   function initCard(card) {
     var key = card.getAttribute('data-storage-key') || 'cesClinBadge';
-    var closeBtn = card.querySelector('[data-ces-clin-collapse]');
+    var expanded = card.querySelector('.ces-clinicians__expanded');
+    var min = card.querySelector('.ces-clinicians__min');
+    var closeBtn = card.querySelector('[data-ces-clin-min]');
 
-    var dismissed = false;
+    var minimized = false;
     try {
-      dismissed = sessionStorage.getItem(key) === '1';
+      minimized = localStorage.getItem(key) === 'min';
     } catch (e) {}
 
-    // The card belongs to the first gallery image only.
-    var anchor = card.closest('.ces-clin-anchor') || card.parentElement;
-    var items = anchor ? anchor.querySelectorAll('.product__media-item') : [];
-    var first = items[0];
-    var multi = items.length >= 2;
-
-    function apply() {
-      var onFirst = !multi || (first && first.classList.contains('is-active'));
-      // Use a class (not [hidden]) so it beats the card's own display rule.
-      card.classList.toggle('is-hidden', dismissed || !onFirst);
+    function setMinimized(state) {
+      minimized = state;
+      if (expanded) expanded.hidden = state;
+      if (min) min.hidden = !state;
+      if (closeBtn) closeBtn.hidden = state;
+      card.classList.toggle('is-min', state);
     }
-    apply();
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function () {
-        dismissed = true;
+    if (min) {
+      setMinimized(minimized);
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          setMinimized(true);
+          try {
+            localStorage.setItem(key, 'min');
+          } catch (err) {}
+        });
+      }
+      min.addEventListener('click', function () {
+        setMinimized(false);
         try {
-          sessionStorage.setItem(key, '1');
-        } catch (e) {}
-        apply();
+          localStorage.setItem(key, 'max');
+        } catch (err) {}
       });
     }
 
-    if (multi && first) {
-      var obs = new MutationObserver(apply);
+    // First-gallery-image-only visibility.
+    var anchor = card.closest('.ces-clin-anchor') || card.parentElement;
+    var items = anchor ? anchor.querySelectorAll('.product__media-item') : [];
+    var first = items[0];
+    if (items.length >= 2 && first) {
+      var syncSlide = function () {
+        card.classList.toggle('is-hidden', !first.classList.contains('is-active'));
+      };
+      syncSlide();
+      var obs = new MutationObserver(syncSlide);
       items.forEach(function (it) {
         obs.observe(it, { attributes: true, attributeFilter: ['class'] });
       });

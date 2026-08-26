@@ -925,9 +925,42 @@
   );
   filter: drop-shadow(0 0.2rem 0.5rem rgba(0, 0, 0, 0.14));
 }
-/* Hidden on non-first slides or after being dismissed; must beat display. */
+/* Hidden on non-first slides; must beat the display rule. */
 .ces-clinicians--top.is-hidden {
   display: none !important;
+}
+/* Only one of max / min is shown at a time; [hidden] must beat flex/inline. */
+.ces-clinicians__expanded[hidden],
+.ces-clinicians__min[hidden],
+.ces-clinicians__close[hidden] {
+  display: none !important;
+}
+
+/* Minimized: a small ribbon card with just the mark. The ribbon notch lives
+   on the container, so it applies to both states automatically. */
+.ces-clinicians__min {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: #212121;
+}
+.ces-clinicians__min .ces-clinicians__laurel,
+.ces-clinicians__min .ces-clinicians__laurel svg {
+  height: 2.6rem;
+}
+.ces-clinicians__min .ces-clinicians__title {
+  max-width: 6.4rem;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 1.55rem;
+}
+.ces-clinicians--top.is-min {
+  padding: 0.7rem 2.4rem 0.7rem 1rem;
 }
 
 .ces-clinicians__close {

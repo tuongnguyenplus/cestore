@@ -21,7 +21,7 @@
     data-storage-key="cesClinBadge-{{ block.id }}"
     {{ block.shopify_attributes }}
   >
-    <button type="button" class="ces-clinicians__close" data-ces-clin-collapse aria-label="Dismiss">
+    <button type="button" class="ces-clinicians__close" data-ces-clin-min aria-label="Minimize">
       <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
 
@@ -70,6 +70,19 @@
         </div>
       </div>
     </div>
+
+    {%- comment -%} Minimized state: a small ribbon card with just the mark. {%- endcomment -%}
+    <button type="button" class="ces-clinicians__min" data-ces-clin-max aria-label="{{ block.settings.eyebrow }}" hidden>
+      <span class="ces-clinicians__badge-mark">
+        <span class="ces-clinicians__laurel ces-clinicians__laurel--left" aria-hidden="true">
+          {{- 'ces-clin-laurel-left.svg' | inline_asset_content -}}
+        </span>
+        <span class="ces-clinicians__title">{{ block.settings.eyebrow }}</span>
+        <span class="ces-clinicians__laurel ces-clinicians__laurel--right" aria-hidden="true">
+          {{- 'ces-clin-laurel-right.svg' | inline_asset_content -}}
+        </span>
+      </span>
+    </button>
   </div>
 
 {%- else -%}
