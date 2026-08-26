@@ -329,6 +329,17 @@
             "link_label": "View clinicians & learn more",
             "link_url": ""
           }
+        },
+        "clinicians-inline": {
+          "type": "ces_clinicians",
+          "settings": {
+            "show_block": true,
+            "position": "content_column",
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong>, including dermatologists, share this on <em>FrontrowMD</em> without compensation.</p>",
+            "learn_more_label": "Learn more",
+            "reviews_label": "Read their reviews"
+          }
         }
       },
       "block_order": [
@@ -336,6 +347,7 @@
         "title",
         "subtitle",
         "clinicians",
+        "clinicians-inline",
         "highlight-1",
         "highlight-2",
         "highlight-3",
