@@ -17,6 +17,15 @@
   --ces-accent: rgb(var(--color-button));
   --ces-accent-contrast: rgb(var(--color-button-text));
   --ces-success: #1c7a4f;
+  /* Sit flush under the announcement marquee — no white gap above the gallery. */
+  margin-top: 0;
+}
+/* Remove any residual gap between the marquee and the section right below it. */
+.ces-announcement-marquee-section {
+  margin-bottom: 0;
+}
+.ces-announcement-marquee-section + .section {
+  margin-top: 0 !important;
 }
 
 /* Media gallery ----------------------------------------------------------- */
