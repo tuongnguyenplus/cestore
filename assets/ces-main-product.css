@@ -926,9 +926,8 @@ body {
 /* ------------------------------------------------------------------ */
 .product__media-wrapper.ces-clin-anchor {
   position: relative;
-  /* Contain the scaled badge (and its shadow) so it never adds page scroll.
-     The gallery slider scrolls within its own child, so this is safe. */
-  overflow-x: clip;
+  /* Note: don't clip here — it would cut the badge's drop shadow. Page-level
+     overflow is handled by `body { overflow-x: clip }`. */
 }
 .ces-clinicians--top {
   position: absolute;
@@ -956,7 +955,7 @@ body {
     100% 100%,
     0 100%
   );
-  filter: drop-shadow(0 0.2rem 0.5rem rgba(0, 0, 0, 0.14));
+  filter: drop-shadow(0 0.3rem 0.9rem rgba(0, 0, 0, 0.2));
 }
 /* Hidden on non-first slides; must beat the display rule. */
 .ces-clinicians--top.is-hidden {
