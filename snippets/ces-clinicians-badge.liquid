@@ -86,7 +86,11 @@
   </div>
 
 {%- else -%}
-  <div class="ces-clinicians quick-add-hidden" {{ block.shopify_attributes }}>
+  <div
+    class="ces-clinicians ces-clinicians--card quick-add-hidden"
+    style="--ces-clin-card-bg: {{ block.settings.card_bg | default: '#ffffff' }};"
+    {{ block.shopify_attributes }}
+  >
     {%- if block.settings.eyebrow != blank -%}
       <div class="ces-clinicians__heading">
         <span class="ces-clinicians__laurel ces-clinicians__laurel--left" aria-hidden="true">

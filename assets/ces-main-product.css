@@ -773,6 +773,16 @@ body {
   color: #212121;
   font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
 }
+/* Rounded card (content-column placement, Botanique style). Background colour
+   is set per-block via --ces-clin-card-bg. */
+.ces-clinicians--card {
+  gap: 1.2rem;
+  padding: 1.6rem 1.8rem;
+  border-radius: 1.4rem;
+  background: var(--ces-clin-card-bg, #fff);
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
+}
 .ces-clinicians__heading {
   display: flex;
   flex-direction: row;
