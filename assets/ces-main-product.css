@@ -774,14 +774,21 @@ body {
   font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
 }
 /* Rounded card (content-column placement, Botanique style). Background colour
-   is set per-block via --ces-clin-card-bg. */
+   is set per-block via --ces-clin-card-bg. Kept compact (~4 lines). */
 .ces-clinicians--card {
-  gap: 1.2rem;
-  padding: 1.6rem 1.8rem;
+  gap: 0.5rem;
+  padding: 1.2rem 1.4rem;
   border-radius: 1.4rem;
   background: var(--ces-clin-card-bg, #fff);
   border: 0.1rem solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
+}
+.ces-clinicians--card .ces-clinicians__copy {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.ces-clinicians--card .ces-clinicians__cta {
+  margin-top: 0.4rem;
 }
 .ces-clinicians__heading {
   display: flex;
