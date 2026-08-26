@@ -776,19 +776,28 @@ body {
 /* Rounded card (content-column placement, Botanique style). Background colour
    is set per-block via --ces-clin-card-bg. Kept compact (~4 lines). */
 .ces-clinicians--card {
-  gap: 0.5rem;
+  gap: 0.4rem;
   padding: 1.2rem 1.4rem;
   border-radius: 1.4rem;
   background: var(--ces-clin-card-bg, #fff);
   border: 0.1rem solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
 }
-.ces-clinicians--card .ces-clinicians__copy {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.ces-clinicians--card .ces-clinicians__title {
+  font-size: 1.7rem;
+}
+/* Smaller copy so the sentence + inline "Learn more" fit in two lines
+   (4 lines total), like the reference. */
+.ces-clinicians--card .ces-clinicians__copy,
+.ces-clinicians--card .ces-clinicians__inline-link {
+  font-size: 1.35rem;
+  line-height: 1.85rem;
 }
 .ces-clinicians--card .ces-clinicians__cta {
   margin-top: 0.4rem;
+}
+.ces-clinicians--card .ces-clinicians__reviews-link {
+  font-size: 1.4rem;
 }
 .ces-clinicians__heading {
   display: flex;
