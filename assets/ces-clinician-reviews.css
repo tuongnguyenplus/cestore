@@ -209,7 +209,7 @@
   overflow: visible;
 }
 .ces-clinreviews__show-more {
-  display: inline-block;
+  display: block;
   background: transparent;
   border: none;
   padding: 0;
@@ -226,7 +226,8 @@
 /* ---------- Citation pill ---------- */
 .ces-clinreviews__citation {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 0.8rem;
 }
 .ces-clinreviews__citation-pill {
@@ -288,17 +289,19 @@
 }
 
 /* ---------- Highlights ---------- */
+/* Stacked as a vertical list: label on its own line, then one highlight per
+   line, left-aligned (matches the reference). */
 .ces-clinreviews__highlights {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
   margin: 1.6rem 0;
   font-size: 1.6rem;
   font-weight: 500;
 }
 .ces-clinreviews__highlights-head {
-  padding: 1rem 0.4rem 1rem 0;
+  padding: 0 0 0.4rem;
   font-weight: 600;
   font-size: 1.6rem;
 }
@@ -306,8 +309,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  height: 1.6rem;
-  padding: 0.8rem 1rem;
+  padding: 0.4rem 0;
   font-size: 1.6rem;
   font-weight: 400;
   color: rgba(var(--color-foreground), 0.75);
