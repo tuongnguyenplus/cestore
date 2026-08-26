@@ -1,79 +1,55 @@
 /*
  * ces-clinicians-badge
- * The "Above gallery" Clinicians' Choice card has an expanded and a collapsed
- * state. The (x) button collapses it, clicking the collapsed pill expands it,
- * and the choice is remembered per-browser via localStorage.
+ * The "Above gallery" Clinicians' Choice card:
+ *   - Shows only while the FIRST gallery image is active (Dawn keeps `is-active`
+ *     on the shown `.product__media-item`; mirror it).
+ *   - The (x) button dismisses the whole card for the current visit
+ *     (sessionStorage), so it comes back on the next visit.
  */
 (function () {
   function initCard(card) {
     var key = card.getAttribute('data-storage-key') || 'cesClinBadge';
-    var expanded = card.querySelector('.ces-clinicians__expanded');
-    var collapsed = card.querySelector('.ces-clinicians__collapsed');
     var closeBtn = card.querySelector('[data-ces-clin-collapse]');
 
-    // Nothing to toggle to — leave the expanded card as-is.
-    if (!collapsed) return;
-
-    function setCollapsed(state) {
-      if (expanded) expanded.hidden = state;
-      collapsed.hidden = !state;
-      card.classList.toggle('is-collapsed', state);
-    }
-
-    var saved = false;
+    var dismissed = false;
     try {
-      saved = localStorage.getItem(key) === '1';
+      dismissed = sessionStorage.getItem(key) === '1';
     } catch (e) {}
-    setCollapsed(saved);
+
+    // The card belongs to the first gallery image only.
+    var anchor = card.closest('.ces-clin-anchor') || card.parentElement;
+    var items = anchor ? anchor.querySelectorAll('.product__media-item') : [];
+    var first = items[0];
+    var multi = items.length >= 2;
+
+    function apply() {
+      var onFirst = !multi || (first && first.classList.contains('is-active'));
+      // Use a class (not [hidden]) so it beats the card's own display rule.
+      card.classList.toggle('is-hidden', dismissed || !onFirst);
+    }
+    apply();
 
     if (closeBtn) {
-      closeBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        setCollapsed(true);
+      closeBtn.addEventListener('click', function () {
+        dismissed = true;
         try {
-          localStorage.setItem(key, '1');
-        } catch (err) {}
+          sessionStorage.setItem(key, '1');
+        } catch (e) {}
+        apply();
       });
     }
 
-    collapsed.addEventListener('click', function () {
-      setCollapsed(false);
-      try {
-        localStorage.setItem(key, '0');
-      } catch (err) {}
-    });
-  }
-
-  /*
-   * The card belongs to the FIRST gallery image only. Dawn keeps the
-   * `is-active` class on the currently shown `.product__media-item` (updated on
-   * thumbnail click and on mobile swipe), so mirror the card's visibility to
-   * whether the first media item is the active one.
-   */
-  function initSlideVisibility(card) {
-    var anchor = card.closest('.ces-clin-anchor') || card.parentElement;
-    if (!anchor) return;
-    var items = anchor.querySelectorAll('.product__media-item');
-    if (items.length < 2) return; // single image: always show
-    var first = items[0];
-
-    function sync() {
-      card.style.display = first.classList.contains('is-active') ? '' : 'none';
+    if (multi && first) {
+      var obs = new MutationObserver(apply);
+      items.forEach(function (it) {
+        obs.observe(it, { attributes: true, attributeFilter: ['class'] });
+      });
     }
-    sync();
-
-    var obs = new MutationObserver(sync);
-    items.forEach(function (it) {
-      obs.observe(it, { attributes: true, attributeFilter: ['class'] });
-    });
   }
 
   function init(root) {
     var scope = root && root.querySelectorAll ? root : document;
-    scope.querySelectorAll('[data-ces-clin-card]').forEach(function (card) {
-      initCard(card);
-      initSlideVisibility(card);
-    });
+    scope.querySelectorAll('[data-ces-clin-card]').forEach(initCard);
   }
 
   if (document.readyState === 'loading') {

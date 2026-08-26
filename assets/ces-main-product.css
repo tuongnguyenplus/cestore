@@ -928,9 +928,8 @@
   transform: translate(-0.4rem, 0.5rem);
   z-index: -1;
 }
-/* Only one state is visible at a time; [hidden] must beat the flex rules. */
-.ces-clinicians__expanded[hidden],
-.ces-clinicians__collapsed[hidden] {
+/* Hidden on non-first slides or after being dismissed; must beat display. */
+.ces-clinicians--top.is-hidden {
   display: none !important;
 }
 
@@ -1012,38 +1011,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   text-underline-offset: 0.3rem;
-}
-
-/* Collapsed state: just the laurel mark, click to expand */
-.ces-clinicians__collapsed {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  font: inherit;
-  color: #212121;
-}
-.ces-clinicians__collapsed .ces-clinicians__laurel,
-.ces-clinicians__collapsed .ces-clinicians__laurel svg {
-  height: 2.6rem;
-}
-.ces-clinicians__collapsed .ces-clinicians__title {
-  max-width: 6.4rem;
-  text-align: center;
-  font-size: 1.35rem;
-  line-height: 1.55rem;
-}
-/* When collapsed the card hugs the small mark and drops the close gutter. */
-.ces-clinicians--top.is-collapsed {
-  padding: 0.7rem 1rem;
-}
-.ces-clinicians--top.is-collapsed .ces-clinicians__close {
-  display: none;
 }
 
 @media screen and (max-width: 749px) {

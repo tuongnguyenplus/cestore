@@ -70,19 +70,6 @@
         </div>
       </div>
     </div>
-
-    {%- comment -%} Collapsed state: just the mark; click to expand again. {%- endcomment -%}
-    <button type="button" class="ces-clinicians__collapsed" data-ces-clin-expand aria-label="{{ block.settings.eyebrow }}" hidden>
-      <span class="ces-clinicians__badge-mark">
-        <span class="ces-clinicians__laurel ces-clinicians__laurel--left" aria-hidden="true">
-          {{- 'ces-clin-laurel-left.svg' | inline_asset_content -}}
-        </span>
-        <span class="ces-clinicians__title">{{ block.settings.eyebrow }}</span>
-        <span class="ces-clinicians__laurel ces-clinicians__laurel--right" aria-hidden="true">
-          {{- 'ces-clin-laurel-right.svg' | inline_asset_content -}}
-        </span>
-      </span>
-    </button>
   </div>
 
 {%- else -%}
