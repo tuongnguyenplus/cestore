@@ -44,9 +44,36 @@
     });
   }
 
+  /*
+   * The card belongs to the FIRST gallery image only. Dawn keeps the
+   * `is-active` class on the currently shown `.product__media-item` (updated on
+   * thumbnail click and on mobile swipe), so mirror the card's visibility to
+   * whether the first media item is the active one.
+   */
+  function initSlideVisibility(card) {
+    var anchor = card.closest('.ces-clin-anchor') || card.parentElement;
+    if (!anchor) return;
+    var items = anchor.querySelectorAll('.product__media-item');
+    if (items.length < 2) return; // single image: always show
+    var first = items[0];
+
+    function sync() {
+      card.style.display = first.classList.contains('is-active') ? '' : 'none';
+    }
+    sync();
+
+    var obs = new MutationObserver(sync);
+    items.forEach(function (it) {
+      obs.observe(it, { attributes: true, attributeFilter: ['class'] });
+    });
+  }
+
   function init(root) {
     var scope = root && root.querySelectorAll ? root : document;
-    scope.querySelectorAll('[data-ces-clin-card]').forEach(initCard);
+    scope.querySelectorAll('[data-ces-clin-card]').forEach(function (card) {
+      initCard(card);
+      initSlideVisibility(card);
+    });
   }
 
   if (document.readyState === 'loading') {

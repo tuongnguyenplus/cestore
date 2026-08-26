@@ -1014,13 +1014,12 @@
   text-underline-offset: 0.3rem;
 }
 
-/* Collapsed pill */
+/* Collapsed state: just the laurel mark, click to expand */
 .ces-clinicians__collapsed {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.4rem;
-  width: 100%;
+  gap: 0.2rem;
   padding: 0;
   background: none;
   border: none;
@@ -1028,9 +1027,6 @@
   cursor: pointer;
   font: inherit;
   color: #212121;
-}
-.ces-clinicians__collapsed .ces-clinicians__badge-mark {
-  gap: 0.2rem;
 }
 .ces-clinicians__collapsed .ces-clinicians__laurel,
 .ces-clinicians__collapsed .ces-clinicians__laurel svg {
@@ -1042,15 +1038,12 @@
   font-size: 1.35rem;
   line-height: 1.55rem;
 }
-.ces-clinicians__collapsed-text {
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  color: #616161;
-  padding-left: 1rem;
-  border-left: 0.1rem solid #e6dede;
-}
+/* When collapsed the card hugs the small mark and drops the close gutter. */
 .ces-clinicians--top.is-collapsed {
-  padding-right: 1.4rem;
+  padding: 0.7rem 1rem;
+}
+.ces-clinicians--top.is-collapsed .ces-clinicians__close {
+  display: none;
 }
 
 @media screen and (max-width: 749px) {
