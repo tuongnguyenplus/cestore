@@ -896,8 +896,9 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* "Above gallery" stacked card (FrontrowMD style)                     */
+/* "Above gallery" ribbon card (FrontrowMD style)                      */
 /* Overlays the top-left of the product area without affecting layout.  */
+/* The right edge is a ribbon "fishtail" notch cut inward.             */
 /* ------------------------------------------------------------------ */
 .page-width.ces-clin-anchor {
   position: relative;
@@ -911,22 +912,18 @@
   width: fit-content;
   max-width: min(calc(100% - 2.4rem), 34rem);
   margin: 0;
-  padding: 0.9rem 2.6rem 0.9rem 1.2rem;
+  padding: 0.9rem 3.4rem 0.9rem 1.2rem;
   background: #fff;
-  border: 0.1rem solid #e6dede;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.08);
-}
-/* Stacked "banner" card peeking out behind (down + left) */
-.ces-clinicians--top::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: #f1e7e7;
-  border: 0.1rem solid #e6dede;
-  transform: translate(-0.4rem, 0.5rem);
-  z-index: -1;
+  /* Ribbon tail: concave V notch cut into the right edge. */
+  --ces-ribbon-notch: 1.2rem;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    calc(100% - var(--ces-ribbon-notch)) 50%,
+    100% 100%,
+    0 100%
+  );
+  filter: drop-shadow(0 0.2rem 0.5rem rgba(0, 0, 0, 0.14));
 }
 /* Hidden on non-first slides or after being dismissed; must beat display. */
 .ces-clinicians--top.is-hidden {
