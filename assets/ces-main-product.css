@@ -97,6 +97,12 @@
     column-gap: 0 !important;
     scroll-padding: 0 !important;
     padding: 0 !important;
+    /* Top-align slides so a shorter image doesn't get whitespace above it
+       (the row height is set by the tallest slide). */
+    align-items: flex-start !important;
+  }
+  .ces-main-product-section .product__media-item {
+    align-self: flex-start !important;
   }
 
   .ces-main-product-section .product__media-list.grid--peek::after {
@@ -911,6 +917,9 @@
 /* ------------------------------------------------------------------ */
 .product__media-wrapper.ces-clin-anchor {
   position: relative;
+  /* Contain the scaled badge (and its shadow) so it never adds page scroll.
+     The gallery slider scrolls within its own child, so this is safe. */
+  overflow-x: clip;
 }
 .ces-clinicians--top {
   position: absolute;
@@ -919,9 +928,11 @@
   z-index: 5;
   display: block;
   /* Reference: a fixed 415px card scaled down (0.87 desktop / 0.70 mobile),
-     anchored to the gallery's top-left. Scaling keeps the tail/text crisp. */
+     anchored to the gallery's top-left. Scaling keeps the tail/text crisp.
+     max-width:100% caps the (unscaled) box to the gallery so it can never
+     overflow narrow screens and push a horizontal scrollbar. */
   width: 41.5rem;
-  max-width: none;
+  max-width: 100%;
   margin: 0;
   padding: 0.9rem 3.4rem 0.9rem 1.2rem;
   background: #fff;
