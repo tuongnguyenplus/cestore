@@ -149,7 +149,7 @@
     {%- endcomment -%}
     {%- assign ces_clin_top = null -%}
     {%- for block in section.blocks -%}
-      {%- if block.type == 'ces_clinicians' and block.settings.position == 'top_gallery' and ces_clin_top == null -%}
+      {%- if block.type == 'ces_clinicians' and block.settings.show_block != false and block.settings.position == 'top_gallery' and ces_clin_top == null -%}
         {%- assign ces_clin_top = block -%}
       {%- endif -%}
     {%- endfor -%}
@@ -1303,9 +1303,9 @@
                     section (see before the media grid). Only render here when
                     the block is meant to sit in the info column.
                   {%- endcomment -%}
-                  {%- unless block.settings.position == 'top_gallery' -%}
+                  {%- if block.settings.show_block != false and block.settings.position != 'top_gallery' -%}
                     {%- render 'ces-clinicians-badge', block: block, variant: 'inline' -%}
-                  {%- endunless -%}
+                  {%- endif -%}
 
               {%- endcase -%}
             {%- endfor -%}
@@ -3762,11 +3762,18 @@
     {
       "type": "ces_clinicians",
       "name": "CES Clinicians' choice",
-      "limit": 2,
+      "limit": 4,
       "settings": [
         {
           "type": "paragraph",
           "content": "A clinician social-proof strip: an eyebrow with a caduceus, a sentence, overlapping avatars and a link."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_block",
+          "label": "Show this block",
+          "info": "Turn off to hide this block without deleting it.",
+          "default": true
         },
         {
           "type": "select",
