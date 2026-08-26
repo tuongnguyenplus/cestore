@@ -8,6 +8,15 @@
  * (`> * + * { margin: 1.5rem 0 }`), so these rules only handle internal layout.
  */
 
+/* The mobile full-bleed gallery uses width:100vw, which includes the
+   scrollbar width and can push a few px of horizontal page scroll (a right
+   "gutter" on the ticker and every image). Clip horizontal overflow at the
+   page level. `clip` (not `hidden`) leaves vertical scroll and position:sticky
+   untouched. */
+body {
+  overflow-x: clip;
+}
+
 .ces-main-product-section {
   --ces-radius: 1.2rem;
   --ces-border-color: rgba(var(--color-foreground), 0.12);
