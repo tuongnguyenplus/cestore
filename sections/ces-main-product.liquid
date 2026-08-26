@@ -143,8 +143,9 @@
     {%- comment -%}
       Find the first ces_clinicians block set to "Above gallery" so it can be
       rendered as a floating card overlaying the top-left of the media gallery.
-      It is rendered OUTSIDE the gallery DOM (absolutely positioned against the
-      page-width wrapper) so it can never affect the gallery's own layout.
+      It is rendered as the LAST child of the media wrapper and positioned
+      absolutely against it, so its left edge lines up with the gallery's own
+      left edge (flush, full-bleed on mobile) without affecting gallery layout.
     {%- endcomment -%}
     {%- assign ces_clin_top = null -%}
     {%- for block in section.blocks -%}
@@ -152,13 +153,13 @@
         {%- assign ces_clin_top = block -%}
       {%- endif -%}
     {%- endfor -%}
-    <div class="page-width{% if ces_clin_top %} ces-clin-anchor{% endif %}">
-      {%- if ces_clin_top -%}
-        {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
-      {%- endif -%}
+    <div class="page-width">
       <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-        <div class="grid__item product__media-wrapper">
+        <div class="grid__item product__media-wrapper{% if ces_clin_top %} ces-clin-anchor{% endif %}">
           {% render 'product-media-gallery', variant_images: variant_images %}
+          {%- if ces_clin_top -%}
+            {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
+          {%- endif -%}
         </div>
         <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <section
