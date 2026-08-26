@@ -935,12 +935,13 @@ body {
   left: 0;
   z-index: 5;
   display: block;
-  /* Reference: a fixed 415px card scaled down (0.87 desktop / 0.70 mobile),
-     anchored to the gallery's top-left. Scaling keeps the tail/text crisp.
-     max-width:100% caps the (unscaled) box to the gallery so it can never
-     overflow narrow screens and push a horizontal scrollbar. */
+  /* Reference: a fixed-width card scaled down (0.87 desktop / 0.70 mobile),
+     anchored to the gallery's top-left. The width stays fixed (not %-capped)
+     so the copy always lays out the same — 2 lines — on every screen;
+     `body { overflow-x: clip }` absorbs the off-screen part of the scaled box
+     so it never adds a horizontal scrollbar. */
   width: 44rem;
-  max-width: 100%;
+  max-width: none;
   margin: 0;
   padding: 0.9rem 2.6rem 0.9rem 1rem;
   background: #fff;
