@@ -909,8 +909,9 @@
   left: 0;
   z-index: 5;
   display: block;
-  width: fit-content;
-  max-width: min(100%, 34rem);
+  /* Stretch the ribbon to ~80% of the gallery width so the tail looks right. */
+  width: 80%;
+  max-width: 80%;
   margin: 0;
   padding: 0.9rem 3.4rem 0.9rem 1.2rem;
   background: #fff;
