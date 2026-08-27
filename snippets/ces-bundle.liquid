@@ -1,0 +1,155 @@
+{%- comment -%}
+  ces-bundle — tiered bundle selector (Starter / Reset / Rebuild style).
+  Each tier maps to a VARIANT of the current product (merchant pastes the
+  variant ID). Price / compare-at are read from the variant so they always
+  match. Selecting a tier and pressing Add to cart adds that variant (plus any
+  "real" free-item products for the tier) via AJAX and opens the cart drawer.
+
+  Accepts: block (the ces_bundle block).
+{%- endcomment -%}
+
+{%- liquid
+  assign ces_accent = block.settings.accent_color | default: '#1D5C5C'
+  assign ces_tier_count = block.settings.tier_count | default: 3
+  assign ces_default_tier = block.settings.default_tier | default: 2
+-%}
+
+<ces-bundle
+  class="ces-bundle quick-add-hidden"
+  style="--ces-bundle-accent: {{ ces_accent }}; --ces-bundle-tint: {{ ces_accent }}1a;"
+  data-open-drawer="{{ block.settings.open_cart_drawer | default: true }}"
+  {{ block.shopify_attributes }}
+>
+  {%- if block.settings.stat_text != blank -%}
+    <div class="ces-bundle__stat">{{ block.settings.stat_text }}</div>
+  {%- endif -%}
+
+  <div class="ces-bundle__tiers" role="radiogroup" aria-label="{{ block.settings.stat_text | default: 'Choose your bundle' | escape }}">
+    {%- for ces_i in (1..ces_tier_count) -%}
+      {%- liquid
+        assign vkey = 'tier_' | append: ces_i | append: '_variant'
+        assign nkey = 'tier_' | append: ces_i | append: '_name'
+        assign skey = 'tier_' | append: ces_i | append: '_supply'
+        assign imkey = 'tier_' | append: ces_i | append: '_image'
+        assign bkey = 'tier_' | append: ces_i | append: '_badge'
+        assign inckey = 'tier_' | append: ces_i | append: '_inclusions'
+        assign frkey = 'tier_' | append: ces_i | append: '_free_products'
+
+        assign ces_vid = block.settings[vkey] | strip
+        assign ces_vid_num = ces_vid | times: 1
+        assign ces_v = null
+        for v in product.variants
+          if v.id == ces_vid_num
+            assign ces_v = v
+          endif
+        endfor
+      -%}
+
+      {%- if ces_v != null -%}
+        {%- liquid
+          assign ces_name = block.settings[nkey]
+          assign ces_supply = block.settings[skey]
+          assign ces_badge = block.settings[bkey]
+          assign ces_img = block.settings[imkey]
+          assign ces_is_best = false
+          if ces_badge != blank
+            assign ces_is_best = true
+          endif
+          assign ces_checked = false
+          if ces_i == ces_default_tier
+            assign ces_checked = true
+          endif
+          if ces_img == blank
+            assign ces_img = ces_v.featured_image | default: product.featured_image
+          endif
+          assign ces_free_ids = ''
+          assign ces_free_list = block.settings[frkey]
+          for fp in ces_free_list
+            if fp.first_available_variant
+              assign ces_free_ids = ces_free_ids | append: fp.first_available_variant.id | append: ','
+            endif
+          endfor
+        -%}
+
+        <label
+          class="ces-bundle__tier{% if ces_is_best %} ces-bundle__tier--best{% endif %}{% if ces_checked %} is-selected{% endif %}{% unless ces_v.available %} is-unavailable{% endunless %}"
+        >
+          {%- if ces_badge != blank -%}
+            <span class="ces-bundle__ribbon">{{ ces_badge }}</span>
+          {%- endif -%}
+
+          <span class="ces-bundle__head">
+            <input
+              type="radio"
+              name="ces-bundle-{{ block.id }}"
+              class="ces-bundle__radio visually-hidden"
+              value="{{ ces_v.id }}"
+              data-variant-id="{{ ces_v.id }}"
+              data-quantity="1"
+              data-free-ids="{{ ces_free_ids | strip }}"
+              data-price-label="{{ ces_v.price | money_with_currency | strip }}"
+              {% unless ces_v.available %}data-unavailable="true"{% endunless %}
+              {% if ces_checked %}checked{% endif %}
+            >
+            <span class="ces-bundle__radio-dot" aria-hidden="true"></span>
+
+            {%- if ces_img != blank -%}
+              <span class="ces-bundle__thumb">
+                {{ ces_img | image_url: width: 120 | image_tag: loading: 'lazy', widths: '60,120', sizes: '60px', alt: ces_name | default: ces_v.title | escape }}
+              </span>
+            {%- endif -%}
+
+            <span class="ces-bundle__info">
+              <span class="ces-bundle__name">{{ ces_name | default: ces_v.title }}</span>
+              {%- if ces_supply != blank -%}
+                <span class="ces-bundle__supply">{{ ces_supply }}</span>
+              {%- endif -%}
+            </span>
+
+            <span class="ces-bundle__price">
+              <span class="ces-bundle__price-now">{{ ces_v.price | money }}</span>
+              {%- if ces_v.compare_at_price > ces_v.price -%}
+                <s class="ces-bundle__price-was">{{ ces_v.compare_at_price | money }}</s>
+              {%- endif -%}
+            </span>
+          </span>
+
+          {%- comment -%} Inclusion / value-stack rows {%- endcomment -%}
+          {%- if block.settings[inckey] != blank -%}
+            {%- assign ces_rows = block.settings[inckey] | newline_to_br | split: '<br />' -%}
+            <span class="ces-bundle__rows">
+              {%- for ces_row in ces_rows -%}
+                {%- assign ces_row = ces_row | strip -%}
+                {%- if ces_row != blank -%}
+                  {%- assign ces_parts = ces_row | split: '|' -%}
+                  {%- assign ces_icon = ces_parts[0] | strip | downcase -%}
+                  {%- assign ces_label = ces_parts[1] | strip -%}
+                  {%- assign ces_value = ces_parts[2] | strip -%}
+                  <span class="ces-bundle__row">
+                    <span class="ces-bundle__row-icon" aria-hidden="true">{% render 'ces-bundle-icon', name: ces_icon %}</span>
+                    <span class="ces-bundle__row-text">{{ ces_label }}</span>
+                    {%- if ces_value != blank -%}
+                      <s class="ces-bundle__row-value">{{ ces_value }}</s>
+                    {%- endif -%}
+                  </span>
+                {%- endif -%}
+              {%- endfor -%}
+            </span>
+          {%- endif -%}
+        </label>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <p class="ces-bundle__error" data-ces-bundle-error hidden></p>
+
+  <button type="button" class="ces-bundle__add button button--full-width button--primary" data-ces-bundle-add>
+    <span class="ces-bundle__add-label">{{ block.settings.add_label | default: 'ADD TO CART' }}</span>
+    <span class="ces-bundle__add-total" data-ces-bundle-total></span>
+    <span class="ces-bundle__spinner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.3"/><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+  </button>
+
+  {%- if block.settings.sub_note != blank -%}
+    <p class="ces-bundle__note">{{ block.settings.sub_note }}</p>
+  {%- endif -%}
+</ces-bundle>

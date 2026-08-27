@@ -16,6 +16,8 @@
   {{ 'ces-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'ces-offer-bundle.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'ces-offer-bundle.js' | asset_url }}" defer="defer"></script>
+  {{ 'ces-bundle.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ces-bundle.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'ces-clinicians-badge.js' | asset_url }}" defer="defer"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1295,6 +1297,9 @@
 
                     <p class="ces-offer__error" role="alert" hidden></p>
                   </ces-offer-bundle>
+
+                {%- when 'ces_bundle' -%}
+                  {%- render 'ces-bundle', block: block -%}
 
                 {%- when 'ces_clinicians' -%}
                   {%- comment -%}
@@ -3756,6 +3761,256 @@
           "id": "tier3_selected",
           "label": "Selected by default",
           "default": false
+        }
+      ]
+    },
+    {
+      "type": "ces_bundle",
+      "name": "CES Bundle selector",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "A tiered bundle selector. Each tier maps to a variant of THIS product (price & compare-at are read from the variant). It replaces the variant picker and is the main Add to cart."
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent colour",
+          "default": "#1D5C5C"
+        },
+        {
+          "type": "text",
+          "id": "stat_text",
+          "label": "Top stat bar",
+          "info": "e.g. \"74% of customers choose the 21-Day Reset\". Leave blank to hide."
+        },
+        {
+          "type": "range",
+          "id": "tier_count",
+          "min": 2,
+          "max": 4,
+          "step": 1,
+          "label": "Number of tiers",
+          "default": 3
+        },
+        {
+          "type": "range",
+          "id": "default_tier",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "label": "Pre-selected tier",
+          "default": 2
+        },
+        {
+          "type": "text",
+          "id": "add_label",
+          "label": "Add to cart label",
+          "default": "ADD TO CART"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_cart_drawer",
+          "label": "Open cart drawer after adding",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "sub_note",
+          "label": "Sub note (under button)"
+        },
+        {
+          "type": "header",
+          "content": "Tier 1"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_variant",
+          "label": "Tier 1 — Variant ID",
+          "info": "Paste the numeric variant ID (Products → variant → the number at the end of its admin URL). Leave blank to hide this tier."
+        },
+        {
+          "type": "text",
+          "id": "tier_1_name",
+          "label": "Name",
+          "default": "7-Day Starter"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_supply",
+          "label": "Sub-line (supply / duration)"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_1_image",
+          "label": "Thumbnail",
+          "info": "Optional — falls back to the variant / product image."
+        },
+        {
+          "type": "text",
+          "id": "tier_1_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. \"Most Popular\". Adds the top ribbon and marks this tier as the hero.",
+          "default": ""
+        },
+        {
+          "type": "textarea",
+          "id": "tier_1_inclusions",
+          "label": "Inclusion rows",
+          "info": "One per line: icon | text | value. Icons: gift, truck, coin, doc, tracker, clock, star, leaf, check. Value is optional (shown struck through, e.g. $35). Example: gift | Free D3 + K2 Gummies | $35",
+          "default": "coin | 30-Day Money Back |"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_1_free_products",
+          "label": "Free items to add to cart",
+          "limit": 4,
+          "info": "Real products auto-added at their $0 variant when this tier is chosen (value-add rows above are display only)."
+        },
+        {
+          "type": "header",
+          "content": "Tier 2"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_variant",
+          "label": "Tier 2 — Variant ID",
+          "info": "Paste the numeric variant ID (Products → variant → the number at the end of its admin URL). Leave blank to hide this tier."
+        },
+        {
+          "type": "text",
+          "id": "tier_2_name",
+          "label": "Name",
+          "default": "21-Day Eye Reset"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_supply",
+          "label": "Sub-line (supply / duration)"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_2_image",
+          "label": "Thumbnail",
+          "info": "Optional — falls back to the variant / product image."
+        },
+        {
+          "type": "text",
+          "id": "tier_2_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. \"Most Popular\". Adds the top ribbon and marks this tier as the hero.",
+          "default": "Most Popular"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_2_inclusions",
+          "label": "Inclusion rows",
+          "info": "One per line: icon | text | value. Icons: gift, truck, coin, doc, tracker, clock, star, leaf, check. Value is optional (shown struck through, e.g. $35). Example: gift | Free D3 + K2 Gummies | $35",
+          "default": "doc | CEBEAM Eye Reset Protocol | $39\ntruck | Free & Fast Shipping |\ncoin | 60-Day Money Back |"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_2_free_products",
+          "label": "Free items to add to cart",
+          "limit": 4,
+          "info": "Real products auto-added at their $0 variant when this tier is chosen (value-add rows above are display only)."
+        },
+        {
+          "type": "header",
+          "content": "Tier 3"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_variant",
+          "label": "Tier 3 — Variant ID",
+          "info": "Paste the numeric variant ID (Products → variant → the number at the end of its admin URL). Leave blank to hide this tier."
+        },
+        {
+          "type": "text",
+          "id": "tier_3_name",
+          "label": "Name",
+          "default": "45-Day Eye Rebuild"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_supply",
+          "label": "Sub-line (supply / duration)"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_3_image",
+          "label": "Thumbnail",
+          "info": "Optional — falls back to the variant / product image."
+        },
+        {
+          "type": "text",
+          "id": "tier_3_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. \"Most Popular\". Adds the top ribbon and marks this tier as the hero.",
+          "default": "Best Value"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_3_inclusions",
+          "label": "Inclusion rows",
+          "info": "One per line: icon | text | value. Icons: gift, truck, coin, doc, tracker, clock, star, leaf, check. Value is optional (shown struck through, e.g. $35). Example: gift | Free D3 + K2 Gummies | $35",
+          "default": "doc | CEBEAM Eye Reset Protocol | $39\ntracker | The 4-Photo Method | $29\ngift | 72-Hour Camera Ready Protocol | $49\ntruck | Free & Fast Shipping |\ncoin | 90-Day Money Back |"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_3_free_products",
+          "label": "Free items to add to cart",
+          "limit": 4,
+          "info": "Real products auto-added at their $0 variant when this tier is chosen (value-add rows above are display only)."
+        },
+        {
+          "type": "header",
+          "content": "Tier 4"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_variant",
+          "label": "Tier 4 — Variant ID",
+          "info": "Paste the numeric variant ID (Products → variant → the number at the end of its admin URL). Leave blank to hide this tier."
+        },
+        {
+          "type": "text",
+          "id": "tier_4_name",
+          "label": "Name",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "tier_4_supply",
+          "label": "Sub-line (supply / duration)"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_4_image",
+          "label": "Thumbnail",
+          "info": "Optional — falls back to the variant / product image."
+        },
+        {
+          "type": "text",
+          "id": "tier_4_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. \"Most Popular\". Adds the top ribbon and marks this tier as the hero.",
+          "default": ""
+        },
+        {
+          "type": "textarea",
+          "id": "tier_4_inclusions",
+          "label": "Inclusion rows",
+          "info": "One per line: icon | text | value. Icons: gift, truck, coin, doc, tracker, clock, star, leaf, check. Value is optional (shown struck through, e.g. $35). Example: gift | Free D3 + K2 Gummies | $35",
+          "default": ""
+        },
+        {
+          "type": "product_list",
+          "id": "tier_4_free_products",
+          "label": "Free items to add to cart",
+          "limit": 4,
+          "info": "Real products auto-added at their $0 variant when this tier is chosen (value-add rows above are display only)."
         }
       ]
     },
