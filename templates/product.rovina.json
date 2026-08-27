@@ -77,6 +77,32 @@
             "text_style": "body"
           }
         },
+        "clinicians": {
+          "type": "ces_clinicians",
+          "settings": {
+            "show_block": true,
+            "position": "top_gallery",
+            "card_bg": "#ffffff",
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
+            "top_link_label": "View clinicians & learn more",
+            "learn_more_label": "Learn more",
+            "reviews_label": "Read their reviews"
+          }
+        },
+        "clinicians-inline": {
+          "type": "ces_clinicians",
+          "settings": {
+            "show_block": true,
+            "position": "content_column",
+            "card_bg": "#ffffff",
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong>, including dermatologists, share this on <em>FrontrowMD</em> without compensation.</p>",
+            "top_link_label": "View clinicians & learn more",
+            "learn_more_label": "Learn more",
+            "reviews_label": "Read their reviews"
+          }
+        },
         "highlight-1": {
           "type": "ces_highlight",
           "settings": {
@@ -320,26 +346,6 @@
             "footnote": "Dermatologist-Tested, Clean Formula",
             "text_alignment": "center"
           }
-        },
-        "clinicians": {
-          "type": "ces_clinicians",
-          "settings": {
-            "eyebrow": "Clinicians' Choice",
-            "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
-            "link_label": "View clinicians & learn more",
-            "link_url": ""
-          }
-        },
-        "clinicians-inline": {
-          "type": "ces_clinicians",
-          "settings": {
-            "show_block": true,
-            "position": "content_column",
-            "eyebrow": "Clinicians' Choice",
-            "text": "<p><strong>216 clinicians</strong>, including dermatologists, share this on <em>FrontrowMD</em> without compensation.</p>",
-            "learn_more_label": "Learn more",
-            "reviews_label": "Read their reviews"
-          }
         }
       },
       "block_order": [
@@ -476,7 +482,7 @@
         "card1": {
           "type": "feature_card",
           "settings": {
-            "image": "shopify://shop_images/59.webp",
+            "image": "shopify://shop_images/1a225911-a51e-4f5e-beb3-89568a501e06.png",
             "heading": "Dissolving Micro-Cones",
             "text": "<p>Hundreds of painless micro-cones dissolve into the skin, delivering actives just below the surface — where creams can’t reach.*</p>"
           }
@@ -484,7 +490,7 @@
         "card2": {
           "type": "feature_card",
           "settings": {
-            "image": "shopify://shop_images/ufvut.webp",
+            "image": "shopify://shop_images/753f2cee-6f6d-477d-9b51-18369122ee81.png",
             "heading": "Works While You Sleep",
             "text": "<p>Press two patches on before bed and leave them overnight. The actives keep working for hours — no routine, no mess, no downtime.</p>"
           }
@@ -1000,6 +1006,117 @@
         "padding_bottom": 40
       }
     },
+    "clinician-reviews": {
+      "type": "ces-clinician-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Anand Balasubramanian, MD",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Internal medicine",
+            "years": "19",
+            "location": "Houston, TX",
+            "preview_label": "Preview",
+            "website": "https://example.com",
+            "website_label": "Go to clinician website",
+            "npi": "1427202845",
+            "practice_type": "Private practice",
+            "joined": "2025",
+            "summary": "Supports eye comfort during screen time and antioxidant balance",
+            "message": "<p>If you spend most of your workday staring at screens, you may have noticed your eyes sometimes feel tired or strained by evening. When patients deal with this kind of eye discomfort, I recommend an astaxanthin supplement like this one from Rovina because it may ease the oxidative load on the eyes. One human trial has even shown that this active ingredient may help maintain visual sharpness during heavy screen work. The astaxanthin here comes from microalgae and may have antioxidant properties, which research suggests could have positive effects on markers of inflammation more broadly.*</p>",
+            "citation_pill": "Journal of Clinical … +1",
+            "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
+            "highlights_label": "Highlights:",
+            "highlights": "Screen fatigue\nOxidative defense\nAll-around support",
+            "show_more_label": "Show more"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Anila Khan, DO",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Family medicine",
+            "years": "31",
+            "location": "Naples, FL",
+            "preview_label": "Preview",
+            "website": "https://example.com",
+            "website_label": "Go to clinician website",
+            "npi": "1568392011",
+            "practice_type": "Private practice",
+            "joined": "2024",
+            "summary": "Potent antioxidant supports daily skin health and resilience",
+            "message": "<p>I’d gladly recommend Rovina’s softgels to patients who want to support their skin as it ages. The primary ingredient is an antioxidant called astaxanthin, included here at 12 mg, which is similar to what’s been studied in research. Antioxidants like astaxanthin can provide support for the skin against everyday stress that can otherwise wear it down.*</p>",
+            "citation_pill": "Nutrients … +1",
+            "citations": "Astaxanthin and skin health | Marine Drugs, 2018\nDietary astaxanthin and skin condition | Journal of Cosmetic Dermatology, 2021",
+            "highlights_label": "Highlights:",
+            "highlights": "Skin resilience\nAntioxidant support\nDaily use",
+            "show_more_label": "Show more"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. James Henderson, MD",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Ophthalmology",
+            "years": "15",
+            "location": "Chicago, IL",
+            "preview_label": "Preview",
+            "website": "https://example.com",
+            "website_label": "Go to clinician website",
+            "npi": "1295301927",
+            "practice_type": "Private practice",
+            "joined": "2026",
+            "summary": "Reasonable support for patients with high screen exposure",
+            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>",
+            "citation_pill": "Journal of Clinical … +1",
+            "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
+            "highlights_label": "Highlights:",
+            "highlights": "Screen exposure\nEye comfort",
+            "show_more_label": "Show more"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "show_reviews_on_page": true,
+        "eyebrow": "Clinician Reviews",
+        "title": "Independent Clinician Evaluations",
+        "subtitle": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>",
+        "learn_more_label": "Learn more",
+        "modal_title": "frontrowMD",
+        "faq1_q": "Who is FrontrowMD?",
+        "faq1_a": "<p>FrontrowMD is an independent, third-party on a mission to help shoppers make informed health choices, bringing unbiased medical expert opinions to the point of purchase.</p>",
+        "faq2_q": "Who / how many clinicians share this?",
+        "faq2_a": "<p>Verified, licensed clinicians who chose to share this product with their patients. The number shows how many clinicians included it on their personalized pages.</p>",
+        "faq3_q": "What’s “Clinicians’ Choice” / “share”?",
+        "faq3_a": "<p>Clinicians receive free samples so they can try the product themselves or share it with patients. “Share” means a clinician chose to feature it; if helpful, one or more pre-drafted reviews are provided that they are welcome to edit or submit.</p>",
+        "faq4_q": "Are clinicians paid to do this?",
+        "faq4_a": "<p>No — clinicians are never compensated. This is a free platform for clinicians and patients. These clinicians include products on their personalized discount pages, which you can preview below, to benefit their patients.</p>",
+        "clinicians_heading": "Clinicians who shared this product",
+        "clinicians_intro": "<p>For the complete list, click here. Numbers below indicate how many clinicians collaborate to share products on a single page at a medical practice.</p>",
+        "modal_disclaimer": "<p>Clinicians may edit and/or submit pre-drafted reviews. All reviews are informational only and not medical advice. Always consult your provider.</p>",
+        "modal_footer_label": "",
+        "modal_footer_link": "",
+        "show_section_footer": true,
+        "footer_button_label": "Learn more",
+        "footer_powered_label": "Clinician reviews powered by",
+        "footer_brand": "frontrowMD",
+        "footer_note": "<p>†This clinician wants to clarify that larger-scale research to support their product claims is still developing. These statements have not been reviewed by the FDA and are not intended to be medical advice.</p>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "faq": {
       "type": "ces-faq-accordion",
       "blocks": {
@@ -1163,76 +1280,6 @@
         "count_step_3": 2,
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
-      }
-    },
-    "clinician-reviews": {
-      "type": "ces-clinician-reviews",
-      "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "name": "Dr. Anand Balasubramanian, MD",
-            "specialty": "Internal medicine",
-            "years": "19",
-            "verified": true,
-            "summary": "Supports eye comfort during screen time and antioxidant balance",
-            "message": "<p>If you spend most of your workday staring at screens, you may have noticed your eyes sometimes feel tired or strained by evening. When patients deal with this kind of eye discomfort, I recommend an astaxanthin supplement like this one from Rovina because it may ease the oxidative load on the eyes. One human trial has even shown that this active ingredient may help maintain visual sharpness during heavy screen work. The astaxanthin here comes from microalgae and may have antioxidant properties, which research suggests could have positive effects on markers of inflammation more broadly.*</p>",
-            "citation_pill": "Journal of Clinical … +1",
-            "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
-            "highlights": "Screen fatigue\nOxidative defense\nAll-around support",
-            "website": "https://example.com",
-            "npi": "1427202845",
-            "practice_type": "Private practice",
-            "joined": "2025",
-            "location": "Houston, TX"
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "name": "Dr. Anila Khan, DO",
-            "specialty": "Family medicine",
-            "years": "31",
-            "verified": true,
-            "summary": "Potent antioxidant supports daily skin health and resilience",
-            "message": "<p>I’d gladly recommend Rovina’s softgels to patients who want to support their skin as it ages. The primary ingredient is an antioxidant called astaxanthin, included here at 12 mg, which is similar to what’s been studied in research. Antioxidants like astaxanthin can provide support for the skin against everyday stress that can otherwise wear it down.*</p>",
-            "citation_pill": "Nutrients … +1",
-            "citations": "Astaxanthin and skin health | Marine Drugs, 2018\nDietary astaxanthin and skin condition | Journal of Cosmetic Dermatology, 2021",
-            "highlights": "Skin resilience\nAntioxidant support\nDaily use",
-            "website": "https://example.com",
-            "npi": "1568392011",
-            "practice_type": "Private practice",
-            "joined": "2024",
-            "location": "Naples, FL"
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "name": "Dr. James Henderson, MD",
-            "specialty": "Ophthalmology",
-            "years": "15",
-            "verified": true,
-            "summary": "Reasonable support for patients with high screen exposure",
-            "message": "<p>Astaxanthin has a solid antioxidant profile. I see this as a helpful adjunct, not a replacement for regular eye care.*</p>",
-            "highlights": "Screen exposure\nEye comfort",
-            "website": "https://example.com",
-            "npi": "1295301927",
-            "practice_type": "Private practice",
-            "joined": "2026",
-            "location": "Chicago, IL"
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3"
-      ],
-      "settings": {
-        "eyebrow": "Clinician Reviews",
-        "title": "Independent Clinician Evaluations",
-        "subtitle": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>"
       }
     }
   },
