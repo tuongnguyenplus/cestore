@@ -208,6 +208,15 @@ body {
   }
 }
 
+/* Tighten the gaps between the payment badges, trust row and guarantee card
+   (Dawn spaces every info-column child by 1.5rem; shrink these three so the
+   marked blocks sit closer together). */
+.ces-main-product-section .product__info-container > .ces-main-product__payment,
+.ces-main-product-section .product__info-container > .ces-main-product__trust,
+.ces-main-product-section .product__info-container > .ces-main-product__guarantee {
+  margin: 0.8rem 0;
+}
+
 /* Trust row --------------------------------------------------------------- */
 
 .ces-main-product__trust {
