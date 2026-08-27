@@ -145,6 +145,42 @@
             "text": "Firmer, Brighter Under-Eyes*"
           }
         },
+        "ces_bundle_8Rq63G": {
+          "type": "ces_bundle",
+          "settings": {
+            "accent_color": "#1d5c5c",
+            "stat_text": "",
+            "tier_count": 3,
+            "default_tier": 2,
+            "add_label": "ADD TO CART",
+            "open_cart_drawer": true,
+            "sub_note": "",
+            "tier_1_variant": "47849253961877",
+            "tier_1_name": "7-Day Starter",
+            "tier_1_supply": "",
+            "tier_1_badge": "",
+            "tier_1_inclusions": "coin | 30-Day Money Back |",
+            "tier_1_free_products": [],
+            "tier_2_variant": "47849253994645",
+            "tier_2_name": "21-Day Eye Reset",
+            "tier_2_supply": "",
+            "tier_2_badge": "Most Popular",
+            "tier_2_inclusions": "doc | CEBEAM Eye Reset Protocol | $39\ntruck | Free & Fast Shipping |\ncoin | 60-Day Money Back |",
+            "tier_2_free_products": [],
+            "tier_3_variant": "47849254027413",
+            "tier_3_name": "45-Day Eye Rebuild",
+            "tier_3_supply": "",
+            "tier_3_badge": "Best Value",
+            "tier_3_inclusions": "doc | CEBEAM Eye Reset Protocol | $39\ntracker | The 4-Photo Method | $29\ngift | 72-Hour Camera Ready Protocol | $49\ntruck | Free & Fast Shipping |\ncoin | 90-Day Money Back |",
+            "tier_3_free_products": [],
+            "tier_4_variant": "",
+            "tier_4_name": "",
+            "tier_4_supply": "",
+            "tier_4_badge": "",
+            "tier_4_inclusions": "",
+            "tier_4_free_products": []
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -360,6 +396,7 @@
         "highlight-4",
         "highlight-5",
         "highlight-6",
+        "ces_bundle_8Rq63G",
         "price",
         "app-price-slot",
         "quantity_selector",
@@ -463,6 +500,10 @@
       "settings": {
         "heading": "See How Cebeam Transforms Tired Eyes",
         "highlight": "Cebeam",
+        "highlight_style": "solid",
+        "highlight_color": "#1d5c5c",
+        "highlight_color_to": "#a8845c",
+        "highlight_gradient_angle": 95,
         "subheading": "",
         "columns_mobile": 2,
         "columns_desktop": 3,
