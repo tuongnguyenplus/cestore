@@ -149,7 +149,7 @@
           "type": "ces_bundle",
           "settings": {
             "accent_color": "#1d5c5c",
-            "stat_text": "",
+            "stat_text": "Low Stock",
             "tier_count": 3,
             "default_tier": 2,
             "add_label": "ADD TO CART",
@@ -157,7 +157,7 @@
             "sub_note": "",
             "tier_1_variant": "47849253961877",
             "tier_1_name": "7-Day Starter",
-            "tier_1_supply": "",
+            "tier_1_supply": "dfgfdgfdg",
             "tier_1_badge": "",
             "tier_1_inclusions": "coin | 30-Day Money Back |",
             "tier_1_free_products": [],
@@ -183,21 +183,6 @@
             "tier_4_free_products": []
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "app-price-slot": {
-          "type": "ces_app_slot",
-          "disabled": true,
-          "settings": {
-            "slot_id": "ces-app-price-slot"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "shipping-estimate": {
           "type": "ces_shipping_estimate",
           "settings": {
@@ -209,8 +194,26 @@
             "origin_icon": "🇺🇸"
           }
         },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "app-price-slot": {
+          "type": "ces_app_slot",
+          "disabled": true,
+          "settings": {
+            "slot_id": "ces-app-price-slot"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
@@ -399,10 +402,10 @@
         "highlight-5",
         "highlight-6",
         "ces_bundle_8Rq63G",
+        "shipping-estimate",
         "price",
         "app-price-slot",
         "quantity_selector",
-        "shipping-estimate",
         "buy_buttons",
         "guarantee-line",
         "ship-1",
