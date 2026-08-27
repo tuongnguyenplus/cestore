@@ -166,7 +166,9 @@
             "tier_2_supply": "",
             "tier_2_badge": "Most Popular",
             "tier_2_inclusions": "doc | CEBEAM Eye Reset Protocol | $39\ntruck | Free & Fast Shipping |\ncoin | 60-Day Money Back |",
-            "tier_2_free_products": [],
+            "tier_2_free_products": [
+              "hydrolyzed-collagen-anti-wrinkle-cream"
+            ],
             "tier_3_variant": "47849254027413",
             "tier_3_name": "45-Day Eye Rebuild",
             "tier_3_supply": "",
