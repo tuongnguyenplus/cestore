@@ -4,7 +4,7 @@
    ========================================================= */
 .ces-clinreviews {
   color: #212121;
-  font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
+  font-family: var(--font-body-family), system-ui, sans-serif;
 }
 .ces-clinreviews__inner {
   max-width: 120rem;
@@ -361,7 +361,7 @@ button.ces-clinreviews__name {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
+  font-family: var(--font-body-family), system-ui, sans-serif;
 }
 .ces-clinreviews__modal[hidden] {
   display: none;

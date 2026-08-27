@@ -771,7 +771,7 @@ body {
   gap: 1rem;
   margin: 1.2rem 0;
   color: #212121;
-  font-family: 'Open Sans', var(--font-body-family), system-ui, sans-serif;
+  font-family: var(--font-body-family), system-ui, sans-serif;
 }
 /* Rounded card (content-column placement, Botanique style). Background colour
    is set per-block via --ces-clin-card-bg. Kept compact (~4 lines). */
