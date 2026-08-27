@@ -255,3 +255,13 @@
   color: rgba(var(--color-foreground), 0.6);
   text-align: center;
 }
+
+/* Shipping estimate row placed inside the bundle (reuses the section estimate
+   styles; just add spacing around it). */
+.ces-bundle__estimate {
+  margin-top: 1.2rem;
+}
+.ces-bundle__estimate:not(:last-child) {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}

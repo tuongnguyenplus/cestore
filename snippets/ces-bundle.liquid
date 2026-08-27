@@ -173,11 +173,41 @@
 
   <p class="ces-bundle__error" data-ces-bundle-error hidden></p>
 
+  {%- comment -%} Shipping-estimate row (same logic as ces_shipping_estimate). {%- endcomment -%}
+  {%- capture ces_ship_row -%}
+    {%- if block.settings.show_shipping -%}
+      {%- assign ces_lead_seconds = block.settings.delivery_days | times: 86400 -%}
+      {%- assign ces_ship_date = 'now' | date: '%s' | plus: ces_lead_seconds | date: block.settings.date_format -%}
+      <div class="ces-main-product__estimate ces-bundle__estimate">
+        {%- if block.settings.delivery_text != blank -%}
+          <span class="ces-main-product__estimate-item">
+            {%- if block.settings.delivery_icon != blank -%}
+              <span class="ces-main-product__estimate-glyph" aria-hidden="true">{{- block.settings.delivery_icon -}}</span>
+            {%- endif -%}
+            <span>{{ block.settings.delivery_text }} <strong>{{ ces_ship_date }}</strong></span>
+          </span>
+        {%- endif -%}
+        {%- if block.settings.origin_text != blank -%}
+          <span class="ces-main-product__estimate-item ces-main-product__estimate-item--end">
+            {%- if block.settings.origin_icon != blank -%}
+              <span class="ces-main-product__estimate-glyph" aria-hidden="true">{{- block.settings.origin_icon -}}</span>
+            {%- endif -%}
+            <span>{{ block.settings.origin_text }}</span>
+          </span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- if block.settings.ship_position == 'above' -%}{{ ces_ship_row }}{%- endif -%}
+
   <button type="button" class="ces-bundle__add button button--full-width button--primary" data-ces-bundle-add>
     <span class="ces-bundle__add-label">{{ block.settings.add_label | default: 'ADD TO CART' }}</span>
     <span class="ces-bundle__add-total" data-ces-bundle-total></span>
     <span class="ces-bundle__spinner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.3"/><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>
   </button>
+
+  {%- unless block.settings.ship_position == 'above' -%}{{ ces_ship_row }}{%- endunless -%}
 
   {%- if block.settings.sub_note != blank -%}
     <p class="ces-bundle__note">{{ block.settings.sub_note }}</p>
