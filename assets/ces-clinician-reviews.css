@@ -453,9 +453,10 @@ button.ces-clinreviews__name {
   gap: 1.2rem;
   list-style: none;
   cursor: pointer;
-  padding: 2rem 0;
+  padding: 1.4rem 0;
   font-size: 1.6rem;
   font-weight: 700;
+  line-height: 1.3;
 }
 .ces-clinreviews__faq-q::-webkit-details-marker {
   display: none;
