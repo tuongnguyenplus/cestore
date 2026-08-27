@@ -80,13 +80,17 @@
         "clinicians": {
           "type": "ces_clinicians",
           "settings": {
+            "show_block": true,
+            "position": "top_gallery",
+            "card_bg": "#ffffff",
             "eyebrow": "Clinicians' Choice",
             "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
             "avatar_1": "shopify://shop_images/360_F_645777959_fNnaNoeVO4qxCNPW9MWr3gQlPFSGA9yL.jpg",
             "avatar_2": "shopify://shop_images/research.webp",
             "avatar_3": "shopify://shop_images/9.webp",
-            "link_label": "View clinicians & learn more",
-            "link_url": ""
+            "top_link_label": "View clinicians & learn more",
+            "learn_more_label": "Learn more",
+            "reviews_label": "Read their reviews"
           }
         },
         "highlight-1": {
@@ -371,7 +375,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -456,7 +460,7 @@
         "show_controls": true,
         "aspect_ratio": "9 / 16",
         "background_pattern": "none",
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -714,7 +718,7 @@
         "button_label": "",
         "button_link": "",
         "badge_speed": 40,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -780,7 +784,7 @@
         "button_link": "#ces-app-price-slot",
         "button_footnote": "90-day money back guarantee",
         "show_frame": true,
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
