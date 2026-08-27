@@ -79,7 +79,7 @@
         "q1": {
           "type": "quote",
           "settings": {
-            "quote": "I am not taking two weeks off and coming back with a different face. There is no version of that conversation I want to have with my team.",
+            "quote": "<p>I am not taking two weeks off and coming back with a different face. There is no version of that conversation I want to have with my team.</p>",
             "attribution": "— Margaret K., Retired Teacher"
           }
         },
@@ -130,7 +130,7 @@
         "accent_color": "#1d5c5c",
         "byline": "By the Health & Performance Desk",
         "date_text": "[month, year] · 9 min read",
-        "intro": "The feedback was three words long and I have not stopped thinking about it since. “Energy seemed low.” It was in a performance summary, about a presentation I had prepared two weeks for, and I had slept seven hours the night before. Nobody in that room had assessed my energy. They had looked at my face and drawn a conclusion.",
+        "intro": "<p>The feedback was three words long and I have not stopped thinking about it since. “Energy seemed low.” It was in a performance summary, about a presentation I had prepared two weeks for, and I had slept seven hours the night before. Nobody in that room had assessed my energy. They had looked at my face and drawn a conclusion.</p>",
         "show_numbers": false,
         "color_scheme": "scheme-1",
         "padding_top": 32,

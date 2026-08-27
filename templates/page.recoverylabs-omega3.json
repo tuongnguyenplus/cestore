@@ -55,7 +55,7 @@
         "q1": {
           "type": "quote",
           "settings": {
-            "quote": "“Are you feeling okay? You look tired.” I had slept eight hours. I had slept eight hours for a week.",
+            "quote": "<p>“Are you feeling okay? You look tired.” I had slept eight hours. I had slept eight hours for a week.</p>",
             "attribution": "— Verified customer"
           }
         },
@@ -121,7 +121,7 @@
         "accent_color": "#1d5c5c",
         "byline": "By the Skin & Ageing Desk",
         "date_text": "[month, year] · 9 min read",
-        "intro": "I stopped looking at myself on video calls about two years ago. The camera “wasn’t working.” Small, reasonable-sounding lies I told twice a week until they became a habit nobody questioned. The truth was that I had seen a recording of myself under office lighting and did not recognise the woman on the screen. She looked exhausted. She was fifty-two — which was the part that stopped me cold, because so was I.",
+        "intro": "<p>I stopped looking at myself on video calls about two years ago. The camera “wasn’t working.” Small, reasonable-sounding lies I told twice a week until they became a habit nobody questioned. The truth was that I had seen a recording of myself under office lighting and did not recognise the woman on the screen. She looked exhausted. She was fifty-two — which was the part that stopped me cold, because so was I.</p>",
         "show_numbers": false,
         "color_scheme": "scheme-1",
         "padding_top": 32,

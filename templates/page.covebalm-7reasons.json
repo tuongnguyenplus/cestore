@@ -54,21 +54,21 @@
         "q1": {
           "type": "quote",
           "settings": {
-            "quote": "I’ve spent hundreds on eye creams over the years. Not one of them did a thing that lasted past the afternoon.",
+            "quote": "<p>I’ve spent hundreds on eye creams over the years. Not one of them did a thing that lasted past the afternoon.</p>",
             "attribution": "— Ash S., verified buyer"
           }
         },
         "q2": {
           "type": "quote",
           "settings": {
-            "quote": "My concealer used to be my best friend. Now it settles into every line by 10am and makes me look older than I actually am.",
+            "quote": "<p>My concealer used to be my best friend. Now it settles into every line by 10am and makes me look older than I actually am.</p>",
             "attribution": "— Ellie S., verified buyer"
           }
         },
         "q3": {
           "type": "quote",
           "settings": {
-            "quote": "I didn’t realise how tired I looked until I saw myself on a recording. I turned my camera off for the rest of the week.",
+            "quote": "<p>I didn’t realise how tired I looked until I saw myself on a recording. I turned my camera off for the rest of the week.</p>",
             "attribution": "— Shannon G., verified buyer"
           }
         },
@@ -101,7 +101,7 @@
         "accent_color": "#1d5c5c",
         "byline": "By the Skin & Ageing Desk",
         "date_text": "Updated [month, year] · 6 min read",
-        "intro": "If you’ve bought three “miracle” eye creams and still avoid the bathroom mirror at 7am, the problem was never the cream. It was the depth.",
+        "intro": "<p>If you’ve bought three “miracle” eye creams and still avoid the bathroom mirror at 7am, the problem was never the cream. It was the depth.</p>",
         "show_numbers": true,
         "color_scheme": "scheme-1",
         "padding_top": 32,

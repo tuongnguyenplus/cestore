@@ -23,7 +23,7 @@
         "q1": {
           "type": "quote",
           "settings": {
-            "quote": "I got eight hours. My boss asked me on a morning call if I’d been up all night.",
+            "quote": "<p>I got eight hours. My boss asked me on a morning call if I’d been up all night.</p>",
             "attribution": "— Sarah K."
           }
         },
@@ -38,7 +38,7 @@
         "q2": {
           "type": "quote",
           "settings": {
-            "quote": "I look angry even when I’m perfectly happy. My daughter asked why I was mad at her. I wasn’t.",
+            "quote": "<p>I look angry even when I’m perfectly happy. My daughter asked why I was mad at her. I wasn’t.</p>",
             "attribution": "— Kevin J."
           }
         },
@@ -69,7 +69,7 @@
         "q3": {
           "type": "quote",
           "settings": {
-            "quote": "I’m not taking two weeks off and coming back with a different face. There’s no version of that conversation I want to have.",
+            "quote": "<p>I’m not taking two weeks off and coming back with a different face. There’s no version of that conversation I want to have.</p>",
             "attribution": "— Emily C."
           }
         },
@@ -119,7 +119,7 @@
         "accent_color": "#1d5c5c",
         "byline": "By the Health & Performance Desk",
         "date_text": "Updated [month, year] · 6 min read",
-        "intro": "You’ve been told to sleep more. You slept more. Here’s what’s actually going on — and the option that sits between a $45 bottle that does nothing and surgery.",
+        "intro": "<p>You’ve been told to sleep more. You slept more. Here’s what’s actually going on — and the option that sits between a $45 bottle that does nothing and surgery.</p>",
         "show_numbers": true,
         "color_scheme": "scheme-1",
         "padding_top": 32,
