@@ -178,7 +178,7 @@
     {%- if block.settings.show_shipping -%}
       {%- assign ces_lead_seconds = block.settings.delivery_days | times: 86400 -%}
       {%- assign ces_ship_date = 'now' | date: '%s' | plus: ces_lead_seconds | date: block.settings.date_format -%}
-      <div class="ces-main-product__estimate ces-bundle__estimate">
+      <div class="ces-main-product__estimate ces-bundle__estimate ces-bundle__estimate--{{ block.settings.ship_position | default: 'below' }}">
         {%- if block.settings.delivery_text != blank -%}
           <span class="ces-main-product__estimate-item">
             {%- if block.settings.delivery_icon != blank -%}

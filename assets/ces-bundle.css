@@ -257,11 +257,13 @@
 }
 
 /* Shipping estimate row placed inside the bundle (reuses the section estimate
-   styles; just add spacing around it). */
-.ces-bundle__estimate {
-  margin-top: 1.2rem;
+   styles; spacing depends on which side of the button it sits). */
+/* Above the button: separate from the tiers above, hug the button below. */
+.ces-bundle__estimate--above {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
 }
-.ces-bundle__estimate:not(:last-child) {
-  margin-top: 0;
-  margin-bottom: 1.2rem;
+/* Below the button: hug the button above. */
+.ces-bundle__estimate--below {
+  margin-top: 0.9rem;
 }
