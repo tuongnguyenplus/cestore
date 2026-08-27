@@ -261,7 +261,11 @@
 /* Above the button: separate from the tiers above, hug the button below. */
 .ces-bundle__estimate--above {
   margin-top: 1.6rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+/* Cancel the button's own top margin so it sits right under the estimate. */
+.ces-bundle__estimate--above + .ces-bundle__add {
+  margin-top: 0.4rem;
 }
 /* Below the button: hug the button above. */
 .ces-bundle__estimate--below {
