@@ -59,7 +59,9 @@ class CesBundle extends HTMLElement {
 
     const body = { items };
     if (this.cart && typeof this.cart.getSectionsToRender === 'function') {
-      body.sections = this.cart.getSectionsToRender().map((section) => section.id);
+      // Shopify's cart API expects `sections` as a comma-separated string, not a
+      // JSON array. (Dawn's own FormData path coerces the array the same way.)
+      body.sections = this.cart.getSectionsToRender().map((section) => section.id).join(',');
       body.sections_url = window.location.pathname;
       if (typeof this.cart.setActiveElement === 'function') this.cart.setActiveElement(document.activeElement);
     }
@@ -73,18 +75,25 @@ class CesBundle extends HTMLElement {
           this.setLoading(false);
           return;
         }
-        if (this.cart && typeof this.cart.renderContents === 'function') {
-          if (this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
-          this.cart.renderContents(response);
-          if (
-            this.dataset.openDrawer !== 'false' &&
-            typeof this.cart.open === 'function' &&
-            !this.cart.classList.contains('active')
-          ) {
-            this.cart.open();
+        if (this.cart && typeof this.cart.renderContents === 'function' && response.sections) {
+          try {
+            if (this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
+            this.cart.renderContents(response);
+            if (
+              this.dataset.openDrawer !== 'false' &&
+              typeof this.cart.open === 'function' &&
+              !this.cart.classList.contains('active')
+            ) {
+              this.cart.open();
+            }
+          } catch (e) {
+            // The item was added; if the drawer can't re-render, fall back to the cart page.
+            window.location = window.routes.cart_url;
+            return;
           }
         } else {
           window.location = window.routes.cart_url;
+          return;
         }
         this.setLoading(false);
       })

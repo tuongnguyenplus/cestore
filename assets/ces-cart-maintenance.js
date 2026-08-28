@@ -30,7 +30,8 @@ class CesCartMaintenance extends HTMLElement {
   sections() {
     if (this.cart && typeof this.cart.getSectionsToRender === 'function') {
       return {
-        sections: this.cart.getSectionsToRender().map((s) => s.id),
+        // Comma-separated string, not a JSON array (Shopify's cart API requirement).
+        sections: this.cart.getSectionsToRender().map((s) => s.id).join(','),
         sections_url: window.location.pathname,
       };
     }
@@ -38,12 +39,16 @@ class CesCartMaintenance extends HTMLElement {
   }
 
   render(response) {
-    if (this.cart && typeof this.cart.renderContents === 'function') {
-      if (this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
-      this.cart.renderContents(response);
-    } else {
-      window.location.reload();
+    if (this.cart && typeof this.cart.renderContents === 'function' && response && response.sections) {
+      try {
+        if (this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
+        this.cart.renderContents(response);
+        return;
+      } catch (e) {
+        // fall through to reload
+      }
     }
+    window.location.reload();
   }
 
   setBusy(state) {
