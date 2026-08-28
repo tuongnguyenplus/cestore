@@ -23,19 +23,17 @@ class CesCartMaintenance extends HTMLElement {
         ? fetchConfig('javascript')
         : { method: 'POST', headers: { Accept: 'application/javascript' } };
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
-    config.headers['Content-Type'] = 'application/json';
+    // Multipart FormData (Dawn's proven cart path); JSON bodies don't reliably
+    // return the `sections` payload the drawer needs to re-render.
+    delete config.headers['Content-Type'];
     return config;
   }
 
-  sections() {
+  appendSections(formData) {
     if (this.cart && typeof this.cart.getSectionsToRender === 'function') {
-      return {
-        // Comma-separated string, not a JSON array (Shopify's cart API requirement).
-        sections: this.cart.getSectionsToRender().map((s) => s.id).join(','),
-        sections_url: window.location.pathname,
-      };
+      formData.append('sections', this.cart.getSectionsToRender().map((s) => s.id));
+      formData.append('sections_url', window.location.pathname);
     }
-    return {};
   }
 
   render(response) {
@@ -64,10 +62,13 @@ class CesCartMaintenance extends HTMLElement {
   }
 
   add() {
-    const item = { id: parseInt(this.variantId, 10), quantity: 1 };
-    if (this.sellingPlan) item.selling_plan = parseInt(this.sellingPlan, 10);
     const config = this.fetchConfigBase();
-    config.body = JSON.stringify(Object.assign({ items: [item] }, this.sections()));
+    const formData = new FormData();
+    formData.append('id', parseInt(this.variantId, 10));
+    formData.append('quantity', 1);
+    if (this.sellingPlan) formData.append('selling_plan', parseInt(this.sellingPlan, 10));
+    this.appendSections(formData);
+    config.body = formData;
     fetch(`${window.routes.cart_add_url}`, config)
       .then((r) => r.json())
       .then((res) => {
@@ -92,7 +93,11 @@ class CesCartMaintenance extends HTMLElement {
         const line = (cart.items || []).find((it) => String(it.variant_id) === String(this.variantId));
         const key = line ? line.key : this.variantId;
         const config = this.fetchConfigBase();
-        config.body = JSON.stringify(Object.assign({ id: key, quantity: 0 }, this.sections()));
+        const formData = new FormData();
+        formData.append('id', key);
+        formData.append('quantity', 0);
+        this.appendSections(formData);
+        config.body = formData;
         return fetch(`${window.routes.cart_change_url}`, config).then((r) => r.json());
       })
       .then((res) => {

@@ -55,17 +55,21 @@ class CesBundle extends HTMLElement {
         ? fetchConfig('javascript')
         : { method: 'POST', headers: { Accept: 'application/javascript' } };
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
-    config.headers['Content-Type'] = 'application/json';
+    // Send as multipart FormData (Dawn's proven cart path). JSON bodies don't
+    // reliably return the `sections` payload, so the drawer can't re-render.
+    delete config.headers['Content-Type'];
 
-    const body = { items };
+    const formData = new FormData();
+    items.forEach((item, i) => {
+      formData.append(`items[${i}][id]`, item.id);
+      formData.append(`items[${i}][quantity]`, item.quantity);
+    });
     if (this.cart && typeof this.cart.getSectionsToRender === 'function') {
-      // Shopify's cart API expects `sections` as a comma-separated string, not a
-      // JSON array. (Dawn's own FormData path coerces the array the same way.)
-      body.sections = this.cart.getSectionsToRender().map((section) => section.id).join(',');
-      body.sections_url = window.location.pathname;
+      formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));
+      formData.append('sections_url', window.location.pathname);
       if (typeof this.cart.setActiveElement === 'function') this.cart.setActiveElement(document.activeElement);
     }
-    config.body = JSON.stringify(body);
+    config.body = formData;
 
     fetch(`${window.routes.cart_add_url}`, config)
       .then((response) => response.json())
