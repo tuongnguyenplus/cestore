@@ -1484,9 +1484,22 @@
       },
       {
         "type": "text",
+        "id": "cart_social_text",
+        "label": "Cart social-proof line",
+        "info": "e.g. \"106 people are checking out now\". Leave blank to hide.",
+        "default": "106 people are checking out now"
+      },
+      {
+        "type": "text",
         "id": "cart_upsell_heading",
         "label": "Special offers heading",
-        "default": "Special offers for your order"
+        "default": "Special Offer"
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_subheading",
+        "label": "Special offers subheading",
+        "default": "Add Now for 50% OFF"
       },
       {
         "type": "product_list",

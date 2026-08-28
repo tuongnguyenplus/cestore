@@ -256,7 +256,12 @@
                         <td class="cart-item__totals right" role="cell" headers="CartDrawer-ColumnTotal">
                           {%- render 'loading-spinner' -%}
                           <div class="cart-item__price-wrapper">
-                            {%- if item.original_line_price != item.final_line_price -%}
+                            {%- if item.final_line_price == 0 -%}
+                              {%- if item.original_line_price > 0 -%}
+                                <s class="cart-item__old-price price price--end">{{ item.original_line_price | money }}</s>
+                              {%- endif -%}
+                              <span class="price price--end cart-item__free">FREE</span>
+                            {%- elsif item.original_line_price != item.final_line_price -%}
                               <div class="cart-item__discounted-prices">
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.regular_price' | t }}
@@ -267,7 +272,7 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
-                                <span class="price price--end">
+                                <span class="price price--end cart-item__sale-price">
                                   {{ item.final_line_price | money }}
                                 </span>
                               </div>
@@ -505,6 +510,13 @@
         </form>
       </cart-drawer-items>
 
+      {%- if settings.cart_social_text != blank and cart != empty -%}
+        <div class="cart-drawer__social">
+          <span class="cart-drawer__social-dot" aria-hidden="true"></span>
+          {{ settings.cart_social_text }}
+        </div>
+      {%- endif -%}
+
       {%- if settings.cart_upsell_enabled and settings.cart_upsell_products.size > 0 and cart != empty -%}
         {%- assign ces_upsell_count = 0 -%}
         {%- capture ces_upsell_cards -%}
@@ -563,6 +575,9 @@
         {%- if ces_upsell_count > 0 -%}
           <ces-cart-upsell class="cart-drawer__offers">
             <p class="cart-drawer__offers-title">{{ settings.cart_upsell_heading }}</p>
+            {%- if settings.cart_upsell_subheading != blank -%}
+              <p class="cart-drawer__offers-sub">{{ settings.cart_upsell_subheading }}</p>
+            {%- endif -%}
             <div class="cart-drawer__offers-viewport">
               <button
                 type="button"

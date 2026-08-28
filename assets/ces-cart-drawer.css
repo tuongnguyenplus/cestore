@@ -408,3 +408,101 @@
   color: rgb(var(--color-button));
   font-weight: 700;
 }
+
+/* ============================================================
+   Botanique-style cart drawer touches
+   ============================================================ */
+
+/* Line-item prices: struck compare (grey) + sale price / FREE in red. */
+.cart-item__sale-price,
+.cart-item__free {
+  color: #e11900;
+  font-weight: 700;
+}
+.cart-item__old-price {
+  color: rgba(var(--color-foreground), 0.5);
+}
+
+/* "N people are checking out now" social-proof pill. */
+.cart-drawer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: fit-content;
+  margin: 1.6rem auto 0;
+  padding: 0.7rem 1.6rem;
+  border-radius: 100px;
+  background: rgb(var(--color-background));
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.cart-drawer__social-dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: #ff4d6d;
+  box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.6);
+  animation: ces-cart-pulse 1.8s infinite;
+}
+@keyframes ces-cart-pulse {
+  70% { box-shadow: 0 0 0 0.8rem rgba(255, 77, 109, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+}
+
+/* "Special Offer" heading + subheading, centered with accent. */
+.cart-drawer__offers-title {
+  text-align: center;
+  color: rgb(var(--color-button));
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin: 1.6rem 0 0.2rem;
+}
+.cart-drawer__offers-sub {
+  text-align: center;
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.75);
+  margin: 0 0 1.2rem;
+}
+
+/* Add-on / Maintenance toggle rendered as a green iOS switch on the right. */
+.cart-drawer__maint-row {
+  align-items: center;
+}
+.cart-drawer__maint-body {
+  order: 1;
+}
+.cart-drawer__maint-mark {
+  order: 2;
+  flex: 0 0 auto;
+  width: 4.4rem;
+  height: 2.6rem;
+  margin-top: 0;
+  border: none;
+  border-radius: 100px;
+  background: rgba(var(--color-foreground), 0.25);
+  transition: background 0.15s ease;
+}
+.cart-drawer__maint-mark::before {
+  content: '';
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+.cart-drawer__maint-check:checked + .cart-drawer__maint-mark {
+  background: #34c759;
+}
+.cart-drawer__maint-check:checked + .cart-drawer__maint-mark::before {
+  transform: translateX(1.8rem);
+}
+/* Neutralise the old square-checkbox tick from the base styles. */
+.cart-drawer__maint-check:checked + .cart-drawer__maint-mark::after {
+  content: none;
+}
