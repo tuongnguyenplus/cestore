@@ -13,6 +13,7 @@
 
 {{ 'ces-cart-drawer.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'ces-cart-upsell.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'ces-cart-maintenance.js' | asset_url }}" defer="defer"></script>
 
 <style>
   .drawer {
@@ -612,6 +613,52 @@
 
         <!-- Start blocks -->
         <!-- Subtotals -->
+
+        {%- comment -%} CEBEAM Maintenance Plan opt-in (subscription upsell). {%- endcomment -%}
+        {%- if settings.cart_maintenance_enabled and settings.cart_maintenance_variant != blank and cart != empty -%}
+          {%- assign ces_maint_vid = settings.cart_maintenance_variant | strip -%}
+          {%- assign ces_maint_in_cart = false -%}
+          {%- for ces_ci in cart.items -%}
+            {%- if ces_ci.variant_id | append: '' == ces_maint_vid -%}
+              {%- assign ces_maint_in_cart = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          <ces-cart-maintenance
+            class="cart-drawer__maint"
+            data-variant-id="{{ ces_maint_vid }}"
+            data-selling-plan="{{ settings.cart_maintenance_selling_plan | strip }}"
+          >
+            <label class="cart-drawer__maint-row">
+              <input type="checkbox" class="cart-drawer__maint-check" data-ces-maint-toggle {% if ces_maint_in_cart %}checked{% endif %}>
+              <span class="cart-drawer__maint-mark" aria-hidden="true"></span>
+              <span class="cart-drawer__maint-body">
+                <span class="cart-drawer__maint-head">
+                  {{ settings.cart_maintenance_heading | default: 'CEBEAM Maintenance Plan™' }}
+                  {%- if settings.cart_maintenance_price != blank -%}
+                    <span class="cart-drawer__maint-price">
+                      <span class="cart-drawer__maint-now">{{ settings.cart_maintenance_price }}</span>
+                      {%- if settings.cart_maintenance_compare != blank -%}
+                        <s class="cart-drawer__maint-was">{{ settings.cart_maintenance_compare }}</s>
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                </span>
+                {%- if settings.cart_maintenance_desc != blank -%}
+                  <span class="cart-drawer__maint-desc">{{ settings.cart_maintenance_desc }}</span>
+                {%- endif -%}
+                {%- if settings.cart_maintenance_benefits != blank -%}
+                  {%- assign ces_maint_bens = settings.cart_maintenance_benefits | newline_to_br | split: '<br />' -%}
+                  <span class="cart-drawer__maint-benefits">
+                    {%- for ces_mb in ces_maint_bens -%}
+                      {%- assign ces_mb = ces_mb | strip -%}
+                      {%- if ces_mb != blank -%}<span class="cart-drawer__maint-benefit">{{ ces_mb }}</span>{%- endif -%}
+                    {%- endfor -%}
+                  </span>
+                {%- endif -%}
+              </span>
+            </label>
+          </ces-cart-maintenance>
+        {%- endif -%}
 
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
           {%- assign ces_cart_savings = cart.original_total_price | minus: cart.total_price -%}

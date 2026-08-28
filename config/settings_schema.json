@@ -1496,6 +1496,61 @@
         "info": "Pick the products to offer in the cart drawer. Products already in the cart are hidden automatically."
       },
       {
+        "type": "header",
+        "content": "Maintenance Plan (subscription opt-in)"
+      },
+      {
+        "type": "paragraph",
+        "content": "A subscription opt-in shown in the cart drawer. Real recurring billing requires the maintenance product to have a selling plan from a Shopify subscription app (Shopify Subscriptions, Recharge, …). Paste the maintenance variant ID and its selling plan ID below."
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_maintenance_enabled",
+        "label": "Show Maintenance Plan opt-in",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "cart_maintenance_variant",
+        "label": "Maintenance variant ID"
+      },
+      {
+        "type": "text",
+        "id": "cart_maintenance_selling_plan",
+        "label": "Selling plan ID",
+        "info": "From your subscription app. Leave blank to add as a one-time item."
+      },
+      {
+        "type": "text",
+        "id": "cart_maintenance_heading",
+        "label": "Heading",
+        "default": "CEBEAM Maintenance Plan™"
+      },
+      {
+        "type": "text",
+        "id": "cart_maintenance_price",
+        "label": "Price line",
+        "default": "$39 every 30 days"
+      },
+      {
+        "type": "text",
+        "id": "cart_maintenance_compare",
+        "label": "Anchor / was price",
+        "default": "Regularly $49.95"
+      },
+      {
+        "type": "text",
+        "id": "cart_maintenance_desc",
+        "label": "Description",
+        "default": "Keep your under-eye routine going after your Reset."
+      },
+      {
+        "type": "textarea",
+        "id": "cart_maintenance_benefits",
+        "label": "Benefits (one per line)",
+        "default": "Ships every 30 days\nPause or cancel anytime\nLocked-in member price + free shipping"
+      },
+      {
         "type": "color_scheme",
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
