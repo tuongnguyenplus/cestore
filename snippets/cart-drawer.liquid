@@ -634,7 +634,8 @@
           {%- assign ces_maint_vid = settings.cart_maintenance_variant | strip -%}
           {%- assign ces_maint_in_cart = false -%}
           {%- for ces_ci in cart.items -%}
-            {%- if ces_ci.variant_id | append: '' == ces_maint_vid -%}
+            {%- assign ces_ci_vid = ces_ci.variant_id | append: '' -%}
+            {%- if ces_ci_vid == ces_maint_vid -%}
               {%- assign ces_maint_in_cart = true -%}
             {%- endif -%}
           {%- endfor -%}
