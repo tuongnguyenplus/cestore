@@ -698,15 +698,27 @@
 }
 #CartDrawer .cart-item__quantity {
   grid-area: qty;
-  align-self: start;
+  align-self: center;
 }
 #CartDrawer .cart-item__totals {
   grid-area: price;
-  align-self: start;
+  align-self: center;
 }
 /* Title now spans the full row width. */
 #CartDrawer .cart-item__name {
   display: block;
+}
+
+/* On editable lines, float the struck compare price ABOVE the actual price so
+   the bold price lines up with the quantity stepper. */
+#CartDrawer .cart-item:not(.cart-item--locked) .cart-item__price-wrapper {
+  position: relative;
+}
+#CartDrawer .cart-item:not(.cart-item--locked) .cart-item__price-wrapper .cart-item__old-price {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: 0.2rem;
 }
 
 /* Locked lines (free gifts): single row, price beside the title, no qty cell. */
