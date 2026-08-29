@@ -706,12 +706,6 @@
                 {%- endif -%}
               </span>
             </div>
-            {%- if ces_cart_savings > 0 -%}
-              <div class="cart-drawer__total-row cart-drawer__total-row--discount">
-                <span class="cart-drawer__total-label">Discounts</span>
-                <span class="cart-drawer__total-num">-{{ ces_cart_savings | money }}</span>
-              </div>
-            {%- endif -%}
             <div class="cart-drawer__total-row cart-drawer__total-row--grand totals" role="status">
               <span class="cart-drawer__total-label totals__total">Total</span>
               <span class="cart-drawer__total-num totals__total-value">{{ cart.total_price | money }}</span>
