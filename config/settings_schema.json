@@ -1449,10 +1449,23 @@
         "content": "Cart drawer extras"
       },
       {
+        "type": "text",
+        "id": "cart_drawer_heading",
+        "label": "Cart drawer heading",
+        "default": "Your bag"
+      },
+      {
+        "type": "text",
+        "id": "cart_guarantee_text",
+        "label": "Guarantee line under total",
+        "info": "e.g. \"365 Days Money-Back Guarantee\". Leave blank to hide.",
+        "default": "365 Days Money-Back Guarantee"
+      },
+      {
         "type": "checkbox",
         "id": "cart_show_item_count",
         "label": "Show item count in title (My cart • N)",
-        "default": true
+        "default": false
       },
       {
         "type": "checkbox",

@@ -587,15 +587,82 @@
 #CartDrawer .drawer__footer {
   padding-top: 1.2rem;
 }
-#CartDrawer .cart-drawer__discount-row {
-  padding-bottom: 0.8rem;
-}
-#CartDrawer .totals {
-  margin-bottom: 0.4rem;
-}
 #CartDrawer .tax-note {
   margin: 0.4rem 0 0;
 }
 .cart-drawer__payment-icons {
   margin-top: 1rem;
+}
+
+/* ============================================================
+   Botanique reference — "Your bag" layout
+   ============================================================ */
+
+/* Bundle / free-gift lines are locked: no qty stepper or remove control. */
+.cart-item--locked .cart-item__quantity-wrapper {
+  display: none;
+}
+
+/* Offer card: sale price in the accent colour, struck compare in grey, and a
+   round accent "add" button on the right. */
+.cart-drawer__offer-now {
+  color: rgb(var(--color-button));
+  font-weight: 700;
+}
+.cart-drawer__offer-was {
+  color: var(--ces-cd-muted);
+  font-size: 1.3rem;
+}
+.cart-drawer__offer-add {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-top: 0;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.cart-drawer__offer-add svg {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+/* Totals: Subtotal / Discounts (red) / Total, divider above the group. */
+#CartDrawer .cart-drawer__totals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 0.1rem solid var(--ces-cd-rule);
+  padding-top: 1.2rem;
+}
+#CartDrawer .cart-drawer__total-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+#CartDrawer .cart-drawer__total-row--discount,
+#CartDrawer .cart-drawer__total-row--discount .cart-drawer__total-num {
+  color: #e11900;
+}
+#CartDrawer .cart-drawer__total-row--grand {
+  border: 0;
+  margin: 0;
+  padding: 0.2rem 0 0;
+}
+#CartDrawer .cart-drawer__total-row--grand .totals__total,
+#CartDrawer .cart-drawer__total-row--grand .totals__total-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* Money-back guarantee line under the total. */
+.cart-drawer__guarantee {
+  margin: 0.6rem 0 0;
+  font-size: 1.3rem;
+  color: var(--ces-cd-muted);
 }
