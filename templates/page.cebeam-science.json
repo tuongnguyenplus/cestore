@@ -8,7 +8,7 @@
         "eyebrow": "THE SCIENCE",
         "heading": "The Science Behind",
         "heading_accent": "CEBEAM",
-        "text": "We combined self-dissolving microneedle technology with a clinically guided peptide complex into one effortless patch — shown to smooth fine lines, de-puff, and rebuild firmer under-eye skin.",
+        "text": "<p>We combined self-dissolving microneedle technology with a clinically guided peptide complex into one effortless patch — shown to smooth fine lines, de-puff, and rebuild firmer under-eye skin.</p>",
         "color_scheme": "scheme-1",
         "padding_top": 56,
         "padding_bottom": 24
@@ -177,8 +177,8 @@
         "heading": "How to Use CEBEAM",
         "highlight_words": "CEBEAM",
         "subheading": "Four steps, a few minutes a night.",
-        "columns_desktop": "4",
-        "columns_mobile": "2",
+        "columns_desktop": 4,
+        "columns_mobile": 2,
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -249,7 +249,7 @@
         "eyebrow": "REAL RESULTS",
         "heading": "93% of users",
         "heading_accent": "reported smoother, brighter under-eyes",
-        "text": "after just 21 days of nightly use. With CEBEAM you're not masking fatigue — you're actively rebuilding the skin underneath.",
+        "text": "<p>after just 21 days of nightly use. With CEBEAM you're not masking fatigue — you're actively rebuilding the skin underneath.</p>",
         "button_label": "Get yours",
         "button_link": "/products/rovina",
         "color_scheme": "scheme-2",
