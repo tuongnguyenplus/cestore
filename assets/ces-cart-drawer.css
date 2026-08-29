@@ -417,10 +417,14 @@
    Botanique-style cart drawer touches
    ============================================================ */
 
-/* Line-item prices: struck compare (grey) + sale price / FREE in red. */
-.cart-item__sale-price,
-.cart-item__free {
+/* Line-item prices: struck compare (grey), sale price in red. */
+.cart-item__sale-price {
   color: #e11900;
+  font-weight: 700;
+}
+/* FREE in the store's brand colour. */
+.cart-item__free {
+  color: rgb(var(--color-button));
   font-weight: 700;
 }
 .cart-item__old-price {
