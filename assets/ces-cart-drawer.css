@@ -506,3 +506,96 @@
 .cart-drawer__maint-check:checked + .cart-drawer__maint-mark::after {
   content: none;
 }
+
+/* ============================================================
+   Compact pass — tighten the drawer's vertical rhythm so more
+   of the cart is visible without scrolling.
+   ============================================================ */
+
+/* Line items: smaller thumbnail, tighter rows and title. */
+#CartDrawer .cart-item {
+  padding: 1.2rem 0;
+}
+#CartDrawer .cart-item:first-child {
+  padding-top: 0.4rem;
+}
+#CartDrawer .cart-item__media {
+  width: 6.4rem;
+}
+#CartDrawer .cart-item__image {
+  max-width: 6.4rem;
+}
+#CartDrawer .cart-item__name {
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+#CartDrawer .cart-item__details > * + * {
+  margin-top: 0.3rem;
+}
+#CartDrawer .cart-item__totals {
+  gap: 0.2rem;
+}
+#CartDrawer .cart-items thead {
+  display: none;
+}
+
+/* Social pill: closer to the items, a touch smaller. */
+.cart-drawer__social {
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.3rem;
+}
+
+/* Special offers: trimmer heading and card. */
+.cart-drawer__offers {
+  padding-top: 1.2rem;
+}
+.cart-drawer__offers-title {
+  margin: 1.2rem 0 0.2rem;
+  font-size: 1.6rem;
+}
+.cart-drawer__offers-sub {
+  margin: 0 0 0.9rem;
+  font-size: 1.3rem;
+}
+.cart-drawer__offer {
+  padding: 1rem;
+  gap: 1rem;
+}
+.cart-drawer__offer-img {
+  width: 6rem;
+  height: 6rem;
+}
+.cart-drawer__offer-name {
+  font-size: 1.4rem;
+}
+.cart-drawer__offer-add {
+  margin-top: 0.2rem;
+  padding: 0.7rem 1.5rem;
+}
+
+/* Maintenance opt-in: tighter card. */
+.cart-drawer__maint {
+  margin: 0.8rem 0;
+}
+.cart-drawer__maint-row {
+  padding: 1rem 1.2rem;
+  gap: 0.9rem;
+}
+
+/* Footer: pull the totals, tax note and CTAs together. */
+#CartDrawer .drawer__footer {
+  padding-top: 1.2rem;
+}
+#CartDrawer .cart-drawer__discount-row {
+  padding-bottom: 0.8rem;
+}
+#CartDrawer .totals {
+  margin-bottom: 0.4rem;
+}
+#CartDrawer .tax-note {
+  margin: 0.4rem 0 0;
+}
+.cart-drawer__payment-icons {
+  margin-top: 1rem;
+}
