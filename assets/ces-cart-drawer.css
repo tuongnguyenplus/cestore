@@ -698,11 +698,11 @@
 }
 #CartDrawer .cart-item__quantity {
   grid-area: qty;
-  align-self: center;
+  align-self: start;
 }
 #CartDrawer .cart-item__totals {
   grid-area: price;
-  align-self: center;
+  align-self: start;
 }
 /* Title now spans the full row width. */
 #CartDrawer .cart-item__name {
