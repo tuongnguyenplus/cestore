@@ -665,6 +665,10 @@
   font-size: 1.9rem;
   font-weight: 700;
 }
+/* Grand total value in the store's brand colour. */
+#CartDrawer .cart-drawer__total-row--grand .totals__total-value {
+  color: rgb(var(--color-button));
+}
 
 /* Money-back guarantee line under the total. */
 .cart-drawer__guarantee {
