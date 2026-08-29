@@ -866,3 +866,14 @@
     max-width: 100vw;
   }
 }
+
+/* ============================================================
+   Layout: items + social + offer flow from the top; only the
+   totals/checkout footer pins to the bottom (no big mid gap).
+   ============================================================ */
+#CartDrawer cart-drawer-items {
+  flex: 0 1 auto;
+}
+#CartDrawer .drawer__footer {
+  margin-top: auto;
+}

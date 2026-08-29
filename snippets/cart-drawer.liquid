@@ -172,18 +172,17 @@
                             -%}
                           </div>
 
-                          {%- if item.line_level_discount_allocations.size > 0 -%}
+                          {%- comment -%} Only the genuinely-free ($0) gift lines get the GIFT badge. {%- endcomment -%}
+                          {%- if item.final_line_price == 0 -%}
                             <ul
                               class="discounts discounts--badges list-unstyled"
                               role="list"
                               aria-label="{{ 'customer.order.discount' | t }}"
                             >
-                              {%- for discount in item.line_level_discount_allocations -%}
-                                <li class="discounts__discount discounts__discount--badge">
-                                  {{- 'icon-discount.svg' | inline_asset_content -}}
-                                  {{ discount.discount_application.title }}
-                                </li>
-                              {%- endfor -%}
+                              <li class="discounts__discount discounts__discount--badge">
+                                {{- 'icon-discount.svg' | inline_asset_content -}}
+                                GIFT
+                              </li>
                             </ul>
                           {%- endif -%}
 
