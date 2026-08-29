@@ -666,3 +666,101 @@
   font-size: 1.3rem;
   color: var(--ces-cd-muted);
 }
+
+/* ============================================================
+   Line-item layout v2 — full-width title, compact qty, tight rows
+   ============================================================ */
+
+#CartDrawer .cart-items,
+#CartDrawer .cart-items tbody {
+  display: block;
+}
+#CartDrawer .cart-item {
+  display: grid;
+  grid-template-columns: 6.4rem minmax(0, 1fr) auto;
+  grid-template-areas:
+    'media details details'
+    'media qty     price';
+  column-gap: 1.2rem;
+  row-gap: 0.6rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 0.1rem solid var(--ces-cd-rule);
+}
+#CartDrawer .cart-item:last-child {
+  border-bottom: 0;
+}
+#CartDrawer .cart-item__media {
+  grid-area: media;
+}
+#CartDrawer .cart-item__details {
+  grid-area: details;
+}
+#CartDrawer .cart-item__quantity {
+  grid-area: qty;
+  align-self: center;
+}
+#CartDrawer .cart-item__totals {
+  grid-area: price;
+  align-self: center;
+}
+/* Title now spans the full row width. */
+#CartDrawer .cart-item__name {
+  display: block;
+}
+
+/* Locked lines (free gifts): single row, price beside the title, no qty cell. */
+#CartDrawer .cart-item--locked {
+  grid-template-areas: 'media details price';
+}
+#CartDrawer .cart-item--locked .cart-item__quantity {
+  display: none;
+}
+#CartDrawer .cart-item--locked .cart-item__totals {
+  align-self: start;
+}
+
+/* Compact quantity stepper. */
+#CartDrawer .cart-item__quantity-wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#CartDrawer .cart-item__quantity .quantity {
+  width: auto;
+  min-width: 0;
+}
+#CartDrawer .cart-item__quantity .quantity__button {
+  width: 3.2rem;
+  height: 3.2rem;
+  min-width: 3.2rem;
+}
+#CartDrawer .cart-item__quantity .quantity__input {
+  width: 3.4rem;
+  padding: 0;
+}
+#CartDrawer .cart-item__quantity .quantity__button svg,
+#CartDrawer .cart-item__quantity .quantity__button .svg-wrapper {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+#CartDrawer .cart-remove-button {
+  padding: 0.4rem;
+}
+
+/* Upsell: tighten the "Special Offer / Add Now…" block above the card. */
+.cart-drawer__offers {
+  padding-top: 1rem;
+}
+.cart-drawer__offers-title {
+  margin: 1rem 0 0.1rem;
+  font-size: 1.6rem;
+}
+.cart-drawer__offers-sub {
+  margin: 0 0 0.8rem;
+  font-size: 1.3rem;
+}
+
+/* Remove the "Taxes, discounts and shipping…" note. */
+#CartDrawer .tax-note {
+  display: none;
+}
