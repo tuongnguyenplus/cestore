@@ -75,6 +75,10 @@
 #CartDrawer .cart-item__totals .price--end {
   font-weight: 700;
 }
+/* The actual (paid) price uses the store's primary/brand colour. */
+#CartDrawer .cart-item__totals .price--end:not(.cart-item__old-price):not(.cart-item__free) {
+  color: rgb(var(--color-button));
+}
 #CartDrawer .cart-item__save-badge {
   display: inline-block;
   padding: 0.3rem 0.7rem;
