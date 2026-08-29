@@ -680,9 +680,31 @@
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
           {%- assign ces_cart_savings = cart.original_total_price | minus: cart.total_price -%}
           <div class="cart-drawer__totals">
+            {%- liquid
+              # Compare-at (MSRP) total across the cart, for the struck price and
+              # "(Save $xx)" note on the Subtotal line.
+              assign ces_compare_total = 0
+              for ces_it in cart.items
+                if ces_it.variant.compare_at_price > ces_it.variant.price
+                  assign ces_lc = ces_it.variant.compare_at_price | times: ces_it.quantity
+                else
+                  assign ces_lc = ces_it.original_line_price
+                endif
+                assign ces_compare_total = ces_compare_total | plus: ces_lc
+              endfor
+              assign ces_sub_save = ces_compare_total | minus: cart.original_total_price
+            -%}
             <div class="cart-drawer__total-row">
               <span class="cart-drawer__total-label">Subtotal</span>
-              <span class="cart-drawer__total-num">{{ cart.original_total_price | money }}</span>
+              <span class="cart-drawer__total-num">
+                {%- if ces_compare_total > cart.original_total_price -%}
+                  <s class="cart-drawer__total-was">{{ ces_compare_total | money }}</s>
+                {%- endif -%}
+                {{ cart.original_total_price | money }}
+                {%- if ces_sub_save > 0 -%}
+                  <span class="cart-drawer__total-save">(Save {{ ces_sub_save | money }})</span>
+                {%- endif -%}
+              </span>
             </div>
             {%- if ces_cart_savings > 0 -%}
               <div class="cart-drawer__total-row cart-drawer__total-row--discount">

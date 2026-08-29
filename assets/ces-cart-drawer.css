@@ -797,17 +797,62 @@
   margin-top: 0.8rem;
 }
 
-/* Quantity stepper: smaller still. */
+/* Subtotal: struck compare-at total (grey) + green "(Save $xx)" note. */
+#CartDrawer .cart-drawer__total-num {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+#CartDrawer .cart-drawer__total-was {
+  color: var(--ces-cd-muted);
+  font-weight: 400;
+  font-size: 1.35rem;
+}
+#CartDrawer .cart-drawer__total-save {
+  color: var(--ces-cd-green);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* ============================================================
+   Quantity stepper — clean, balanced pill
+   ============================================================ */
+#CartDrawer .cart-item__quantity .quantity {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-width: 0;
+  height: 3rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.22);
+  border-radius: 0.9rem;
+  background: rgb(var(--color-background));
+  overflow: hidden;
+}
+#CartDrawer .cart-item__quantity .quantity::after {
+  display: none;
+}
 #CartDrawer .cart-item__quantity .quantity__button {
-  width: 2.8rem;
-  height: 2.8rem;
-  min-width: 2.8rem;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  padding: 0;
+  border: 0;
+  color: rgb(var(--color-foreground));
 }
 #CartDrawer .cart-item__quantity .quantity__input {
   width: 3rem;
+  height: 3rem;
+  padding: 0;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 #CartDrawer .cart-item__quantity .quantity__button svg,
 #CartDrawer .cart-item__quantity .quantity__button .svg-wrapper {
-  width: 1rem;
-  height: 1rem;
+  width: 1.1rem;
+  height: 1.1rem;
 }
