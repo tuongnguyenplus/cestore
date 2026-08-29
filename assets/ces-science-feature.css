@@ -1,0 +1,206 @@
+/* ============================================================
+   CES Science Feature — "Advanced Features / The Science" rows
+   ============================================================ */
+.ces-science-feature__header {
+  max-width: 72rem;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+.ces-science-feature__heading {
+  margin: 0.6rem 0 1rem;
+}
+.ces-science-feature__intro {
+  color: rgba(var(--color-foreground), 0.72);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.ces-science-feature__items {
+  display: flex;
+  flex-direction: column;
+  gap: 5.6rem;
+}
+
+.ces-science-feature__item {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3.2rem;
+  align-items: center;
+}
+.ces-science-feature__item.is-reversed .ces-science-feature__media {
+  order: 2;
+}
+
+/* Media */
+.ces-science-feature__media {
+  position: relative;
+}
+.ces-science-feature__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1.8rem;
+  display: block;
+  object-fit: cover;
+}
+
+/* Body */
+.ces-science-feature__label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.ces-science-feature__sci-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+.ces-science-feature__sci-text {
+  color: rgba(var(--color-foreground), 0.78);
+  font-size: 1.55rem;
+  line-height: 1.65;
+}
+
+/* Clinical chips */
+.ces-science-feature__chips {
+  margin-top: 2rem;
+}
+.ces-science-feature__chips-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.55);
+  margin: 0 0 1rem;
+}
+.ces-science-feature__chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1.2rem;
+}
+.ces-science-feature__chip {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.ces-science-feature__chip-icon {
+  flex: 0 0 auto;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(var(--color-button), 0.12);
+  color: rgb(var(--color-button));
+}
+.ces-science-feature__chip-icon img {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+}
+
+/* Beauty-Nerds */
+.ces-science-feature__nerds {
+  margin-top: 2.2rem;
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.14);
+  padding-top: 1.4rem;
+}
+.ces-science-feature__nerds-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.8rem;
+}
+.ces-science-feature__nerds-body {
+  color: rgba(var(--color-foreground), 0.75);
+  font-size: 1.45rem;
+  line-height: 1.65;
+}
+.ces-science-feature__nerds-body > * + * {
+  margin-top: 0.8rem;
+}
+
+/* Collapsible variant */
+.ces-science-feature__nerds--toggle {
+  padding-top: 0;
+}
+.ces-science-feature__nerds-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.4rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.ces-science-feature__nerds-summary::-webkit-details-marker {
+  display: none;
+}
+.ces-science-feature__nerds-sign {
+  position: relative;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+}
+.ces-science-feature__nerds-sign::before,
+.ces-science-feature__nerds-sign::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  transition: opacity 0.2s ease;
+}
+.ces-science-feature__nerds-sign::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  transform: translateY(-50%);
+}
+.ces-science-feature__nerds-sign::after {
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 0.2rem;
+  transform: translateX(-50%);
+}
+.ces-science-feature__nerds--toggle[open] .ces-science-feature__nerds-sign::after {
+  opacity: 0;
+}
+.ces-science-feature__nerds--toggle .ces-science-feature__nerds-body {
+  padding-top: 1rem;
+}
+
+/* Reveal hook (kept as a no-op; content is always visible). */
+.ces-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media screen and (max-width: 749px) {
+  .ces-science-feature__header {
+    margin-bottom: 2.8rem;
+  }
+  .ces-science-feature__items {
+    gap: 3.6rem;
+  }
+  .ces-science-feature__item {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .ces-science-feature__item.is-reversed .ces-science-feature__media {
+    order: 0;
+  }
+  .ces-science-feature__chip-list {
+    grid-template-columns: 1fr;
+  }
+  .ces-science-feature__sci-heading {
+    font-size: 2.1rem;
+  }
+}

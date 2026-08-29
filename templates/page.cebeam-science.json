@@ -1,0 +1,335 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ces-image-text-banner",
+      "settings": {
+        "layout": "band",
+        "text_position": "center",
+        "eyebrow": "THE SCIENCE",
+        "heading": "The Science Behind",
+        "heading_accent": "CEBEAM",
+        "text": "We combined self-dissolving microneedle technology with a clinically guided peptide complex into one effortless patch — shown to smooth fine lines, de-puff, and rebuild firmer under-eye skin.",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 24
+      }
+    },
+    "advanced": {
+      "type": "ces-science-feature",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "label": "Microneedle Technology",
+            "reverse": false,
+            "science_heading": "The Science",
+            "science_text": "<p>Every CEBEAM patch is lined with hundreds of self-dissolving micro-cones made from cross-linked hyaluronic acid. On contact they create painless micro-channels through the skin's outer barrier, then dissolve completely — carrying their actives past the layer that blocks ordinary creams.</p>",
+            "chips_heading": "Clinically shown to",
+            "chip_1_label": "Boost Collagen",
+            "chip_2_label": "Improve Absorption",
+            "chip_3_label": "Smooth Fine Lines",
+            "chip_4_label": "Firm & Lift",
+            "nerds_collapsible": true,
+            "nerds_heading": "For the Beauty-Nerds",
+            "nerds_content": "<p><strong>Micro-channel creation:</strong> Micro-cones form transient channels through the stratum corneum without wounding living tissue, opening a direct route for actives.</p><p><strong>Collagen-induction:</strong> The controlled micro-stimulus signals fibroblasts to lay down new collagen and elastin in the treated zone.</p><p><strong>Self-dissolving delivery:</strong> Cones are made of the treatment itself, so nothing is wasted and there is no biohazard — they melt into the skin within minutes.</p>"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "label": "Deep Active Delivery",
+            "reverse": true,
+            "science_heading": "The Science",
+            "science_text": "<p>Most of a topical serum never reaches the living skin — it sits on the surface and evaporates. CEBEAM's micro-channels bypass the stratum corneum and deliver a peptide-and-hyaluronic complex directly into the layers where fine lines and dark circles form.</p>",
+            "chips_heading": "Clinically shown to",
+            "chip_1_label": "Deeper Absorption",
+            "chip_2_label": "Intense Hydration",
+            "chip_3_label": "Deliver Peptides",
+            "chip_4_label": "Brighter Under-Eyes",
+            "nerds_collapsible": true,
+            "nerds_heading": "For the Beauty-Nerds",
+            "nerds_content": "<p><strong>Barrier bypass:</strong> Delivering below the stratum corneum raises the effective dose reaching target cells by many times versus a surface cream.</p><p><strong>Targeted concentration:</strong> Actives are deposited exactly under the eye, so a lower total dose does more work with less irritation.</p><p><strong>Sustained release:</strong> The dissolving hyaluronic matrix holds moisture and releases the complex gradually over the wear time.</p>"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "label": "Collagen Rebuild",
+            "reverse": false,
+            "science_heading": "The Science",
+            "science_text": "<p>Each micro-channel triggers a controlled micro-repair response. The skin reads it as a signal to rebuild — ramping up fibroblast activity and fresh collagen and elastin exactly where the eye area has thinned with age.</p>",
+            "chips_heading": "Clinically shown to",
+            "chip_1_label": "Increase Collagen",
+            "chip_2_label": "Repair Tissue",
+            "chip_3_label": "Improve Elasticity",
+            "chip_4_label": "Accelerate Renewal",
+            "nerds_collapsible": true,
+            "nerds_heading": "For the Beauty-Nerds",
+            "nerds_content": "<p><strong>Repair cascade:</strong> Micro-injury initiates the skin's natural wound-healing sequence — growth factors, fibroblast recruitment, and new matrix synthesis — without visible damage.</p><p><strong>Structural rebuild:</strong> New collagen and elastin thicken and firm the thin under-eye skin, softening crepiness and hollowing over a course of use.</p><p><strong>Cumulative results:</strong> Benefits compound across a program as each session builds on the last.</p>"
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "label": "Targeted Eye Design",
+            "reverse": true,
+            "science_heading": "The Science",
+            "science_text": "<p>The crescent patch is contoured to the orbital bone so every micro-cone lands on the delicate under-eye — not the cheek. Worn overnight, it holds the actives in place for hours of uninterrupted, precise treatment.</p>",
+            "chips_heading": "Clinically shown to",
+            "chip_1_label": "Precise Placement",
+            "chip_2_label": "Even Coverage",
+            "chip_3_label": "Overnight Action",
+            "chip_4_label": "Comfortable Wear",
+            "nerds_collapsible": true,
+            "nerds_heading": "For the Beauty-Nerds",
+            "nerds_content": "<p><strong>Anatomical fit:</strong> The curved geometry follows the tear-trough so pressure — and therefore penetration — is even across the whole under-eye.</p><p><strong>Extended contact:</strong> Long overnight wear keeps micro-channels open and actives working far longer than a rinse-off treatment.</p><p><strong>Gentle by design:</strong> Flexible backing and ultra-fine cones make application comfortable and residue-free.</p>"
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": {
+        "eyebrow": "THE SCIENCE",
+        "heading": "Advanced Features",
+        "intro": "<p>Two proven mechanisms — microneedling and deep active delivery — combined into one effortless overnight patch.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "clinicians": {
+      "type": "ces-clinician-reviews",
+      "blocks": {
+        "c1": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Elena Marsh, MD",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Board-Certified Dermatologist",
+            "years": "14 years",
+            "location": "New York, NY",
+            "summary": "A smart at-home way to get actives where creams can't reach.",
+            "message": "<p>Microneedle patches are one of the few at-home formats that actually cross the skin barrier. For the thin under-eye area, delivering peptides and hyaluronic acid below the surface is exactly what you want for fine lines and hollowing. CEBEAM's self-dissolving design makes it safe and simple for daily use.</p>"
+          }
+        },
+        "c2": {
+          "type": "review",
+          "settings": {
+            "name": "Dr. Priya Raman, MD",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Cosmetic Dermatology",
+            "years": "11 years",
+            "location": "Austin, TX",
+            "summary": "Consistent use is where the collagen results show.",
+            "message": "<p>The controlled micro-stimulus is what drives new collagen over time. Patients who stick to a program — rather than one-off use — see the meaningful change in firmness and brightness. A structured 45-day course is the right way to think about it.</p>"
+          }
+        }
+      },
+      "block_order": ["c1", "c2"],
+      "settings": {
+        "eyebrow": "CLINICIANS' CHOICE",
+        "title": "Trusted by skin professionals",
+        "subtitle": "<p>Why clinicians rate microneedle delivery for the under-eye.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "howto": {
+      "type": "ces-icon-feature-grid",
+      "blocks": {
+        "s1": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "1",
+            "heading": "Cleanse & dry",
+            "text": "Start on clean, fully dry skin — no oils or heavy creams, so the micro-cones grip."
+          }
+        },
+        "s2": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "2",
+            "heading": "Apply under the eye",
+            "text": "Place the crescent patch along the under-eye and press gently for 20-30 seconds."
+          }
+        },
+        "s3": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "3",
+            "heading": "Leave on overnight",
+            "text": "Wear for at least 2 hours, or overnight, while the micro-cones dissolve and work."
+          }
+        },
+        "s4": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "4",
+            "heading": "Peel & pat in",
+            "text": "Remove in the morning and pat any residue into the skin. Follow with moisturizer."
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {
+        "heading": "How to Use CEBEAM",
+        "highlight_words": "CEBEAM",
+        "subheading": "Four steps, a few minutes a night.",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "program": {
+      "type": "ces-timeline-accordion",
+      "blocks": {
+        "t1": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Days 1-7",
+            "heading": "7-Day Starter",
+            "content": "<p>Skin adjusts to nightly delivery. Immediate hydration and de-puffing — the under-eye looks smoother and more awake on waking.</p>",
+            "open": true
+          }
+        },
+        "t2": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Days 8-21",
+            "heading": "21-Day Eye Reset",
+            "content": "<p>Peptides accumulate and the repair response ramps up. Fine lines soften and dark circles start to lift as circulation and collagen improve.</p>"
+          }
+        },
+        "t3": {
+          "type": "timeline_step",
+          "settings": {
+            "time_label": "Days 22-45",
+            "heading": "45-Day Eye Rebuild",
+            "content": "<p>New collagen and elastin rebuild firmness. Crepiness and hollowing visibly reduce for a lifted, rested, younger-looking eye area.</p>"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "heading": "Your 45-Day Eye Rebuild",
+        "subheading": "Results compound with consistency — here's what to expect.",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "tips": {
+      "type": "ces-benefits-checklist",
+      "blocks": {
+        "b1": { "type": "benefit_item", "settings": { "text": "Cleanse and fully dry skin before applying" } },
+        "b2": { "type": "benefit_item", "settings": { "text": "Press the patch for 20-30 seconds so every cone contacts the skin" } },
+        "b3": { "type": "benefit_item", "settings": { "text": "Use consistently — nightly, or at least 4-5 nights a week" } },
+        "b4": { "type": "benefit_item", "settings": { "text": "Follow your program to completion for the collagen results" } },
+        "b5": { "type": "benefit_item", "settings": { "text": "Stay hydrated and moisturize — hydrated skin responds better" } },
+        "b6": { "type": "benefit_item", "settings": { "text": "Don't reuse a patch — each is single-use once the cones dissolve" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "settings": {
+        "heading": "Tips for optimal results",
+        "subheading": "Small habits that make a visible difference.",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "results": {
+      "type": "ces-image-text-banner",
+      "settings": {
+        "layout": "band",
+        "text_position": "center",
+        "eyebrow": "REAL RESULTS",
+        "heading": "93% of users",
+        "heading_accent": "reported smoother, brighter under-eyes",
+        "text": "after just 21 days of nightly use. With CEBEAM you're not masking fatigue — you're actively rebuilding the skin underneath.",
+        "button_label": "Get yours",
+        "button_link": "/products/rovina",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq": {
+      "type": "ces-faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it hurt?",
+            "answer": "<p>No. The micro-cones are far too small to reach the nerves that sense pain — most people feel only a light tingle or nothing at all.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from an eye cream?",
+            "answer": "<p>A cream sits on the surface, where most of it evaporates. CEBEAM's micro-cones dissolve below the barrier and deposit the actives into the layers where lines and dark circles form.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How often should I use it?",
+            "answer": "<p>Nightly for best results, or at least 4-5 nights a week. Follow your chosen program (7, 21, or 45 days) to completion.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will I see results?",
+            "answer": "<p>Hydration and de-puffing are immediate. Fine lines and dark circles improve across 2-3 weeks, and firmness rebuilds over the full 45-day course.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe for sensitive skin?",
+            "answer": "<p>Yes. The cones are made of hyaluronic acid and dissolve completely. Start every other night if your skin is very reactive, then build up.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "heading": "The Science, answered",
+        "subheading": "Common questions about how CEBEAM works.",
+        "footer_text": "<p><em>This information is provided to explain how microneedle and active-delivery technologies work and is not intended as medical advice.</em></p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cta": {
+      "type": "ces-bullet-cta",
+      "settings": {
+        "image_position": "start",
+        "heading": "Rebuild your under-eye — the smart way",
+        "bullets": "<ul><li>Self-dissolving microneedle patches</li><li>Peptide + hyaluronic complex delivered deep</li><li>Visible in weeks, rebuilt in 45 days</li><li>365-day money-back guarantee</li></ul>",
+        "button_label": "Shop CEBEAM",
+        "button_link": "/products/rovina",
+        "button_footnote": "Free shipping · 365-day guarantee",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "advanced",
+    "clinicians",
+    "howto",
+    "program",
+    "tips",
+    "results",
+    "faq",
+    "cta"
+  ]
+}
