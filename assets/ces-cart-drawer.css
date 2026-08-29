@@ -422,7 +422,8 @@
   color: #e11900;
   font-weight: 700;
 }
-/* FREE in the store's brand colour. */
+/* FREE in the store's brand colour (scoped high enough to win). */
+#CartDrawer .cart-item__totals .cart-item__free,
 .cart-item__free {
   color: rgb(var(--color-button));
   font-weight: 700;
