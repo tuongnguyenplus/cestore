@@ -732,6 +732,19 @@
   align-self: start;
 }
 
+/* Keep the qty cell exactly the stepper's height (float the hidden line-error
+   out of flow) so the row centres the price against the stepper. */
+#CartDrawer .cart-item__quantity quantity-popover {
+  position: relative;
+  display: block;
+}
+#CartDrawer .cart-item__quantity .cart-item__error {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.4rem;
+}
+
 /* Compact quantity stepper. */
 #CartDrawer .cart-item__quantity-wrapper {
   width: -moz-fit-content;
