@@ -583,9 +583,11 @@
   gap: 0.9rem;
 }
 
-/* Footer: pull the totals, tax note and CTAs together. */
+/* Footer: pull the totals, tax note and CTAs together. Drop Dawn's own top
+   border so only the divider above Subtotal remains (no double line). */
 #CartDrawer .drawer__footer {
   padding-top: 1.2rem;
+  border-top: 0;
 }
 #CartDrawer .tax-note {
   margin: 0.4rem 0 0;
