@@ -583,6 +583,7 @@
             "image": "shopify://shop_images/C5B14712-E351-4CD4-92A6-F50A547B6377_1.webp",
             "icon_text": "",
             "icon": "cell-defense",
+            "icon_color": "",
             "heading": "Dark Circles & Bags*",
             "text": ""
           }
@@ -593,6 +594,7 @@
             "image": "shopify://shop_images/image-1-e1780984910353-1024x399.webp",
             "icon_text": "",
             "icon": "shield",
+            "icon_color": "",
             "heading": "Puffiness & Under-Eye Fatigue*",
             "text": ""
           }
@@ -603,6 +605,7 @@
             "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.png",
             "icon_text": "",
             "icon": "molecule",
+            "icon_color": "",
             "heading": "Fine Lines & Crepey Texture*",
             "text": ""
           }
@@ -613,6 +616,7 @@
             "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.webp",
             "icon_text": "",
             "icon": "vitality",
+            "icon_color": "",
             "heading": "Firmness & Hydration*",
             "text": ""
           }
@@ -798,7 +802,7 @@
           "settings": {
             "tab_label": "Antioxidant Strength",
             "default_open": true,
-            "image": "shopify://shop_images/ufvut.webp",
+            "image": "shopify://shop_images/753f2cee-6f6d-477d-9b51-18369122ee81.png",
             "heading": "Delivered Below the Surface",
             "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.*</p>",
             "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo needles, no procedure\nNo downtime",
@@ -844,6 +848,7 @@
     "guarantee-cta": {
       "type": "ces-bullet-cta",
       "settings": {
+        "image": "shopify://shop_images/44_1.webp",
         "image_position": "start",
         "heading": "90-Day Money-Back Guarantee.",
         "bullets": "<ul><li>Try it for a full 90 days</li><li>Keep the box even if it is not for you</li><li>No return shipping and no hassle</li></ul>",
@@ -935,7 +940,7 @@
       "settings": {
         "heading": "What sets Cebeam apart",
         "subheading": "",
-        "image": "shopify://shop_images/BP_UEC_1__1x1_transp.webp",
+        "image": "shopify://shop_images/44_1.webp",
         "brand_label": "Cebeam",
         "other_label": "Other Brands",
         "footnote": "",
