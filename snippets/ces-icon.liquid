@@ -213,6 +213,21 @@
           <path d="M6 20l6-6 6 6"/>
           <path d="M12 2.6s2.4 2.6 2.4 4.2a2.4 2.4 0 0 1-4.8 0C9.6 5.2 12 2.6 12 2.6Z" fill="currentColor" stroke="none"/>
         </svg>
+
+      {%- when 'drop' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2.8s6.4 6.8 6.4 11A6.4 6.4 0 0 1 5.6 13.8C5.6 9.6 12 2.8 12 2.8Z"/>
+          <path d="M9.2 13.8a2.8 2.8 0 0 0 2.8 2.8"/>
+        </svg>
+
+      {%- when 'patch' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="3.6" y="6.6" width="16.8" height="10.8" rx="3.2"/>
+          <g fill="currentColor" stroke="none">
+            <circle cx="8" cy="10.6" r="0.85"/><circle cx="12" cy="10.6" r="0.85"/><circle cx="16" cy="10.6" r="0.85"/>
+            <circle cx="8" cy="13.4" r="0.85"/><circle cx="12" cy="13.4" r="0.85"/><circle cx="16" cy="13.4" r="0.85"/>
+          </g>
+        </svg>
     {%- endcase -%}
   {%- endif -%}
 </span>

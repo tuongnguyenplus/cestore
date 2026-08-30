@@ -106,42 +106,42 @@
         "highlight-1": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "sparkle",
+            "icon": "eye",
             "text": "Fades Dark Circles & Puffiness*"
           }
         },
         "highlight-2": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "leaf",
+            "icon": "depuff",
             "text": "De-Puffs Tired Eye Bags*"
           }
         },
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "shield",
+            "icon": "smooth",
             "text": "Smooths Fine Lines & Crepey Skin*"
           }
         },
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "heart",
+            "icon": "drop",
             "text": "Deep Hydration & Plumping*"
           }
         },
         "highlight-5": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "lightning",
+            "icon": "patch",
             "text": "Painless Micro-Delivery — No Needles*"
           }
         },
         "highlight-6": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "star",
+            "icon": "firm",
             "text": "Firmer, Brighter Under-Eyes*"
           }
         },
@@ -580,9 +580,9 @@
         "icon-1": {
           "type": "icon_item",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/C5B14712-E351-4CD4-92A6-F50A547B6377_1.webp",
             "icon_text": "",
-            "icon": "eye",
+            "icon": "cell-defense",
             "heading": "Dark Circles & Bags*",
             "text": ""
           }
@@ -590,9 +590,9 @@
         "icon-2": {
           "type": "icon_item",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/image-1-e1780984910353-1024x399.webp",
             "icon_text": "",
-            "icon": "depuff",
+            "icon": "shield",
             "heading": "Puffiness & Under-Eye Fatigue*",
             "text": ""
           }
@@ -600,9 +600,9 @@
         "icon-3": {
           "type": "icon_item",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.png",
             "icon_text": "",
-            "icon": "smooth",
+            "icon": "molecule",
             "heading": "Fine Lines & Crepey Texture*",
             "text": ""
           }
@@ -610,9 +610,9 @@
         "icon-4": {
           "type": "icon_item",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.webp",
             "icon_text": "",
-            "icon": "firm",
+            "icon": "vitality",
             "heading": "Firmness & Hydration*",
             "text": ""
           }
