@@ -61,7 +61,10 @@
       <div class="ces-icon-feature-grid__grid" style="--ces-icon-frame: {{ section.settings.icon_size }}rem;">
         {%- for block in section.blocks -%}
           <div class="ces-icon-feature-grid__item" {{ block.shopify_attributes }}>
-            <span class="ces-icon-feature-grid__icon ces-icon-feature-grid__icon--{{ section.settings.icon_frame }}">
+            <span
+              class="ces-icon-feature-grid__icon ces-icon-feature-grid__icon--{{ section.settings.icon_frame }}"
+              {% if block.settings.icon_color != blank %}style="--ces-icon-color: {{ block.settings.icon_color }};"{% endif %}
+            >
               {%- comment -%}
                 Three ways to supply the mark, most specific first: an uploaded
                 image, a literal glyph (an emoji, or an icon-font ligature if the
@@ -320,6 +323,12 @@
             }
           ],
           "default": "cell-defense"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon colour (this item)",
+          "info": "Overrides the section icon colour for this item. Leave blank to use the section colour."
         },
         {
           "type": "text",
