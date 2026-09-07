@@ -975,11 +975,15 @@
       "blocks": {
         "avatar-1": {
           "type": "avatar_item",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/5aaf758b-0c8c-4a73-9541-e7499f30d030.png"
+          }
         },
         "avatar-2": {
           "type": "avatar_item",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/a27678e0-e592-4a10-bd64-a1cd33b9cd67.png"
+          }
         },
         "avatar-3": {
           "type": "avatar_item",
@@ -991,7 +995,9 @@
         },
         "avatar-5": {
           "type": "avatar_item",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/cfe0ee7e-afe7-425b-bdd2-b42d6345e5b6.png"
+          }
         },
         "avatar-6": {
           "type": "avatar_item",
