@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+.ces-ad-img{width:100%;height:auto;display:block;}
 .ces-ad{--teal:#1d5c5c;--teal-deep:#144444;--bone:#ede8e0;--warm:#f7f4ee;--bronze:#a8845c;--ink:#14161a;--soft:#474d54;--rule:#d9d2c6;--white:#fffdfa}
 .ces-ad *{box-sizing:border-box}
 .ces-ad{margin:0;background:var(--warm);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:19.5px;line-height:1.76;-webkit-font-smoothing:antialiased}
@@ -82,7 +83,7 @@
 
 <p>I sat with it for about a week before I worked out what had actually happened. Nobody in that room had assessed my energy. They had looked at my face and drawn a conclusion, and my face had been telling them something I did not authorise it to say.</p>
 
-<div class="ph"><mark>[IMAGE 1]</mark><br>Man, 50s, ordinary office or kitchen, ordinary overhead light.<br>Not groomed, not styled. He should look like a colleague, not a model.</div>
+{% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1500,1780', alt: 'CEBEAM Microneedle Patches', class: 'ces-ad-img' }}{% else %}<div class="ph"><mark>[IMAGE 1]</mark><br>Man, 50s, ordinary office or kitchen, ordinary overhead light.<br>Not groomed, not styled. He should look like a colleague, not a model.</div>{% endif %}
 
 <!-- 2. CURRENT SITUATION -->
 <h2>It arrives as other people's opinions about you</h2>
@@ -200,7 +201,7 @@
 
 <p>It also explains why you cannot shortcut this with something cheaper. Hyaluronic acid on the surface hydrates the surface. The delivery is the mechanism, not the ingredient list. A bottle containing all five of those, rubbed on top of the barrier, is the same black bottle I already owned.</p>
 
-<div class="ph"><mark>[IMAGE 2]</mark><br>Macro of cone texture + simple cross-section diagram:<br>cream stopping at the barrier vs cones starting below it.<br>Most important visual on the page. Keep it technical, not pretty.</div>
+{% if section.settings.image_2 != blank %}{{ section.settings.image_2 | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1500,1780', alt: 'CEBEAM Microneedle Patches', class: 'ces-ad-img' }}{% else %}<div class="ph"><mark>[IMAGE 2]</mark><br>Macro of cone texture + simple cross-section diagram:<br>cream stopping at the barrier vs cones starting below it.<br>Most important visual on the page. Keep it technical, not pretty.</div>{% endif %}
 
 <!-- 6. PROOF -->
 <h2>Eight weeks, written down as it happened</h2>
@@ -409,6 +410,20 @@
       "id": "legal_company",
       "label": "Company & legal line",
       "default": "[REPLACE — registered company name, business address, phone, support email. If this page is an advertisement it must be labelled as one, and any material connection between writer and brand disclosed clearly and conspicuously.]"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
     },
     {
       "type": "header",

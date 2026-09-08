@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+.ces-ad-img{width:100%;height:auto;display:block;}
 .ces-ad{--teal:#1d5c5c;--teal-deep:#144444;--bone:#ede8e0;--warm:#f7f4ee;--bronze:#a8845c;--ink:#14161a;--soft:#474d54;--rule:#d9d2c6;--white:#fffdfa}
 .ces-ad *{box-sizing:border-box}
 .ces-ad{margin:0;background:var(--warm);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:19.5px;line-height:1.78;-webkit-font-smoothing:antialiased}
@@ -81,7 +82,7 @@
 
 <p>The truth was that I had seen a recording of myself in a Tuesday meeting, under office overhead lighting, and I did not recognise the woman on the screen. She looked exhausted. She looked like she was being worn down by something. And she was fifty-two years old, which was the part that stopped me cold, because so was I.</p>
 
-<div class="ph"><mark>[IMAGE 1]</mark><br>Real, unretouched. A woman 50s at a laptop, ordinary lighting.<br>Not a beauty shot. It should look like a moment, not a campaign.</div>
+{% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1500,1780', alt: 'CEBEAM Microneedle Patches', class: 'ces-ad-img' }}{% else %}<div class="ph"><mark>[IMAGE 1]</mark><br>Real, unretouched. A woman 50s at a laptop, ordinary lighting.<br>Not a beauty shot. It should look like a moment, not a campaign.</div>{% endif %}
 
 <!-- ===== SECTION 2: CURRENT SITUATION / PAIN ===== -->
 <h2>It did not happen overnight. That is what made it so hard to fight.</h2>
@@ -201,7 +202,7 @@
 
 <p>And that is also why you cannot get the same result by buying a cheaper version of one ingredient. Hyaluronic acid on the surface hydrates the surface. The delivery is the mechanism — not the ingredient list. A jar containing all five of those actives, applied on top of the barrier, is the same jar I already had nine of.</p>
 
-<div class="ph"><mark>[IMAGE 2]</mark><br>Macro of the cone texture, plus a simple cross-section diagram:<br>cream stopping at the barrier vs cones starting below it.<br>This diagram is the single most important visual on the page.</div>
+{% if section.settings.image_2 != blank %}{{ section.settings.image_2 | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1500,1780', alt: 'CEBEAM Microneedle Patches', class: 'ces-ad-img' }}{% else %}<div class="ph"><mark>[IMAGE 2]</mark><br>Macro of the cone texture, plus a simple cross-section diagram:<br>cream stopping at the barrier vs cones starting below it.<br>This diagram is the single most important visual on the page.</div>{% endif %}
 
 <!-- ===== SECTION 6: PROOF STORY ===== -->
 <h2>What actually happened over eight weeks</h2>
@@ -412,6 +413,20 @@
       "id": "legal_company",
       "label": "Company & legal line",
       "default": "[REPLACE — registered company name, full business address, phone, support email. If this page is an advertisement, it must be labelled as one, and any material connection between the writer and the brand must be disclosed clearly and conspicuously.]"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
     },
     {
       "type": "header",

@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+.ces-ad-img{width:100%;height:auto;display:block;}
 .ces-ad{--teal:#1d5c5c;--teal-deep:#144444;--bone:#ede8e0;--warm:#f5f1ea;--bronze:#a8845c;--ink:#14161a;--soft:#474d54;--rule:#d8d1c5;--white:#fffdfa}
 .ces-ad *{box-sizing:border-box}
 .ces-ad{margin:0;background:var(--warm);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -59,7 +60,7 @@
 </section>
 
 <figure>
-  <div class="ph"><mark>[IMAGE 1]</mark><br>Macro: patch on a fingertip, cone texture visible.<br>Technical, not pretty. No spa lighting, no marble.</div>
+  {% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1500,1780', alt: 'CEBEAM Microneedle Patches', class: 'ces-ad-img' }}{% else %}<div class="ph"><mark>[IMAGE 1]</mark><br>Macro: patch on a fingertip, cone texture visible.<br>Technical, not pretty. No spa lighting, no marble.</div>{% endif %}
   <figcaption>The underside of a microdart patch — hundreds of cones, each shorter than a grain of salt.</figcaption>
 </figure>
 
@@ -245,6 +246,15 @@
       "id": "legal_company",
       "label": "Company & legal line",
       "default": "[REPLACE — registered company name, business address, phone, support email]"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
     },
     {
       "type": "header",
