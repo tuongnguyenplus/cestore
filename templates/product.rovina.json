@@ -718,7 +718,7 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "NIGHT 1",
+            "time_label": "WEEK 1",
             "heading": "The First Application",
             "bullets": "Initial smoothing of morning puffiness. \nActives release beneath the skin overnight\nThe \"Concealer Trap\" begins to fade as skin texture hydrates from within.\nWake up to a fresher, more hydrated look",
             "content": "",
@@ -729,7 +729,7 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEK 1",
+            "time_label": "WEEK 3",
             "heading": "Volume Restoration",
             "bullets": "Deep hollows and dark shadows begin to brighten as dermal density increases.\nPuffiness looks visibly reduced in the morning\nUnder-eye area feels smoother and plumper",
             "content": "",
@@ -740,7 +740,7 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEKS 3",
+            "time_label": "WEEKS 6",
             "heading": "Structural Lift",
             "bullets": "Fine lines and \"crepey\" texture are visibly minimized. The orbital area looks firmer and more resilient.\nDark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you’re not",
             "content": "",
