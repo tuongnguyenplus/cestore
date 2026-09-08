@@ -12,16 +12,95 @@
     "listicle": {
       "type": "ces-listicle",
       "blocks": {
-        "r1": { "type": "reason", "settings": { "image_position": "top", "heading": "Loose Skin Is Not Extra Skin", "body": "<p>When a surgeon says \"we need to cut that off,\" they treat it like leftover fabric. But your skin isn't extra — it's the same skin you've always had. It just lost the ability to snap back. The reason has nothing to do with how much skin you have, and everything to do with what's inside it.</p>" } },
-        "r2": { "type": "reason", "settings": { "image_position": "top", "heading": "There Are Rubber Bands Inside Your Skin — And Yours Are Broken", "body": "<p>Inside your skin is a protein called <strong>elastin</strong> that works like tiny rubber bands — it's what makes skin stretch and snap back. Collagen is the bricks; elastin is the rubber bands. When you lost weight fast (especially on Ozempic, Wegovy, or after bariatric surgery) those rubber bands snapped, so the skin just hangs.</p>" } },
-        "r3": { "type": "reason", "settings": { "image_position": "top", "heading": "Your Body Stopped Making Elastin in Your Mid-Twenties", "body": "<p>Unlike collagen, elastin production shuts down after your mid-twenties — your body makes no meaningful new elastin after that. So when those rubber bands broke, your body had no ability to replace them. Every month that passes, the fibers degrade further.</p>" } },
-        "r4": { "type": "reason", "settings": { "image_position": "top", "heading": "Everything You've Tried Targets the Wrong Layer", "body": "<p>Firming creams sit on the surface — elastin lives in the dermis, where no cream can reach. Collagen gives more bricks but no rubber bands. Compression only holds skin while you wear it. Surgery costs $12,000 and removes hanging skin but doesn't replace the elastin inside — which is why many tummy tucks sag again within years.</p>" } },
-        "r5": { "type": "reason", "settings": { "image_position": "top", "heading": "The One Thing That Works Is the One Nobody's Been Selling You", "body": "<p>The richest natural source of elastin is wild-caught marine fish. In gold-standard, double-blind, placebo-controlled trials published in the National Library of Medicine, women taking marine elastin peptides daily saw significant improvements in elasticity, hydration and firmness within 12 weeks — elastin production up to 250%, collagen up to 100%. The rubber bands started rebuilding, from the inside out.</p>" } },
-        "q1": { "type": "quote", "settings": { "quote": "<p>I was about to book a $15,000 tummy tuck. Three months on Elastin Peptide and I cancelled the consultation. Still have my money.</p>", "attribution": "— Verified customer" } },
-        "q2": { "type": "quote", "settings": { "quote": "<p>I took collagen for six months. Nothing. Twelve weeks on Elastin Peptide and my husband noticed before I did.</p>", "attribution": "— Verified customer" } },
-        "offer": { "type": "callout", "settings": { "heading": "Glowadin Elastin Peptide", "body": "<p>1,000mg of marine elastin peptides from wild-caught fish. 60 capsules — a full 30-day supply. The highest dose on the market, no filler. Backed by a 60-day money-back guarantee: if your skin doesn't feel tighter, you don't pay.</p>", "cta_label": "Try Elastin Peptide now", "cta_link": "/collections/all" } }
+        "r1": {
+          "type": "reason",
+          "settings": {
+            "heading": "Loose Skin Is Not Extra Skin",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>When a surgeon says \"we need to cut that off,\" they treat it like leftover fabric. But your skin isn't extra — it's the same skin you've always had. It just lost the ability to snap back. The reason has nothing to do with how much skin you have, and everything to do with what's inside it.</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r2": {
+          "type": "reason",
+          "settings": {
+            "heading": "There Are Rubber Bands Inside Your Skin — And Yours Are Broken",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Inside your skin is a protein called <strong>elastin</strong> that works like tiny rubber bands — it's what makes skin stretch and snap back. Collagen is the bricks; elastin is the rubber bands. When you lost weight fast (especially on Ozempic, Wegovy, or after bariatric surgery) those rubber bands snapped, so the skin just hangs.</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r3": {
+          "type": "reason",
+          "settings": {
+            "heading": "Your Body Stopped Making Elastin in Your Mid-Twenties",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Unlike collagen, elastin production shuts down after your mid-twenties — your body makes no meaningful new elastin after that. So when those rubber bands broke, your body had no ability to replace them. Every month that passes, the fibers degrade further.</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r4": {
+          "type": "reason",
+          "settings": {
+            "heading": "Everything You've Tried Targets the Wrong Layer",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Firming creams sit on the surface — elastin lives in the dermis, where no cream can reach. Collagen gives more bricks but no rubber bands. Compression only holds skin while you wear it. Surgery costs $12,000 and removes hanging skin but doesn't replace the elastin inside — which is why many tummy tucks sag again within years.</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r5": {
+          "type": "reason",
+          "settings": {
+            "heading": "The One Thing That Works Is the One Nobody's Been Selling You",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>The richest natural source of elastin is wild-caught marine fish. In gold-standard, double-blind, placebo-controlled trials published in the National Library of Medicine, women taking marine elastin peptides daily saw significant improvements in elasticity, hydration and firmness within 12 weeks — elastin production up to 250%, collagen up to 100%. The rubber bands started rebuilding, from the inside out.</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "q1": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I was about to book a $15,000 tummy tuck. Three months on Elastin Peptide and I cancelled the consultation. Still have my money.</p>",
+            "attribution": "— Verified customer"
+          }
+        },
+        "q2": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I took collagen for six months. Nothing. Twelve weeks on Elastin Peptide and my husband noticed before I did.</p>",
+            "attribution": "— Verified customer"
+          }
+        },
+        "offer": {
+          "type": "callout",
+          "settings": {
+            "heading": "Glowadin Elastin Peptide",
+            "body": "<p>1,000mg of marine elastin peptides from wild-caught fish. 60 capsules — a full 30-day supply. The highest dose on the market, no filler. Backed by a 60-day money-back guarantee: if your skin doesn't feel tighter, you don't pay.</p>",
+            "cta_label": "Try Elastin Peptide now",
+            "cta_link": "/collections/all"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4", "r5", "q1", "q2", "offer"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "q1",
+        "q2",
+        "offer"
+      ],
       "settings": {
         "eyebrow": "GLOWADIN · SKIN & AGING",
         "headline": "5 Reasons Your Skin Won't Bounce Back After Weight Loss (And The One Thing That Fixes It)",
@@ -36,7 +115,22 @@
         "padding_bottom": 24
       }
     },
-    "newsletter": { "type": "ces-newsletter-signup", "settings": { "color_scheme": "scheme-1", "padding_top": 24, "padding_bottom": 40 } }
+    "newsletter": {
+      "type": "ces-newsletter-signup",
+      "disabled": true,
+      "settings": {
+        "heading": "Join The Rovina Community",
+        "text": "<p>Research summaries, honest product updates and subscriber-only offers. One email a week, and you can leave whenever you like.</p>",
+        "footnote": "No spam. Unsubscribe in one click.",
+        "overlay_opacity": 50,
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    }
   },
-  "order": ["listicle", "newsletter"]
+  "order": [
+    "listicle",
+    "newsletter"
+  ]
 }
