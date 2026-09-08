@@ -330,7 +330,23 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+    {%- comment -%}
+      Hide the store header on advertorial / listicle landing pages so they read
+      like a native article instead of an ad. Matches page templates whose suffix
+      contains "reasons", "listicle" or "advertorial" (plus the omega3 advertorial).
+    {%- endcomment -%}
+    {%- liquid
+      assign ces_hide_header = false
+      if template.name == 'page'
+        assign ces_sfx = template.suffix | default: ''
+        if ces_sfx contains 'reasons' or ces_sfx contains 'listicle' or ces_sfx contains 'advertorial' or ces_sfx == 'recoverylabs-omega3'
+          assign ces_hide_header = true
+        endif
+      endif
+    -%}
+    {%- unless ces_hide_header -%}
+      {% sections 'header-group' %}
+    {%- endunless -%}
 
     <main
       id="MainContent"
