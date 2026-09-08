@@ -475,7 +475,7 @@
         "video_item_JceynK": {
           "type": "video_item",
           "settings": {
-            "video": "shopify://files/videos/a1.mp4",
+            "video": "shopify://files/videos/Scene 4.mp4",
             "video_url": "",
             "label": "Maya, 34"
           }
@@ -483,7 +483,7 @@
         "video-1": {
           "type": "video_item",
           "settings": {
-            "video": "shopify://files/videos/a1.mp4",
+            "video": "shopify://files/videos/scense 7.mp4",
             "video_url": "",
             "label": "Maya, 34"
           }
@@ -491,7 +491,7 @@
         "video-2": {
           "type": "video_item",
           "settings": {
-            "video": "shopify://files/videos/a1.mp4",
+            "video": "shopify://files/videos/cb1.mp4",
             "video_url": "",
             "label": "Daniel, 41"
           }
