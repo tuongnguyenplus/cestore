@@ -15,8 +15,9 @@
 -%}
 
 <ces-bundle
+  id="ces-bundle"
   class="ces-bundle quick-add-hidden"
-  style="--ces-bundle-accent: {{ ces_accent }}; --ces-bundle-tint: {{ ces_accent }}1a;"
+  style="--ces-bundle-accent: {{ ces_accent }}; --ces-bundle-tint: {{ ces_accent }}1a; scroll-margin-top: 9rem;"
   data-open-drawer="{{ block.settings.open_cart_drawer | default: true }}"
   {{ block.shopify_attributes }}
 >
