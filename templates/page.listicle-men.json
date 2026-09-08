@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-ad-listicle-men",
+      "settings": {
+        "cta_url": "/products/rovina"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

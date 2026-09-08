@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-ad-advertorial-women",
+      "settings": {
+        "cta_url": "/products/rovina"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

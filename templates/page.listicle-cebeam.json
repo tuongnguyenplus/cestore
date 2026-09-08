@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-ad-listicle-cebeam",
+      "settings": {
+        "cta_url": "/products/rovina"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-ad-listicle-women",
+      "settings": {
+        "cta_url": "/products/rovina"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
