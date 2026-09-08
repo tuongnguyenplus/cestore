@@ -605,6 +605,18 @@
   margin-top: 1rem;
 }
 
+/* Drawer CTAs must always stack: full-width checkout button, payment icons
+   centred beneath it. Dawn flips .cart__ctas to display:flex at >=750px (for
+   the main cart page's update+checkout row), which on the drawer wrongly puts
+   the checkout button and payment icons side by side on desktop. */
+#CartDrawer .cart__ctas {
+  display: block;
+}
+#CartDrawer .cart__checkout-button {
+  max-width: none;
+  width: 100%;
+}
+
 /* ============================================================
    Botanique reference — "Your bag" layout
    ============================================================ */
