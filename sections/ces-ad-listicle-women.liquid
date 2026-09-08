@@ -51,7 +51,7 @@ figure{margin:0 0 40px}
 </style>
 
 <div class="ces-ad ces-ad--listicle-women">
-<div class="bar">Reader offer · <mark>[XX]</mark>% off ends <mark>[date]</mark> · <mark>[XX]</mark>-day money-back guarantee</div>
+<div class="bar">Reader offer · <mark>{{ section.settings.discount_pct }}</mark>% off ends <mark>{{ section.settings.offer_end }}</mark> · <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee</div>
 
 <header class="mast"><div class="wrap">
   <span class="brand">CEBEAM</span>
@@ -61,9 +61,9 @@ figure{margin:0 0 40px}
 <main class="wrap">
 
 <section class="hero">
-  <h1>7 Reasons Women Over 45 Are Quietly Ditching Eye Cream For <em>Microneedle Patches</em></h1>
-  <p class="dek">If you've bought three "miracle" eye creams and still avoid the bathroom mirror at 7am, the problem was never the cream. It was the depth.</p>
-  <p class="byline">Skin &amp; Ageing Desk · Updated <mark>[month, year]</mark> · 6 min read</p>
+  <h1>{{ section.settings.hero_heading }}</h1>
+  <p class="dek">{{ section.settings.hero_sub }}</p>
+  <p class="byline">Skin &amp; Ageing Desk · Updated <mark>{{ section.settings.byline_date }}</mark> · 6 min read</p>
 </section>
 
 <figure>
@@ -103,7 +103,7 @@ figure{margin:0 0 40px}
   <h2>It costs less than one consultation — let alone the procedure</h2>
   <p>At some point the under-eye question stops being about creams and starts being about clinics. Tear-trough filler in the US typically runs <strong>$600–$1,200 a session</strong>, and it is not permanent. Lower blepharoplasty typically runs <strong>$3,000–$6,000</strong>, and it is.</p>
   <p>Both come with something harder to price: the under-eye is the trickiest area on the face to inject well, and surgery means real recovery time, real risk, and a result you cannot undo if you dislike it. Which is why so many women sit on the decision for years, spending money on creams in the meantime precisely because they are afraid of the alternative.</p>
-  <p>Cebeam is <mark>$XX</mark>. That is less than one consultation fee at most clinics.</p>
+  <p>Cebeam is <mark>{{ section.settings.price }}</mark>. That is less than one consultation fee at most clinics.</p>
   <p>It is not a replacement for either procedure, and we say so plainly further down this page. But for the very large group of women whose under-eye problem is skin quality rather than structure, it is the thing worth trying <em>before</em> you book anything.</p>
   <a class="mini" href="#offer">See today's reader price →</a>
 </section>
@@ -143,7 +143,7 @@ figure{margin:0 0 40px}
 <!-- REASON 7 -->
 <section class="reason">
   <p class="num">REASON 07</p>
-  <h2>You get <mark>[XX]</mark> days to judge it — with the box already open</h2>
+  <h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it — with the box already open</h2>
   <p>Here is the honest timeline, because expectation is where most of these products lose people. The morning after night one, the area looks smoother. That is hydration — real, and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is simply how long skin takes to turn over. Nothing shortens it.</p>
   <p>Which means the only fair way to sell this is to give you long enough to actually find out.</p>
   <p>Use it for eight weeks. If your under-eye does not look different to you — not to us, to you — email us and we will refund you. You do not ship anything back. We are not going to charge you postage to return a half-used box, and we are not going to ask you to prove it did not work.</p>
@@ -154,13 +154,13 @@ figure{margin:0 0 40px}
 
 <section class="close" id="offer">
   <div class="wrap">
-    <h2>Try it for eight weeks. Decide after.</h2>
+    <h2>{{ section.settings.offer_heading }}</h2>
     <p>You have already spent more than this on products that never made it past the surface — with no deadline and no refund attached to any of them.</p>
     <p>This one has both.</p>
-    <a class="btn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability — <mark>[XX]</mark>% off today →</a>
+    <a class="btn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability — <mark>{{ section.settings.discount_pct }}</mark>% off today →</a>
     <p class="stack">
-      <mark>[XX]</mark>-day money-back guarantee · Keep the box<br>
-      Ships from <mark>[location]</mark> · Tracked delivery<br>
+      <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee · Keep the box<br>
+      Ships from <mark>{{ section.settings.ships_from }}</mark> · Tracked delivery<br>
       <mark>[Real stock or offer-deadline statement — see note below]</mark>
     </p>
   </div>
@@ -170,7 +170,7 @@ figure{margin:0 0 40px}
   <p><strong>Scarcity note for your team — delete before publishing.</strong> If you run a stock or deadline line, it must be true and it must have a mechanical reason behind it (a real production batch size, a real restock lead time, a real promotional end date). A countdown that resets on refresh destroys trust with this age group faster than it converts them, and invites regulatory attention.</p>
   <p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug, is not intended to diagnose, treat, cure or prevent any disease, and has not been evaluated by the FDA. Do not use on the eyelid itself, on broken skin, or if you have an active eye or skin condition in the area.</p>
   <p>Individual results vary, and some people will see no change. Nothing on this page is medical advice. Procedure cost ranges are typical US figures and vary widely by city and practitioner. Consult a qualified healthcare professional if you are pregnant or nursing, using prescription topicals, or considering a cosmetic procedure. Not for under 18s.</p>
-  <p><mark>[REPLACE — registered company name, full business address, phone, support email]</mark></p>
+  <p><mark>{{ section.settings.legal_company }}</mark></p>
   <p style="margin-top:14px">© 2026 Cebeam</p>
 </div></div></footer>
 </div>
@@ -181,6 +181,90 @@ figure{margin:0 0 40px}
   "tag": "section",
   "class": "ces-ad-section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Offer bar & pricing"
+    },
+    {
+      "type": "paragraph",
+      "content": "These fill the highlighted spots in the top bar, byline, price and offer note."
+    },
+    {
+      "type": "text",
+      "id": "discount_pct",
+      "label": "Discount %",
+      "default": "[XX]"
+    },
+    {
+      "type": "text",
+      "id": "offer_end",
+      "label": "Offer end (date)",
+      "default": "[date]"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_days",
+      "label": "Guarantee (days)",
+      "default": "[XX]"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$XX"
+    },
+    {
+      "type": "text",
+      "id": "byline_date",
+      "label": "Byline date",
+      "default": "[month, year]"
+    },
+    {
+      "type": "text",
+      "id": "ships_from",
+      "label": "Ships from (location)",
+      "default": "[location]"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "7 Reasons Women Over 45 Are Quietly Ditching Eye Cream For <em>Microneedle Patches</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_sub",
+      "label": "Hero sub-text",
+      "default": "If you've bought three \"miracle\" eye creams and still avoid the bathroom mirror at 7am, the problem was never the cream. It was the depth."
+    },
+    {
+      "type": "header",
+      "content": "Closing offer"
+    },
+    {
+      "type": "text",
+      "id": "offer_heading",
+      "label": "Closing heading",
+      "default": "Try it for eight weeks. Decide after."
+    },
+    {
+      "type": "header",
+      "content": "Footer / legal"
+    },
+    {
+      "type": "textarea",
+      "id": "legal_company",
+      "label": "Company & legal line",
+      "default": "[REPLACE — registered company name, full business address, phone, support email]"
+    },
+    {
+      "type": "header",
+      "content": "Call-to-action link"
+    },
     {
       "type": "paragraph",
       "content": "Long-form advertorial page. Edit the copy directly in the section code; set the CTA link below."

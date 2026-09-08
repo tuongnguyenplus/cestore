@@ -52,7 +52,7 @@
 </style>
 
 <div class="ces-ad ces-ad--advertorial-women">
-<div class="bar">Reader offer · <mark>[XX]</mark>-day money-back guarantee</div>
+<div class="bar">Reader offer · <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee</div>
 
 <header class="mast"><div class="wrap">
   <span class="brand">CEBEAM</span>
@@ -63,8 +63,8 @@
 
 <!-- ===== SECTION 1: HOOK ===== -->
 <section class="hero">
-  <h1>The Real Reason Eye Cream Never Fixed Your Under-Eyes <em>(It Isn't The Cream)</em></h1>
-  <p class="byline">Skin &amp; Ageing Desk · <mark>[month, year]</mark> · 9 min read</p>
+  <h1>{{ section.settings.hero_heading }}</h1>
+  <p class="byline">Skin &amp; Ageing Desk · <mark>{{ section.settings.byline_date }}</mark> · 9 min read</p>
 </section>
 
 <div class="note">
@@ -267,7 +267,7 @@
 </div>
 
 <div class="faq">
-  <p>"<mark>$XX</mark> seems low for something that works."</p>
+  <p>"<mark>{{ section.settings.price }}</mark> seems low for something that works."</p>
   <p>I thought so too, and I asked. The honest answer is that the cost sits in the manufacturing of the patch itself, and there is no clinic overhead, no practitioner time, and no consultation fee attached to it. You are buying a product, not an appointment.</p>
 </div>
 
@@ -283,7 +283,7 @@
   <li><strong>Four years</strong> of twenty-minute mornings spent hiding</li>
 </ul>
 
-<p>Against that, Cebeam is <mark>$XX</mark> — <mark>[X pairs, roughly X weeks at two nights a week]</mark>.</p>
+<p>Against that, Cebeam is <mark>{{ section.settings.price }}</mark> — <mark>[X pairs, roughly X weeks at two nights a week]</mark>.</p>
 
 <p>It is less than one clinic consultation fee. It is less than the single jar of eye cream that a woman at a counter promised me would be different.</p>
 
@@ -292,7 +292,7 @@
 <!-- ===== SECTION 9: GUARANTEE + CLOSE ===== -->
 <h2>The part that made it an easy decision</h2>
 
-<p><mark>[XX]</mark> days, and you can have used the box.</p>
+<p><mark>{{ section.settings.guarantee_days }}</mark> days, and you can have used the box.</p>
 
 <p>That mattered more to me than any claim on the page, because the honest timeline for this is six to eight weeks — that is simply how long skin takes to turn over, and no product shortens it. A thirty-day return window on something that takes eight weeks to judge is not a guarantee, it is a technicality.</p>
 
@@ -304,7 +304,7 @@
 
 <section class="cross" id="offer">
   <div class="wrap">
-    <h2>You are at a fork, and one road is disguised as no decision at all</h2>
+    <h2>{{ section.settings.offer_heading }}</h2>
 
     <div class="opt">
       <b>Option one</b>
@@ -318,7 +318,7 @@
 
     <a class="cta" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability →</a>
     <p style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,241,234,.72);line-height:2">
-      <mark>[XX]</mark>-day money-back guarantee · Keep the box<br>Ships from <mark>[location]</mark> · Tracked delivery
+      <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee · Keep the box<br>Ships from <mark>{{ section.settings.ships_from }}</mark> · Tracked delivery
     </p>
 
     <div class="ps">
@@ -340,7 +340,7 @@
   </p>
   <p style="margin-top:18px"><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug, is not intended to diagnose, treat, cure or prevent any disease, and has not been evaluated by the FDA. Do not use on the eyelid itself, on broken skin, or where there is an active eye or skin condition.</p>
   <p>Individual results vary and some people will see no change. Nothing on this page is medical advice. Procedure costs quoted are the writer's own quotes and vary widely by city and practitioner. Consult a qualified healthcare professional if you are pregnant or nursing, using prescription topicals, or considering a cosmetic procedure. Not for under 18s.</p>
-  <p><mark>[REPLACE — registered company name, full business address, phone, support email. If this page is an advertisement, it must be labelled as one, and any material connection between the writer and the brand must be disclosed clearly and conspicuously.]</mark></p>
+  <p><mark>{{ section.settings.legal_company }}</mark></p>
   <p style="margin-top:14px">© 2026 Cebeam</p>
 </div></div></footer>
 </div>
@@ -351,6 +351,72 @@
   "tag": "section",
   "class": "ces-ad-section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Offer bar & pricing"
+    },
+    {
+      "type": "paragraph",
+      "content": "These fill the highlighted spots in the top bar, byline, price and offer note."
+    },
+    {
+      "type": "text",
+      "id": "guarantee_days",
+      "label": "Guarantee (days)",
+      "default": "[XX]"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$XX"
+    },
+    {
+      "type": "text",
+      "id": "byline_date",
+      "label": "Byline date",
+      "default": "[month, year]"
+    },
+    {
+      "type": "text",
+      "id": "ships_from",
+      "label": "Ships from (location)",
+      "default": "[location]"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "The Real Reason Eye Cream Never Fixed Your Under-Eyes <em>(It Isn't The Cream)</em>"
+    },
+    {
+      "type": "header",
+      "content": "Closing offer"
+    },
+    {
+      "type": "text",
+      "id": "offer_heading",
+      "label": "Closing heading",
+      "default": "You are at a fork, and one road is disguised as no decision at all"
+    },
+    {
+      "type": "header",
+      "content": "Footer / legal"
+    },
+    {
+      "type": "textarea",
+      "id": "legal_company",
+      "label": "Company & legal line",
+      "default": "[REPLACE — registered company name, full business address, phone, support email. If this page is an advertisement, it must be labelled as one, and any material connection between the writer and the brand must be disclosed clearly and conspicuously.]"
+    },
+    {
+      "type": "header",
+      "content": "Call-to-action link"
+    },
     {
       "type": "paragraph",
       "content": "Long-form advertorial page. Edit the copy directly in the section code; set the CTA link below."

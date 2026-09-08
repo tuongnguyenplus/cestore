@@ -43,7 +43,7 @@
 </style>
 
 <div class="ces-ad ces-ad--listicle-men">
-<div class="bar">Reader offer · <mark>[XX]</mark>% off ends <mark>[date]</mark> · <mark>[XX]</mark>-day money-back guarantee</div>
+<div class="bar">Reader offer · <mark>{{ section.settings.discount_pct }}</mark>% off ends <mark>{{ section.settings.offer_end }}</mark> · <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee</div>
 
 <header class="mast"><div class="wrap">
   <span class="brand">CEBEAM</span>
@@ -53,9 +53,9 @@
 <main class="wrap">
 
 <section class="hero">
-  <h1>7 Reasons Men Over 45 Are Finally Dealing With <em>The Bags Under Their Eyes</em></h1>
-  <p class="dek">You've been told to sleep more. You slept more. Here's what's actually going on — and the option that sits between a $45 bottle that does nothing and surgery.</p>
-  <p class="byline">Health &amp; Performance Desk · Updated <mark>[month, year]</mark> · 6 min read</p>
+  <h1>{{ section.settings.hero_heading }}</h1>
+  <p class="dek">{{ section.settings.hero_sub }}</p>
+  <p class="byline">Health &amp; Performance Desk · Updated <mark>{{ section.settings.byline_date }}</mark> · 6 min read</p>
 </section>
 
 <figure>
@@ -92,7 +92,7 @@
   <p>This is the real reason so many men do nothing for years. Women with this problem can at least cover it — there is an entire industry for that. For men there are two options and a canyon between them.</p>
   <p>On one side, an eye cream in a black bottle that costs <strong>$45</strong> and does approximately nothing, because a cream cannot get past the skin's barrier layer in any meaningful amount. On the other, lower eyelid surgery at <strong>$3,000–$6,000</strong>, general anaesthetic, and <strong>seven to ten days</strong> where you cannot turn up to work.</p>
   <div class="pull">"I'm not taking two weeks off and coming back with a different face. There's no version of that conversation I want to have."</div>
-  <p>Cebeam is <mark>$XX</mark>, takes fifteen seconds, and costs you no days off. It is the middle option that did not exist five years ago.</p>
+  <p>Cebeam is <mark>{{ section.settings.price }}</mark>, takes fifteen seconds, and costs you no days off. It is the middle option that did not exist five years ago.</p>
   <a class="mini" href="#offer">See today's reader price →</a>
 </section>
 
@@ -128,7 +128,7 @@
 <!-- 7 -->
 <section class="reason">
   <p class="num">REASON 07</p>
-  <h2>You get <mark>[XX]</mark> days to judge it, with the box already open</h2>
+  <h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it, with the box already open</h2>
   <p>The honest timeline: the morning after night one the area looks flatter — that is hydration, real and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is how long skin takes to turn over. Nothing shortens that, and any product claiming otherwise is lying to you.</p>
   <p>Which is why a thirty-day return window on something like this is a technicality, not a guarantee.</p>
   <p>Use it for eight weeks. If nothing has changed, email them and get your money back. Nothing goes back in the post, and there is no form asking you to prove it did not work.</p>
@@ -139,13 +139,13 @@
 
 <section class="close" id="offer">
   <div class="wrap">
-    <h2>Eight weeks. Two nights a week. Then decide.</h2>
+    <h2>{{ section.settings.offer_heading }}</h2>
     <p>You have already spent more than this on a bottle that never got past the surface, and on a roller that is still in the drawer.</p>
     <p>Neither of them came with a deadline or a refund.</p>
-    <a class="btn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability — <mark>[XX]</mark>% off today →</a>
+    <a class="btn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability — <mark>{{ section.settings.discount_pct }}</mark>% off today →</a>
     <p class="stack">
-      <mark>[XX]</mark>-day money-back guarantee · Keep the box<br>
-      Ships from <mark>[location]</mark> · Discreet packaging · Tracked<br>
+      <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee · Keep the box<br>
+      Ships from <mark>{{ section.settings.ships_from }}</mark> · Discreet packaging · Tracked<br>
       <mark>[Real stock or deadline statement — only if you have a genuine reason]</mark>
     </p>
   </div>
@@ -155,7 +155,7 @@
   <p><strong>Scarcity note — delete before publishing.</strong> Only run a stock or deadline line if it is true and has a mechanical reason behind it. A resetting countdown reads as dishonest to this audience and converts worse than nothing.</p>
   <p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug, is not intended to diagnose, treat, cure or prevent any disease, and has not been evaluated by the FDA. Do not use on the eyelid itself, on broken skin, or where there is an active eye or skin condition.</p>
   <p>Individual results vary and some people will see no change. Nothing on this page is medical advice. Procedure cost ranges are typical US figures and vary by city and practitioner. Consult a qualified healthcare professional if you are using prescription topicals or considering a cosmetic procedure. Not for under 18s.</p>
-  <p><mark>[REPLACE — registered company name, business address, phone, support email]</mark></p>
+  <p><mark>{{ section.settings.legal_company }}</mark></p>
   <p style="margin-top:14px">© 2026 Cebeam</p>
 </div></div></footer>
 </div>
@@ -166,6 +166,90 @@
   "tag": "section",
   "class": "ces-ad-section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Offer bar & pricing"
+    },
+    {
+      "type": "paragraph",
+      "content": "These fill the highlighted spots in the top bar, byline, price and offer note."
+    },
+    {
+      "type": "text",
+      "id": "discount_pct",
+      "label": "Discount %",
+      "default": "[XX]"
+    },
+    {
+      "type": "text",
+      "id": "offer_end",
+      "label": "Offer end (date)",
+      "default": "[date]"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_days",
+      "label": "Guarantee (days)",
+      "default": "[XX]"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$XX"
+    },
+    {
+      "type": "text",
+      "id": "byline_date",
+      "label": "Byline date",
+      "default": "[month, year]"
+    },
+    {
+      "type": "text",
+      "id": "ships_from",
+      "label": "Ships from (location)",
+      "default": "[location]"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "7 Reasons Men Over 45 Are Finally Dealing With <em>The Bags Under Their Eyes</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_sub",
+      "label": "Hero sub-text",
+      "default": "You've been told to sleep more. You slept more. Here's what's actually going on — and the option that sits between a $45 bottle that does nothing and surgery."
+    },
+    {
+      "type": "header",
+      "content": "Closing offer"
+    },
+    {
+      "type": "text",
+      "id": "offer_heading",
+      "label": "Closing heading",
+      "default": "Eight weeks. Two nights a week. Then decide."
+    },
+    {
+      "type": "header",
+      "content": "Footer / legal"
+    },
+    {
+      "type": "textarea",
+      "id": "legal_company",
+      "label": "Company & legal line",
+      "default": "[REPLACE — registered company name, business address, phone, support email]"
+    },
+    {
+      "type": "header",
+      "content": "Call-to-action link"
+    },
     {
       "type": "paragraph",
       "content": "Long-form advertorial page. Edit the copy directly in the section code; set the CTA link below."
