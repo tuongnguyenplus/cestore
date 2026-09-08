@@ -1,20 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "listicle": {
       "type": "ces-listicle",
       "blocks": {
-        "r1": { "type": "reason", "settings": { "image_position": "top" } },
-        "r2": { "type": "reason", "settings": { "image_position": "top" } },
-        "q1": { "type": "quote", "settings": {} },
-        "r3": { "type": "reason", "settings": { "image_position": "top" } },
-        "r4": { "type": "reason", "settings": { "image_position": "top" } },
-        "c1": { "type": "callout", "settings": {} },
-        "r5": { "type": "reason", "settings": { "image_position": "top" } },
-        "r6": { "type": "reason", "settings": { "image_position": "top" } },
-        "r7": { "type": "reason", "settings": { "image_position": "top" } }
+        "r1": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r2": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "q1": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I did not expect to feel a difference this quickly. I am telling all my friends.</p>",
+            "attribution": "— Sarah M., verified buyer"
+          }
+        },
+        "r3": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r4": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "c1": {
+          "type": "callout",
+          "settings": {
+            "heading": "Ready to try it risk-free?",
+            "body": "<p>Backed by a 90-day money-back guarantee. If you do not love it, you do not pay.</p>",
+            "cta_label": "Get yours today",
+            "cta_link": ""
+          }
+        },
+        "r5": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r6": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        },
+        "r7": {
+          "type": "reason",
+          "settings": {
+            "heading": "It targets the root cause, not just the symptom",
+            "image_position": "top",
+            "caption": "",
+            "body": "<p>Explain the reason here in a sentence or two. Keep it conversational and specific — the more concrete the benefit, the more believable it reads.*</p>",
+            "cta_label": "",
+            "cta_link": ""
+          }
+        }
       },
-      "block_order": ["r1", "r2", "q1", "r3", "r4", "c1", "r5", "r6", "r7"],
+      "block_order": [
+        "r1",
+        "r2",
+        "q1",
+        "r3",
+        "r4",
+        "c1",
+        "r5",
+        "r6",
+        "r7"
+      ],
       "settings": {
+        "eyebrow": "HEALTH & WELLNESS",
+        "headline": "7 Reasons Women Over 40 Are Switching to This Daily Softgel",
+        "highlight_words": "",
+        "accent_color": "#1d5c5c",
+        "byline": "By The Editorial Team",
+        "date_text": "Updated this week",
+        "intro": "<p>If you have noticed the little changes that come with getting older, you are not alone — and there is a simple daily habit thousands have added to their routine. Here is why.</p>",
+        "show_numbers": true,
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 24
@@ -23,6 +134,14 @@
     "cta": {
       "type": "ces-bullet-cta",
       "settings": {
+        "image_position": "start",
+        "heading": "What sets Rovina apart",
+        "bullets": "<ul><li>12mg of natural astaxanthin — the dose used in published trials</li><li>Grown from microalgae, never synthesised</li><li>Carried in cold-pressed oil so your body can actually absorb it</li><li>Third-party tested for potency and purity, every batch</li></ul>",
+        "button_label": "Get Rovina Sunglow",
+        "button_link": "#ces-app-price-slot",
+        "button_footnote": "90-day money back guarantee",
+        "show_frame": true,
+        "color_scheme": "",
         "padding_top": 24,
         "padding_bottom": 40
       }
@@ -30,10 +149,19 @@
     "faq": {
       "type": "ces-faq-accordion",
       "settings": {
+        "heading": "Frequently asked questions",
+        "subheading": "",
+        "exclusive": true,
+        "footer_text": "<p>Still have a question? Email us at support@example.com and a real person will get back to you within one business day.</p>",
+        "color_scheme": "",
         "padding_top": 24,
         "padding_bottom": 40
       }
     }
   },
-  "order": ["listicle", "cta", "faq"]
+  "order": [
+    "listicle",
+    "cta",
+    "faq"
+  ]
 }
