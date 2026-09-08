@@ -358,7 +358,9 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {%- unless ces_hide_header -%}
+      {% sections 'footer-group' %}
+    {%- endunless -%}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
