@@ -1,0 +1,24 @@
+{%- comment -%}
+  Reusable advertorial/listicle disclaimer footer.
+  Params:
+    show      - boolean, render only when true
+    text      - richtext body (FDA / informational / GDPR / advertisement notice)
+    copyright - plain-text copyright line
+{%- endcomment -%}
+{%- if show -%}
+<section class="ces-ad-disclaimer">
+  <style>
+    .ces-ad-disclaimer{background:#1c1c1c;color:#b9b9b9;padding:40px 20px 0;text-align:center;}
+    .ces-ad-disclaimer .dis-wrap{max-width:1180px;margin:0 auto;padding-bottom:26px;}
+    .ces-ad-disclaimer .dis-title{color:#fff;font-size:16px;font-weight:700;margin:0 0 16px;letter-spacing:.01em;}
+    .ces-ad-disclaimer .dis-body p{font-size:12px;line-height:1.7;margin:0 0 12px;color:#b9b9b9;}
+    .ces-ad-disclaimer .dis-body p:last-child{margin-bottom:0;}
+    .ces-ad-disclaimer .dis-copy{border-top:1px solid rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:15px;padding:20px;margin:0;}
+  </style>
+  <div class="dis-wrap">
+    <h3 class="dis-title">Disclaimer</h3>
+    <div class="dis-body">{{ text }}</div>
+  </div>
+  {%- if copyright != blank -%}<p class="dis-copy">{{ copyright }}</p>{%- endif -%}
+</section>
+{%- endif -%}

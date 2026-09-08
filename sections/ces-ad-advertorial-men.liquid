@@ -341,6 +341,7 @@
   <p><mark>{{ section.settings.legal_company }}</mark></p>
   <p style="margin-top:14px">© 2026 Cebeam</p>
 </div></div></footer>
+{% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
 </div>
 
 {% schema %}
@@ -424,6 +425,28 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "Image 2"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_disclaimer",
+      "label": "Show disclaimer footer",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text",
+      "default": "<p>These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p><p>The information provided on this site is for informational purposes only and is not intended as a substitute for advice from your dermatologist or other health care professional or any information contained on or in any product label or packaging. You should not use the information on this website or the product described for diagnosis or treatment of any health problem or as a substitute for any prescription of any medication or other treatment. You should consult with a health care professional before starting any skin or facial regiment or if you have or suspect you might have a skin problem. This information and product is not recommended for women who are pregnant or children.</p><p>Privacy &amp; GDPR Disclosure: We value your privacy and are committed to transparency. While we may collect personal information for marketing purposes, we will always inform you of the reasons behind such collection. Additionally, please be aware that this website uses cookies for marketing purposes.</p><p>THIS IS AN ADVERTISEMENT AND NOT AN ACTUAL NEWS ARTICLE, BLOG, OR CONSUMER PROTECTION UPDATE.</p>"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright line",
+      "default": "Copyright © 2025 CUMA Skincare. All Rights Reserved."
     },
     {
       "type": "header",
