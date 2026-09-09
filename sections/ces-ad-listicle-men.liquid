@@ -1,167 +1,182 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-.ces-ad-img{width:100%;height:auto;display:block;}
-.ces-ad{--teal:#1d5c5c;--teal-deep:#144444;--bone:#ede8e0;--warm:#f5f1ea;--bronze:#a8845c;--ink:#14161a;--soft:#474d54;--rule:#d8d1c5;--white:#fffdfa}
-.ces-ad *{box-sizing:border-box}
-.ces-ad{margin:0;background:var(--warm);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
-.ces-ad .wrap{max-width:760px;margin:0 auto;padding:0 22px}
-.ces-ad h1,.ces-ad h2,.ces-ad h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.14;letter-spacing:-.015em}
-.ces-ad mark{background:#f7e4c4;padding:0 3px}
-.ces-ad .bar{background:var(--teal);color:var(--warm);text-align:center;padding:11px 18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase}
-.ces-ad .mast{background:var(--white);border-bottom:1px solid var(--rule);padding:15px 0}
-.ces-ad .mast .wrap{display:flex;justify-content:space-between;align-items:center}
-.ces-ad .brand{font-family:"Fraunces",serif;font-size:20px;letter-spacing:.2em;color:var(--teal)}
-.ces-ad .kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
-.ces-ad .hero{padding:52px 0 20px;text-align:center}
-.ces-ad h1{font-size:clamp(31px,5.4vw,46px);margin:0 0 20px}
-.ces-ad h1 em{font-style:italic;color:var(--teal)}
-.ces-ad .dek{font-size:20px;color:var(--soft);margin:0 auto 26px;max-width:56ch}
-.ces-ad .byline{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0;margin:0 0 34px}
-.ces-ad figure{margin:0 0 40px}
-.ces-ad .ph{background:var(--white);border:1px solid var(--rule);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--soft);font-family:"IBM Plex Mono",monospace;font-size:12.5px;padding:24px;line-height:1.8}
-.ces-ad figcaption{font-size:14.5px;color:var(--soft);padding:9px 2px 0;font-style:italic}
-.ces-ad .reason{border-top:1px solid var(--rule);padding:42px 0 6px}
-.ces-ad .num{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;color:var(--bronze);margin:0 0 12px}
-.ces-ad .reason h2{font-size:clamp(24px,3.6vw,32px);margin:0 0 18px}
-.ces-ad .reason p{margin:0 0 17px}
-.ces-ad .reason p:last-child{margin-bottom:0}
-.ces-ad .pull{border-left:3px solid var(--bronze);padding:4px 0 4px 20px;margin:22px 0;font-style:italic;color:var(--soft);font-size:18px}
-.ces-ad .mini{display:block;background:var(--teal);color:var(--warm);text-align:center;text-decoration:none;padding:17px 22px;font-weight:600;font-size:18px;margin:30px 0 6px;border:2px solid var(--teal)}
-.ces-ad .mini:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
-.ces-ad .mini:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}
-.ces-ad .close{background:var(--teal);color:var(--warm);margin-top:52px;padding:60px 0}
-.ces-ad .close h2{color:var(--warm);font-size:clamp(28px,4.4vw,38px);margin:0 0 18px}
-.ces-ad .close p{color:rgba(245,241,234,.88);margin:0 0 14px}
-.ces-ad .close .btn{display:block;background:var(--warm);color:var(--teal);text-align:center;text-decoration:none;padding:20px;font-weight:700;font-size:20px;margin:30px 0 14px;border:2px solid var(--warm)}
-.ces-ad .close .btn:hover{background:transparent;color:var(--warm)}
-.ces-ad .close .btn:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}
-.ces-ad .stack{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.07em;text-transform:uppercase;text-align:center;color:rgba(245,241,234,.72);line-height:2}
-.ces-ad footer{background:var(--bone);padding:38px 0;font-size:13.5px;color:var(--soft);line-height:1.62}
-.ces-ad .fine{border-top:1px solid var(--rule);padding-top:20px}
-.ces-ad .note{background:#fdf6e6;border:1px dashed var(--bronze);padding:16px 18px;margin:22px 0;font-size:15px;color:#6b5322;line-height:1.6}
+.ces-lst{--teal:#1d5c5c;--teal-d:#164747;--ink:#18211f;--muted:#5d6b67;--line:#e7e1d8;--paper:#fff;--sand:#f6f2ec;--gold:#d99b2b;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+.ces-lst *{box-sizing:border-box}
+.ces-lst img{max-width:100%;display:block}
+.ces-lst mark{background:transparent;color:inherit;padding:0}
+.ces-lst .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+.ces-lst .bar{background:var(--teal);color:#eaf3f1;text-align:center;font-size:12.5px;letter-spacing:.02em;padding:9px 14px;font-weight:600}
+.ces-lst .bar b{color:#fff}
+.ces-lst .mast{border-bottom:1px solid var(--line);text-align:center;padding:16px 0 14px}
+.ces-lst .mast .brand{font-family:var(--serif);font-size:24px;letter-spacing:.42em;font-weight:600;padding-left:.42em}
+.ces-lst .mast .kicker{display:block;margin-top:5px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.ces-lst .hero{text-align:center;max-width:800px;margin:0 auto;padding:40px 22px 14px}
+.ces-lst .stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+.ces-lst .rate{font-size:12.5px;color:var(--muted);margin:6px 0 16px;letter-spacing:.02em}
+.ces-lst h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.14;margin:6px 0 16px}
+.ces-lst h1 em{font-style:italic;color:var(--teal)}
+.ces-lst .dek{font-size:19px;color:#39453f;max-width:640px;margin:0 auto 22px}
+.ces-lst .btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;letter-spacing:.04em;padding:16px 34px;border-radius:999px;font-size:15px;box-shadow:0 10px 24px rgba(29,92,92,.24);transition:.2s}
+.ces-lst .btn:hover{background:var(--teal-d)}
+.ces-lst .btn.big{padding:18px 42px;font-size:16px}
+.ces-lst .reasons{padding:26px 0 8px}
+.ces-lst .reason{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:34px 0;border-top:1px solid var(--line)}
+.ces-lst .reason:first-child{border-top:none}
+.ces-lst .reason .media{order:2}
+.ces-lst .reason:nth-child(even) .txt{order:2}
+.ces-lst .reason:nth-child(even) .media{order:1}
+.ces-lst .num{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--teal);background:#eaf1ef;padding:5px 11px;border-radius:999px;margin:0 0 12px}
+.ces-lst .reason h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px}
+.ces-lst .reason p{margin:0 0 12px;color:#2c3733}
+.ces-lst .pull{border-left:3px solid var(--teal);background:var(--sand);padding:12px 16px;border-radius:0 10px 10px 0;font-family:var(--serif);font-style:italic;font-size:18px;color:#243330;margin:14px 0}
+.ces-lst .media .card{background:linear-gradient(160deg,#eef3f1,#dfe8e5);border-radius:16px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;text-align:center;color:#6f7f7b;font-size:13px;box-shadow:0 18px 40px rgba(22,71,71,.12);border:1px solid #e3ece9;padding:20px}
+.ces-lst .media img{border-radius:16px;box-shadow:0 18px 40px rgba(22,71,71,.12);width:100%}
+.ces-lst .mini{display:inline-block;color:var(--teal);font-weight:700;text-decoration:none;border-bottom:2px solid #cfe0dc;padding-bottom:2px}
+.ces-lst .offer{background:var(--teal);color:#eaf3f1;text-align:center;padding:52px 22px;margin-top:20px}
+.ces-lst .offer h2{font-family:var(--serif);color:#fff;font-size:clamp(26px,4vw,36px);font-weight:600;margin:0 0 8px}
+.ces-lst .offer .sub{color:#cfe3df;max-width:560px;margin:0 auto 22px}
+.ces-lst .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 26px;max-width:560px;margin:0 auto 26px;text-align:left;padding:0}
+.ces-lst .checks li{list-style:none;position:relative;padding-left:30px;color:#eaf3f1;font-size:15px}
+.ces-lst .checks li::before{content:"\2713";position:absolute;left:0;top:-1px;width:20px;height:20px;background:#fff;color:var(--teal);border-radius:50%;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.ces-lst .offer .btn{background:#fff;color:var(--teal)}
+.ces-lst .offer .btn:hover{background:#f0efe9}
+.ces-lst .offer .rate2{margin-top:16px;color:#cfe3df;font-size:13px}
+.ces-lst .offer .rate2 .stars{color:#ffd479}
+.ces-lst .reviews{padding:52px 22px 40px;background:var(--sand)}
+.ces-lst .reviews h3{font-family:var(--serif);text-align:center;font-size:28px;font-weight:600;margin:0 0 6px}
+.ces-lst .reviews .subh{text-align:center;color:var(--muted);font-size:13px;margin:0 0 28px}
+.ces-lst .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto}
+.ces-lst .rev{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.ces-lst .rev .stars{font-size:14px}
+.ces-lst .rev p{font-size:14.5px;color:#33403c;margin:10px 0 14px}
+.ces-lst .rev .who{font-size:13px;font-weight:700}
+.ces-lst .rev .vf{font-size:11.5px;color:var(--teal);font-weight:700}
+.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;padding:20px 22px 0}
+@media(max-width:760px){
+  .ces-lst .reason{grid-template-columns:1fr;gap:18px;padding:26px 0}
+  .ces-lst .reason .media,.ces-lst .reason:nth-child(even) .media{order:1}
+  .ces-lst .reason .txt,.ces-lst .reason:nth-child(even) .txt{order:2}
+  .ces-lst .rev-grid{grid-template-columns:1fr}
+  .ces-lst .checks{grid-template-columns:1fr}
+}
 </style>
 
-<div class="ces-ad ces-ad--listicle-men">
-<div class="bar">Reader offer · <mark>{{ section.settings.discount_pct }}</mark>% off ends <mark>{{ section.settings.offer_end }}</mark> · <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee</div>
+<div class="ces-ad ces-lst ces-ad--listicle-men">
+<div class="bar">Reader offer · <b>{{ section.settings.discount_pct }}% off</b> ends {{ section.settings.offer_end }} · <b>{{ section.settings.guarantee_days }}-day</b> money-back guarantee</div>
 
-<header class="mast"><div class="wrap">
-  <span class="brand">CEBEAM</span>
-  <span class="kicker">Health &amp; Performance</span>
-</div></header>
-
-<main class="wrap">
+<header class="mast"><div class="wrap"><span class="brand">{{ section.settings.brand_name }}</span><span class="kicker">{{ section.settings.brand_kicker }}</span></div></header>
 
 <section class="hero">
+  <div class="stars">★★★★★</div>
+  <div class="rate">{{ section.settings.rating_value }} / 5 · {{ section.settings.rating_count }} verified reviews</div>
   <h1>{{ section.settings.hero_heading }}</h1>
   <p class="dek">{{ section.settings.hero_sub }}</p>
-  <p class="byline">Health &amp; Performance Desk · Updated <mark>{{ section.settings.byline_date }}</mark> · 6 min read</p>
+  <a class="btn" href="#ces-offer">{{ section.settings.hero_cta_label }}</a>
 </section>
 
-<figure>
-  {% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1500,1780', alt: 'CEBEAM Microneedle Patches', class: 'ces-ad-img' }}{% else %}<div class="ph"><mark>[IMAGE 1]</mark><br>Macro: patch on a fingertip, cone texture visible.<br>Technical, not pretty. No spa lighting, no marble.</div>{% endif %}
-  <figcaption>The underside of a microdart patch — hundreds of cones, each shorter than a grain of salt.</figcaption>
-</figure>
+<div class="wrap"><div class="reasons">
 
-<div class="note"><strong>Note for your team — delete before publishing.</strong> Every <mark>highlighted</mark> field needs a real number, date or citation. Use the same five sources as the other Cebeam pages so no figure ever contradicts another.</div>
-
-<!-- 1 -->
-<section class="reason">
-  <p class="num">REASON 01</p>
-  <h2>Sleeping more was never going to fix it — and being told to is the most useless advice in the category</h2>
-  <p>Every man with this problem has done the experiment. Eight hours a night, consistently, for weeks. It helps the morning puffiness a bit. It does nothing about the shadow or the texture underneath, and by day ten you work out that "get more sleep" was not a diagnosis — it was a way of ending the conversation.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 01</span>
+<h2>Sleeping more was never going to fix it — and being told to is the most useless advice in the category</h2>
+<p>Every man with this problem has done the experiment. Eight hours a night, consistently, for weeks. It helps the morning puffiness a bit. It does nothing about the shadow or the texture underneath, and by day ten you work out that "get more sleep" was not a diagnosis — it was a way of ending the conversation.</p>
   <p>So you accept it. And the acceptance is expensive, because the thing keeps talking on your behalf: at work, on calls, at home, in every first impression you make before you have opened your mouth.</p>
   <div class="pull">"I got eight hours. My boss asked me on a morning call if I'd been up all night."</div>
   <p>The reason sleep does not fix it is that fatigue was rarely the cause. What you are looking at is some combination of fluid, thinning skin, and lost firmness in the thinnest skin on your body — none of which sleep repairs. Cebeam works on those directly.</p>
-</section>
+</div>
+<figure class="media">{% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 1</div>{% endif %}</figure>
+</div>
 
-<!-- 2 -->
-<section class="reason">
-  <p class="num">REASON 02</p>
-  <h2>Your face is briefing the room before you say anything</h2>
-  <p>At thirty-two, looking rough reads as working hard. At fifty-four it reads as slowing down, and slowing down is the specific thing that gets you quietly routed around on the projects that matter. Nobody announces it. They just stop asking.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 02</span>
+<h2>Your face is briefing the room before you say anything</h2>
+<p>At thirty-two, looking rough reads as working hard. At fifty-four it reads as slowing down, and slowing down is the specific thing that gets you quietly routed around on the projects that matter. Nobody announces it. They just stop asking.</p>
   <p>Then there is the domestic version, which is worse. You get read as annoyed, checked-out, or unapproachable when you are none of those, and you spend energy correcting an impression you never created.</p>
   <div class="pull">"I look angry even when I'm perfectly happy. My daughter asked why I was mad at her. I wasn't."</div>
   <p>The shadow under the eye is what the brain reads as fatigue and irritation — it is a hardwired signal. Reduce the shadow and you stop transmitting it. That is the whole return on this: your face stops filing reports you did not authorise.</p>
-</section>
+</div>
+<figure class="media">{% if section.settings.image_2 != blank %}{{ section.settings.image_2 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 2</div>{% endif %}</figure>
+</div>
 
-<!-- 3 -->
-<section class="reason">
-  <p class="num">REASON 03</p>
-  <h2>Until now there was nothing between a $45 bottle and surgery</h2>
-  <p>This is the real reason so many men do nothing for years. Women with this problem can at least cover it — there is an entire industry for that. For men there are two options and a canyon between them.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 03</span>
+<h2>Until now there was nothing between a $45 bottle and surgery</h2>
+<p>This is the real reason so many men do nothing for years. Women with this problem can at least cover it — there is an entire industry for that. For men there are two options and a canyon between them.</p>
   <p>On one side, an eye cream in a black bottle that costs <strong>$45</strong> and does approximately nothing, because a cream cannot get past the skin's barrier layer in any meaningful amount. On the other, lower eyelid surgery at <strong>$3,000–$6,000</strong>, general anaesthetic, and <strong>seven to ten days</strong> where you cannot turn up to work.</p>
   <div class="pull">"I'm not taking two weeks off and coming back with a different face. There's no version of that conversation I want to have."</div>
   <p>Cebeam is <mark>{{ section.settings.price }}</mark>, takes fifteen seconds, and costs you no days off. It is the middle option that did not exist five years ago.</p>
-  <a class="mini" href="#offer">See today's reader price →</a>
-</section>
+  <a class="mini" href="#ces-offer">See today's reader price →</a>
+</div>
+<figure class="media">{% if section.settings.image_3 != blank %}{{ section.settings.image_3 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 3</div>{% endif %}</figure>
+</div>
 
-<!-- 4 -->
-<section class="reason">
-  <p class="num">REASON 04</p>
-  <h2>The reason creams fail is delivery, not ingredients</h2>
-  <p>The outer layer of your skin exists to keep things out. It is a barrier, it is extremely good at its job, and it does not make an exception because you spent money. Most of any cream you apply never gets through it — some sits on top and ends up on the pillowcase, some evaporates, and a fraction makes it in.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 04</span>
+<h2>The reason creams fail is delivery, not ingredients</h2>
+<p>The outer layer of your skin exists to keep things out. It is a barrier, it is extremely good at its job, and it does not make an exception because you spent money. Most of any cream you apply never gets through it — some sits on top and ends up on the pillowcase, some evaporates, and a fraction makes it in.</p>
   <p><mark>[CITATION A — barrier function]</mark> <em>One sentence with the figure and the source named inline. Same source as Slot 1 on the advertorial.</em></p>
   <p>Under the eye it is worse, because that skin is the thinnest on the body — so eye products get deliberately formulated weak, or they would sting. A weak formula against a barrier built to block it.</p>
   <p>Cebeam's cones are made from the actives themselves, dried and compressed, and they start on the other side of that barrier. <mark>[CITATION B — microneedle vs topical delivery]</mark> <em>Comparative figure, source named inline. Same source as Slot 3. This is your strongest number — repeat it in the ads.</em></p>
-</section>
+</div>
+<figure class="media">{% if section.settings.image_4 != blank %}{{ section.settings.image_4 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 4</div>{% endif %}</figure>
+</div>
 
-<!-- 5 -->
-<section class="reason">
-  <p class="num">REASON 05</p>
-  <h2>It is not a routine, and nobody has to know you use it</h2>
-  <p>Most men will not adopt anything that requires steps, and they are right not to — a routine survives about nine days before it becomes a shelf of things you feel vaguely guilty about.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 05</span>
+<h2>It is not a routine, and nobody has to know you use it</h2>
+<p>Most men will not adopt anything that requires steps, and they are right not to — a routine survives about nine days before it becomes a shelf of things you feel vaguely guilty about.</p>
   <p>This is the whole method: press one patch under each eye before bed, peel them off in the morning. Two nights a week. No cleanser step, no serum, nothing to layer, nothing to rinse.</p>
   <p>It is also invisible. There is no colour in it and nothing sits on your face during the day — it works overnight and it is gone by breakfast. Nobody at work sees a product, and there is nothing on the bathroom shelf that needs explaining.</p>
-</section>
+</div>
+<figure class="media">{% if section.settings.image_5 != blank %}{{ section.settings.image_5 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 5</div>{% endif %}</figure>
+</div>
 
-<!-- 6 -->
-<section class="reason">
-  <p class="num">REASON 06</p>
-  <h2>If your bags are the inherited kind, this will not fix them — and we would rather say so</h2>
-  <p>Read this bit properly, because it is the honest answer rather than the one that sells more units.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 06</span>
+<h2>If your bags are the inherited kind, this will not fix them — and we would rather say so</h2>
+<p>Read this bit properly, because it is the honest answer rather than the one that sells more units.</p>
   <p>If the fullness comes from <strong>inherited fat pads</strong> — the kind visible in photographs of you at twenty-five, the kind your father and your brother also have — no patch, cream or serum shifts those. Only surgery does. Same goes for deep hollows set by bone structure.</p>
   <p>What does respond is everything else: <strong>fluid, thinning skin, lost firmness, and the crepey texture that catches hard overhead light.</strong> That covers most men who end up on a page like this.</p>
   <p>Most people are a mix of both, which is exactly why two men the same age get very different results from the same product. If you are mostly the first kind, keep your money.</p>
-</section>
+</div>
+<figure class="media">{% if section.settings.image_6 != blank %}{{ section.settings.image_6 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 6</div>{% endif %}</figure>
+</div>
 
-<!-- 7 -->
-<section class="reason">
-  <p class="num">REASON 07</p>
-  <h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it, with the box already open</h2>
-  <p>The honest timeline: the morning after night one the area looks flatter — that is hydration, real and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is how long skin takes to turn over. Nothing shortens that, and any product claiming otherwise is lying to you.</p>
+<div class="reason">
+<div class="txt"><span class="num">REASON 07</span>
+<h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it, with the box already open</h2>
+<p>The honest timeline: the morning after night one the area looks flatter — that is hydration, real and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is how long skin takes to turn over. Nothing shortens that, and any product claiming otherwise is lying to you.</p>
   <p>Which is why a thirty-day return window on something like this is a technicality, not a guarantee.</p>
   <p>Use it for eight weeks. If nothing has changed, email them and get your money back. Nothing goes back in the post, and there is no form asking you to prove it did not work.</p>
   <p>If you have something in the calendar — a wedding, a reunion, a round of interviews — count backwards and start at least eight weeks out.</p>
-</section>
-
-</main>
-
-<section class="close" id="offer">
-  <div class="wrap">
-    <h2>{{ section.settings.offer_heading }}</h2>
-    <p>You have already spent more than this on a bottle that never got past the surface, and on a roller that is still in the drawer.</p>
-    <p>Neither of them came with a deadline or a refund.</p>
-    <a class="btn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability — <mark>{{ section.settings.discount_pct }}</mark>% off today →</a>
-    <p class="stack">
-      <mark>{{ section.settings.guarantee_days }}</mark>-day money-back guarantee · Keep the box<br>
-      Ships from <mark>{{ section.settings.ships_from }}</mark> · Discreet packaging · Tracked<br>
-      <mark>[Real stock or deadline statement — only if you have a genuine reason]</mark>
-    </p>
-  </div>
-</section>
-
-<footer><div class="wrap"><div class="fine">
-  <p><strong>Scarcity note — delete before publishing.</strong> Only run a stock or deadline line if it is true and has a mechanical reason behind it. A resetting countdown reads as dishonest to this audience and converts worse than nothing.</p>
-  <p><strong>Cosmetic product.</strong> Cebeam is intended to improve the appearance of the skin around the eye. It is not a drug, is not intended to diagnose, treat, cure or prevent any disease, and has not been evaluated by the FDA. Do not use on the eyelid itself, on broken skin, or where there is an active eye or skin condition.</p>
-  <p>Individual results vary and some people will see no change. Nothing on this page is medical advice. Procedure cost ranges are typical US figures and vary by city and practitioner. Consult a qualified healthcare professional if you are using prescription topicals or considering a cosmetic procedure. Not for under 18s.</p>
-  <p><mark>{{ section.settings.legal_company }}</mark></p>
-  <p style="margin-top:14px">© 2026 Cebeam</p>
-</div></div></footer>
-{% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
+</div>
+<figure class="media">{% if section.settings.image_7 != blank %}{{ section.settings.image_7 | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '375,550,750,1100,1400', alt: 'CEBEAM Microneedle Patches' }}{% else %}<div class="card">CEBEAM — image 7</div>{% endif %}</figure>
 </div>
 
+</div></div>
+
+<section class="offer" id="ces-offer">
+  <h2>{{ section.settings.offer_heading }}</h2>
+  <p class="sub">{{ section.settings.offer_sub }}</p>
+  <ul class="checks">
+    {%- assign ces_checks = section.settings.offer_checklist | strip | newline_to_br | split: '<br />' -%}
+    {%- for c in ces_checks -%}{%- assign cc = c | strip -%}{%- if cc != blank -%}<li>{{ cc }}</li>{%- endif -%}{%- endfor -%}
+  </ul>
+  <a class="btn big" href="{{ section.settings.cta_url | default: '/products/rovina' }}">{{ section.settings.offer_cta_label }}</a>
+  <div class="rate2"><span class="stars">★★★★★</span> &nbsp;Rated {{ section.settings.rating_value }}/5 by {{ section.settings.rating_count }} customers</div>
+</section>
+
+<section class="reviews">
+  <h3>{{ section.settings.reviews_heading }}</h3>
+  <p class="subh">{{ section.settings.reviews_sub }}</p>
+  <div class="rev-grid"><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r1_quote }}</p><div class="who">{{ section.settings.r1_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r2_quote }}</p><div class="who">{{ section.settings.r2_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r3_quote }}</p><div class="who">{{ section.settings.r3_name }}</div><div class="vf">✓ Verified buyer</div></div></div>
+</section>
+
+{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company }}</div>{%- endif -%}
+{% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
+</div>
 {% schema %}
 {
   "name": "CES Ad - Listicle Men",
@@ -171,10 +186,6 @@
     {
       "type": "header",
       "content": "Offer bar & pricing"
-    },
-    {
-      "type": "paragraph",
-      "content": "These fill the highlighted spots in the top bar, byline, price and offer note."
     },
     {
       "type": "text",
@@ -202,19 +213,41 @@
     },
     {
       "type": "text",
-      "id": "byline_date",
-      "label": "Byline date",
-      "default": "[month, year]"
-    },
-    {
-      "type": "text",
       "id": "ships_from",
-      "label": "Ships from (location)",
+      "label": "Ships from",
       "default": "[location]"
     },
     {
       "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand wordmark",
+      "default": "CEBEAM"
+    },
+    {
+      "type": "text",
+      "id": "brand_kicker",
+      "label": "Kicker",
+      "default": "Skin & Performance"
+    },
+    {
+      "type": "header",
       "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "rating_value",
+      "label": "Rating value",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "rating_count",
+      "label": "Review count",
+      "default": "2,300+"
     },
     {
       "type": "inline_richtext",
@@ -229,14 +262,134 @@
       "default": "You've been told to sleep more. You slept more. Here's what's actually going on — and the option that sits between a $45 bottle that does nothing and surgery."
     },
     {
+      "type": "text",
+      "id": "hero_cta_label",
+      "label": "Hero button label",
+      "default": "TRY IT RISK-FREE →"
+    },
+    {
+      "type": "header",
+      "content": "Reason images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Reason 1 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Reason 2 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Reason 3 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Reason 4 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Reason 5 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Reason 6 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "Reason 7 image"
+    },
+    {
       "type": "header",
       "content": "Closing offer"
     },
     {
       "type": "text",
       "id": "offer_heading",
-      "label": "Closing heading",
+      "label": "Offer heading",
       "default": "Eight weeks. Two nights a week. Then decide."
+    },
+    {
+      "type": "textarea",
+      "id": "offer_sub",
+      "label": "Offer sub-text",
+      "default": "You've already spent more than this on a bottle that never got past the surface. This one comes with a deadline and a refund."
+    },
+    {
+      "type": "textarea",
+      "id": "offer_checklist",
+      "label": "Offer checklist (one per line)",
+      "default": "90-day money-back guarantee\nKeep the box, no returns\nDissolving microneedle delivery\nTwo nights a week, fifteen seconds\nDiscreet, tracked shipping\nInvisible — nobody sees a product"
+    },
+    {
+      "type": "text",
+      "id": "offer_cta_label",
+      "label": "Offer button label",
+      "default": "SHOP NOW →"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "text",
+      "id": "reviews_heading",
+      "label": "Reviews heading",
+      "default": "What men are saying"
+    },
+    {
+      "type": "text",
+      "id": "reviews_sub",
+      "label": "Reviews sub-text",
+      "default": "Over 2,300 verified 5-star reviews"
+    },
+    {
+      "type": "textarea",
+      "id": "r1_quote",
+      "label": "Review 1 quote",
+      "default": "Two colleagues asked if I'd been on holiday. I hadn't — I'd just stopped looking tired on the 8am calls."
+    },
+    {
+      "type": "text",
+      "id": "r1_name",
+      "label": "Review 1 name",
+      "default": "Mark T."
+    },
+    {
+      "type": "textarea",
+      "id": "r2_quote",
+      "label": "Review 2 quote",
+      "default": "I'm 58 and sceptical of everything. Week six is when the shadow actually lifted."
+    },
+    {
+      "type": "text",
+      "id": "r2_name",
+      "label": "Review 2 name",
+      "default": "Dennis R."
+    },
+    {
+      "type": "textarea",
+      "id": "r3_quote",
+      "label": "Review 3 quote",
+      "default": "Fifteen seconds before bed, twice a week. No shelf of products to feel guilty about."
+    },
+    {
+      "type": "text",
+      "id": "r3_name",
+      "label": "Review 3 name",
+      "default": "James P."
     },
     {
       "type": "header",
@@ -247,15 +400,6 @@
       "id": "legal_company",
       "label": "Company & legal line",
       "default": "[REPLACE — registered company name, business address, phone, support email]"
-    },
-    {
-      "type": "header",
-      "content": "Images"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "Image 1"
     },
     {
       "type": "header",
@@ -278,19 +422,6 @@
       "id": "copyright_text",
       "label": "Copyright line",
       "default": "Copyright © 2025 CUMA Skincare. All Rights Reserved."
-    },
-    {
-      "type": "header",
-      "content": "Call-to-action link"
-    },
-    {
-      "type": "paragraph",
-      "content": "Long-form advertorial page. Edit the copy directly in the section code; set the CTA link below."
-    },
-    {
-      "type": "url",
-      "id": "cta_url",
-      "label": "CTA / Check-availability link"
     }
   ],
   "presets": [
