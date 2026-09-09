@@ -155,7 +155,7 @@
           "type": "ces_bundle",
           "settings": {
             "accent_color": "#1d5c5c",
-            "stat_text": "Low Stock",
+            "stat_text": "74% of customers choose the 21-Day Reset",
             "tier_count": 3,
             "default_tier": 2,
             "add_label": "ADD TO CART",
