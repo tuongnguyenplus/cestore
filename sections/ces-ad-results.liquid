@@ -1,0 +1,238 @@
+<style>
+.ces-results{--teal:#1d5c5c;--card:#123c3c;--ink:#16233a;--gold:#f5b301;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#fff;padding:48px 20px;font-family:var(--sans)}
+.ces-results *{box-sizing:border-box}
+.ces-results h2{text-align:center;font-size:clamp(28px,4.4vw,42px);font-weight:800;color:var(--ink);margin:0 0 8px;letter-spacing:-.01em}
+.ces-results .subh{text-align:center;color:#5d6b67;font-size:14px;margin:0 0 30px}
+.ces-results .row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1140px;margin:0 auto}
+.ces-results .card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(18,60,60,.18)}
+.ces-results .ba{display:grid;grid-template-columns:1fr 1fr}
+.ces-results .half{position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,#e6ede9,#cfdcd7);overflow:hidden}
+.ces-results .half img{width:100%;height:100%;object-fit:cover;display:block}
+.ces-results .half .tag{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:4px}
+.ces-results .half .ph{display:flex;align-items:center;justify-content:center;height:100%;color:#7f918d;font-size:12px;text-align:center;padding:8px}
+.ces-results .body{padding:16px 18px 20px;color:#eaf3f1}
+.ces-results .name{font-weight:700;color:#fff;font-size:15px}
+.ces-results .name .stars{color:var(--gold);font-size:14px;margin-left:6px;letter-spacing:1px}
+.ces-results .quote{margin:8px 0 0;font-size:14px;line-height:1.55;color:#cfe0dc}
+.ces-results .cta-wrap{text-align:center;margin-top:32px}
+.ces-results .btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;letter-spacing:.02em;padding:16px 32px;border-radius:10px;font-size:15px;box-shadow:0 10px 24px rgba(29,92,92,.24)}
+@media(max-width:820px){
+  .ces-results .row{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px}
+  .ces-results .card{scroll-snap-align:center}
+}
+</style>
+{%- if section.settings.show_section -%}
+<section class="ces-results">
+  <h2>{{ section.settings.heading }}</h2>
+  {%- if section.settings.subheading != blank -%}<p class="subh">{{ section.settings.subheading }}</p>{%- endif -%}
+  <div class="row">
+{%- assign q = section.settings.p1_quote -%}{%- assign nm = section.settings.p1_name -%}
+{%- if q != blank or nm != blank or section.settings.p1_before != blank -%}
+<div class="card">
+  <div class="ba">
+    <div class="half"><span class="tag">BEFORE</span>{%- if section.settings.p1_before != blank -%}<img src="{{ section.settings.p1_before | image_url: width: 600 }}" alt="Before" loading="lazy">{%- else -%}<span class="ph">Before photo</span>{%- endif -%}</div>
+    <div class="half"><span class="tag">AFTER</span>{%- if section.settings.p1_after != blank -%}<img src="{{ section.settings.p1_after | image_url: width: 600 }}" alt="After" loading="lazy">{%- else -%}<span class="ph">After photo</span>{%- endif -%}</div>
+  </div>
+  <div class="body">
+    <div class="name">{{ nm }}<span class="stars">★★★★★</span></div>
+    <p class="quote">{{ q }}</p>
+  </div>
+</div>
+{%- endif -%}
+{%- assign q = section.settings.p2_quote -%}{%- assign nm = section.settings.p2_name -%}
+{%- if q != blank or nm != blank or section.settings.p2_before != blank -%}
+<div class="card">
+  <div class="ba">
+    <div class="half"><span class="tag">BEFORE</span>{%- if section.settings.p2_before != blank -%}<img src="{{ section.settings.p2_before | image_url: width: 600 }}" alt="Before" loading="lazy">{%- else -%}<span class="ph">Before photo</span>{%- endif -%}</div>
+    <div class="half"><span class="tag">AFTER</span>{%- if section.settings.p2_after != blank -%}<img src="{{ section.settings.p2_after | image_url: width: 600 }}" alt="After" loading="lazy">{%- else -%}<span class="ph">After photo</span>{%- endif -%}</div>
+  </div>
+  <div class="body">
+    <div class="name">{{ nm }}<span class="stars">★★★★★</span></div>
+    <p class="quote">{{ q }}</p>
+  </div>
+</div>
+{%- endif -%}
+{%- assign q = section.settings.p3_quote -%}{%- assign nm = section.settings.p3_name -%}
+{%- if q != blank or nm != blank or section.settings.p3_before != blank -%}
+<div class="card">
+  <div class="ba">
+    <div class="half"><span class="tag">BEFORE</span>{%- if section.settings.p3_before != blank -%}<img src="{{ section.settings.p3_before | image_url: width: 600 }}" alt="Before" loading="lazy">{%- else -%}<span class="ph">Before photo</span>{%- endif -%}</div>
+    <div class="half"><span class="tag">AFTER</span>{%- if section.settings.p3_after != blank -%}<img src="{{ section.settings.p3_after | image_url: width: 600 }}" alt="After" loading="lazy">{%- else -%}<span class="ph">After photo</span>{%- endif -%}</div>
+  </div>
+  <div class="body">
+    <div class="name">{{ nm }}<span class="stars">★★★★★</span></div>
+    <p class="quote">{{ q }}</p>
+  </div>
+</div>
+{%- endif -%}
+{%- assign q = section.settings.p4_quote -%}{%- assign nm = section.settings.p4_name -%}
+{%- if q != blank or nm != blank or section.settings.p4_before != blank -%}
+<div class="card">
+  <div class="ba">
+    <div class="half"><span class="tag">BEFORE</span>{%- if section.settings.p4_before != blank -%}<img src="{{ section.settings.p4_before | image_url: width: 600 }}" alt="Before" loading="lazy">{%- else -%}<span class="ph">Before photo</span>{%- endif -%}</div>
+    <div class="half"><span class="tag">AFTER</span>{%- if section.settings.p4_after != blank -%}<img src="{{ section.settings.p4_after | image_url: width: 600 }}" alt="After" loading="lazy">{%- else -%}<span class="ph">After photo</span>{%- endif -%}</div>
+  </div>
+  <div class="body">
+    <div class="name">{{ nm }}<span class="stars">★★★★★</span></div>
+    <p class="quote">{{ q }}</p>
+  </div>
+</div>
+{%- endif -%}
+  </div>
+  {%- if section.settings.cta_label != blank -%}
+  <div class="cta-wrap"><a class="btn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">{{ section.settings.cta_label }}</a></div>
+  {%- endif -%}
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "CES Ad - Results",
+  "tag": "section",
+  "class": "ces-ad-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show this section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Age-Defying Results"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading (optional)",
+      "default": "Real customers, real before &amp; after"
+    },
+    {
+      "type": "header",
+      "content": "Person 1"
+    },
+    {
+      "type": "text",
+      "id": "p1_name",
+      "label": "Name",
+      "default": "Kyle T."
+    },
+    {
+      "type": "textarea",
+      "id": "p1_quote",
+      "label": "Quote",
+      "default": "At 49 my under-eye bags were bad enough that I looked into surgery — until the price stopped me. Nine weeks on CEBEAM and the whole area looks tighter. My brother asked where I got it."
+    },
+    {
+      "type": "image_picker",
+      "id": "p1_before",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p1_after",
+      "label": "After image"
+    },
+    {
+      "type": "header",
+      "content": "Person 2"
+    },
+    {
+      "type": "text",
+      "id": "p2_name",
+      "label": "Name",
+      "default": "Aaron B."
+    },
+    {
+      "type": "textarea",
+      "id": "p2_quote",
+      "label": "Quote",
+      "default": "I'm 52 and the bags made me look exhausted no matter how much I slept. Six weeks in and my wife noticed the difference before I did."
+    },
+    {
+      "type": "image_picker",
+      "id": "p2_before",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p2_after",
+      "label": "After image"
+    },
+    {
+      "type": "header",
+      "content": "Person 3"
+    },
+    {
+      "type": "text",
+      "id": "p3_name",
+      "label": "Name",
+      "default": "Leon G."
+    },
+    {
+      "type": "textarea",
+      "id": "p3_quote",
+      "label": "Quote",
+      "default": "Thought my genetic eye bags were permanent. About seven weeks with CEBEAM and they're visibly smaller — bought two more as gifts for my dad and brother-in-law."
+    },
+    {
+      "type": "image_picker",
+      "id": "p3_before",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p3_after",
+      "label": "After image"
+    },
+    {
+      "type": "header",
+      "content": "Person 4"
+    },
+    {
+      "type": "text",
+      "id": "p4_name",
+      "label": "Name"
+    },
+    {
+      "type": "textarea",
+      "id": "p4_quote",
+      "label": "Quote"
+    },
+    {
+      "type": "image_picker",
+      "id": "p4_before",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p4_after",
+      "label": "After image"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "GET RID OF YOUR EYE BAGS 👉"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CES Ad - Results"
+    }
+  ]
+}
+{% endschema %}

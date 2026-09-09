@@ -14,9 +14,14 @@
       "settings": {
         "cta_url": "/products/rovina"
       }
+    },
+    "results": {
+      "type": "ces-ad-results",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "results"
   ]
 }
