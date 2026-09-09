@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-advertorial-women",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

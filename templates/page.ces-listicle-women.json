@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-listicle-women",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

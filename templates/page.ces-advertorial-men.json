@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-advertorial-men",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
