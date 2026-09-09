@@ -86,91 +86,17 @@
 </section>
 
 <div class="wrap"><div class="reasons">
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 01</span>
-<h2>Your eye cream never reached the problem — it stopped at the door</h2>
-<p>The outer layer of your skin exists for one purpose: to keep things out. It is very good at its job, and it does not make an exception for the $80 jar on your nightstand. This is why a luxury eye cream and a drugstore one so often perform about the same — most of both is still sitting on the surface when you wash your face the next morning.</p>
-  <p>So you buy another one. Then another. And the money adds up faster than the results do. Somewhere around the fourth jar, most women stop believing anything topical can work at all, and start pricing up procedures instead.</p>
-  <div class="pull">"I've spent hundreds on eye creams over the years. Not one of them did a thing that lasted past the afternoon."</div>
-  <p><mark>[CITATION A — barrier function]</mark> <em>One sentence stating how much of a topical active the stratum corneum blocks, with the source named inline (e.g. "Research published in [Journal] found that…"). Same source as Slot 1 in the advertorial — use one citation across both pages so the number stays consistent.</em></p>
-  <p>Cebeam's patches take a different route entirely. The cones on the underside are made from the actives themselves — dried and compressed, no liquid — and they sit just inside the top layer of skin, where they dissolve over the next few hours. They start on the other side of the door.</p>
-  <p><mark>[CITATION B — microneedle vs topical delivery]</mark> <em>One sentence with the comparative figure, source named inline. Same source as Slot 3 in the advertorial. This is the strongest number you will have — repeat it in the ad creative too.</em></p>
-  <p>Same ingredients your cream promised. Delivered where the cream never arrived.</p>
+{%- for block in section.blocks -%}{%- if block.type == 'reason' -%}
+<div class="reason" {{ block.shopify_attributes }}>
+  <div class="txt"><span class="num">{{ block.settings.num }}</span>
+    <h2>{{ block.settings.heading }}</h2>
+    {{ block.settings.body }}
+    {%- if block.settings.pull != blank -%}<div class="pull">{{ block.settings.pull }}</div>{%- endif -%}
+    {%- if block.settings.show_link -%}<a class="mini" href="#ces-offer">{{ block.settings.link_label }}</a>{%- endif -%}
+  </div>
+  <figure class="media">{%- if block.settings.image != blank -%}<img src="{{ block.settings.image | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{%- else -%}<div class="card">CEBEAM image</div>{%- endif -%}</figure>
 </div>
-<figure class="media">{% if section.settings.image_1 != blank %}<img src="{{ section.settings.image_1 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 1</div>{% endif %}</figure>
-</div>
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 02</span>
-<h2>It fixes the reason your concealer creases — instead of adding another layer on top</h2>
-<p>Here is what nobody at the makeup counter tells you: concealer does not crease because the concealer is bad. It creases because of the texture underneath it. You are painting a smooth coat onto an uneven wall, and by 10am the wall wins.</p>
-  <p>So the routine gets longer. Primer, then concealer, then powder to set it, then a mirror check at lunch, then a touch-up that somehow makes it worse. Twenty minutes every morning spent hiding something — and the hiding is what makes you look older than you are.</p>
-  <div class="pull">"My concealer used to be my best friend. Now it settles into every line by 10am and makes me look older than I actually am."</div>
-  <p>Because the patches work on the skin itself rather than covering it, the surface they leave behind is smoother. Makeup sits on top of it instead of sinking into it. Most people notice this around week three.</p>
-  <p>The result is not a better cover-up. It is needing less of one.</p>
-</div>
-<figure class="media">{% if section.settings.image_2 != blank %}<img src="{{ section.settings.image_2 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 2</div>{% endif %}</figure>
-</div>
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 03</span>
-<h2>It costs less than one consultation — let alone the procedure</h2>
-<p>At some point the under-eye question stops being about creams and starts being about clinics. Tear-trough filler in the US typically runs <strong>$600–$1,200 a session</strong>, and it is not permanent. Lower blepharoplasty typically runs <strong>$3,000–$6,000</strong>, and it is.</p>
-  <p>Both come with something harder to price: the under-eye is the trickiest area on the face to inject well, and surgery means real recovery time, real risk, and a result you cannot undo if you dislike it. Which is why so many women sit on the decision for years, spending money on creams in the meantime precisely because they are afraid of the alternative.</p>
-  <p>Cebeam is <mark>{{ section.settings.price }}</mark>. That is less than one consultation fee at most clinics.</p>
-  <p>It is not a replacement for either procedure, and we say so plainly further down this page. But for the very large group of women whose under-eye problem is skin quality rather than structure, it is the thing worth trying <em>before</em> you book anything.</p>
-  <a class="mini" href="#ces-offer">See today's reader price →</a>
-</div>
-<figure class="media">{% if section.settings.image_3 != blank %}<img src="{{ section.settings.image_3 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 3</div>{% endif %}</figure>
-</div>
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 04</span>
-<h2>It was built for the camera you now spend your whole day in front of</h2>
-<p>Something changed in the last few years that nobody planned for. You now spend hours a day looking at your own face in high definition, under bad overhead lighting, in a small rectangle on a screen. No previous generation of women had to audit their own appearance for six hours a day.</p>
-  <p>And the under-eye is the first thing that camera finds. Not your outfit, not your work — the shadows. It is why so many women over 45 now default to camera-off, or spend the first ten minutes of a meeting looking at themselves instead of listening.</p>
-  <div class="pull">"I didn't realise how tired I looked until I saw myself on a recording. I turned my camera off for the rest of the week."</div>
-  <p>The patches target exactly what that camera exaggerates: the shadow cast by uneven texture, and the crepiness that catches hard light. Smoother skin reflects light more evenly, and even light is what makes a face read as rested.</p>
-  <p>Not a filter. The thing the filter was imitating.</p>
-</div>
-<figure class="media">{% if section.settings.image_4 != blank %}<img src="{{ section.settings.image_4 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 4</div>{% endif %}</figure>
-</div>
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 05</span>
-<h2>Two nights a week. No routine, no steps, nothing to remember</h2>
-<p>Most eye products fail for a boring reason: nobody uses them properly. A twelve-step routine survives about nine days. Then it becomes a shelf of expensive jars you feel guilty about.</p>
-  <p>The people who need this most are usually the ones with the least patience for skincare — which includes a large number of men, who make up a growing share of Cebeam customers and who have no intention of learning a routine.</p>
-  <p>The entire method is this: press one patch under each eye before bed, peel them off in the morning. Two nights a week. There is nothing to layer, nothing to rinse, and no order to get wrong.</p>
-  <p>A product you will actually still be using in week six beats a better product you abandoned in week two.</p>
-</div>
-<figure class="media">{% if section.settings.image_5 != blank %}<img src="{{ section.settings.image_5 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 5</div>{% endif %}</figure>
-</div>
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 06</span>
-<h2>It will not work on everyone — and we would rather tell you now</h2>
-<p>This is the part most brands in this category leave out, and it is the reason you should trust the rest of the page.</p>
-  <p>If your under-eye looks heavy because of <strong>fluid, thin skin, lost firmness, or crepey texture</strong>, that is exactly what a delivery-based topical can improve. That covers most people who arrive here.</p>
-  <p>But if your bags are <strong>inherited fat pads</strong> — the kind visible in photographs of you at twenty — no patch, cream, or serum moves those. Only a surgeon does. The same applies to deep hollows caused by bone structure, and to brown pigment circles, which are common in darker and South Asian skin tones and respond to different treatment entirely.</p>
-  <p>Most people are some mix of both. That is why two women the same age get very different results from the same product.</p>
-  <p>If you are mostly in the second group, save your money. We would rather lose the sale than be the fifth thing that disappointed you.</p>
-</div>
-<figure class="media">{% if section.settings.image_6 != blank %}<img src="{{ section.settings.image_6 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 6</div>{% endif %}</figure>
-</div>
-
-<div class="reason">
-<div class="txt"><span class="num">REASON 07</span>
-<h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it — with the box already open</h2>
-<p>Here is the honest timeline, because expectation is where most of these products lose people. The morning after night one, the area looks smoother. That is hydration — real, and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is simply how long skin takes to turn over. Nothing shortens it.</p>
-  <p>Which means the only fair way to sell this is to give you long enough to actually find out.</p>
-  <p>Use it for eight weeks. If your under-eye does not look different to you — not to us, to you — email us and we will refund you. You do not ship anything back. We are not going to charge you postage to return a half-used box, and we are not going to ask you to prove it did not work.</p>
-  <p>If you are buying for a specific event, count backwards and start at least eight weeks out. Never try anything new on the eye area in the fortnight before a wedding.</p>
-</div>
-<figure class="media">{% if section.settings.image_7 != blank %}<img src="{{ section.settings.image_7 | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy" style="width:100%;height:auto;display:block">{% else %}<div class="card">CEBEAM — image 7</div>{% endif %}</figure>
-</div>
-
+{%- endif -%}{%- endfor -%}
 </div></div>
 
 
@@ -204,6 +130,7 @@
 {%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company }}</div>{%- endif -%}
 {% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
 </div>
+
 {% schema %}
 {
   "name": "CES Ad - Listicle Women",
@@ -293,45 +220,6 @@
       "id": "hero_cta_label",
       "label": "Hero button label",
       "default": "TRY IT RISK-FREE →"
-    },
-    {
-      "type": "header",
-      "content": "Reason images"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "Reason 1 image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Reason 2 image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_3",
-      "label": "Reason 3 image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_4",
-      "label": "Reason 4 image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_5",
-      "label": "Reason 5 image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_6",
-      "label": "Reason 6 image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_7",
-      "label": "Reason 7 image"
     },
     {
       "type": "header",
@@ -479,8 +367,66 @@
   ],
   "presets": [
     {
-      "name": "CES Ad - Listicle Women"
+      "name": "CES Ad - Listicle Women",
+      "blocks": [
+        {
+          "type": "reason"
+        },
+        {
+          "type": "reason"
+        },
+        {
+          "type": "reason"
+        }
+      ]
     }
-  ]
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        {
+          "type": "text",
+          "id": "num",
+          "label": "Number label",
+          "default": "REASON"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "textarea",
+          "id": "pull",
+          "label": "Pull quote (optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_link",
+          "label": "Show inline offer link",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Inline link label",
+          "default": "See today's reader price →"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
 }
 {% endschema %}

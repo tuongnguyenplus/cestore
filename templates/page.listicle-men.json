@@ -24,8 +24,6 @@
         "hero_heading": "7 Reasons Men Over 45 Are Finally Dealing With <em>The Bags Under Their Eyes</em>",
         "hero_sub": "You've been told to sleep more. You slept more. Here's what's actually going on — and the option that sits between a $45 bottle that does nothing and surgery.",
         "hero_cta_label": "TRY IT RISK-FREE →",
-        "image_1": "shopify://shop_images/bef.png",
-        "image_2": "shopify://shop_images/david-8-frame-storyboard-frame-4-wrong-signal-1080x1920.png",
         "offer_heading": "Eight weeks. Two nights a week. Then decide.",
         "offer_sub": "You've already spent more than this on a bottle that never got past the surface. This one comes with a deadline and a refund.",
         "offer_checklist": "90-day money-back guarantee\nKeep the box, no returns\nDissolving microneedle delivery\nTwo nights a week, fifteen seconds\nDiscreet, tracked shipping\nInvisible — nobody sees a product",
@@ -43,7 +41,81 @@
         "show_disclaimer": true,
         "disclaimer_text": "<p>These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p><p>The information provided on this site is for informational purposes only and is not intended as a substitute for advice from your dermatologist or other health care professional or any information contained on or in any product label or packaging. You should not use the information on this website or the product described for diagnosis or treatment of any health problem or as a substitute for any prescription of any medication or other treatment. You should consult with a health care professional before starting any skin or facial regiment or if you have or suspect you might have a skin problem. This information and product is not recommended for women who are pregnant or children.</p><p>Privacy & GDPR Disclosure: We value your privacy and are committed to transparency. While we may collect personal information for marketing purposes, we will always inform you of the reasons behind such collection. Additionally, please be aware that this website uses cookies for marketing purposes.</p><p>THIS IS AN ADVERTISEMENT AND NOT AN ACTUAL NEWS ARTICLE, BLOG, OR CONSUMER PROTECTION UPDATE.</p>",
         "copyright_text": "Copyright © 2026 CEBEAM. All Rights Reserved."
-      }
+      },
+      "blocks": {
+        "reason-1": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 01",
+            "heading": "Sleeping more was never going to fix it — and being told to is the most useless advice in the category",
+            "body": "<p>Every man with this problem has done the experiment. Eight hours a night, consistently, for weeks. It helps the morning puffiness a bit. It does nothing about the shadow or the texture underneath, and by day ten you work out that \"get more sleep\" was not a diagnosis — it was a way of ending the conversation.</p>\n  <p>So you accept it. And the acceptance is expensive, because the thing keeps talking on your behalf: at work, on calls, at home, in every first impression you make before you have opened your mouth.</p>\n  \n  <p>The reason sleep does not fix it is that fatigue was rarely the cause. What you are looking at is some combination of fluid, thinning skin, and lost firmness in the thinnest skin on your body — none of which sleep repairs. Cebeam works on those directly.</p>\n</div>",
+            "pull": "\"I got eight hours. My boss asked me on a morning call if I'd been up all night.\"",
+            "image": "shopify://shop_images/bef.png"
+          }
+        },
+        "reason-2": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 02",
+            "heading": "Your face is briefing the room before you say anything",
+            "body": "<p>At thirty-two, looking rough reads as working hard. At fifty-four it reads as slowing down, and slowing down is the specific thing that gets you quietly routed around on the projects that matter. Nobody announces it. They just stop asking.</p>\n  <p>Then there is the domestic version, which is worse. You get read as annoyed, checked-out, or unapproachable when you are none of those, and you spend energy correcting an impression you never created.</p>\n  \n  <p>The shadow under the eye is what the brain reads as fatigue and irritation — it is a hardwired signal. Reduce the shadow and you stop transmitting it. That is the whole return on this: your face stops filing reports you did not authorise.</p>\n</div>",
+            "pull": "\"I look angry even when I'm perfectly happy. My daughter asked why I was mad at her. I wasn't.\"",
+            "image": "shopify://shop_images/david-8-frame-storyboard-frame-4-wrong-signal-1080x1920.png"
+          }
+        },
+        "reason-3": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 03",
+            "heading": "Until now there was nothing between a $45 bottle and surgery",
+            "body": "<p>This is the real reason so many men do nothing for years. Women with this problem can at least cover it — there is an entire industry for that. For men there are two options and a canyon between them.</p>\n  <p>On one side, an eye cream in a black bottle that costs <strong>$45</strong> and does approximately nothing, because a cream cannot get past the skin's barrier layer in any meaningful amount. On the other, lower eyelid surgery at <strong>$3,000–$6,000</strong>, general anaesthetic, and <strong>seven to ten days</strong> where you cannot turn up to work.</p>\n  \n  <p>Cebeam is $39.95, takes fifteen seconds, and costs you no days off. It is the middle option that did not exist five years ago.</p>\n  \n</div>",
+            "pull": "\"I'm not taking two weeks off and coming back with a different face. There's no version of that conversation I want to have.\"",
+            "show_link": true,
+            "link_label": "See today's reader price →"
+          }
+        },
+        "reason-4": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 04",
+            "heading": "The reason creams fail is delivery, not ingredients",
+            "body": "<p>The outer layer of your skin exists to keep things out. It is a barrier, it is extremely good at its job, and it does not make an exception because you spent money. Most of any cream you apply never gets through it — some sits on top and ends up on the pillowcase, some evaporates, and a fraction makes it in.</p>\n  <p>[CITATION A — barrier function] <em>One sentence with the figure and the source named inline. Same source as Slot 1 on the advertorial.</em></p>\n  <p>Under the eye it is worse, because that skin is the thinnest on the body — so eye products get deliberately formulated weak, or they would sting. A weak formula against a barrier built to block it.</p>\n  <p>Cebeam's cones are made from the actives themselves, dried and compressed, and they start on the other side of that barrier. [CITATION B — microneedle vs topical delivery] <em>Comparative figure, source named inline. Same source as Slot 3. This is your strongest number — repeat it in the ads.</em></p>\n</div>"
+          }
+        },
+        "reason-5": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 05",
+            "heading": "It is not a routine, and nobody has to know you use it",
+            "body": "<p>Most men will not adopt anything that requires steps, and they are right not to — a routine survives about nine days before it becomes a shelf of things you feel vaguely guilty about.</p>\n  <p>This is the whole method: press one patch under each eye before bed, peel them off in the morning. Two nights a week. No cleanser step, no serum, nothing to layer, nothing to rinse.</p>\n  <p>It is also invisible. There is no colour in it and nothing sits on your face during the day — it works overnight and it is gone by breakfast. Nobody at work sees a product, and there is nothing on the bathroom shelf that needs explaining.</p>\n</div>"
+          }
+        },
+        "reason-6": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 06",
+            "heading": "If your bags are the inherited kind, this will not fix them — and we would rather say so",
+            "body": "<p>Read this bit properly, because it is the honest answer rather than the one that sells more units.</p>\n  <p>If the fullness comes from <strong>inherited fat pads</strong> — the kind visible in photographs of you at twenty-five, the kind your father and your brother also have — no patch, cream or serum shifts those. Only surgery does. Same goes for deep hollows set by bone structure.</p>\n  <p>What does respond is everything else: <strong>fluid, thinning skin, lost firmness, and the crepey texture that catches hard overhead light.</strong> That covers most men who end up on a page like this.</p>\n  <p>Most people are a mix of both, which is exactly why two men the same age get very different results from the same product. If you are mostly the first kind, keep your money.</p>\n</div>"
+          }
+        },
+        "reason-7": {
+          "type": "reason",
+          "settings": {
+            "num": "REASON 07",
+            "heading": "You get 90 days to judge it, with the box already open",
+            "body": "<p>The honest timeline: the morning after night one the area looks flatter — that is hydration, real and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is how long skin takes to turn over. Nothing shortens that, and any product claiming otherwise is lying to you.</p>\n  <p>Which is why a thirty-day return window on something like this is a technicality, not a guarantee.</p>\n  <p>Use it for eight weeks. If nothing has changed, email them and get your money back. Nothing goes back in the post, and there is no form asking you to prove it did not work.</p>\n  <p>If you have something in the calendar — a wedding, a reunion, a round of interviews — count backwards and start at least eight weeks out.</p>\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "reason-1",
+        "reason-2",
+        "reason-3",
+        "reason-4",
+        "reason-5",
+        "reason-6",
+        "reason-7"
+      ]
     },
     "results": {
       "type": "ces-ad-results",
