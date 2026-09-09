@@ -113,42 +113,42 @@
           "type": "ces_highlight",
           "settings": {
             "icon": "eye",
-            "text": "Fades Dark Circles & Puffiness*"
+            "text": "Fades Dark Circles & Puffiness"
           }
         },
         "highlight-2": {
           "type": "ces_highlight",
           "settings": {
             "icon": "depuff",
-            "text": "De-Puffs Tired Eye Bags*"
+            "text": "De-Puffs Tired Eye Bags"
           }
         },
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
             "icon": "smooth",
-            "text": "Smooths Fine Lines & Crepey Skin*"
+            "text": "Smooths Fine Lines & Crepey Skin"
           }
         },
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
             "icon": "drop",
-            "text": "Deep Hydration & Plumping*"
+            "text": "Deep Hydration & Plumping"
           }
         },
         "highlight-5": {
           "type": "ces_highlight",
           "settings": {
             "icon": "patch",
-            "text": "Painless Micro-Delivery — No Needles*"
+            "text": "Painless Micro-Delivery — No Needles"
           }
         },
         "highlight-6": {
           "type": "ces_highlight",
           "settings": {
             "icon": "firm",
-            "text": "Firmer, Brighter Under-Eyes*"
+            "text": "Firmer, Brighter Under-Eyes"
           }
         },
         "ces_bundle_8Rq63G": {
@@ -174,14 +174,14 @@
             "tier_1_supply": "Your first week with CEBEAM",
             "tier_1_image": "shopify://shop_images/sta.png",
             "tier_1_badge": "",
-            "tier_1_inclusions": "patches | 4 treatments |\ndoc | Quick Start Guide |\ncoin | 90-Day Money Back |",
+            "tier_1_inclusions": "patches | 4 treatments |\ndoc | Quick Start Guide |\ncoin | 30-Day Money Back |",
             "tier_1_free_products": [],
             "tier_2_variant": "47849253994645",
             "tier_2_name": "21-Day Eye Reset™",
             "tier_2_supply": "Complete 3-week routine",
             "tier_2_image": "shopify://shop_images/reset.png",
             "tier_2_badge": "Most Popular",
-            "tier_2_inclusions": "patches | 12 treatments |\nstar | Eye Reset Protocol™ |\ntracker | The 4-Photo Method™ |\ntruck | Free & Fast Shipping |\ncoin | 90-Day Money Back |",
+            "tier_2_inclusions": "patches | 12 treatments |\nstar | Eye Reset Protocol™ |\ntracker | The 4-Photo Method™ |\ntruck | Free & Fast Shipping |\ncoin | 60-Day Money Back |",
             "tier_2_free_products": [],
             "tier_3_variant": "47849254027413",
             "tier_3_name": "45-Day Eye Rebuild™",
