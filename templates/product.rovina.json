@@ -990,11 +990,15 @@
         },
         "avatar-3": {
           "type": "avatar_item",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png"
+          }
         },
         "avatar-4": {
           "type": "avatar_item",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/65926863-1770-41e5-af1a-b9f94e34f9c0.png"
+          }
         },
         "avatar-5": {
           "type": "avatar_item",
@@ -1004,7 +1008,9 @@
         },
         "avatar-6": {
           "type": "avatar_item",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png"
+          }
         },
         "review-1": {
           "type": "review_item",
@@ -1013,6 +1019,7 @@
             "name": "Richard H.",
             "meta": "Verified Buyer",
             "verified": true,
+            "avatar": "shopify://shop_images/ehsan-saadat-46533.jpg",
             "rating": 5
           }
         },
@@ -1023,6 +1030,7 @@
             "name": "Michael R.",
             "meta": "Verified Buyer",
             "verified": true,
+            "avatar": "shopify://shop_images/istockphoto-1440945691-612x612.jpg",
             "rating": 5
           }
         },
@@ -1033,6 +1041,7 @@
             "name": "Denise K.",
             "meta": "Verified Buyer",
             "verified": true,
+            "avatar": "shopify://shop_images/GMYREK_WEBSITEBIO.png",
             "rating": 5
           }
         },
@@ -1043,6 +1052,7 @@
             "name": "Susan A.",
             "meta": "Verified Buyer",
             "verified": true,
+            "avatar": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
             "rating": 5
           }
         },
@@ -1050,9 +1060,10 @@
           "type": "review_item",
           "settings": {
             "review": "<p>Melts right in, no sticky residue, skin feels hydrated and smooth. Highly recommend.</p>",
-            "name": "Charity",
+            "name": "James D.",
             "meta": "Verified Buyer",
             "verified": true,
+            "avatar": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png",
             "rating": 5
           }
         }
