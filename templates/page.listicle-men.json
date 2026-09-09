@@ -24,8 +24,16 @@
         "hero_heading": "7 Reasons Men Over 45 Are Finally Dealing With <em>The Bags Under Their Eyes</em>",
         "hero_sub": "You've been told to sleep more. You slept more. Here's what's actually going on — and the option that sits between a $45 bottle that does nothing and surgery.",
         "hero_cta_label": "TRY IT RISK-FREE →",
-        "image_1": "shopify://shop_images/bef.png",
+        "image_1": "shopify://shop_images/ehsan-saadat-46533.jpg",
         "image_2": "shopify://shop_images/david-8-frame-storyboard-frame-4-wrong-signal-1080x1920.png",
+        "image_3": "shopify://shop_images/istockphoto-1440945691-612x612.jpg",
+        "image_4": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png",
+        "image_5": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
+        "image_6": "shopify://shop_images/7962c422-b856-4238-b159-0476f7c688f8.png",
+        "image_7": "shopify://shop_images/bef.png",
+        "solution_heading": "So here's the fix — and why it actually works",
+        "solution_body": "<p>CEBEAM is a dissolving microneedle patch. The cones are made from the actives themselves, dried and compressed, so they start on the other side of the barrier a cream can never cross — which is the entire reason creams fail and this doesn't.</p><p>Two nights a week, fifteen seconds, nothing on your face by breakfast. Give it eight weeks. If the shadow hasn't lifted, you get your money back and keep the box.</p>",
+        "solution_cta_label": "See today's reader price →",
         "offer_heading": "Eight weeks. Two nights a week. Then decide.",
         "offer_sub": "You've already spent more than this on a bottle that never got past the surface. This one comes with a deadline and a refund.",
         "offer_checklist": "90-day money-back guarantee\nKeep the box, no returns\nDissolving microneedle delivery\nTwo nights a week, fifteen seconds\nDiscreet, tracked shipping\nInvisible — nobody sees a product",
@@ -47,7 +55,21 @@
     },
     "results": {
       "type": "ces-ad-results",
-      "settings": {}
+      "settings": {
+        "show_section": true,
+        "heading": "Age-Defying Results",
+        "subheading": "Real customers, real before &amp; after",
+        "p1_name": "Kyle T.",
+        "p1_quote": "At 49 my under-eye bags were bad enough that I looked into surgery — until the price stopped me. Nine weeks on CEBEAM and the whole area looks tighter. My brother asked where I got it.",
+        "p2_name": "Aaron B.",
+        "p2_quote": "I'm 52 and the bags made me look exhausted no matter how much I slept. Six weeks in and my wife noticed the difference before I did.",
+        "p3_name": "Leon G.",
+        "p3_quote": "Thought my genetic eye bags were permanent. About seven weeks with CEBEAM and they're visibly smaller — bought two more as gifts for my dad and brother-in-law.",
+        "p4_name": "",
+        "p4_quote": "",
+        "cta_label": "GET RID OF YOUR EYE BAGS 👉",
+        "cta_url": ""
+      }
     }
   },
   "order": [
