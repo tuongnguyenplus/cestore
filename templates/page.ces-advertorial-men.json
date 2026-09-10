@@ -1,8 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "ces-advertorial-men",
-      "settings": {}
+      "settings": {
+        "guarantee_days": "90",
+        "price": "$39.95",
+        "ships_from": "the US",
+        "cta_url": "",
+        "image_1": "shopify://shop_images/bef.png",
+        "image_2": "shopify://shop_images/5bc7f757-a882-4e13-bd64-d22ba4cab1e6.png",
+        "pbox_image": "shopify://shop_images/74cb5b44-22f6-48e7-baf1-8d5dd4d15000_44777073-5690-4453-bc5a-7a7c386596aa.png",
+        "pbox_name": "CEBEAM Microneedle Eye Patches",
+        "pbox_price": "$39.95",
+        "pbox_desc": "One month's supply — two patches, two nights a week. 90-day money-back guarantee, and you keep the box.",
+        "pbox_button": "Get CEBEAM →",
+        "t1_quote": "Two people asked if I'd been on holiday. I hadn't — I'd just stopped looking tired on the morning calls.",
+        "t1_who": "Mark, 54",
+        "t2_quote": "I'm 61 and sceptical of anything with 'anti-ageing' on it. Week six was when the shadow actually lifted.",
+        "t2_who": "Dennis, 61",
+        "t3_quote": "I nearly booked the surgery. Glad I tried this first — same read from the room, none of the two weeks off.",
+        "t3_who": "James, 49",
+        "legal_company": ""
+      }
     }
   },
   "order": [
