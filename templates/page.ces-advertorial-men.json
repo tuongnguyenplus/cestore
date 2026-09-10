@@ -15,7 +15,7 @@
         "guarantee_days": "90",
         "price": "$39.95",
         "ships_from": "the US",
-        "cta_url": "",
+        "cta_url": "shopify://products/microneedle-patches",
         "image_1": "shopify://shop_images/bef.png",
         "image_2": "shopify://shop_images/5bc7f757-a882-4e13-bd64-d22ba4cab1e6.png",
         "pbox_image": "shopify://shop_images/74cb5b44-22f6-48e7-baf1-8d5dd4d15000_44777073-5690-4453-bc5a-7a7c386596aa.png",
