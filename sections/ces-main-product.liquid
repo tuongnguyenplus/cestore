@@ -55,8 +55,8 @@
     #MainProduct-{{ section.id }} .product__title > * {
       font-size: {{ section.settings.ces_title_size | default: 26 }}px;
       line-height: 1.12;
-      /* Strong, thick title with a gradient of the brand colour, as in the
-         reference. Solid colour first as a fallback where background-clip:text
+      /* Strong, thick title with a gradient of the brand color, as in the
+         reference. Solid color first as a fallback where background-clip:text
          is unsupported. */
       font-weight: 800;
       letter-spacing: -0.03rem;
@@ -973,7 +973,7 @@
                     {%- assign ces_rating = block.settings.rating_tenths | default: 45 | divided_by: 10.0 -%}
                     {%- if ces_rating > 0 -%}
                       {%- comment -%}
-                        Two identical rows of five stars: a grey track, and a gold
+                        Two identical rows of five stars: a gray track, and a gold
                         layer clipped to (rating / 5) of the width. Any decimal —
                         4.5, 4.8 — fills to exactly its fraction, which a per-star
                         full/half approach cannot do.
@@ -3303,13 +3303,13 @@
         {
           "type": "color",
           "id": "gradient_from",
-          "label": "Panel colour, from",
+          "label": "Panel color, from",
           "default": "#1d5c5c"
         },
         {
           "type": "color",
           "id": "gradient_to",
-          "label": "Panel colour, to",
+          "label": "Panel color, to",
           "default": "#1A1A1A"
         },
         {
@@ -3555,19 +3555,19 @@
         },
         {
           "type": "header",
-          "content": "Colours"
+          "content": "Colors"
         },
         {
           "type": "color",
           "id": "accent_color",
-          "label": "Emphasis colour",
+          "label": "Emphasis color",
           "info": "Best-seller header, selected border and the Add to cart button.",
           "default": "#20303f"
         },
         {
           "type": "color",
           "id": "sale_color",
-          "label": "Sale colour",
+          "label": "Sale color",
           "default": "#e23b3b"
         },
         {
@@ -3783,7 +3783,7 @@
         {
           "type": "color",
           "id": "accent_color",
-          "label": "Accent colour",
+          "label": "Accent color",
           "default": "#1D5C5C"
         },
         {
@@ -4125,7 +4125,7 @@
           "type": "color",
           "id": "card_bg",
           "label": "Card background (In content column)",
-          "info": "Background colour of the rounded card when placed in the content column.",
+          "info": "Background color of the rounded card when placed in the content column.",
           "default": "#ffffff"
         },
         {
@@ -4423,22 +4423,22 @@
     {
       "type": "color",
       "id": "atc_bg",
-      "label": "Button colour"
+      "label": "Button color"
     },
     {
       "type": "color",
       "id": "atc_text",
-      "label": "Text colour"
+      "label": "Text color"
     },
     {
       "type": "color",
       "id": "atc_hover_bg",
-      "label": "Button colour on hover"
+      "label": "Button color on hover"
     },
     {
       "type": "color",
       "id": "atc_hover_text",
-      "label": "Text colour on hover"
+      "label": "Text color on hover"
     }
   ]
 }
