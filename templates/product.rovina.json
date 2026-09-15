@@ -823,6 +823,7 @@
           "settings": {
             "tab_label": "What's Inside",
             "default_open": false,
+            "image": "shopify://shop_images/fnpnf.webp",
             "heading": "A Formula Made for Eyes",
             "text": "<p>Hyaluronic acid, niacinamide, peptides, vitamin C and retinol — chosen for the delicate under-eye area and free from fragrance and harsh fillers.</p>",
             "bullets": "Hyaluronic acid for hydration & plumping\nNiacinamide to brighten tone\nPeptides & retinol to smooth lines",
@@ -835,9 +836,9 @@
             "tab_label": "Why It Works",
             "default_open": false,
             "heading": "Backed by Results",
-            "text": "<p>Designed for visible under-eye results, not overnight miracles.</p>",
-            "bullets": "",
-            "footnote": "Loved by 100,000+ customers and backed by our 90-day money-back guarantee."
+            "text": "<p>Most eye treatments fail because good actives never make it past the skin barrier. Cebeam's microneedle patch solves the delivery problem first — then puts targeted actives exactly where dark circles and puffiness form.<br/><br/></p>",
+            "bullets": "Micro-cones create a direct path — bypassing the stratum corneum that blocks topical creams\n\nActives dissolve exactly where they're needed — at the dermis, near the pigmentation and microcirculation that cause dark circles\n\nConsistent, repeatable delivery — every application reaches the same depth, unlike creams that vary by how hard you rub them in\n\nBacked by the science of microneedle delivery — a growing body of clinical research on HA-based microneedle patches shows measurable improvements in hydration, wrinkle depth, and skin density over consistent use",
+            "footnote": "It's not one ingredient doing the work — it's the delivery system making sure any ingredient actually works."
           }
         }
       },
