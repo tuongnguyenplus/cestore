@@ -305,7 +305,7 @@
           "settings": {
             "heading": "Description",
             "icon": "none",
-            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. Two patches, two nights a week, for visibly fresher, smoother, brighter under-eyes.</p>",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. Two patches, two nights a week, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A simple one-week introduction to CEBEAM™. Use one treatment every other night during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>A complete three-week routine for more noticeable under-eye concerns. Adjust your treatment frequency based on the severity of your concerns and how well your skin responds.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines. Adjust your treatment frequency based on your skin’s needs and tolerance.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye).</strong><br/><br/></p>",
             "page": ""
           }
         },
@@ -1211,52 +1211,73 @@
     "faq": {
       "type": "ces-faq-accordion",
       "blocks": {
-        "faq-1": {
+        "faq-9": {
           "type": "faq_item",
           "settings": {
-            "question": "How long until I see results?",
-            "answer": "<p>Hydration and a smoother look are often visible the next morning. Changes to bags, dark circles and lines usually build over 1–2 weeks of regular use.*</p>",
-            "open": false,
-            "group_label": "Results & what to expect"
-          }
-        },
-        "faq-2": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do the patches hurt?",
-            "answer": "<p>No. You may feel a light tingle for a minute or two as the painless micro-cones make contact and soften. The sensation fades quickly.</p>",
-            "open": false,
-            "group_label": "Safety & the microneedle feel"
-          }
-        },
-        "faq-3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How often should I use them?",
-            "answer": "<p>Two to three nights a week is all you need. The actives keep working between uses, so there’s no need to apply every night.</p>",
+            "group_label": "Before you buy",
+            "question": "Will this work on bags I’ve had for years?",
+            "answer": "<p>Often, partly — it depends what’s under there. Fluid, thin skin and lost firmness respond well. Inherited fat pads that push forward are a surgical issue no topical can move.*</p>",
             "open": false
           }
         },
-        "faq-4": {
+        "faq-10": {
           "type": "faq_item",
           "settings": {
-            "question": "Are they safe for sensitive skin?",
-            "answer": "<p>Yes. The formula is dermatologist-tested and made for the delicate eye area. If your skin is very reactive, do a small patch test first.</p>",
+            "group_label": "",
+            "question": "Can I buy Cebeam in stores?",
+            "answer": "<p>Not currently. It’s sold direct so we can control storage and freshness.</p>",
             "open": false
           }
         },
         "faq-5": {
           "type": "faq_item",
           "settings": {
+            "group_label": "How to use them",
             "question": "How do I apply them?",
             "answer": "<p>On clean, dry skin, place one under each eye and press firmly for 5–10 seconds. Leave on at least 2 hours, or overnight, then remove in the morning.</p>",
-            "open": false,
-            "group_label": "How to use them"
+            "open": false
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "How often should I use them?",
+            "answer": "<p>Two to three nights a week is all you need. The actives keep working between uses, so there’s no need to apply every night.</p>",
+            "open": false
+          }
+        },
+        "faq-8": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Can I wear makeup afterwards?",
+            "answer": "<p>Yes — after removing the patch, wait about 20 minutes, then apply concealer as normal. Many people find it sits smoother on the days after.</p>",
+            "open": false
+          }
+        },
+        "faq-12": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "How should I store them?",
+            "answer": "<p>Sealed, somewhere cool and dry, out of direct sun. Don’t refrigerate — condensation ruins the micro-cones. Once a patch is out of its pouch, use it.</p>",
+            "open": false
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Safety & the microneedle feel",
+            "question": "Do the patches hurt?",
+            "answer": "<p>No. You may feel a light tingle for a minute or two as the painless micro-cones make contact and soften. The sensation fades quickly.</p>",
+            "open": false
           }
         },
         "faq-6": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Why do the patches feel dry to the touch?",
             "answer": "<p>That’s normal. The micro-cones are crystallised, solidified actives — not a soaked serum — so there’s no visible liquid. The dry feel is part of how they work.</p>",
             "open": false
@@ -1265,72 +1286,52 @@
         "faq-7": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "A little redness after use — is that normal?",
             "answer": "<p>Yes, and it’s a good sign. It means the micro-cones delivered the actives where they’re needed. It usually settles within 15–30 minutes.</p>",
             "open": false
           }
         },
-        "faq-8": {
+        "faq-4": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I wear makeup afterwards?",
-            "answer": "<p>Yes — after removing the patch, wait about 20 minutes, then apply concealer as normal. Many people find it sits smoother on the days after.</p>",
-            "open": false
-          }
-        },
-        "faq-9": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Will this work on bags I’ve had for years?",
-            "answer": "<p>Often, partly — it depends what’s under there. Fluid, thin skin and lost firmness respond well. Inherited fat pads that push forward are a surgical issue no topical can move.*</p>",
-            "open": false,
-            "group_label": "Before you buy"
-          }
-        },
-        "faq-10": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I buy Cebeam in stores?",
-            "answer": "<p>Not currently. It’s sold direct so we can control storage and freshness.</p>",
+            "group_label": "",
+            "question": "Are they safe for sensitive skin?",
+            "answer": "<p>Yes. The formula is dermatologist-tested and made for the delicate eye area. If your skin is very reactive, do a small patch test first.</p>",
             "open": false
           }
         },
         "faq-11": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Who should not use these?",
             "answer": "<p>Skip them on broken, irritated or sunburned skin, or with an active eye infection. If you’re pregnant, nursing or on prescription retinoids, ask your doctor first.*</p>",
             "open": false
           }
         },
-        "faq-12": {
+        "faq-1": {
           "type": "faq_item",
           "settings": {
-            "question": "How should I store them?",
-            "answer": "<p>Sealed, somewhere cool and dry, out of direct sun. Don’t refrigerate — condensation ruins the micro-cones. Once a patch is out of its pouch, use it.</p>",
-            "open": false
-          }
-        },
-        "faq-13": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if it doesn’t work for me?",
-            "answer": "<p>Contact us within 90 days for a full refund. You don’t need to send the box back.</p>",
+            "group_label": "Results & what to expect",
+            "question": "How long until I see results?",
+            "answer": "<p>Hydration and a smoother look are often visible the next morning. Changes to bags, dark circles and lines usually build over 1–2 weeks of regular use.*</p>",
             "open": false
           }
         },
         "faq-sub1": {
           "type": "faq_item",
           "settings": {
+            "group_label": "Subscription",
             "question": "How does the subscription work?",
             "answer": "<p>Choose Subscribe at checkout and your refill ships automatically at the subscriber price — nothing to reorder or remember. You pick the interval that matches how often you use them.</p>",
-            "open": false,
-            "group_label": "Subscription"
+            "open": false
           }
         },
         "faq-sub2": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Can I skip, pause or cancel?",
             "answer": "<p>Yes — anytime from your account, with no phone call and no cancellation fee. Skip a delivery, change the interval, pause, or cancel before your next billing date.</p>",
             "open": false
@@ -1339,10 +1340,19 @@
         "faq-ship1": {
           "type": "faq_item",
           "settings": {
+            "group_label": "Shipping & returns",
             "question": "Where do you ship from, and how fast?",
             "answer": "<p>Orders ship from our US warehouse. Standard delivery runs 3–5 business days, and you’ll get a tracking link by email as soon as it’s on the way.</p>",
-            "open": false,
-            "group_label": "Shipping & returns"
+            "open": false
+          }
+        },
+        "faq-13": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "What if it doesn’t work for me?",
+            "answer": "<p>Contact us within 90 days for a full refund. You don’t need to send the box back.</p>",
+            "open": false
           }
         }
       },
