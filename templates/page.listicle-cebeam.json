@@ -12,12 +12,58 @@
     "main": {
       "type": "ces-ad-listicle-cebeam",
       "settings": {
-        "cta_url": "/products/rovina"
+        "discount_pct": "20",
+        "offer_end": "Sunday",
+        "guarantee_days": "90",
+        "price": "$39.95",
+        "ships_from": "the US",
+        "brand_name": "CEBEAM",
+        "brand_kicker": "Skin & Ageing",
+        "rating_value": "4.8",
+        "rating_count": "2,300+",
+        "hero_heading": "7 Reasons Women Over 45 Are Quietly Ditching Eye Cream For <em>Microneedle Patches</em>",
+        "hero_sub": "If you've bought three \"miracle\" eye creams and still avoid the bathroom mirror at 7am, the problem was never the cream. It was the depth.",
+        "hero_cta_label": "TRY IT RISK-FREE →",
+        "image_1": "shopify://shop_images/5bc7f757-a882-4e13-bd64-d22ba4cab1e6.png",
+        "solution_heading": "So here's the fix — and why it actually works",
+        "solution_body": "<p>CEBEAM is a dissolving microneedle patch. The cones are made from the actives themselves, so they start below the barrier a cream stops at — which is exactly why creams never reached the problem and this does.</p><p>One minute before bed, twice a week, invisible by morning. Give it eight weeks. If nothing's changed, you get your money back and keep the box.</p>",
+        "solution_cta_label": "See today's reader price →",
+        "offer_heading": "Try it for eight weeks. Decide after.",
+        "offer_sub": "You've already spent more than this on a bottle that never got past the surface. This one comes with a deadline and a refund.",
+        "offer_checklist": "90-day money-back guarantee\nKeep the box, no returns\nDissolving microneedle delivery\nTwo nights a week, fifteen seconds\nDiscreet, tracked shipping\nInvisible — nobody sees a product",
+        "offer_cta_label": "SHOP NOW →",
+        "cta_url": "/products/rovina",
+        "reviews_heading": "What readers are saying",
+        "reviews_sub": "Over 2,300 verified 5-star reviews",
+        "r1_quote": "My concealer stopped creasing — because there was finally nothing to crease into.",
+        "r1_name": "Karen L.",
+        "r2_quote": "Three creams in the drawer did nothing. Week six with this and I stopped reaching for concealer.",
+        "r2_name": "Rebecca C.",
+        "r3_quote": "One minute before bed, twice a week. I look rested in photos again.",
+        "r3_name": "Sofia M.",
+        "legal_company": "",
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p><p>The information provided on this site is for informational purposes only and is not intended as a substitute for advice from your dermatologist or other health care professional or any information contained on or in any product label or packaging. You should not use the information on this website or the product described for diagnosis or treatment of any health problem or as a substitute for any prescription of any medication or other treatment. You should consult with a health care professional before starting any skin or facial regiment or if you have or suspect you might have a skin problem. This information and product is not recommended for women who are pregnant or children.</p><p>Privacy & GDPR Disclosure: We value your privacy and are committed to transparency. While we may collect personal information for marketing purposes, we will always inform you of the reasons behind such collection. Additionally, please be aware that this website uses cookies for marketing purposes.</p><p>THIS IS AN ADVERTISEMENT AND NOT AN ACTUAL NEWS ARTICLE, BLOG, OR CONSUMER PROTECTION UPDATE.</p>",
+        "copyright_text": "Copyright © 2025 CUMA Skincare. All Rights Reserved."
       }
     },
     "results": {
       "type": "ces-ad-results",
-      "settings": {}
+      "settings": {
+        "show_section": true,
+        "heading": "Age-Defying Results",
+        "subheading": "Real customers, real before &amp; after",
+        "p1_name": "Kyle T.",
+        "p1_quote": "At 49 my under-eye bags were bad enough that I looked into surgery — until the price stopped me. Nine weeks on CEBEAM and the whole area looks tighter. My brother asked where I got it.",
+        "p2_name": "Aaron B.",
+        "p2_quote": "I'm 52 and the bags made me look exhausted no matter how much I slept. Six weeks in and my wife noticed the difference before I did.",
+        "p3_name": "Leon G.",
+        "p3_quote": "Thought my genetic eye bags were permanent. About seven weeks with CEBEAM and they're visibly smaller — bought two more as gifts for my dad and brother-in-law.",
+        "p4_name": "",
+        "p4_quote": "",
+        "cta_label": "GET RID OF YOUR EYE BAGS 👉",
+        "cta_url": ""
+      }
     }
   },
   "order": [
