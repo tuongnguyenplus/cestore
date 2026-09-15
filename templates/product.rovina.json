@@ -787,7 +787,7 @@
     "banner-clinical": {
       "type": "ces-image-text-banner",
       "settings": {
-        "image": "shopify://shop_images/59.webp",
+        "image": "shopify://shop_images/17c36898-a508-4a7f-a4e8-11b1eb02646d.png",
         "layout": "split",
         "text_position": "end",
         "overlay_opacity": 0,
@@ -815,7 +815,7 @@
             "heading": "Delivered Below the Surface",
             "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.*</p>",
             "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo needles, no procedure\nNo downtime",
-            "footnote": "This is why the difference builds instead of washing off.*"
+            "footnote": "This is why the difference builds instead of washing off."
           }
         },
         "tab2": {
