@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-ad-listicle-cebeam-men",
+      "settings": {}
+    },
+    "results": {
+      "type": "ces-ad-results",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "results"
+  ]
+}
