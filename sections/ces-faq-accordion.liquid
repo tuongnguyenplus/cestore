@@ -27,6 +27,9 @@
 
     <div class="ces-accordion">
       {%- for block in section.blocks -%}
+        {%- if block.settings.group_label != blank -%}
+          <p class="ces-faq-group"{{ block.shopify_attributes }}>{{ block.settings.group_label }}</p>
+        {%- endif -%}
         {% render 'ces-accordion-item',
           id: block.id,
           heading: block.settings.question,
@@ -109,6 +112,12 @@
       "type": "faq_item",
       "name": "Question",
       "settings": [
+        {
+          "type": "text",
+          "id": "group_label",
+          "label": "Group label (shown above this question)",
+          "info": "Set only on the first question of a journey stage, e.g. \"Before you buy\". Leave blank on the rest."
+        },
         {
           "type": "text",
           "id": "question",

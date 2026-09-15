@@ -6,6 +6,19 @@
   background: var(--gradient-background);
 }
 
+.ces-faq-group {
+  margin: 2.8rem 0 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ces-accent);
+}
+
+.ces-faq-group:first-child {
+  margin-top: 0;
+}
+
 .ces-faq-accordion__footer {
   margin-top: 2.4rem;
   font-size: 1.4rem;
