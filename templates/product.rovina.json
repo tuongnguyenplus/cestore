@@ -1216,7 +1216,8 @@
           "settings": {
             "question": "How long until I see results?",
             "answer": "<p>Hydration and a smoother look are often visible the next morning. Changes to bags, dark circles and lines usually build over 1–2 weeks of regular use.*</p>",
-            "open": false
+            "open": false,
+            "group_label": "Results & what to expect"
           }
         },
         "faq-2": {
@@ -1224,7 +1225,8 @@
           "settings": {
             "question": "Do the patches hurt?",
             "answer": "<p>No. You may feel a light tingle for a minute or two as the painless micro-cones make contact and soften. The sensation fades quickly.</p>",
-            "open": false
+            "open": false,
+            "group_label": "Safety & the microneedle feel"
           }
         },
         "faq-3": {
@@ -1248,7 +1250,8 @@
           "settings": {
             "question": "How do I apply them?",
             "answer": "<p>On clean, dry skin, place one under each eye and press firmly for 5–10 seconds. Leave on at least 2 hours, or overnight, then remove in the morning.</p>",
-            "open": false
+            "open": false,
+            "group_label": "How to use them"
           }
         },
         "faq-6": {
@@ -1280,7 +1283,8 @@
           "settings": {
             "question": "Will this work on bags I’ve had for years?",
             "answer": "<p>Often, partly — it depends what’s under there. Fluid, thin skin and lost firmness respond well. Inherited fat pads that push forward are a surgical issue no topical can move.*</p>",
-            "open": false
+            "open": false,
+            "group_label": "Before you buy"
           }
         },
         "faq-10": {
@@ -1314,21 +1318,50 @@
             "answer": "<p>Contact us within 90 days for a full refund. You don’t need to send the box back.</p>",
             "open": false
           }
+        },
+        "faq-sub1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the subscription work?",
+            "answer": "<p>Choose Subscribe at checkout and your refill ships automatically at the subscriber price — nothing to reorder or remember. You pick the interval that matches how often you use them.</p>",
+            "open": false,
+            "group_label": "Subscription"
+          }
+        },
+        "faq-sub2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I skip, pause or cancel?",
+            "answer": "<p>Yes — anytime from your account, with no phone call and no cancellation fee. Skip a delivery, change the interval, pause, or cancel before your next billing date.</p>",
+            "open": false
+          }
+        },
+        "faq-ship1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Where do you ship from, and how fast?",
+            "answer": "<p>Orders ship from our US warehouse. Standard delivery runs 3–5 business days, and you’ll get a tracking link by email as soon as it’s on the way.</p>",
+            "open": false,
+            "group_label": "Shipping & returns"
+          }
         }
       },
       "block_order": [
-        "faq-1",
-        "faq-2",
-        "faq-3",
-        "faq-4",
-        "faq-5",
-        "faq-6",
-        "faq-7",
-        "faq-8",
         "faq-9",
         "faq-10",
-        "faq-11",
+        "faq-5",
+        "faq-3",
+        "faq-8",
         "faq-12",
+        "faq-2",
+        "faq-6",
+        "faq-7",
+        "faq-4",
+        "faq-11",
+        "faq-1",
+        "faq-sub1",
+        "faq-sub2",
+        "faq-ship1",
         "faq-13"
       ],
       "settings": {
