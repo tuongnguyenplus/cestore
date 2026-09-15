@@ -809,11 +809,11 @@
         "tab1": {
           "type": "tab_item",
           "settings": {
-            "tab_label": "Antioxidant Strength",
+            "tab_label": "Penetration Power",
             "default_open": true,
-            "image": "shopify://shop_images/753f2cee-6f6d-477d-9b51-18369122ee81.png",
+            "image": "shopify://shop_images/5bc7f757-a882-4e13-bd64-d22ba4cab1e6.png",
             "heading": "Delivered Below the Surface",
-            "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.*</p>",
+            "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.</p>",
             "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo needles, no procedure\nNo downtime",
             "footnote": "This is why the difference builds instead of washing off."
           }
