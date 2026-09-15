@@ -34,6 +34,9 @@
 .ces-lst .pull{border-left:3px solid var(--teal);background:var(--sand);padding:12px 16px;border-radius:0 10px 10px 0;font-family:var(--serif);font-style:italic;font-size:18px;color:#243330;margin:14px 0}
 .ces-lst .ces-media .ces-ph{background:linear-gradient(160deg,#eef3f1,#dfe8e5);border-radius:16px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;text-align:center;color:#6f7f7b;font-size:13px;box-shadow:0 18px 40px rgba(22,71,71,.12);border:1px solid #e3ece9;padding:20px}
 .ces-lst .ces-media img{border-radius:16px;box-shadow:0 18px 40px rgba(22,71,71,.12);width:100%}
+.ces-lst .hero-fig{margin:6px auto 22px;max-width:640px}
+.ces-lst .hero-fig img{border-radius:16px;box-shadow:0 18px 40px rgba(22,71,71,.12);width:100%}
+.ces-lst .hero-fig .ces-ph{background:linear-gradient(160deg,#eef3f1,#dfe8e5);border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;color:#6f7f7b;font-size:13px;box-shadow:0 18px 40px rgba(22,71,71,.12);border:1px solid #e3ece9;padding:20px}
 .ces-lst .mini{display:inline-block;color:var(--teal);font-weight:700;text-decoration:none;border-bottom:2px solid #cfe0dc;padding-bottom:2px}
 .ces-lst .offer{background:var(--teal);color:#eaf3f1;text-align:center;padding:52px 22px;margin-top:20px}
 .ces-lst .offer h2{font-family:var(--serif);color:#fff;font-size:clamp(26px,4vw,36px);font-weight:600;margin:0 0 8px}
@@ -86,6 +89,7 @@
   <div class="rate">{{ section.settings.rating_value }} / 5 · {{ section.settings.rating_count }} verified reviews</div>
   <h1>{{ section.settings.hero_heading }}</h1>
   <p class="dek">{{ section.settings.hero_sub }}</p>
+  {%- if section.settings.hero_image != blank -%}<figure class="hero-fig"><img src="{{ section.settings.hero_image | image_url: width: 1400 }}" alt="CEBEAM Microneedle Patches" loading="lazy"></figure>{%- endif -%}
   {%- if section.settings.hero_bridge != blank -%}<p class="bridge">{{ section.settings.hero_bridge }}</p>{%- endif -%}
   <a class="btn" href="#ces-offer">{{ section.settings.hero_cta_label }}</a>
 </section>
@@ -279,6 +283,11 @@
       "id": "hero_bridge",
       "label": "Hero bridge line",
       "default": "Whether it's your daughter's wedding, an upcoming reunion, or another camera-heavy event, the goal isn't to look younger. It's to look as rested as you actually feel."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image (between sub-text and bridge line)"
     },
     {
       "type": "text",
