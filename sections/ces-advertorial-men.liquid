@@ -24,7 +24,7 @@
 .cesdoc .tbahint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--soft);font-family:"IBM Plex Mono",monospace;font-size:11px}
 </style>
 <div class="cesdoc cesdoc--ces-advertorial-men">
-<div class="bar">Reader offer · {{ section.settings.guarantee_days }}-day money-back guarantee</div>
+<div class="bar">The CEBEAM 21-Day Eye Reset · {{ section.settings.guarantee_days }}-day money-back guarantee</div>
 
 <header class="mast"><div class="wrap">
   <span class="brand">CEBEAM</span>
@@ -272,6 +272,7 @@
 
 <section class="cross" id="offer">
   <div class="wrap">
+    <p style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8c9a8;margin:0 0 8px">The CEBEAM 21-Day Eye Reset</p>
     <h2>Two options, and one of them is disguised as not deciding</h2>
 
     <div class="opt">
@@ -311,36 +312,163 @@
   "tag": "section",
   "class": "cesdoc-section",
   "settings": [
-    {"type": "header", "content": "Offer & pricing"},
-    {"type": "text", "id": "guarantee_days", "label": "Guarantee (days)", "default": "90"},
-    {"type": "text", "id": "price", "label": "Price", "default": "$39.95"},
-    {"type": "text", "id": "ships_from", "label": "Ships from", "default": "the US"},
-    {"type": "url", "id": "cta_url", "label": "Buy button link"},
-    {"type": "header", "content": "In-article photos"},
-    {"type": "image_picker", "id": "image_1", "label": "Photo 1 (hook)"},
-    {"type": "image_picker", "id": "image_2", "label": "Photo 2 (cones / diagram)"},
-    {"type": "header", "content": "Product box"},
-    {"type": "image_picker", "id": "pbox_image", "label": "Product image"},
-    {"type": "text", "id": "pbox_name", "label": "Product name", "default": "CEBEAM Microneedle Eye Patches"},
-    {"type": "text", "id": "pbox_price", "label": "Product price", "default": "$39.95"},
-    {"type": "textarea", "id": "pbox_desc", "label": "Product description", "default": "7-day starter — 4 treatments. 90-day money-back guarantee, and you keep the box."},
-    {"type": "text", "id": "pbox_button", "label": "Product button label", "default": "Get CEBEAM →"},
-    {"type": "header", "content": "Testimonials"},
-    {"type": "paragraph", "content": "Use real customer testimonials only. Replace or clear the samples below."},
-    {"type": "textarea", "id": "t1_quote", "label": "Testimonial 1", "default": "Two people asked if I'd been on holiday. I hadn't — I'd just stopped looking tired on the morning calls."},
-    {"type": "text", "id": "t1_who", "label": "Name 1", "default": "Mark, 54"},
-    {"type": "image_picker", "id": "t1_before", "label": "Testimonial 1 — before"},
-    {"type": "image_picker", "id": "t1_after", "label": "Testimonial 1 — after"},
-    {"type": "textarea", "id": "t2_quote", "label": "Testimonial 2", "default": "I'm 61 and skeptical of anything with 'anti-aging' on it. Week six was when the shadow actually lifted."},
-    {"type": "text", "id": "t2_who", "label": "Name 2", "default": "Dennis, 61"},
-    {"type": "image_picker", "id": "t2_before", "label": "Testimonial 2 — before"},
-    {"type": "image_picker", "id": "t2_after", "label": "Testimonial 2 — after"},
-    {"type": "textarea", "id": "t3_quote", "label": "Testimonial 3", "default": "I nearly booked the surgery. Glad I tried this first — same read from the room, none of the two weeks off."},
-    {"type": "text", "id": "t3_who", "label": "Name 3", "default": "James, 49"},
-    {"type": "image_picker", "id": "t3_before", "label": "Testimonial 3 — before"},
-    {"type": "image_picker", "id": "t3_after", "label": "Testimonial 3 — after"},
-    {"type": "header", "content": "Footer"},
-    {"type": "textarea", "id": "legal_company", "label": "Company & legal line"}
+    {
+      "type": "header",
+      "content": "Offer & pricing"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_days",
+      "label": "Guarantee (days)",
+      "default": "90"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$39.95"
+    },
+    {
+      "type": "text",
+      "id": "ships_from",
+      "label": "Ships from",
+      "default": "the US"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Buy button link"
+    },
+    {
+      "type": "header",
+      "content": "In-article photos"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Photo 1 (hook)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Photo 2 (cones / diagram)"
+    },
+    {
+      "type": "header",
+      "content": "Product box"
+    },
+    {
+      "type": "image_picker",
+      "id": "pbox_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "pbox_name",
+      "label": "Product name",
+      "default": "CEBEAM 21-Day Eye Reset"
+    },
+    {
+      "type": "text",
+      "id": "pbox_price",
+      "label": "Product price",
+      "default": "$39.95"
+    },
+    {
+      "type": "textarea",
+      "id": "pbox_desc",
+      "label": "Product description",
+      "default": "7-day starter — 4 treatments. 90-day money-back guarantee, and you keep the box."
+    },
+    {
+      "type": "text",
+      "id": "pbox_button",
+      "label": "Product button label",
+      "default": "Get CEBEAM →"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use real customer testimonials only. Replace or clear the samples below."
+    },
+    {
+      "type": "textarea",
+      "id": "t1_quote",
+      "label": "Testimonial 1",
+      "default": "Two people asked if I'd been on holiday. I hadn't — I'd just stopped looking tired on the morning calls."
+    },
+    {
+      "type": "text",
+      "id": "t1_who",
+      "label": "Name 1",
+      "default": "Mark, 54"
+    },
+    {
+      "type": "image_picker",
+      "id": "t1_before",
+      "label": "Testimonial 1 — before"
+    },
+    {
+      "type": "image_picker",
+      "id": "t1_after",
+      "label": "Testimonial 1 — after"
+    },
+    {
+      "type": "textarea",
+      "id": "t2_quote",
+      "label": "Testimonial 2",
+      "default": "I'm 61 and skeptical of anything with 'anti-aging' on it. Week six was when the shadow actually lifted."
+    },
+    {
+      "type": "text",
+      "id": "t2_who",
+      "label": "Name 2",
+      "default": "Dennis, 61"
+    },
+    {
+      "type": "image_picker",
+      "id": "t2_before",
+      "label": "Testimonial 2 — before"
+    },
+    {
+      "type": "image_picker",
+      "id": "t2_after",
+      "label": "Testimonial 2 — after"
+    },
+    {
+      "type": "textarea",
+      "id": "t3_quote",
+      "label": "Testimonial 3",
+      "default": "I nearly booked the surgery. Glad I tried this first — same read from the room, none of the two weeks off."
+    },
+    {
+      "type": "text",
+      "id": "t3_who",
+      "label": "Name 3",
+      "default": "James, 49"
+    },
+    {
+      "type": "image_picker",
+      "id": "t3_before",
+      "label": "Testimonial 3 — before"
+    },
+    {
+      "type": "image_picker",
+      "id": "t3_after",
+      "label": "Testimonial 3 — after"
+    },
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "textarea",
+      "id": "legal_company",
+      "label": "Company & legal line"
+    }
   ],
   "presets": [
     {
