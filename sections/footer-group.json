@@ -20,6 +20,13 @@
             "show_social": true
           }
         },
+        "link_list_LYBGEb": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
         "image_wPjmVy": {
           "type": "image",
           "settings": {
@@ -31,6 +38,7 @@
       },
       "block_order": [
         "brand_information_z7EcbF",
+        "link_list_LYBGEb",
         "image_wPjmVy"
       ],
       "settings": {
