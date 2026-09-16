@@ -190,7 +190,7 @@
     {%- assign ces_checks = section.settings.offer_checklist | strip | newline_to_br | split: '<br />' -%}
     {%- for c in ces_checks -%}{%- assign cc = c | strip -%}{%- if cc != blank -%}<li>{{ cc }}</li>{%- endif -%}{%- endfor -%}
   </ul>
-  <a class="btn big" href="{{ section.settings.cta_url | default: '/products/rovina' }}">{{ section.settings.offer_cta_label }}</a>
+  <a class="btn big" href="{{ section.settings.cta_url | default: 'https://cebeam.com/products/microneedle-patches' }}">{{ section.settings.offer_cta_label }}</a>
   <div class="rate2"><span class="stars">★★★★★</span> &nbsp;Rated {{ section.settings.rating_value }}/5 by {{ section.settings.rating_count }} customers</div>
 </section>
 

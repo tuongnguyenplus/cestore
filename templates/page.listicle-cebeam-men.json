@@ -45,7 +45,7 @@
         "offer_sub": "You've already spent more than this on a cream that never got past the surface. This one comes with a deadline and a refund.",
         "offer_checklist": "90-day money-back guarantee\nKeep the box, no returns\nDissolving microneedle delivery\n7-day starter, then two nights a week\nDiscreet, tracked shipping\nInvisible — nobody sees a product",
         "offer_cta_label": "SHOP NOW →",
-        "cta_url": "shopify://products/microneedle-patches",
+        "cta_url": "https://cebeam.com/products/microneedle-patches",
         "reviews_heading": "What men are saying",
         "reviews_sub": "Over 2,300 verified 5-star reviews",
         "r1_quote": "Two colleagues asked if I'd been on holiday. I hadn't — I'd just stopped looking tired on the morning calls.",

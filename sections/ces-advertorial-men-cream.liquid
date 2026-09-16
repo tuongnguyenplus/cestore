@@ -235,7 +235,7 @@
     <h3>{{ section.settings.pbox_name }}</h3>
     <p class="pprice">{{ section.settings.pbox_price }}</p>
     <p>{{ section.settings.pbox_desc }}</p>
-    <a class="pbtn" href="{{ section.settings.cta_url | default: '/products/rovina' }}">{{ section.settings.pbox_button }}</a>
+    <a class="pbtn" href="{{ section.settings.cta_url | default: 'https://cebeam.com/products/microneedle-patches' }}">{{ section.settings.pbox_button }}</a>
   </div>
 </div>
 
@@ -267,7 +267,7 @@
       <p style="margin:0">Six weeks. A patch a couple of nights a week. Find out what your face says about you when something actually reaches the skin. If it changes nothing, you get your money back and you are out the six weeks.</p>
     </div>
 
-    <a class="cta" href="{{ section.settings.cta_url | default: '/products/rovina' }}">Check availability →</a>
+    <a class="cta" href="{{ section.settings.cta_url | default: 'https://cebeam.com/products/microneedle-patches' }}">Check availability →</a>
     <p style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,241,234,.72);line-height:2">
       {{ section.settings.guarantee_days }}-day money-back guarantee · Keep the box<br>Ships from {{ section.settings.ships_from }} · Discreet packaging · Tracked
     </p>
