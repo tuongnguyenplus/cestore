@@ -57,7 +57,7 @@
           "type": "ces_rating_bar",
           "settings": {
             "rating_tenths": 45,
-            "text": "Rated <strong>4.4 Excellent</strong> | Over",
+            "text": "Rated <strong>4.8 Excellent</strong> | Over",
             "enable_counter": true,
             "sold_count": 255127,
             "sold_suffix": "Sold",
