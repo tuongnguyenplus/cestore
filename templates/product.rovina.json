@@ -1223,6 +1223,7 @@
         },
         "video-3": {
           "type": "video_item",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/a1.mp4",
             "video_url": "",
@@ -1231,6 +1232,7 @@
         },
         "video-4": {
           "type": "video_item",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/a1.mp4",
             "video_url": "",
