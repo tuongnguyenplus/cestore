@@ -1473,6 +1473,62 @@
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
       }
+    },
+    "experience-list": {
+      "type": "ces-experience-list",
+      "blocks": {
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "text": "Stays where you place it during normal upright activity."
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "text": "Dry micro-cone format—not a wet gel patch."
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "text": "Removes cleanly without a sticky film."
+          }
+        },
+        "item-4": {
+          "type": "item",
+          "settings": {
+            "text": "Individually sealed treatment pouches."
+          }
+        },
+        "item-5": {
+          "type": "item",
+          "settings": {
+            "text": "Designed for comfortable use when directions are followed."
+          }
+        },
+        "item-6": {
+          "type": "item",
+          "settings": {
+            "text": "Fits into a makeup routine after removal."
+          }
+        }
+      },
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3",
+        "item-4",
+        "item-5",
+        "item-6"
+      ],
+      "settings": {
+        "heading": "Designed around what people dislike about ordinary eye patches",
+        "subheading": "",
+        "color_scheme": "scheme-ces-gradient",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -1486,6 +1542,7 @@
     "timeline",
     "banner-clinical",
     "content-tabs",
+    "experience-list",
     "guarantee-cta",
     "comparison",
     "bullet-cta",

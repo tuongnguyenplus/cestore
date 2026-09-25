@@ -1,0 +1,66 @@
+/* Styles for sections/ces-experience-list.liquid.
+   A headline plus a checked list of product-experience points. */
+
+.ces-experience-list {
+  color: rgb(var(--color-foreground));
+  background: var(--gradient-background);
+}
+
+.ces-experience-list__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem 2.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .ces-experience-list__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ces-experience-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.4rem 0;
+  border-top: 0.1rem dashed var(--ces-border-color);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.ces-experience-list__item:first-child,
+.ces-experience-list__item:nth-child(2) {
+  border-top: none;
+}
+
+@media screen and (max-width: 749px) {
+  .ces-experience-list__item:nth-child(2) {
+    border-top: 0.1rem dashed var(--ces-border-color);
+  }
+}
+
+.ces-experience-list__check {
+  flex: 0 0 auto;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  background: var(--ces-accent);
+  color: rgb(var(--color-background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ces-experience-list__check svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+}
+
+.ces-experience-list__text {
+  padding-top: 0.1rem;
+}
