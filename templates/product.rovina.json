@@ -964,6 +964,66 @@
           "settings": {
             "text": "No real guarantee"
           }
+        },
+        "ours-6": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Stays put overnight — no repositioning"
+          }
+        },
+        "theirs-6": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Slides down or won't stay stuck"
+          }
+        },
+        "ours-7": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Peels off clean — no sticky film"
+          }
+        },
+        "theirs-7": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Leaves a sticky residue"
+          }
+        },
+        "ours-8": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Individually sealed — fresh every pouch"
+          }
+        },
+        "theirs-8": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Loose packs that dry out or arrive faulty"
+          }
+        },
+        "ours-9": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Delivers actives — real, visible change"
+          }
+        },
+        "theirs-9": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "A cool feel for a minute, then nothing changes"
+          }
+        },
+        "ours-10": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Skin sits smoother under makeup afterward"
+          }
+        },
+        "theirs-10": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Leaves skin tacky under makeup"
+          }
         }
       },
       "block_order": [
@@ -972,19 +1032,29 @@
         "ours-3",
         "ours-4",
         "ours-5",
+        "ours-6",
+        "ours-7",
+        "ours-8",
+        "ours-9",
+        "ours-10",
         "theirs-1",
         "theirs-2",
         "theirs-3",
         "theirs-4",
-        "theirs-5"
+        "theirs-5",
+        "theirs-6",
+        "theirs-7",
+        "theirs-8",
+        "theirs-9",
+        "theirs-10"
       ],
       "settings": {
         "heading": "What sets Cebeam apart",
         "subheading": "",
         "image": "shopify://shop_images/44_1.webp",
         "brand_label": "Cebeam",
-        "other_label": "Other Brands",
-        "footnote": "",
+        "other_label": "Ordinary patches & creams",
+        "footnote": "<p>Right column reflects the most common complaints from reviews of ordinary eye patches and creams.</p>",
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 40,
         "padding_bottom": 40
