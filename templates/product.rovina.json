@@ -546,7 +546,7 @@
         "card1": {
           "type": "feature_card",
           "settings": {
-            "image": "shopify://shop_images/1a225911-a51e-4f5e-beb3-89568a501e06.png",
+            "image": "shopify://shop_images/US_c42881f4-c502-4b96-b510-c1c4ee1bc96f.webp",
             "heading": "Dissolving Micro-Cones",
             "text": "<p>Hundreds of painless micro-cones dissolve into the skin, delivering actives just below the surface — where creams can’t reach.</p>"
           }
@@ -562,7 +562,7 @@
         "card3": {
           "type": "feature_card",
           "settings": {
-            "image": "shopify://shop_images/US.webp",
+            "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png",
             "heading": "Clean & Dermatologist-Tested",
             "text": "<p>Made in a GMP-certified facility and dermatologist-tested. Fragrance-free and gentle enough for delicate, mature eye skin.</p>"
           }
@@ -978,16 +978,40 @@
     "testimonials": {
       "type": "ces-testimonial-marquee",
       "blocks": {
+        "avatar_item_dXtLe6": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png"
+          }
+        },
+        "avatar_item_eaFPzR": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/95d7d4b3a0e5e508dee44756c74a8919.jpg"
+          }
+        },
         "avatar-1": {
           "type": "avatar_item",
           "settings": {
             "image": "shopify://shop_images/5aaf758b-0c8c-4a73-9541-e7499f30d030.png"
           }
         },
+        "avatar_item_TRmW8T": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/febe207403798d395523da12f6af32a4.jpg"
+          }
+        },
         "avatar-2": {
           "type": "avatar_item",
           "settings": {
             "image": "shopify://shop_images/a27678e0-e592-4a10-bd64-a1cd33b9cd67.png"
+          }
+        },
+        "avatar_item_pfxKER": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/looping_gif_small_c71a6cc7-a54d-4c82-9692-0b7b075ed96b.webp"
           }
         },
         "avatar-3": {
@@ -1014,17 +1038,6 @@
             "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png"
           }
         },
-        "review-1": {
-          "type": "review_item",
-          "settings": {
-            "review": "<p>This is the first time I've ever tried these. I'm 70 years old in Italian! I have my Italian bags my whole life. I put these on for 20 minutes. I can tell a difference in the puffiness. I knew it wasn't going to be a facelift but it's certainly helped!&nbsp;</p>",
-            "name": "Melisa H.",
-            "meta": "Verified Buyer",
-            "verified": true,
-            "avatar": "shopify://shop_images/Untitled_design_12.webp",
-            "rating": 5
-          }
-        },
         "review-2": {
           "type": "review_item",
           "settings": {
@@ -1033,6 +1046,17 @@
             "meta": "Verified Buyer",
             "verified": true,
             "avatar": "shopify://shop_images/istockphoto-1440945691-612x612.jpg",
+            "rating": 5
+          }
+        },
+        "review-1": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>This is the first time I've ever tried these. I'm 70 years old in Italian! I have my Italian bags my whole life. I put these on for 20 minutes. I can tell a difference in the puffiness. I knew it wasn't going to be a facelift but it's certainly helped!&nbsp;</p>",
+            "name": "Melisa H.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/Untitled_design_12.webp",
             "rating": 5
           }
         },
@@ -1047,17 +1071,6 @@
             "rating": 5
           }
         },
-        "review-4": {
-          "type": "review_item",
-          "settings": {
-            "review": "<p>My eyes were making me look years older. After a month I’ve got my confidence back.*</p>",
-            "name": "Susan A.",
-            "meta": "Verified Buyer",
-            "verified": true,
-            "avatar": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
-            "rating": 5
-          }
-        },
         "review-5": {
           "type": "review_item",
           "settings": {
@@ -1068,20 +1081,35 @@
             "avatar": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png",
             "rating": 5
           }
+        },
+        "review-4": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>My eyes were making me look years older. After a month I’ve got my confidence back.*</p>",
+            "name": "Susan A.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
+            "rating": 5
+          }
         }
       },
       "block_order": [
+        "avatar_item_dXtLe6",
+        "avatar_item_eaFPzR",
         "avatar-1",
+        "avatar_item_TRmW8T",
         "avatar-2",
+        "avatar_item_pfxKER",
         "avatar-3",
         "avatar-4",
         "avatar-5",
         "avatar-6",
-        "review-1",
         "review-2",
+        "review-1",
         "review-3",
-        "review-4",
-        "review-5"
+        "review-5",
+        "review-4"
       ],
       "settings": {
         "heading": "What Customers Are Saying",
