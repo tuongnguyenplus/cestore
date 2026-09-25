@@ -73,7 +73,7 @@
         "subtitle": {
           "type": "text",
           "settings": {
-            "text": "Your eyes shouldn't announce you're tired before you say a word. Dissolving micro-cone patches carry real actives beneath the skin — for visibly fewer bags, dark circles and fine lines. No needles, no downtime.",
+            "text": "Your eyes shouldn't announce you're tired before you say a word. Dissolving micro-cone patches carry real actives beneath the skin — for visibly fewer bags, dark circles and fine lines. No injections, no metal needles, no downtime.",
             "text_style": "body"
           }
         },
@@ -141,7 +141,7 @@
           "type": "ces_highlight",
           "settings": {
             "icon": "patch",
-            "text": "Painless Micro-Delivery — No Needles"
+            "text": "Painless — No Injections or Metal Needles"
           }
         },
         "highlight-6": {
@@ -264,7 +264,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "Just 2 patches, 2 nights a week",
+            "text": "4 treatment nights a week, then 2 to maintain",
             "standalone": false,
             "align": "center"
           }
@@ -273,7 +273,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "Painless — no needles, no downtime",
+            "text": "Painless — no injections, no metal needles",
             "standalone": false,
             "align": "center"
           }
@@ -319,7 +319,7 @@
           "settings": {
             "heading": "What’s Included?",
             "icon": "none",
-            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. Two patches, two nights a week, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A simple one-week introduction to CEBEAM™. Use one treatment every other night during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>A complete three-week routine for more noticeable under-eye concerns. Adjust your treatment frequency based on the severity of your concerns and how well your skin responds.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines. Adjust your treatment frequency based on your skin’s needs and tolerance.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye).</strong><br/><br/></p>",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, four nights a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on four nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on four nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
             "page": ""
           }
         },
@@ -337,7 +337,7 @@
           "settings": {
             "heading": "Does it actually work?",
             "icon": "none",
-            "content": "<p>Hydration and a plumping effect are often visible from the very first uses. Deeper changes to dark circles, bags and fine lines typically build over 1–2 weeks of regular use. Consistency — two nights a week — is what matters most.*</p>",
+            "content": "<p>Hydration and a plumping effect are often visible from the very first uses. Deeper changes to dark circles, bags and fine lines typically build over 1–2 weeks of regular use. Consistency — four treatment nights a week through your reset — is what matters most.*</p>",
             "page": ""
           }
         },
@@ -364,7 +364,7 @@
           "settings": {
             "heading": "How do I apply them?",
             "icon": "none",
-            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use 2–3 nights a week.</p>",
+            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment on four nights a week during your reset, then two treatment nights a week to maintain.</p>",
             "page": ""
           }
         },
@@ -442,7 +442,7 @@
             "overlay_opacity": 0,
             "heading": "Why Trust Cebeam for Your Under-Eyes?",
             "icon": "check-circle",
-            "items": "Dissolving Microneedle Technology\n2–3 Treatment Nights / Week\n2+ Hours or Overnight\nMade for Mature Under-Eyes\nNo Injections. No Downtime.\n90-Day Money-Back Guarantee",
+            "items": "Dissolving Microneedle Technology\n4 Treatment Nights / Week (Reset)\n2+ Hours or Overnight\nMade for Mature Under-Eyes\nNo Injections. No Metal Needles. No Downtime.\n90-Day Money-Back Guarantee",
             "footnote": "Dermatologist-Tested, Clean Formula",
             "text_alignment": "center"
           }
@@ -654,7 +654,7 @@
           "settings": {
             "image": "shopify://shop_images/753f2cee-6f6d-477d-9b51-18369122ee81.png",
             "heading": "Works While You Sleep",
-            "text": "<p>Press two patches on before bed and leave them overnight. The actives keep working for hours — no routine, no mess, no downtime.</p>"
+            "text": "<p>Press one fresh two-patch treatment on before bed and leave it overnight. The actives keep working for hours — no routine, no mess, no downtime.</p>"
           }
         },
         "card3": {
@@ -711,7 +711,7 @@
             "image": "shopify://shop_images/5bc7f757-a882-4e13-bd64-d22ba4cab1e6.png",
             "heading": "Delivered Below the Surface",
             "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.</p>",
-            "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo needles, no procedure\nNo downtime",
+            "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo injections, no metal needles\nNo downtime",
             "footnote": "This is why the difference builds instead of washing off."
           }
         },
@@ -819,7 +819,7 @@
         "eyebrow": "Dermatologist-Tested",
         "heading_accent": "Painless",
         "heading": "Made to clinical standards, with zero downtime",
-        "text": "<p>Made in a GMP-certified facility and dermatologist-tested for the delicate eye area. No needles in the medical sense, no procedure, no recovery time.</p>",
+        "text": "<p>Made in a GMP-certified facility and dermatologist-tested for the delicate eye area. No injections, no metal needles, no procedure, no recovery time.</p>",
         "button_label": "",
         "button_link": "",
         "badge_speed": 40,
@@ -910,8 +910,8 @@
           "settings": {
             "state": "auto",
             "time_label": "ONGOING",
-            "heading": "Keep it up, 2 nights a week",
-            "bullets": "Results hold with just one pair, two nights a week\nPuffiness and shadows stay under control\nFirmness and brightness keep improving\nNo routine, no downtime — it fits your life",
+            "heading": "Maintain: 2 treatment nights a week",
+            "bullets": "Results hold with two treatment nights a week\nPuffiness and shadows stay under control\nFirmness and brightness keep improving\nNo routine, no downtime — it fits your life",
             "content": "",
             "open": false
           }
@@ -975,7 +975,7 @@
       "settings": {
         "heading": "How to use it — the whole method takes about 15 seconds",
         "subheading": "",
-        "note": "The 7-day starter is 4 treatments in your first week. After that, one pair two nights a week is all it takes to hold it.",
+        "note": "During the 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain your routine with two treatment nights per week.",
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 48,
         "padding_bottom": 48
@@ -1114,7 +1114,7 @@
         "ours-4": {
           "type": "rovina_point",
           "settings": {
-            "text": "Works in 2 nights a week"
+            "text": "4 treatment nights a week, then 2 to maintain"
           }
         },
         "ours-5": {
@@ -1558,7 +1558,7 @@
       "settings": {
         "image_position": "start",
         "heading": "Start your 21-day under-eye reset",
-        "bullets": "<ul><li>Reaches beneath the skin, unlike creams*</li><li>Visible results in 1–2 weeks*</li><li>Painless, no needles, no downtime</li></ul>",
+        "bullets": "<ul><li>Reaches beneath the skin, unlike creams*</li><li>Visible results in 1–2 weeks*</li><li>Painless — no injections, no metal needles</li></ul>",
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-bundle",
         "button_footnote": "90-day money back guarantee",
@@ -1603,7 +1603,7 @@
           "settings": {
             "group_label": "",
             "question": "How often should I use them?",
-            "answer": "<p>Two nights a week is all you need. The actives keep working between uses, so there’s no need to apply every night.</p>",
+            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
             "open": false
           }
         },
