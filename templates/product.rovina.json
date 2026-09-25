@@ -161,7 +161,7 @@
         "highlight-8": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "lightning",
+            "icon": "patch-pair",
             "text": "Real Actives — Not Just a Cool Feel"
           }
         },
