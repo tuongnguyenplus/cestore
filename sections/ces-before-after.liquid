@@ -1,10 +1,25 @@
 {{ 'ces-base.css' | asset_url | stylesheet_tag }}
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+{{ 'ces-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-slider.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign baft_pairs = ''
+  for block in section.blocks
+    if block.settings.before_image != blank or block.settings.after_image != blank
+      assign baft_pairs = baft_pairs | append: block.id | append: ','
+    endif
+  endfor
+  assign baft_ids = baft_pairs | split: ','
+-%}
 
 {%- style -%}
   .ces-baft{color:rgb(var(--color-foreground));background:var(--gradient-background)}
-  .ces-baft__grid{display:grid;grid-template-columns:1fr;gap:2.4rem;margin-top:2.8rem}
-  .ces-baft__card{border:.1rem solid var(--ces-border-color);border-radius:var(--ces-radius);overflow:hidden;background:var(--ces-surface)}
+  .ces-baft__track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:1.6rem;margin-top:2.8rem;
+    overflow-x:auto;overflow-anchor:none;scroll-snap-type:x proximity;scrollbar-width:none;overscroll-behavior-x:contain}
+  .ces-baft__track::-webkit-scrollbar{display:none}
+  .ces-baft__slide{scroll-snap-align:start;display:flex}
+  .ces-baft__card{width:100%;border:.1rem solid var(--ces-border-color);border-radius:var(--ces-radius);overflow:hidden;background:var(--ces-surface)}
   .ces-baft__pair{display:grid;grid-template-columns:1fr 1fr}
   .ces-baft__cell{position:relative;aspect-ratio:1/1;background:var(--ces-surface-strong)}
   .ces-baft__cell img{width:100%;height:100%;object-fit:cover;display:block}
@@ -17,13 +32,20 @@
   .ces-baft__verified{display:inline-flex;align-items:center;gap:.4rem;color:var(--ces-accent);font-weight:700}
   .ces-baft__verified svg{width:1.4rem;height:1.4rem;display:block}
   .ces-baft__dot{opacity:.45}
-  .ces-baft__disclaimer{margin:2.4rem 0 0;font-size:1.35rem;line-height:1.5;color:var(--ces-muted);font-style:italic}
-  @media screen and (min-width:750px){.ces-baft__grid{grid-template-columns:repeat({{ section.settings.columns }},1fr)}}
+  .ces-baft__disclaimer{margin:2rem 0 0;font-size:1.35rem;line-height:1.5;color:var(--ces-muted);font-style:italic}
+  @media screen and (max-width:749px){
+    .ces-baft__meta{flex-direction:column;align-items:flex-start;gap:.3rem}
+    .ces-baft__dot{display:none}
+  }
+  @media screen and (min-width:750px){
+    .ces-baft__track{grid-auto-columns:calc((100% - (var(--ces-baft-columns,2) - 1) * 1.6rem) / var(--ces-baft-columns,2))}
+  }
 {%- endstyle -%}
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-baft ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-baft ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  style="--ces-baft-columns: {{ section.settings.columns }};">
   <div class="ces-section__inner">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -32,49 +54,65 @@
       </div>
     {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
-      <div class="ces-baft__grid">
-        {%- for block in section.blocks -%}
-          {%- if block.settings.before_image != blank or block.settings.after_image != blank -%}
-          <div class="ces-baft__card" {{ block.shopify_attributes }}>
-            <div class="ces-baft__pair">
-              <div class="ces-baft__cell ces-baft__cell--before">
-                <span class="ces-baft__tag">{{ section.settings.before_label }}</span>
-                {%- if block.settings.before_image != blank -%}
-                  <img src="{{ block.settings.before_image | image_url: width: 800 }}" alt="{{ block.settings.name | default: 'Before' | escape }} — before" loading="lazy">
-                {%- else -%}<span class="ces-baft__ph">Before</span>{%- endif -%}
-              </div>
-              <div class="ces-baft__cell ces-baft__cell--after">
-                <span class="ces-baft__tag">{{ section.settings.after_label }}</span>
-                {%- if block.settings.after_image != blank -%}
-                  <img src="{{ block.settings.after_image | image_url: width: 800 }}" alt="{{ block.settings.name | default: 'After' | escape }} — after" loading="lazy">
-                {%- else -%}<span class="ces-baft__ph">After</span>{%- endif -%}
-              </div>
-            </div>
-            {%- if block.settings.name != blank or block.settings.progress != blank or block.settings.verified -%}
-              <div class="ces-baft__cap">
-                {%- if block.settings.name != blank -%}<p class="ces-baft__name">{{ block.settings.name }}</p>{%- endif -%}
-                {%- if block.settings.verified or block.settings.progress != blank -%}
-                  <p class="ces-baft__meta">
-                    {%- if block.settings.verified -%}
-                      <span class="ces-baft__verified">
-                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <circle cx="8" cy="8" r="7" fill="currentColor"/>
-                          <path d="M4.8 8.2 7 10.4l4.2-4.6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        {{ section.settings.verified_label }}
-                      </span>
-                    {%- endif -%}
-                    {%- if block.settings.verified and block.settings.progress != blank -%}<span class="ces-baft__dot">&middot;</span>{%- endif -%}
-                    {%- if block.settings.progress != blank -%}<span>{{ block.settings.progress }}</span>{%- endif -%}
-                  </p>
-                {%- endif -%}
+    {%- if baft_ids.size > 0 -%}
+      <ces-slider class="ces-baft__slider" data-dot-label="Go to pair">
+        <div class="ces-baft__track" data-ces-slider-track>
+          {%- for block in section.blocks -%}
+            {%- if block.settings.before_image != blank or block.settings.after_image != blank -%}
+              <div class="ces-baft__slide" data-ces-slider-slide {{ block.shopify_attributes }}>
+                <div class="ces-baft__card">
+                  <div class="ces-baft__pair">
+                    <div class="ces-baft__cell ces-baft__cell--before">
+                      <span class="ces-baft__tag">{{ section.settings.before_label }}</span>
+                      {%- if block.settings.before_image != blank -%}
+                        <img src="{{ block.settings.before_image | image_url: width: 800 }}" alt="{{ block.settings.name | default: 'Before' | escape }} — before" loading="lazy">
+                      {%- else -%}<span class="ces-baft__ph">{{ section.settings.before_label }}</span>{%- endif -%}
+                    </div>
+                    <div class="ces-baft__cell ces-baft__cell--after">
+                      <span class="ces-baft__tag">{{ section.settings.after_label }}</span>
+                      {%- if block.settings.after_image != blank -%}
+                        <img src="{{ block.settings.after_image | image_url: width: 800 }}" alt="{{ block.settings.name | default: 'After' | escape }} — after" loading="lazy">
+                      {%- else -%}<span class="ces-baft__ph">{{ section.settings.after_label }}</span>{%- endif -%}
+                    </div>
+                  </div>
+                  {%- if block.settings.name != blank or block.settings.progress != blank or block.settings.verified -%}
+                    <div class="ces-baft__cap">
+                      {%- if block.settings.name != blank -%}<p class="ces-baft__name">{{ block.settings.name }}</p>{%- endif -%}
+                      {%- if block.settings.verified or block.settings.progress != blank -%}
+                        <p class="ces-baft__meta">
+                          {%- if block.settings.verified -%}
+                            <span class="ces-baft__verified">
+                              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="8" cy="8" r="7" fill="currentColor"/>
+                                <path d="M4.8 8.2 7 10.4l4.2-4.6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              {{ section.settings.verified_label }}
+                            </span>
+                          {%- endif -%}
+                          {%- if block.settings.verified and block.settings.progress != blank -%}<span class="ces-baft__dot">&middot;</span>{%- endif -%}
+                          {%- if block.settings.progress != blank -%}<span>{{ block.settings.progress }}</span>{%- endif -%}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </div>
               </div>
             {%- endif -%}
-          </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="ces-slider__controls">
+          <button class="ces-slider__arrow" type="button" data-ces-slider-prev>
+            <span class="ces-visually-hidden">Previous pair</span>
+            {% render 'ces-icon', icon: 'chevron-left', size: '1.8rem' %}
+          </button>
+          <div class="ces-slider__dots" data-ces-slider-dots></div>
+          <button class="ces-slider__arrow" type="button" data-ces-slider-next>
+            <span class="ces-visually-hidden">Next pair</span>
+            {% render 'ces-icon', icon: 'chevron-right', size: '1.8rem' %}
+          </button>
+        </div>
+      </ces-slider>
     {%- endif -%}
 
     {%- if section.settings.disclaimer != blank -%}<p class="ces-baft__disclaimer">{{ section.settings.disclaimer }}</p>{%- endif -%}
@@ -92,7 +130,7 @@
     { "type": "text", "id": "before_label", "label": "Before label", "default": "Before" },
     { "type": "text", "id": "after_label", "label": "After label", "default": "After" },
     { "type": "text", "id": "verified_label", "label": "Verified badge text", "default": "Verified customer" },
-    { "type": "range", "id": "columns", "min": 1, "max": 3, "step": 1, "label": "Columns (desktop)", "default": 2 },
+    { "type": "range", "id": "columns", "min": 1, "max": 3, "step": 1, "label": "Cards per view (desktop)", "info": "Mobile always shows one card and swipes sideways.", "default": 2 },
     { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "Real customers, unretouched, shared with permission. Individual results vary." },
     { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
     { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
@@ -100,17 +138,19 @@
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
   ],
   "blocks": [
-    { "type": "pair", "name": "Before / after pair", "settings": [
-      { "type": "image_picker", "id": "before_image", "label": "Before image" },
-      { "type": "image_picker", "id": "after_image", "label": "After image" },
-      { "type": "text", "id": "name", "label": "Name and age", "info": "e.g. Anna, 58", "default": "Anna, 58" },
-      { "type": "checkbox", "id": "verified", "label": "Show verified customer", "default": true },
-      { "type": "text", "id": "progress", "label": "Usage progress", "info": "e.g. Day 18 of the protocol, or After 3 weeks of use", "default": "After 3 weeks of use" }
-    ] }
+    {
+      "type": "pair",
+      "name": "Before / after pair",
+      "settings": [
+        { "type": "image_picker", "id": "before_image", "label": "Before image" },
+        { "type": "image_picker", "id": "after_image", "label": "After image" },
+        { "type": "text", "id": "name", "label": "Name and age", "info": "e.g. Anna, 58", "default": "Anna, 58" },
+        { "type": "checkbox", "id": "verified", "label": "Show verified customer", "default": true },
+        { "type": "text", "id": "progress", "label": "Usage progress", "info": "e.g. Day 18 of the protocol, or After 3 weeks of use", "default": "After 3 weeks of use" }
+      ]
+    }
   ],
-  "max_blocks": 6,
-  "presets": [
-    { "name": "CES Before After", "blocks": [ { "type": "pair" }, { "type": "pair" } ] }
-  ]
+  "max_blocks": 12,
+  "presets": [ { "name": "CES Before After", "blocks": [ { "type": "pair" }, { "type": "pair" } ] } ]
 }
 {% endschema %}
