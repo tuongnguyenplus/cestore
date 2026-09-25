@@ -1,6 +1,24 @@
 {{ 'ces-base.css' | asset_url | stylesheet_tag }}
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign recog_images = section.blocks | where: 'type', 'image'
+  assign recog_items = section.blocks | where: 'type', 'item'
+  assign recog_pos = section.settings.image_position
+  assign has_media = false
+  for img in recog_images
+    if img.settings.image != blank
+      assign has_media = true
+    endif
+  endfor
+  assign is_split = false
+  if has_media
+    if recog_pos == 'left' or recog_pos == 'right'
+      assign is_split = true
+    endif
+  endif
+-%}
+
 {%- style -%}
   .ces-recog{color:rgb(var(--color-foreground));background:var(--gradient-background)}
   .ces-recog__list{margin:2.4rem 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr;gap:0}
@@ -8,36 +26,79 @@
   .ces-recog__item:first-child{border-top:none}
   .ces-recog__mark{flex:0 0 auto;width:2.2rem;height:2.2rem;margin-top:.1rem;border-radius:50%;border:.15rem solid var(--ces-accent);color:var(--ces-accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;line-height:1}
   .ces-recog__closing{margin:2.4rem 0 0;font-size:1.7rem;line-height:1.55;font-weight:600}
-  @media screen and (min-width:750px){.ces-recog__list{grid-template-columns:1fr 1fr;gap:0 3.2rem}
-    .ces-recog__item:nth-child(2){border-top:none}}
+  .ces-recog__media{display:grid;gap:1.6rem;grid-template-columns:1fr}
+  .ces-recog__media--band{margin:2.4rem 0 0}
+  .ces-recog__fig{margin:0}
+  .ces-recog__fig img{width:100%;height:auto;display:block;border-radius:var(--ces-radius);border:.1rem solid var(--ces-border-color)}
+  .ces-recog__cap{margin:.8rem 0 0;font-size:1.35rem;line-height:1.45;color:var(--ces-muted)}
+  .ces-recog__split{display:grid;grid-template-columns:1fr;gap:2.8rem;align-items:center}
+  @media screen and (min-width:750px){
+    .ces-recog__list{grid-template-columns:1fr 1fr;gap:0 3.2rem}
+    .ces-recog__item:nth-child(2){border-top:none}
+    .ces-recog__media--band{grid-template-columns:repeat({{ recog_images.size | at_least: 1 | at_most: 2 }},1fr)}
+    .ces-recog__split{grid-template-columns:5fr 6fr}
+    .ces-recog__split--right .ces-recog__media{order:2}
+    .ces-recog__split .ces-recog__list{grid-template-columns:1fr}
+    .ces-recog__split .ces-recog__item:nth-child(2){border-top:.1rem dashed var(--ces-border-color)}
+  }
 {%- endstyle -%}
 
 {% render 'ces-section-padding' %}
 
+{%- capture recog_head -%}
+  {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+    <div class="ces-section__header">
+      {%- if section.settings.heading != blank -%}<h2 class="ces-heading">{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.subheading != blank -%}<p class="ces-subheading">{{ section.settings.subheading }}</p>{%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture recog_points -%}
+  {%- if recog_items.size > 0 -%}
+    <ul class="ces-recog__list">
+      {%- for block in recog_items -%}
+        {%- if block.settings.text != blank -%}
+          <li class="ces-recog__item" {{ block.shopify_attributes }}>
+            <span class="ces-recog__mark" aria-hidden="true">?</span>
+            <span>{{ block.settings.text }}</span>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+  {%- if section.settings.closing != blank -%}
+    <p class="ces-recog__closing">{{ section.settings.closing }}</p>
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture recog_media -%}
+  {%- for block in recog_images -%}
+    {%- if block.settings.image != blank -%}
+      <figure class="ces-recog__fig" {{ block.shopify_attributes }}>
+        <img src="{{ block.settings.image | image_url: width: 1400 }}" alt="{{ block.settings.caption | default: section.settings.heading | escape }}" loading="lazy">
+        {%- if block.settings.caption != blank -%}<figcaption class="ces-recog__cap">{{ block.settings.caption }}</figcaption>{%- endif -%}
+      </figure>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
 <div class="ces-section ces-recog ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
-    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
-      <div class="ces-section__header">
-        {%- if section.settings.heading != blank -%}<h2 class="ces-heading">{{ section.settings.heading }}</h2>{%- endif -%}
-        {%- if section.settings.subheading != blank -%}<p class="ces-subheading">{{ section.settings.subheading }}</p>{%- endif -%}
+    {%- if is_split -%}
+      <div class="ces-recog__split ces-recog__split--{{ recog_pos }}">
+        <div class="ces-recog__media">{{ recog_media }}</div>
+        <div class="ces-recog__body">{{ recog_head }}{{ recog_points }}</div>
       </div>
-    {%- endif -%}
-
-    {%- if section.blocks.size > 0 -%}
-      <ul class="ces-recog__list">
-        {%- for block in section.blocks -%}
-          {%- if block.settings.text != blank -%}
-            <li class="ces-recog__item" {{ block.shopify_attributes }}>
-              <span class="ces-recog__mark" aria-hidden="true">?</span>
-              <span>{{ block.settings.text }}</span>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-    {%- endif -%}
-
-    {%- if section.settings.closing != blank -%}
-      <p class="ces-recog__closing">{{ section.settings.closing }}</p>
+    {%- else -%}
+      {{ recog_head }}
+      {%- if has_media and recog_pos == 'above' -%}
+        <div class="ces-recog__media ces-recog__media--band">{{ recog_media }}</div>
+      {%- endif -%}
+      {{ recog_points }}
+      {%- if has_media and recog_pos == 'below' -%}
+        <div class="ces-recog__media ces-recog__media--band">{{ recog_media }}</div>
+      {%- endif -%}
     {%- endif -%}
   </div>
 </div>
@@ -51,19 +112,47 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "If you've started noticing this, it isn't just tiredness" },
     { "type": "text", "id": "subheading", "label": "Subheading" },
     { "type": "textarea", "id": "closing", "label": "Closing line", "default": "That's not a willpower problem. It's the thin skin under your eyes changing — and it needs something built for exactly that." },
+    { "type": "header", "content": "Image" },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "info": "Applies to the Image blocks you add below.",
+      "options": [
+        { "value": "left", "label": "Beside the points (left)" },
+        { "value": "right", "label": "Beside the points (right)" },
+        { "value": "above", "label": "Above the points" },
+        { "value": "below", "label": "Below the points" }
+      ],
+      "default": "left"
+    },
     { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
     { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 40 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
   ],
   "blocks": [
-    { "type": "item", "name": "Recognition point", "settings": [
-      { "type": "text", "id": "text", "label": "Text", "default": "People ask if you slept badly — even on the mornings you slept fine." }
-    ] }
+    {
+      "type": "item",
+      "name": "Recognition point",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "People ask if you slept badly — even on the mornings you slept fine." }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 2,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "caption", "label": "Caption" }
+      ]
+    }
   ],
-  "max_blocks": 8,
+  "max_blocks": 10,
   "presets": [
     { "name": "CES Recognition", "blocks": [
+      { "type": "image" },
       { "type": "item", "settings": { "text": "People ask if you slept badly — even on the mornings you slept fine." } },
       { "type": "item", "settings": { "text": "Concealer used to cover it. Now it creases, cakes, and the shadow still shows through." } },
       { "type": "item", "settings": { "text": "On video calls and in photos, your eyes read older and more tired than you feel." } },
