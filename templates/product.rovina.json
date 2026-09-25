@@ -919,6 +919,7 @@
         "s1": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/hf_20260923_032143_dc87b02a-2514-4d1d-a221-73b27ce50179.png",
             "title": "Start clean and dry",
             "text": "On clean, dry skin, peel one patch from its individually sealed pouch."
           }
