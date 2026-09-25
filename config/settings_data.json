@@ -127,8 +127,9 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "cart_guarantee_text": "90 Days Money-Back Guarantee",
     "cart_upsell_products": [
-      "lifteyes"
+      "eye-bag-cream"
     ],
     "cart_color_scheme": "scheme-1",
     "customer_account_menu": "customer-account-main-menu",
