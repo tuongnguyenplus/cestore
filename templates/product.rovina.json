@@ -656,7 +656,7 @@
         "card2": {
           "type": "feature_card",
           "settings": {
-            "image": "shopify://shop_images/753f2cee-6f6d-477d-9b51-18369122ee81.png",
+            "image": "shopify://shop_images/aa082078-57c0-47bd-b461-66f60b0f8491_3.webp",
             "heading": "Works While You Sleep",
             "text": "<p>Press one fresh two-patch treatment on before bed and leave it overnight. The actives keep working for hours — no routine, no mess, no downtime.</p>"
           }
@@ -690,6 +690,7 @@
       "settings": {
         "image": "shopify://shop_images/ufvut.webp",
         "layout": "band",
+        "image_shape": "auto",
         "text_position": "center",
         "overlay_opacity": 40,
         "eyebrow": "Micro-cone delivery",
@@ -818,6 +819,7 @@
       "settings": {
         "image": "shopify://shop_images/17c36898-a508-4a7f-a4e8-11b1eb02646d.png",
         "layout": "split",
+        "image_shape": "original",
         "text_position": "end",
         "overlay_opacity": 0,
         "eyebrow": "Dermatologist-Tested",
