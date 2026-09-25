@@ -589,6 +589,13 @@
     "recognition": {
       "type": "ces-recognition",
       "blocks": {
+        "img-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/whole_video_gif_small_94a63e16-2a41-4838-a407-c73718e78b58.webp",
+            "caption": ""
+          }
+        },
         "r1": {
           "type": "item",
           "settings": {
@@ -612,12 +619,6 @@
           "settings": {
             "text": "You've tried more sleep, more water, cutting back — the puffiness softens, the shadow stays."
           }
-        },
-        "img-1": {
-          "type": "image",
-          "settings": {
-            "caption": ""
-          }
         }
       },
       "block_order": [
@@ -631,10 +632,10 @@
         "heading": "If you've started noticing this, it isn't just tiredness",
         "subheading": "",
         "closing": "That's not a willpower problem. It's the thin skin under your eyes changing — and it needs something built for exactly that.",
+        "image_position": "left",
         "color_scheme": "scheme-1",
         "padding_top": 48,
-        "padding_bottom": 48,
-        "image_position": "left"
+        "padding_bottom": 48
       }
     },
     "feature-cards": {
@@ -1081,12 +1082,12 @@
         "subheading": "",
         "before_label": "Before",
         "after_label": "After",
+        "verified_label": "Verified customer",
         "columns": 2,
         "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
         "color_scheme": "scheme-1",
         "padding_top": 48,
-        "padding_bottom": 48,
-        "verified_label": "Verified customer"
+        "padding_bottom": 48
       }
     },
     "comparison": {
