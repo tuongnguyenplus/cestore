@@ -1046,13 +1046,17 @@
         "p1": {
           "type": "pair",
           "settings": {
-            "caption": "<p><strong>Week 3</strong>Verified customer</p>"
+            "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
+            "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
+            "caption": "<p><strong>Week 3 </strong>Verified customer</p>"
           }
         },
         "p2": {
           "type": "pair",
           "settings": {
-            "caption": "<p><strong>Week 3</strong>Verified customer</p>"
+            "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
+            "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
+            "caption": "<p><strong>Week 3 </strong>Verified customer</p>"
           }
         }
       },
