@@ -112,7 +112,7 @@
         "highlight-1": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "eye",
+            "icon": "eye-lift",
             "text": "Fades Dark Circles & Puffiness"
           }
         },
@@ -436,7 +436,7 @@
         "highlight-7": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "lock",
+            "icon": "patch-pair",
             "text": "Stays Put All Night"
           }
         },
