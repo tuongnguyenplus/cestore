@@ -28,6 +28,7 @@
         },
         "p3": {
           "type": "marquee_item",
+          "disabled": true,
           "settings": {
             "text": "67% Off",
             "icon": ""
@@ -515,75 +516,45 @@
         "atc_hover_text": "#1d5c5c"
       }
     },
-    "video-testimonials": {
-      "type": "ces-video-testimonial-row",
+    "before-after": {
+      "type": "ces-before-after",
       "blocks": {
-        "video_item_JceynK": {
-          "type": "video_item",
+        "p1": {
+          "type": "pair",
           "settings": {
-            "video": "shopify://files/videos/Scene 4.mp4",
-            "video_url": "",
-            "label": "Maya, 34"
+            "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
+            "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
+            "name": "Anna, 58",
+            "verified": true,
+            "progress": "Day 18 of the protocol"
           }
         },
-        "video-1": {
-          "type": "video_item",
+        "p2": {
+          "type": "pair",
           "settings": {
-            "video": "shopify://files/videos/scense 7.mp4",
-            "video_url": "",
-            "label": "Maya, 34"
-          }
-        },
-        "video-2": {
-          "type": "video_item",
-          "settings": {
-            "video": "shopify://files/videos/cb1.mp4",
-            "video_url": "",
-            "label": "Daniel, 41"
-          }
-        },
-        "video-3": {
-          "type": "video_item",
-          "settings": {
-            "video": "shopify://files/videos/a1.mp4",
-            "video_url": "",
-            "label": "Priya, 29"
-          }
-        },
-        "video-4": {
-          "type": "video_item",
-          "settings": {
-            "video": "shopify://files/videos/a1.mp4",
-            "video_url": "",
-            "label": "Chris, 52"
+            "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
+            "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
+            "name": "David, 54",
+            "verified": true,
+            "progress": "After 3 weeks of use"
           }
         }
       },
       "block_order": [
-        "video_item_JceynK",
-        "video-1",
-        "video-2",
-        "video-3",
-        "video-4"
+        "p1",
+        "p2"
       ],
       "settings": {
-        "heading": "See How Cebeam™ Transforms Tired Eyes",
-        "highlight": "Cebeam™",
-        "highlight_style": "solid",
-        "highlight_color": "#1d5c5c",
-        "highlight_color_to": "#a8845c",
-        "highlight_gradient_angle": 95,
+        "heading": "Same person. Same lighting. Weeks apart.",
         "subheading": "",
-        "columns_mobile": 2,
-        "columns_desktop": 3,
-        "autoplay": false,
-        "loop": false,
-        "show_controls": true,
-        "aspect_ratio": "9 / 16",
-        "background_pattern": "none",
-        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "before_label": "Before",
+        "after_label": "After",
+        "verified_label": "Verified customer",
+        "columns": 2,
+        "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "recognition": {
@@ -1049,47 +1020,6 @@
         "padding_bottom": 40
       }
     },
-    "before-after": {
-      "type": "ces-before-after",
-      "blocks": {
-        "p1": {
-          "type": "pair",
-          "settings": {
-            "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
-            "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
-            "name": "Anna, 58",
-            "verified": true,
-            "progress": "Day 18 of the protocol"
-          }
-        },
-        "p2": {
-          "type": "pair",
-          "settings": {
-            "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
-            "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
-            "name": "David, 54",
-            "verified": true,
-            "progress": "After 3 weeks of use"
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2"
-      ],
-      "settings": {
-        "heading": "Same person. Same lighting. Weeks apart.",
-        "subheading": "",
-        "before_label": "Before",
-        "after_label": "After",
-        "verified_label": "Verified customer",
-        "columns": 2,
-        "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
-        "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "comparison": {
       "type": "ces-comparison-table",
       "blocks": {
@@ -1261,6 +1191,77 @@
         "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 48
+      }
+    },
+    "video-testimonials": {
+      "type": "ces-video-testimonial-row",
+      "blocks": {
+        "video_item_JceynK": {
+          "type": "video_item",
+          "settings": {
+            "video": "shopify://files/videos/Scene 4.mp4",
+            "video_url": "",
+            "label": "Maya, 34"
+          }
+        },
+        "video-1": {
+          "type": "video_item",
+          "settings": {
+            "video": "shopify://files/videos/scense 7.mp4",
+            "video_url": "",
+            "label": "Maya, 34"
+          }
+        },
+        "video-2": {
+          "type": "video_item",
+          "settings": {
+            "video": "shopify://files/videos/cb1.mp4",
+            "video_url": "",
+            "label": "Daniel, 41"
+          }
+        },
+        "video-3": {
+          "type": "video_item",
+          "settings": {
+            "video": "shopify://files/videos/a1.mp4",
+            "video_url": "",
+            "label": "Priya, 29"
+          }
+        },
+        "video-4": {
+          "type": "video_item",
+          "settings": {
+            "video": "shopify://files/videos/a1.mp4",
+            "video_url": "",
+            "label": "Chris, 52"
+          }
+        }
+      },
+      "block_order": [
+        "video_item_JceynK",
+        "video-1",
+        "video-2",
+        "video-3",
+        "video-4"
+      ],
+      "settings": {
+        "heading": "See How Cebeam™ Transforms Tired Eyes",
+        "highlight": "Cebeam™",
+        "highlight_style": "solid",
+        "highlight_color": "#1d5c5c",
+        "highlight_color_to": "#a8845c",
+        "highlight_gradient_angle": 95,
+        "subheading": "",
+        "columns_mobile": 2,
+        "columns_desktop": 3,
+        "autoplay": false,
+        "loop": false,
+        "show_controls": true,
+        "aspect_ratio": "9 / 16",
+        "background_pattern": "none",
+        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "testimonials": {
@@ -1527,6 +1528,7 @@
     "team": {
       "type": "ces-team",
       "settings": {
+        "image": "shopify://shop_images/dermatology-clinic-1.jpg",
         "image_position": "left",
         "heading": "The people behind CEBEAM",
         "body": "<p>We built CEBEAM because the eye-care aisle is full of creams that never get past the surface — and we were tired of paying for hope. So we started with the delivery problem first: dissolving micro-cones that carry real actives to where dark circles and puffiness actually form.</p><p>Every batch is made in a GMP-certified facility, dermatologist-tested, and backed by a 90-day money-back guarantee. If it doesn't work for you, you get your money back and you keep the box.</p>",
