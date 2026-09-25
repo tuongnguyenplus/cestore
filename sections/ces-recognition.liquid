@@ -54,7 +54,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- capture recog_points -%}
+{%- capture recog_list -%}
   {%- if recog_items.size > 0 -%}
     <ul class="ces-recog__list">
       {%- for block in recog_items -%}
@@ -67,6 +67,9 @@
       {%- endfor -%}
     </ul>
   {%- endif -%}
+{%- endcapture -%}
+
+{%- capture recog_closing -%}
   {%- if section.settings.closing != blank -%}
     <p class="ces-recog__closing">{{ section.settings.closing }}</p>
   {%- endif -%}
@@ -88,14 +91,18 @@
     {%- if is_split -%}
       <div class="ces-recog__split ces-recog__split--{{ recog_pos }}">
         <div class="ces-recog__media">{{ recog_media }}</div>
-        <div class="ces-recog__body">{{ recog_head }}{{ recog_points }}</div>
+        <div class="ces-recog__body">{{ recog_head }}{{ recog_list }}{{ recog_closing }}</div>
       </div>
     {%- else -%}
       {{ recog_head }}
       {%- if has_media and recog_pos == 'above' -%}
         <div class="ces-recog__media ces-recog__media--band">{{ recog_media }}</div>
       {%- endif -%}
-      {{ recog_points }}
+      {{ recog_list }}
+      {%- if has_media and recog_pos == 'before_closing' -%}
+        <div class="ces-recog__media ces-recog__media--band">{{ recog_media }}</div>
+      {%- endif -%}
+      {{ recog_closing }}
       {%- if has_media and recog_pos == 'below' -%}
         <div class="ces-recog__media ces-recog__media--band">{{ recog_media }}</div>
       {%- endif -%}
@@ -121,8 +128,9 @@
       "options": [
         { "value": "left", "label": "Beside the points (left)" },
         { "value": "right", "label": "Beside the points (right)" },
-        { "value": "above", "label": "Above the points" },
-        { "value": "below", "label": "Below the points" }
+        { "value": "above", "label": "Below the heading (above the points)" },
+        { "value": "before_closing", "label": "Above the closing line" },
+        { "value": "below", "label": "Below the closing line" }
       ],
       "default": "left"
     },
