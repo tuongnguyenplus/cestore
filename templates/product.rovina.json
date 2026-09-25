@@ -341,7 +341,7 @@
           "settings": {
             "heading": "Key ingredients",
             "icon": "none",
-            "content": "<p><strong>Hyaluronic Acid</strong> — deep hydration and a plumping effect.</p><p><strong>Niacinamide</strong> — brightens tone and calms the eye area.</p><p><strong>Peptides &amp; Collagen</strong> — support firmness.</p><p><strong>Vitamin C &amp; Retinol</strong> — smooth fine lines and revive radiance.*</p>",
+            "content": "<p><strong>Hyaluronic Acid</strong> — deep hydration and a plumping effect.</p><p><strong>Niacinamide</strong> — brightens tone and calms the eye area.</p><p><strong>Peptides & Collagen</strong> — support firmness.</p><p><strong>Vitamin C & Retinol</strong> — smooth fine lines and revive radiance.*</p>",
             "page": ""
           }
         },
@@ -363,10 +363,37 @@
             "page": ""
           }
         },
+        "collapsible_tab_VzH6wn": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is redness a sign it worked?",
+            "icon": "none",
+            "content": "<p>No. Mild temporary redness can occur, but it does not prove effectiveness. Remove the patches and stop using them if you experience burning, marked swelling, or redness that persists (24 hours). Do not apply to broken skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_DYrk48": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will the patches slide down while I sleep?",
+            "icon": "none",
+            "content": "<p><br/>Apply each patch to clean, completely dry skin and press for 5–10 seconds. The placement video shows the fit and the routine we tested. If a patch does not stay in place as shown, contact us so we can help.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_AG9czL": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What should I expect after the first use?",
+            "icon": "none",
+            "content": "<p>Check how your under-eyes look and feel the next morning, then compare photos taken in the same light as you continue the routine. Hydration and a smoother appearance may be easier to notice early; the degree of change in bags, dark circles, and lines varies with the cause of each concern.<br/><br/></p>",
+            "page": ""
+          }
+        },
         "acc-8": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How long before I see results?",
+            "heading": "How long before I see full results?",
             "icon": "none",
             "content": "<p>Many people notice a fresher, smoother look the very next morning — that’s mostly hydration. Changes that hold to bags, dark circles and lines usually appear after 1–2 weeks of consistent use. Buying for an event? Start at least a few weeks out.</p>",
             "page": ""
@@ -439,6 +466,9 @@
         "acc-5",
         "acc-6",
         "acc-7",
+        "collapsible_tab_VzH6wn",
+        "collapsible_tab_DYrk48",
+        "collapsible_tab_AG9czL",
         "acc-8",
         "acc-9",
         "acc-10",
