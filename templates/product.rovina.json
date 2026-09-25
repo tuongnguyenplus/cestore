@@ -112,43 +112,43 @@
         "highlight-1": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "eye",
-            "text": "Fades Dark Circles & Puffiness"
+            "icon": "lock",
+            "text": "Stays Put All Night — No Sliding"
           }
         },
         "highlight-2": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "depuff",
-            "text": "No Sticky Residue"
+            "icon": "sparkle",
+            "text": "No Sticky Residue or Film"
           }
         },
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "smooth",
-            "text": "Smooths Fine Lines & Crepey Skin"
+            "icon": "patch",
+            "text": "Painless — No Needles or Sting"
           }
         },
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "drop",
-            "text": "Deep Hydration & Plumping"
+            "icon": "shield",
+            "text": "Sealed Fresh, One Pair Per Pouch"
           }
         },
         "highlight-5": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "patch",
-            "text": "Painless Micro-Delivery — No Needles"
+            "icon": "smooth",
+            "text": "Makeup-Ready After Removal"
           }
         },
         "highlight-6": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "firm",
-            "text": "Firmer, Brighter Under-Eyes"
+            "icon": "drop",
+            "text": "Real Actives — Not Just a Cool Feel"
           }
         },
         "ces_bundle_8Rq63G": {
