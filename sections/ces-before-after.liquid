@@ -31,6 +31,7 @@
     {%- if section.blocks.size > 0 -%}
       <div class="ces-baft__grid">
         {%- for block in section.blocks -%}
+          {%- if block.settings.before_image != blank or block.settings.after_image != blank -%}
           <div class="ces-baft__card" {{ block.shopify_attributes }}>
             <div class="ces-baft__pair">
               <div class="ces-baft__cell ces-baft__cell--before">
@@ -48,6 +49,7 @@
             </div>
             {%- if block.settings.caption != blank -%}<div class="ces-baft__cap">{{ block.settings.caption }}</div>{%- endif -%}
           </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
     {%- endif -%}

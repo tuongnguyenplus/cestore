@@ -73,7 +73,7 @@
         "subtitle": {
           "type": "text",
           "settings": {
-            "text": "Dissolving microneedle patches that deliver actives beneath the skin — for visibly fewer bags, dark circles and fine lines.",
+            "text": "Your eyes shouldn't announce you're tired before you say a word. Dissolving micro-cone patches carry real actives beneath the skin — for visibly fewer bags, dark circles and fine lines. No needles, no downtime.",
             "text_style": "body"
           }
         },
@@ -174,7 +174,7 @@
             "tier_1_supply": "Your first week with CEBEAM",
             "tier_1_image": "shopify://shop_images/sta.png",
             "tier_1_badge": "",
-            "tier_1_inclusions": "patches | 4 treatments |\ndoc | Quick Start Guide |\ncoin | 30-Day Money Back |",
+            "tier_1_inclusions": "patches | 4 treatments |\ndoc | Quick Start Guide |\ncoin | 90-Day Money Back |",
             "tier_1_free_products": [],
             "tier_2_variant": "47849253994645",
             "tier_2_name": "21-Day Eye Reset™",
@@ -688,9 +688,9 @@
         "layout": "band",
         "text_position": "center",
         "overlay_opacity": 40,
-        "eyebrow": "",
+        "eyebrow": "Micro-cone delivery",
         "heading_accent": "Micro-delivery",
-        "heading": "that reaches the root",
+        "heading": "Actives delivered to the root of dark circles and puffiness",
         "text": "<p>Painless dissolving micro-cones carry the actives beneath the skin barrier — precision delivery exactly where puffiness and dark circles start.*</p>",
         "button_label": "",
         "button_link": "",
@@ -823,7 +823,7 @@
         "overlay_opacity": 0,
         "eyebrow": "Dermatologist-Tested",
         "heading_accent": "Painless",
-        "heading": "micro-delivery, zero downtime",
+        "heading": "Made to clinical standards, with zero downtime",
         "text": "<p>Made in a GMP-certified facility and dermatologist-tested for the delicate eye area. No needles in the medical sense, no procedure, no recovery time.</p>",
         "button_label": "",
         "button_link": "",
@@ -994,7 +994,7 @@
       "type": "ces-bullet-cta",
       "settings": {
         "image_position": "start",
-        "heading": "What sets Cebeam apart",
+        "heading": "Start your 21-day under-eye reset",
         "bullets": "<ul><li>Reaches beneath the skin, unlike creams*</li><li>Visible results in 1–2 weeks*</li><li>Painless, no needles, no downtime</li></ul>",
         "button_label": "Try Risk-Free Today",
         "button_link": "#ces-bundle",
@@ -1529,25 +1529,172 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "recognition": {
+      "type": "ces-recognition",
+      "settings": {
+        "heading": "If you've started noticing this, it isn't just tiredness",
+        "subheading": "",
+        "closing": "That's not a willpower problem. It's the thin skin under your eyes changing — and it needs something built for exactly that.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      },
+      "blocks": {
+        "r1": {
+          "type": "item",
+          "settings": {
+            "text": "People ask if you slept badly — even on the mornings you slept fine."
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "text": "Concealer used to cover it. Now it creases, cakes, and the shadow still shows through."
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "text": "On video calls and in photos, your eyes read older and more tired than you feel."
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "text": "You've tried more sleep, more water, cutting back — the puffiness softens, the shadow stays."
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ]
+    },
+    "usage-steps": {
+      "type": "ces-usage-steps",
+      "settings": {
+        "heading": "How to use it — the whole method takes about 15 seconds",
+        "subheading": "",
+        "note": "The 7-day starter is 4 treatments in your first week. After that, one pair two nights a week is all it takes to hold it.",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "padding_top": 48,
+        "padding_bottom": 48
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Start clean and dry",
+            "text": "On clean, dry skin, peel one patch from its individually sealed pouch."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Press and leave on",
+            "text": "Place one under each eye and press for 10 seconds. Leave on at least 2 hours, or overnight."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Peel in the morning",
+            "text": "Remove and discard. Nothing to rinse, nothing on your face by breakfast."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "before-after": {
+      "type": "ces-before-after",
+      "settings": {
+        "heading": "Same person. Same lighting. Weeks apart.",
+        "subheading": "",
+        "before_label": "Before",
+        "after_label": "After",
+        "columns": 2,
+        "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      },
+      "blocks": {
+        "p1": {
+          "type": "pair",
+          "settings": {
+            "caption": "<p><strong>Week 3</strong>Verified customer</p>"
+          }
+        },
+        "p2": {
+          "type": "pair",
+          "settings": {
+            "caption": "<p><strong>Week 3</strong>Verified customer</p>"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2"
+      ]
+    },
+    "who-for": {
+      "type": "ces-who-for",
+      "settings": {
+        "heading": "Who it's for — and the one thing it can't change",
+        "subheading": "",
+        "yes_label": "What CEBEAM works on",
+        "yes_points": "Fluid and morning puffiness\nDark shadows and dullness\nThin, crepey skin and fine lines\nLost firmness in the under-eye",
+        "no_label": "What no patch can change",
+        "no_points": "Inherited fat pads that push forward — the kind visible in photos of you at 25\nDeep hollows set by bone structure",
+        "honest_line": "Those are a surgical issue no topical can move. If that's mostly you, keep your money — we'd rather lose the sale than be the fifth thing that let you down.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "team": {
+      "type": "ces-team",
+      "settings": {
+        "image_position": "left",
+        "heading": "The people behind CEBEAM",
+        "body": "<p>We built CEBEAM because the eye-care aisle is full of creams that never get past the surface — and we were tired of paying for hope. So we started with the delivery problem first: dissolving micro-cones that carry real actives to where dark circles and puffiness actually form.</p><p>Every batch is made in a GMP-certified facility, dermatologist-tested, and backed by a 90-day money-back guarantee. If it doesn't work for you, you get your money back and you keep the box.</p>",
+        "signature": "",
+        "role": "Founder, CEBEAM",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "ticker-announcement",
     "main",
     "video-testimonials",
+    "recognition",
     "feature-cards",
-    "icon-grid",
     "banner-research",
-    "ticker-badges",
-    "timeline",
-    "banner-clinical",
     "content-tabs",
     "experience-list",
-    "guarantee-cta",
+    "banner-clinical",
+    "ticker-badges",
+    "timeline",
+    "usage-steps",
+    "icon-grid",
+    "before-after",
     "comparison",
-    "bullet-cta",
+    "who-for",
     "testimonials",
     "clinician-reviews",
+    "team",
+    "guarantee-cta",
+    "bullet-cta",
     "faq",
     "newsletter",
     "sticky-atc"
