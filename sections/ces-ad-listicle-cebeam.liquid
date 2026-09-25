@@ -54,7 +54,7 @@
 .ces-lst .rev p{font-size:14.5px;color:#33403c;margin:10px 0 14px}
 .ces-lst .rev .who{font-size:13px;font-weight:700}
 .ces-lst .rev .vf{font-size:11.5px;color:var(--teal);font-weight:700}
-.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;padding:20px 22px 0}
+.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.8;padding:22px 22px 6px}
 @media(max-width:760px){
   .ces-lst .reason{grid-template-columns:1fr;gap:18px;padding:26px 0}
   .ces-lst .reason .ces-media,.ces-lst .reason:nth-child(even) .ces-media{order:1}
@@ -162,10 +162,10 @@
 <div class="reason">
 <div class="txt"><span class="num">REASON 07</span>
 <h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it — with the box already open</h2>
-<p>Here is the honest timeline, because expectation is where most of these products lose people. The morning after night one, the area looks smoother. That is hydration — real, and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is simply how long skin takes to turn over. Nothing shortens it.</p>
+<p>Here is the honest timeline, because expectation is where most of these products lose people. The morning after night one, the area looks smoother. That is hydration — real, and temporary. The changes that hold take <strong>about three weeks</strong>, because that is simply how long skin takes to turn over. Nothing shortens it.</p>
   <p>Which means the only fair way to sell this is to give you long enough to actually find out.</p>
-  <p>Use it for eight weeks. If your under-eye does not look different to you — not to us, to you — email us and we will refund you. You do not ship anything back. We are not going to charge you postage to return a half-used box, and we are not going to ask you to prove it did not work.</p>
-  <p>If you are buying for a specific event, count backwards and start at least eight weeks out. Never try anything new on the eye area in the two weeks before a wedding.</p>
+  <p>Use it for three weeks. If your under-eye does not look different to you — not to us, to you — email us and we will refund you. You do not ship anything back. We are not going to charge you postage to return a half-used box, and we are not going to ask you to prove it did not work.</p>
+  <p>If you are buying for a specific event, count backwards and start at least three weeks out. Never try anything new on the eye area in the two weeks before a wedding.</p>
 </div>
 <figure class="ces-media">{% if section.settings.image_7 != blank %}<img src="{{ section.settings.image_7 | image_url: width: 1600 }}" alt="CEBEAM Microneedle Patches" loading="lazy">{% else %}<div class="ces-ph">CEBEAM — image 7</div>{% endif %}</figure>
 </div>
@@ -200,7 +200,7 @@
   <div class="rev-grid"><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r1_quote }}</p><div class="who">{{ section.settings.r1_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r2_quote }}</p><div class="who">{{ section.settings.r2_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r3_quote }}</p><div class="who">{{ section.settings.r3_name }}</div><div class="vf">✓ Verified buyer</div></div></div>
 </section>
 
-{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company }}</div>{%- endif -%}
+{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company | newline_to_br }}</div>{%- endif -%}
 {% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
 </div>
 {% schema %}
@@ -351,7 +351,7 @@
       "type": "richtext",
       "id": "solution_body",
       "label": "Solution body",
-      "default": "<p>CEBEAM is a dissolving microneedle patch. The cones are made from the actives themselves, so they start below the barrier a cream stops at — which is exactly why creams never reached the problem and this does.</p><p>One minute before bed, twice a week, invisible by morning. Give it eight weeks. If nothing's changed, you get your money back and keep the box.</p>"
+      "default": "<p>CEBEAM is a dissolving microneedle patch. The cones are made from the actives themselves, so they start below the barrier a cream stops at — which is exactly why creams never reached the problem and this does.</p><p>One minute before bed, twice a week, invisible by morning. Give it three weeks. If nothing's changed, you get your money back and keep the box.</p>"
     },
     {
       "type": "text",
@@ -367,7 +367,7 @@
       "type": "text",
       "id": "offer_heading",
       "label": "Offer heading",
-      "default": "Try it for eight weeks. Decide after."
+      "default": "Try it for three weeks. Decide after."
     },
     {
       "type": "textarea",

@@ -54,7 +54,7 @@
 .ces-lst .rev p{font-size:14.5px;color:#33403c;margin:10px 0 14px}
 .ces-lst .rev .who{font-size:13px;font-weight:700}
 .ces-lst .rev .vf{font-size:11.5px;color:var(--teal);font-weight:700}
-.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;padding:20px 22px 0}
+.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.8;padding:22px 22px 6px}
 @media(max-width:760px){
   .ces-lst .reason{grid-template-columns:1fr;gap:18px;padding:26px 0}
   .ces-lst .reason .ces-media,.ces-lst .reason:nth-child(even) .ces-media{order:1}
@@ -157,10 +157,10 @@
 <div class="reason">
 <div class="txt"><span class="num">REASON 07</span>
 <h2>You get <mark>{{ section.settings.guarantee_days }}</mark> days to judge it, with the box already open</h2>
-<p>The honest timeline: the morning after night one the area looks flatter — that is hydration, real and temporary. The changes that hold take <strong>six to eight weeks</strong>, because that is how long skin takes to turn over. Nothing shortens that, and any product claiming otherwise is lying to you.</p>
+<p>The honest timeline: the morning after night one the area looks flatter — that is hydration, real and temporary. The changes that hold take <strong>about three weeks</strong>, because that is how long skin takes to turn over. Nothing shortens that, and any product claiming otherwise is lying to you.</p>
   <p>Which is why a thirty-day return window on something like this is a technicality, not a guarantee.</p>
-  <p>Use it for eight weeks. If nothing has changed, email them and get your money back. Nothing goes back in the post, and there is no form asking you to prove it did not work.</p>
-  <p>If you have something in the calendar — a wedding, a reunion, a round of interviews — count backwards and start at least eight weeks out.</p>
+  <p>Use it for three weeks. If nothing has changed, email them and get your money back. Nothing goes back in the post, and there is no form asking you to prove it did not work.</p>
+  <p>If you have something in the calendar — a wedding, a reunion, a round of interviews — count backwards and start at least three weeks out.</p>
 </div>
 <figure class="ces-media">{% if section.settings.image_7 != blank %}<img src="{{ section.settings.image_7 | image_url: width: 1600 }}" alt="CEBEAM Microneedle Patches" loading="lazy">{% else %}<div class="ces-ph">CEBEAM — image 7</div>{% endif %}</figure>
 </div>
@@ -195,7 +195,7 @@
   <div class="rev-grid"><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r1_quote }}</p><div class="who">{{ section.settings.r1_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r2_quote }}</p><div class="who">{{ section.settings.r2_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r3_quote }}</p><div class="who">{{ section.settings.r3_name }}</div><div class="vf">✓ Verified buyer</div></div></div>
 </section>
 
-{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company }}</div>{%- endif -%}
+{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company | newline_to_br }}</div>{%- endif -%}
 {% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
 </div>
 {% schema %}
@@ -346,7 +346,7 @@
       "type": "richtext",
       "id": "solution_body",
       "label": "Solution body",
-      "default": "<p>CEBEAM is a dissolving microneedle patch. The cones are made from the actives themselves, dried and compressed, so they start on the other side of the barrier a cream can never cross — which is the entire reason creams fail and this doesn't.</p><p>Four treatment nights a week, fifteen seconds each, nothing on your face by breakfast. Give it eight weeks. If the shadow hasn't lifted, you get your money back and keep the box.</p>"
+      "default": "<p>CEBEAM is a dissolving microneedle patch. The cones are made from the actives themselves, dried and compressed, so they start on the other side of the barrier a cream can never cross — which is the entire reason creams fail and this doesn't.</p><p>Four treatment nights a week, fifteen seconds each, nothing on your face by breakfast. Give it three weeks. If the shadow hasn't lifted, you get your money back and keep the box.</p>"
     },
     {
       "type": "text",
@@ -362,7 +362,7 @@
       "type": "text",
       "id": "offer_heading",
       "label": "Offer heading",
-      "default": "Eight weeks. Four nights a week, then two. Then decide."
+      "default": "Three weeks. Four nights a week, then two. Then decide."
     },
     {
       "type": "textarea",

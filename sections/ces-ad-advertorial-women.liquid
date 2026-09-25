@@ -55,7 +55,7 @@
 .ces-adv .rev{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
 .ces-adv .rev .stars{color:var(--gold);font-size:14px}.ces-adv .rev p{font-size:14.5px;color:#33403c;margin:10px 0 14px}
 .ces-adv .rev .who{font-size:13px;font-weight:700}.ces-adv .rev .vf{font-size:11.5px;color:var(--teal);font-weight:700}
-.ces-adv .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;padding:20px 22px 0}
+.ces-adv .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.8;padding:22px 22px 6px}
 @media(max-width:760px){.ces-adv .feat,.ces-adv .feat.alt{grid-template-columns:1fr}.ces-adv .feat .ic,.ces-adv .feat.alt .ic{order:0;width:100%;height:150px}.ces-adv .rev-grid{grid-template-columns:1fr}}
 </style>
 
@@ -106,7 +106,7 @@
   <div class="rev-grid"><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r1_quote }}</p><div class="who">{{ section.settings.r1_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r2_quote }}</p><div class="who">{{ section.settings.r2_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r3_quote }}</p><div class="who">{{ section.settings.r3_name }}</div><div class="vf">✓ Verified buyer</div></div></div>
 </section>
 
-{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company }}</div>{%- endif -%}
+{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company | newline_to_br }}</div>{%- endif -%}
 {% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
 </div>
 {% schema %}
@@ -224,7 +224,7 @@
       "type": "textarea",
       "id": "feat2_text",
       "label": "Card 2 text",
-      "default": "Flatter the first morning from hydration; the changes that last show over six to eight weeks as skin turns over."
+      "default": "Flatter the first morning from hydration; the changes that last show over about three weeks as skin turns over."
     },
     {
       "type": "image_picker",

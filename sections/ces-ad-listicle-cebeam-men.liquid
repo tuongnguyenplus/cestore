@@ -57,7 +57,7 @@
 .ces-lst .rev p{font-size:14.5px;color:#33403c;margin:10px 0 14px}
 .ces-lst .rev .who{font-size:13px;font-weight:700}
 .ces-lst .rev .vf{font-size:11.5px;color:var(--teal);font-weight:700}
-.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;padding:20px 22px 0}
+.ces-lst .legal{background:#fff;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.8;padding:22px 22px 6px}
 @media(max-width:760px){
   .ces-lst .reason{grid-template-columns:1fr;gap:18px;padding:26px 0}
   .ces-lst .reason .ces-media,.ces-lst .reason:nth-child(even) .ces-media{order:1}
@@ -191,7 +191,7 @@
   <div class="rev-grid"><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r1_quote }}</p><div class="who">{{ section.settings.r1_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r2_quote }}</p><div class="who">{{ section.settings.r2_name }}</div><div class="vf">✓ Verified buyer</div></div><div class="rev"><div class="stars">★★★★★</div><p>{{ section.settings.r3_quote }}</p><div class="who">{{ section.settings.r3_name }}</div><div class="vf">✓ Verified buyer</div></div></div>
 </section>
 
-{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company }}</div>{%- endif -%}
+{%- if section.settings.legal_company != blank -%}<div class="legal">{{ section.settings.legal_company | newline_to_br }}</div>{%- endif -%}
 {% render 'ces-ad-disclaimer', show: section.settings.show_disclaimer, text: section.settings.disclaimer_text, copyright: section.settings.copyright_text %}
 </div>
 {% schema %}
