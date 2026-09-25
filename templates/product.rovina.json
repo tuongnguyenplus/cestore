@@ -896,9 +896,9 @@
       ],
       "settings": {
         "display": "open",
-        "image": "shopify://shop_images/47.webp",
+        "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png",
         "image_position": "start",
-        "image_ratio": "3 / 4",
+        "image_ratio": "auto",
         "heading": "What to expect across your 21-day reset",
         "subheading": "Micro-delivery works below the surface, so results build with consistent use.*",
         "fill_speed": 900,
