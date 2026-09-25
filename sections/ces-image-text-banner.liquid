@@ -18,7 +18,7 @@
 {% render 'ces-section-padding' %}
 
 <div
-  class="ces-section ces-image-text-banner ces-image-text-banner--{{ section.settings.layout }} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  class="ces-section ces-image-text-banner ces-image-text-banner--{{ section.settings.layout }} ces-image-text-banner--shape-{{ section.settings.image_shape | default: 'auto' }} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
   style="--ces-banner-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
 >
   <div class="ces-section__inner">
@@ -135,6 +135,35 @@
         }
       ],
       "default": "overlay"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Image shape",
+      "info": "Overrides the aspect ratio the layout would otherwise use.",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Default (follows layout)"
+        },
+        {
+          "value": "original",
+          "label": "Original (image's own ratio)"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "square",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape (16:9)"
+        }
+      ],
+      "default": "auto"
     },
     {
       "type": "select",

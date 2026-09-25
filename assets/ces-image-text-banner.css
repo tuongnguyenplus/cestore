@@ -206,3 +206,32 @@
     font-size: calc(var(--font-heading-scale) * 2.3rem);
   }
 }
+
+
+/* Image shape -------------------------------------------------------------
+ * Set on the section root, and last in the file, so an explicit shape wins
+ * over the aspect ratios the overlay/split layouts set — including the ones
+ * inside their desktop media queries.
+ */
+.ces-image-text-banner--shape-portrait .ces-image-text-banner__media {
+  aspect-ratio: 3 / 4;
+}
+
+.ces-image-text-banner--shape-square .ces-image-text-banner__media {
+  aspect-ratio: 1 / 1;
+}
+
+.ces-image-text-banner--shape-landscape .ces-image-text-banner__media {
+  aspect-ratio: 16 / 9;
+}
+
+/* No fixed box: the image sets the height, so nothing is cropped. */
+.ces-image-text-banner--shape-original .ces-image-text-banner__media {
+  aspect-ratio: auto;
+}
+
+.ces-image-text-banner--shape-original .ces-image-text-banner__image,
+.ces-image-text-banner--shape-original .ces-image-text-banner__media > svg {
+  height: auto;
+  object-fit: contain;
+}
