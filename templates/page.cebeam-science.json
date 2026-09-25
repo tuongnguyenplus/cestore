@@ -121,64 +121,92 @@
     "clinicians": {
       "type": "ces-clinician-reviews",
       "blocks": {
-        "c1": {
+        "r1": {
           "type": "review",
           "settings": {
-            "name": "Dr. Elena Marsh, MD",
+            "image": "shopify://shop_images/asybods5w4m477v80m9tddifjgge.png",
+            "name": "Eleanor Dominguez-Curatolo, NP",
             "verified": true,
             "verified_label": "Verified clinician",
-            "specialty": "Board-Certified Dermatologist",
-            "years": "14 years",
-            "location": "New York, NY",
+            "specialty": "Internal medicine",
+            "years": "14",
+            "location": "Forked River, NJ",
             "preview_label": "Preview",
             "website": "",
             "website_label": "Go to clinician website",
-            "npi": "",
+            "npi": "1588631683",
             "practice_type": "Private practice",
-            "joined": "2026",
-            "summary": "A smart at-home way to get actives where creams can't reach.",
-            "message": "<p>Microneedle patches are one of the few at-home formats that actually cross the skin barrier. For the thin under-eye area, delivering peptides and hyaluronic acid below the surface is exactly what you want for fine lines and hollowing. CEBEAM's self-dissolving design makes it safe and simple for daily use.</p>",
+            "joined": "2025",
+            "summary": "Noticeable Difference After 3 Weeks",
+            "message": "<p>I liked these enough that after my second use. That is usually my best test of whether a skincare product is actually worth keeping around. I use them under my eyes where I have deeper lines, and I also place them vertically along my smile lines. At 53 with dry, mature skin, those are the areas where temporary plumping and surface smoothing make the biggest visible difference for me.<br/><br/>These are not ordinary eye patches. Each patch contains tiny self-dissolving micro-darts, and the box states there are 80 of them per patch. When you press the patch onto clean, dry skin, you can definitely feel them. I would describe it as a mild prickly or tingling sensation rather than pain. For me, that feeling settles down quickly, and within about ten minutes I barely notice the patches at all.<br/><br/>The ingredient list is actually quite good for this type of targeted treatment. Sodium hyaluronate is first, which makes sense because hydration and temporary plumping are a major part of what these patches do. Caffeine can help the under-eye area look less puffy, while niacinamide supports the skin barrier and can help with overall tone. Copper tripeptide-1 and acetyl hexapeptide-8 are included for skin-conditioning and the appearance of lines, and there is also madecassoside, centella, allantoin, and licorice root extract to help keep the formula more soothing.<br/><br/>There is retinol in here as well, although I would not look at these as a replacement for a properly formulated retinoid routine. The purpose here is much more targeted. You are getting a combination of hydration, temporary plumping, smoothing, and skin-supportive ingredients delivered directly against a specific area for an extended period of time.<br/>And that is where I think these do very well.<br/><br/>After a couple of hours, the skin where I use them looks more hydrated and slightly fuller, and deeper dehydration lines look softer. They do not erase wrinkles, and I would not expect them to. The effect is primarily cosmetic and temporary, but it is noticeable enough on my skin that I keep reaching for them.<br/><br/>I have even slept in them. I am a stomach sleeper, so I sometimes wake up with compression lines on my face, and I wanted to see whether keeping these over my smile-line area overnight would help. They absolutely stay put all night. The adhesive is very strong. I did notice less of that deeply creased look in the morning, although I still prefer wearing them for a couple of hours while I am walking around the house rather than sleeping in them.<br/><br/>One important warning: remove them slowly.<br/><br/>The first time I used them, I pulled one off much too quickly. That was my mistake. These adhere extremely well, and under-eye skin is thin. Now I hold the surrounding skin gently and peel the patch back slowly rather than pulling it straight off. That works much better and is particularly important around the eyes.<br/><br/>I also like that the shape makes them useful beyond the under-eye area. They fit nicely along nasolabial and smile-line areas, which is actually one of my favorite ways to use them. If your main concern is a specific deeper line rather than general facial hydration, this format makes much more sense than applying another full-face mask.<br/><br/>Who are these best for? I think they make the most sense for someone with visible dehydration lines, under-eye creasing, smile lines, or an area that could use concentrated temporary plumping. They are also excellent before an event or anytime you want the skin around the eyes or mouth to look a little fresher.<br/><br/>Someone with very reactive skin, sensitivity to adhesives, or very irritated skin may not love them. The micro-darts are intentionally noticeable at first, and the adhesive is strong. I also would not put them over compromised skin. For me they fall into the category of targeted treatment that I use when I actually want a visible short-term result.<br/><br/>Five stars from me. The fact that I purchased another box after only two uses probably says more than anything else.</p>",
             "citation_pill": "Journal of Clinical … +1",
-            "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
+            "citations": "A Prospective Trial of the Microneedle Fractional Radiofrequency System for the Treatment of Infraorbital Dark Circles | Clinical, Cosmetic and Investigational Dermatology (Dove Press), 2022\nComparing the Efficiency of Microneedling and Tranexamic Acid vs. Microneedling and Vitamin C for Infraorbital Hyperpigmentation | Advanced Biomedical Research, 2025",
             "highlights_label": "Highlights:",
-            "highlights": "Screen fatigue\nOxidative defense\nAll-around support",
+            "highlights": "Remove eye bags\npuffiness reduction\nBoosts firmness",
             "show_more_label": "Show more"
           }
         },
-        "c2": {
+        "r2": {
           "type": "review",
           "settings": {
-            "name": "Dr. Priya Raman, MD",
+            "image": "shopify://shop_images/vic0h983k85llxku4anih3hsrp1x.png",
+            "name": "Dr. Regina O'Brien, MD",
             "verified": true,
             "verified_label": "Verified clinician",
-            "specialty": "Cosmetic Dermatology",
-            "years": "11 years",
-            "location": "Austin, TX",
+            "specialty": "Family medicine",
+            "years": "15",
+            "location": "Oak Park, IL",
             "preview_label": "Preview",
-            "website": "",
+            "website": "https://illinoisderm.com/locations/oak-park-office/",
             "website_label": "Go to clinician website",
-            "npi": "",
+            "npi": "1568392011",
             "practice_type": "Private practice",
             "joined": "2026",
-            "summary": "Consistent use is where the collagen results show.",
-            "message": "<p>The controlled micro-stimulus is what drives new collagen over time. Patients who stick to a program — rather than one-off use — see the meaningful change in firmness and brightness. A structured 45-day course is the right way to think about it.</p>",
-            "citation_pill": "Journal of Clinical … +1",
-            "citations": "Effects of diet containing astaxanthin on visual function in healthy individuals | Journal of Clinical Biochemistry and Nutrition, 2022\nAstaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans | Nutrition and Metabolism, 2010",
+            "summary": "A Lifesaver for Night-Shift Eyes",
+            "message": "<p>I used these primarily for under-eye puffiness and dark circles, and also on the frown lines between my eyebrows. I have oily skin, so most products don’t stay in place well—but these surprised me.<br/><br/>What I liked:<br/>&nbsp; &nbsp;• &nbsp; Dramatic improvement in under-eye puffiness and dark circles after use. Skin felt soft and dewy.<br/>&nbsp; &nbsp;• &nbsp; Very effective. Noticeable smoothing of frown lines between the eyebrows<br/>&nbsp; &nbsp;• &nbsp; Stayed in place overnight, even with oily skin (no sliding or shifting).<br/>&nbsp; &nbsp;• &nbsp; Easy to use and felt secure once applied<br/><br/>These are a really cool concept if you like overnight skincare that feels “active” without being complicated. The patches dissolve overnight, so you don’t wake up with something peeling off your face or sliding around your pillowcase, and I love that they’re targeted for areas like smile lines, frown lines, and under-eye puffiness. They feel like a nice little self-care upgrade—especially if you’re trying to look a bit more rested in the morning. The ingredient combo is also solid (retinol + caffeine + peptides), which makes it effective and feel like more than just a basic hydration patch. Adheres fairly well, even overnight. It’s the kind of product that’s easy to use and great for “special occasion prep” or when you just want to feel a little more polished without adding extra steps. I'd say these are a good value for a special treat.</p>",
+            "citation_pill": "Anti-aging and Hydration… +1",
+            "citations": "Anti-aging and Hydration Efficacy of a Cross-linked Hyaluronic Acid Microstructure Patch | Dermatologic Therapy, 2019\nEfficacy of Bioactive Peptides Loaded on Hyaluronic Acid Microneedle Patches: A Monocentric Clinical Study\t| Journal of Cosmetic Dermatology, 2019",
             "highlights_label": "Highlights:",
-            "highlights": "Screen fatigue\nOxidative defense\nAll-around support",
+            "highlights": "Eliminates dark circles\nMore circulation\npainless",
+            "show_more_label": "Show more"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/zvwd2gnzd9m5n5id3xzibjz1v515.png",
+            "name": "Dr. Anila Khan, DO",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Ophthalmology",
+            "years": "31",
+            "location": "Arlington Heights, IL",
+            "preview_label": "Preview",
+            "website": "https://mikarimedspa.com/",
+            "website_label": "Go to clinician website",
+            "npi": "1205896974",
+            "practice_type": "Private practice",
+            "joined": "2025",
+            "summary": "Skeptical at First, Now a Believer",
+            "message": "<p>These Cebeam micro-infusion anti wrinkle patches are a really interesting and easy addition to a nighttime skincare routine. The patches are designed for smile lines, frown lines, under eye bags, puffiness, and crow’s feet, and they dissolve overnight as described. They stay in place well while sleeping and feel comfortable on the skin.<br/>It is painless and I was delighted that it wasn’t irritating to my sensitive skin as well. You’re able to see the little places where the darts penetrate the skin after removal. I am absolutely able to tell an immediate notable difference after my use of these patches, where I leave them on for several hours or overnight.<br/><br/>I like that they combine ingredients like retinol, caffeine, and peptides in a targeted way instead of a cream that spreads everywhere. In the morning, my skin looked smoother and more refreshed, especially under the eyes and around expression lines. They are simple to apply, feel gentle, and make my skin look well hydrated and plumper by morning. These feel like a thoughtful, well designed skincare product and I would absolutely continue using them.<br/><br/></p>",
+            "citation_pill": "Journal of Clinical … +1",
+            "citations": "Efficacy and safety of a novel, soluble microneedle patch for the improvement of facial wrinkle | JJournal of Cosmetic Dermatology, 2018\nEfficacy of a novel microneedle patch for rejuvenation of the nasolabial fold | Skin Research and Technology, 2022",
+            "highlights_label": "Highlights:",
+            "highlights": "under-eye bags\nEye comfort\nwrinkles treatment",
             "show_more_label": "Show more"
           }
         }
       },
       "block_order": [
-        "c1",
-        "c2"
+        "r1",
+        "r2",
+        "r3"
       ],
       "settings": {
         "show_reviews_on_page": true,
-        "eyebrow": "CLINICIANS' CHOICE",
-        "title": "Trusted by skin professionals",
-        "subtitle": "<p>Why clinicians rate microneedle delivery for the under-eye.</p>",
+        "eyebrow": "Clinician Reviews",
+        "title": "Independent Clinician Evaluations",
+        "subtitle": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>",
         "learn_more_label": "Learn more",
         "modal_title": "frontrowMD",
         "faq1_q": "Who is FrontrowMD?",
@@ -407,64 +435,184 @@
     "faq": {
       "type": "ces-faq-accordion",
       "blocks": {
-        "q1": {
+        "faq-science-1": {
           "type": "faq_item",
           "settings": {
-            "group_label": "",
-            "question": "Does it hurt?",
-            "answer": "<p>No. The micro-cones are far too small to reach the nerves that sense pain — most people feel only a light tingle or nothing at all.</p>",
-            "open": false
-          }
-        },
-        "q2": {
-          "type": "faq_item",
-          "settings": {
-            "group_label": "",
+            "group_label": "How it works",
             "question": "How is this different from an eye cream?",
             "answer": "<p>A cream sits on the surface, where most of it evaporates. CEBEAM's micro-cones dissolve below the barrier and deposit the actives into the layers where lines and dark circles form.</p>",
             "open": false
           }
         },
-        "q3": {
+        "faq-9": {
           "type": "faq_item",
           "settings": {
-            "group_label": "",
-            "question": "How often should I use it?",
-            "answer": "<p>During your reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
+            "group_label": "Before you buy",
+            "question": "Will this work on bags I’ve had for years?",
+            "answer": "<p>Often, partly — it depends what’s under there. Fluid, thin skin and lost firmness respond well. Inherited fat pads that push forward are a surgical issue no topical can move.*</p>",
             "open": false
           }
         },
-        "q4": {
+        "faq-10": {
           "type": "faq_item",
           "settings": {
             "group_label": "",
-            "question": "When will I see results?",
-            "answer": "<p>Hydration and de-puffing are immediate. Dark circles and fine lines visibly improve by around week three — the end of the 21-Day Eye Reset — and firmness keeps rebuilding across the full 45-day course.</p>",
+            "question": "Can I buy Cebeam in stores?",
+            "answer": "<p>Not currently. It’s sold direct so we can control storage and freshness.</p>",
             "open": false
           }
         },
-        "q5": {
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "How to use them",
+            "question": "How do I apply them?",
+            "answer": "<p>On clean, dry skin, place one under each eye and press firmly for 5–10 seconds. Leave on at least 2 hours, or overnight, then remove in the morning.</p>",
+            "open": false
+          }
+        },
+        "faq-3": {
           "type": "faq_item",
           "settings": {
             "group_label": "",
-            "question": "Is it safe for sensitive skin?",
-            "answer": "<p>Yes. The cones are made of hyaluronic acid and dissolve completely. If your skin is very reactive, start with two treatment nights a week and build up to four.</p>",
+            "question": "How often should I use them?",
+            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
+            "open": false
+          }
+        },
+        "faq-8": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Can I wear makeup afterwards?",
+            "answer": "<p>Yes — after removing the patch, wait about 20 minutes, then apply concealer as normal. Many people find it sits smoother on the days after.</p>",
+            "open": false
+          }
+        },
+        "faq-12": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "How should I store them?",
+            "answer": "<p>Sealed, somewhere cool and dry, out of direct sun. Don’t refrigerate — condensation ruins the micro-cones. Once a patch is out of its pouch, use it.</p>",
+            "open": false
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Safety & the microneedle feel",
+            "question": "Do the patches hurt?",
+            "answer": "<p>No. You may feel a light tingle for a minute or two as the painless micro-cones make contact and soften. The sensation fades quickly.</p>",
+            "open": false
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Why do the patches feel dry to the touch?",
+            "answer": "<p>That’s normal. The micro-cones are crystallized, solidified actives — not a soaked serum — so there’s no visible liquid. The dry feel is part of how they work.</p>",
+            "open": false
+          }
+        },
+        "faq-7": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "A little redness after use — is that normal?",
+            "answer": "<p>Yes, and it’s a good sign. It means the micro-cones delivered the actives where they’re needed. It usually settles within 15–30 minutes.</p>",
+            "open": false
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Are they safe for sensitive skin?",
+            "answer": "<p>Yes. The formula is dermatologist-tested and made for the delicate eye area. If your skin is very reactive, do a small patch test first.</p>",
+            "open": false
+          }
+        },
+        "faq-11": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Who should not use these?",
+            "answer": "<p>Skip them on broken, irritated or sunburned skin, or with an active eye infection. If you’re pregnant, nursing or on prescription retinoids, ask your doctor first.*</p>",
+            "open": false
+          }
+        },
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Results & what to expect",
+            "question": "How long until I see results?",
+            "answer": "<p>Hydration and a smoother look are often visible the next morning. Changes to bags, dark circles and lines usually build over 1–2 weeks of regular use.*</p>",
+            "open": false
+          }
+        },
+        "faq-sub1": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Subscription",
+            "question": "How does the subscription work?",
+            "answer": "<p>Choose Subscribe at checkout and your refill ships automatically at the subscriber price — nothing to reorder or remember. You pick the interval that matches how often you use them.</p>",
+            "open": false
+          }
+        },
+        "faq-sub2": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Can I skip, pause or cancel?",
+            "answer": "<p>Yes — anytime from your account, with no phone call and no cancellation fee. Skip a delivery, change the interval, pause, or cancel before your next billing date.</p>",
+            "open": false
+          }
+        },
+        "faq-ship1": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Shipping & returns",
+            "question": "Where do you ship from, and how fast?",
+            "answer": "<p>Orders ship from our US warehouse. Standard delivery runs 3–5 business days, and you’ll get a tracking link by email as soon as it’s on the way.</p>",
+            "open": false
+          }
+        },
+        "faq-13": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "What if it doesn’t work for me?",
+            "answer": "<p>Contact us within 90 days for a full refund. You don’t need to send the box back.</p>",
             "open": false
           }
         }
       },
       "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5"
+        "faq-science-1",
+        "faq-9",
+        "faq-10",
+        "faq-5",
+        "faq-3",
+        "faq-8",
+        "faq-12",
+        "faq-2",
+        "faq-6",
+        "faq-7",
+        "faq-4",
+        "faq-11",
+        "faq-1",
+        "faq-sub1",
+        "faq-sub2",
+        "faq-ship1",
+        "faq-13"
       ],
       "settings": {
-        "heading": "The Science, answered",
+        "heading": "Frequently Asked Questions",
         "subheading": "Common questions about how CEBEAM works.",
         "exclusive": true,
-        "footer_text": "<p><em>This information is provided to explain how microneedle and active-delivery technologies work and is not intended as medical advice.</em></p>",
+        "footer_text": "<p>Still have a question? Email support@cebeam.com and a real person will reply within one business day.</p><p>This information explains how microneedle and active-delivery technologies work and is not intended as medical advice.</p>",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
