@@ -529,6 +529,36 @@
             "progress": "Day 18 of the protocol"
           }
         },
+        "pair_QqPKNN": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
+            "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
+            "name": "David, 58",
+            "verified": true,
+            "progress": "After 25 days of use"
+          }
+        },
+        "pair_9M6FUm": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_35_PM.webp",
+            "after_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "name": "Anna, 45",
+            "verified": true,
+            "progress": "After 2 weeks of use"
+          }
+        },
+        "pair_VcLGTX": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
+            "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+            "name": "Anna, 52",
+            "verified": true,
+            "progress": "After 27 days of use"
+          }
+        },
         "p2": {
           "type": "pair",
           "settings": {
@@ -542,6 +572,9 @@
       },
       "block_order": [
         "p1",
+        "pair_QqPKNN",
+        "pair_9M6FUm",
+        "pair_VcLGTX",
         "p2"
       ],
       "settings": {
