@@ -978,10 +978,10 @@
     "testimonials": {
       "type": "ces-testimonial-marquee",
       "blocks": {
-        "avatar_item_dXtLe6": {
+        "avatar_item_TRmW8T": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png"
+            "image": "shopify://shop_images/febe207403798d395523da12f6af32a4.jpg"
           }
         },
         "avatar_item_eaFPzR": {
@@ -990,28 +990,28 @@
             "image": "shopify://shop_images/95d7d4b3a0e5e508dee44756c74a8919.jpg"
           }
         },
+        "avatar_item_pfxKER": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/looping_gif_small_c71a6cc7-a54d-4c82-9692-0b7b075ed96b.webp"
+          }
+        },
+        "avatar_item_dXtLe6": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png"
+          }
+        },
         "avatar-1": {
           "type": "avatar_item",
           "settings": {
             "image": "shopify://shop_images/5aaf758b-0c8c-4a73-9541-e7499f30d030.png"
           }
         },
-        "avatar_item_TRmW8T": {
-          "type": "avatar_item",
-          "settings": {
-            "image": "shopify://shop_images/febe207403798d395523da12f6af32a4.jpg"
-          }
-        },
         "avatar-2": {
           "type": "avatar_item",
           "settings": {
             "image": "shopify://shop_images/a27678e0-e592-4a10-bd64-a1cd33b9cd67.png"
-          }
-        },
-        "avatar_item_pfxKER": {
-          "type": "avatar_item",
-          "settings": {
-            "image": "shopify://shop_images/looping_gif_small_c71a6cc7-a54d-4c82-9692-0b7b075ed96b.webp"
           }
         },
         "avatar-3": {
@@ -1095,12 +1095,12 @@
         }
       },
       "block_order": [
-        "avatar_item_dXtLe6",
-        "avatar_item_eaFPzR",
-        "avatar-1",
         "avatar_item_TRmW8T",
-        "avatar-2",
+        "avatar_item_eaFPzR",
         "avatar_item_pfxKER",
+        "avatar_item_dXtLe6",
+        "avatar-1",
+        "avatar-2",
         "avatar-3",
         "avatar-4",
         "avatar-5",
