@@ -927,6 +927,7 @@
         "s2": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/hf_20260925_083543_c7f62231-0964-4fe4-b206-9ff425b61b3a.png",
             "title": "Press and leave on",
             "text": "Place one under each eye and press for 10 seconds. Leave on at least 2 hours, or overnight."
           }
@@ -934,6 +935,7 @@
         "s3": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/hf_20260925_084055_3959aaa9-d80e-4c6a-a7a5-7a10d6816b24.png",
             "title": "Peel in the morning",
             "text": "Remove and discard. Nothing to rinse, nothing on your face by breakfast."
           }
