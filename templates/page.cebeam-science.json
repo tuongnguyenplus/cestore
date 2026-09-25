@@ -86,7 +86,12 @@
           }
         }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
       "settings": {
         "eyebrow": "THE SCIENCE",
         "heading": "Advanced Features",
@@ -126,7 +131,10 @@
           }
         }
       },
-      "block_order": ["c1", "c2"],
+      "block_order": [
+        "c1",
+        "c2"
+      ],
       "settings": {
         "eyebrow": "CLINICIANS' CHOICE",
         "title": "Trusted by skin professionals",
@@ -151,8 +159,8 @@
           "type": "icon_item",
           "settings": {
             "icon_text": "2",
-            "heading": "Apply under the eye",
-            "text": "Place the crescent patch along the under-eye and press gently for 20-30 seconds."
+            "heading": "Apply under each eye",
+            "text": "Place one patch under each eye — that is one treatment — and press gently for 20-30 seconds."
           }
         },
         "s3": {
@@ -172,11 +180,16 @@
           }
         }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
         "heading": "How to Use CEBEAM",
         "highlight_words": "CEBEAM",
-        "subheading": "Four steps, a few minutes a night.",
+        "subheading": "Four steps, about fifteen seconds a treatment.",
         "columns_desktop": 4,
         "columns_mobile": 2,
         "color_scheme": "scheme-1",
@@ -192,7 +205,7 @@
           "settings": {
             "time_label": "Days 1-7",
             "heading": "7-Day Starter",
-            "content": "<p>Skin adjusts to nightly delivery. Immediate hydration and de-puffing — the under-eye looks smoother and more awake on waking.</p>",
+            "content": "<p>Four treatments in your first week as skin adjusts to the new delivery. Immediate hydration and de-puffing — the under-eye looks smoother and more awake on waking.</p>",
             "open": true
           }
         },
@@ -213,7 +226,11 @@
           }
         }
       },
-      "block_order": ["t1", "t2", "t3"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
       "settings": {
         "heading": "Your 45-Day Eye Rebuild",
         "subheading": "Results compound with consistency — here's what to expect.",
@@ -225,14 +242,51 @@
     "tips": {
       "type": "ces-benefits-checklist",
       "blocks": {
-        "b1": { "type": "benefit_item", "settings": { "text": "Cleanse and fully dry skin before applying" } },
-        "b2": { "type": "benefit_item", "settings": { "text": "Press the patch for 20-30 seconds so every cone contacts the skin" } },
-        "b3": { "type": "benefit_item", "settings": { "text": "Use consistently — nightly, or at least 4-5 nights a week" } },
-        "b4": { "type": "benefit_item", "settings": { "text": "Follow your program to completion for the collagen results" } },
-        "b5": { "type": "benefit_item", "settings": { "text": "Stay hydrated and moisturize — hydrated skin responds better" } },
-        "b6": { "type": "benefit_item", "settings": { "text": "Don't reuse a patch — each is single-use once the cones dissolve" } }
+        "b1": {
+          "type": "benefit_item",
+          "settings": {
+            "text": "Cleanse and fully dry skin before applying"
+          }
+        },
+        "b2": {
+          "type": "benefit_item",
+          "settings": {
+            "text": "Press the patch for 20-30 seconds so every cone contacts the skin"
+          }
+        },
+        "b3": {
+          "type": "benefit_item",
+          "settings": {
+            "text": "Use one fresh treatment four nights a week through your reset, then two to maintain"
+          }
+        },
+        "b4": {
+          "type": "benefit_item",
+          "settings": {
+            "text": "Follow your program to completion for the collagen results"
+          }
+        },
+        "b5": {
+          "type": "benefit_item",
+          "settings": {
+            "text": "Stay hydrated and moisturize — hydrated skin responds better"
+          }
+        },
+        "b6": {
+          "type": "benefit_item",
+          "settings": {
+            "text": "Don't reuse a patch — each is single-use once the cones dissolve"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
       "settings": {
         "heading": "Tips for optimal results",
         "subheading": "Small habits that make a visible difference.",
@@ -249,9 +303,9 @@
         "eyebrow": "REAL RESULTS",
         "heading": "93% of users",
         "heading_accent": "reported smoother, brighter under-eyes",
-        "text": "<p>after just 21 days of nightly use. With CEBEAM you're not masking fatigue — you're actively rebuilding the skin underneath.</p>",
+        "text": "<p>after completing the 21-Day Eye Reset. With CEBEAM you're not masking fatigue — you're actively rebuilding the skin underneath.</p>",
         "button_label": "Get yours",
-        "button_link": "/products/rovina",
+        "button_link": "https://cebeam.com/products/microneedle-patches",
         "color_scheme": "scheme-2",
         "padding_top": 48,
         "padding_bottom": 48
@@ -278,25 +332,31 @@
           "type": "faq_item",
           "settings": {
             "question": "How often should I use it?",
-            "answer": "<p>Nightly for best results, or at least 4-5 nights a week. Follow your chosen program (7, 21, or 45 days) to completion.</p>"
+            "answer": "<p>During your reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>"
           }
         },
         "q4": {
           "type": "faq_item",
           "settings": {
             "question": "When will I see results?",
-            "answer": "<p>Hydration and de-puffing are immediate. Fine lines and dark circles improve across 2-3 weeks, and firmness rebuilds over the full 45-day course.</p>"
+            "answer": "<p>Hydration and de-puffing are immediate. Dark circles and fine lines visibly improve by around week three — the end of the 21-Day Eye Reset — and firmness keeps rebuilding across the full 45-day course.</p>"
           }
         },
         "q5": {
           "type": "faq_item",
           "settings": {
             "question": "Is it safe for sensitive skin?",
-            "answer": "<p>Yes. The cones are made of hyaluronic acid and dissolve completely. Start every other night if your skin is very reactive, then build up.</p>"
+            "answer": "<p>Yes. The cones are made of hyaluronic acid and dissolve completely. If your skin is very reactive, start with two treatment nights a week and build up to four.</p>"
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
       "settings": {
         "heading": "The Science, answered",
         "subheading": "Common questions about how CEBEAM works.",
@@ -311,10 +371,10 @@
       "settings": {
         "image_position": "start",
         "heading": "Rebuild your under-eye — the smart way",
-        "bullets": "<ul><li>Self-dissolving microneedle patches</li><li>Peptide + hyaluronic complex delivered deep</li><li>Visible in weeks, rebuilt in 45 days</li><li>365-day money-back guarantee</li></ul>",
+        "bullets": "<ul><li>Self-dissolving microneedle patches</li><li>Peptide + hyaluronic complex delivered deep</li><li>Visible in weeks, rebuilt in 45 days</li><li>90-day money-back guarantee</li></ul>",
         "button_label": "Shop CEBEAM",
-        "button_link": "/products/rovina",
-        "button_footnote": "Free shipping · 365-day guarantee",
+        "button_link": "https://cebeam.com/products/microneedle-patches",
+        "button_footnote": "Free shipping · 90-day guarantee",
         "color_scheme": "scheme-2",
         "padding_top": 48,
         "padding_bottom": 56
