@@ -35,7 +35,9 @@
   border-radius: 1.2rem;
   background: rgb(var(--color-background));
   cursor: pointer;
-  overflow: hidden;
+  /* No overflow clipping here: the ribbon sits above the card's top edge and
+     `overflow: hidden` removed it entirely. The one thing that needed
+     clipping — the tinted last row — is rounded explicitly below. */
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 .ces-bundle__tier:hover {
@@ -65,7 +67,7 @@
   z-index: 1;
 }
 .ces-bundle__tier--best {
-  margin-top: 1rem;
+  margin-top: 2.4rem;
 }
 
 /* Card head row: radio · thumb · info · price */
@@ -159,6 +161,10 @@
 }
 .ces-bundle__row:first-child {
   border-top: none;
+}
+.ces-bundle__row:last-child {
+  border-bottom-left-radius: 1.05rem;
+  border-bottom-right-radius: 1.05rem;
 }
 /* On the selected tier, tint the rows with the brand accent. */
 .ces-bundle__tier.is-selected .ces-bundle__row {
