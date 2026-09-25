@@ -60,7 +60,7 @@
             "text": "Rated <strong>4.8 Excellent</strong> | Over",
             "enable_counter": true,
             "sold_count": 255127,
-            "sold_suffix": "Sold",
+            "sold_suffix": "Pouches sold",
             "count_step_1": 1,
             "count_step_2": 3,
             "count_step_3": 4
