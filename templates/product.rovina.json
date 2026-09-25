@@ -126,29 +126,29 @@
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "firm",
-            "text": "Firmer, Brighter, Better Hydrated"
+            "icon": "drop",
+            "text": "Deep Hydration & Plumping"
           }
         },
         "highlight-4": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "firm",
+            "text": "Firmer, Brighter Under-Eyes"
+          }
+        },
+        "highlight-5": {
           "type": "ces_highlight",
           "settings": {
             "icon": "patch",
             "text": "Painless Micro-Delivery — No Needles"
           }
         },
-        "highlight-5": {
-          "type": "ces_highlight",
-          "settings": {
-            "icon": "lock",
-            "text": "Stays Put All Night — No Sticky Residue"
-          }
-        },
         "highlight-6": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "drop",
-            "text": "Real Actives — Not Just a Cool Feel"
+            "icon": "sparkle",
+            "text": "No Sticky Residue"
           }
         },
         "ces_bundle_8Rq63G": {
@@ -432,6 +432,20 @@
             "footnote": "Dermatologist-Tested, Clean Formula",
             "text_alignment": "center"
           }
+        },
+        "highlight-7": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "lock",
+            "text": "Stays Put All Night"
+          }
+        },
+        "highlight-8": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "lightning",
+            "text": "Real Actives — Not Just a Cool Feel"
+          }
         }
       },
       "block_order": [
@@ -446,6 +460,8 @@
         "highlight-4",
         "highlight-5",
         "highlight-6",
+        "highlight-7",
+        "highlight-8",
         "ces_bundle_8Rq63G",
         "shipping-estimate",
         "price",
