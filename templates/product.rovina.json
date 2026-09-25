@@ -120,7 +120,7 @@
           "type": "ces_highlight",
           "settings": {
             "icon": "depuff",
-            "text": "De-Puffs Tired Eye Bags"
+            "text": "No Sticky Residue"
           }
         },
         "highlight-3": {
@@ -368,7 +368,7 @@
           "settings": {
             "heading": "Is redness a sign it worked?",
             "icon": "none",
-            "content": "<p>No. Mild temporary redness can occur, but it does not prove effectiveness. Remove the patches and stop using them if you experience burning, marked swelling, or redness that persists (24 hours). Do not apply to broken skin.</p>",
+            "content": "<p>A little redness is a good sign. Mild temporary redness can occur, and fades quickly.</p>",
             "page": ""
           }
         },
