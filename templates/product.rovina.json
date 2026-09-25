@@ -112,36 +112,36 @@
         "highlight-1": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "lock",
-            "text": "Stays Put All Night — No Sliding"
+            "icon": "eye",
+            "text": "Fades Dark Circles & Puffiness"
           }
         },
         "highlight-2": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "sparkle",
-            "text": "No Sticky Residue or Film"
+            "icon": "smooth",
+            "text": "Smooths Fine Lines & Crepey Skin"
           }
         },
         "highlight-3": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "patch",
-            "text": "Painless — No Needles or Sting"
+            "icon": "firm",
+            "text": "Firmer, Brighter, Better Hydrated"
           }
         },
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "shield",
-            "text": "Sealed Fresh, One Pair Per Pouch"
+            "icon": "patch",
+            "text": "Painless Micro-Delivery — No Needles"
           }
         },
         "highlight-5": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "smooth",
-            "text": "Makeup-Ready After Removal"
+            "icon": "lock",
+            "text": "Stays Put All Night — No Sticky Residue"
           }
         },
         "highlight-6": {
@@ -624,7 +624,7 @@
             "icon": "cell-defense",
             "icon_color": "",
             "heading": "Dark Circles & Bags*",
-            "text": ""
+            "text": "Shadows look lighter and the bag under the eye looks less pronounced."
           }
         },
         "icon-2": {
@@ -635,7 +635,7 @@
             "icon": "shield",
             "icon_color": "",
             "heading": "Puffiness & Under-Eye Fatigue*",
-            "text": ""
+            "text": "Morning puffiness looks reduced, so eyes read rested instead of swollen."
           }
         },
         "icon-3": {
@@ -646,7 +646,7 @@
             "icon": "molecule",
             "icon_color": "",
             "heading": "Fine Lines & Crepey Texture*",
-            "text": ""
+            "text": "Crepey texture that catches hard light looks softer and more even."
           }
         },
         "icon-4": {
@@ -657,7 +657,7 @@
             "icon": "vitality",
             "icon_color": "",
             "heading": "Firmness & Hydration*",
-            "text": ""
+            "text": "Skin holds hydration better, so the area looks plumper and firmer."
           }
         }
       },
@@ -749,8 +749,8 @@
           "settings": {
             "state": "auto",
             "time_label": "WEEK 1",
-            "heading": "The First Application",
-            "bullets": "Initial smoothing of morning puffiness. \nActives release beneath the skin overnight\nThe \"Concealer Trap\" begins to fade as skin texture hydrates from within.\nWake up to a fresher, more hydrated look",
+            "heading": "Your starter week",
+            "bullets": "Morning puffiness starts to look smoother\nActives release beneath the skin overnight\nSkin hydrates from within, so concealer goes on smoother\nWake up looking fresher and more rested",
             "content": "",
             "open": true
           }
@@ -759,9 +759,9 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEK 3",
-            "heading": "Volume Restoration",
-            "bullets": "Deep hollows and dark shadows begin to brighten as dermal density increases.\nPuffiness looks visibly reduced in the morning\nUnder-eye area feels smoother and plumper",
+            "time_label": "WEEK 2",
+            "heading": "It stops being subtle",
+            "bullets": "Dark shadows begin to brighten\nPuffiness looks visibly reduced in the morning\nThe under-eye area feels smoother and plumper",
             "content": "",
             "open": false
           }
@@ -770,9 +770,9 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "WEEKS 6",
-            "heading": "Structural Lift",
-            "bullets": "Fine lines and \"crepey\" texture are visibly minimized. The orbital area looks firmer and more resilient.\nDark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you’re not",
+            "time_label": "WEEK 3",
+            "heading": "The reset lands",
+            "bullets": "Dark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nThe orbital area looks firmer and more resilient\nEyes look rested — even when you're not",
             "content": "",
             "open": false
           }
@@ -782,8 +782,8 @@
           "settings": {
             "state": "auto",
             "time_label": "ONGOING",
-            "heading": "Keep It Up, 2 Nights a Week",
-            "bullets": "Results hold with just two patches a week\nYour \"Genetic Baggage\" is under control.\nFirmness and brightness keep improving\nNo routine, no downtime — it fits your life",
+            "heading": "Keep it up, 2 nights a week",
+            "bullets": "Results hold with just one pair, two nights a week\nPuffiness and shadows stay under control\nFirmness and brightness keep improving\nNo routine, no downtime — it fits your life",
             "content": "",
             "open": false
           }
@@ -800,7 +800,7 @@
         "image": "shopify://shop_images/47.webp",
         "image_position": "start",
         "image_ratio": "3 / 4",
-        "heading": "What to expect, use by use",
+        "heading": "What to expect across your 21-day reset",
         "subheading": "Micro-delivery works below the surface, so results build with consistent use.*",
         "fill_speed": 900,
         "meta_opacity": 100,
@@ -1371,7 +1371,7 @@
           "settings": {
             "group_label": "",
             "question": "How often should I use them?",
-            "answer": "<p>Two to three nights a week is all you need. The actives keep working between uses, so there’s no need to apply every night.</p>",
+            "answer": "<p>Two nights a week is all you need. The actives keep working between uses, so there’s no need to apply every night.</p>",
             "open": false
           }
         },
@@ -1407,7 +1407,7 @@
           "settings": {
             "group_label": "",
             "question": "Why do the patches feel dry to the touch?",
-            "answer": "<p>That’s normal. The micro-cones are crystallised, solidified actives — not a soaked serum — so there’s no visible liquid. The dry feel is part of how they work.</p>",
+            "answer": "<p>That’s normal. The micro-cones are crystallized, solidified actives — not a soaked serum — so there’s no visible liquid. The dry feel is part of how they work.</p>",
             "open": false
           }
         },
