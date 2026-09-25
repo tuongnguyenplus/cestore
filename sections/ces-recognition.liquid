@@ -31,13 +31,17 @@
   .ces-recog__fig{margin:0}
   .ces-recog__fig img{width:100%;height:auto;display:block;border-radius:var(--ces-radius);border:.1rem solid var(--ces-border-color)}
   .ces-recog__cap{margin:.8rem 0 0;font-size:1.35rem;line-height:1.45;color:var(--ces-muted)}
-  .ces-recog__split{display:grid;grid-template-columns:1fr;gap:2.8rem;align-items:center}
+  .ces-recog__split{display:grid;grid-template-columns:1fr;gap:2.4rem}
   @media screen and (min-width:750px){
     .ces-recog__list{grid-template-columns:1fr 1fr;gap:0 3.2rem}
     .ces-recog__item:nth-child(2){border-top:none}
     .ces-recog__media--band{grid-template-columns:repeat({{ recog_images.size | at_least: 1 | at_most: 2 }},1fr)}
-    .ces-recog__split{grid-template-columns:5fr 6fr}
-    .ces-recog__split--right .ces-recog__media{order:2}
+    .ces-recog__split{grid-template-columns:5fr 6fr;grid-template-rows:auto 1fr;column-gap:4rem;row-gap:0;align-items:start}
+    .ces-recog__split--left{grid-template-areas:"media head" "media text"}
+    .ces-recog__split--right{grid-template-areas:"head media" "text media"}
+    .ces-recog__split .ces-recog__head-slot{grid-area:head}
+    .ces-recog__split .ces-recog__media{grid-area:media;align-self:center}
+    .ces-recog__split .ces-recog__text{grid-area:text}
     .ces-recog__split .ces-recog__list{grid-template-columns:1fr}
     .ces-recog__split .ces-recog__item:nth-child(2){border-top:.1rem dashed var(--ces-border-color)}
   }
@@ -90,8 +94,9 @@
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if is_split -%}
       <div class="ces-recog__split ces-recog__split--{{ recog_pos }}">
+        <div class="ces-recog__head-slot">{{ recog_head }}</div>
         <div class="ces-recog__media">{{ recog_media }}</div>
-        <div class="ces-recog__body">{{ recog_head }}{{ recog_list }}{{ recog_closing }}</div>
+        <div class="ces-recog__text">{{ recog_list }}{{ recog_closing }}</div>
       </div>
     {%- else -%}
       {{ recog_head }}
