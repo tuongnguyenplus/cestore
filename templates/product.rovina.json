@@ -133,7 +133,7 @@
         "highlight-4": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "firm",
+            "icon": "brighten",
             "text": "Firmer, Brighter Under-Eyes"
           }
         },
@@ -147,21 +147,21 @@
         "highlight-6": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "sparkle",
+            "icon": "peel-clean",
             "text": "No Sticky Residue"
           }
         },
         "highlight-7": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "patch-pair",
+            "icon": "moon-zzz",
             "text": "Stays Put All Night"
           }
         },
         "highlight-8": {
           "type": "ces_highlight",
           "settings": {
-            "icon": "patch-pair",
+            "icon": "lightning",
             "text": "Real Actives — Not Just a Cool Feel"
           }
         },
