@@ -1,0 +1,88 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .ces-baft{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-baft__grid{display:grid;grid-template-columns:1fr;gap:2.4rem;margin-top:2.8rem}
+  .ces-baft__card{border:.1rem solid var(--ces-border-color);border-radius:var(--ces-radius);overflow:hidden;background:var(--ces-surface)}
+  .ces-baft__pair{display:grid;grid-template-columns:1fr 1fr}
+  .ces-baft__cell{position:relative;aspect-ratio:1/1;background:var(--ces-surface-strong)}
+  .ces-baft__cell img{width:100%;height:100%;object-fit:cover;display:block}
+  .ces-baft__ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ces-muted);font-size:1.2rem}
+  .ces-baft__tag{position:absolute;top:1rem;left:1rem;background:rgba(0,0,0,.62);color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border-radius:99rem}
+  .ces-baft__cell--after .ces-baft__tag{background:var(--ces-accent)}
+  .ces-baft__cap{padding:1.4rem 1.8rem;font-size:1.45rem;line-height:1.45}
+  .ces-baft__cap strong{display:block;font-size:1.55rem}
+  .ces-baft__disclaimer{margin:2.4rem 0 0;font-size:1.35rem;line-height:1.5;color:var(--ces-muted);font-style:italic}
+  @media screen and (min-width:750px){.ces-baft__grid{grid-template-columns:repeat({{ section.settings.columns }},1fr)}}
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-baft ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}<h2 class="ces-heading">{{ section.settings.heading }}</h2>{%- endif -%}
+        {%- if section.settings.subheading != blank -%}<p class="ces-subheading">{{ section.settings.subheading }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ces-baft__grid">
+        {%- for block in section.blocks -%}
+          <div class="ces-baft__card" {{ block.shopify_attributes }}>
+            <div class="ces-baft__pair">
+              <div class="ces-baft__cell ces-baft__cell--before">
+                <span class="ces-baft__tag">{{ section.settings.before_label }}</span>
+                {%- if block.settings.before_image != blank -%}
+                  <img src="{{ block.settings.before_image | image_url: width: 800 }}" alt="Before" loading="lazy">
+                {%- else -%}<span class="ces-baft__ph">Before</span>{%- endif -%}
+              </div>
+              <div class="ces-baft__cell ces-baft__cell--after">
+                <span class="ces-baft__tag">{{ section.settings.after_label }}</span>
+                {%- if block.settings.after_image != blank -%}
+                  <img src="{{ block.settings.after_image | image_url: width: 800 }}" alt="After" loading="lazy">
+                {%- else -%}<span class="ces-baft__ph">After</span>{%- endif -%}
+              </div>
+            </div>
+            {%- if block.settings.caption != blank -%}<div class="ces-baft__cap">{{ block.settings.caption }}</div>{%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.disclaimer != blank -%}<p class="ces-baft__disclaimer">{{ section.settings.disclaimer }}</p>{%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Before After",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Same person. Same lighting. Weeks apart." },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "before_label", "label": "Before label", "default": "Before" },
+    { "type": "text", "id": "after_label", "label": "After label", "default": "After" },
+    { "type": "range", "id": "columns", "min": 1, "max": 3, "step": 1, "label": "Columns (desktop)", "default": 2 },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "Real customers, unretouched, shared with permission. Individual results vary." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
+  ],
+  "blocks": [
+    { "type": "pair", "name": "Before / after pair", "settings": [
+      { "type": "image_picker", "id": "before_image", "label": "Before image" },
+      { "type": "image_picker", "id": "after_image", "label": "After image" },
+      { "type": "richtext", "id": "caption", "label": "Caption", "default": "<p><strong>Week 3</strong>Verified customer</p>" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "CES Before After", "blocks": [ { "type": "pair" }, { "type": "pair" } ] }
+  ]
+}
+{% endschema %}
