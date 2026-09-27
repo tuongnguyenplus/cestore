@@ -17,6 +17,7 @@
   {{ 'ces-offer-bundle.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'ces-offer-bundle.js' | asset_url }}" defer="defer"></script>
   {{ 'ces-bundle.css' | asset_url | stylesheet_tag }}
+{{ 'ces-bundle-v2.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'ces-bundle.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'ces-clinicians-badge.js' | asset_url }}" defer="defer"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1300,6 +1301,9 @@
 
                 {%- when 'ces_bundle' -%}
                   {%- render 'ces-bundle', block: block -%}
+
+                {%- when 'ces_bundle_v2' -%}
+                  {%- render 'ces-bundle-v2', block: block -%}
 
                 {%- when 'ces_clinicians' -%}
                   {%- comment -%}
@@ -2879,19 +2883,51 @@
             {
               "value": "info",
               "label": "Info"
+            },
+            {
+              "value": "eye",
+              "label": "Eye / dark circles"
+            },
+            {
+              "value": "depuff",
+              "label": "De-puff / drain"
+            },
+            {
+              "value": "smooth",
+              "label": "Smooth / fine lines"
+            },
+            {
+              "value": "firm",
+              "label": "Firm / lift"
+            },
+            {
+              "value": "drop",
+              "label": "Hydration drop"
+            },
+            {
+              "value": "patch",
+              "label": "Microneedle patch"
+            },
+            {
+              "value": "patch-pair",
+              "label": "Patch pair (under-eye)"
+            },
+            {
+              "value": "eye-lift",
+              "label": "Eye with lift arrows"
+            },
+            {
+              "value": "moon-zzz",
+              "label": "Moon with zzz (sleep)"
+            },
+            {
+              "value": "peel-clean",
+              "label": "Patch peeling off clean"
+            },
+            {
+              "value": "brighten",
+              "label": "Rising sun / brighten"
             }
-          ,
-            { "value": "eye", "label": "Eye / dark circles" },
-            { "value": "depuff", "label": "De-puff / drain" },
-            { "value": "smooth", "label": "Smooth / fine lines" },
-            { "value": "firm", "label": "Firm / lift" },
-            { "value": "drop", "label": "Hydration drop" },
-            { "value": "patch", "label": "Microneedle patch" },
-            { "value": "patch-pair", "label": "Patch pair (under-eye)" },
-            { "value": "eye-lift", "label": "Eye with lift arrows" },
-            { "value": "moon-zzz", "label": "Moon with zzz (sleep)" },
-            { "value": "peel-clean", "label": "Patch peeling off clean" },
-            { "value": "brighten", "label": "Rising sun / brighten" }
           ],
           "default": "check-circle"
         },
@@ -4090,6 +4126,398 @@
           "label": "Free items to add to cart",
           "limit": 4,
           "info": "Real products auto-added at their $0 variant when this tier is chosen (value-add rows above are display only)."
+        }
+      ]
+    },
+    {
+      "type": "ces_bundle_v2",
+      "name": "CES Bundle selector V2",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Subscribe-and-save style tiers. Only the selected tier expands to show its benefits, free gift and fine print."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label above the tiers",
+          "default": "Subscribe & save:"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent colour",
+          "default": "#1D5C5C"
+        },
+        {
+          "type": "range",
+          "id": "tier_count",
+          "min": 2,
+          "max": 4,
+          "step": 1,
+          "label": "Number of tiers",
+          "default": 3
+        },
+        {
+          "type": "range",
+          "id": "default_tier",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "label": "Pre-selected tier",
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "add_label",
+          "label": "Button label",
+          "default": "ADD TO CART"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_cart_drawer",
+          "label": "Open cart drawer after adding",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "onetime_label",
+          "label": "One-time purchase link"
+        },
+        {
+          "type": "url",
+          "id": "onetime_url",
+          "label": "One-time purchase link URL"
+        },
+        {
+          "type": "textarea",
+          "id": "sub_note",
+          "label": "Note under the button"
+        },
+        {
+          "type": "header",
+          "content": "Tier 1"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_variant",
+          "label": "Variant",
+          "info": "Variant title, part of it, or position (1, 2, 3…)."
+        },
+        {
+          "type": "text",
+          "id": "tier_1_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. 24-hour flash offer"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_price",
+          "label": "Price",
+          "info": "Leave blank to use the variant price."
+        },
+        {
+          "type": "text",
+          "id": "tier_1_unit",
+          "label": "Price suffix",
+          "info": "e.g. /mo"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_compare",
+          "label": "Compare-at price",
+          "info": "Shown struck through."
+        },
+        {
+          "type": "text",
+          "id": "tier_1_off",
+          "label": "Discount pill",
+          "info": "e.g. 47% OFF"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_serving",
+          "label": "Per-serving line"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_fine",
+          "label": "Fine print"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_1_benefits",
+          "label": "Benefits (one per line)"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_1_free_products",
+          "label": "Free items to add to cart",
+          "limit": 3
+        },
+        {
+          "type": "text",
+          "id": "tier_1_gift_title",
+          "label": "Free gift title"
+        },
+        {
+          "type": "text",
+          "id": "tier_1_gift_sub",
+          "label": "Free gift sub-line"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_1_foot",
+          "label": "Footer note"
+        },
+        {
+          "type": "header",
+          "content": "Tier 2"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_variant",
+          "label": "Variant",
+          "info": "Variant title, part of it, or position (1, 2, 3…)."
+        },
+        {
+          "type": "text",
+          "id": "tier_2_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. 24-hour flash offer"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_price",
+          "label": "Price",
+          "info": "Leave blank to use the variant price."
+        },
+        {
+          "type": "text",
+          "id": "tier_2_unit",
+          "label": "Price suffix",
+          "info": "e.g. /mo"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_compare",
+          "label": "Compare-at price",
+          "info": "Shown struck through."
+        },
+        {
+          "type": "text",
+          "id": "tier_2_off",
+          "label": "Discount pill",
+          "info": "e.g. 47% OFF"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_serving",
+          "label": "Per-serving line"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_fine",
+          "label": "Fine print"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_2_benefits",
+          "label": "Benefits (one per line)"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_2_free_products",
+          "label": "Free items to add to cart",
+          "limit": 3
+        },
+        {
+          "type": "text",
+          "id": "tier_2_gift_title",
+          "label": "Free gift title"
+        },
+        {
+          "type": "text",
+          "id": "tier_2_gift_sub",
+          "label": "Free gift sub-line"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_2_foot",
+          "label": "Footer note"
+        },
+        {
+          "type": "header",
+          "content": "Tier 3"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_variant",
+          "label": "Variant",
+          "info": "Variant title, part of it, or position (1, 2, 3…)."
+        },
+        {
+          "type": "text",
+          "id": "tier_3_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. 24-hour flash offer"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_price",
+          "label": "Price",
+          "info": "Leave blank to use the variant price."
+        },
+        {
+          "type": "text",
+          "id": "tier_3_unit",
+          "label": "Price suffix",
+          "info": "e.g. /mo"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_compare",
+          "label": "Compare-at price",
+          "info": "Shown struck through."
+        },
+        {
+          "type": "text",
+          "id": "tier_3_off",
+          "label": "Discount pill",
+          "info": "e.g. 47% OFF"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_serving",
+          "label": "Per-serving line"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_fine",
+          "label": "Fine print"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_3_benefits",
+          "label": "Benefits (one per line)"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_3_free_products",
+          "label": "Free items to add to cart",
+          "limit": 3
+        },
+        {
+          "type": "text",
+          "id": "tier_3_gift_title",
+          "label": "Free gift title"
+        },
+        {
+          "type": "text",
+          "id": "tier_3_gift_sub",
+          "label": "Free gift sub-line"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_3_foot",
+          "label": "Footer note"
+        },
+        {
+          "type": "header",
+          "content": "Tier 4"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_variant",
+          "label": "Variant",
+          "info": "Variant title, part of it, or position (1, 2, 3…)."
+        },
+        {
+          "type": "text",
+          "id": "tier_4_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_badge",
+          "label": "Ribbon badge",
+          "info": "e.g. 24-hour flash offer"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_price",
+          "label": "Price",
+          "info": "Leave blank to use the variant price."
+        },
+        {
+          "type": "text",
+          "id": "tier_4_unit",
+          "label": "Price suffix",
+          "info": "e.g. /mo"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_compare",
+          "label": "Compare-at price",
+          "info": "Shown struck through."
+        },
+        {
+          "type": "text",
+          "id": "tier_4_off",
+          "label": "Discount pill",
+          "info": "e.g. 47% OFF"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_serving",
+          "label": "Per-serving line"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_fine",
+          "label": "Fine print"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_4_benefits",
+          "label": "Benefits (one per line)"
+        },
+        {
+          "type": "product_list",
+          "id": "tier_4_free_products",
+          "label": "Free items to add to cart",
+          "limit": 3
+        },
+        {
+          "type": "text",
+          "id": "tier_4_gift_title",
+          "label": "Free gift title"
+        },
+        {
+          "type": "text",
+          "id": "tier_4_gift_sub",
+          "label": "Free gift sub-line"
+        },
+        {
+          "type": "textarea",
+          "id": "tier_4_foot",
+          "label": "Footer note"
         }
       ]
     },
