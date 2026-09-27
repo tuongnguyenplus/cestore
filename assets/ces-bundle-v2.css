@@ -38,10 +38,11 @@
 
 .ces-b2__ident { display: block; margin: 1rem 0 0; }
 .ces-b2__meta { display: block; font-size: 1.45rem; font-weight: 700; line-height: 1.4; }
-.ces-b2__quote { display: block; margin: .3rem 0 0; font-size: 1.45rem; line-height: 1.4; font-style: italic; color: var(--ces-b2-accent); }
+.ces-b2__bestfor { display: block; margin: .35rem 0 0; font-size: 1.45rem; line-height: 1.4; color: rgba(var(--color-foreground), .8); }
+
+.ces-b2__role { display: block; margin: .35rem 0 0; font-size: 1.45rem; line-height: 1.4; color: rgba(var(--color-foreground), .8); }
 
 .ces-b2__detail { display: block; }
-.ces-b2__role { display: block; margin: 1rem 0 0; font-size: 1.45rem; line-height: 1.45; }
 .ces-b2__tier:not(.is-selected) .ces-b2__detail { display: none; }
 .ces-b2__serving { display: block; margin: .7rem 0 0; font-size: 1.5rem; line-height: 1.45; }
 .ces-b2__fine { display: block; margin: .3rem 0 0; font-size: 1.35rem; line-height: 1.45; color: rgba(var(--color-foreground), .55); }

@@ -172,21 +172,25 @@
             {%- if block.settings[okey] != blank -%}<span class="ces-b2__off">{{ block.settings[okey] }}</span>{%- endif -%}
           </span>
 
-          {%- if block.settings[mtkey] != blank or block.settings[qtkey] != blank -%}
+          {%- comment -%}
+            qtkey is historically named "quote"; it now carries the "Best for"
+            line. The id is kept so existing theme settings are not orphaned.
+          {%- endcomment -%}
+          {%- if block.settings[mtkey] != blank or block.settings[qtkey] != blank or block.settings[rlkey] != blank -%}
             <span class="ces-b2__ident">
               {%- if block.settings[mtkey] != blank -%}
                 <span class="ces-b2__meta">{{ block.settings[mtkey] }}</span>
               {%- endif -%}
               {%- if block.settings[qtkey] != blank -%}
-                <span class="ces-b2__quote">&ldquo;{{ block.settings[qtkey] }}&rdquo;</span>
+                <span class="ces-b2__bestfor">{{ block.settings[qtkey] }}</span>
+              {%- endif -%}
+              {%- if block.settings[rlkey] != blank -%}
+                <span class="ces-b2__role">{{ block.settings[rlkey] }}</span>
               {%- endif -%}
             </span>
           {%- endif -%}
 
           <span class="ces-b2__detail">
-            {%- if block.settings[rlkey] != blank -%}
-              <span class="ces-b2__role">{{ block.settings[rlkey] }}</span>
-            {%- endif -%}
             {%- if block.settings[srkey] != blank -%}<span class="ces-b2__serving">{{ block.settings[srkey] }}</span>{%- endif -%}
             {%- if block.settings[fkey] != blank -%}<span class="ces-b2__fine">{{ block.settings[fkey] }}</span>{%- endif -%}
 
