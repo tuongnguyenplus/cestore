@@ -320,7 +320,7 @@
             "open_cart_drawer": true,
             "onetime_label": "",
             "onetime_url": "",
-            "sub_note": "74% of customers choose the 21-Day Eye Reset™",
+            "sub_note": "",
             "trust_line": "Free U.S. shipping · 90-day money-back guarantee",
             "gift_more_label": "",
             "gift_sub_mode": "",
@@ -414,7 +414,7 @@
           "disabled": true,
           "settings": {
             "accent_color": "#1d5c5c",
-            "stat_text": "74% of customers choose the 21-Day Eye Reset™",
+            "stat_text": "",
             "tier_count": 3,
             "default_tier": 2,
             "add_label": "ADD TO CART",
