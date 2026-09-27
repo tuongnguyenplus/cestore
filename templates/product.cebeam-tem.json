@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "bar": {
@@ -48,7 +57,8 @@
         "eyebrow": "HEALTH & BEAUTY DESK",
         "heading": "5 Reasons Why 100,000+ People Chose Microneedle Patches Over Eye Surgery",
         "subheading": "A closer look at why the under-eye market moved away from the operating table — and what actually reaches the skin.",
-        "author_name": "By the CEBEAM editorial desk",
+        "author_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+        "author_name": "By Sarah W.",
         "date_text": "Last updated September 2026",
         "cta_label": "Try it risk free today",
         "cta_url": "https://cebeam.com/products/microneedle-patches",
@@ -63,6 +73,7 @@
         "r1": {
           "type": "reason",
           "settings": {
+            "number_label": "",
             "title": "Because surgery is a permanent answer to a reversible problem",
             "text": "<p>Lower-lid blepharoplasty runs $3,000–$6,000, needs one to two weeks of visible recovery, and carries the risks any surgery does. It is the right call for some people. For fluid, thin skin and lost firmness — the things most under-eyes are actually dealing with — it is a very large hammer.</p>",
             "pull_quote": "“I nearly booked the surgery. I'm glad I tried this first.”"
@@ -71,29 +82,37 @@
         "r2": {
           "type": "reason",
           "settings": {
+            "number_label": "",
             "title": "Because creams were never going to reach the problem",
-            "text": "<p>A cream works on the surface, where most of it evaporates. The actives that matter for shadows, puffiness and crepey texture have to get <strong>below</strong> the skin barrier — and a barrier is exactly what the stratum corneum is designed to be. That is a delivery problem, not an ingredient problem.</p>"
+            "text": "<p>A cream works on the surface, where most of it evaporates. The actives that matter for shadows, puffiness and crepey texture have to get <strong>below</strong> the skin barrier — and a barrier is exactly what the stratum corneum is designed to be. That is a delivery problem, not an ingredient problem.</p>",
+            "pull_quote": ""
           }
         },
         "r3": {
           "type": "reason",
           "settings": {
+            "number_label": "",
             "title": "Because dissolving micro-cones solve the delivery problem",
-            "text": "<p>Each patch is lined with hundreds of self-dissolving micro-cones made from the actives themselves. They open a direct path through the barrier without wounding living tissue, then dissolve overnight and release where puffiness and dark circles form. No injections, no metal needles, no downtime.</p>"
+            "text": "<p>Each patch is lined with hundreds of self-dissolving micro-cones made from the actives themselves. They open a direct path through the barrier without wounding living tissue, then dissolve overnight and release where puffiness and dark circles form. No injections, no metal needles, no downtime.</p>",
+            "pull_quote": ""
           }
         },
         "r4": {
           "type": "reason",
           "settings": {
+            "number_label": "",
             "title": "Because the routine survives contact with real life",
-            "text": "<p>One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it. Fifteen seconds before bed, peeled off by breakfast, nothing on your face during the day. A routine only works if you actually keep doing it.</p>"
+            "text": "<p>One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it. Fifteen seconds before bed, peeled off by breakfast, nothing on your face during the day. A routine only works if you actually keep doing it.</p>",
+            "pull_quote": ""
           }
         },
         "r5": {
           "type": "reason",
           "settings": {
+            "number_label": "",
             "title": "Because you can judge it with your own eyes, at no risk",
-            "text": "<p>The visible reset lands around week three. You get the full 90 days to decide — box open, patches used — and if your under-eyes do not look different to you, you get your money back and you keep the box.</p>"
+            "text": "<p>The visible reset lands around week three. You get the full 90 days to decide — box open, patches used — and if your under-eyes do not look different to you, you get your money back and you keep the box.</p>",
+            "pull_quote": ""
           }
         }
       },
@@ -105,6 +124,8 @@
         "r5"
       ],
       "settings": {
+        "heading": "",
+        "subheading": "",
         "number_prefix": "Reason",
         "cta_label": "See today's price →",
         "cta_url": "https://cebeam.com/products/microneedle-patches",
