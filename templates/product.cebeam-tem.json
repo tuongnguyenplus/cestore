@@ -60,6 +60,8 @@
         "author_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
         "author_name": "By Sarah W.",
         "date_text": "Last updated September 2026",
+        "image": "shopify://shop_images/okkkk.webp",
+        "image_position": "below",
         "cta_label": "Try it risk free today",
         "cta_url": "#ces-bundle",
         "color_scheme": "scheme-1",
@@ -77,7 +79,9 @@
             "title": "Because surgery is a permanent answer to a reversible problem",
             "text": "<p>Lower-lid blepharoplasty runs $3,000–$6,000, needs one to two weeks of visible recovery, and carries the risks any surgery does. It is the right call for some people. For fluid, thin skin and lost firmness — the things most under-eyes are actually dealing with — it is a very large hammer.</p>",
             "pull_quote": "“I nearly booked the surgery. I'm glad I tried this first.”",
-            "pull_quote_author": "James D., verified customer"
+            "pull_quote_author": "James D., verified customer",
+            "show_benefits": false,
+            "benefits": ""
           }
         },
         "r2": {
@@ -86,7 +90,10 @@
             "number_label": "",
             "title": "Because creams were never going to reach the problem",
             "text": "<p>A cream works on the surface, where most of it evaporates. The actives that matter for shadows, puffiness and crepey texture have to get <strong>below</strong> the skin barrier — and a barrier is exactly what the stratum corneum is designed to be. That is a delivery problem, not an ingredient problem.</p>",
-            "pull_quote": ""
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "show_benefits": false,
+            "benefits": ""
           }
         },
         "r3": {
@@ -96,6 +103,7 @@
             "title": "Because dissolving micro-cones solve the delivery problem",
             "text": "<p>Each patch is lined with hundreds of self-dissolving micro-cones made from the actives themselves. They open a direct path through the barrier without wounding living tissue, then dissolve overnight and release where puffiness and dark circles form. No injections, no metal needles, no downtime.</p>",
             "pull_quote": "",
+            "pull_quote_author": "",
             "show_benefits": true,
             "benefits": "No injections. No metal needles. No downtime.\nDissolves overnight — nothing on your face by breakfast.\nDermatologist-tested and made in a GMP-certified facility.\nIndividually sealed pouches — a fresh treatment every time."
           }
@@ -106,7 +114,10 @@
             "number_label": "",
             "title": "Because the routine survives contact with real life",
             "text": "<p>One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it. Fifteen seconds before bed, peeled off by breakfast, nothing on your face during the day. A routine only works if you actually keep doing it.</p>",
-            "pull_quote": ""
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "show_benefits": false,
+            "benefits": ""
           }
         },
         "r5": {
@@ -115,7 +126,10 @@
             "number_label": "",
             "title": "Because you can judge it with your own eyes, at no risk",
             "text": "<p>The visible reset lands around week three. You get the full 90 days to decide — box open, patches used — and if your under-eyes do not look different to you, you get your money back and you keep the box.</p>",
-            "pull_quote": ""
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "show_benefits": false,
+            "benefits": ""
           }
         }
       },
@@ -900,6 +914,46 @@
     },
     "timeline": {
       "type": "ces-results-timeline",
+      "blocks": {
+        "s1": {
+          "type": "stage",
+          "settings": {
+            "time_label": "Week 1",
+            "title": "Your starter week",
+            "points": "Morning puffiness starts to look smoother\nActives release beneath the skin overnight\nSkin hydrates from within, so concealer goes on smoother",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
+          }
+        },
+        "s2": {
+          "type": "stage",
+          "settings": {
+            "time_label": "Week 2",
+            "title": "It stops being subtle",
+            "points": "Dark shadows begin to brighten\nPuffiness looks visibly reduced in the morning\nThe under-eye area feels smoother and plumper",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
+          }
+        },
+        "s3": {
+          "type": "stage",
+          "settings": {
+            "time_label": "Week 3",
+            "title": "The reset lands",
+            "points": "Dark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you're not",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
         "eyebrow": "Results Timeline",
         "heading": "What to expect — week by week",
@@ -908,38 +962,7 @@
         "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 48
-      },
-      "blocks": {
-        "s1": {
-          "type": "stage",
-          "settings": {
-            "time_label": "Week 1",
-            "title": "Your starter week",
-            "points": "Morning puffiness starts to look smoother\nActives release beneath the skin overnight\nSkin hydrates from within, so concealer goes on smoother"
-          }
-        },
-        "s2": {
-          "type": "stage",
-          "settings": {
-            "time_label": "Week 2",
-            "title": "It stops being subtle",
-            "points": "Dark shadows begin to brighten\nPuffiness looks visibly reduced in the morning\nThe under-eye area feels smoother and plumper"
-          }
-        },
-        "s3": {
-          "type": "stage",
-          "settings": {
-            "time_label": "Week 3",
-            "title": "The reset lands",
-            "points": "Dark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you're not"
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ]
+      }
     },
     "howto": {
       "type": "ces-usage-steps",
