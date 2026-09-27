@@ -104,7 +104,7 @@
           endfor
         -%}
 
-        <label class="ces-b2__tier ces-bundle__tier{% if ces_checked %} is-selected{% endif %}{% unless ces_v.available %} is-unavailable{% endunless %}">
+        <label class="ces-b2__tier ces-bundle__tier{% if block.settings[bkey] != blank %} ces-b2__tier--badged{% endif %}{% if ces_checked %} is-selected{% endif %}{% unless ces_v.available %} is-unavailable{% endunless %}">
           {%- if block.settings[bkey] != blank -%}
             <span class="ces-b2__ribbon">{{ block.settings[bkey] }}</span>
           {%- endif -%}
