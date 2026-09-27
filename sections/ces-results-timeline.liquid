@@ -3,14 +3,11 @@
 
 {%- liquid
   assign rtl_stages = section.blocks | where: 'type', 'stage'
-  assign rtl_images = section.blocks | where: 'type', 'image'
   assign rtl_cols = rtl_stages.size | at_least: 1
   assign rtl_has_media = false
-  for img in rtl_images
-    if img.settings.image != blank
-      assign rtl_has_media = true
-    endif
-  endfor
+  if section.settings.image != blank
+    assign rtl_has_media = true
+  endif
 -%}
 
 {%- style -%}
@@ -65,7 +62,6 @@
 
   /* ---- Desktop: every stage side by side, rail through the pills ---- */
   @media screen and (min-width:750px){
-    .ces-rtl__media{grid-template-columns:repeat({{ rtl_images.size | at_least: 1 | at_most: 2 }},1fr)}
     .ces-rtl__tabs{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);gap:0;justify-items:start}
     .ces-rtl__tabs::before{content:"";position:absolute;left:0;right:0;top:50%;height:.2rem;background:var(--ces-accent);opacity:.45;transform:translateY(-50%);z-index:0}
     .ces-rtl__pill{cursor:default}
@@ -80,14 +76,10 @@
 <div class="ces-section ces-rtl ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient" data-ces-rtl>
   <div class="ces-section__inner">
     {%- capture rtl_media -%}
-      {%- for block in rtl_images -%}
-        {%- if block.settings.image != blank -%}
-          <figure class="ces-rtl__fig" {{ block.shopify_attributes }}>
-            <img src="{{ block.settings.image | image_url: width: 1600 }}" alt="{{ block.settings.caption | default: section.settings.heading | escape }}" loading="lazy">
-            {%- if block.settings.caption != blank -%}<figcaption class="ces-rtl__cap">{{ block.settings.caption }}</figcaption>{%- endif -%}
-          </figure>
-        {%- endif -%}
-      {%- endfor -%}
+      <figure class="ces-rtl__fig">
+        <img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.image_caption | default: section.settings.heading | escape }}" loading="lazy">
+        {%- if section.settings.image_caption != blank -%}<figcaption class="ces-rtl__cap">{{ section.settings.image_caption }}</figcaption>{%- endif -%}
+      </figure>
     {%- endcapture -%}
 
     {%- if rtl_has_media and section.settings.image_position == 'above_heading' -%}
@@ -212,10 +204,20 @@
       "content": "Image"
     },
     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image caption"
+    },
+    {
       "type": "select",
       "id": "image_position",
       "label": "Image position",
-      "info": "Applies to the Image blocks you add below.",
+      "info": "Where the image above sits.",
       "options": [
         {
           "value": "above_heading",
@@ -313,23 +315,6 @@
           "type": "textarea",
           "id": "quote_text",
           "label": "Quote"
-        }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "Image",
-      "limit": 2,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "caption",
-          "label": "Caption"
         }
       ]
     }
