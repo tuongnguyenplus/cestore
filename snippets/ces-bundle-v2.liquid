@@ -25,6 +25,12 @@
   {%- if block.settings.label != blank -%}
     <p class="ces-b2__label">{{ block.settings.label }}</p>
   {%- endif -%}
+  {%- if block.settings.heading != blank -%}
+    <p class="ces-b2__heading">{{ block.settings.heading }}</p>
+  {%- endif -%}
+  {%- if block.settings.intro != blank -%}
+    <p class="ces-b2__intro">{{ block.settings.intro }}</p>
+  {%- endif -%}
 
   <div class="ces-b2__tiers" role="radiogroup" aria-label="{{ block.settings.label | default: 'Choose your plan' | escape }}">
     {%- for ces_i in (1..ces_tier_count) -%}
@@ -73,6 +79,10 @@
         {%- liquid
           assign nkey  = 'tier_' | append: ces_i | append: '_name'
           assign bkey  = 'tier_' | append: ces_i | append: '_badge'
+          assign stkey = 'tier_' | append: ces_i | append: '_subtitle'
+          assign mtkey = 'tier_' | append: ces_i | append: '_meta'
+          assign qtkey = 'tier_' | append: ces_i | append: '_quote'
+          assign rlkey = 'tier_' | append: ces_i | append: '_role'
           assign pkey  = 'tier_' | append: ces_i | append: '_price'
           assign ukey  = 'tier_' | append: ces_i | append: '_unit'
           assign ckey  = 'tier_' | append: ces_i | append: '_compare'
@@ -147,7 +157,12 @@
               {% if ces_checked %}checked{% endif %}
             >
             <span class="ces-b2__dot" aria-hidden="true"></span>
-            <span class="ces-b2__name">{{ block.settings[nkey] | default: ces_v.title }}</span>
+            <span class="ces-b2__titles">
+              <span class="ces-b2__name">{{ block.settings[nkey] | default: ces_v.title }}</span>
+              {%- if block.settings[stkey] != blank -%}
+                <span class="ces-b2__subtitle">{{ block.settings[stkey] }}</span>
+              {%- endif -%}
+            </span>
           </span>
 
           <span class="ces-b2__pricing">
@@ -157,7 +172,21 @@
             {%- if block.settings[okey] != blank -%}<span class="ces-b2__off">{{ block.settings[okey] }}</span>{%- endif -%}
           </span>
 
+          {%- if block.settings[mtkey] != blank or block.settings[qtkey] != blank -%}
+            <span class="ces-b2__ident">
+              {%- if block.settings[mtkey] != blank -%}
+                <span class="ces-b2__meta">{{ block.settings[mtkey] }}</span>
+              {%- endif -%}
+              {%- if block.settings[qtkey] != blank -%}
+                <span class="ces-b2__quote">&ldquo;{{ block.settings[qtkey] }}&rdquo;</span>
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+
           <span class="ces-b2__detail">
+            {%- if block.settings[rlkey] != blank -%}
+              <span class="ces-b2__role">{{ block.settings[rlkey] }}</span>
+            {%- endif -%}
             {%- if block.settings[srkey] != blank -%}<span class="ces-b2__serving">{{ block.settings[srkey] }}</span>{%- endif -%}
             {%- if block.settings[fkey] != blank -%}<span class="ces-b2__fine">{{ block.settings[fkey] }}</span>{%- endif -%}
 
@@ -230,6 +259,10 @@
       {%- endif -%}
     {%- endfor -%}
   </div>
+
+  {%- if block.settings.trust_line != blank -%}
+    <p class="ces-b2__trust">{{ block.settings.trust_line }}</p>
+  {%- endif -%}
 
   {%- if block.settings.onetime_label != blank -%}
     <a class="ces-b2__onetime" href="{{ block.settings.onetime_url | default: '#' }}">{{ block.settings.onetime_label }}</a>

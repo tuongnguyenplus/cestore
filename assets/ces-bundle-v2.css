@@ -10,6 +10,8 @@
  */
 .ces-b2 { display: block; --ces-b2-accent: #1d5c5c; --ces-b2-tint: rgba(29, 92, 92, 0.07); }
 .ces-b2__label { margin: 0 0 1.2rem; font-size: 1.2rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--ces-b2-accent); }
+.ces-b2__heading { margin: 0 0 .6rem; font-size: 1.9rem; font-weight: 800; line-height: 1.25; }
+.ces-b2__intro { margin: 0 0 1.6rem; font-size: 1.45rem; line-height: 1.5; color: rgba(var(--color-foreground), .7); }
 .ces-b2__tiers { display: flex; flex-direction: column; gap: 1.2rem; }
 
 .ces-b2__tier { position: relative; display: block; border: .2rem solid rgba(var(--color-foreground), .14); border-radius: 1.4rem; background: rgb(var(--color-background)); cursor: pointer; padding: 1.8rem 1.6rem; transition: border-color .15s ease, background-color .15s ease; }
@@ -24,7 +26,9 @@
 .ces-b2__dot { flex: 0 0 auto; width: 2.2rem; height: 2.2rem; border-radius: 50%; border: .2rem solid rgba(var(--color-foreground), .32); background: rgb(var(--color-background)); position: relative; }
 .ces-b2__tier.is-selected .ces-b2__dot { border-color: var(--ces-b2-accent); border-width: .35rem; }
 .ces-b2__tier.is-selected .ces-b2__dot::after { content: ""; position: absolute; inset: .3rem; border-radius: 50%; background: var(--ces-b2-accent); }
-.ces-b2__name { margin: 0; font-size: 1.8rem; font-weight: 800; line-height: 1.25; }
+.ces-b2__titles { min-width: 0; }
+.ces-b2__name { display: block; margin: 0; font-size: 1.8rem; font-weight: 800; line-height: 1.25; }
+.ces-b2__subtitle { display: block; margin: .3rem 0 0; font-size: 1.35rem; line-height: 1.4; color: rgba(var(--color-foreground), .65); }
 
 .ces-b2__pricing { display: flex; align-items: baseline; flex-wrap: wrap; gap: .3rem .8rem; margin: .6rem 0 0; }
 .ces-b2__price { font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
@@ -32,7 +36,12 @@
 .ces-b2__unit { font-size: 1.5rem; color: rgba(var(--color-foreground), .6); }
 .ces-b2__off { font-size: 1.25rem; font-weight: 800; padding: .5rem 1.1rem; border-radius: 99rem; background: #f0c869; color: #4a3608; }
 
+.ces-b2__ident { display: block; margin: 1rem 0 0; }
+.ces-b2__meta { display: block; font-size: 1.45rem; font-weight: 700; line-height: 1.4; }
+.ces-b2__quote { display: block; margin: .3rem 0 0; font-size: 1.45rem; line-height: 1.4; font-style: italic; color: var(--ces-b2-accent); }
+
 .ces-b2__detail { display: block; }
+.ces-b2__role { display: block; margin: 1rem 0 0; font-size: 1.45rem; line-height: 1.45; }
 .ces-b2__tier:not(.is-selected) .ces-b2__detail { display: none; }
 .ces-b2__serving { display: block; margin: .7rem 0 0; font-size: 1.5rem; line-height: 1.45; }
 .ces-b2__fine { display: block; margin: .3rem 0 0; font-size: 1.35rem; line-height: 1.45; color: rgba(var(--color-foreground), .55); }
@@ -71,6 +80,7 @@
 
 .ces-b2__foot { display: block; margin: 1.8rem 0 0; padding-top: 1.6rem; border-top: .1rem solid rgba(var(--color-foreground), .14); font-size: 1.4rem; line-height: 1.5; color: rgba(var(--color-foreground), .7); }
 
+.ces-b2__trust { margin: 1.4rem 0 0; text-align: center; font-size: 1.35rem; line-height: 1.5; color: rgba(var(--color-foreground), .7); }
 .ces-b2__onetime { display: block; margin: 1.8rem 0 0; text-align: center; font-size: 1.6rem; font-weight: 700; color: rgb(var(--color-foreground)); text-underline-offset: .4rem; }
 
 .ces-b2__error { margin: 1rem 0 0; color: #b3261e; font-size: 1.35rem; }
