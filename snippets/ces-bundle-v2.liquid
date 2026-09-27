@@ -228,14 +228,18 @@
                   <svg class="ces-b2__gift-chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="m5 12.5 5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  {%- if block.settings.gift_more_label != blank -%}
-                    <span class="ces-b2__gift-more">
-                      {{ block.settings.gift_more_label }}
-                      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                  {%- endif -%}
+                  {%- comment -%}
+                    Always rendered: with no label the chevron alone still shows
+                    the bar opens, and without it the block looks inert.
+                  {%- endcomment -%}
+                  <span class="ces-b2__gift-more">
+                    {%- if block.settings.gift_more_label != blank -%}
+                      <span>{{ block.settings.gift_more_label }}</span>
+                    {%- endif -%}
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
                 </button>
 
                 <span class="ces-b2__gift-panel" data-ces-gift-panel>
