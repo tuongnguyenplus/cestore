@@ -161,7 +161,6 @@
                         {%- if fp.featured_image -%}
                           <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="" loading="lazy">
                         {%- endif -%}
-                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
                       </span>
                     {%- endfor -%}
                   </span>
@@ -172,9 +171,14 @@
                   <svg class="ces-b2__gift-chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="m5 12.5 5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <svg class="ces-b2__gift-more" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="m7.5 4 5 6-5 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  {%- if block.settings.gift_more_label != blank -%}
+                    <span class="ces-b2__gift-more">
+                      {{ block.settings.gift_more_label }}
+                      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  {%- endif -%}
                 </button>
 
                 <span class="ces-b2__gift-panel" data-ces-gift-panel>
