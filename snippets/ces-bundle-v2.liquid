@@ -76,7 +76,11 @@
           assign ftkey = 'tier_' | append: ces_i | append: '_foot'
           assign frkey = 'tier_' | append: ces_i | append: '_free_products'
 
-          assign ces_price = block.settings[pkey] | default: ces_v.price | money
+          if block.settings[pkey] != blank
+            assign ces_price = block.settings[pkey]
+          else
+            assign ces_price = ces_v.price | money
+          endif
           assign ces_checked = false
           if ces_i == ces_default_tier
             assign ces_checked = true
