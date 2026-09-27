@@ -35,7 +35,8 @@
         assign ces_v = null
 
         comment
-          Resolve the tier's variant: exact title, then contains, then position.
+          Resolve the tier's variant: exact title, then contains, then
+          position (1, 2, 3...), then variant id.
         endcomment
         for v in product.variants
           assign vt = v.title | downcase
@@ -57,6 +58,14 @@
             assign ces_idx = ces_pos | minus: 1
             assign ces_v = product.variants[ces_idx]
           endif
+        endif
+        if ces_v == null
+          assign ces_vid_num = ces_key | times: 1
+          for v in product.variants
+            if v.id == ces_vid_num and ces_v == null
+              assign ces_v = v
+            endif
+          endfor
         endif
       -%}
 
