@@ -82,6 +82,7 @@
           assign nbkey = 'tier_' | append: ces_i | append: '_benefits'
           assign gtkey = 'tier_' | append: ces_i | append: '_gift_title'
           assign gskey = 'tier_' | append: ces_i | append: '_gift_sub'
+          assign glkey = 'tier_' | append: ces_i | append: '_gift_label'
           assign ftkey = 'tier_' | append: ces_i | append: '_foot'
           assign frkey = 'tier_' | append: ces_i | append: '_free_products'
 
@@ -152,20 +153,45 @@
             {%- endif -%}
 
             {%- if ces_free_list.size > 0 and block.settings[gtkey] != blank -%}
-              <span class="ces-b2__gift">
-                <span class="ces-b2__gift-thumbs">
-                  {%- for fp in ces_free_list limit: 3 -%}
-                    <span class="ces-b2__thumb">
-                      {%- if fp.featured_image -%}
-                        <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="{{ fp.title | escape }}" loading="lazy">
-                      {%- endif -%}
-                      <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
-                    </span>
-                  {%- endfor -%}
-                </span>
-                <span class="ces-b2__gift-text">
-                  <span class="ces-b2__gift-title">{{ block.settings[gtkey] }}</span>
-                  {%- if block.settings[gskey] != blank -%}<span class="ces-b2__gift-sub">{{ block.settings[gskey] }}</span>{%- endif -%}
+              <span class="ces-b2__gift is-open" data-ces-gift>
+                <button type="button" class="ces-b2__gift-bar" aria-expanded="true" data-ces-gift-toggle>
+                  <span class="ces-b2__gift-thumbs" aria-hidden="true">
+                    {%- for fp in ces_free_list limit: 3 -%}
+                      <span class="ces-b2__thumb">
+                        {%- if fp.featured_image -%}
+                          <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="" loading="lazy">
+                        {%- endif -%}
+                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                      </span>
+                    {%- endfor -%}
+                  </span>
+                  <span class="ces-b2__gift-text">
+                    <span class="ces-b2__gift-title">{{ block.settings[gtkey] }}</span>
+                    {%- if block.settings[gskey] != blank -%}<span class="ces-b2__gift-sub">{{ block.settings[gskey] }}</span>{%- endif -%}
+                  </span>
+                  <svg class="ces-b2__gift-chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="m5 12.5 5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg class="ces-b2__gift-more" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="m7.5 4 5 6-5 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+
+                <span class="ces-b2__gift-panel" data-ces-gift-panel>
+                  {%- if block.settings[glkey] != blank -%}
+                    <span class="ces-b2__gift-label">{{ block.settings[glkey] }}</span>
+                  {%- endif -%}
+                  <span class="ces-b2__gift-grid">
+                    {%- for fp in ces_free_list limit: 3 -%}
+                      <span class="ces-b2__gift-item">
+                        {%- if fp.featured_image -%}
+                          <img src="{{ fp.featured_image | image_url: width: 300 }}" alt="{{ fp.title | escape }}" loading="lazy">
+                        {%- endif -%}
+                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                        <span class="ces-b2__gift-name">{{ fp.title }}</span>
+                      </span>
+                    {%- endfor -%}
+                  </span>
                 </span>
               </span>
             {%- endif -%}
@@ -193,3 +219,22 @@
     <p class="ces-bundle__note">{{ block.settings.sub_note }}</p>
   {%- endif -%}
 </ces-bundle>
+
+<script>
+  // Free-gift accordion. The bar lives inside the tier's <label>, so the click
+  // must not bubble out and re-trigger the radio.
+  (function () {
+    var root = document.getElementById('ces-bundle');
+    if (!root || root.dataset.cesGiftReady) return;
+    root.dataset.cesGiftReady = '1';
+    root.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-ces-gift-toggle]');
+      if (!btn || !root.contains(btn)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.closest('[data-ces-gift]').classList.toggle('is-open', open);
+    });
+  })();
+</script>

@@ -332,6 +332,7 @@
             "tier_1_free_products": [],
             "tier_1_gift_title": "",
             "tier_1_gift_sub": "",
+            "tier_1_gift_label": "",
             "tier_1_foot": "",
             "tier_2_variant": "47849253994645",
             "tier_2_name": "21-Day Eye Reset™",
@@ -350,6 +351,7 @@
             ],
             "tier_2_gift_title": "Free Welcome Kit",
             "tier_2_gift_sub": "$80 value · 3 items",
+            "tier_2_gift_label": "Welcome kit — arrives with first order",
             "tier_2_foot": "",
             "tier_3_variant": "47849254027413",
             "tier_3_name": "45-Day Eye Rebuild™",
@@ -366,6 +368,7 @@
             ],
             "tier_3_gift_title": "Free Anti-Wrinkle Eye Cream",
             "tier_3_gift_sub": "Included with the 45-Day Eye Rebuild™",
+            "tier_3_gift_label": "Welcome kit — arrives with first order",
             "tier_3_foot": "",
             "tier_4_variant": "",
             "tier_4_name": "",
@@ -380,6 +383,7 @@
             "tier_4_free_products": [],
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
+            "tier_4_gift_label": "",
             "tier_4_foot": ""
           }
         },
