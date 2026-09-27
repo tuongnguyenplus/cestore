@@ -161,6 +161,7 @@
                         {%- if fp.featured_image -%}
                           <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="" loading="lazy">
                         {%- endif -%}
+                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
                       </span>
                     {%- endfor -%}
                   </span>
