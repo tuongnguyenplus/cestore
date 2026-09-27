@@ -343,9 +343,13 @@
             "tier_2_serving": "$5.41 per treatment",
             "tier_2_fine": "The complete 3-week routine: four treatment nights per week for 21 days.",
             "tier_2_benefits": "12 treatments (24 patches)\nEye Reset Protocol™\nThe 4-Photo Method™\nFree & fast shipping\n90-day money-back guarantee",
-            "tier_2_free_products": [],
-            "tier_2_gift_title": "",
-            "tier_2_gift_sub": "",
+            "tier_2_free_products": [
+              "hydrolyzed-collagen-anti-wrinkle-cream",
+              "lifteyes",
+              "eye-bag-cream"
+            ],
+            "tier_2_gift_title": "Free Welcome Kit",
+            "tier_2_gift_sub": "$80 value · 3 items",
             "tier_2_foot": "",
             "tier_3_variant": "47849254027413",
             "tier_3_name": "45-Day Eye Rebuild™",
