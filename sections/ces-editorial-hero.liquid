@@ -1,0 +1,78 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .ces-edhero{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-edhero__inner{text-align:center;max-width:78rem;margin:0 auto}
+  .ces-edhero__eyebrow{margin:0 0 1.2rem;font-size:1.2rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ces-accent)}
+  .ces-edhero__heading{margin:0;font-size:clamp(2.6rem,4.4vw,4.2rem);line-height:1.15;font-weight:800}
+  .ces-edhero__sub{margin:1.6rem 0 0;font-size:1.7rem;line-height:1.55;color:var(--ces-muted)}
+  .ces-edhero__byline{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2.4rem 0 0;flex-wrap:wrap}
+  .ces-edhero__avatar{width:4.4rem;height:4.4rem;border-radius:50%;overflow:hidden;background:var(--ces-surface);flex:0 0 auto}
+  .ces-edhero__avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .ces-edhero__by{text-align:left;font-size:1.4rem;line-height:1.4}
+  .ces-edhero__by strong{display:block;font-size:1.5rem}
+  .ces-edhero__date{color:var(--ces-muted)}
+  .ces-edhero__media{margin:2.8rem 0 0;border-radius:var(--ces-radius);overflow:hidden;border:.1rem solid var(--ces-border-color)}
+  .ces-edhero__media img{width:100%;height:auto;display:block}
+  .ces-edhero__cta{margin:2.4rem 0 0}
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-edhero ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    <div class="ces-edhero__inner">
+      {%- if section.settings.eyebrow != blank -%}<p class="ces-edhero__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h1 class="ces-edhero__heading">{{ section.settings.heading }}</h1>{%- endif -%}
+      {%- if section.settings.subheading != blank -%}<p class="ces-edhero__sub">{{ section.settings.subheading }}</p>{%- endif -%}
+
+      {%- if section.settings.author_name != blank or section.settings.date_text != blank -%}
+        <div class="ces-edhero__byline">
+          {%- if section.settings.author_image != blank -%}
+            <span class="ces-edhero__avatar"><img src="{{ section.settings.author_image | image_url: width: 160 }}" alt="{{ section.settings.author_name | escape }}" loading="lazy"></span>
+          {%- endif -%}
+          <span class="ces-edhero__by">
+            {%- if section.settings.author_name != blank -%}<strong>{{ section.settings.author_name }}</strong>{%- endif -%}
+            {%- if section.settings.date_text != blank -%}<span class="ces-edhero__date">{{ section.settings.date_text }}</span>{%- endif -%}
+          </span>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.image != blank -%}
+        <figure class="ces-edhero__media"><img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.heading | escape }}" loading="lazy"></figure>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <p class="ces-edhero__cta">
+          <a class="ces-button" href="{{ section.settings.cta_url | default: '#' }}">{{ section.settings.cta_label }}</a>
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Editorial hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Editorial-style opener for an advertorial product page: big listicle headline, author byline and a call to action." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "textarea", "id": "heading", "label": "Headline", "default": "5 Reasons Why 100,000+ People Chose Microneedle Patches Over Eye Surgery" },
+    { "type": "textarea", "id": "subheading", "label": "Sub-headline" },
+    { "type": "image_picker", "id": "author_image", "label": "Author photo" },
+    { "type": "text", "id": "author_name", "label": "Author", "default": "By the CEBEAM editorial desk" },
+    { "type": "text", "id": "date_text", "label": "Date line", "default": "Last updated September 2026" },
+    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Try it risk free today" },
+    { "type": "url", "id": "cta_url", "label": "Button link" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 32 }
+  ],
+  "presets": [ { "name": "CES Editorial hero" } ]
+}
+{% endschema %}
