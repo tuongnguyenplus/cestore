@@ -21,6 +21,13 @@
   data-open-drawer="{{ block.settings.open_cart_drawer | default: true }}"
   {{ block.shopify_attributes }}
 >
+  {%- if block.settings.heading != blank -%}
+    <p class="ces-bundle__heading">{{ block.settings.heading }}</p>
+  {%- endif -%}
+  {%- if block.settings.intro != blank -%}
+    <p class="ces-bundle__intro">{{ block.settings.intro }}</p>
+  {%- endif -%}
+
   {%- if block.settings.stat_text != blank -%}
     <div class="ces-bundle__stat">{{ block.settings.stat_text }}</div>
   {%- endif -%}
