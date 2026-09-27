@@ -61,6 +61,13 @@
 .ces-b2__thumb { flex: 0 0 auto; width: 5.2rem; text-align: center; }
 .ces-b2__thumb img { width: 4.2rem; aspect-ratio: 1/1; object-fit: cover; border-radius: .8rem; display: block; margin-inline: auto; background: rgb(var(--color-background)); }
 .ces-b2__thumb-price { display: block; margin-top: .4rem; font-size: 1.1rem; line-height: 1.25; overflow-wrap: anywhere; text-decoration: line-through; color: rgba(var(--color-foreground), .5); }
+/* Non-product perks have no photo, so they get an icon tile the same size as
+   a product thumbnail. */
+.ces-b2__thumb-icon { display: flex; align-items: center; justify-content: center; width: 4.2rem; height: 4.2rem; margin-inline: auto; border-radius: .8rem; background: rgb(var(--color-background)); color: var(--ces-b2-accent); }
+.ces-b2__thumb-icon svg { width: 2.2rem; height: 2.2rem; }
+.ces-b2__gift-icon { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 8.6rem; aspect-ratio: 1/1; margin-inline: auto; border-radius: .8rem; background: rgba(var(--color-foreground), .05); color: var(--ces-b2-accent); }
+.ces-b2__gift-icon svg { width: 3.2rem; height: 3.2rem; }
+
 .ces-b2__gift-text { grid-area: 1 / 2; min-width: 0; }
 .ces-b2__gift:not(.is-open) .ces-b2__gift-text { text-align: right; }
 .ces-b2__gift-title { display: block; margin: 0; font-size: 1.45rem; font-weight: 700; line-height: 1.3; }

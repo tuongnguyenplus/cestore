@@ -115,19 +115,37 @@
           endfor
 
           comment
+            Perks that are not products — express shipping, a warranty — cannot
+            come from the product picker, since that also drives what the cart
+            receives. They are listed separately and are display only.
+            One per line: icon | name | value in the store's currency.
+          endcomment
+          assign ces_extra_rows = ''
+          assign ces_extra_cents = 0
+          assign xkey = 'tier_' | append: ces_i | append: '_extra_gifts'
+          if block.settings[xkey] != blank
+            assign ces_extra_rows = block.settings[xkey] | newline_to_br | split: '<br />'
+            for xrow in ces_extra_rows
+              assign xparts = xrow | split: '|'
+              assign xamount = xparts[2] | strip | times: 100 | round
+              assign ces_extra_cents = ces_extra_cents | plus: xamount
+            endfor
+          endif
+
+          comment
             The gift value line is either typed in, or added up from the gift
             products and rounded to the nearest whole unit ($79.90 reads $80).
           endcomment
           assign ces_gift_sub = block.settings[gskey]
           if block.settings.gift_sub_mode == 'auto'
-            assign ces_gift_cents = 0
+            assign ces_gift_cents = ces_extra_cents
             for fp in ces_free_list limit: 3
               assign ces_gift_cents = ces_gift_cents | plus: fp.price
             endfor
             assign ces_gift_cents = ces_gift_cents | plus: 50 | divided_by: 100 | times: 100
             if ces_gift_cents > 0
               assign ces_gift_value = ces_gift_cents | money_without_trailing_zeros
-              assign ces_gift_count = ces_free_list.size | at_most: 3
+              assign ces_gift_count = ces_free_list.size | at_most: 3 | plus: ces_extra_rows.size
               assign ces_gift_word = 'items'
               if ces_gift_count == 1
                 assign ces_gift_word = 'item'
@@ -208,7 +226,7 @@
               </span>
             {%- endif -%}
 
-            {%- if ces_free_list.size > 0 and block.settings[gtkey] != blank -%}
+            {%- if block.settings[gtkey] != blank and ces_free_list.size > 0 or block.settings[gtkey] != blank and ces_extra_rows.size > 0 -%}
               <span class="ces-b2__gift is-open" data-ces-gift>
                 <button type="button" class="ces-b2__gift-bar" aria-expanded="true" data-ces-gift-toggle>
                   <span class="ces-b2__gift-thumbs" aria-hidden="true">
@@ -219,6 +237,18 @@
                         {%- endif -%}
                         <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
                       </span>
+                    {%- endfor -%}
+                    {%- for xrow in ces_extra_rows -%}
+                      {%- assign xparts = xrow | split: '|' -%}
+                      {%- if xparts[1] != blank -%}
+                        <span class="ces-b2__thumb">
+                          <span class="ces-b2__thumb-icon">{% render 'ces-bundle-icon', name: xparts[0] | strip | downcase %}</span>
+                          {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
+                          {%- if xcents > 0 -%}
+                            <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
+                          {%- endif -%}
+                        </span>
+                      {%- endif -%}
                     {%- endfor -%}
                   </span>
                   <span class="ces-b2__gift-text">
@@ -255,6 +285,19 @@
                         <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
                         <span class="ces-b2__gift-name">{{ fp.title }}</span>
                       </span>
+                    {%- endfor -%}
+                    {%- for xrow in ces_extra_rows -%}
+                      {%- assign xparts = xrow | split: '|' -%}
+                      {%- if xparts[1] != blank -%}
+                        <span class="ces-b2__gift-item">
+                          <span class="ces-b2__gift-icon">{% render 'ces-bundle-icon', name: xparts[0] | strip | downcase %}</span>
+                          {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
+                          {%- if xcents > 0 -%}
+                            <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
+                          {%- endif -%}
+                          <span class="ces-b2__gift-name">{{ xparts[1] | strip }}</span>
+                        </span>
+                      {%- endif -%}
                     {%- endfor -%}
                   </span>
                 </span>
