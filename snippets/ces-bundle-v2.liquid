@@ -103,6 +103,29 @@
               assign ces_free_ids = ces_free_ids | append: fp.first_available_variant.id | append: ','
             endif
           endfor
+
+          comment
+            The gift value line is either typed in, or added up from the gift
+            products and rounded to the nearest whole unit ($79.90 reads $80).
+          endcomment
+          assign ces_gift_sub = block.settings[gskey]
+          if block.settings.gift_sub_mode == 'auto'
+            assign ces_gift_cents = 0
+            for fp in ces_free_list limit: 3
+              assign ces_gift_cents = ces_gift_cents | plus: fp.price
+            endfor
+            assign ces_gift_cents = ces_gift_cents | plus: 50 | divided_by: 100 | times: 100
+            if ces_gift_cents > 0
+              assign ces_gift_value = ces_gift_cents | money_without_trailing_zeros
+              assign ces_gift_count = ces_free_list.size | at_most: 3
+              assign ces_gift_word = 'items'
+              if ces_gift_count == 1
+                assign ces_gift_word = 'item'
+              endif
+              assign ces_gift_sub = block.settings.gift_sub_template | default: '[value] value &middot; [count] [items]'
+              assign ces_gift_sub = ces_gift_sub | replace: '[value]', ces_gift_value | replace: '[count]', ces_gift_count | replace: '[items]', ces_gift_word
+            endif
+          endif
         -%}
 
         <label class="ces-b2__tier ces-bundle__tier{% if block.settings[bkey] != blank %} ces-b2__tier--badged{% endif %}{% if ces_checked %} is-selected{% endif %}{% unless ces_v.available %} is-unavailable{% endunless %}">
@@ -167,7 +190,7 @@
                   </span>
                   <span class="ces-b2__gift-text">
                     <span class="ces-b2__gift-title">{{ block.settings[gtkey] }}</span>
-                    {%- if block.settings[gskey] != blank -%}<span class="ces-b2__gift-sub">{{ block.settings[gskey] }}</span>{%- endif -%}
+                    {%- if ces_gift_sub != blank -%}<span class="ces-b2__gift-sub">{{ ces_gift_sub }}</span>{%- endif -%}
                   </span>
                   <svg class="ces-b2__gift-chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="m5 12.5 5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>

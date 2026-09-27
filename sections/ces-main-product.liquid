@@ -4203,6 +4203,29 @@
           "default": "See details"
         },
         {
+          "type": "select",
+          "id": "gift_sub_mode",
+          "label": "Free gift value line",
+          "options": [
+            {
+              "value": "manual",
+              "label": "Type it myself"
+            },
+            {
+              "value": "auto",
+              "label": "Add up the gift products"
+            }
+          ],
+          "default": "manual"
+        },
+        {
+          "type": "text",
+          "id": "gift_sub_template",
+          "label": "Automatic value line format",
+          "info": "Used when the line is added up. [value] is the gift total, rounded to the nearest whole amount; [count] is how many gifts; [items] becomes item or items.",
+          "default": "[value] value · [count] [items]"
+        },
+        {
           "type": "header",
           "content": "Tier 1"
         },
