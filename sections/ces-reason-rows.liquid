@@ -14,6 +14,11 @@
   .ces-reasons__media{margin:0}
   .ces-reasons__media img{width:100%;height:auto;display:block;border-radius:var(--ces-radius);border:.1rem solid var(--ces-border-color)}
   .ces-reasons__ph{aspect-ratio:1/1;border-radius:var(--ces-radius);background:var(--ces-surface);border:.1rem solid var(--ces-border-color);display:flex;align-items:center;justify-content:center;color:var(--ces-muted);font-size:1.3rem}
+  .ces-reasons__quote-by{display:block;margin-top:.8rem;font-style:normal;font-size:1.4rem;font-weight:700;color:var(--ces-accent)}
+  .ces-reasons__benefits{margin:1.8rem 0 0;padding:1.6rem 1.8rem;list-style:none;border:.1rem solid var(--ces-border-color);border-radius:var(--ces-radius);background:var(--ces-surface)}
+  .ces-reasons__benefit{display:flex;align-items:flex-start;gap:.9rem;font-size:1.5rem;line-height:1.5;margin:0 0 1rem}
+  .ces-reasons__benefit:last-child{margin-bottom:0}
+  .ces-reasons__benefit svg{flex:0 0 auto;width:1.8rem;height:1.8rem;margin-top:.2rem;color:var(--ces-accent)}
   .ces-reasons__cta{margin:2.8rem 0 0;text-align:center}
   @media screen and (min-width:750px){
     .ces-reasons__row{grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
@@ -44,7 +49,25 @@
           {%- endif -%}
           {%- if block.settings.title != blank -%}<h3 class="ces-reasons__title">{{ block.settings.title }}</h3>{%- endif -%}
           {%- if block.settings.text != blank -%}<div class="ces-reasons__body rte ces-rte">{{ block.settings.text }}</div>{%- endif -%}
-          {%- if block.settings.pull_quote != blank -%}<p class="ces-reasons__pull">{{ block.settings.pull_quote }}</p>{%- endif -%}
+          {%- if block.settings.pull_quote != blank -%}
+            <p class="ces-reasons__pull">{{ block.settings.pull_quote }}
+              {%- if block.settings.pull_quote_author != blank -%}<cite class="ces-reasons__quote-by">— {{ block.settings.pull_quote_author }}</cite>{%- endif -%}
+            </p>
+          {%- endif -%}
+          {%- if block.settings.show_benefits and block.settings.benefits != blank -%}
+            <ul class="ces-reasons__benefits">
+              {%- assign ben = block.settings.benefits | newline_to_br | split: '<br />' -%}
+              {%- for line in ben -%}{%- assign l = line | strip -%}{%- if l != blank -%}
+                <li class="ces-reasons__benefit">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                    <path d="M6 10.3 8.7 13l5.3-5.8" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>{{ l }}</span>
+                </li>
+              {%- endif -%}{%- endfor -%}
+            </ul>
+          {%- endif -%}
         </div>
         <figure class="ces-reasons__media">
           {%- if block.settings.image != blank -%}
@@ -57,7 +80,7 @@
     {%- endfor -%}
 
     {%- if section.settings.cta_label != blank -%}
-      <p class="ces-reasons__cta"><a class="ces-button" href="{{ section.settings.cta_url | default: '#' }}">{{ section.settings.cta_label }}</a></p>
+      <p class="ces-reasons__cta"><a class="ces-button" href="{{ section.settings.cta_url | default: '#ces-bundle' }}">{{ section.settings.cta_label }}</a></p>
     {%- endif -%}
   </div>
 </div>
@@ -68,31 +91,136 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Numbered reason blocks for a listicle-style product page. Images alternate sides on desktop." },
-    { "type": "text", "id": "heading", "label": "Heading" },
-    { "type": "text", "id": "subheading", "label": "Subheading" },
-    { "type": "text", "id": "number_prefix", "label": "Auto number prefix", "default": "Reason" },
-    { "type": "text", "id": "cta_label", "label": "Button label" },
-    { "type": "url", "id": "cta_url", "label": "Button link" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
-    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
-    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 32 },
-    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
+    {
+      "type": "paragraph",
+      "content": "Numbered reason blocks for a listicle-style product page. Images alternate sides on desktop."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "number_prefix",
+      "label": "Auto number prefix",
+      "default": "Reason"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link",
+      "info": "Defaults to the product buy box (#ces-bundle)."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
   ],
   "blocks": [
     {
       "type": "reason",
       "name": "Reason",
       "settings": [
-        { "type": "text", "id": "number_label", "label": "Number label", "info": "Leave blank to auto-number." },
-        { "type": "text", "id": "title", "label": "Title" },
-        { "type": "richtext", "id": "text", "label": "Body" },
-        { "type": "text", "id": "pull_quote", "label": "Pull quote" },
-        { "type": "image_picker", "id": "image", "label": "Image" }
+        {
+          "type": "text",
+          "id": "number_label",
+          "label": "Number label",
+          "info": "Leave blank to auto-number."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "pull_quote",
+          "label": "Pull quote"
+        },
+        {
+          "type": "text",
+          "id": "pull_quote_author",
+          "label": "Pull quote author",
+          "info": "e.g. Dr. Brandi W."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_benefits",
+          "label": "Show benefit list",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "benefits",
+          "label": "Benefits (one per line)",
+          "info": "Each line gets a check icon."
+        }
       ]
     }
   ],
   "max_blocks": 10,
-  "presets": [ { "name": "CES Reason rows", "blocks": [ { "type": "reason" }, { "type": "reason" }, { "type": "reason" } ] } ]
+  "presets": [
+    {
+      "name": "CES Reason rows",
+      "blocks": [
+        {
+          "type": "reason"
+        },
+        {
+          "type": "reason"
+        },
+        {
+          "type": "reason"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

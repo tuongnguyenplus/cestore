@@ -61,7 +61,7 @@
         "author_name": "By Sarah W.",
         "date_text": "Last updated September 2026",
         "cta_label": "Try it risk free today",
-        "cta_url": "https://cebeam.com/products/microneedle-patches",
+        "cta_url": "#ces-bundle",
         "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 24
@@ -76,7 +76,8 @@
             "number_label": "",
             "title": "Because surgery is a permanent answer to a reversible problem",
             "text": "<p>Lower-lid blepharoplasty runs $3,000–$6,000, needs one to two weeks of visible recovery, and carries the risks any surgery does. It is the right call for some people. For fluid, thin skin and lost firmness — the things most under-eyes are actually dealing with — it is a very large hammer.</p>",
-            "pull_quote": "“I nearly booked the surgery. I'm glad I tried this first.”"
+            "pull_quote": "“I nearly booked the surgery. I'm glad I tried this first.”",
+            "pull_quote_author": "James D., verified customer"
           }
         },
         "r2": {
@@ -94,7 +95,9 @@
             "number_label": "",
             "title": "Because dissolving micro-cones solve the delivery problem",
             "text": "<p>Each patch is lined with hundreds of self-dissolving micro-cones made from the actives themselves. They open a direct path through the barrier without wounding living tissue, then dissolve overnight and release where puffiness and dark circles form. No injections, no metal needles, no downtime.</p>",
-            "pull_quote": ""
+            "pull_quote": "",
+            "show_benefits": true,
+            "benefits": "No injections. No metal needles. No downtime.\nDissolves overnight — nothing on your face by breakfast.\nDermatologist-tested and made in a GMP-certified facility.\nIndividually sealed pouches — a fresh treatment every time."
           }
         },
         "r4": {
@@ -128,7 +131,7 @@
         "subheading": "",
         "number_prefix": "Reason",
         "cta_label": "See today's price →",
-        "cta_url": "https://cebeam.com/products/microneedle-patches",
+        "cta_url": "#ces-bundle",
         "color_scheme": "scheme-1",
         "padding_top": 24,
         "padding_bottom": 40
@@ -896,77 +899,47 @@
       }
     },
     "timeline": {
-      "type": "ces-timeline-accordion",
+      "type": "ces-results-timeline",
+      "settings": {
+        "eyebrow": "Results Timeline",
+        "heading": "What to expect — week by week",
+        "subheading": "The 21-Day Eye Reset, stage by stage. Four treatment nights a week throughout.",
+        "show_quotes": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      },
       "blocks": {
-        "step-1": {
-          "type": "timeline_step",
+        "s1": {
+          "type": "stage",
           "settings": {
-            "state": "auto",
-            "time_label": "WEEK 1",
-            "heading": "Your starter week",
-            "bullets": "Morning puffiness starts to look smoother\nActives release beneath the skin overnight\nSkin hydrates from within, so concealer goes on smoother\nWake up looking fresher and more rested",
-            "content": "",
-            "open": true
+            "time_label": "Week 1",
+            "title": "Your starter week",
+            "points": "Morning puffiness starts to look smoother\nActives release beneath the skin overnight\nSkin hydrates from within, so concealer goes on smoother"
           }
         },
-        "step-2": {
-          "type": "timeline_step",
+        "s2": {
+          "type": "stage",
           "settings": {
-            "state": "auto",
-            "time_label": "WEEK 2",
-            "heading": "It stops being subtle",
-            "bullets": "Dark shadows begin to brighten\nPuffiness looks visibly reduced in the morning\nThe under-eye area feels smoother and plumper",
-            "content": "",
-            "open": false
+            "time_label": "Week 2",
+            "title": "It stops being subtle",
+            "points": "Dark shadows begin to brighten\nPuffiness looks visibly reduced in the morning\nThe under-eye area feels smoother and plumper"
           }
         },
-        "step-3": {
-          "type": "timeline_step",
+        "s3": {
+          "type": "stage",
           "settings": {
-            "state": "auto",
-            "time_label": "WEEK 3",
-            "heading": "The reset lands",
-            "bullets": "Dark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nThe orbital area looks firmer and more resilient\nEyes look rested — even when you're not",
-            "content": "",
-            "open": false
-          }
-        },
-        "step-4": {
-          "type": "timeline_step",
-          "settings": {
-            "state": "auto",
-            "time_label": "ONGOING",
-            "heading": "Maintain: 2 treatment nights a week",
-            "bullets": "Results hold with two treatment nights a week\nPuffiness and shadows stay under control\nFirmness and brightness keep improving\nNo routine, no downtime — it fits your life",
-            "content": "",
-            "open": false
+            "time_label": "Week 3",
+            "title": "The reset lands",
+            "points": "Dark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you're not"
           }
         }
       },
       "block_order": [
-        "step-1",
-        "step-2",
-        "step-3",
-        "step-4"
-      ],
-      "settings": {
-        "display": "open",
-        "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png",
-        "image_position": "start",
-        "image_ratio": "auto",
-        "heading": "What to expect across your 21-day reset",
-        "subheading": "Micro-delivery works below the surface, so results build with consistent use.*",
-        "fill_speed": 900,
-        "meta_opacity": 100,
-        "heading_style": "plain",
-        "button_label": "",
-        "button_link": "",
-        "exclusive": true,
-        "background_pattern": "dots",
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
+        "s1",
+        "s2",
+        "s3"
+      ]
     },
     "howto": {
       "type": "ces-usage-steps",

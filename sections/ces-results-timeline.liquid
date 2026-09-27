@@ -1,0 +1,113 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .ces-rtl{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-rtl__eyebrow{text-align:center;margin:0 0 .8rem;font-size:1.3rem;font-weight:600;color:var(--ces-muted)}
+  .ces-rtl__grid{display:grid;grid-template-columns:1fr;gap:3.2rem;margin-top:2.8rem}
+  .ces-rtl__col{position:relative}
+  .ces-rtl__pill{display:inline-block;background:var(--ces-accent);color:rgb(var(--color-background));font-weight:800;font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1.6rem;border-radius:.6rem;margin:0 0 1.8rem}
+  .ces-rtl__title{margin:0 0 1.2rem;font-size:1.7rem;font-weight:800}
+  .ces-rtl__points{margin:0;padding:0;list-style:none;display:grid;gap:.8rem}
+  .ces-rtl__point{position:relative;padding:.9rem 1.2rem .9rem 1.4rem;border:.1rem solid var(--ces-border-color);border-radius:.8rem;background:rgb(var(--color-background));font-size:1.45rem;line-height:1.45}
+  .ces-rtl__point::before{content:"";position:absolute;left:-.9rem;top:50%;width:.7rem;height:.7rem;border-radius:50%;background:var(--ces-accent);transform:translateY(-50%)}
+  .ces-rtl__quote{margin:1.8rem 0 0;border:.1rem solid var(--ces-border-color);border-radius:var(--ces-radius);padding:1.6rem;background:rgb(var(--color-background))}
+  .ces-rtl__who{display:flex;align-items:center;gap:.9rem;margin:0 0 .9rem}
+  .ces-rtl__avatar{width:3.4rem;height:3.4rem;border-radius:50%;overflow:hidden;background:var(--ces-surface);flex:0 0 auto}
+  .ces-rtl__avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .ces-rtl__stars{color:#d99b2b;font-size:1.3rem;letter-spacing:.1em;line-height:1}
+  .ces-rtl__name{font-size:1.35rem;color:var(--ces-muted)}
+  .ces-rtl__qtitle{margin:0 0 .6rem;font-weight:800;font-size:1.5rem;color:var(--ces-accent)}
+  .ces-rtl__qtext{margin:0;font-size:1.4rem;line-height:1.55}
+  @media screen and (min-width:750px){
+    .ces-rtl__grid{grid-template-columns:repeat({{ section.blocks.size | at_least: 1 }},1fr);gap:2.4rem}
+    /* Connecting rail behind the day pills */
+    .ces-rtl__rail{position:relative;height:.2rem;background:var(--ces-border-color);margin:1.6rem 0 -1.2rem}
+  }
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-rtl ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.eyebrow != blank -%}<p class="ces-rtl__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-section__header">
+        {%- if section.settings.heading != blank -%}<h2 class="ces-heading">{{ section.settings.heading }}</h2>{%- endif -%}
+        {%- if section.settings.subheading != blank -%}<p class="ces-subheading">{{ section.settings.subheading }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ces-rtl__grid">
+        {%- for block in section.blocks -%}
+          <div class="ces-rtl__col" {{ block.shopify_attributes }}>
+            {%- if block.settings.time_label != blank -%}<span class="ces-rtl__pill">{{ block.settings.time_label }}</span>{%- endif -%}
+            {%- if block.settings.title != blank -%}<p class="ces-rtl__title">{{ block.settings.title }}</p>{%- endif -%}
+            {%- if block.settings.points != blank -%}
+              <ul class="ces-rtl__points">
+                {%- assign pts = block.settings.points | newline_to_br | split: '<br />' -%}
+                {%- for line in pts -%}{%- assign l = line | strip -%}{%- if l != blank -%}
+                  <li class="ces-rtl__point">{{ l }}</li>
+                {%- endif -%}{%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            {%- if section.settings.show_quotes and block.settings.quote_text != blank -%}
+              <div class="ces-rtl__quote">
+                <div class="ces-rtl__who">
+                  {%- if block.settings.quote_image != blank -%}
+                    <span class="ces-rtl__avatar"><img src="{{ block.settings.quote_image | image_url: width: 120 }}" alt="{{ block.settings.quote_name | escape }}" loading="lazy"></span>
+                  {%- endif -%}
+                  <span>
+                    <span class="ces-rtl__stars">★★★★★</span>
+                    {%- if block.settings.quote_name != blank -%}<span class="ces-rtl__name"> {{ block.settings.quote_name }}</span>{%- endif -%}
+                  </span>
+                </div>
+                {%- if block.settings.quote_title != blank -%}<p class="ces-rtl__qtitle">{{ block.settings.quote_title }}</p>{%- endif -%}
+                <p class="ces-rtl__qtext">{{ block.settings.quote_text }}</p>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Results timeline",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Side-by-side timeline: one column per stage, each with a day pill, bullet points and an optional customer quote. An alternative layout to the stacked timeline accordion." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Results Timeline" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What to expect — week by week" },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "checkbox", "id": "show_quotes", "label": "Show customer quotes", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "stage",
+      "name": "Stage",
+      "settings": [
+        { "type": "text", "id": "time_label", "label": "Day / week label", "default": "Days 1-7" },
+        { "type": "text", "id": "title", "label": "Stage title" },
+        { "type": "textarea", "id": "points", "label": "Points (one per line)" },
+        { "type": "header", "content": "Customer quote" },
+        { "type": "image_picker", "id": "quote_image", "label": "Photo" },
+        { "type": "text", "id": "quote_name", "label": "Name" },
+        { "type": "text", "id": "quote_title", "label": "Quote headline" },
+        { "type": "textarea", "id": "quote_text", "label": "Quote" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [ { "name": "CES Results timeline", "blocks": [ { "type": "stage" }, { "type": "stage" }, { "type": "stage" } ] } ]
+}
+{% endschema %}
