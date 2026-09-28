@@ -56,7 +56,7 @@
       "type": "ces-editorial-hero",
       "settings": {
         "eyebrow": "HEALTH & BEAUTY DESK",
-        "heading": "5 Reasons Why Women Over 45 Choose Microneedle Patches Instead of Under-Eye Surger",
+        "heading": "5 Reasons Why Women Over 45 Choose Microneedle Patches Instead of Under-Eye Surgery",
         "subheading": "A closer look at why the under-eye market moved away from the operating table — and what actually reaches the skin.",
         "author_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
         "author_name": "By Sarah W.",
@@ -381,6 +381,7 @@
             "onetime_url": "",
             "sub_note": "",
             "trust_line": "Free Delivery · 90-Day Money-back Guarantee",
+            "meta_template": "[count] treatments · [unit]/treatment",
             "gift_more_label": "See details",
             "gift_sub_mode": "manual",
             "gift_sub_template": "[value] value · [count] [items]",
@@ -390,6 +391,7 @@
             "tier_1_badge": "",
             "tier_1_cta": "Try the 7-Day Starter",
             "tier_1_meta": "4 treatments · $9.99/treatment",
+            "tier_1_treatments": 4,
             "tier_1_quote": "4 treatments over 1 week",
             "tier_1_role": "Try the routine before committing",
             "tier_1_price": "",
@@ -411,6 +413,7 @@
             "tier_2_badge": "MOST POPULAR",
             "tier_2_cta": "Start My 21-Day Reset",
             "tier_2_meta": "12 treatments · $5.41/treatment",
+            "tier_2_treatments": 12,
             "tier_2_quote": "4 treatments a week for 3 weeks",
             "tier_2_role": "Recommended full routine",
             "tier_2_price": "",
@@ -434,6 +437,7 @@
             "tier_3_badge": "BEST VALUE",
             "tier_3_cta": "Start My 45-Day Rebuild",
             "tier_3_meta": "24 treatments · $4.16/treatment",
+            "tier_3_treatments": 24,
             "tier_3_quote": "4 treatments a week for 6 weeks",
             "tier_3_role": "Some concerns need a longer runway",
             "tier_3_price": "",
@@ -472,11 +476,7 @@
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
-            "tier_4_foot": "",
-            "meta_template": "[count] treatments · [unit]/treatment",
-            "tier_1_treatments": 4,
-            "tier_2_treatments": 12,
-            "tier_3_treatments": 24
+            "tier_4_foot": ""
           }
         },
         "ces_bundle_8Rq63G": {
