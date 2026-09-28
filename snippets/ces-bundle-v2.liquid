@@ -20,6 +20,7 @@
   class="ces-b2 quick-add-hidden"
   style="--ces-b2-accent: {{ ces_accent }}; --ces-b2-tint: {{ ces_accent }}12; scroll-margin-top: 9rem;"
   data-open-drawer="{{ block.settings.open_cart_drawer | default: true }}"
+  data-after-add="{{ block.settings.after_add | default: 'drawer' }}"
   {{ block.shopify_attributes }}
 >
   {%- if block.settings.label != blank -%}

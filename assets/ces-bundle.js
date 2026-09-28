@@ -73,6 +73,9 @@ class CesBundle extends HTMLElement {
       return;
     }
 
+    // Going straight to checkout means we never render the drawer, so the
+    // section payload that add would otherwise fetch is wasted work.
+    const toCheckout = this.dataset.afterAdd === 'checkout';
     const mainId = parseInt(radio.dataset.variantId, 10);
     const mainQty = parseInt(radio.dataset.quantity, 10) || 1;
     const freeIds = (radio.dataset.freeIds || '')
@@ -93,11 +96,18 @@ class CesBundle extends HTMLElement {
     });
 
     chain
-      .then(() => this.addLine(mainId, mainQty, true))
+      .then(() => this.addLine(mainId, mainQty, !toCheckout))
       .then((response) => {
         if (response && response.status) {
           this.showError(response.description || response.message || 'Could not add to cart.');
           this.setLoading(false);
+          return;
+        }
+        if (toCheckout) {
+          // Leave the button loading; we are navigating away, and clearing it
+          // would invite a second click that adds the tier twice.
+          const root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+          window.location = root.replace(/\/$/, '') + '/checkout';
           return;
         }
         if (this.cart && typeof this.cart.renderContents === 'function' && response && response.sections) {
