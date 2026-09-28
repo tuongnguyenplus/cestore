@@ -170,8 +170,8 @@
             "number_label": "",
             "title": "Because the routine survives contact with real life",
             "text": "<p>Fifteen seconds before bed. One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it.</p><p>They stay where you put them through a night of turning over, and they lift off clean in the morning — no tacky film to wash off before your moisturiser, no half-peeled patch on the pillow. The routine you actually keep is the only one that does anything.</p>",
-            "pull_quote": "",
-            "pull_quote_author": "",
+            "pull_quote": "\"I love how well they stay in place. I can sleep with them on without them moving. The skin under my eyes feels firmer and the eye bags I've had for years are FINALLY starting to go\"",
+            "pull_quote_author": "Melisa H.",
             "image": "shopify://shop_images/08114sdfsdfa85-922a-48a1-ae5f-2132c52bc52e.webp",
             "show_benefits": false,
             "benefits": ""
@@ -1121,6 +1121,7 @@
         "item-5",
         "item-6"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Designed around what people dislike about ordinary eye patches",
         "subheading": "",
