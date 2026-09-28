@@ -207,7 +207,7 @@
             "text": "Rated <strong>4.8 Excellent</strong> | Over",
             "enable_counter": true,
             "sold_count": 255127,
-            "sold_suffix": "Pouches sold",
+            "sold_suffix": "sold",
             "count_step_1": 1,
             "count_step_2": 3,
             "count_step_3": 4
@@ -553,9 +553,9 @@
         "trust-row": {
           "type": "ces_trust_row",
           "settings": {
-            "avatar_1": "shopify://shop_images/360_F_645777959_fNnaNoeVO4qxCNPW9MWr3gQlPFSGA9yL.jpg",
-            "avatar_2": "shopify://shop_images/images.jpg",
-            "avatar_3": "shopify://shop_images/istockphoto-2162083710-612x612.jpg",
+            "avatar_1": "shopify://shop_images/Untitled_design_12_764f6a05-31f2-42de-91d1-3b2513c991fa.webp",
+            "avatar_2": "shopify://shop_images/Alycia_Wanat-Hawthorne_Cropped.webp",
+            "avatar_3": "shopify://shop_images/Dr-B-CC-eye.webp",
             "text": "Loved by 100k+ Tired Eyes",
             "subtext": "for real, visible under-eye results",
             "show_verified": true
