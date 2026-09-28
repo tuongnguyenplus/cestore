@@ -1890,16 +1890,123 @@
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
       }
+    },
+    "recognition": {
+      "type": "ces-recognition",
+      "blocks": {
+        "img-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/whole_video_gif_small_94a63e16-2a41-4838-a407-c73718e78b58.webp",
+            "caption": ""
+          }
+        },
+        "r1": {
+          "type": "item",
+          "settings": {
+            "text": "People ask if you slept badly — even on the mornings you slept fine."
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "text": "Concealer used to cover it. Now it creases, cakes, and the shadow still shows through."
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "text": "On video calls and in photos, your eyes read older and more tired than you feel."
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "text": "You've tried more sleep, more water, cutting back — the puffiness softens, the shadow stays."
+          }
+        }
+      },
+      "block_order": [
+        "img-1",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "heading": "If you've started noticing this, it isn't just tiredness",
+        "subheading": "",
+        "closing": "That's not a willpower problem. It's the thin skin under your eyes changing — and it needs something built for exactly that.",
+        "image_position": "left",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "content-tabs": {
+      "type": "ces-content-tabs",
+      "blocks": {
+        "tab1": {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "Penetration Power",
+            "default_open": true,
+            "image": "shopify://shop_images/5bc7f757-a882-4e13-bd64-d22ba4cab1e6.png",
+            "heading": "Delivered Below the Surface",
+            "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.</p>",
+            "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo injections, no metal needles\nNo downtime",
+            "footnote": "This is why the difference builds instead of washing off."
+          }
+        },
+        "tab2": {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "What's Inside",
+            "default_open": false,
+            "image": "shopify://shop_images/fnpnf.webp",
+            "heading": "A Formula Made for Eyes",
+            "text": "<p>Hyaluronic acid, niacinamide, peptides, vitamin C and retinol — chosen for the delicate under-eye area and free from fragrance and harsh fillers.</p>",
+            "bullets": "Hyaluronic acid for hydration & plumping\nNiacinamide to brighten tone\nPeptides & retinol to smooth lines",
+            "footnote": ""
+          }
+        },
+        "tab3": {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "Why It Works",
+            "default_open": false,
+            "image": "shopify://shop_images/r03okok.png",
+            "heading": "Backed by Results",
+            "text": "<p>Most eye treatments fail because good actives never make it past the skin barrier. Cebeam's microneedle patch solves the delivery problem first — then puts targeted actives exactly where dark circles and puffiness form.<br/><br/></p>",
+            "bullets": "Micro-cones create a direct path — bypassing the stratum corneum that blocks topical creams\n\nActives dissolve exactly where they're needed — at the dermis, near the pigmentation and microcirculation that cause dark circles\n\nConsistent, repeatable delivery — every application reaches the same depth, unlike creams that vary by how hard you rub them in\n\nBacked by the science of microneedle delivery — a growing body of clinical research on HA-based microneedle patches shows measurable improvements in hydration, wrinkle depth, and skin density over consistent use",
+            "footnote": "It's not one ingredient doing the work — it's the delivery system making sure any ingredient actually works."
+          }
+        }
+      },
+      "block_order": [
+        "tab1",
+        "tab2",
+        "tab3"
+      ],
+      "settings": {
+        "heading": "Why Microneedle Patches Work",
+        "subheading": "",
+        "color_scheme": "scheme-ces-gradient",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "bar",
     "editorial",
+    "recognition",
     "reasons",
     "badges",
     "main",
     "results",
     "mechanism",
+    "content-tabs",
     "timeline",
     "howto",
     "complaints",
