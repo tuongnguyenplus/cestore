@@ -170,6 +170,8 @@
           "type": "ces_bundle",
           "settings": {
             "accent_color": "#1d5c5c",
+            "heading": "Choose the Routine That Fits Your Under-Eyes",
+            "intro": "Not every under-eye concern looks the same. Choose based on how often you notice yours and how long it has been there.",
             "stat_text": "",
             "tier_count": 3,
             "default_tier": 2,
@@ -182,8 +184,8 @@
             "delivery_days": 1,
             "date_format": "%b. %-d",
             "delivery_icon": "🟢",
-            "origin_text": "Ships from USA",
-            "origin_icon": "🇺🇸",
+            "origin_text": "Free Delivery",
+            "origin_icon": "",
             "tier_1_variant": "47849253961877",
             "tier_1_name": "7-Day Starter",
             "tier_1_supply": "For first-time users or newly noticeable puffiness",
@@ -212,9 +214,7 @@
             "tier_4_supply": "",
             "tier_4_badge": "",
             "tier_4_inclusions": "",
-            "tier_4_free_products": [],
-            "heading": "Choose the Routine That Fits Your Under-Eyes",
-            "intro": "Not every under-eye concern looks the same. Choose based on how often you notice yours and how long it has been there."
+            "tier_4_free_products": []
           }
         },
         "shipping-estimate": {
@@ -258,7 +258,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "shield",
-            "text": "Free U.S. shipping · 90-day money-back guarantee",
+            "text": "&nbsp;<em>Estimated delivery date: 3-5 business days</em> &nbsp;· 90-day money-back guarantee",
             "standalone": true,
             "align": "center"
           }
