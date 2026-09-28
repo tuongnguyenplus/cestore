@@ -819,7 +819,7 @@
     "banner-clinical": {
       "type": "ces-image-text-banner",
       "settings": {
-        "image": "shopify://shop_images/okkkk.webp",
+        "image": "shopify://shop_images/sdf231c-4da8-b687-8b0e812e42ae_55e98de9-b3ce-4a7e-a361-d5fe486fbefa.webp",
         "layout": "split",
         "image_shape": "original",
         "text_position": "end",
@@ -933,7 +933,7 @@
       ],
       "settings": {
         "display": "open",
-        "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png",
+        "image": "shopify://shop_images/b413f376-153f-4ca6-a358-a42f9860b3c2.png",
         "image_position": "start",
         "image_ratio": "auto",
         "heading": "What to expect across your 21-day reset",
@@ -1046,6 +1046,7 @@
         "icon-3",
         "icon-4"
       ],
+      "disabled": true,
       "settings": {
         "heading": "One Patch. Everything Your Eyes Need.",
         "highlight_words": "",
@@ -1226,7 +1227,7 @@
         "yes_label": "What CEBEAM works on",
         "yes_points": "Fluid and morning puffiness\nDark shadows and dullness\nThin, crepey skin and fine lines\nLost firmness in the under-eye",
         "no_label": "What no patch can change",
-        "no_points": "Inherited fat pads that push forward — the kind visible in photos of you at 25\nDeep hollows set by bone structure",
+        "no_points": "Deep hollows set by bone structure",
         "honest_line": "Those are a surgical issue no topical can move. If that's mostly you, keep your money — we'd rather lose the sale than be the fifth thing that let you down.",
         "color_scheme": "scheme-1",
         "padding_top": 48,
