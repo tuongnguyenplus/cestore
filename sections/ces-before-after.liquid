@@ -27,6 +27,13 @@
   .ces-baft__tag{position:absolute;top:1rem;left:1rem;background:rgba(0,0,0,.62);color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border-radius:99rem}
   .ces-baft__cell--after .ces-baft__tag{background:var(--ces-accent)}
   .ces-baft__cap{padding:1.4rem 1.8rem}
+  /* Both layers lay out identically as inline runs. A flex fill would shrink
+     its stars to the clipped width instead of cutting one in half. */
+  .ces-baft__stars{position:relative;display:inline-block;line-height:0;white-space:nowrap;margin:0 0 .8rem}
+  .ces-baft__stars-track{display:block;color:rgba(var(--color-foreground),.2)}
+  .ces-baft__stars-fill{position:absolute;top:0;left:0;width:var(--ces-rating-pct,100%);overflow:hidden;color:#f5b301}
+  .ces-baft__stars svg{display:inline-block;vertical-align:top}
+  .ces-baft__quote{margin:0 0 1rem;padding:0;border:0;font-size:1.6rem;line-height:1.5;font-style:italic}
   .ces-baft__name{margin:0;font-weight:700;font-size:1.6rem;line-height:1.35}
   .ces-baft__meta{margin:.6rem 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;font-size:1.35rem;line-height:1.4;color:var(--ces-muted)}
   .ces-baft__verified{display:inline-flex;align-items:center;gap:.4rem;color:var(--ces-accent);font-weight:700}
@@ -75,8 +82,31 @@
                       {%- else -%}<span class="ces-baft__ph">{{ section.settings.after_label }}</span>{%- endif -%}
                     </div>
                   </div>
-                  {%- if block.settings.name != blank or block.settings.progress != blank or block.settings.verified -%}
+                  {%- liquid
+                    assign baft_rating = block.settings.rating_tenths | default: 0
+                    assign baft_pct = baft_rating | times: 2
+                    assign baft_stars = baft_rating | divided_by: 10.0
+                  -%}
+                  {%- if block.settings.name != blank or block.settings.progress != blank or block.settings.verified or block.settings.quote != blank or baft_rating > 0 -%}
                     <div class="ces-baft__cap">
+                      {%- if baft_rating > 0 -%}
+                        <span
+                          class="ces-baft__stars"
+                          style="--ces-rating-pct: {{ baft_pct }}%;"
+                          role="img"
+                          aria-label="{{ baft_stars }} out of 5 stars"
+                        >
+                          <span class="ces-baft__stars-track" aria-hidden="true">
+                            {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.6rem' %}{%- endfor -%}
+                          </span>
+                          <span class="ces-baft__stars-fill" aria-hidden="true">
+                            {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.6rem' %}{%- endfor -%}
+                          </span>
+                        </span>
+                      {%- endif -%}
+                      {%- if block.settings.quote != blank -%}
+                        <blockquote class="ces-baft__quote">&ldquo;{{ block.settings.quote }}&rdquo;</blockquote>
+                      {%- endif -%}
                       {%- if block.settings.name != blank -%}<p class="ces-baft__name">{{ block.settings.name }}</p>{%- endif -%}
                       {%- if block.settings.verified or block.settings.progress != blank -%}
                         <p class="ces-baft__meta">
@@ -144,6 +174,8 @@
       "settings": [
         { "type": "image_picker", "id": "before_image", "label": "Before image" },
         { "type": "image_picker", "id": "after_image", "label": "After image" },
+        { "type": "range", "id": "rating_tenths", "min": 0, "max": 50, "step": 1, "label": "Rating (tenths)", "info": "In tenths of a star: 50 = 5.0, 45 = 4.5. Set to 0 to hide the stars.", "default": 50 },
+        { "type": "textarea", "id": "quote", "label": "What she said", "info": "A short line in her own words. Quote marks are added for you." },
         { "type": "text", "id": "name", "label": "Name and age", "info": "e.g. Anna, 58", "default": "Anna, 58" },
         { "type": "checkbox", "id": "verified", "label": "Show verified customer", "default": true },
         { "type": "text", "id": "progress", "label": "Usage progress", "info": "e.g. Day 18 of the protocol, or After 3 weeks of use", "default": "After 3 weeks of use" }
