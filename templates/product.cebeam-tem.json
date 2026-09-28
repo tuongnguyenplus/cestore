@@ -60,7 +60,7 @@
         "author_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
         "author_name": "By Sarah W.",
         "date_text": "Last updated September 2026",
-        "image": "shopify://shop_images/r03okok.webp",
+        "image": "shopify://shop_images/gfdg.webp",
         "image_position": "above",
         "cta_label": "Try it risk free today",
         "cta_url": "#ces-bundle",
@@ -80,6 +80,7 @@
             "text": "<p>Lower-lid surgery runs $3,000–$6,000 and a week or two of staying home while it settles. Filler means a needle beside your eye, again every six months, indefinitely. Plenty of women choose that and are glad they did.</p><p>But most of what you see in the mirror is not structural. It is fluid that pools overnight, skin that has thinned, and collagen that has slowed. Those three respond to being treated. They do not need to be operated on.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
+            "image": "shopify://shop_images/eye1.webp",
             "show_benefits": false,
             "benefits": ""
           }
@@ -92,6 +93,7 @@
             "text": "<p>There are probably two or three of them. You used one every night for a month, saw nothing, and quietly wondered whether the problem was you.</p><p>It wasn't. The skin under your eye is about half a millimetre thick, and its outer layer exists to keep things out. A cream sits on top of that layer, and most of it evaporates before morning. The ingredients were often perfectly good. They simply never arrived.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
+            "image": "shopify://shop_images/gdfgfd.webp",
             "show_benefits": false,
             "benefits": ""
           }
@@ -104,6 +106,7 @@
             "text": "<p>The word microneedle puts people off, so here is exactly what happens. Each patch is lined with hundreds of cones too small to feel, made from the actives themselves rather than metal. They pass the outer layer, then dissolve through the night and release where the puffiness and shadows form.</p><p>Most women describe it as a patch that feels slightly firm for a minute. That is all.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
+            "image": "shopify://shop_images/fnpnf.webp",
             "show_benefits": true,
             "benefits": "No injections. No metal needles. No downtime.\nGone by breakfast — nothing on your face during the day.\nDermatologist-tested, made in a GMP-certified facility.\nIndividually sealed — a fresh, clean treatment every time."
           }
@@ -340,6 +343,7 @@
             "tier_1_fine": "",
             "tier_1_benefits": "",
             "tier_1_free_products": [],
+            "tier_1_extra_gifts": "",
             "tier_1_gift_title": "",
             "tier_1_gift_sub": "",
             "tier_1_gift_label": "",
@@ -363,6 +367,7 @@
               "lifteyes",
               "eye-bag-cream"
             ],
+            "tier_2_extra_gifts": "",
             "tier_2_gift_title": "Free Welcome Kit",
             "tier_2_gift_sub": "$80 value · 3 items",
             "tier_2_gift_label": "Welcome kit — arrives with first order",
@@ -384,6 +389,7 @@
             "tier_3_free_products": [
               "hydrolyzed-collagen-anti-wrinkle-cream"
             ],
+            "tier_3_extra_gifts": "",
             "tier_3_gift_title": "Free Anti-Wrinkle Eye Cream",
             "tier_3_gift_sub": "Included with the 45-Day Eye Rebuild™",
             "tier_3_gift_label": "Welcome kit — arrives with first order",
@@ -403,6 +409,7 @@
             "tier_4_fine": "",
             "tier_4_benefits": "",
             "tier_4_free_products": [],
+            "tier_4_extra_gifts": "",
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
@@ -414,6 +421,8 @@
           "disabled": true,
           "settings": {
             "accent_color": "#1d5c5c",
+            "heading": "",
+            "intro": "",
             "stat_text": "",
             "tier_count": 3,
             "default_tier": 2,
