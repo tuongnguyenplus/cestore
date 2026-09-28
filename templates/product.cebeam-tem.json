@@ -881,7 +881,7 @@
             "name": "Michael R.",
             "meta": "Verified Buyer",
             "verified": true,
-            "avatar": "shopify://shop_images/istockphoto-1440945691-612x612.jpg",
+            "avatar": "shopify://shop_images/65926863-1770-41e5-af1a-b9f94e34f9c0.webp",
             "rating": 5
           }
         },
@@ -1210,16 +1210,6 @@
             "progress": "Day 18 of the protocol"
           }
         },
-        "pair_QqPKNN": {
-          "type": "pair",
-          "settings": {
-            "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
-            "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
-            "name": "David, 58",
-            "verified": true,
-            "progress": "After 25 days of use"
-          }
-        },
         "pair_9M6FUm": {
           "type": "pair",
           "settings": {
@@ -1228,6 +1218,16 @@
             "name": "Anna, 45",
             "verified": true,
             "progress": "After 2 weeks of use"
+          }
+        },
+        "pair_QqPKNN": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
+            "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
+            "name": "David, 58",
+            "verified": true,
+            "progress": "After 25 days of use"
           }
         },
         "pair_VcLGTX": {
@@ -1253,8 +1253,8 @@
       },
       "block_order": [
         "p1",
-        "pair_QqPKNN",
         "pair_9M6FUm",
+        "pair_QqPKNN",
         "pair_VcLGTX",
         "p2"
       ],
