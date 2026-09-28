@@ -837,9 +837,11 @@
           "settings": {
             "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
             "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
-            "name": "Anna, 58",
+            "rating_tenths": 35,
+            "quote": "Overall a good product for the price. Noticed an immediate deflation and reduced puffiness in the first week. After 2 weeks of uses noticed a slight reduction in dark circles. They stay on nicely overnight. You have to press on them to get them to stick and have the micro needles monitor the skin (doesn't hurt) and then after about 5s they are adhered well to the skin and stay on.",
+            "name": "Susan, 58",
             "verified": true,
-            "progress": "Day 18 of the protocol"
+            "progress": "Day 19 of the protocol"
           }
         },
         "pair_9M6FUm": {
@@ -847,6 +849,8 @@
           "settings": {
             "before_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_35_PM.webp",
             "after_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "rating_tenths": 50,
+            "quote": "I couldn’t believe how fast these patches work! After the first time I used them, my under eyes were already more hydrated and less puffy. After a week, the dark circles were lighter, and after a month, my fine lines were almost gone. I’ve never had a skincare product work this fast before!",
             "name": "Anna, 45",
             "verified": true,
             "progress": "After 2 weeks of use"
@@ -857,6 +861,8 @@
           "settings": {
             "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
             "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
+            "rating_tenths": 44,
+            "quote": "An excellent product; after using them several times, I noticed the skin under my eyes looked much more hydrated, soft, and rested. Fine lines appear less pronounced, and the eye area looks brighter and firmer. Each patch comes in an individual sachet, keeping them in perfect condition. Plus, application is very easy, and the treatment feels comfortable.",
             "name": "David, 58",
             "verified": true,
             "progress": "After 6 weeks of use"
@@ -867,6 +873,8 @@
           "settings": {
             "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
             "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+            "rating_tenths": 50,
+            "quote": "I’ve been looking for something effective to treat puffiness and dark circles, and I’m so glad I found these patches. After using them, I noticed a visible difference in the appearance of the eye area; it looks fresher and more hydrated. They are very comfortable to wear and stay perfectly in place. I love the combination of ingredients—like hyaluronic acid and peptides—as they leave the skin feeling firm and smooth.",
             "name": "Sarah, 52",
             "verified": true,
             "progress": "After 21 days of use"
@@ -877,6 +885,8 @@
           "settings": {
             "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
             "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
+            "rating_tenths": 40,
+            "quote": "These eye patches are easy to apply and feel very comfortable on the skin. They provide a refreshing cooling sensation and leave the under-eye area feeling hydrated and smoother. After using them, my eyes looked more awake and less puffy. I also noticed that my skin felt soft and well moisturized. The individual packaging is convenient and keeps each patch fresh. Great addition to my skincare routine. I would definitely purchase them",
             "name": "John, 54",
             "verified": true,
             "progress": "After 3 weeks of use"
@@ -1868,6 +1878,8 @@
           "settings": {
             "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
             "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
+            "rating_tenths": 50,
+            "quote": "",
             "name": "Anna, 58",
             "verified": true,
             "progress": "Day 18 of the protocol"
@@ -1878,6 +1890,8 @@
           "settings": {
             "before_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_35_PM.webp",
             "after_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "rating_tenths": 50,
+            "quote": "",
             "name": "Anna, 45",
             "verified": true,
             "progress": "After 2 weeks of use"
@@ -1888,6 +1902,8 @@
           "settings": {
             "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
             "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
+            "rating_tenths": 50,
+            "quote": "",
             "name": "David, 58",
             "verified": true,
             "progress": "After 25 days of use"
@@ -1898,6 +1914,8 @@
           "settings": {
             "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
             "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+            "rating_tenths": 50,
+            "quote": "",
             "name": "Anna, 52",
             "verified": true,
             "progress": "After 27 days of use"
@@ -1908,6 +1926,8 @@
           "settings": {
             "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
             "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
+            "rating_tenths": 50,
+            "quote": "",
             "name": "John, 54",
             "verified": true,
             "progress": "After 3 weeks of use"
