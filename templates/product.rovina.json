@@ -1583,6 +1583,7 @@
     },
     "guarantee-cta": {
       "type": "ces-bullet-cta",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/44_1.webp",
         "image_position": "start",
