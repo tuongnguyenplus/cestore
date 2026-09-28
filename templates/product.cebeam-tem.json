@@ -383,7 +383,7 @@
             "trust_line": "Free Delivery · 90-Day Money-back Guarantee",
             "meta_template": "[count] treatments · [unit]/treatment",
             "gift_more_label": "See details",
-            "gift_sub_mode": "manual",
+            "gift_sub_mode": "auto",
             "gift_sub_template": "[value] value · [count] [items]",
             "tier_1_variant": "67585919418517",
             "tier_1_name": "7-Day Starter",
@@ -426,7 +426,7 @@
             "tier_2_free_products": [
               "ebook-the-21-day-under-eye-reset-guide-for-women-45"
             ],
-            "tier_2_extra_gifts": "truck | Express Shipping | 12",
+            "tier_2_extra_gifts": "truck | Express Shipping |",
             "tier_2_gift_title": "Free Welcome Kit",
             "tier_2_gift_sub": "$32 value · 2 items",
             "tier_2_gift_label": "Welcome kit — arrives with first order",
@@ -451,7 +451,7 @@
               "ebook-the-21-day-under-eye-reset-guide-for-women-45",
               "hydrolyzed-collagen-anti-wrinkle-cream"
             ],
-            "tier_3_extra_gifts": "truck | Express Shipping | 12",
+            "tier_3_extra_gifts": "truck | Express Shipping |",
             "tier_3_gift_title": "Free Welcome Kit",
             "tier_3_gift_sub": "$52 value · 3 items",
             "tier_3_gift_label": "Welcome kit — arrives with first order",
