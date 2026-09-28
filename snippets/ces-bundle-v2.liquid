@@ -11,6 +11,9 @@
 
 {%- liquid
   assign ces_accent = block.settings.accent_color | default: '#1D5C5C'
+  assign ces_accent_r = ces_accent | color_extract: 'red'
+  assign ces_accent_g = ces_accent | color_extract: 'green'
+  assign ces_accent_b = ces_accent | color_extract: 'blue'
   assign ces_tier_count = block.settings.tier_count | default: 3
   assign ces_default_tier = block.settings.default_tier | default: 1
 -%}
@@ -18,7 +21,7 @@
 <ces-bundle
   id="ces-bundle"
   class="ces-b2 quick-add-hidden"
-  style="--ces-b2-accent: {{ ces_accent }}; --ces-b2-tint: {{ ces_accent }}12; scroll-margin-top: 9rem;"
+  style="--ces-b2-accent: {{ ces_accent }}; --ces-b2-accent-rgb: {{ ces_accent_r }}, {{ ces_accent_g }}, {{ ces_accent_b }}; --ces-bundle-accent: {{ ces_accent }}; --ces-b2-tint: {{ ces_accent }}12; scroll-margin-top: 9rem;"
   data-open-drawer="{{ block.settings.open_cart_drawer | default: true }}"
   data-after-add="{{ block.settings.after_add | default: 'drawer' }}"
   {{ block.shopify_attributes }}

@@ -92,7 +92,27 @@
 .ces-b2__onetime { display: block; margin: 1.8rem 0 0; text-align: center; font-size: 1.6rem; font-weight: 700; color: rgb(var(--color-foreground)); text-underline-offset: .4rem; }
 
 .ces-b2__error { margin: 1rem 0 0; color: #b3261e; font-size: 1.35rem; }
-.ces-b2__add { margin-top: 1.6rem; }
+/* Dawn draws the button from these three variables — the fill, its opacity and
+   the text colour — so setting them keeps its border ring, focus outline and
+   disabled state intact instead of overriding them one by one. The scheme's
+   own alpha is 0, which is what left the button looking like an outline. */
+.ces-b2__add {
+  margin-top: 1.6rem;
+  --color-button: var(--ces-b2-accent-rgb, 29, 92, 92);
+  --alpha-button-background: 1;
+  --color-button-text: 255, 255, 255;
+}
+/* Dawn already has a shadow layer behind the button; borrowing it keeps the
+   hover shadow from clashing with the focus outline, which lives on the
+   element itself. */
+.ces-b2__add::before { transition: box-shadow .18s ease; }
+.ces-b2__add:not([disabled]):hover::before {
+  box-shadow: 0 .6rem 1.6rem -.3rem rgba(var(--ces-b2-accent-rgb, 29, 92, 92), .45);
+}
+/* Dawn's ring is drawn at its own radius, which does not match this button's,
+   so it would trace a second outline outside the teal. Its hover ring is
+   switched off too, leaving the shadow as the only hover cue. */
+.ces-b2__add::after { border-radius: 1rem; --border-opacity: 0; }
 
 @media screen and (max-width: 400px) {
   .ces-b2__gift-bar { gap: 1rem; padding: 1rem; }
