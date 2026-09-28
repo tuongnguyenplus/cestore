@@ -240,9 +240,10 @@
                     {%- endfor -%}
                     {%- for xrow in ces_extra_rows -%}
                       {%- assign xparts = xrow | split: '|' -%}
+                      {%- assign xicon = xparts[0] | strip | downcase -%}
                       {%- if xparts[1] != blank -%}
                         <span class="ces-b2__thumb">
-                          <span class="ces-b2__thumb-icon">{% render 'ces-bundle-icon', name: xparts[0] | strip | downcase %}</span>
+                          <span class="ces-b2__thumb-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
                           {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
                           {%- if xcents > 0 -%}
                             <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
@@ -288,9 +289,10 @@
                     {%- endfor -%}
                     {%- for xrow in ces_extra_rows -%}
                       {%- assign xparts = xrow | split: '|' -%}
+                      {%- assign xicon = xparts[0] | strip | downcase -%}
                       {%- if xparts[1] != blank -%}
                         <span class="ces-b2__gift-item">
-                          <span class="ces-b2__gift-icon">{% render 'ces-bundle-icon', name: xparts[0] | strip | downcase %}</span>
+                          <span class="ces-b2__gift-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
                           {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
                           {%- if xcents > 0 -%}
                             <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
