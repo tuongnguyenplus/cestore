@@ -1286,6 +1286,7 @@
         "video-3",
         "video-4"
       ],
+      "disabled": true,
       "settings": {
         "heading": "See How Cebeam™ Transforms Tired Eyes",
         "highlight": "Cebeam™",
