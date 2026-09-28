@@ -94,6 +94,7 @@
           assign gskey = 'tier_' | append: ces_i | append: '_gift_sub'
           assign glkey = 'tier_' | append: ces_i | append: '_gift_label'
           assign ftkey = 'tier_' | append: ces_i | append: '_foot'
+          assign ctakey = 'tier_' | append: ces_i | append: '_cta'
           assign frkey = 'tier_' | append: ces_i | append: '_free_products'
 
           if block.settings[pkey] != blank
@@ -171,6 +172,7 @@
               data-quantity="1"
               data-free-ids="{{ ces_free_ids | strip }}"
               data-price-label="{{ ces_v.price | money_with_currency | strip }}"
+              data-add-label="{{ block.settings[ctakey] | escape }}"
               {% unless ces_v.available %}data-unavailable="true"{% endunless %}
               {% if ces_checked %}checked{% endif %}
             >
@@ -324,7 +326,7 @@
   <p class="ces-b2__error" data-ces-bundle-error hidden></p>
 
   <button type="button" class="ces-b2__add ces-bundle__add button button--full-width button--primary" data-ces-bundle-add>
-    <span class="ces-bundle__add-label">{{ block.settings.add_label | default: 'ADD TO CART' }}</span>
+    <span class="ces-bundle__add-label" data-ces-bundle-label>{{ block.settings.add_label | default: 'Add to Cart' }}</span>
     <span class="ces-bundle__add-total" data-ces-bundle-total></span>
     <span class="ces-bundle__spinner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.3"/><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>
   </button>

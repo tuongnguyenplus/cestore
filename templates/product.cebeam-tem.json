@@ -322,7 +322,7 @@
             "accent_color": "#1d5c5c",
             "tier_count": 3,
             "default_tier": 2,
-            "add_label": "ADD TO CART",
+            "add_label": "Add to Cart",
             "open_cart_drawer": true,
             "onetime_label": "",
             "onetime_url": "",
@@ -415,7 +415,10 @@
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
-            "tier_4_foot": ""
+            "tier_4_foot": "",
+            "tier_1_cta": "Try the 7-Day Starter",
+            "tier_2_cta": "Start My 21-Day Reset",
+            "tier_3_cta": "Start My 45-Day Rebuild"
           }
         },
         "ces_bundle_8Rq63G": {
@@ -1623,7 +1626,7 @@
       "settings": {
         "target_id": "ces-app-price-slot",
         "reveal_id": "",
-        "button_label": "ADD TO CART",
+        "button_label": "Choose Your Routine",
         "show_image": true,
         "title": "",
         "rating_tenths": 44,

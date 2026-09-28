@@ -10,6 +10,9 @@ class CesBundle extends HTMLElement {
     this.addBtn = this.querySelector('[data-ces-bundle-add]');
     this.errorEl = this.querySelector('[data-ces-bundle-error]');
     this.totalEl = this.querySelector('[data-ces-bundle-total]');
+    this.labelEl = this.querySelector('[data-ces-bundle-label]');
+    // What the button says before any tier supplies its own wording.
+    this.defaultLabel = this.labelEl ? this.labelEl.textContent : '';
     this.radios = Array.from(this.querySelectorAll('.ces-bundle__radio'));
 
     this.radios.forEach((radio) => radio.addEventListener('change', () => this.sync()));
@@ -29,6 +32,7 @@ class CesBundle extends HTMLElement {
     });
     const radio = this.selected;
     if (radio && this.totalEl) this.totalEl.textContent = radio.dataset.priceLabel || '';
+    if (radio && this.labelEl) this.labelEl.textContent = radio.dataset.addLabel || this.defaultLabel;
     if (radio && this.addBtn) this.addBtn.disabled = radio.dataset.unavailable === 'true';
   }
 
