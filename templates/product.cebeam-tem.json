@@ -1642,6 +1642,251 @@
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
       }
+    },
+    "complaints": {
+      "type": "ces-experience-list",
+      "blocks": {
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "text": "Stays where you place it during normal upright activity."
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "text": "Dry micro-cone format—not a wet gel patch."
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "text": "Removes cleanly without a sticky film."
+          }
+        },
+        "item-4": {
+          "type": "item",
+          "settings": {
+            "text": "Individually sealed treatment pouches."
+          }
+        },
+        "item-5": {
+          "type": "item",
+          "settings": {
+            "text": "Designed for comfortable use when directions are followed."
+          }
+        },
+        "item-6": {
+          "type": "item",
+          "settings": {
+            "text": "Fits into a makeup routine after removal."
+          }
+        }
+      },
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3",
+        "item-4",
+        "item-5",
+        "item-6"
+      ],
+      "settings": {
+        "heading": "Designed around what people dislike about ordinary eye patches",
+        "subheading": "",
+        "color_scheme": "scheme-ces-gradient",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "comparison": {
+      "type": "ces-comparison-table",
+      "blocks": {
+        "ours-1": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Delivers actives below the skin barrier"
+          }
+        },
+        "ours-2": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Painless dissolving micro-cones"
+          }
+        },
+        "ours-3": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Dermatologist-tested & fragrance-free"
+          }
+        },
+        "ours-4": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "4 treatment nights a week, then 2 to maintain"
+          }
+        },
+        "ours-5": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "90-day money-back guarantee"
+          }
+        },
+        "ours-6": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Stays put overnight — no repositioning"
+          }
+        },
+        "ours-7": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Peels off clean — no sticky film"
+          }
+        },
+        "ours-8": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Individually sealed — fresh every pouch"
+          }
+        },
+        "ours-9": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Delivers actives — real, visible change"
+          }
+        },
+        "ours-10": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Skin sits smoother under makeup afterward"
+          }
+        },
+        "theirs-1": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Sits on top of the skin"
+          }
+        },
+        "theirs-2": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Needles, pain or downtime"
+          }
+        },
+        "theirs-3": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Fragrance & harsh fillers"
+          }
+        },
+        "theirs-4": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Daily routine required"
+          }
+        },
+        "theirs-5": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "No real guarantee"
+          }
+        },
+        "theirs-6": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Slides down or won't stay stuck"
+          }
+        },
+        "theirs-7": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Leaves a sticky residue"
+          }
+        },
+        "theirs-8": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Loose packs that dry out or arrive faulty"
+          }
+        },
+        "theirs-9": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "A cool feel for a minute, then nothing changes"
+          }
+        },
+        "theirs-10": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Leaves skin tacky under makeup"
+          }
+        }
+      },
+      "block_order": [
+        "ours-1",
+        "ours-2",
+        "ours-3",
+        "ours-4",
+        "ours-5",
+        "ours-6",
+        "ours-7",
+        "ours-8",
+        "ours-9",
+        "ours-10",
+        "theirs-1",
+        "theirs-2",
+        "theirs-3",
+        "theirs-4",
+        "theirs-5",
+        "theirs-6",
+        "theirs-7",
+        "theirs-8",
+        "theirs-9",
+        "theirs-10"
+      ],
+      "settings": {
+        "heading": "What sets Cebeam apart",
+        "subheading": "",
+        "image": "shopify://shop_images/44_1.webp",
+        "brand_label": "Cebeam",
+        "other_label": "Ordinary patches & creams",
+        "footnote": "<p>Right column reflects the most common complaints from reviews of ordinary eye patches and creams.</p>",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "limits": {
+      "type": "ces-who-for",
+      "settings": {
+        "heading": "Who it's for — and the one thing it can't change",
+        "subheading": "",
+        "yes_label": "What CEBEAM works on",
+        "yes_points": "Fluid and morning puffiness\nDark shadows and dullness\nThin, crepey skin and fine lines\nLost firmness in the under-eye",
+        "no_label": "What no patch can change",
+        "no_points": "Inherited fat pads that push forward — the kind visible in photos of you at 25\nDeep hollows set by bone structure",
+        "honest_line": "Those are a surgical issue no topical can move. If that's mostly you, keep your money — we'd rather lose the sale than be the fifth thing that let you down.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "guarantee": {
+      "type": "ces-bullet-cta",
+      "settings": {
+        "image": "shopify://shop_images/44_1.webp",
+        "image_position": "start",
+        "heading": "90-Day Money-Back Guarantee.",
+        "bullets": "<ul><li>Try it for a full 90 days</li><li>Keep the box even if it is not for you</li><li>No return shipping and no hassle</li></ul>",
+        "button_label": "Try Risk-Free Today",
+        "button_link": "#ces-bundle",
+        "button_footnote": "90-day money back guarantee",
+        "show_frame": true,
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -1654,8 +1899,12 @@
     "mechanism",
     "timeline",
     "howto",
+    "complaints",
+    "comparison",
+    "limits",
     "social",
     "reviews",
+    "guarantee",
     "faq",
     "didyouknow",
     "team",
