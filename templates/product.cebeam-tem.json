@@ -511,7 +511,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "shield",
-            "text": "90-day money-back guarantee",
+            "text": "<em>Estimated delivery date: 3-5 business days</em> &nbsp;",
             "standalone": true,
             "align": "center"
           }
