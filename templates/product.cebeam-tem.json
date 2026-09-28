@@ -1652,6 +1652,7 @@
     },
     "didyouknow": {
       "type": "ces-image-text-banner",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/sdf231c-4da8-b687-8b0e812e42ae.webp",
         "layout": "split",
