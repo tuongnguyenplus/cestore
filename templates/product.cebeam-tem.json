@@ -472,7 +472,11 @@
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
-            "tier_4_foot": ""
+            "tier_4_foot": "",
+            "meta_template": "[count] treatments · [unit]/treatment",
+            "tier_1_treatments": 4,
+            "tier_2_treatments": 12,
+            "tier_3_treatments": 24
           }
         },
         "ces_bundle_8Rq63G": {

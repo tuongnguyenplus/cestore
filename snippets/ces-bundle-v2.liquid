@@ -85,6 +85,7 @@
           assign bkey  = 'tier_' | append: ces_i | append: '_badge'
           assign stkey = 'tier_' | append: ces_i | append: '_subtitle'
           assign mtkey = 'tier_' | append: ces_i | append: '_meta'
+          assign tnkey = 'tier_' | append: ces_i | append: '_treatments'
           assign qtkey = 'tier_' | append: ces_i | append: '_quote'
           assign rlkey = 'tier_' | append: ces_i | append: '_role'
           assign pkey  = 'tier_' | append: ces_i | append: '_price'
@@ -118,6 +119,20 @@
               assign ces_free_ids = ces_free_ids | append: fp.first_available_variant.id | append: ','
             endif
           endfor
+
+          comment
+            The per-treatment figure is divided out of the variant's own price,
+            so it follows Shopify's presentment currency for each market and
+            cannot drift from what the customer is actually charged.
+          endcomment
+          assign ces_meta = block.settings[mtkey]
+          assign ces_treatments = block.settings[tnkey] | default: 0
+          if ces_treatments > 0
+            assign ces_unit_cents = ces_v.price | times: 1.0 | divided_by: ces_treatments | round
+            assign ces_unit = ces_unit_cents | money
+            assign ces_meta = block.settings.meta_template | default: '[count] treatments &middot; [unit]/treatment'
+            assign ces_meta = ces_meta | replace: '[count]', ces_treatments | replace: '[unit]', ces_unit | replace: '[total]', ces_price
+          endif
 
           comment
             Perks that are not products — express shipping, a warranty — cannot
@@ -200,10 +215,10 @@
             qtkey is historically named "quote"; it now carries the "Best for"
             line. The id is kept so existing theme settings are not orphaned.
           {%- endcomment -%}
-          {%- if block.settings[mtkey] != blank or block.settings[qtkey] != blank or block.settings[rlkey] != blank -%}
+          {%- if ces_meta != blank or block.settings[qtkey] != blank or block.settings[rlkey] != blank -%}
             <span class="ces-b2__ident">
-              {%- if block.settings[mtkey] != blank -%}
-                <span class="ces-b2__meta">{{ block.settings[mtkey] }}</span>
+              {%- if ces_meta != blank -%}
+                <span class="ces-b2__meta">{{ ces_meta }}</span>
               {%- endif -%}
               {%- if block.settings[qtkey] != blank -%}
                 <span class="ces-b2__bestfor">{{ block.settings[qtkey] }}</span>

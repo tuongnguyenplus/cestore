@@ -4245,6 +4245,13 @@
         },
         {
           "type": "text",
+          "id": "meta_template",
+          "label": "Treatments line format",
+          "info": "Used when a tier has a treatment count. [count] is that number, [unit] is the price of one treatment and [total] the tier price — both in the shopper's own currency.",
+          "default": "[count] treatments · [unit]/treatment"
+        },
+        {
+          "type": "text",
           "id": "gift_more_label",
           "label": "Free gift \"see details\" text",
           "info": "Shown with a down arrow under the gift thumbnails. Leave blank to hide it.",
@@ -4311,6 +4318,12 @@
           "id": "tier_1_meta",
           "label": "Treatments and cost",
           "info": "e.g. 12 Treatments · $5.41/Treatment"
+        },
+        {
+          "type": "number",
+          "id": "tier_1_treatments",
+          "label": "Treatments in this tier",
+          "info": "The tier price is divided by this to show the price per treatment, which then replaces the line above. Leave blank to type that line yourself."
         },
         {
           "type": "text",
@@ -4437,6 +4450,12 @@
           "info": "e.g. 12 Treatments · $5.41/Treatment"
         },
         {
+          "type": "number",
+          "id": "tier_2_treatments",
+          "label": "Treatments in this tier",
+          "info": "The tier price is divided by this to show the price per treatment, which then replaces the line above. Leave blank to type that line yourself."
+        },
+        {
           "type": "text",
           "id": "tier_2_quote",
           "label": "Treatment schedule",
@@ -4561,6 +4580,12 @@
           "info": "e.g. 12 Treatments · $5.41/Treatment"
         },
         {
+          "type": "number",
+          "id": "tier_3_treatments",
+          "label": "Treatments in this tier",
+          "info": "The tier price is divided by this to show the price per treatment, which then replaces the line above. Leave blank to type that line yourself."
+        },
+        {
           "type": "text",
           "id": "tier_3_quote",
           "label": "Treatment schedule",
@@ -4683,6 +4708,12 @@
           "id": "tier_4_meta",
           "label": "Treatments and cost",
           "info": "e.g. 12 Treatments · $5.41/Treatment"
+        },
+        {
+          "type": "number",
+          "id": "tier_4_treatments",
+          "label": "Treatments in this tier",
+          "info": "The tier price is divided by this to show the price per treatment, which then replaces the line above. Leave blank to type that line yourself."
         },
         {
           "type": "text",
