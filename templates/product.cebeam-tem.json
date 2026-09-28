@@ -323,6 +323,7 @@
             "tier_count": 3,
             "default_tier": 2,
             "add_label": "Add to Cart",
+            "after_add": "drawer",
             "open_cart_drawer": true,
             "onetime_label": "",
             "onetime_url": "",
@@ -335,6 +336,7 @@
             "tier_1_name": "7-Day Starter",
             "tier_1_subtitle": "For first-time users or newly noticeable puffiness",
             "tier_1_badge": "",
+            "tier_1_cta": "Try the 7-Day Starter",
             "tier_1_meta": "4 treatments · $9.99/treatment",
             "tier_1_quote": "4 treatments over 1 week",
             "tier_1_role": "Try the routine before committing",
@@ -355,6 +357,7 @@
             "tier_2_name": "21-Day Eye Reset™",
             "tier_2_subtitle": "For recurring puffiness & visible texture",
             "tier_2_badge": "MOST POPULAR",
+            "tier_2_cta": "Start My 21-Day Reset",
             "tier_2_meta": "12 treatments · $5.41/treatment",
             "tier_2_quote": "4 treatments a week for 3 weeks",
             "tier_2_role": "Recommended full routine",
@@ -377,6 +380,7 @@
             "tier_3_name": "45-Day Eye Rebuild™",
             "tier_3_subtitle": "For stubborn puffiness & more noticeable texture",
             "tier_3_badge": "BEST VALUE",
+            "tier_3_cta": "Start My 45-Day Rebuild",
             "tier_3_meta": "24 treatments · $4.16/treatment",
             "tier_3_quote": "4 treatments a week for 6 weeks",
             "tier_3_role": "Some concerns need a longer runway",
@@ -400,6 +404,7 @@
             "tier_4_name": "",
             "tier_4_subtitle": "",
             "tier_4_badge": "",
+            "tier_4_cta": "",
             "tier_4_meta": "",
             "tier_4_quote": "",
             "tier_4_role": "",
@@ -415,11 +420,7 @@
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
-            "tier_4_foot": "",
-            "tier_1_cta": "Try the 7-Day Starter",
-            "tier_2_cta": "Start My 21-Day Reset",
-            "tier_3_cta": "Start My 45-Day Rebuild",
-            "after_add": "drawer"
+            "tier_4_foot": ""
           }
         },
         "ces_bundle_8Rq63G": {
@@ -834,43 +835,43 @@
         "avatar_item_dXtLe6": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/0ad572b7-6bf6-47b3-a74b-33ca109deec7.png"
+            "image": "shopify://shop_images/sdf231c-4da8-b687-8b0e812e42ae_55e98de9-b3ce-4a7e-a361-d5fe486fbefa.webp"
           }
         },
         "avatar-1": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/5aaf758b-0c8c-4a73-9541-e7499f30d030.png"
+            "image": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.webp"
           }
         },
         "avatar-2": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/a27678e0-e592-4a10-bd64-a1cd33b9cd67.png"
+            "image": "shopify://shop_images/65926863-1770-41e5-af1a-b9f94e34f9c0.webp"
           }
         },
         "avatar-3": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png"
+            "image": "shopify://shop_images/7962c422-b856-4238-b159-0476f7c688f8.webp"
           }
         },
         "avatar-4": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/65926863-1770-41e5-af1a-b9f94e34f9c0.png"
+            "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.webp"
           }
         },
         "avatar-5": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/cfe0ee7e-afe7-425b-bdd2-b42d6345e5b6.png"
+            "image": "shopify://shop_images/8f8ae381-9b03-442d-91ab-802f03c5e9c7.webp"
           }
         },
         "avatar-6": {
           "type": "avatar_item",
           "settings": {
-            "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png"
+            "image": "shopify://shop_images/80c4710a-438b-40dd-90f8-ac4a2416dedf.webp"
           }
         },
         "review-2": {
