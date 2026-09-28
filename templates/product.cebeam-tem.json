@@ -1366,15 +1366,37 @@
             "image": "shopify://shop_images/80c4710a-438b-40dd-90f8-ac4a2416dedf.webp"
           }
         },
+        "review-4": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>Overall a good product for the price. Noticed an immediate deflation and reduced puffiness. After a few uses noticed a slight reduction in dark circles. They stay on nicely overnight. You have to press on them to get them to stick and have the micro needles monitor the skin (doesn't hurt) and then after about 45min they are adhered well to the skin and stay on.<br/><br/></p>",
+            "name": "Susan A.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
+            "rating": 3
+          }
+        },
+        "review-5": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>I can confirm it doesn't hurt at all (I was worried with the word microneedles). I have sensitive skin and zero irritation. Visible results in under 2 weeks for me. I look less 'tired' and it clearly changes your whole face.<br/><br/></p>",
+            "name": "Maya D.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/Alycia_Wanat-Hawthorne_Cropped.webp",
+            "rating": 5
+          }
+        },
         "review-2": {
           "type": "review_item",
           "settings": {
-            "review": "<p>I have tried so many eye masks, and these are definitely my favorite! They have an instant cooling affect, brighten tired eyes and feel so hydrating. They are at an incredible price point for the quality and amount you get in each pack. Absolutely my go to so I can feel alive after my overnight shifts !!<br/><br/></p>",
-            "name": "Michael R.",
+            "review": "<p>I’m in my 40s and started noticing fine lines under my eyes, and these patches have been a lifesaver! The peptides in them really boost collagen, and after 2 months of consistent use, my lines are way smoother. My makeup even applies better now!<br/><br/></p>",
+            "name": "Emma R.",
             "meta": "Verified Buyer",
             "verified": true,
-            "avatar": "shopify://shop_images/65926863-1770-41e5-af1a-b9f94e34f9c0.webp",
-            "rating": 5
+            "avatar": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "rating": 4
           }
         },
         "review-1": {
@@ -1398,28 +1420,6 @@
             "avatar": "shopify://shop_images/GMYREK_WEBSITEBIO.png",
             "rating": 5
           }
-        },
-        "review-5": {
-          "type": "review_item",
-          "settings": {
-            "review": "<p>I can confirm it doesn't hurt at all (I was worried with the word microneedles). I have sensitive skin and zero irritation. Visible results in under 2 weeks for me. I look less 'tired' and it clearly changes your whole face.<br/><br/></p>",
-            "name": "James D.",
-            "meta": "Verified Buyer",
-            "verified": true,
-            "avatar": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.png",
-            "rating": 5
-          }
-        },
-        "review-4": {
-          "type": "review_item",
-          "settings": {
-            "review": "<p>Way better than the $120 eye contour cream I had been using for years. These patches deliver real results. The puffiness around my eyes has almost gone.<br/><br/></p>",
-            "name": "Susan A.",
-            "meta": "Verified Buyer",
-            "verified": true,
-            "avatar": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
-            "rating": 5
-          }
         }
       },
       "block_order": [
@@ -1433,11 +1433,11 @@
         "avatar-4",
         "avatar-5",
         "avatar-6",
+        "review-4",
+        "review-5",
         "review-2",
         "review-1",
-        "review-3",
-        "review-5",
-        "review-4"
+        "review-3"
       ],
       "settings": {
         "heading": "What Customers Are Saying",
