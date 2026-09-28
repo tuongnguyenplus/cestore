@@ -76,10 +76,10 @@
           "type": "reason",
           "settings": {
             "number_label": "",
-            "title": "Because surgery is a permanent answer to a reversible problem",
-            "text": "<p>Lower-lid blepharoplasty runs $3,000–$6,000, needs one to two weeks of visible recovery, and carries the risks any surgery does. It is the right call for some people. For fluid, thin skin and lost firmness — the things most under-eyes are actually dealing with — it is a very large hammer.</p>",
-            "pull_quote": "“I nearly booked the surgery. I'm glad I tried this first.”",
-            "pull_quote_author": "James D., verified customer",
+            "title": "Because you were told the only real fix was a procedure",
+            "text": "<p>Lower-lid surgery runs $3,000–$6,000 and a week or two of staying home while it settles. Filler means a needle beside your eye, again every six months, indefinitely. Plenty of women choose that and are glad they did.</p><p>But most of what you see in the mirror is not structural. It is fluid that pools overnight, skin that has thinned, and collagen that has slowed. Those three respond to being treated. They do not need to be operated on.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
             "show_benefits": false,
             "benefits": ""
           }
@@ -88,8 +88,8 @@
           "type": "reason",
           "settings": {
             "number_label": "",
-            "title": "Because creams were never going to reach the problem",
-            "text": "<p>A cream works on the surface, where most of it evaporates. The actives that matter for shadows, puffiness and crepey texture have to get <strong>below</strong> the skin barrier — and a barrier is exactly what the stratum corneum is designed to be. That is a delivery problem, not an ingredient problem.</p>",
+            "title": "Because the creams in your drawer were never reaching it",
+            "text": "<p>There are probably two or three of them. You used one every night for a month, saw nothing, and quietly wondered whether the problem was you.</p><p>It wasn't. The skin under your eye is about half a millimetre thick, and its outer layer exists to keep things out. A cream sits on top of that layer, and most of it evaporates before morning. The ingredients were often perfectly good. They simply never arrived.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
             "show_benefits": false,
@@ -100,20 +100,20 @@
           "type": "reason",
           "settings": {
             "number_label": "",
-            "title": "Because dissolving micro-cones solve the delivery problem",
-            "text": "<p>Each patch is lined with hundreds of self-dissolving micro-cones made from the actives themselves. They open a direct path through the barrier without wounding living tissue, then dissolve overnight and release where puffiness and dark circles form. No injections, no metal needles, no downtime.</p>",
+            "title": "Because these dissolve into the skin instead of sitting on it",
+            "text": "<p>The word microneedle puts people off, so here is exactly what happens. Each patch is lined with hundreds of cones too small to feel, made from the actives themselves rather than metal. They pass the outer layer, then dissolve through the night and release where the puffiness and shadows form.</p><p>Most women describe it as a patch that feels slightly firm for a minute. That is all.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
             "show_benefits": true,
-            "benefits": "No injections. No metal needles. No downtime.\nDissolves overnight — nothing on your face by breakfast.\nDermatologist-tested and made in a GMP-certified facility.\nIndividually sealed pouches — a fresh treatment every time."
+            "benefits": "No injections. No metal needles. No downtime.\nGone by breakfast — nothing on your face during the day.\nDermatologist-tested, made in a GMP-certified facility.\nIndividually sealed — a fresh, clean treatment every time."
           }
         },
         "r4": {
           "type": "reason",
           "settings": {
             "number_label": "",
-            "title": "Because the routine survives contact with real life",
-            "text": "<p>One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it. Fifteen seconds before bed, peeled off by breakfast, nothing on your face during the day. A routine only works if you actually keep doing it.</p>",
+            "title": "Because it has to survive an ordinary week, not a perfect one",
+            "text": "<p>Fifteen seconds before bed. One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it.</p><p>They stay where you put them through a night of turning over, and they lift off clean in the morning — no tacky film to wash off before your moisturiser, no half-peeled patch on the pillow. The routine you actually keep is the only one that does anything.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
             "show_benefits": false,
@@ -124,8 +124,8 @@
           "type": "reason",
           "settings": {
             "number_label": "",
-            "title": "Because you can judge it with your own eyes, at no risk",
-            "text": "<p>The visible reset lands around week three. You get the full 90 days to decide — box open, patches used — and if your under-eyes do not look different to you, you get your money back and you keep the box.</p>",
+            "title": "Because you shouldn't have to take our word for it",
+            "text": "<p>Before your first treatment, take a photo in your bathroom light and put it away. Memory is a poor judge of your own face; a photo from three weeks ago is not.</p><p>You have the full 90 days to decide — box open, patches used. If your eyes do not look different to you, write to us and we will refund you, and you keep the box.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
             "show_benefits": false,
@@ -141,10 +141,10 @@
         "r5"
       ],
       "settings": {
-        "heading": "",
+        "heading": "Five reasons this works when the jars didn't",
         "subheading": "",
         "number_prefix": "Reason",
-        "cta_label": "See today's price →",
+        "cta_label": "Choose your routine →",
         "cta_url": "#ces-bundle",
         "color_scheme": "scheme-1",
         "padding_top": 24,
