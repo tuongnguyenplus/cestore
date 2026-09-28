@@ -1738,6 +1738,7 @@
         "icon-3",
         "icon-4"
       ],
+      "disabled": true,
       "settings": {
         "heading": "One Patch. Everything Your Eyes Need.",
         "highlight_words": "",
@@ -1813,6 +1814,7 @@
         "pair_VcLGTX",
         "p2"
       ],
+      "disabled": true,
       "settings": {
         "heading": "They thought nothing would touch it either",
         "subheading": "What consistent use looks like, photographed the same way each time.",
@@ -1832,7 +1834,7 @@
         "p1": {
           "type": "marquee_item",
           "settings": {
-            "text": "ORDER TODAY · SHIPS FROM THE US",
+            "text": "ORDER TODAY · FREE DELIVERY",
             "icon": ""
           }
         },
