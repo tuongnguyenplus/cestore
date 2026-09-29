@@ -259,8 +259,8 @@
           "settings": {
             "rating_tenths": 45,
             "text": "Rated <strong>4.8 Excellent</strong> | Over",
-            "enable_counter": true,
-            "sold_count": 255127,
+            "enable_counter": false,
+            "sold_count": 127000,
             "sold_suffix": "sold",
             "count_step_1": 1,
             "count_step_2": 3,
