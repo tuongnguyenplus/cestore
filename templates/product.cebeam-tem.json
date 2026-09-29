@@ -2021,6 +2021,105 @@
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
       }
+    },
+    "problem-solution": {
+      "type": "ces-problem-solution",
+      "blocks": {
+        "problem-1": {
+          "type": "problem",
+          "settings": {
+            "icon": "cross-circle",
+            "text": "Temporary fixes that fade quickly"
+          }
+        },
+        "problem-2": {
+          "type": "problem",
+          "settings": {
+            "icon": "moon-zzz",
+            "text": "Tired-looking eyes even after rest"
+          }
+        },
+        "problem-3": {
+          "type": "problem",
+          "settings": {
+            "icon": "depuff",
+            "text": "Visible puffiness and under-eye shadows"
+          }
+        },
+        "problem-4": {
+          "type": "problem",
+          "settings": {
+            "icon": "stopwatch",
+            "text": "Heaviness around the eyes after long days"
+          }
+        },
+        "problem-5": {
+          "type": "problem",
+          "settings": {
+            "icon": "skin-aging",
+            "text": "Skin looks dull or uneven in low light"
+          }
+        },
+        "solution-6": {
+          "type": "solution",
+          "settings": {
+            "icon": "patch-pair",
+            "text": "Delivers actives deeper with microneedle tech"
+          }
+        },
+        "solution-7": {
+          "type": "solution",
+          "settings": {
+            "icon": "check-circle",
+            "text": "Designed for simple, consistent use"
+          }
+        },
+        "solution-8": {
+          "type": "solution",
+          "settings": {
+            "icon": "drop",
+            "text": "Supports smoother, more hydrated skin appearance"
+          }
+        },
+        "solution-9": {
+          "type": "solution",
+          "settings": {
+            "icon": "brighten",
+            "text": "Helps eyes look fresher and more awake"
+          }
+        },
+        "solution-10": {
+          "type": "solution",
+          "settings": {
+            "icon": "leaf",
+            "text": "Clean, targeted formulation"
+          }
+        }
+      },
+      "block_order": [
+        "problem-1",
+        "problem-2",
+        "problem-3",
+        "problem-4",
+        "problem-5",
+        "solution-6",
+        "solution-7",
+        "solution-8",
+        "solution-9",
+        "solution-10"
+      ],
+      "settings": {
+        "eyebrow": "Refresh your look. Naturally.",
+        "heading": "Targeted Under-Eye Care That Works With Your Skin",
+        "problems_label": "Your Problems",
+        "solutions_label": "Our Solutions",
+        "before_alt": "Before",
+        "after_alt": "After",
+        "transform_text": "Within <strong>3 Weeks</strong>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -2028,6 +2127,7 @@
     "editorial",
     "recognition",
     "reasons",
+    "problem-solution",
     "badges",
     "main",
     "results",

@@ -33,6 +33,14 @@
   .ces-baft__stars-track{display:block;color:rgba(var(--color-foreground),.2)}
   .ces-baft__stars-fill{position:absolute;top:0;left:0;width:var(--ces-rating-pct,100%);overflow:hidden;color:#f5b301}
   .ces-baft__stars svg{display:inline-block;vertical-align:top}
+  /* Trustpilot style: the star is knocked out of a solid tile, so the tile
+     carries the colour and the glyph stays white in both layers. */
+  .ces-baft__stars--trustpilot svg{padding:.3rem;border-radius:.2rem;box-sizing:content-box}
+  .ces-baft__stars--trustpilot .ces-baft__stars-track{color:#fff}
+  .ces-baft__stars--trustpilot .ces-baft__stars-fill{color:#fff}
+  .ces-baft__stars--trustpilot .ces-baft__stars-track svg{background:#dcdce6}
+  .ces-baft__stars--trustpilot .ces-baft__stars-fill svg{background:#00b67a}
+  .ces-baft__stars--trustpilot svg + svg{margin-left:.3rem}
   .ces-baft__quote{margin:0 0 1rem;padding:0;border:0;font-size:1.6rem;line-height:1.5;font-style:italic}
   .ces-baft__name{margin:0;font-weight:700;font-size:1.6rem;line-height:1.35}
   .ces-baft__meta{margin:.6rem 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;font-size:1.35rem;line-height:1.4;color:var(--ces-muted)}
@@ -91,7 +99,7 @@
                     <div class="ces-baft__cap">
                       {%- if baft_rating > 0 -%}
                         <span
-                          class="ces-baft__stars"
+                          class="ces-baft__stars ces-baft__stars--{{ section.settings.star_style | default: 'classic' }}"
                           style="--ces-rating-pct: {{ baft_pct }}%;"
                           role="img"
                           aria-label="{{ baft_stars }} out of 5 stars"
@@ -160,6 +168,16 @@
     { "type": "text", "id": "before_label", "label": "Before label", "default": "Before" },
     { "type": "text", "id": "after_label", "label": "After label", "default": "After" },
     { "type": "text", "id": "verified_label", "label": "Verified badge text", "default": "Verified customer" },
+    {
+      "type": "select",
+      "id": "star_style",
+      "label": "Star style",
+      "options": [
+        { "value": "classic", "label": "Gold stars" },
+        { "value": "trustpilot", "label": "Green tiles (Trustpilot style)" }
+      ],
+      "default": "classic"
+    },
     { "type": "range", "id": "columns", "min": 1, "max": 3, "step": 1, "label": "Cards per view (desktop)", "info": "Mobile always shows one card and swipes sideways.", "default": 2 },
     { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "Real customers, unretouched, shared with permission. Individual results vary." },
     { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },

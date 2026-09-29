@@ -1,0 +1,232 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign ps_problems = section.blocks | where: 'type', 'problem'
+  assign ps_solutions = section.blocks | where: 'type', 'solution'
+  assign ps_has_transform = false
+  if section.settings.before_image != blank and section.settings.after_image != blank
+    assign ps_has_transform = true
+  endif
+-%}
+
+{%- style -%}
+  .ces-ps{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-ps__eyebrow{display:inline-block;margin:0 auto 1.6rem;padding:.7rem 1.6rem;border-radius:.6rem;
+    background:rgba(var(--color-foreground),.07);font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+  .ces-ps__head{text-align:center}
+  /* The two columns stay side by side at every width, as the reference does —
+     reading them as a pair is the whole point of the section. */
+  .ces-ps__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.4rem}
+  .ces-ps__col{padding:1.6rem 1.4rem;border-radius:1.4rem;border:.1rem solid var(--ces-border-color);background:rgba(var(--color-foreground),.04);min-width:0}
+  /* The solution column is the one being argued for, so it carries the accent
+     and a soft halo; the problem column stays recessive. */
+  .ces-ps__col--solution{border-color:var(--ces-accent);background:rgba(var(--color-foreground),.06);
+    box-shadow:0 0 0 .1rem var(--ces-accent), 0 1.2rem 4rem -1rem rgba(var(--ces-accent-rgb,29,92,92),.45)}
+  .ces-ps__col-title{margin:0 0 1.4rem;font-size:1.6rem;font-weight:700;line-height:1.3}
+  .ces-ps__list{margin:0;padding:0;list-style:none;display:grid;gap:1.2rem}
+  .ces-ps__item{display:flex;align-items:flex-start;gap:.9rem;font-size:1.45rem;line-height:1.45;overflow-wrap:break-word}
+  .ces-ps__icon{flex:0 0 auto;display:inline-flex;width:1.7rem;height:1.7rem;margin-top:.2rem}
+  .ces-ps__icon svg{width:100%;height:100%}
+  .ces-ps__col--problem .ces-ps__icon{color:#d64545}
+  .ces-ps__col--solution .ces-ps__icon{color:var(--ces-accent)}
+
+  /* One row at every width: stacked, the pair stops reading as a before and an
+     after and just becomes two photographs. */
+  .ces-ps__transform{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:nowrap;margin-top:2.8rem}
+  .ces-ps__shot{flex:1 1 0;min-width:0;max-width:12rem;margin:0}
+  .ces-ps__shot img{width:100%;height:auto;display:block;border-radius:1rem}
+  .ces-ps__arrow{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+  .ces-ps__within{font-size:1.4rem;line-height:1.3}
+  .ces-ps__within strong{font-style:italic}
+  .ces-ps__arrow svg{width:4rem;height:1.2rem;color:rgb(var(--color-foreground))}
+  @media screen and (min-width:750px){
+    .ces-ps__grid{gap:2.4rem;margin-top:2.8rem}
+    .ces-ps__col{padding:2.4rem}
+    .ces-ps__col-title{margin-bottom:1.8rem;font-size:1.8rem}
+    .ces-ps__list{gap:1.4rem}
+    .ces-ps__item{gap:1.2rem;font-size:1.6rem}
+    .ces-ps__icon{width:2rem;height:2rem;margin-top:.1rem}
+    .ces-ps__shot{max-width:16rem}
+    .ces-ps__transform{gap:2.4rem;margin-top:3.2rem}
+    .ces-ps__within{font-size:1.7rem}
+    .ces-ps__arrow svg{width:6.4rem;height:1.4rem}
+  }
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-ps ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+      <div class="ces-ps__head">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="ces-ps__eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="ces-ps__grid">
+      {%- if ps_problems.size > 0 -%}
+        <div class="ces-ps__col ces-ps__col--problem">
+          {%- if section.settings.problems_label != blank -%}
+            <p class="ces-ps__col-title">{{ section.settings.problems_label }}</p>
+          {%- endif -%}
+          <ul class="ces-ps__list" role="list">
+            {%- for block in ps_problems -%}
+              {%- if block.settings.text != blank -%}
+                <li class="ces-ps__item" {{ block.shopify_attributes }}>
+                  <span class="ces-ps__icon" aria-hidden="true">
+                    {% render 'ces-icon', icon: block.settings.icon %}
+                  </span>
+                  <span>{{ block.settings.text }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if ps_solutions.size > 0 -%}
+        <div class="ces-ps__col ces-ps__col--solution">
+          {%- if section.settings.solutions_label != blank -%}
+            <p class="ces-ps__col-title">{{ section.settings.solutions_label }}</p>
+          {%- endif -%}
+          <ul class="ces-ps__list" role="list">
+            {%- for block in ps_solutions -%}
+              {%- if block.settings.text != blank -%}
+                <li class="ces-ps__item" {{ block.shopify_attributes }}>
+                  <span class="ces-ps__icon" aria-hidden="true">
+                    {% render 'ces-icon', icon: block.settings.icon %}
+                  </span>
+                  <span>{{ block.settings.text }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if ps_has_transform -%}
+      <div class="ces-ps__transform">
+        <figure class="ces-ps__shot">
+          <img src="{{ section.settings.before_image | image_url: width: 480 }}" alt="{{ section.settings.before_alt | escape }}" loading="lazy">
+        </figure>
+        <div class="ces-ps__arrow">
+          {%- if section.settings.transform_text != blank -%}
+            <span class="ces-ps__within">{{ section.settings.transform_text }}</span>
+          {%- endif -%}
+          <svg viewBox="0 0 64 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 7h60M54 1l7 6-7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <figure class="ces-ps__shot">
+          <img src="{{ section.settings.after_image | image_url: width: 480 }}" alt="{{ section.settings.after_alt | escape }}" loading="lazy">
+        </figure>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="ces-disclaimer">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Problem / Solution",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Refresh your look. Naturally." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Targeted Under-Eye Care That Works With Your Skin" },
+    { "type": "text", "id": "problems_label", "label": "Left column title", "default": "Your Problems" },
+    { "type": "text", "id": "solutions_label", "label": "Right column title", "default": "Our Solutions" },
+    { "type": "header", "content": "Before and after strip" },
+    { "type": "paragraph", "content": "Shown only when both images are set." },
+    { "type": "image_picker", "id": "before_image", "label": "Before image" },
+    { "type": "text", "id": "before_alt", "label": "Before image description", "default": "Before" },
+    { "type": "image_picker", "id": "after_image", "label": "After image" },
+    { "type": "text", "id": "after_alt", "label": "After image description", "default": "After" },
+    { "type": "text", "id": "transform_text", "label": "Text between the images", "info": "Wrap words in <strong> to italicise them.", "default": "Within <strong>3 Weeks</strong>" },
+    { "type": "textarea", "id": "footnote", "label": "Footnote" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "problem",
+      "name": "Problem",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "cross-circle", "label": "Cross" },
+            { "value": "info", "label": "Info" },
+            { "value": "question-mark", "label": "Question" },
+            { "value": "stopwatch", "label": "Stopwatch" },
+            { "value": "eye", "label": "Eye" },
+            { "value": "depuff", "label": "Puffiness" },
+            { "value": "skin-aging", "label": "Skin ageing" },
+            { "value": "moon-zzz", "label": "Sleep" },
+            { "value": "inflammation", "label": "Inflammation" }
+          ],
+          "default": "cross-circle"
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "Temporary fixes that fade quickly" }
+      ]
+    },
+    {
+      "type": "solution",
+      "name": "Solution",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "check-circle", "label": "Check" },
+            { "value": "patch-pair", "label": "Microneedle patch" },
+            { "value": "drop", "label": "Hydration" },
+            { "value": "brighten", "label": "Brighten" },
+            { "value": "eye-lift", "label": "Lift" },
+            { "value": "smooth", "label": "Smooth" },
+            { "value": "moon-zzz", "label": "Overnight" },
+            { "value": "leaf", "label": "Clean formula" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "sparkle", "label": "Sparkle" }
+          ],
+          "default": "check-circle"
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "Delivers actives deeper with microneedle tech" }
+      ]
+    }
+  ],
+  "max_blocks": 14,
+  "presets": [
+    {
+      "name": "CES Problem / Solution",
+      "blocks": [
+        { "type": "problem", "settings": { "icon": "cross-circle", "text": "Temporary fixes that fade quickly" } },
+        { "type": "problem", "settings": { "icon": "moon-zzz", "text": "Tired-looking eyes even after rest" } },
+        { "type": "problem", "settings": { "icon": "depuff", "text": "Visible puffiness and under-eye shadows" } },
+        { "type": "problem", "settings": { "icon": "stopwatch", "text": "Heaviness around the eyes after long days" } },
+        { "type": "problem", "settings": { "icon": "skin-aging", "text": "Skin looks dull or uneven in low light" } },
+        { "type": "solution", "settings": { "icon": "patch-pair", "text": "Delivers actives deeper with microneedle tech" } },
+        { "type": "solution", "settings": { "icon": "check-circle", "text": "Designed for simple, consistent use" } },
+        { "type": "solution", "settings": { "icon": "drop", "text": "Supports smoother, more hydrated skin appearance" } },
+        { "type": "solution", "settings": { "icon": "brighten", "text": "Helps eyes look fresher and more awake" } },
+        { "type": "solution", "settings": { "icon": "leaf", "text": "Clean, targeted formulation" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
