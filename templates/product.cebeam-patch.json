@@ -381,7 +381,15 @@
             "onetime_label": "",
             "onetime_url": "",
             "sub_note": "",
-            "trust_line": "Free Delivery · 90-Day Money-back Guarantee",
+            "show_shipping": true,
+            "ship_position": "above",
+            "delivery_text": "Ships by",
+            "delivery_days": 1,
+            "date_format": "%b. %-d",
+            "delivery_icon": "🟢",
+            "origin_text": "USA warehouse",
+            "origin_icon": "us",
+            "trust_line": "",
             "meta_template": "[count] treatments · [unit]/treatment",
             "gift_more_label": "See details",
             "gift_sub_mode": "manual",
@@ -477,15 +485,7 @@
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
-            "tier_4_foot": "",
-            "show_shipping": true,
-            "ship_position": "above",
-            "delivery_text": "Ships by",
-            "delivery_days": 1,
-            "date_format": "%b. %-d",
-            "delivery_icon": "🟢",
-            "origin_text": "Free Delivery",
-            "origin_icon": ""
+            "tier_4_foot": ""
           }
         },
         "ces_bundle_8Rq63G": {
