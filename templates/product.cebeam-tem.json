@@ -112,6 +112,7 @@
         "r3",
         "r4"
       ],
+      "disabled": true,
       "settings": {
         "heading": "If you've started noticing this, it isn't just tiredness",
         "subheading": "",
