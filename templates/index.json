@@ -55,6 +55,7 @@
       "settings": {
         "image": "shopify://shop_images/4fd34b97-6ec3-4ec4-82de-4e2f4d6f124a.png",
         "layout": "split",
+        "image_shape": "auto",
         "text_position": "start",
         "overlay_opacity": 55,
         "eyebrow": "OVER 255,000 PATCHES WORN",
@@ -62,7 +63,7 @@
         "heading": "Your Under-Eyes Changed. Your Routine Didn’t.",
         "text": "<p>Dissolving microneedle patches that reach the bags, shadows and fine lines a cream can’t — delivered below the surface, painless, two nights a week. No needles, no downtime.*</p>",
         "button_label": "Shop now",
-        "button_link": "/collections/all",
+        "button_link": "shopify://products/microneedle-patches",
         "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 0,
@@ -77,6 +78,7 @@
           "settings": {
             "icon_text": "",
             "icon": "sparkle",
+            "icon_color": "",
             "heading": "Dark Circles & Shadows",
             "text": ""
           }
@@ -86,6 +88,7 @@
           "settings": {
             "icon_text": "",
             "icon": "check-circle",
+            "icon_color": "",
             "heading": "Under-Eye Bags & Puffiness",
             "text": ""
           }
@@ -95,6 +98,7 @@
           "settings": {
             "icon_text": "",
             "icon": "vitality",
+            "icon_color": "",
             "heading": "Fine Lines & Crepey Texture",
             "text": ""
           }
@@ -104,6 +108,7 @@
           "settings": {
             "icon_text": "",
             "icon": "skin-aging",
+            "icon_color": "",
             "heading": "Tired-Looking Eyes",
             "text": ""
           }
@@ -137,7 +142,7 @@
         "heading": "The Two-Night-a-Week Treatment",
         "bullets": "<ul><li>Dark circles</li><li>Under-eye bags</li><li>Puffiness</li><li>Fine lines</li><li>Crepey texture</li></ul>",
         "button_label": "Shop the patches",
-        "button_link": "/collections/all",
+        "button_link": "https://cebeam.com/products/microneedle-patches",
         "button_footnote": "90-day money-back guarantee",
         "show_frame": true,
         "color_scheme": "scheme-1",
@@ -153,6 +158,7 @@
           "settings": {
             "icon_text": "",
             "icon": "sparkle",
+            "icon_color": "",
             "heading": "Hyaluronic Acid",
             "text": "Holds water in the tissue — the immediate effect."
           }
@@ -162,6 +168,7 @@
           "settings": {
             "icon_text": "",
             "icon": "molecule",
+            "icon_color": "",
             "heading": "Niacinamide",
             "text": "Works on tone and barrier strength over weeks."
           }
@@ -171,6 +178,7 @@
           "settings": {
             "icon_text": "",
             "icon": "leaf",
+            "icon_color": "",
             "heading": "Peptides",
             "text": "Signal toward firmness — the slower work."
           }
@@ -180,6 +188,7 @@
           "settings": {
             "icon_text": "",
             "icon": "shield",
+            "icon_color": "",
             "heading": "Collagen",
             "text": "Supports firmer-looking under-eyes."
           }
@@ -189,6 +198,7 @@
           "settings": {
             "icon_text": "",
             "icon": "cell-defense",
+            "icon_color": "",
             "heading": "Vitamin C",
             "text": "Targets dullness; dried, so it won’t oxidise."
           }
@@ -198,6 +208,7 @@
           "settings": {
             "icon_text": "",
             "icon": "heart-plus",
+            "icon_color": "",
             "heading": "Retinol",
             "text": "Smooths fine lines and texture."
           }
@@ -207,6 +218,7 @@
           "settings": {
             "icon_text": "",
             "icon": "leaf",
+            "icon_color": "",
             "heading": "Ceramides",
             "text": "Rebuild the barrier that thins with age."
           }
@@ -216,6 +228,7 @@
           "settings": {
             "icon_text": "",
             "icon": "sparkle",
+            "icon_color": "",
             "heading": "Microdart Delivery",
             "text": "Starts below the barrier, not on top of it."
           }
@@ -325,6 +338,7 @@
         "q1": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "How is this different from an eye cream?",
             "answer": "<p>A cream sits on the skin’s outer barrier, so most of it never gets far. The dissolving micro-cones start <strong>below</strong> that barrier and deliver the actives where they can work. It’s a delivery difference, not a stronger cream.</p>",
             "open": true
@@ -333,6 +347,7 @@
         "q2": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Does it hurt?",
             "answer": "<p>No. A light prickle for a minute while the cones soften, then you stop noticing. They’re far too short to reach a nerve or draw blood.</p>",
             "open": false
@@ -341,6 +356,7 @@
         "q3": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "How long until I see results?",
             "answer": "<p>A fresher look the next morning is mostly hydration. The changes that hold to bags, shadows and lines build over several weeks of consistent use.*</p>",
             "open": false
