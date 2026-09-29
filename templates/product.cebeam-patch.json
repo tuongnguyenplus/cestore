@@ -477,7 +477,15 @@
             "tier_4_gift_title": "",
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
-            "tier_4_foot": ""
+            "tier_4_foot": "",
+            "show_shipping": true,
+            "ship_position": "above",
+            "delivery_text": "Ships by",
+            "delivery_days": 1,
+            "date_format": "%b. %-d",
+            "delivery_icon": "🟢",
+            "origin_text": "Free Delivery",
+            "origin_icon": ""
           }
         },
         "ces_bundle_8Rq63G": {
