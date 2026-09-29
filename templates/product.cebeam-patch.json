@@ -392,7 +392,7 @@
             "trust_line": "",
             "meta_template": "[count] treatments · [unit]/treatment",
             "gift_more_label": "See details",
-            "gift_sub_mode": "manual",
+            "gift_sub_mode": "auto",
             "gift_sub_template": "[value] value · [count] [items]",
             "tier_1_variant": "47849253961877",
             "tier_1_name": "7-Day Starter",
