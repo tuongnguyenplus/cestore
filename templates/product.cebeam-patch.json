@@ -1,0 +1,2052 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "bar": {
+      "type": "ces-announcement-marquee",
+      "blocks": {
+        "p1": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "90-DAY GUARANTEE",
+            "icon": ""
+          }
+        },
+        "p2": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "3-5 Days Delivery",
+            "icon": ""
+          }
+        },
+        "p3": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "text": "67% Off",
+            "icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "speed": 35,
+        "direction": "left",
+        "pause_on_hover": true,
+        "separator": "✦",
+        "icon_style": "none",
+        "font_size": 13,
+        "padding": 10
+      }
+    },
+    "editorial": {
+      "type": "ces-editorial-hero",
+      "settings": {
+        "eyebrow": "HEALTH & BEAUTY DESK",
+        "heading": "5 Reasons 100,000+ Women Over 45 Are Choosing Microneedle Patches for Under-Eye Bags and Puffiness",
+        "subheading": "rom morning puffiness and stubborn under-eye bags to creams that fall short, here’s what makes dissolving microneedle patches worth a closer look.",
+        "author_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+        "author_name": "By Sarah W.",
+        "date_text": "Last updated September 2026",
+        "image": "shopify://shop_images/oknhe.webp",
+        "image_position": "above",
+        "cta_label": "Try it risk free today",
+        "cta_url": "#ces-bundle",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "recognition": {
+      "type": "ces-recognition",
+      "blocks": {
+        "img-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/whole_video_gif_small_94a63e16-2a41-4838-a407-c73718e78b58.webp",
+            "caption": ""
+          }
+        },
+        "r1": {
+          "type": "item",
+          "settings": {
+            "text": "People ask if you slept badly — even on the mornings you slept fine."
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "text": "Concealer used to cover it. Now it creases, cakes, and the shadow still shows through."
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "text": "On video calls and in photos, your eyes read older and more tired than you feel."
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "text": "You've tried more sleep, more water, cutting back — the puffiness softens, the shadow stays."
+          }
+        }
+      },
+      "block_order": [
+        "img-1",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "If you've started noticing this, it isn't just tiredness",
+        "subheading": "",
+        "closing": "That's not a willpower problem. It's the thin skin under your eyes changing — and it needs something built for exactly that.",
+        "image_position": "left",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "reasons": {
+      "type": "ces-reason-rows",
+      "blocks": {
+        "r1": {
+          "type": "reason",
+          "settings": {
+            "number_label": "",
+            "title": "Because you were told the only real fix was a procedure",
+            "text": "<p>Lower-lid surgery runs $3,000–$6,000 and a week or two of staying home while it settles. Filler means a needle beside your eye, again every six months, indefinitely. Plenty of women choose that and are glad they did.</p><p>But most of what you see in the mirror is not structural. It is fluid that pools overnight, skin that has thinned, and collagen that has slowed. Those three respond to being treated. They do not need to be operated on.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "image": "shopify://shop_images/eye1.webp",
+            "show_benefits": false,
+            "benefits": ""
+          }
+        },
+        "r2": {
+          "type": "reason",
+          "settings": {
+            "number_label": "",
+            "title": "Because the creams in your drawer were never reaching it",
+            "text": "<p>There are probably two or three of them. You used one every night for a month, saw nothing, and quietly wondered whether the problem was you.</p><p>It wasn't. The skin under your eye is about half a millimetre thick, and its outer layer exists to keep things out. A cream sits on top of that layer, and most of it evaporates before morning. The ingredients were often perfectly good. They simply never arrived.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "image": "shopify://shop_images/gdfgfd.webp",
+            "show_benefits": false,
+            "benefits": ""
+          }
+        },
+        "r3": {
+          "type": "reason",
+          "settings": {
+            "number_label": "",
+            "title": "Because these dissolve into the skin instead of sitting on it",
+            "text": "<p>The word microneedle puts people off, so here is exactly what happens. Each patch is lined with hundreds of cones too small to feel, made from the actives themselves rather than metal. They pass the outer layer, then dissolve through the night and release where the puffiness and shadows form.</p><p>Most women describe it as a patch that feels slightly firm for a minute. That is all.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "image": "shopify://shop_images/fnpnf.webp",
+            "show_benefits": true,
+            "benefits": "No injections. No metal needles. No downtime.\nGone by breakfast — nothing on your face during the day.\nDermatologist-tested, made in a GMP-certified facility.\nIndividually sealed — a fresh, clean treatment every time."
+          }
+        },
+        "r4": {
+          "type": "reason",
+          "settings": {
+            "number_label": "",
+            "title": "Because the routine survives contact with real life",
+            "text": "<p>Fifteen seconds before bed. One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it.</p><p>They stay where you put them through a night of turning over, and they lift off clean in the morning — no tacky film to wash off before your moisturiser, no half-peeled patch on the pillow. The routine you actually keep is the only one that does anything.</p>",
+            "pull_quote": "\"I love how well they stay in place. I can sleep with them on without them moving. The skin under my eyes feels firmer and the eye bags I've had for years are FINALLY starting to go\"",
+            "pull_quote_author": "Melisa H.",
+            "image": "shopify://shop_images/08114sdfsdfa85-922a-48a1-ae5f-2132c52bc52e.webp",
+            "show_benefits": false,
+            "benefits": ""
+          }
+        },
+        "r5": {
+          "type": "reason",
+          "settings": {
+            "number_label": "",
+            "title": "Because you shouldn't have to take our word for it",
+            "text": "<p>Before your first treatment, take a photo in your bathroom light and put it away. Memory is a poor judge of your own face; a photo from three weeks ago is not.</p><p>You have the full 90 days to decide — box open, patches used. If your eyes do not look different to you, write to us and we will refund you, and you keep the box.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "image": "shopify://shop_images/dfgfdg.webp",
+            "show_benefits": false,
+            "benefits": ""
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "number_prefix": "Reason",
+        "cta_label": "Choose your routine →",
+        "cta_url": "#ces-bundle",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "badges": {
+      "type": "ces-announcement-marquee",
+      "blocks": {
+        "b1": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Painless",
+            "icon": ""
+          }
+        },
+        "b2": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "No Downtime",
+            "icon": ""
+          }
+        },
+        "b3": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Dermatologist-Tested",
+            "icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "speed": 40,
+        "direction": "left",
+        "pause_on_hover": true,
+        "separator": "",
+        "icon_style": "circle",
+        "font_size": 13,
+        "padding": 14
+      }
+    },
+    "main": {
+      "type": "ces-main-product",
+      "blocks": {
+        "rating-bar": {
+          "type": "ces_rating_bar",
+          "settings": {
+            "rating_tenths": 45,
+            "text": "Rated <strong>4.8 Excellent</strong> | Over",
+            "enable_counter": true,
+            "sold_count": 255127,
+            "sold_suffix": "sold",
+            "count_step_1": 1,
+            "count_step_2": 3,
+            "count_step_3": 4
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "Your eyes shouldn't announce you're tired before you say a word. Dissolving micro-cone patches carry real actives beneath the skin — for visibly fewer bags, dark circles and fine lines. No injections, no metal needles, no downtime.",
+            "text_style": "body"
+          }
+        },
+        "clinicians": {
+          "type": "ces_clinicians",
+          "settings": {
+            "show_block": true,
+            "position": "top_gallery",
+            "card_bg": "#ffffff",
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong> share this on <em>FrontrowMD</em> without compensation.</p>",
+            "avatar_1": "shopify://shop_images/d9ctoeanwh9r0yx7kwnc0sjiupw4.png",
+            "avatar_2": "shopify://shop_images/zvwd2gnzd9m5n5id3xzibjz1v515.png",
+            "avatar_3": "shopify://shop_images/asybods5w4m477v80m9tddifjgge.png",
+            "top_link_label": "View clinicians & learn more",
+            "learn_more_label": "Learn more",
+            "reviews_label": "Read their reviews"
+          }
+        },
+        "clinicians-inline": {
+          "type": "ces_clinicians",
+          "settings": {
+            "show_block": true,
+            "position": "content_column",
+            "card_bg": "#ffffff",
+            "eyebrow": "Clinicians' Choice",
+            "text": "<p><strong>216 clinicians</strong>, including dermatologists, share this on <em>FrontrowMD</em> without compensation.</p>",
+            "avatar_1": "shopify://shop_images/zvwd2gnzd9m5n5id3xzibjz1v515.png",
+            "avatar_2": "shopify://shop_images/asybods5w4m477v80m9tddifjgge.png",
+            "avatar_3": "shopify://shop_images/d9ctoeanwh9r0yx7kwnc0sjiupw4.png",
+            "top_link_label": "View clinicians & learn more",
+            "learn_more_label": "Learn more",
+            "reviews_label": "Read their reviews"
+          }
+        },
+        "highlight-1": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "eye-lift",
+            "text": "Fades Dark Circles & Puffiness"
+          }
+        },
+        "highlight-2": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "smooth",
+            "text": "Smooths Fine Lines & Crepey Skin"
+          }
+        },
+        "highlight-3": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "drop",
+            "text": "Deep Hydration & Plumping"
+          }
+        },
+        "highlight-4": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "brighten",
+            "text": "Firmer, Brighter Under-Eyes"
+          }
+        },
+        "highlight-5": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "patch",
+            "text": "Painless — No Injections or Metal Needles"
+          }
+        },
+        "highlight-6": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "peel-clean",
+            "text": "No Sticky Residue"
+          }
+        },
+        "highlight-7": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "moon-zzz",
+            "text": "Stays Put All Night"
+          }
+        },
+        "highlight-8": {
+          "type": "ces_highlight",
+          "settings": {
+            "icon": "patch-pair",
+            "text": "Real Actives — Not Just a Cool Feel"
+          }
+        },
+        "ces_bundle_v2_6QEajj": {
+          "type": "ces_bundle_v2",
+          "settings": {
+            "label": "",
+            "heading": "Choose the Routine That Fits Your Under-Eyes",
+            "intro": "Not every under-eye concern looks the same. Choose based on how often you notice yours and how long it has been there.",
+            "accent_color": "#1d5c5c",
+            "tier_count": 3,
+            "default_tier": 2,
+            "add_label": "Add to Cart",
+            "after_add": "drawer",
+            "open_cart_drawer": true,
+            "onetime_label": "",
+            "onetime_url": "",
+            "sub_note": "",
+            "trust_line": "Free Delivery · 90-Day Money-back Guarantee",
+            "meta_template": "[count] treatments · [unit]/treatment",
+            "gift_more_label": "See details",
+            "gift_sub_mode": "manual",
+            "gift_sub_template": "[value] value · [count] [items]",
+            "tier_1_variant": "67585919418517",
+            "tier_1_name": "7-Day Starter",
+            "tier_1_subtitle": "For first-time users or newly noticeable puffiness",
+            "tier_1_badge": "",
+            "tier_1_cta": "Try the 7-Day Starter",
+            "tier_1_meta": "4 treatments · $9.99/treatment",
+            "tier_1_treatments": 4,
+            "tier_1_quote": "4 treatments over 1 week",
+            "tier_1_role": "Try the routine before committing",
+            "tier_1_price": "",
+            "tier_1_unit": "",
+            "tier_1_compare": "",
+            "tier_1_off": "",
+            "tier_1_serving": "",
+            "tier_1_fine": "",
+            "tier_1_benefits": "",
+            "tier_1_free_products": [],
+            "tier_1_extra_gifts": "",
+            "tier_1_gift_title": "",
+            "tier_1_gift_sub": "",
+            "tier_1_gift_label": "",
+            "tier_1_foot": "",
+            "tier_2_variant": "67585919451285",
+            "tier_2_name": "21-Day Eye Reset™",
+            "tier_2_subtitle": "For recurring puffiness & visible texture",
+            "tier_2_badge": "MOST POPULAR",
+            "tier_2_cta": "Start My 21-Day Reset",
+            "tier_2_meta": "12 treatments · $5.41/treatment",
+            "tier_2_treatments": 12,
+            "tier_2_quote": "4 treatments a week for 3 weeks",
+            "tier_2_role": "Recommended full routine",
+            "tier_2_price": "",
+            "tier_2_unit": "",
+            "tier_2_compare": "",
+            "tier_2_off": "",
+            "tier_2_serving": "",
+            "tier_2_fine": "",
+            "tier_2_benefits": "",
+            "tier_2_free_products": [
+              "ebook-the-21-day-under-eye-reset-guide-for-women-45"
+            ],
+            "tier_2_extra_gifts": "truck | Express Shipping |",
+            "tier_2_gift_title": "Free Welcome Kit",
+            "tier_2_gift_sub": "$32 value · 2 items",
+            "tier_2_gift_label": "Welcome kit — arrives with first order",
+            "tier_2_foot": "",
+            "tier_3_variant": "67585919484053",
+            "tier_3_name": "45-Day Eye Rebuild™",
+            "tier_3_subtitle": "For stubborn puffiness & more noticeable texture",
+            "tier_3_badge": "BEST VALUE",
+            "tier_3_cta": "Start My 45-Day Rebuild",
+            "tier_3_meta": "24 treatments · $4.16/treatment",
+            "tier_3_treatments": 24,
+            "tier_3_quote": "4 treatments a week for 6 weeks",
+            "tier_3_role": "Some concerns need a longer runway",
+            "tier_3_price": "",
+            "tier_3_unit": "",
+            "tier_3_compare": "",
+            "tier_3_off": "",
+            "tier_3_serving": "",
+            "tier_3_fine": "",
+            "tier_3_benefits": "",
+            "tier_3_free_products": [
+              "ebook-the-21-day-under-eye-reset-guide-for-women-45",
+              "hydrolyzed-collagen-anti-wrinkle-cream"
+            ],
+            "tier_3_extra_gifts": "truck | Express Shipping |",
+            "tier_3_gift_title": "Free Welcome Kit",
+            "tier_3_gift_sub": "$52 value · 3 items",
+            "tier_3_gift_label": "Welcome kit — arrives with first order",
+            "tier_3_foot": "",
+            "tier_4_variant": "",
+            "tier_4_name": "",
+            "tier_4_subtitle": "",
+            "tier_4_badge": "",
+            "tier_4_cta": "",
+            "tier_4_meta": "",
+            "tier_4_quote": "",
+            "tier_4_role": "",
+            "tier_4_price": "",
+            "tier_4_unit": "",
+            "tier_4_compare": "",
+            "tier_4_off": "",
+            "tier_4_serving": "",
+            "tier_4_fine": "",
+            "tier_4_benefits": "",
+            "tier_4_free_products": [],
+            "tier_4_extra_gifts": "",
+            "tier_4_gift_title": "",
+            "tier_4_gift_sub": "",
+            "tier_4_gift_label": "",
+            "tier_4_foot": ""
+          }
+        },
+        "ces_bundle_8Rq63G": {
+          "type": "ces_bundle",
+          "disabled": true,
+          "settings": {
+            "accent_color": "#1d5c5c",
+            "heading": "",
+            "intro": "",
+            "stat_text": "",
+            "tier_count": 3,
+            "default_tier": 2,
+            "add_label": "ADD TO CART",
+            "open_cart_drawer": true,
+            "sub_note": "",
+            "show_shipping": true,
+            "ship_position": "above",
+            "delivery_text": "Ships by",
+            "delivery_days": 1,
+            "date_format": "%b. %-d",
+            "delivery_icon": "🟢",
+            "origin_text": "Ships from USA",
+            "origin_icon": "🇺🇸",
+            "tier_1_variant": "47849253961877",
+            "tier_1_name": "7-Day Starter",
+            "tier_1_supply": "Your first week with CEBEAM",
+            "tier_1_image": "shopify://shop_images/sta.png",
+            "tier_1_badge": "",
+            "tier_1_inclusions": "patches | 4 treatments ~ $9.98/Treatment |\ndoc | Quick Start Guide |\ncoin | 90-Day Money Back |",
+            "tier_1_free_products": [],
+            "tier_2_variant": "47849253994645",
+            "tier_2_name": "21-Day Eye Reset™",
+            "tier_2_supply": "Complete 3-week routine",
+            "tier_2_image": "shopify://shop_images/reset.png",
+            "tier_2_badge": "MOST POPULAR",
+            "tier_2_inclusions": "patches | 12 treatments ~ $5.41/Treatment|\nstar | Eye Reset Protocol™ |\ntracker | The 4-Photo Method™ |\ntruck | Free & Fast Shipping |\ncoin | 90-Day Money Back |",
+            "tier_2_free_products": [],
+            "tier_3_variant": "47849254027413",
+            "tier_3_name": "45-Day Eye Rebuild™",
+            "tier_3_supply": "Extended under-eye routine",
+            "tier_3_image": "shopify://shop_images/re.png",
+            "tier_3_badge": "BEST VALUE",
+            "tier_3_inclusions": "patches | 24 treatments ~ $4.16/Treatment|\nstar | Full Reset Protocol™ |\ntracker | The 4-Photo Method™ |\nclock | 72-Hour Camera Ready Protocol™ |\ntruck | Free & Fast Shipping |\ncoin | 90-Day Money Back |",
+            "tier_3_free_products": [
+              "hydrolyzed-collagen-anti-wrinkle-cream"
+            ],
+            "tier_4_variant": "",
+            "tier_4_name": "",
+            "tier_4_supply": "",
+            "tier_4_badge": "",
+            "tier_4_inclusions": "",
+            "tier_4_free_products": []
+          }
+        },
+        "shipping-estimate": {
+          "type": "ces_shipping_estimate",
+          "disabled": true,
+          "settings": {
+            "delivery_text": "Ships by",
+            "delivery_days": 1,
+            "date_format": "%b. %-d",
+            "delivery_icon": "🟢",
+            "origin_text": "Ships from USA",
+            "origin_icon": "🇺🇸"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "app-price-slot": {
+          "type": "ces_app_slot",
+          "disabled": true,
+          "settings": {
+            "slot_id": "ces-app-price-slot"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "guarantee-line": {
+          "type": "ces_shipping_item",
+          "settings": {
+            "icon": "shield",
+            "text": "<em>Estimated delivery date: 3-5 business days</em> &nbsp;",
+            "standalone": true,
+            "align": "center"
+          }
+        },
+        "ship-1": {
+          "type": "ces_shipping_item",
+          "settings": {
+            "icon": "check-circle",
+            "text": "4 treatment nights a week, then 2 to maintain",
+            "standalone": false,
+            "align": "center"
+          }
+        },
+        "ship-2": {
+          "type": "ces_shipping_item",
+          "settings": {
+            "icon": "check-circle",
+            "text": "Painless — no injections, no metal needles",
+            "standalone": false,
+            "align": "center"
+          }
+        },
+        "ship-3": {
+          "type": "ces_shipping_item",
+          "settings": {
+            "icon": "check-circle",
+            "text": "Works overnight while you sleep",
+            "standalone": false,
+            "align": "center"
+          }
+        },
+        "payment-badges": {
+          "type": "ces_payment_badges",
+          "settings": {
+            "image": "shopify://shop_images/Payment-Badge_1.webp",
+            "text": ""
+          }
+        },
+        "trust-row": {
+          "type": "ces_trust_row",
+          "settings": {
+            "avatar_1": "shopify://shop_images/Untitled_design_12_764f6a05-31f2-42de-91d1-3b2513c991fa.webp",
+            "avatar_2": "shopify://shop_images/Alycia_Wanat-Hawthorne_Cropped.webp",
+            "avatar_3": "shopify://shop_images/Dr-B-CC-eye.webp",
+            "text": "Loved by 100k+ Tired Eyes",
+            "subtext": "for real, visible under-eye results",
+            "show_verified": true
+          }
+        },
+        "guarantee-card": {
+          "type": "ces_guarantee_badge",
+          "settings": {
+            "image": "shopify://shop_images/1733673742-image_7.webp",
+            "badge_text": "90 DAY",
+            "heading": "90-Day Money Back Guarantee",
+            "text": "<p>Love your results within 90 days or get 100% of your money back.</p>"
+          }
+        },
+        "acc-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What’s Included?",
+            "icon": "none",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, four nights a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on four nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on four nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
+            "page": ""
+          }
+        },
+        "acc-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How are these different from eye creams?",
+            "icon": "none",
+            "content": "<p>A cream has to fight through the skin’s outer barrier, the layer built to keep things out, so most of it never gets far. The dissolving micro-cones start <strong>below</strong> that barrier and deliver the actives where they can actually work. That’s a delivery difference, not magic.</p>",
+            "page": ""
+          }
+        },
+        "acc-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Does it actually work?",
+            "icon": "none",
+            "content": "<p>Hydration and a plumping effect are often visible from the very first uses. Deeper changes to dark circles, bags and fine lines typically build over 1–2 weeks of regular use. Consistency — four treatment nights a week through your reset — is what matters most.*</p>",
+            "page": ""
+          }
+        },
+        "acc-4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Who is it for?",
+            "icon": "none",
+            "content": "<p>Adults dealing with under-eye bags, dark circles, puffiness or fine lines — whether they’re hereditary, from screen time and late nights, or simply from getting older. Gentle enough for men and women with sensitive, mature skin.</p>",
+            "page": ""
+          }
+        },
+        "acc-5": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Key ingredients",
+            "icon": "none",
+            "content": "<p><strong>Hyaluronic Acid</strong> — deep hydration and a plumping effect.</p><p><strong>Niacinamide</strong> — brightens tone and calms the eye area.</p><p><strong>Peptides & Collagen</strong> — support firmness.</p><p><strong>Vitamin C & Retinol</strong> — smooth fine lines and revive radiance.*</p>",
+            "page": ""
+          }
+        },
+        "acc-6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I apply them?",
+            "icon": "none",
+            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment on four nights a week during your reset, then two treatment nights a week to maintain.</p>",
+            "page": ""
+          }
+        },
+        "acc-7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do the patches hurt?",
+            "icon": "none",
+            "content": "<p>No. You may feel a light tingle for a minute or two as the micro-cones soften and get to work — that fades quickly. Sharp pain isn’t normal; if you feel it, take the patch off.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_VzH6wn": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is redness a sign it worked?",
+            "icon": "none",
+            "content": "<p>A little redness is a good sign. Mild temporary redness can occur, and fades quickly.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_DYrk48": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will the patches slide down while I sleep?",
+            "icon": "none",
+            "content": "<p><br/>Apply each patch to clean, completely dry skin and press for 5–10 seconds. The placement video shows the fit and the routine we tested. If a patch does not stay in place as shown, contact us so we can help.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_AG9czL": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What should I expect after the first use?",
+            "icon": "none",
+            "content": "<p>Check how your under-eyes look and feel the next morning, then compare photos taken in the same light as you continue the routine. Hydration and a smoother appearance may be easier to notice early; the degree of change in bags, dark circles, and lines varies with the cause of each concern.<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "acc-8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How long before I see full results?",
+            "icon": "none",
+            "content": "<p>Many people notice a fresher, smoother look the very next morning — that’s mostly hydration. Changes that hold to bags, dark circles and lines usually appear after 1–2 weeks of consistent use. Buying for an event? Start at least a few weeks out.</p>",
+            "page": ""
+          }
+        },
+        "acc-9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer a guarantee?",
+            "icon": "none",
+            "content": "<p>Yes — a 90-day money-back guarantee. If you don’t see a noticeable improvement, contact us for a full refund. You can have opened and used the box.</p>",
+            "page": ""
+          }
+        },
+        "acc-10": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping information",
+            "icon": "none",
+            "content": "<p>Fast, tracked shipping across the U.S. You’ll get a tracking link by email as soon as your order leaves our facility.</p>",
+            "page": ""
+          }
+        },
+        "trust-panel": {
+          "type": "ces_media_panel",
+          "settings": {
+            "image": "shopify://shop_images/research.webp",
+            "gradient_from": "#1d5c5c",
+            "gradient_to": "#1a1a1a",
+            "gradient_angle": 135,
+            "image_opacity": 15,
+            "overlay_opacity": 0,
+            "heading": "Why Trust Cebeam for Your Under-Eyes?",
+            "icon": "check-circle",
+            "items": "Dissolving Microneedle Technology\n4 Treatment Nights / Week (Reset)\n2+ Hours or Overnight\nMade for Mature Under-Eyes\nNo Injections. No Metal Needles. No Downtime.\n90-Day Money-Back Guarantee",
+            "footnote": "Dermatologist-Tested, Clean Formula",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "rating-bar",
+        "title",
+        "subtitle",
+        "clinicians",
+        "clinicians-inline",
+        "highlight-1",
+        "highlight-2",
+        "highlight-3",
+        "highlight-4",
+        "highlight-5",
+        "highlight-6",
+        "highlight-7",
+        "highlight-8",
+        "ces_bundle_v2_6QEajj",
+        "ces_bundle_8Rq63G",
+        "shipping-estimate",
+        "price",
+        "app-price-slot",
+        "quantity_selector",
+        "buy_buttons",
+        "guarantee-line",
+        "ship-1",
+        "ship-2",
+        "ship-3",
+        "payment-badges",
+        "trust-row",
+        "guarantee-card",
+        "acc-1",
+        "acc-2",
+        "acc-3",
+        "acc-4",
+        "acc-5",
+        "acc-6",
+        "acc-7",
+        "collapsible_tab_VzH6wn",
+        "collapsible_tab_DYrk48",
+        "collapsible_tab_AG9czL",
+        "acc-8",
+        "acc-9",
+        "acc-10",
+        "trust-panel"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "ces_highlights_layout": "inline",
+        "ces_highlights_columns_mobile": 2,
+        "ces_highlights_columns_desktop": 2,
+        "ces_title_size": 22,
+        "atc_label": "GET YOUR NOW",
+        "atc_bg": "#1d5c5c",
+        "atc_text": "#fcfdfd",
+        "atc_hover_bg": "#fcfdfd",
+        "atc_hover_text": "#1d5c5c"
+      }
+    },
+    "results": {
+      "type": "ces-before-after",
+      "blocks": {
+        "p1": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
+            "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
+            "rating_tenths": 35,
+            "quote": "Overall a good product for the price. Noticed an immediate deflation and reduced puffiness in the first week. After 2 weeks of uses noticed a slight reduction in dark circles. They stay on nicely overnight. You have to press on them to get them to stick and have the micro needles monitor the skin (doesn't hurt) and then after about 5s they are adhered well to the skin and stay on.",
+            "name": "Susan, 58",
+            "verified": true,
+            "progress": "Day 19 of the protocol"
+          }
+        },
+        "pair_9M6FUm": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_35_PM.webp",
+            "after_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "rating_tenths": 50,
+            "quote": "I couldn’t believe how fast these patches work! After the first time I used them, my under eyes were already more hydrated and less puffy. After a week, the dark circles were lighter, and after a month, my fine lines were almost gone. I’ve never had a skincare product work this fast before!",
+            "name": "Anna, 45",
+            "verified": true,
+            "progress": "After 2 weeks of use"
+          }
+        },
+        "pair_QqPKNN": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
+            "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
+            "rating_tenths": 44,
+            "quote": "An excellent product; after using them several times, I noticed the skin under my eyes looked much more hydrated, soft, and rested. Fine lines appear less pronounced, and the eye area looks brighter and firmer. Each patch comes in an individual sachet, keeping them in perfect condition. Plus, application is very easy, and the treatment feels comfortable.",
+            "name": "David, 58",
+            "verified": true,
+            "progress": "After 6 weeks of use"
+          }
+        },
+        "pair_VcLGTX": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
+            "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+            "rating_tenths": 50,
+            "quote": "I’ve been looking for something effective to treat puffiness and dark circles, and I’m so glad I found these patches. After using them, I noticed a visible difference in the appearance of the eye area; it looks fresher and more hydrated. They are very comfortable to wear and stay perfectly in place. I love the combination of ingredients—like hyaluronic acid and peptides—as they leave the skin feeling firm and smooth.",
+            "name": "Sarah, 52",
+            "verified": true,
+            "progress": "After 21 days of use"
+          }
+        },
+        "p2": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
+            "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
+            "rating_tenths": 40,
+            "quote": "These eye patches are easy to apply and feel very comfortable on the skin. They provide a refreshing cooling sensation and leave the under-eye area feeling hydrated and smoother. After using them, my eyes looked more awake and less puffy. I also noticed that my skin felt soft and well moisturized. The individual packaging is convenient and keeps each patch fresh. Great addition to my skincare routine. I would definitely purchase them",
+            "name": "John, 54",
+            "verified": true,
+            "progress": "After 3 weeks of use"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "pair_9M6FUm",
+        "pair_QqPKNN",
+        "pair_VcLGTX",
+        "p2"
+      ],
+      "settings": {
+        "heading": "Same person. Same lighting. Weeks apart.",
+        "subheading": "",
+        "before_label": "Before",
+        "after_label": "After",
+        "verified_label": "Verified customer",
+        "columns": 2,
+        "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "mechanism": {
+      "type": "ces-image-text-banner",
+      "settings": {
+        "image": "shopify://shop_images/sdf231c-4da8-b687-8b0e812e42ae_55e98de9-b3ce-4a7e-a361-d5fe486fbefa.webp",
+        "layout": "split",
+        "image_shape": "auto",
+        "text_position": "center",
+        "overlay_opacity": 40,
+        "eyebrow": "Micro-cone delivery",
+        "heading_accent": "Micro-delivery",
+        "heading": "Actives delivered to the root of dark circles and puffiness",
+        "text": "<p>Painless dissolving micro-cones carry the actives beneath the skin barrier — precision delivery exactly where puffiness and dark circles start.</p>",
+        "button_label": "",
+        "button_link": "",
+        "badge_speed": 40,
+        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "content-tabs": {
+      "type": "ces-content-tabs",
+      "blocks": {
+        "tab1": {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "Penetration Power",
+            "default_open": true,
+            "image": "shopify://shop_images/gdfgfd.webp",
+            "heading": "Delivered Below the Surface",
+            "text": "<p>Traditional patches and creams sit on top of the skin. Cebeam’s dissolving micro-cones start below the barrier, so the actives reach where dark circles and puffiness actually begin.</p>",
+            "bullets": "Beneath the skin barrier, not on top\nPainless dissolving micro-cones\nNo injections, no metal needles\nNo downtime",
+            "footnote": "This is why the difference builds instead of washing off."
+          }
+        },
+        "tab2": {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "What's Inside",
+            "default_open": false,
+            "image": "shopify://shop_images/fnpnf.webp",
+            "heading": "A Formula Made for Eyes",
+            "text": "<p>Hyaluronic acid, niacinamide, peptides, vitamin C and retinol — chosen for the delicate under-eye area and free from fragrance and harsh fillers.</p>",
+            "bullets": "Hyaluronic acid for hydration & plumping\nNiacinamide to brighten tone\nPeptides & retinol to smooth lines",
+            "footnote": ""
+          }
+        },
+        "tab3": {
+          "type": "tab_item",
+          "settings": {
+            "tab_label": "Why It Works",
+            "default_open": false,
+            "image": "shopify://shop_images/dfgfdg_bfa578db-5806-4ae2-a1bf-611b77a699e9.webp",
+            "heading": "Backed by Results",
+            "text": "<p>Most eye treatments fail because good actives never make it past the skin barrier. Cebeam's microneedle patch solves the delivery problem first — then puts targeted actives exactly where dark circles and puffiness form.<br/><br/></p>",
+            "bullets": "Micro-cones create a direct path — bypassing the stratum corneum that blocks topical creams\n\nActives dissolve exactly where they're needed — at the dermis, near the pigmentation and microcirculation that cause dark circles\n\nConsistent, repeatable delivery — every application reaches the same depth, unlike creams that vary by how hard you rub them in\n\nBacked by the science of microneedle delivery — a growing body of clinical research on HA-based microneedle patches shows measurable improvements in hydration, wrinkle depth, and skin density over consistent use",
+            "footnote": "It's not one ingredient doing the work — it's the delivery system making sure any ingredient actually works."
+          }
+        }
+      },
+      "block_order": [
+        "tab1",
+        "tab2",
+        "tab3"
+      ],
+      "settings": {
+        "heading": "Why Microneedle Patches Work",
+        "subheading": "",
+        "color_scheme": "scheme-ces-gradient",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "timeline": {
+      "type": "ces-results-timeline",
+      "blocks": {
+        "s1": {
+          "type": "stage",
+          "settings": {
+            "time_label": "Week 1",
+            "title": "Your starter week",
+            "points": "Morning puffiness starts to look smoother\nActives release beneath the skin overnight\nSkin hydrates from within, so concealer goes on smoother",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
+          }
+        },
+        "s2": {
+          "type": "stage",
+          "settings": {
+            "time_label": "Week 3",
+            "title": "It stops being subtle",
+            "points": "Dark shadows begin to brighten\nPuffiness looks visibly reduced in the morning\nThe under-eye area feels smoother and plumper",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
+          }
+        },
+        "s3": {
+          "type": "stage",
+          "settings": {
+            "time_label": "Week 6",
+            "title": "The reset lands",
+            "points": "Dark circles and bags look noticeably lighter\nFine lines and crepey texture soften\nEyes look rested — even when you're not",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "Results Timeline",
+        "heading": "What to expect — week by week",
+        "subheading": "The 21-Day Eye Reset, stage by stage. Four treatment nights a week throughout.",
+        "image": "shopify://shop_images/nheok.webp",
+        "image_caption": "",
+        "image_position": "below_subheading",
+        "show_quotes": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "howto": {
+      "type": "ces-usage-steps",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260923_032143_dc87b02a-2514-4d1d-a221-73b27ce50179.png",
+            "title": "Start clean and dry",
+            "text": "On clean, dry skin, peel one patch from its individually sealed pouch."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260925_083543_c7f62231-0964-4fe4-b206-9ff425b61b3a.png",
+            "title": "Press and leave on",
+            "text": "Place one under each eye and press for 5 seconds. Leave on at least 2 hours, or overnight."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260925_084728_97da50ed-6814-4fc3-b27d-d942237e6a57.png",
+            "title": "Peel in the morning",
+            "text": "Remove and discard. Nothing to rinse, nothing on your face by breakfast."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "heading": "How to use it — the whole method takes about 15 seconds",
+        "subheading": "",
+        "note": "During the 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain your routine with two treatment nights per week.",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "complaints": {
+      "type": "ces-experience-list",
+      "blocks": {
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "text": "Stays where you place it during normal upright activity."
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "text": "Dry micro-cone format—not a wet gel patch."
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "text": "Removes cleanly without a sticky film."
+          }
+        },
+        "item-4": {
+          "type": "item",
+          "settings": {
+            "text": "Individually sealed treatment pouches."
+          }
+        },
+        "item-5": {
+          "type": "item",
+          "settings": {
+            "text": "Designed for comfortable use when directions are followed."
+          }
+        },
+        "item-6": {
+          "type": "item",
+          "settings": {
+            "text": "Fits into a makeup routine after removal."
+          }
+        }
+      },
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3",
+        "item-4",
+        "item-5",
+        "item-6"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Designed around what people dislike about ordinary eye patches",
+        "subheading": "",
+        "color_scheme": "scheme-ces-gradient",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "comparison": {
+      "type": "ces-comparison-table",
+      "blocks": {
+        "ours-1": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Delivers actives below the skin barrier"
+          }
+        },
+        "ours-2": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Painless dissolving micro-cones"
+          }
+        },
+        "ours-3": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Dermatologist-tested & fragrance-free"
+          }
+        },
+        "ours-4": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "4 treatment nights a week, then 2 to maintain"
+          }
+        },
+        "ours-5": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "90-day money-back guarantee"
+          }
+        },
+        "ours-6": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Stays put overnight — no repositioning"
+          }
+        },
+        "ours-7": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Peels off clean — no sticky film"
+          }
+        },
+        "ours-8": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Individually sealed — fresh every pouch"
+          }
+        },
+        "ours-9": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Delivers actives — real, visible change"
+          }
+        },
+        "ours-10": {
+          "type": "rovina_point",
+          "settings": {
+            "text": "Skin sits smoother under makeup afterward"
+          }
+        },
+        "theirs-1": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Sits on top of the skin"
+          }
+        },
+        "theirs-2": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Needles, pain or downtime"
+          }
+        },
+        "theirs-3": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Fragrance & harsh fillers"
+          }
+        },
+        "theirs-4": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Daily routine required"
+          }
+        },
+        "theirs-5": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "No real guarantee"
+          }
+        },
+        "theirs-6": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Slides down or won't stay stuck"
+          }
+        },
+        "theirs-7": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Leaves a sticky residue"
+          }
+        },
+        "theirs-8": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Loose packs that dry out or arrive faulty"
+          }
+        },
+        "theirs-9": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "A cool feel for a minute, then nothing changes"
+          }
+        },
+        "theirs-10": {
+          "type": "other_brand_point",
+          "settings": {
+            "text": "Leaves skin tacky under makeup"
+          }
+        }
+      },
+      "block_order": [
+        "ours-1",
+        "ours-2",
+        "ours-3",
+        "ours-4",
+        "ours-5",
+        "ours-6",
+        "ours-7",
+        "ours-8",
+        "ours-9",
+        "ours-10",
+        "theirs-1",
+        "theirs-2",
+        "theirs-3",
+        "theirs-4",
+        "theirs-5",
+        "theirs-6",
+        "theirs-7",
+        "theirs-8",
+        "theirs-9",
+        "theirs-10"
+      ],
+      "settings": {
+        "heading": "What sets Cebeam apart",
+        "subheading": "",
+        "image": "shopify://shop_images/44_1.webp",
+        "brand_label": "Cebeam",
+        "other_label": "Ordinary patches & creams",
+        "footnote": "<p>Right column reflects the most common complaints from reviews of ordinary eye patches and creams.</p>",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "limits": {
+      "type": "ces-who-for",
+      "settings": {
+        "heading": "Who it's for — and the one thing it can't change",
+        "subheading": "",
+        "yes_label": "What CEBEAM works on",
+        "yes_points": "Fluid and morning puffiness\nDark shadows and dullness\nThin, crepey skin and fine lines\nLost firmness in the under-eye",
+        "no_label": "What no patch can change",
+        "no_points": "Deep hollows set by bone structure",
+        "honest_line": "Those are a surgical issue no topical can move. If that's mostly you, keep your money — we'd rather lose the sale than be the fifth thing that let you down.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "social": {
+      "type": "ces-testimonial-marquee",
+      "blocks": {
+        "avatar_item_TRmW8T": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/febe207403798d395523da12f6af32a4.jpg"
+          }
+        },
+        "avatar_item_eaFPzR": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/95d7d4b3a0e5e508dee44756c74a8919.jpg"
+          }
+        },
+        "avatar_item_pfxKER": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/looping_gif_small_c71a6cc7-a54d-4c82-9692-0b7b075ed96b.webp"
+          }
+        },
+        "avatar_item_dXtLe6": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/sdf231c-4da8-b687-8b0e812e42ae_55e98de9-b3ce-4a7e-a361-d5fe486fbefa.webp"
+          }
+        },
+        "avatar-1": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.webp"
+          }
+        },
+        "avatar-2": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/65926863-1770-41e5-af1a-b9f94e34f9c0.webp"
+          }
+        },
+        "avatar-3": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/7962c422-b856-4238-b159-0476f7c688f8.webp"
+          }
+        },
+        "avatar-4": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.webp"
+          }
+        },
+        "avatar-5": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/8f8ae381-9b03-442d-91ab-802f03c5e9c7.webp"
+          }
+        },
+        "avatar-6": {
+          "type": "avatar_item",
+          "settings": {
+            "image": "shopify://shop_images/80c4710a-438b-40dd-90f8-ac4a2416dedf.webp"
+          }
+        },
+        "review-4": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>Overall a good product for the price. Noticed an immediate deflation and reduced puffiness. After a few uses noticed a slight reduction in dark circles. They stay on nicely overnight. You have to press on them to get them to stick and have the micro needles monitor the skin (doesn't hurt) and then after about 45min they are adhered well to the skin and stay on.<br/><br/></p>",
+            "name": "Susan A.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.png",
+            "rating": 3
+          }
+        },
+        "review-5": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>I can confirm it doesn't hurt at all (I was worried with the word microneedles). I have sensitive skin and zero irritation. Visible results in under 2 weeks for me. I look less 'tired' and it clearly changes your whole face.<br/><br/></p>",
+            "name": "Maya D.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/Alycia_Wanat-Hawthorne_Cropped.webp",
+            "rating": 5
+          }
+        },
+        "review-2": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>I’m in my 40s and started noticing fine lines under my eyes, and these patches have been a lifesaver! The peptides in them really boost collagen, and after 2 months of consistent use, my lines are way smoother. My makeup even applies better now!<br/><br/></p>",
+            "name": "Emma R.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "rating": 4
+          }
+        },
+        "review-1": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>I love how well they stay in place. I can sleep with them on without them moving. The skin under my eyes feels firmer and the eye bags I've had for years are FINALLY starting to go</p>",
+            "name": "Melisa H.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/Untitled_design_12.webp",
+            "rating": 5
+          }
+        },
+        "review-3": {
+          "type": "review_item",
+          "settings": {
+            "review": "<p>My new favorite eye patches! Wear these on the way to work. They have a very good cooling effect and feel nice on the under eyes. The patch is nice and thick. They are not sticky or tacky but stay well enough that you can walk around with the on. No smell to them, super cute and recommend!</p>",
+            "name": "Denise K.",
+            "meta": "Verified Buyer",
+            "verified": true,
+            "avatar": "shopify://shop_images/GMYREK_WEBSITEBIO.png",
+            "rating": 4
+          }
+        }
+      },
+      "block_order": [
+        "avatar_item_TRmW8T",
+        "avatar_item_eaFPzR",
+        "avatar_item_pfxKER",
+        "avatar_item_dXtLe6",
+        "avatar-1",
+        "avatar-2",
+        "avatar-3",
+        "avatar-4",
+        "avatar-5",
+        "avatar-6",
+        "review-4",
+        "review-5",
+        "review-2",
+        "review-1",
+        "review-3"
+      ],
+      "settings": {
+        "heading": "What Customers Are Saying",
+        "subheading": "Honest experiences with Cebeam Microneedle Patches",
+        "avatar_shape": "tile",
+        "avatar_speed": 35,
+        "disclaimer": "<p>Testimonials reflect individual experiences. Results may vary.</p>",
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "reviews": {
+      "type": "ces-clinician-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/asybods5w4m477v80m9tddifjgge.png",
+            "name": "Eleanor Dominguez-Curatolo, NP",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Internal medicine",
+            "years": "14",
+            "location": "Forked River, NJ",
+            "preview_label": "Preview",
+            "website": "",
+            "website_label": "Go to clinician website",
+            "npi": "1588631683",
+            "practice_type": "Private practice",
+            "joined": "2025",
+            "summary": "Noticeable Difference After 3 Weeks",
+            "message": "<p>I liked these enough that after my second use. That is usually my best test of whether a skincare product is actually worth keeping around. I use them under my eyes where I have deeper lines, and I also place them vertically along my smile lines. At 53 with dry, mature skin, those are the areas where temporary plumping and surface smoothing make the biggest visible difference for me.<br/><br/>These are not ordinary eye patches. Each patch contains tiny self-dissolving micro-darts, and the box states there are 80 of them per patch. When you press the patch onto clean, dry skin, you can definitely feel them. I would describe it as a mild prickly or tingling sensation rather than pain. For me, that feeling settles down quickly, and within about ten minutes I barely notice the patches at all.<br/><br/>The ingredient list is actually quite good for this type of targeted treatment. Sodium hyaluronate is first, which makes sense because hydration and temporary plumping are a major part of what these patches do. Caffeine can help the under-eye area look less puffy, while niacinamide supports the skin barrier and can help with overall tone. Copper tripeptide-1 and acetyl hexapeptide-8 are included for skin-conditioning and the appearance of lines, and there is also madecassoside, centella, allantoin, and licorice root extract to help keep the formula more soothing.<br/><br/>There is retinol in here as well, although I would not look at these as a replacement for a properly formulated retinoid routine. The purpose here is much more targeted. You are getting a combination of hydration, temporary plumping, smoothing, and skin-supportive ingredients delivered directly against a specific area for an extended period of time.<br/>And that is where I think these do very well.<br/><br/>After a couple of hours, the skin where I use them looks more hydrated and slightly fuller, and deeper dehydration lines look softer. They do not erase wrinkles, and I would not expect them to. The effect is primarily cosmetic and temporary, but it is noticeable enough on my skin that I keep reaching for them.<br/><br/>I have even slept in them. I am a stomach sleeper, so I sometimes wake up with compression lines on my face, and I wanted to see whether keeping these over my smile-line area overnight would help. They absolutely stay put all night. The adhesive is very strong. I did notice less of that deeply creased look in the morning, although I still prefer wearing them for a couple of hours while I am walking around the house rather than sleeping in them.<br/><br/>One important warning: remove them slowly.<br/><br/>The first time I used them, I pulled one off much too quickly. That was my mistake. These adhere extremely well, and under-eye skin is thin. Now I hold the surrounding skin gently and peel the patch back slowly rather than pulling it straight off. That works much better and is particularly important around the eyes.<br/><br/>I also like that the shape makes them useful beyond the under-eye area. They fit nicely along nasolabial and smile-line areas, which is actually one of my favorite ways to use them. If your main concern is a specific deeper line rather than general facial hydration, this format makes much more sense than applying another full-face mask.<br/><br/>Who are these best for? I think they make the most sense for someone with visible dehydration lines, under-eye creasing, smile lines, or an area that could use concentrated temporary plumping. They are also excellent before an event or anytime you want the skin around the eyes or mouth to look a little fresher.<br/><br/>Someone with very reactive skin, sensitivity to adhesives, or very irritated skin may not love them. The micro-darts are intentionally noticeable at first, and the adhesive is strong. I also would not put them over compromised skin. For me they fall into the category of targeted treatment that I use when I actually want a visible short-term result.<br/><br/>Five stars from me. The fact that I purchased another box after only two uses probably says more than anything else.</p>",
+            "citation_pill": "Journal of Clinical … +1",
+            "citations": "A Prospective Trial of the Microneedle Fractional Radiofrequency System for the Treatment of Infraorbital Dark Circles | Clinical, Cosmetic and Investigational Dermatology (Dove Press), 2022\nComparing the Efficiency of Microneedling and Tranexamic Acid vs. Microneedling and Vitamin C for Infraorbital Hyperpigmentation | Advanced Biomedical Research, 2025",
+            "highlights_label": "Highlights:",
+            "highlights": "Remove eye bags\npuffiness reduction\nBoosts firmness",
+            "show_more_label": "Show more"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/vic0h983k85llxku4anih3hsrp1x.png",
+            "name": "Dr. Regina O'Brien, MD",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Family medicine",
+            "years": "15",
+            "location": "Oak Park, IL",
+            "preview_label": "Preview",
+            "website": "https://illinoisderm.com/locations/oak-park-office/",
+            "website_label": "Go to clinician website",
+            "npi": "1568392011",
+            "practice_type": "Private practice",
+            "joined": "2026",
+            "summary": "A Lifesaver for Night-Shift Eyes",
+            "message": "<p>I used these primarily for under-eye puffiness and dark circles, and also on the frown lines between my eyebrows. I have oily skin, so most products don’t stay in place well—but these surprised me.<br/><br/>What I liked:<br/>&nbsp; &nbsp;• &nbsp; Dramatic improvement in under-eye puffiness and dark circles after use. Skin felt soft and dewy.<br/>&nbsp; &nbsp;• &nbsp; Very effective. Noticeable smoothing of frown lines between the eyebrows<br/>&nbsp; &nbsp;• &nbsp; Stayed in place overnight, even with oily skin (no sliding or shifting).<br/>&nbsp; &nbsp;• &nbsp; Easy to use and felt secure once applied<br/><br/>These are a really cool concept if you like overnight skincare that feels “active” without being complicated. The patches dissolve overnight, so you don’t wake up with something peeling off your face or sliding around your pillowcase, and I love that they’re targeted for areas like smile lines, frown lines, and under-eye puffiness. They feel like a nice little self-care upgrade—especially if you’re trying to look a bit more rested in the morning. The ingredient combo is also solid (retinol + caffeine + peptides), which makes it effective and feel like more than just a basic hydration patch. Adheres fairly well, even overnight. It’s the kind of product that’s easy to use and great for “special occasion prep” or when you just want to feel a little more polished without adding extra steps. I'd say these are a good value for a special treat.</p>",
+            "citation_pill": "Anti-aging and Hydration… +1",
+            "citations": "Anti-aging and Hydration Efficacy of a Cross-linked Hyaluronic Acid Microstructure Patch | Dermatologic Therapy, 2019\nEfficacy of Bioactive Peptides Loaded on Hyaluronic Acid Microneedle Patches: A Monocentric Clinical Study\t| Journal of Cosmetic Dermatology, 2019",
+            "highlights_label": "Highlights:",
+            "highlights": "Eliminates dark circles\nMore circulation\npainless",
+            "show_more_label": "Show more"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/zvwd2gnzd9m5n5id3xzibjz1v515.png",
+            "name": "Dr. Anila Khan, DO",
+            "verified": true,
+            "verified_label": "Verified clinician",
+            "specialty": "Ophthalmology",
+            "years": "31",
+            "location": "Arlington Heights, IL",
+            "preview_label": "Preview",
+            "website": "https://mikarimedspa.com/",
+            "website_label": "Go to clinician website",
+            "npi": "1205896974",
+            "practice_type": "Private practice",
+            "joined": "2025",
+            "summary": "Skeptical at First, Now a Believer",
+            "message": "<p>These Cebeam micro-infusion anti wrinkle patches are a really interesting and easy addition to a nighttime skincare routine. The patches are designed for smile lines, frown lines, under eye bags, puffiness, and crow’s feet, and they dissolve overnight as described. They stay in place well while sleeping and feel comfortable on the skin.<br/>It is painless and I was delighted that it wasn’t irritating to my sensitive skin as well. You’re able to see the little places where the darts penetrate the skin after removal. I am absolutely able to tell an immediate notable difference after my use of these patches, where I leave them on for several hours or overnight.<br/><br/>I like that they combine ingredients like retinol, caffeine, and peptides in a targeted way instead of a cream that spreads everywhere. In the morning, my skin looked smoother and more refreshed, especially under the eyes and around expression lines. They are simple to apply, feel gentle, and make my skin look well hydrated and plumper by morning. These feel like a thoughtful, well designed skincare product and I would absolutely continue using them.<br/><br/></p>",
+            "citation_pill": "Journal of Clinical … +1",
+            "citations": "Efficacy and safety of a novel, soluble microneedle patch for the improvement of facial wrinkle | JJournal of Cosmetic Dermatology, 2018\nEfficacy of a novel microneedle patch for rejuvenation of the nasolabial fold | Skin Research and Technology, 2022",
+            "highlights_label": "Highlights:",
+            "highlights": "under-eye bags\nEye comfort\nwrinkles treatment",
+            "show_more_label": "Show more"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "show_reviews_on_page": true,
+        "eyebrow": "Clinician Reviews",
+        "title": "Independent Clinician Evaluations",
+        "subtitle": "<p>Clinicians can receive product samples and are never compensated to submit evaluations.</p>",
+        "learn_more_label": "Learn more",
+        "modal_title": "frontrowMD",
+        "faq1_q": "Who is FrontrowMD?",
+        "faq1_a": "<p>FrontrowMD is an independent, third-party on a mission to help shoppers make informed health choices, bringing unbiased medical expert opinions to the point of purchase.</p>",
+        "faq2_q": "Who / how many clinicians share this?",
+        "faq2_a": "<p>Verified, licensed clinicians who chose to share this product with their patients. The number shows how many clinicians included it on their personalized pages.</p>",
+        "faq3_q": "What’s “Clinicians’ Choice” / “share”?",
+        "faq3_a": "<p>Clinicians receive free samples so they can try the product themselves or share it with patients. “Share” means a clinician chose to feature it; if helpful, one or more pre-drafted reviews are provided that they are welcome to edit or submit.</p>",
+        "faq4_q": "Are clinicians paid to do this?",
+        "faq4_a": "<p>No — clinicians are never compensated. This is a free platform for clinicians and patients. These clinicians include products on their personalized discount pages, which you can preview below, to benefit their patients.</p>",
+        "clinicians_heading": "Clinicians who shared this product",
+        "clinicians_intro": "<p>For the complete list, click here. Numbers below indicate how many clinicians collaborate to share products on a single page at a medical practice.</p>",
+        "modal_disclaimer": "<p>Clinicians may edit and/or submit pre-drafted reviews. All reviews are informational only and not medical advice. Always consult your provider.</p>",
+        "modal_footer_label": "",
+        "modal_footer_link": "",
+        "show_section_footer": true,
+        "footer_button_label": "Learn more",
+        "footer_powered_label": "Clinician reviews powered by",
+        "footer_brand": "frontrowMD",
+        "footer_note": "<p>†This clinician wants to clarify that larger-scale research to support their product claims is still developing. These statements have not been reviewed by the FDA and are not intended to be medical advice.</p>",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "guarantee": {
+      "type": "ces-bullet-cta",
+      "settings": {
+        "image": "shopify://shop_images/44_1.webp",
+        "image_position": "start",
+        "heading": "90-Day Money-Back Guarantee.",
+        "bullets": "<ul><li>Try it for a full 90 days</li><li>Keep the box even if it is not for you</li><li>No return shipping and no hassle</li></ul>",
+        "button_label": "Try Risk-Free Today",
+        "button_link": "#ces-bundle",
+        "button_footnote": "90-day money back guarantee",
+        "show_frame": true,
+        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "ces-faq-accordion",
+      "blocks": {
+        "faq-9": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Before you buy",
+            "question": "Will this work on bags I’ve had for years?",
+            "answer": "<p>Often, partly — it depends what’s under there. Fluid, thin skin and lost firmness respond well. Inherited fat pads that push forward are a surgical issue no topical can move.*</p>",
+            "open": false
+          }
+        },
+        "faq-10": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Can I buy Cebeam in stores?",
+            "answer": "<p>Not currently. It’s sold direct so we can control storage and freshness.</p>",
+            "open": false
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "How to use them",
+            "question": "How do I apply them?",
+            "answer": "<p>On clean, dry skin, place one under each eye and press firmly for 5–10 seconds. Leave on at least 2 hours, or overnight, then remove in the morning.</p>",
+            "open": false
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "How often should I use them?",
+            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
+            "open": false
+          }
+        },
+        "faq-8": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Can I wear makeup afterwards?",
+            "answer": "<p>Yes — after removing the patch, wait about 20 minutes, then apply concealer as normal. Many people find it sits smoother on the days after.</p>",
+            "open": false
+          }
+        },
+        "faq-12": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "How should I store them?",
+            "answer": "<p>Sealed, somewhere cool and dry, out of direct sun. Don’t refrigerate — condensation ruins the micro-cones. Once a patch is out of its pouch, use it.</p>",
+            "open": false
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Safety & the microneedle feel",
+            "question": "Do the patches hurt?",
+            "answer": "<p>No. You may feel a light tingle for a minute or two as the painless micro-cones make contact and soften. The sensation fades quickly.</p>",
+            "open": false
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Why do the patches feel dry to the touch?",
+            "answer": "<p>That’s normal. The micro-cones are crystallized, solidified actives — not a soaked serum — so there’s no visible liquid. The dry feel is part of how they work.</p>",
+            "open": false
+          }
+        },
+        "faq-7": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "A little redness after use — is that normal?",
+            "answer": "<p>Yes, and it’s a good sign. It means the micro-cones delivered the actives where they’re needed. It usually settles within 15–30 minutes.</p>",
+            "open": false
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Are they safe for sensitive skin?",
+            "answer": "<p>Yes. The formula is dermatologist-tested and made for the delicate eye area. If your skin is very reactive, do a small patch test first.</p>",
+            "open": false
+          }
+        },
+        "faq-11": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Who should not use these?",
+            "answer": "<p>Skip them on broken, irritated or sunburned skin, or with an active eye infection. If you’re pregnant, nursing or on prescription retinoids, ask your doctor first.*</p>",
+            "open": false
+          }
+        },
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Results & what to expect",
+            "question": "How long until I see results?",
+            "answer": "<p>Hydration and a smoother look are often visible the next morning. Changes to bags, dark circles and lines usually build over 1–2 weeks of regular use.*</p>",
+            "open": false
+          }
+        },
+        "faq-sub1": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Subscription",
+            "question": "How does the subscription work?",
+            "answer": "<p>Choose Subscribe at checkout and your refill ships automatically at the subscriber price — nothing to reorder or remember. You pick the interval that matches how often you use them.</p>",
+            "open": false
+          }
+        },
+        "faq-sub2": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "Can I skip, pause or cancel?",
+            "answer": "<p>Yes — anytime from your account, with no phone call and no cancellation fee. Skip a delivery, change the interval, pause, or cancel before your next billing date.</p>",
+            "open": false
+          }
+        },
+        "faq-ship1": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "Shipping & returns",
+            "question": "Where do you ship from, and how fast?",
+            "answer": "<p>Orders ship from our US warehouse. Standard delivery runs 3–5 business days, and you’ll get a tracking link by email as soon as it’s on the way.</p>",
+            "open": false
+          }
+        },
+        "faq-13": {
+          "type": "faq_item",
+          "settings": {
+            "group_label": "",
+            "question": "What if it doesn’t work for me?",
+            "answer": "<p>Contact us within 90 days for a full refund. You don’t need to send the box back.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "faq-9",
+        "faq-10",
+        "faq-5",
+        "faq-3",
+        "faq-8",
+        "faq-12",
+        "faq-2",
+        "faq-6",
+        "faq-7",
+        "faq-4",
+        "faq-11",
+        "faq-1",
+        "faq-sub1",
+        "faq-sub2",
+        "faq-ship1",
+        "faq-13"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "",
+        "exclusive": true,
+        "footer_text": "<p>Still have a question? Email support@cebeam.com and a real person will reply within one business day.</p>",
+        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "didyouknow": {
+      "type": "ces-image-text-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/sdf231c-4da8-b687-8b0e812e42ae.webp",
+        "layout": "split",
+        "image_shape": "original",
+        "text_position": "end",
+        "overlay_opacity": 0,
+        "eyebrow": "Did you know?",
+        "heading_accent": "Painless",
+        "heading": "Lower-lid surgery costs thousands and needs real recovery time",
+        "text": "<p>Blepharoplasty typically runs $3,000–$6,000, with one to two weeks of visible bruising and the risks any surgical procedure carries. CEBEAM is a cosmetic patch, not a substitute for surgery — but for fluid, thin skin and lost firmness, it is the step most people have not tried yet.</p>",
+        "button_label": "",
+        "button_link": "",
+        "badge_speed": 40,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "team": {
+      "type": "ces-team",
+      "settings": {
+        "image": "shopify://shop_images/dermatology-clinic-1.jpg",
+        "image_position": "left",
+        "heading": "The people behind CEBEAM",
+        "body": "<p>We built CEBEAM because the eye-care aisle is full of creams that never get past the surface — and we were tired of paying for hope. So we started with the delivery problem first: dissolving micro-cones that carry real actives to where dark circles and puffiness actually form.</p><p>Every batch is made in a GMP-certified facility, dermatologist-tested, and backed by a 90-day money-back guarantee. If it doesn't work for you, you get your money back and you keep the box.</p>",
+        "signature": "",
+        "role": "Founder, CEBEAM",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "ingredients": {
+      "type": "ces-icon-feature-grid",
+      "blocks": {
+        "icon-1": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/C5B14712-E351-4CD4-92A6-F50A547B6377_1.webp",
+            "icon_text": "",
+            "icon": "cell-defense",
+            "icon_color": "",
+            "heading": "Dark Circles & Bags*",
+            "text": "Shadows look lighter and the bag under the eye looks less pronounced."
+          }
+        },
+        "icon-2": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/image-1-e1780984910353-1024x399.webp",
+            "icon_text": "",
+            "icon": "shield",
+            "icon_color": "",
+            "heading": "Puffiness & Under-Eye Fatigue*",
+            "text": "Morning puffiness looks reduced, so eyes read rested instead of swollen."
+          }
+        },
+        "icon-3": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.png",
+            "icon_text": "",
+            "icon": "molecule",
+            "icon_color": "",
+            "heading": "Fine Lines & Crepey Texture*",
+            "text": "Crepey texture that catches hard light looks softer and more even."
+          }
+        },
+        "icon-4": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/close-up-crow-s-feet-eyes-puffy-eye-bag-area-illustration-crow-s-feet-eyes-puffy-eye-bag-area-illustration-324842696.webp",
+            "icon_text": "",
+            "icon": "vitality",
+            "icon_color": "",
+            "heading": "Firmness & Hydration*",
+            "text": "Skin holds hydration better, so the area looks plumper and firmer."
+          }
+        }
+      },
+      "block_order": [
+        "icon-1",
+        "icon-2",
+        "icon-3",
+        "icon-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "One Patch. Everything Your Eyes Need.",
+        "highlight_words": "",
+        "subheading": "",
+        "icon_color": "#1d5c5c",
+        "icon_frame": "bare",
+        "icon_size": 5,
+        "columns_mobile": 2,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-ces-gradient",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "skeptics": {
+      "type": "ces-before-after",
+      "blocks": {
+        "p1": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/video_4x5_loop_final_small_954ba221-7830-4dc2-9bd2-800cdba10d0e.webp",
+            "after_image": "shopify://shop_images/ezgif-819a3d5acdbff6b4.webp",
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "Anna, 58",
+            "verified": true,
+            "progress": "Day 18 of the protocol"
+          }
+        },
+        "pair_9M6FUm": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_35_PM.webp",
+            "after_image": "shopify://shop_images/ChatGPT_Image_May_26_2026_05_41_39_PM.webp",
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "Anna, 45",
+            "verified": true,
+            "progress": "After 2 weeks of use"
+          }
+        },
+        "pair_QqPKNN": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/bef_66d74fb7-9f96-4d91-92ff-62c5f7b214a8.png",
+            "after_image": "shopify://shop_images/david-storyboard-frame-8-wedding-day-reveal-1080x1920.png",
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "David, 58",
+            "verified": true,
+            "progress": "After 25 days of use"
+          }
+        },
+        "pair_VcLGTX": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
+            "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "Anna, 52",
+            "verified": true,
+            "progress": "After 27 days of use"
+          }
+        },
+        "p2": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/86e7c25c-98ad-4abd-bd4e-c5c17fc4c9ff_c5388a43-842a-42ce-a8e9-cd5a5cf78721.png",
+            "after_image": "shopify://shop_images/76576fb1138ada51b5ce08b44cd4b948_d9857929-3f0f-47b2-a9c1-260cdde273ac.jpg",
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "John, 54",
+            "verified": true,
+            "progress": "After 3 weeks of use"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "pair_9M6FUm",
+        "pair_QqPKNN",
+        "pair_VcLGTX",
+        "p2"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "They thought nothing would touch it either",
+        "subheading": "What consistent use looks like, photographed the same way each time.",
+        "before_label": "Before",
+        "after_label": "After",
+        "verified_label": "Verified customer",
+        "columns": 2,
+        "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "ships": {
+      "type": "ces-announcement-marquee",
+      "blocks": {
+        "p1": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "ORDER TODAY · FREE DELIVERY",
+            "icon": ""
+          }
+        },
+        "p2": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "90-DAY MONEY-BACK GUARANTEE",
+            "icon": ""
+          }
+        },
+        "p3": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "text": "KEEP THE BOX EITHER WAY",
+            "icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
+        "speed": 35,
+        "direction": "left",
+        "pause_on_hover": true,
+        "separator": "✦",
+        "icon_style": "none",
+        "font_size": 13,
+        "padding": 10
+      }
+    },
+    "sticky": {
+      "type": "ces-sticky-atc",
+      "settings": {
+        "target_id": "ces-app-price-slot",
+        "reveal_id": "",
+        "button_label": "Choose Your Routine",
+        "show_image": true,
+        "title": "",
+        "rating_tenths": 44,
+        "rating_text": "Rated 4.4 Excellent | Over 255,000 Sold",
+        "enable_counter": true,
+        "sold_count": 100000,
+        "sold_suffix": "Sold",
+        "count_step_1": 1,
+        "count_step_2": 1,
+        "count_step_3": 2,
+        "hide_on_desktop": false,
+        "color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "bar",
+    "editorial",
+    "recognition",
+    "reasons",
+    "badges",
+    "main",
+    "results",
+    "mechanism",
+    "content-tabs",
+    "timeline",
+    "howto",
+    "complaints",
+    "comparison",
+    "limits",
+    "social",
+    "reviews",
+    "guarantee",
+    "faq",
+    "didyouknow",
+    "team",
+    "ingredients",
+    "skeptics",
+    "ships",
+    "sticky"
+  ]
+}
