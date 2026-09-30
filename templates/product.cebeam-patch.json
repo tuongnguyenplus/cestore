@@ -54,7 +54,6 @@
     },
     "editorial": {
       "type": "ces-editorial-hero",
-      "disabled": true,
       "settings": {
         "eyebrow": "HEALTH & BEAUTY DESK",
         "heading": "5 Reasons 100,000+ Women Over 45 Are Choosing Microneedle Patches for Under-Eye Bags and Puffiness",
@@ -199,7 +198,6 @@
         "r4",
         "r5"
       ],
-      "disabled": true,
       "settings": {
         "heading": "",
         "subheading": "",
