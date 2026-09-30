@@ -1,0 +1,648 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+.cesdoc{--teal:#1d5c5c;--teal-deep:#144444;--bone:#ede8e0;--warm:#f7f4ee;--bronze:#a8845c;--ink:#14161a;--soft:#474d54;--rule:#d9d2c6;--white:#fffdfa}.cesdoc *{box-sizing:border-box}.cesdoc{margin:0;background:var(--warm);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:19.5px;line-height:1.76;-webkit-font-smoothing:antialiased}.cesdoc .wrap{max-width:700px;margin:0 auto;padding:0 22px}.cesdoc h1,.cesdoc h2,.cesdoc h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.16;letter-spacing:-.015em}.cesdoc mark{background:#f7e4c4;padding:0 3px}.cesdoc p{margin:0 0 19px}.cesdoc .bar{background:var(--teal);color:var(--warm);text-align:center;padding:10px 18px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.09em;text-transform:uppercase}.cesdoc .mast{background:var(--white);border-bottom:1px solid var(--rule);padding:14px 0}.cesdoc .mast .wrap{display:flex;justify-content:space-between;align-items:center}.cesdoc .brand{font-family:"Fraunces",serif;font-size:19px;letter-spacing:.2em;color:var(--teal)}.cesdoc .kicker{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}.cesdoc .hero{padding:48px 0 8px}.cesdoc h1{font-size:clamp(30px,5.2vw,44px);margin:0 0 20px}.cesdoc h1 em{font-style:italic;color:var(--teal)}.cesdoc .byline{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0;margin:0 0 32px}.cesdoc h2{font-size:clamp(24px,3.7vw,31px);margin:44px 0 20px}.cesdoc h3{font-size:21px;margin:32px 0 14px}.cesdoc .ph{background:var(--white);border:1px solid var(--rule);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--soft);font-family:"IBM Plex Mono",monospace;font-size:12.5px;padding:24px;line-height:1.8;margin:32px 0}.cesdoc .said{border-left:3px solid var(--bronze);padding:6px 0 6px 22px;margin:26px 0;font-style:italic;font-size:20px;color:var(--ink)}.cesdoc .beat{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--bronze);text-transform:uppercase;margin:40px 0 10px}.cesdoc ul{padding-left:22px}.cesdoc li{margin-bottom:11px}.cesdoc .cta{display:block;background:var(--teal);color:var(--warm);text-align:center;text-decoration:none;padding:19px 22px;font-weight:700;font-size:19px;margin:34px 0 8px;border:2px solid var(--teal)}.cesdoc .cta:hover{background:var(--teal-deep);border-color:var(--teal-deep)}.cesdoc .cta:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}.cesdoc .box{background:var(--white);border:1px solid var(--rule);padding:26px 28px;margin:30px 0}.cesdoc .box h3{margin-top:0}.cesdoc .spec{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--rule)}.cesdoc .spec:last-child{border-bottom:0}.cesdoc .spec b{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--bronze);font-weight:500}@media(max-width:600px){.cesdoc .spec{grid-template-columns:1fr;gap:3px}}.cesdoc .faq{border-top:1px solid var(--rule);padding:22px 0}.cesdoc .faq p:first-child{font-weight:600;color:var(--ink)}.cesdoc .cross{background:var(--teal);color:var(--warm);padding:52px 0;margin-top:50px}.cesdoc .cross h2{color:var(--warm);margin-top:0}.cesdoc .cross p{color:rgba(245,241,234,.9)}.cesdoc .cross .cta{background:var(--warm);color:var(--teal);border-color:var(--warm)}.cesdoc .cross .cta:hover{background:transparent;color:var(--warm)}.cesdoc .opt{border:1px solid rgba(245,241,234,.3);padding:22px 24px;margin:20px 0}.cesdoc .opt b{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#e8c9a8;margin-bottom:10px}.cesdoc .ps{border-top:1px solid var(--rule);margin-top:36px;padding-top:26px;font-size:18.5px}.cesdoc footer{background:var(--bone);padding:38px 0;font-size:13.5px;color:var(--soft);line-height:1.62}.cesdoc .fine{border-top:1px solid var(--rule);padding-top:20px}.cesdoc .note{background:#fdf6e6;border:1px dashed var(--bronze);padding:17px 19px;margin:26px 0;font-size:15px;color:#6b5322;line-height:1.62}.cesdoc .note b{color:#5a4419}
+.cesdoc .pbox{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;background:var(--white);border:1px solid var(--rule);padding:22px 24px;margin:30px 0}
+.cesdoc .pbox .pimg{aspect-ratio:1/1;background:var(--warm);border:1px solid var(--rule);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--soft);font-family:"IBM Plex Mono",monospace;font-size:11px;text-align:center;padding:8px}
+.cesdoc .pbox .pimg img{width:100%;height:100%;object-fit:cover;display:block}
+.cesdoc .pbox h3{margin:0 0 6px;font-size:22px}
+.cesdoc .pbox .pprice{font-family:"IBM Plex Mono",monospace;color:var(--teal);font-size:18px;margin:0 0 8px}
+.cesdoc .pbox p{margin:0 0 14px;font-size:16px;color:var(--soft)}
+.cesdoc .pbox .pbtn{display:inline-block;background:var(--teal);color:var(--warm);text-decoration:none;padding:12px 22px;font-weight:700;font-size:16px;border:2px solid var(--teal)}
+.cesdoc .pbox .pbtn:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+@media(max-width:600px){.cesdoc .pbox{grid-template-columns:1fr}}
+.cesdoc .tgrid{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0}
+.cesdoc .tcard{background:var(--white);border:1px solid var(--rule);padding:18px 20px}
+.cesdoc .tcard .tstars{color:#d99b2b;font-size:14px;letter-spacing:1px}
+.cesdoc .tcard p{margin:8px 0 10px;font-size:17px;color:var(--ink)}
+.cesdoc .tcard .twho{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--bronze)}
+.cesdoc .tba{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:0 0 14px}
+.cesdoc .tbahalf{position:relative;aspect-ratio:1/1;background:var(--warm);border:1px solid var(--rule);overflow:hidden}
+.cesdoc .tbahalf img{width:100%;height:100%;object-fit:cover;display:block}
+.cesdoc .tbatag{position:absolute;top:6px;left:6px;background:rgba(20,22,26,.6);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;padding:2px 6px}
+.cesdoc .tbahint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--soft);font-family:"IBM Plex Mono",monospace;font-size:11px}
+</style>
+<style>
+.cesdoc .ticker{background:#14161a;color:#f7f4ee;text-align:center;padding:9px 18px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.cesdoc .ticker b{color:#f0c869}
+.cesdoc .share{display:flex;gap:10px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:0 0 26px}
+.cesdoc .share span{width:26px;height:26px;border:1px solid var(--rule);display:inline-flex;align-items:center;justify-content:center;border-radius:50%}
+.cesdoc .author{display:flex;gap:14px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0;margin:0 0 30px}
+.cesdoc .author img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+.cesdoc .author .aname{font-weight:700;font-size:16px;line-height:1.3}
+.cesdoc .author .arole{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
+.cesdoc .econ{background:var(--white);border:1px solid var(--rule);padding:8px 24px;margin:28px 0}
+.cesdoc .econ .row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--rule);font-size:17px}
+.cesdoc .econ .row:last-child{border-bottom:0}
+.cesdoc .econ .row b{font-family:"IBM Plex Mono",monospace;color:var(--teal);white-space:nowrap}
+.cesdoc .econ .row.hi b{color:var(--bronze)}
+.cesdoc .wall{display:grid;grid-template-columns:1fr;gap:12px;margin:26px 0}
+.cesdoc .wall .w{background:var(--white);border:1px solid var(--rule);padding:16px 18px;font-size:16.5px}
+.cesdoc .wall .w b{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:6px}
+@media(min-width:640px){.cesdoc .wall{grid-template-columns:repeat(3,1fr)}}
+.cesdoc .phase{background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--teal);padding:18px 22px;margin:22px 0}
+.cesdoc .phase h3{margin:0 0 10px;font-size:19px}
+.cesdoc .alert{background:#fdf1f1;border:1px dashed #c46a6a;padding:17px 19px;margin:26px 0;font-size:16px;color:#7a3030;line-height:1.62}
+.cesdoc .alert b{color:#5e2323}
+</style>
+
+<div class="cesdoc cesdoc--ces-tryoros-adv4">
+
+{%- if section.settings.ticker_text != blank -%}
+  <div class="ticker">{{ section.settings.ticker_text }}{% if section.settings.ticker_sub != blank %} &middot; <b>{{ section.settings.ticker_sub }}</b>{% endif %}</div>
+{%- endif -%}
+
+<div class="bar">CEBEAM Under-Eye Reset &middot; {{ section.settings.guarantee_days }}-day money-back guarantee</div>
+
+<header class="mast"><div class="wrap">
+  <span class="brand">CEBEAM</span>
+  <span class="kicker">{{ section.settings.desk_name }}</span>
+</div></header>
+
+<main class="wrap">
+
+<!-- 1. HEADLINE -->
+<section class="hero">
+  <h1>{{ section.settings.headline }}</h1>
+  {%- if section.settings.subheadline != blank -%}
+    <p>{{ section.settings.subheadline }}</p>
+  {%- endif -%}
+</section>
+
+<!-- 2. BYLINE -->
+{%- if section.settings.author_name != blank -%}
+  <div class="author">
+    {%- if section.settings.author_image != blank -%}
+      <img src="{{ section.settings.author_image | image_url: width: 140 }}" alt="{{ section.settings.author_name | escape }}" loading="lazy">
+    {%- endif -%}
+    <div>
+      <div class="aname">{{ section.settings.author_name }}</div>
+      <div class="arole">{{ section.settings.author_role }}{% if section.settings.date_text != blank %} &middot; {{ section.settings.date_text }}{% endif %}</div>
+    </div>
+  </div>
+{%- else -%}
+  <p class="byline">{{ section.settings.desk_name }}{% if section.settings.date_text != blank %} &middot; {{ section.settings.date_text }}{% endif %} &middot; 9 min read</p>
+{%- endif -%}
+
+<!-- 3. LEAD -->
+{%- if section.settings.lead_quote != blank -%}
+  <div class="said">{{ section.settings.lead_quote }}</div>
+{%- endif -%}
+
+<p>Deflating heavy, structural under-eye bags without injectable filler or eyelid surgery was written off for years as something no topical could do.</p>
+
+<p>The argument was never really about the ingredients. It was about whether anything could get far enough into the skin to matter &mdash; and on men, whose skin is measurably thicker, almost nothing did.</p>
+
+<p>That is the part worth understanding, because it explains every jar you have already bought and thrown away.</p>
+
+{%- if section.settings.image_1 != blank -%}
+  <figure style="margin:32px 0">
+    <img src="{{ section.settings.image_1 | image_url: width: 1400 }}" alt="{{ section.settings.image_1_caption | escape }}" loading="lazy" style="width:100%;height:auto;display:block;border:1px solid var(--rule)">
+    {%- if section.settings.image_1_caption != blank -%}
+      <figcaption class="kicker" style="margin-top:10px">{{ section.settings.image_1_caption }}</figcaption>
+    {%- endif -%}
+  </figure>
+{%- else -%}
+  <div class="ph">Image: the one-eye test &mdash; treated side against untreated side, same light, same day</div>
+{%- endif -%}
+
+<!-- 4. THE ECONOMICS -->
+<h2>What the alternatives actually cost</h2>
+
+<p>Before the science, the arithmetic &mdash; because it is the reason the cheap option is never the one you get recommended.</p>
+
+<div class="econ">
+  <div class="row"><span>Under-eye filler, per appointment</span><b>{{ section.settings.cost_filler }}</b></div>
+  <div class="row"><span>Filler lasts 6&ndash;9 months, so per year</span><b>{{ section.settings.cost_filler_year }}</b></div>
+  <div class="row"><span>Lower-lid surgery, per procedure</span><b>{{ section.settings.cost_surgery }}</b></div>
+  <div class="row"><span>Eye creams, at {{ section.settings.cost_cream }} a jar</span><b>{{ section.settings.cost_cream_year }}/yr</b></div>
+  <div class="row hi"><span><b style="color:inherit">CEBEAM</b> &mdash; {{ section.settings.supply_text }}</span><b>{{ section.settings.price }}</b></div>
+</div>
+
+<p>None of that makes a clinic dishonest. It does explain why a $40 patch is rarely the first thing anyone suggests, and why the cream aisle is positioned as a step on the way to a procedure rather than an alternative to one.</p>
+
+<!-- 5. THE STORY -->
+<p class="beat">The story</p>
+<h2>{{ section.settings.story_headline }}</h2>
+
+<div class="said">{{ section.settings.story_quote }}</div>
+
+{{ section.settings.story_body }}
+
+<!-- 6. THE MECHANISM REVEAL -->
+<h2>&ldquo;Don't grease the bag. Drain it.&rdquo;</h2>
+
+<p>The sentence that reframes the whole problem is not a skincare sentence. It is a plumbing one.</p>
+
+<p>Under-eye bags are not, for the most part, a dryness problem. They are fluid that has pooled where the drainage is sluggish, sitting under skin that has thinned and lost some of its structure. That is why the thing you have been doing &mdash; adding moisture to the surface &mdash; has never touched them.</p>
+
+<p>You are not treating a dry wall. You are treating a blocked drain.</p>
+
+<!-- 7. WHY CREAMS FAIL -->
+<h2>So why didn't the expensive eye cream ever work?</h2>
+
+<p>Your skin's outer layer, the stratum corneum, exists to keep things out. It is good at its job. On men it is denser still &mdash; the commonly cited figure is around 20&ndash;25% thicker than women's skin.</p>
+
+<p>Every cream, serum, roller and balm you have pressed under your eyes was working against a barrier built to stop exactly that.</p>
+
+<h3>The 500-Dalton rule</h3>
+
+<p>Dermatology has a rough principle: molecules larger than about 500 Daltons do not passively cross the skin barrier. Most eye-cream actives are comfortably under that line.</p>
+
+<ul>
+  <li>Vitamin C &mdash; 176 Da</li>
+  <li>Caffeine &mdash; 194 Da</li>
+  <li>Retinol &mdash; 286 Da</li>
+  <li>Niacinamide &mdash; 122 Da</li>
+</ul>
+
+<p>So why so little to show for it? Because being small enough to <em>theoretically</em> cross the barrier is not the same as arriving, at a useful concentration, at the depth where the problem actually sits. On the way down the molecules degrade, dissipate and dilute. They hydrate the surface. They do not reach the fluid, the vessels or the collagen underneath.</p>
+
+<p>It is water poured on a sealed wall. Some of it wets the surface. None of it reaches the foundation where the cracks are.</p>
+
+<h3>And the tallow balms?</h3>
+
+<p>Tallow is an occlusive. It seals moisture into the surface of the skin. That is the whole of what it does.</p>
+
+<p>If the bag is fluid and slackened structure rather than dryness, sealing the surface does not deflate it &mdash; it puts a layer on top of it.</p>
+
+<div class="wall">
+  <div class="w"><b>Eye creams</b>Paint on the wall. Sits on the surface, never gets through.</div>
+  <div class="w"><b>Tallow balms</b>Seals the wall. Traps moisture on the surface, and everything else with it.</div>
+  <div class="w"><b>CEBEAM</b>Goes through the wall. Delivers the actives below the barrier.</div>
+</div>
+
+<!-- 8. HOW IT WORKS -->
+<h2>How CEBEAM works, without the jargon</h2>
+
+<p>Each patch is covered in hundreds of dissolving micro-cones, made from the actives themselves rather than metal. They pass the outer barrier &mdash; the one the cream could not &mdash; and then dissolve overnight, releasing what they are made of into the tissue below.</p>
+
+<p>No injections. No metal needles. No downtime.</p>
+
+<div class="phase">
+  <h3>The first night</h3>
+  <p>The cones soften and begin to dissolve. Most people describe a patch that feels slightly firm for a minute, and nothing after that.</p>
+</div>
+
+<div class="phase">
+  <h3>Across three weeks</h3>
+  <p>The routine is one fresh two-patch treatment, four nights a week through the reset, then two nights a week to hold it. Fifteen seconds before bed; peeled off clean by breakfast.</p>
+</div>
+
+<a class="cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label }}</a>
+<p class="kicker" style="text-align:center;margin:0 0 30px">{{ section.settings.guarantee_days }}-day money-back guarantee &middot; {{ section.settings.ships_from }}</p>
+
+<!-- 9. EXPERT LINE -->
+{%- if section.settings.expert_quote != blank -%}
+  <div class="said">{{ section.settings.expert_quote }}{% if section.settings.expert_who != blank %}<br><span class="kicker">&mdash; {{ section.settings.expert_who }}</span>{% endif %}</div>
+{%- endif -%}
+
+<!-- 10. TESTIMONIALS -->
+<h2>{{ section.settings.testimonials_heading }}</h2>
+
+<div class="tgrid">
+  {%- for i in (1..3) -%}
+    {%- assign qk = 't' | append: i | append: '_quote' -%}
+    {%- assign wk = 't' | append: i | append: '_who' -%}
+    {%- assign bk = 't' | append: i | append: '_before' -%}
+    {%- assign ak = 't' | append: i | append: '_after' -%}
+    {%- if section.settings[qk] != blank -%}
+      <div class="tcard">
+        <div class="tba">
+          <div class="tbahalf">
+            {%- if section.settings[bk] != blank -%}
+              <img src="{{ section.settings[bk] | image_url: width: 600 }}" alt="Before" loading="lazy">
+            {%- else -%}<span class="tbahint">Before</span>{%- endif -%}
+            <span class="tbatag">BEFORE</span>
+          </div>
+          <div class="tbahalf">
+            {%- if section.settings[ak] != blank -%}
+              <img src="{{ section.settings[ak] | image_url: width: 600 }}" alt="After" loading="lazy">
+            {%- else -%}<span class="tbahint">After</span>{%- endif -%}
+            <span class="tbatag">AFTER</span>
+          </div>
+        </div>
+        <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>{{ section.settings[qk] }}</p>
+        <div class="twho">{{ section.settings[wk] }}</div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<!-- 11. PRODUCT BOX -->
+<div class="pbox">
+  <div class="pimg">
+    {%- if section.settings.pbox_image != blank -%}
+      <img src="{{ section.settings.pbox_image | image_url: width: 500 }}" alt="{{ section.settings.pbox_name | escape }}" loading="lazy">
+    {%- else -%}Product image{%- endif -%}
+  </div>
+  <div>
+    <h3>{{ section.settings.pbox_name }}</h3>
+    <p class="pprice">{{ section.settings.pbox_price }}</p>
+    <p>{{ section.settings.pbox_desc }}</p>
+    <a class="pbtn" href="{{ section.settings.cta_url }}">{{ section.settings.pbox_button }}</a>
+  </div>
+</div>
+
+<!-- 12. AVAILABILITY -->
+{%- if section.settings.stock_note != blank -%}
+  <div class="alert">{{ section.settings.stock_note }}</div>
+{%- endif -%}
+
+<!-- 13. CLOSE -->
+<h2>{{ section.settings.close_headline }}</h2>
+
+{{ section.settings.close_body }}
+
+<a class="cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label_final }}</a>
+<p class="kicker" style="text-align:center;margin:0 0 8px">{{ section.settings.guarantee_days }}-day money-back guarantee &middot; {{ section.settings.ships_from }}</p>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="fine">
+    <p>{{ section.settings.legal_disclaimer }}</p>
+    <p>{{ section.settings.legal_company | newline_to_br }}</p>
+  </div>
+</div></footer>
+
+</div>
+
+{% schema %}
+{
+  "name": "CES Adv - TryOros ADV4",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Top bar"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker text",
+      "default": "Free shipping on orders over $40"
+    },
+    {
+      "type": "text",
+      "id": "ticker_sub",
+      "label": "Ticker highlight",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "desk_name",
+      "label": "Desk name",
+      "default": "Health & Performance"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_days",
+      "label": "Guarantee days",
+      "default": "90"
+    },
+    {
+      "type": "text",
+      "id": "ships_from",
+      "label": "Ships from",
+      "default": "Ships from the USA"
+    },
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "The Eye-Bag Fix That Skips the $1,200 Appointment"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Sub-headline",
+      "default": "Why every cream you have tried was fighting a barrier it was built to lose against — and what changes when the actives get underneath it."
+    },
+    {
+      "type": "header",
+      "content": "Byline"
+    },
+    {
+      "type": "paragraph",
+      "content": "Fill these in only with a real author. Leave the name blank to show the desk line instead."
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author name",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "author_role",
+      "label": "Author role",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Author photo"
+    },
+    {
+      "type": "text",
+      "id": "date_text",
+      "label": "Date",
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Opening"
+    },
+    {
+      "type": "textarea",
+      "id": "lead_quote",
+      "label": "Pull quote",
+      "info": "A real quote from someone who can be named. Leave blank to hide.",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Lead image"
+    },
+    {
+      "type": "text",
+      "id": "image_1_caption",
+      "label": "Lead image caption",
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "What the alternatives cost"
+    },
+    {
+      "type": "text",
+      "id": "cost_filler",
+      "label": "Filler, per appointment",
+      "default": "$1,200"
+    },
+    {
+      "type": "text",
+      "id": "cost_filler_year",
+      "label": "Filler, per year",
+      "default": "$2,400"
+    },
+    {
+      "type": "text",
+      "id": "cost_surgery",
+      "label": "Lower-lid surgery",
+      "default": "$4,500+"
+    },
+    {
+      "type": "text",
+      "id": "cost_cream",
+      "label": "Eye cream, per jar",
+      "default": "$80"
+    },
+    {
+      "type": "text",
+      "id": "cost_cream_year",
+      "label": "Eye cream, per year",
+      "default": "$500"
+    },
+    {
+      "type": "text",
+      "id": "supply_text",
+      "label": "What the price covers",
+      "default": "21-Day Eye Reset"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Your price",
+      "default": "$64.95"
+    },
+    {
+      "type": "header",
+      "content": "The story"
+    },
+    {
+      "type": "text",
+      "id": "story_headline",
+      "label": "Story headline",
+      "default": "“The tired look went away before anyone knew why”"
+    },
+    {
+      "type": "textarea",
+      "id": "story_quote",
+      "label": "Opening quote",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "story_body",
+      "label": "Story body",
+      "info": "The customer's account, in their words. Use only what they have agreed to.",
+      "default": "<p>Paste the customer story here.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Expert line"
+    },
+    {
+      "type": "textarea",
+      "id": "expert_quote",
+      "label": "Expert quote",
+      "info": "Attribute it to a real, named person or leave blank.",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "expert_who",
+      "label": "Attributed to",
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "See today's price"
+    },
+    {
+      "type": "text",
+      "id": "cta_label_final",
+      "label": "Final button label",
+      "default": "Start the 21-Day Reset"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "text",
+      "id": "testimonials_heading",
+      "label": "Heading",
+      "default": "Real men, real results"
+    },
+    {
+      "type": "textarea",
+      "id": "t1_quote",
+      "label": "Testimonial 1 — quote",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "t1_who",
+      "label": "Testimonial 1 — who",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "t1_before",
+      "label": "Testimonial 1 — before"
+    },
+    {
+      "type": "image_picker",
+      "id": "t1_after",
+      "label": "Testimonial 1 — after"
+    },
+    {
+      "type": "textarea",
+      "id": "t2_quote",
+      "label": "Testimonial 2 — quote",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "t2_who",
+      "label": "Testimonial 2 — who",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "t2_before",
+      "label": "Testimonial 2 — before"
+    },
+    {
+      "type": "image_picker",
+      "id": "t2_after",
+      "label": "Testimonial 2 — after"
+    },
+    {
+      "type": "textarea",
+      "id": "t3_quote",
+      "label": "Testimonial 3 — quote",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "t3_who",
+      "label": "Testimonial 3 — who",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "t3_before",
+      "label": "Testimonial 3 — before"
+    },
+    {
+      "type": "image_picker",
+      "id": "t3_after",
+      "label": "Testimonial 3 — after"
+    },
+    {
+      "type": "header",
+      "content": "Product box"
+    },
+    {
+      "type": "image_picker",
+      "id": "pbox_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "pbox_name",
+      "label": "Product name",
+      "default": "CEBEAM Microneedle Eye Patches"
+    },
+    {
+      "type": "text",
+      "id": "pbox_price",
+      "label": "Price line",
+      "default": "$64.95 · 21-Day Eye Reset"
+    },
+    {
+      "type": "textarea",
+      "id": "pbox_desc",
+      "label": "Description",
+      "default": "One fresh two-patch treatment, four nights a week for three weeks."
+    },
+    {
+      "type": "text",
+      "id": "pbox_button",
+      "label": "Button label",
+      "default": "Choose your routine"
+    },
+    {
+      "type": "header",
+      "content": "Availability note"
+    },
+    {
+      "type": "textarea",
+      "id": "stock_note",
+      "label": "Note",
+      "info": "Say only what is true. Leave blank to hide.",
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Close"
+    },
+    {
+      "type": "text",
+      "id": "close_headline",
+      "label": "Closing headline",
+      "default": "What tomorrow morning could look like"
+    },
+    {
+      "type": "richtext",
+      "id": "close_body",
+      "label": "Closing copy",
+      "default": "<p>Take a photo tonight, in your bathroom light, before the first treatment. Put it away. Three weeks is not long, and a photograph is a far more honest judge of your own face than memory is.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Legal"
+    },
+    {
+      "type": "textarea",
+      "id": "legal_disclaimer",
+      "label": "Disclaimer",
+      "default": "Results vary between individuals. This is a cosmetic product and is not intended to diagnose, treat, cure or prevent any disease. Testimonials reflect the experience of the individuals quoted."
+    },
+    {
+      "type": "textarea",
+      "id": "legal_company",
+      "label": "Company details",
+      "default": "1500 N Grant St, Ste N\nDenver, CO 80203\nUnited States"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CES Adv - TryOros ADV4"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "ces-tryoros-adv4",
+      "settings": {
+        "ticker_text": "Free shipping on orders over $40",
+        "ticker_sub": "",
+        "desk_name": "Health & Performance",
+        "guarantee_days": "90",
+        "ships_from": "Ships from the USA",
+        "headline": "The Eye-Bag Fix That Skips the $1,200 Appointment",
+        "subheadline": "Why every cream you have tried was fighting a barrier it was built to lose against — and what changes when the actives get underneath it.",
+        "author_name": "",
+        "author_role": "",
+        "date_text": "",
+        "lead_quote": "",
+        "image_1_caption": "",
+        "cost_filler": "$1,200",
+        "cost_filler_year": "$2,400",
+        "cost_surgery": "$4,500+",
+        "cost_cream": "$80",
+        "cost_cream_year": "$500",
+        "supply_text": "21-Day Eye Reset",
+        "price": "$64.95",
+        "story_headline": "“The tired look went away before anyone knew why”",
+        "story_quote": "",
+        "story_body": "<p>Paste the customer story here.</p>",
+        "expert_quote": "",
+        "expert_who": "",
+        "cta_label": "See today's price",
+        "cta_label_final": "Start the 21-Day Reset",
+        "testimonials_heading": "Real men, real results",
+        "t1_quote": "",
+        "t1_who": "",
+        "t2_quote": "",
+        "t2_who": "",
+        "t3_quote": "",
+        "t3_who": "",
+        "pbox_name": "CEBEAM Microneedle Eye Patches",
+        "pbox_price": "$64.95 · 21-Day Eye Reset",
+        "pbox_desc": "One fresh two-patch treatment, four nights a week for three weeks.",
+        "pbox_button": "Choose your routine",
+        "stock_note": "",
+        "close_headline": "What tomorrow morning could look like",
+        "close_body": "<p>Take a photo tonight, in your bathroom light, before the first treatment. Put it away. Three weeks is not long, and a photograph is a far more honest judge of your own face than memory is.</p>",
+        "legal_disclaimer": "Results vary between individuals. This is a cosmetic product and is not intended to diagnose, treat, cure or prevent any disease. Testimonials reflect the experience of the individuals quoted.",
+        "legal_company": "1500 N Grant St, Ste N\nDenver, CO 80203\nUnited States"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
