@@ -65,7 +65,7 @@
         "image_position": "above",
         "cta_label": "Try it risk free today",
         "cta_url": "#ces-bundle",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 0,
         "padding_bottom": 24
       }
@@ -205,7 +205,7 @@
         "number_prefix": "Reason",
         "cta_label": "Choose your routine →",
         "cta_url": "#ces-bundle",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 0,
         "padding_bottom": 40
       }
@@ -819,7 +819,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "media_size": "medium",
         "constrain_to_viewport": false,
         "media_fit": "contain",
@@ -922,7 +922,7 @@
         "star_style": "classic",
         "columns": 2,
         "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -942,7 +942,7 @@
         "button_label": "",
         "button_link": "",
         "badge_speed": 40,
-        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -1050,7 +1050,7 @@
         "image_caption": "",
         "image_position": "below_subheading",
         "show_quotes": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -1322,7 +1322,7 @@
         "no_label": "What no patch can change",
         "no_points": "Deep hollows set by bone structure",
         "honest_line": "Those are a surgical issue no topical can move. If that's mostly you, keep your money — we'd rather lose the sale than be the fifth thing that let you down.",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -1469,7 +1469,7 @@
         "avatar_shape": "tile",
         "avatar_speed": 35,
         "disclaimer": "<p>Testimonials reflect individual experiences. Results may vary.</p>",
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -1599,7 +1599,7 @@
         "button_link": "#ces-bundle",
         "button_footnote": "90-day money back guarantee",
         "show_frame": true,
-        "color_scheme": "scheme-01dbb994-800e-4f19-912f-b642b020e43c",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -1775,7 +1775,7 @@
         "subheading": "",
         "exclusive": true,
         "footer_text": "<p>Still have a question? Email support@cebeam.com and a real person will reply within one business day.</p>",
-        "color_scheme": "scheme-44ddbd9e-9001-47e3-a397-67f618614fd0",
+        "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "padding_top": 40,
         "padding_bottom": 40
       }
