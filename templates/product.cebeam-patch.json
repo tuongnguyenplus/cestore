@@ -390,7 +390,7 @@
             "origin_text": "USA warehouse",
             "origin_icon": "us",
             "trust_line": "",
-            "meta_template": "[count] pairs · [unit]/pairs",
+            "meta_template": "[count] treatments · [unit]/treatment",
             "gift_more_label": "See details",
             "gift_sub_mode": "auto",
             "gift_sub_template": "[value] value · [count] [items]",
