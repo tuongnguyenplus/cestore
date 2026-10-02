@@ -856,6 +856,18 @@
             "progress": "Day 19 of the protocol"
           }
         },
+        "pair_VcLGTX": {
+          "type": "pair",
+          "settings": {
+            "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
+            "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
+            "rating_tenths": 50,
+            "quote": "I’ve been looking for something effective to treat puffiness and dark circles, and I’m so glad I found these patches. After using them, I noticed a visible difference in the appearance of the eye area; it looks fresher and more hydrated. They are very comfortable to wear and stay perfectly in place. I love the combination of ingredients—like hyaluronic acid and peptides—as they leave the skin feeling firm and smooth.",
+            "name": "Sarah, 52",
+            "verified": true,
+            "progress": "After 21 days of use"
+          }
+        },
         "pair_9M6FUm": {
           "type": "pair",
           "settings": {
@@ -880,18 +892,6 @@
             "progress": "After 6 weeks of use"
           }
         },
-        "pair_VcLGTX": {
-          "type": "pair",
-          "settings": {
-            "before_image": "shopify://shop_images/W45_01_A1_Unaware_and_Problem_Aware.png",
-            "after_image": "shopify://shop_images/hf_20260925_084055_5b2d2216-15a7-498a-a130-6db5bb7846b6.png",
-            "rating_tenths": 50,
-            "quote": "I’ve been looking for something effective to treat puffiness and dark circles, and I’m so glad I found these patches. After using them, I noticed a visible difference in the appearance of the eye area; it looks fresher and more hydrated. They are very comfortable to wear and stay perfectly in place. I love the combination of ingredients—like hyaluronic acid and peptides—as they leave the skin feeling firm and smooth.",
-            "name": "Sarah, 52",
-            "verified": true,
-            "progress": "After 21 days of use"
-          }
-        },
         "p2": {
           "type": "pair",
           "settings": {
@@ -907,9 +907,9 @@
       },
       "block_order": [
         "p1",
+        "pair_VcLGTX",
         "pair_9M6FUm",
         "pair_QqPKNN",
-        "pair_VcLGTX",
         "p2"
       ],
       "settings": {
