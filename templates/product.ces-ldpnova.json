@@ -870,6 +870,7 @@
         "photo-3": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/8f8ae381-9b03-442d-91ab-802f03c5e9c7.webp",
             "alt": ""
           }
         },
