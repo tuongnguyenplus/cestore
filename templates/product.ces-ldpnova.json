@@ -87,7 +87,13 @@
     "hero": {
       "type": "ces-editorial-hero",
       "settings": {
+        "text_align": "left",
+        "rating_tenths": 48,
+        "rating_text": "",
         "eyebrow": "Still Waking Up With Eye Bags No Matter What You Try?",
+        "eyebrow_style": "plain",
+        "heading_size": "large",
+        "heading_accent": "Wake Up Looking Like Yourself Again",
         "heading": "Finally, The Micro-Needle Patch To Wake Up Looking Like Yourself Again",
         "subheading": "Tiny dissolving cones reach the deeper layer where eye bags actually start.",
         "author_name": "",
@@ -97,13 +103,7 @@
         "cta_url": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 0,
-        "rating_tenths": 48,
-        "rating_text": "",
-        "eyebrow_style": "plain",
-        "heading_accent": "Wake Up Looking Like Yourself Again",
-        "text_align": "left",
-        "heading_size": "large"
+        "padding_bottom": 0
       }
     },
     "herobullets": {
@@ -152,15 +152,16 @@
         "subheading": "",
         "icon": "check-circle",
         "disclaimer": "",
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 32,
+        "columns_desktop": "1",
+        "check_color": "",
         "check_style": "filled",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
-        "columns_desktop": "1",
-        "cta_width": "full"
+        "cta_width": "full",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 32
       }
     },
     "recognition": {
@@ -169,6 +170,7 @@
         "image-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/logo.webp",
             "caption": ""
           }
         },
@@ -265,11 +267,12 @@
       "settings": {
         "heading": "If Any Of This Sounds Like You, Keep Reading",
         "subheading": "",
+        "heading_accent": "Keep Reading",
+        "image_alt": "The products that stopped at the surface",
+        "image_caption": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 24,
-        "heading_accent": "Keep Reading",
-        "image_alt": "The products that stopped at the surface"
+        "padding_bottom": 24
       }
     },
     "badges": {
@@ -440,6 +443,9 @@
         "icon_item-6"
       ],
       "settings": {
+        "eyebrow": "You've Tried Everything.",
+        "text_style": "pill",
+        "pill_color": "#c0392b",
         "heading": "Here's Why Nothing Has Worked:",
         "highlight_words": "",
         "subheading": "",
@@ -451,12 +457,10 @@
         "cta_label": "",
         "cta_url": "",
         "cta_footnote": "",
+        "cta_width": "auto",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40,
-        "eyebrow": "You've Tried Everything.",
-        "text_style": "pill",
-        "pill_color": "#c0392b"
+        "padding_bottom": 40
       }
     },
     "mechanism": {
@@ -703,10 +707,10 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40,
-        "cta_width": "full"
+        "padding_bottom": 40
       }
     },
     "timeline": {
@@ -785,10 +789,10 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "cta_width": "full"
+        "padding_bottom": 40
       }
     },
     "mornings": {
@@ -853,6 +857,9 @@
         "icon_item-5"
       ],
       "settings": {
+        "eyebrow": "",
+        "text_style": "text",
+        "pill_color": "#c0392b",
         "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
         "highlight_words": "",
         "subheading": "",
@@ -864,10 +871,10 @@
         "cta_label": "",
         "cta_url": "",
         "cta_footnote": "",
+        "cta_width": "full",
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 24,
-        "cta_width": "full"
+        "padding_bottom": 24
       }
     },
     "photowall": {
@@ -949,10 +956,10 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_width": "full",
         "color_scheme": "scheme-2",
         "padding_top": 0,
-        "padding_bottom": 40,
-        "cta_width": "full"
+        "padding_bottom": 40
       }
     },
     "compare": {
