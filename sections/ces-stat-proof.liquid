@@ -1,0 +1,166 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-scroll.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign sp_has_callout = false
+  if section.settings.callout_figure != blank or section.settings.callout_text != blank
+    assign sp_has_callout = true
+  endif
+-%}
+
+{%- style -%}
+  .ces-sp{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-sp__head{text-align:center}
+  .ces-sp__body{margin:2rem auto 0;max-width:68rem;font-size:1.55rem;line-height:1.6}
+  .ces-sp__body > :first-child{margin-top:0}
+  .ces-sp__body > :last-child{margin-bottom:0}
+  .ces-sp__figure{margin:2.4rem auto 0;max-width:52rem}
+  .ces-sp__figure img{display:block;width:100%;height:auto;border-radius:var(--ces-radius)}
+  .ces-sp__caption{margin:.8rem 0 0;font-size:1.3rem;line-height:1.45;text-align:center;opacity:.8}
+
+  /* The callout is the one thing in the section that is allowed to shout, so it
+     gets the accent rule and the only oversized type. */
+  .ces-sp__callout{margin:2.8rem auto 0;max-width:60rem;padding:2rem 1.8rem;text-align:center;
+    border-radius:var(--ces-radius);border:var(--ces-border);background:var(--ces-surface);
+    border-left:.4rem solid var(--ces-accent)}
+  .ces-sp__callout-label{display:block;margin:0 0 .8rem;font-size:1.15rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;line-height:1.2;color:var(--ces-accent)}
+  .ces-sp__callout-lead{display:block;margin:0 0 .4rem;font-size:1.5rem;line-height:1.45}
+  .ces-sp__figure-value{display:block;margin:0;font-size:3.2rem;font-weight:700;line-height:1.1;
+    letter-spacing:-.01em;color:var(--ces-accent)}
+  .ces-sp__callout-text{margin:1rem 0 0;font-size:1.45rem;line-height:1.5}
+  .ces-sp__source{display:block;margin:1.2rem 0 0;font-size:1.15rem;line-height:1.4;opacity:.7}
+  .ces-sp__cta{margin-top:2.4rem;text-align:center}
+  @media screen and (min-width:750px){
+    .ces-sp__body{margin-top:2.4rem;font-size:1.7rem;line-height:1.65}
+    .ces-sp__callout{margin-top:3.2rem;padding:2.8rem 3.2rem}
+    .ces-sp__figure-value{font-size:4.8rem}
+    .ces-sp__callout-lead{font-size:1.7rem}
+    .ces-sp__callout-text{font-size:1.6rem}
+  }
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-sp ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-sp__head">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ces-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.image != blank and section.settings.image_position == 'above_body' -%}
+      <figure class="ces-sp__figure">
+        <img
+          src="{{ section.settings.image | image_url: width: 1040 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+        {%- if section.settings.image_caption != blank -%}
+          <figcaption class="ces-sp__caption">{{ section.settings.image_caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+
+    {%- if section.settings.body != blank -%}
+      <div class="ces-sp__body ces-rte">{{ section.settings.body }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.image != blank and section.settings.image_position == 'below_body' -%}
+      <figure class="ces-sp__figure">
+        <img
+          src="{{ section.settings.image | image_url: width: 1040 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+        {%- if section.settings.image_caption != blank -%}
+          <figcaption class="ces-sp__caption">{{ section.settings.image_caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+
+    {%- if sp_has_callout -%}
+      <aside class="ces-sp__callout">
+        {%- if section.settings.callout_label != blank -%}
+          <span class="ces-sp__callout-label">{{ section.settings.callout_label }}</span>
+        {%- endif -%}
+        {%- if section.settings.callout_lead != blank -%}
+          <span class="ces-sp__callout-lead">{{ section.settings.callout_lead }}</span>
+        {%- endif -%}
+        {%- if section.settings.callout_figure != blank -%}
+          <p class="ces-sp__figure-value">{{ section.settings.callout_figure }}</p>
+        {%- endif -%}
+        {%- if section.settings.callout_text != blank -%}
+          <div class="ces-sp__callout-text ces-rte">{{ section.settings.callout_text }}</div>
+        {%- endif -%}
+        {%- if section.settings.callout_source != blank -%}
+          <span class="ces-sp__source">{{ section.settings.callout_source }}</span>
+        {%- endif -%}
+      </aside>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="ces-sp__cta">
+        <a class="ces-button" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Stat proof",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "A block of argument with one figure pulled out of it. Use it where the case rests on a number the shopper can check." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One." },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "richtext", "id": "body", "label": "Body" },
+    { "type": "header", "content": "Image" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        { "value": "above_body", "label": "Above the body" },
+        { "value": "below_body", "label": "Below the body" }
+      ],
+      "default": "below_body"
+    },
+    { "type": "text", "id": "image_alt", "label": "Image description" },
+    { "type": "text", "id": "image_caption", "label": "Caption" },
+    { "type": "header", "content": "The figure" },
+    { "type": "paragraph", "content": "Shown only when the figure or the text below it is filled in. Cite a figure you can point at a source for — the source line prints under the callout." },
+    { "type": "text", "id": "callout_label", "label": "Label above", "default": "Industry Insight" },
+    { "type": "text", "id": "callout_lead", "label": "Lead-in line", "default": "The global eye cream market is worth" },
+    { "type": "text", "id": "callout_figure", "label": "The figure" },
+    { "type": "richtext", "id": "callout_text", "label": "Text under the figure" },
+    { "type": "text", "id": "callout_source", "label": "Source", "info": "Name the publication or database the figure comes from." },
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "text", "id": "button_link", "label": "Button link", "default": "#ces-bundle" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 48 }
+  ],
+  "presets": [{ "name": "CES Stat proof" }]
+}
+{% endschema %}

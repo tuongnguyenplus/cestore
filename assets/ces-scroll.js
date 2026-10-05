@@ -28,6 +28,13 @@
   function headerOffset() {
     var header = document.querySelector('.section-header, .header-wrapper, sticky-header');
     var h = header ? header.getBoundingClientRect().height : 0;
+
+    // A sticky in-page nav sits below the header and covers the same amount
+    // again, so the target has to clear both or it lands underneath the strip.
+    // Pages without one measure 0 here and behave exactly as before.
+    var nav = document.querySelector('.ces-nav--sticky');
+    if (nav) h += nav.getBoundingClientRect().height;
+
     // A little breathing room so the target does not hug the header edge.
     return h + 16;
   }

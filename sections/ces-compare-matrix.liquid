@@ -1,0 +1,269 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  # Only the alternative columns that have been named are drawn, so the same
+  # section does a two-way or a four-way comparison without empty headers.
+  assign cm_others = ''
+  for i in (1..3)
+    assign key = 'col_' | append: i | append: '_label'
+    assign label = section.settings[key] | strip
+    if label != blank
+      # Joined without a trailing separator on purpose: Shopify's split drops a
+      # trailing empty field but not every Liquid engine does, and one stray
+      # entry here adds a header cell the body rows have no column for.
+      if cm_others == ''
+        assign cm_others = i | append: ''
+      else
+        assign cm_others = cm_others | append: ',' | append: i
+      endif
+    endif
+  endfor
+  assign cm_others = cm_others | split: ','
+  assign cm_cols = cm_others.size | plus: 1
+-%}
+
+{%- style -%}
+  .ces-cm{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-cm__head{text-align:center}
+  .ces-cm__wrap{margin-top:2.4rem;border-radius:var(--ces-radius);border:var(--ces-border);overflow:hidden}
+  .ces-cm__table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .ces-cm__table th,.ces-cm__table td{padding:1.2rem .6rem;text-align:center;vertical-align:middle;
+    border-bottom:.1rem solid var(--ces-border-color)}
+  .ces-cm__table tr:last-child th,.ces-cm__table tr:last-child td{border-bottom:0}
+  /* The row label is the only left-aligned cell and takes the slack, so the
+     tick columns stay narrow enough for four of them on a phone. */
+  .ces-cm__row-label{width:40%;text-align:left;font-size:1.35rem;font-weight:500;line-height:1.35;
+    overflow-wrap:break-word}
+  .ces-cm__col{font-size:1.15rem;font-weight:700;line-height:1.2;letter-spacing:.01em;
+    overflow-wrap:break-word;hyphens:auto}
+  /* The brand column is tinted the whole way down rather than only in the
+     header, so the eye follows one stripe instead of re-finding it per row. */
+  .ces-cm__col--brand,.ces-cm__cell--brand{background:rgba(var(--ces-accent-rgb,29,92,92),.08)}
+  .ces-cm__col--brand{color:var(--ces-accent)}
+  .ces-cm__brand-logo{display:block;max-width:100%;height:auto;margin:0 auto .4rem}
+  .ces-cm__mark{display:inline-flex;width:2rem;height:2rem}
+  .ces-cm__mark svg{width:100%;height:100%}
+  .ces-cm__mark--yes{color:var(--ces-success)}
+  .ces-cm__mark--no{color:var(--ces-danger)}
+  .ces-cm__mark--partial{color:var(--ces-gold)}
+  .ces-cm__note{display:block;margin-top:.2rem;font-size:1.1rem;line-height:1.2;opacity:.75}
+  .ces-cm__footnote{margin:2rem 0 0;font-size:1.4rem;line-height:1.55}
+  @media screen and (min-width:750px){
+    .ces-cm__wrap{margin-top:2.8rem}
+    .ces-cm__table th,.ces-cm__table td{padding:1.6rem 1.2rem}
+    .ces-cm__row-label{width:34%;font-size:1.6rem}
+    .ces-cm__col{font-size:1.5rem}
+    .ces-cm__mark{width:2.4rem;height:2.4rem}
+    .ces-cm__note{font-size:1.2rem}
+  }
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-cm ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-cm__head">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ces-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 and cm_cols > 1 -%}
+      <div class="ces-cm__wrap">
+        <table class="ces-cm__table">
+          {%- if section.settings.table_caption != blank -%}
+            <caption class="ces-visually-hidden">{{ section.settings.table_caption }}</caption>
+          {%- endif -%}
+          <thead>
+            <tr>
+              <td></td>
+              <th class="ces-cm__col ces-cm__col--brand" scope="col">
+                {%- if section.settings.brand_image != blank -%}
+                  <img
+                    class="ces-cm__brand-logo"
+                    src="{{ section.settings.brand_image | image_url: width: 240 }}"
+                    alt="{{ section.settings.brand_label | escape }}"
+                    width="120"
+                    height="40"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                {{ section.settings.brand_label }}
+              </th>
+              {%- for i in cm_others -%}
+                {%- assign key = 'col_' | append: i | append: '_label' -%}
+                <th class="ces-cm__col" scope="col">{{ section.settings[key] }}</th>
+              {%- endfor -%}
+            </tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              {%- if block.settings.label != blank -%}
+                <tr {{ block.shopify_attributes }}>
+                  <th class="ces-cm__row-label" scope="row">{{ block.settings.label }}</th>
+
+                  {%- assign cells = 'brand,col_1,col_2,col_3' | split: ',' -%}
+                  {%- for cell in cells -%}
+                    {%- liquid
+                      assign is_brand = false
+                      if cell == 'brand'
+                        assign is_brand = true
+                      else
+                        assign index = cell | remove: 'col_'
+                        unless cm_others contains index
+                          continue
+                        endunless
+                      endif
+                      assign state = block.settings[cell]
+                      assign note_key = cell | append: '_note'
+                      assign note = block.settings[note_key]
+                      case state
+                        when 'yes'
+                          assign mark = 'check-circle'
+                        when 'partial'
+                          assign mark = 'info'
+                        else
+                          assign mark = 'cross-circle'
+                      endcase
+                    -%}
+                    <td{% if is_brand %} class="ces-cm__cell--brand"{% endif %}>
+                      <span class="ces-cm__mark ces-cm__mark--{{ state }}">
+                        {% render 'ces-icon', icon: mark %}
+                      </span>
+                      <span class="ces-visually-hidden">
+                        {%- if state == 'yes' -%}
+                          {{ section.settings.yes_text }}
+                        {%- elsif state == 'partial' -%}
+                          {{ section.settings.partial_text }}
+                        {%- else -%}
+                          {{ section.settings.no_text }}
+                        {%- endif -%}
+                      </span>
+                      {%- if note != blank -%}
+                        <span class="ces-cm__note">{{ note }}</span>
+                      {%- endif -%}
+                    </td>
+                  {%- endfor -%}
+                </tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.footnote != blank -%}
+      <div class="ces-cm__footnote ces-rte">{{ section.settings.footnote }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Compare matrix",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How We Compare" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How CEBEAM Patches Compare To What You Have Already Tried" },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "table_caption", "label": "Screen-reader caption for the table", "default": "Feature comparison" },
+    { "type": "header", "content": "Columns" },
+    { "type": "paragraph", "content": "The first column is yours. Name up to three alternatives — an unnamed one is left out of the table." },
+    { "type": "text", "id": "brand_label", "label": "Your column", "default": "CEBEAM" },
+    { "type": "image_picker", "id": "brand_image", "label": "Logo above your column name" },
+    { "type": "text", "id": "col_1_label", "label": "Alternative 1", "default": "Eye Creams" },
+    { "type": "text", "id": "col_2_label", "label": "Alternative 2", "default": "Fillers" },
+    { "type": "text", "id": "col_3_label", "label": "Alternative 3", "default": "Eye Surgery" },
+    { "type": "header", "content": "Wording read out by screen readers" },
+    { "type": "text", "id": "yes_text", "label": "For a tick", "default": "Yes" },
+    { "type": "text", "id": "partial_text", "label": "For a partial mark", "default": "Partly" },
+    { "type": "text", "id": "no_text", "label": "For a cross", "default": "No" },
+    { "type": "header", "content": "Below the table" },
+    { "type": "richtext", "id": "footnote", "label": "Footnote" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "What is being compared", "default": "Reaches beneath the surface" },
+        {
+          "type": "select",
+          "id": "brand",
+          "label": "Your column",
+          "options": [
+            { "value": "yes", "label": "Tick" },
+            { "value": "partial", "label": "Partly" },
+            { "value": "no", "label": "Cross" }
+          ],
+          "default": "yes"
+        },
+        { "type": "text", "id": "brand_note", "label": "Small text under your mark" },
+        {
+          "type": "select",
+          "id": "col_1",
+          "label": "Alternative 1",
+          "options": [
+            { "value": "yes", "label": "Tick" },
+            { "value": "partial", "label": "Partly" },
+            { "value": "no", "label": "Cross" }
+          ],
+          "default": "no"
+        },
+        { "type": "text", "id": "col_1_note", "label": "Small text under alternative 1" },
+        {
+          "type": "select",
+          "id": "col_2",
+          "label": "Alternative 2",
+          "options": [
+            { "value": "yes", "label": "Tick" },
+            { "value": "partial", "label": "Partly" },
+            { "value": "no", "label": "Cross" }
+          ],
+          "default": "no"
+        },
+        { "type": "text", "id": "col_2_note", "label": "Small text under alternative 2" },
+        {
+          "type": "select",
+          "id": "col_3",
+          "label": "Alternative 3",
+          "options": [
+            { "value": "yes", "label": "Tick" },
+            { "value": "partial", "label": "Partly" },
+            { "value": "no", "label": "Cross" }
+          ],
+          "default": "no"
+        },
+        { "type": "text", "id": "col_3_note", "label": "Small text under alternative 3" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "CES Compare matrix",
+      "blocks": [
+        { "type": "row", "settings": { "label": "Reaches beneath the surface", "brand": "yes", "col_1": "no", "col_2": "yes", "col_3": "yes" } },
+        { "type": "row", "settings": { "label": "No surgery or needles", "brand": "yes", "col_1": "yes", "col_2": "no", "col_3": "no" } },
+        { "type": "row", "settings": { "label": "No clinic visits needed", "brand": "yes", "col_1": "yes", "col_2": "no", "col_3": "no" } },
+        { "type": "row", "settings": { "label": "No ongoing clinic cost", "brand": "yes", "col_1": "yes", "col_2": "no", "col_3": "no" } },
+        { "type": "row", "settings": { "label": "No downtime or recovery", "brand": "yes", "col_1": "yes", "col_2": "partial", "col_3": "no" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,102 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ces-anchor-nav.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'ces-scroll.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .ces-nav{color:rgb(var(--color-foreground));background:var(--gradient-background);
+    border-bottom:.1rem solid var(--ces-border-color)}
+  /* Sticky rather than fixed, so the bar takes part in the page flow and does
+     not need a spacer underneath it. */
+  .ces-nav--sticky{position:sticky;top:0;z-index:4}
+  .ces-nav__inner{display:flex;align-items:center;gap:1.2rem;padding:0 1.2rem}
+  .ces-nav__strip{flex:1 1 auto;display:flex;align-items:center;gap:.4rem;min-width:0;
+    overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .ces-nav__strip::-webkit-scrollbar{display:none}
+  .ces-nav__link{flex:0 0 auto;position:relative;padding:1.2rem .8rem;
+    font-size:1.3rem;font-weight:600;line-height:1.2;white-space:nowrap;
+    text-decoration:none;color:currentColor;opacity:.7;transition:opacity .15s ease}
+  .ces-nav__link:hover{opacity:1}
+  /* The underline is drawn on a pseudo-element so turning it on does not shift
+     the label by the thickness of a border. */
+  .ces-nav__link::after{content:"";position:absolute;left:.8rem;right:.8rem;bottom:0;
+    height:.2rem;border-radius:.2rem;background:var(--ces-accent);opacity:0;transition:opacity .15s ease}
+  .ces-nav__link.is-current{opacity:1;font-weight:700}
+  .ces-nav__link.is-current::after{opacity:1}
+  .ces-nav__cta{flex:0 0 auto;padding:.8rem 1.4rem;font-size:1.3rem;min-height:0}
+  @media screen and (min-width:750px){
+    .ces-nav__inner{justify-content:center;gap:2rem;padding:0 2rem}
+    .ces-nav__strip{flex:0 1 auto;gap:1.2rem;justify-content:center}
+    .ces-nav__link{padding:1.4rem 1rem;font-size:1.4rem}
+    .ces-nav__link::after{left:1rem;right:1rem}
+    .ces-nav__cta{padding:1rem 2rem;font-size:1.4rem}
+  }
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 or section.settings.cta_label != blank -%}
+  <ces-anchor-nav
+    class="ces-section ces-nav color-{{ section.settings.color_scheme }} gradient{% if section.settings.sticky %} ces-nav--sticky{% endif %}"
+  >
+    <nav class="ces-nav__inner" aria-label="{{ section.settings.aria_label | escape }}">
+      {%- if section.blocks.size > 0 -%}
+        <div class="ces-nav__strip" data-ces-nav-strip>
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign nav_target = block.settings.target_id | strip | remove: '#'
+              assign nav_label = block.settings.label | strip
+            -%}
+            {%- if nav_label != blank and nav_target != blank -%}
+              <a class="ces-nav__link" href="#{{ nav_target }}" {{ block.shopify_attributes }}>{{ nav_label }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <a class="ces-button ces-nav__cta" href="{{ section.settings.cta_url | default: '#' }}">
+          {{ section.settings.cta_label }}
+        </a>
+      {%- endif -%}
+    </nav>
+  </ces-anchor-nav>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CES Anchor nav",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "A strip of in-page links. Each link needs the id of the element it jumps to. Shopify wraps every section in an id of the form shopify-section-SECTIONNAME, so a link to the FAQ section named faq jumps to shopify-section-faq. A link whose id is not on the page is left out rather than shown as dead." },
+    { "type": "checkbox", "id": "sticky", "label": "Stick to the top of the screen", "default": true },
+    { "type": "text", "id": "aria_label", "label": "Screen-reader name for the strip", "default": "Jump to a section" },
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Order Now" },
+    { "type": "text", "id": "cta_url", "label": "Button link", "default": "#ces-bundle" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "How it Works" },
+        { "type": "text", "id": "target_id", "label": "Jumps to id", "info": "Without the #.", "default": "" }
+      ]
+    }
+  ],
+  "max_blocks": 7,
+  "presets": [
+    {
+      "name": "CES Anchor nav",
+      "blocks": [
+        { "type": "link", "settings": { "label": "How it Works", "target_id": "ces-how-it-works" } },
+        { "type": "link", "settings": { "label": "Real Results", "target_id": "ces-results" } },
+        { "type": "link", "settings": { "label": "How To Use", "target_id": "ces-how-to-use" } },
+        { "type": "link", "settings": { "label": "Offers", "target_id": "ces-bundle" } },
+        { "type": "link", "settings": { "label": "FAQ", "target_id": "ces-faq" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
