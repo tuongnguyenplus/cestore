@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "countdown": {
@@ -6,29 +15,23 @@
         "heading": "Limited Time Flash Sale",
         "subheading": "Up To 70% Off + Free Shipping",
         "mode": "rolling",
+        "deadline": "",
         "rolling_minutes": 60,
         "show_days": false,
         "days_label": "DAYS",
         "hours_label": "HRS",
         "minutes_label": "MINS",
         "seconds_label": "SECS",
+        "expired_text": "",
+        "cta_label": "",
         "cta_url": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 0,
-        "expired_text": "",
-        "cta_label": ""
+        "padding_bottom": 0
       }
     },
     "nav": {
       "type": "ces-anchor-nav",
-      "settings": {
-        "sticky": true,
-        "aria_label": "Jump to a section",
-        "cta_label": "Order Now",
-        "cta_url": "#shopify-section-main",
-        "color_scheme": "scheme-1"
-      },
       "blocks": {
         "link-1": {
           "type": "link",
@@ -72,35 +75,33 @@
         "link-3",
         "link-4",
         "link-5"
-      ]
+      ],
+      "settings": {
+        "sticky": true,
+        "aria_label": "Jump to a section",
+        "cta_label": "Order Now",
+        "cta_url": "#shopify-section-main",
+        "color_scheme": "scheme-1"
+      }
     },
     "hero": {
       "type": "ces-editorial-hero",
       "settings": {
+        "eyebrow": "Still Waking Up With Eye Bags No Matter What You Try?",
         "heading": "Finally, The Micro-Needle Patch To Wake Up Looking Like Yourself Again",
+        "subheading": "Tiny dissolving cones reach the deeper layer where eye bags actually start.",
         "author_name": "",
         "date_text": "",
         "image_position": "below",
         "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 8,
-        "eyebrow": "Still Waking Up With Eye Bags No Matter What You Try?",
-        "subheading": "Tiny dissolving cones reach the deeper layer where eye bags actually start.",
-        "cta_url": "#shopify-section-main"
+        "padding_bottom": 8
       }
     },
     "herobullets": {
       "type": "ces-benefits-checklist",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "icon": "check-circle",
-        "disclaimer": "<p>30 Day Money Back Guarantee · Free Shipping</p>",
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 32
-      },
       "blocks": {
         "benefit_item-1": {
           "type": "benefit_item",
@@ -139,39 +140,49 @@
         "benefit_item-3",
         "benefit_item-4",
         "benefit_item-5"
-      ]
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "icon": "check-circle",
+        "disclaimer": "<p>30 Day Money Back Guarantee · Free Shipping</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
     },
     "recognition": {
       "type": "ces-recognition",
-      "settings": {
-        "heading": "As Seen On",
-        "closing": "",
-        "image_position": "below",
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 24,
-        "subheading": ""
-      },
       "blocks": {
         "image-1": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": ""
+          }
         },
         "image-2": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": ""
+          }
         },
         "image-3": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": ""
+          }
         },
         "image-4": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": ""
+          }
         },
         "image-5": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": ""
+          }
         }
       },
       "block_order": [
@@ -180,17 +191,19 @@
         "image-3",
         "image-4",
         "image-5"
-      ]
+      ],
+      "settings": {
+        "heading": "As Seen On",
+        "subheading": "",
+        "closing": "",
+        "image_position": "below",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
     },
     "qualify": {
       "type": "ces-experience-list",
-      "settings": {
-        "heading": "If Any Of This Sounds Like You, Keep Reading",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 24,
-        "subheading": ""
-      },
       "blocks": {
         "item-1": {
           "type": "item",
@@ -236,20 +249,17 @@
         "item-4",
         "item-5",
         "item-6"
-      ]
+      ],
+      "settings": {
+        "heading": "If Any Of This Sounds Like You, Keep Reading",
+        "subheading": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 24
+      }
     },
     "badges": {
       "type": "ces-announcement-marquee",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "speed": 40,
-        "direction": "left",
-        "pause_on_hover": true,
-        "separator": "•",
-        "icon_style": "none",
-        "font_size": 14,
-        "padding": 10
-      },
       "blocks": {
         "marquee_item-1": {
           "type": "marquee_item",
@@ -309,50 +319,49 @@
         "marquee_item-5",
         "marquee_item-6",
         "marquee_item-7"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "speed": 40,
+        "direction": "left",
+        "pause_on_hover": true,
+        "separator": "•",
+        "icon_style": "none",
+        "font_size": 14,
+        "padding": 10
+      }
     },
     "layers": {
       "type": "ces-stat-proof",
       "settings": {
-        "heading": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One.",
-        "image_position": "below_body",
-        "callout_label": "Industry Insight",
-        "callout_lead": "The global eye cream market is worth",
-        "button_link": "#shopify-section-main",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40,
         "eyebrow": "",
+        "heading": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One.",
         "subheading": "",
         "body": "<p>Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.</p><p>Eye bags don't start at the surface. They start deeper &mdash; in the tissue where fluid builds overnight, where skin gets thinner with age, where the hollow that makes you look tired actually forms.</p><p>Creams sit on top. Serums sit on top. Even the gel patches you have already tried sit on top.</p><p>Your skin is designed to keep things out and it is very good at its job. That is not a quality problem with the products you chose. It is a physics problem. Nothing applied to the surface can cross that barrier.</p><p>That is the only reason nothing has worked. Not because you did not try hard enough. Because everything stopped at the same wall.</p>",
+        "image_position": "below_body",
         "image_alt": "",
         "image_caption": "",
+        "callout_label": "Industry Insight",
+        "callout_lead": "The global eye cream market is worth",
         "callout_figure": "$2.8B / Year",
         "callout_text": "<p>Built to keep you buying. Not to reach where the problem starts.</p>",
         "callout_source": "",
-        "button_label": ""
+        "button_label": "",
+        "button_link": "#shopify-section-main",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "failures": {
       "type": "ces-icon-feature-grid",
-      "settings": {
-        "heading": "You've Tried Everything. Here's Why Nothing Has Worked",
-        "icon_color": "#c0392b",
-        "icon_frame": "disc",
-        "icon_size": 5,
-        "columns_mobile": 2,
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 40,
-        "highlight_words": "Nothing Has Worked",
-        "subheading": ""
-      },
       "blocks": {
         "icon_item-1": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "cross-circle",
+            "icon_color": "",
             "heading": "Eye Creams",
             "text": "Surface only"
           }
@@ -360,7 +369,9 @@
         "icon_item-2": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "cross-circle",
+            "icon_color": "",
             "heading": "Caffeine Serum",
             "text": "Wears off"
           }
@@ -368,7 +379,9 @@
         "icon_item-3": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "cross-circle",
+            "icon_color": "",
             "heading": "Gel Patches",
             "text": "Same wall"
           }
@@ -376,7 +389,9 @@
         "icon_item-4": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "cross-circle",
+            "icon_color": "",
             "heading": "Jade Roller",
             "text": "Temporary drainage"
           }
@@ -384,7 +399,9 @@
         "icon_item-5": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "cross-circle",
+            "icon_color": "",
             "heading": "Cold Compress",
             "text": "Surface tightening"
           }
@@ -392,7 +409,9 @@
         "icon_item-6": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "cross-circle",
+            "icon_color": "",
             "heading": "Concealer",
             "text": "Last resort, failed"
           }
@@ -405,7 +424,23 @@
         "icon_item-4",
         "icon_item-5",
         "icon_item-6"
-      ]
+      ],
+      "settings": {
+        "heading": "You've Tried Everything. Here's Why Nothing Has Worked",
+        "highlight_words": "Nothing Has Worked",
+        "subheading": "",
+        "icon_color": "#c0392b",
+        "icon_frame": "disc",
+        "icon_size": 5,
+        "columns_mobile": 2,
+        "columns_desktop": 3,
+        "cta_label": "",
+        "cta_url": "",
+        "cta_footnote": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 40
+      }
     },
     "mechanism": {
       "type": "ces-image-text-banner",
@@ -414,64 +449,55 @@
         "image_shape": "rounded",
         "text_position": "middle",
         "overlay_opacity": 0,
+        "eyebrow": "How it Works",
         "heading_accent": "",
         "heading": "Meet The Patch That Crosses The Wall",
         "text": "<p>CEBEAM Patches don't sit on your skin. They dissolve into it.</p><p>Each patch carries hundreds of tiny cones made from hyaluronic acid and peptides. Press one under your eye before bed. The cones dissolve painlessly beneath the surface over several hours, reaching the deeper layer where eye bags actually form.</p><p>You sleep. They work. Peel them off in the morning.</p><p>That is it. No routine. No reapplying. No waiting for something to soak in that never will.</p>",
+        "button_label": "Get Now & Save 70%",
+        "button_link": "#shopify-section-main",
         "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "eyebrow": "How it Works",
-        "button_label": "Get Now & Save 70%",
-        "button_link": "#shopify-section-main"
+        "padding_bottom": 40
       }
     },
     "preqa": {
       "type": "ces-faq-accordion",
-      "settings": {
-        "heading": "Before You Go Further, Here's What Most Women Ask",
-        "exclusive": true,
-        "footer_text": "",
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 40,
-        "subheading": ""
-      },
       "blocks": {
         "faq_item-1": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Will it work on my type of eye bags?",
             "answer": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-2": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "How quickly will I notice a difference?",
             "answer": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-3": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Does it hurt?",
             "answer": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-4": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Is it safe near the eye area?",
             "answer": "<p>The dissolving cones are designed specifically for the delicate under-eye area. Follow the application instructions and avoid applying the patches to irritated or damaged skin.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         }
       },
@@ -480,46 +506,54 @@
         "faq_item-2",
         "faq_item-3",
         "faq_item-4"
-      ]
+      ],
+      "settings": {
+        "heading": "Before You Go Further, Here's What Most Women Ask",
+        "subheading": "",
+        "exclusive": true,
+        "footer_text": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
     },
     "howitworks": {
       "type": "ces-reason-rows",
-      "settings": {
-        "number_prefix": "Step",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "heading": "This is What Happens Under Your Eye While You Sleep",
-        "subheading": "",
-        "cta_label": "",
-        "cta_url": "#shopify-section-main"
-      },
       "blocks": {
         "reason-1": {
           "type": "reason",
           "settings": {
-            "show_benefits": false,
             "number_label": "1",
             "title": "Hundreds Of Tiny Dissolving Cones",
-            "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
+            "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "show_benefits": false,
+            "benefits": ""
           }
         },
         "reason-2": {
           "type": "reason",
           "settings": {
-            "show_benefits": false,
             "number_label": "2",
             "title": "Painless Delivery Beneath The Surface",
-            "text": "<p>The cones dissolve beneath the surface, reaching the deeper tissue where eye bags actually form. Not the first layer. Not the second. The layer where the problem lives.</p><p>You feel a light tingle for a few seconds. That's it.</p>"
+            "text": "<p>The cones dissolve beneath the surface, reaching the deeper tissue where eye bags actually form. Not the first layer. Not the second. The layer where the problem lives.</p><p>You feel a light tingle for a few seconds. That's it.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "show_benefits": false,
+            "benefits": ""
           }
         },
         "reason-3": {
           "type": "reason",
           "settings": {
-            "show_benefits": false,
             "number_label": "3",
             "title": "You Sleep. They Work. You Wake Up Different.",
-            "text": "<p>While you rest the ingredients release slowly into the deeper tissue over several hours. By morning the work is already done.</p><p>Not sitting on top of your skin waiting to evaporate. Inside it, where it actually counts.</p>"
+            "text": "<p>While you rest the ingredients release slowly into the deeper tissue over several hours. By morning the work is already done.</p><p>Not sitting on top of your skin waiting to evaporate. Inside it, where it actually counts.</p>",
+            "pull_quote": "",
+            "pull_quote_author": "",
+            "show_benefits": false,
+            "benefits": ""
           }
         }
       },
@@ -527,35 +561,83 @@
         "reason-1",
         "reason-2",
         "reason-3"
-      ]
+      ],
+      "settings": {
+        "heading": "This is What Happens Under Your Eye While You Sleep",
+        "subheading": "",
+        "number_prefix": "Step",
+        "cta_label": "",
+        "cta_url": "#shopify-section-main",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "pubmed": {
       "type": "ces-stat-proof",
+      "disabled": true,
       "settings": {
-        "heading": "",
-        "image_position": "below_body",
-        "callout_label": "Published Research",
-        "callout_lead": "A study indexed on PubMed, the US National Library of Medicine database, found that dissolving hyaluronic acid patches deliver ingredients",
-        "button_link": "#shopify-section-main",
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 40,
         "eyebrow": "",
+        "heading": "",
         "subheading": "",
         "body": "",
+        "image_position": "below_body",
         "image_alt": "",
         "image_caption": "",
+        "callout_label": "Published Research",
+        "callout_lead": "A study indexed on PubMed, the US National Library of Medicine database, found that dissolving hyaluronic acid patches deliver ingredients",
         "callout_figure": "",
         "callout_text": "<p>beneath the skin more effectively than standard patches.</p>",
         "callout_source": "",
-        "button_label": ""
-      },
-      "disabled": true
+        "button_label": "",
+        "button_link": "#shopify-section-main",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
     },
     "results": {
       "type": "ces-before-after",
+      "blocks": {
+        "pair-1": {
+          "type": "pair",
+          "settings": {
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "",
+            "verified": true,
+            "progress": ""
+          }
+        },
+        "pair-2": {
+          "type": "pair",
+          "settings": {
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "",
+            "verified": true,
+            "progress": ""
+          }
+        },
+        "pair-3": {
+          "type": "pair",
+          "settings": {
+            "rating_tenths": 50,
+            "quote": "",
+            "name": "",
+            "verified": true,
+            "progress": ""
+          }
+        }
+      },
+      "block_order": [
+        "pair-1",
+        "pair-2",
+        "pair-3"
+      ],
       "settings": {
         "heading": "Visible Changes Our Customers Love",
+        "subheading": "See how CEBEAM patches made all the difference.",
         "before_label": "Before",
         "after_label": "After",
         "verified_label": "Verified customer",
@@ -564,60 +646,11 @@
         "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "subheading": "See how CEBEAM patches made all the difference."
-      },
-      "blocks": {
-        "pair-1": {
-          "type": "pair",
-          "settings": {
-            "rating_tenths": 50,
-            "name": "",
-            "verified": true,
-            "progress": "",
-            "quote": ""
-          }
-        },
-        "pair-2": {
-          "type": "pair",
-          "settings": {
-            "rating_tenths": 50,
-            "name": "",
-            "verified": true,
-            "progress": "",
-            "quote": ""
-          }
-        },
-        "pair-3": {
-          "type": "pair",
-          "settings": {
-            "rating_tenths": 50,
-            "name": "",
-            "verified": true,
-            "progress": "",
-            "quote": ""
-          }
-        }
-      },
-      "block_order": [
-        "pair-1",
-        "pair-2",
-        "pair-3"
-      ]
+        "padding_bottom": 40
+      }
     },
     "howto": {
       "type": "ces-usage-steps",
-      "settings": {
-        "heading": "2 Minutes Before Bed. Wake Up To Already-Done Results.",
-        "note": "<p>The overnight timing matters more than it sounds. When you sleep flat your face is horizontal for 6 to 8 hours. That is when fluid builds under your eyes, and when the tissue is most receptive. <strong>CEBEAM works during those exact hours</strong>, not in the morning when the damage is already done.</p>",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 40,
-        "subheading": "",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
-      },
       "blocks": {
         "step-1": {
           "type": "step",
@@ -645,31 +678,31 @@
         "step-1",
         "step-2",
         "step-3"
-      ]
+      ],
+      "settings": {
+        "heading": "2 Minutes Before Bed. Wake Up To Already-Done Results.",
+        "subheading": "",
+        "note": "<p>The overnight timing matters more than it sounds. When you sleep flat your face is horizontal for 6 to 8 hours. That is when fluid builds under your eyes, and when the tissue is most receptive. <strong>CEBEAM works during those exact hours</strong>, not in the morning when the damage is already done.</p>",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 40
+      }
     },
     "timeline": {
       "type": "ces-results-timeline",
-      "settings": {
-        "eyebrow": "The Transformation",
-        "heading": "What Changes, Week By Week",
-        "image_position": "below_subheading",
-        "show_quotes": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "subheading": "",
-        "image_caption": "",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
-      },
       "blocks": {
         "stage-1": {
           "type": "stage",
           "settings": {
             "time_label": "First use",
             "title": "The area feels softer",
-            "points": "When you peel the patches off in the morning the area under your eye feels softer and less swollen than usual. Most people notice this on the very first morning."
+            "points": "When you peel the patches off in the morning the area under your eye feels softer and less swollen than usual. Most people notice this on the very first morning.",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
           }
         },
         "stage-2": {
@@ -677,7 +710,10 @@
           "settings": {
             "time_label": "Week 1",
             "title": "Puffiness is visibly reduced on waking",
-            "points": "Eye bags that used to take hours to go down start looking visibly reduced when you wake up. The area feels softer. Your concealer may sit differently too."
+            "points": "Eye bags that used to take hours to go down start looking visibly reduced when you wake up. The area feels softer. Your concealer may sit differently too.",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
           }
         },
         "stage-3": {
@@ -685,7 +721,10 @@
           "settings": {
             "time_label": "Week 2",
             "title": "Morning to morning gets consistent",
-            "points": "Visible improvement becomes more consistent morning to morning. The hollow under your eye starts looking less pronounced."
+            "points": "Visible improvement becomes more consistent morning to morning. The hollow under your eye starts looking less pronounced.",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
           }
         },
         "stage-4": {
@@ -693,7 +732,10 @@
           "settings": {
             "time_label": "Week 3",
             "title": "The skin starts to feel firmer",
-            "points": "The skin under the eye starts to feel firmer. Fine lines around the eye area appear softer."
+            "points": "The skin under the eye starts to feel firmer. Fine lines around the eye area appear softer.",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
           }
         },
         "stage-5": {
@@ -701,7 +743,10 @@
           "settings": {
             "time_label": "Week 4",
             "title": "A different starting point",
-            "points": "The bags that used to greet you every morning look noticeably different. The skin under your eye looks and feels different from where you started."
+            "points": "The bags that used to greet you every morning look noticeably different. The skin under your eye looks and feels different from where you started.",
+            "quote_name": "",
+            "quote_title": "",
+            "quote_text": ""
           }
         }
       },
@@ -711,31 +756,31 @@
         "stage-3",
         "stage-4",
         "stage-5"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "The Transformation",
+        "heading": "What Changes, Week By Week",
+        "subheading": "",
+        "image_caption": "",
+        "image_position": "below_subheading",
+        "show_quotes": false,
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     },
     "mornings": {
       "type": "ces-icon-feature-grid",
-      "settings": {
-        "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
-        "icon_color": "#1d5c5c",
-        "icon_frame": "disc",
-        "icon_size": 5,
-        "columns_mobile": 1,
-        "columns_desktop": 3,
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "highlight_words": "",
-        "subheading": "",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
-      },
       "blocks": {
         "icon_item-1": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "eye",
+            "icon_color": "",
             "heading": "Wake Up And Actually Look In The Mirror",
             "text": "No more avoiding your reflection before 10am."
           }
@@ -743,7 +788,9 @@
         "icon_item-2": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "brighten",
+            "icon_color": "",
             "heading": "Leave The House Without Concealer",
             "text": "The first time this happens you will remember it."
           }
@@ -751,7 +798,9 @@
         "icon_item-3": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "stopwatch",
+            "icon_color": "",
             "heading": "Stop Spending 20 Minutes Depuffing",
             "text": "Those 20 minutes are yours again."
           }
@@ -759,7 +808,9 @@
         "icon_item-4": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "heart",
+            "icon_color": "",
             "heading": "Stop Hearing “Are You Okay? You Look Tired”",
             "text": "You were always fine. Now you look it too."
           }
@@ -767,7 +818,9 @@
         "icon_item-5": {
           "type": "icon_item",
           "settings": {
+            "icon_text": "",
             "icon": "sparkle",
+            "icon_color": "",
             "heading": "Be In Photos Without Planning The Angle",
             "text": "Front on. Natural light. No problem."
           }
@@ -779,36 +832,39 @@
         "icon_item-3",
         "icon_item-4",
         "icon_item-5"
-      ]
+      ],
+      "settings": {
+        "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
+        "highlight_words": "",
+        "subheading": "",
+        "icon_color": "#1d5c5c",
+        "icon_frame": "disc",
+        "icon_size": 5,
+        "columns_mobile": 1,
+        "columns_desktop": 3,
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     },
     "compare": {
       "type": "ces-compare-matrix",
-      "settings": {
-        "eyebrow": "How We Compare",
-        "heading": "How CEBEAM Patches Compare To What You Have Already Tried",
-        "table_caption": "CEBEAM compared with eye creams, fillers and eye surgery",
-        "brand_label": "CEBEAM",
-        "col_1_label": "Eye Creams",
-        "col_2_label": "Fillers",
-        "col_3_label": "Eye Surgery",
-        "yes_text": "Yes",
-        "partial_text": "Partly",
-        "no_text": "No",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "subheading": "",
-        "footnote": "<p>Fillers and surgery work. We are not going to pretend they don't. What they require is a clinic, a needle, ongoing cost, and in some cases recovery time. CEBEAM Patches reach the same layer using the same core ingredient, hyaluronic acid, without any of that. It is not a replacement for everything. It is the option that sits between a cream that cannot reach the problem and a procedure that comes with costs and risks you may not be ready for.</p>"
-      },
       "blocks": {
         "row-1": {
           "type": "row",
           "settings": {
             "label": "Reaches beneath the surface",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "no",
+            "col_1_note": "",
             "col_2": "yes",
-            "col_3": "yes"
+            "col_2_note": "",
+            "col_3": "yes",
+            "col_3_note": ""
           }
         },
         "row-2": {
@@ -816,9 +872,13 @@
           "settings": {
             "label": "No surgery or needles",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "yes",
+            "col_1_note": "",
             "col_2": "no",
-            "col_3": "no"
+            "col_2_note": "",
+            "col_3": "no",
+            "col_3_note": ""
           }
         },
         "row-3": {
@@ -826,9 +886,13 @@
           "settings": {
             "label": "No clinic visits needed",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "yes",
+            "col_1_note": "",
             "col_2": "no",
-            "col_3": "no"
+            "col_2_note": "",
+            "col_3": "no",
+            "col_3_note": ""
           }
         },
         "row-4": {
@@ -836,9 +900,13 @@
           "settings": {
             "label": "No ongoing clinic cost",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "yes",
+            "col_1_note": "",
             "col_2": "no",
-            "col_3": "no"
+            "col_2_note": "",
+            "col_3": "no",
+            "col_3_note": ""
           }
         },
         "row-5": {
@@ -846,9 +914,13 @@
           "settings": {
             "label": "Supports skin tissue structure",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "no",
+            "col_1_note": "",
             "col_2": "yes",
-            "col_3": "yes"
+            "col_2_note": "",
+            "col_3": "yes",
+            "col_3_note": ""
           }
         },
         "row-6": {
@@ -856,9 +928,13 @@
           "settings": {
             "label": "No downtime or recovery",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "yes",
+            "col_1_note": "",
             "col_2": "partial",
-            "col_3": "no"
+            "col_2_note": "",
+            "col_3": "no",
+            "col_3_note": ""
           }
         },
         "row-7": {
@@ -866,9 +942,13 @@
           "settings": {
             "label": "Visible results in 1 to 2 weeks",
             "brand": "yes",
+            "brand_note": "",
             "col_1": "no",
+            "col_1_note": "",
             "col_2": "yes",
-            "col_3": "partial"
+            "col_2_note": "",
+            "col_3": "partial",
+            "col_3_note": ""
           }
         }
       },
@@ -880,7 +960,24 @@
         "row-5",
         "row-6",
         "row-7"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "How We Compare",
+        "heading": "How CEBEAM Patches Compare To What You Have Already Tried",
+        "subheading": "",
+        "table_caption": "CEBEAM compared with eye creams, fillers and eye surgery",
+        "brand_label": "CEBEAM",
+        "col_1_label": "Eye Creams",
+        "col_2_label": "Fillers",
+        "col_3_label": "Eye Surgery",
+        "yes_text": "Yes",
+        "partial_text": "Partly",
+        "no_text": "No",
+        "footnote": "<p>Fillers and surgery work. We are not going to pretend they don't. What they require is a clinic, a needle, ongoing cost, and in some cases recovery time. CEBEAM Patches reach the same layer using the same core ingredient, hyaluronic acid, without any of that. It is not a replacement for everything. It is the option that sits between a cream that cannot reach the problem and a procedure that comes with costs and risks you may not be ready for.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     },
     "guarantee": {
       "type": "ces-bullet-cta",
@@ -1040,7 +1137,7 @@
             "gift_more_label": "See details",
             "gift_sub_mode": "auto",
             "gift_sub_template": "[value] value · [count] [items]",
-            "tier_1_variant": "47849253961877",
+            "tier_1_variant": "67585919418517",
             "tier_1_name": "7-Day Starter",
             "tier_1_subtitle": "For first-time users or newly noticeable puffiness",
             "tier_1_badge": "",
@@ -1062,7 +1159,7 @@
             "tier_1_gift_sub": "",
             "tier_1_gift_label": "",
             "tier_1_foot": "",
-            "tier_2_variant": "47849253994645",
+            "tier_2_variant": "67585919451285",
             "tier_2_name": "21-Day Eye Reset™",
             "tier_2_subtitle": "For recurring puffiness & visible texture",
             "tier_2_badge": "MOST POPULAR",
@@ -1086,7 +1183,7 @@
             "tier_2_gift_sub": "$32 value · 2 items",
             "tier_2_gift_label": "Welcome kit — arrives with first order",
             "tier_2_foot": "",
-            "tier_3_variant": "47849254027413",
+            "tier_3_variant": "67585919484053",
             "tier_3_name": "45-Day Eye Rebuild™",
             "tier_3_subtitle": "For stubborn puffiness & more noticeable texture",
             "tier_3_badge": "BEST VALUE",
@@ -1490,77 +1587,68 @@
     },
     "faq": {
       "type": "ces-faq-accordion",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "exclusive": true,
-        "footer_text": "<p>Still have a question? Email support@cebeam.com and a real person will reply within one business day.</p>",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "subheading": "We've Got Answers"
-      },
       "blocks": {
         "faq_item-1": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "How is this different from the gel eye patches I have already tried?",
             "answer": "<p>Most eye patches are hydrogel. They sit on the surface of your skin and deliver moisture to the top layer. When you take them off, whatever they delivered evaporates or rubs off within a few hours.</p><p>CEBEAM Patches have hundreds of tiny dissolving cones that press painlessly into your skin when you apply them. The cones dissolve over several hours, carrying the ingredients beneath the surface. That is a physically different process from a gel patch sitting on top. It is not a better version of the same thing. It is a different way of delivering entirely.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-2": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "How quickly will I notice a difference in my eye bags?",
             "answer": "<p>You will likely notice something different the first morning you peel the patches off — the area feels softer or less swollen. Visible improvement in the appearance of eye bags typically shows within 1 to 2 weeks of twice-weekly use, and builds over 4 weeks. If you don't see a difference within 30 days you can request a full refund.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-3": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Does it hurt?",
             "answer": "<p>You will feel a light tingle when you first apply the patches. That is normal — it is the cones starting to dissolve. It lasts a few seconds and then you feel nothing. Think of it as a gentle prickle rather than pain. If you have very sensitive skin you can do a small test patch first.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-4": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Will it work on structural eye bags or just temporary morning puffiness?",
             "answer": "<p>Both. Hyaluronic acid delivered beneath the surface addresses the volume loss that creates structural hollowness. Caffeine delivered beneath the surface addresses the fluid retention that causes morning puffiness. Surface creams cannot reach either.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-5": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "How often do I use them and how long does one box last?",
             "answer": "<p>Twice a week before bed. One box contains 3 pairs of patches, which is roughly 1.5 weeks of use. Most customers order the larger bundles so they are never without them.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-6": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "What if they don't work for me?",
             "answer": "<p>You have 30 days to try them. If you don't see a visible difference in your eye bags, contact us for a full refund.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         },
         "faq_item-7": {
           "type": "faq_item",
           "settings": {
+            "group_label": "",
             "question": "Is it safe to use around the eye area?",
             "answer": "<p>The formula is dermatologist-tested, hypoallergenic, and free of parabens, sulfates and harsh fragrances. The dissolving cones are made from hyaluronic acid and peptides, which are gentle and well tolerated by the skin around the eye. If you have very sensitive skin, do a small test patch on your inner wrist first.</p>",
-            "open": false,
-            "group_label": ""
+            "open": false
           }
         }
       },
@@ -1572,7 +1660,16 @@
         "faq_item-5",
         "faq_item-6",
         "faq_item-7"
-      ]
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "We've Got Answers",
+        "exclusive": true,
+        "footer_text": "<p>Still have a question? Email support@cebeam.com and a real person will reply within one business day.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     },
     "finalcta": {
       "type": "ces-bullet-cta",
@@ -1593,8 +1690,10 @@
       "type": "ces-sticky-atc",
       "settings": {
         "target_id": "shopify-section-main",
+        "reveal_id": "shopify-section-hero",
         "button_label": "Order Now",
         "show_image": true,
+        "title": "",
         "rating_tenths": 48,
         "rating_text": "Rated",
         "enable_counter": false,
@@ -1604,9 +1703,7 @@
         "count_step_2": 1,
         "count_step_3": 2,
         "hide_on_desktop": false,
-        "color_scheme": "scheme-1",
-        "reveal_id": "shopify-section-hero",
-        "title": ""
+        "color_scheme": "scheme-1"
       }
     }
   },
