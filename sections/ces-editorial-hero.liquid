@@ -5,6 +5,18 @@
   .ces-edhero{color:rgb(var(--color-foreground));background:var(--gradient-background)}
   .ces-edhero__inner{text-align:center;max-width:78rem;margin:0 auto}
   .ces-edhero__eyebrow{margin:0 0 1.2rem;font-size:1.2rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ces-accent)}
+  /* The plain eyebrow is a sentence leading into the headline, not a label
+     above it, so it keeps sentence case and the body colour. */
+  .ces-edhero__eyebrow--plain{font-size:1.7rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ces-muted);line-height:1.4}
+  .ces-edhero__accent{color:var(--ces-accent)}
+  .ces-edhero__rating{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:0 0 1.6rem;flex-wrap:wrap}
+  .ces-edhero__stars{position:relative;display:inline-block;line-height:0;flex:0 0 auto}
+  .ces-edhero__stars-track{display:block;color:rgba(var(--color-foreground),.18)}
+  /* The fill is clipped to the score's width, so it must not be a flex
+     container or its stars would shrink instead of being cut off. */
+  .ces-edhero__stars-fill{position:absolute;top:0;left:0;width:var(--ces-rating-pct,100%);overflow:hidden;color:#f5b301;white-space:nowrap}
+  .ces-edhero__stars svg{display:inline-block;vertical-align:top}
+  .ces-edhero__rating-text{font-size:1.5rem;font-weight:700;line-height:1.3}
   .ces-edhero__heading{margin:0;font-size:clamp(2.6rem,4.4vw,4.2rem);line-height:1.15;font-weight:800}
   .ces-edhero__sub{margin:1.6rem 0 0;font-size:1.7rem;line-height:1.55;color:var(--ces-muted)}
   .ces-edhero__byline{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2.4rem 0 0;flex-wrap:wrap}
@@ -31,8 +43,48 @@
 
       {%- if section.settings.image_position == 'above' -%}{{ edh_media }}{%- endif -%}
 
-      {%- if section.settings.eyebrow != blank -%}<p class="ces-edhero__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
-      {%- if section.settings.heading != blank -%}<h1 class="ces-edhero__heading">{{ section.settings.heading }}</h1>{%- endif -%}
+      {%- liquid
+        assign edh_rating = section.settings.rating_tenths | default: 0
+        assign edh_pct = edh_rating | times: 2
+        assign edh_stars = edh_rating | divided_by: 10.0
+      -%}
+      {%- if edh_rating > 0 or section.settings.rating_text != blank -%}
+        <div class="ces-edhero__rating">
+          {%- if edh_rating > 0 -%}
+            <span class="ces-edhero__stars" style="--ces-rating-pct: {{ edh_pct }}%;" role="img" aria-label="{{ edh_stars }} out of 5 stars">
+              <span class="ces-edhero__stars-track" aria-hidden="true">
+                {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.8rem' %}{%- endfor -%}
+              </span>
+              <span class="ces-edhero__stars-fill" aria-hidden="true">
+                {%- for i in (1..5) -%}{% render 'ces-icon', icon: 'star-filled', size: '1.8rem' %}{%- endfor -%}
+              </span>
+            </span>
+          {%- endif -%}
+          {%- if section.settings.rating_text != blank -%}
+            <span class="ces-edhero__rating-text">{{ section.settings.rating_text }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ces-edhero__eyebrow{% if section.settings.eyebrow_style == 'plain' %} ces-edhero__eyebrow--plain{% endif %}">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        {%- liquid
+          assign edh_heading = section.settings.heading
+          assign edh_accent = section.settings.heading_accent | strip
+          if edh_accent != blank and edh_heading contains edh_accent
+            capture edh_wrapped
+              echo '<span class="ces-edhero__accent">'
+              echo edh_accent
+              echo '</span>'
+            endcapture
+            assign edh_heading = edh_heading | replace: edh_accent, edh_wrapped
+          endif
+        -%}
+        <h1 class="ces-edhero__heading">{{ edh_heading }}</h1>
+      {%- endif -%}
       {%- if section.settings.subheading != blank -%}<p class="ces-edhero__sub">{{ section.settings.subheading }}</p>{%- endif -%}
 
       {%- if section.settings.author_name != blank or section.settings.date_text != blank -%}
@@ -69,9 +121,41 @@
       "content": "Editorial-style opener for an advertorial product page: big listicle headline, author byline and a call to action."
     },
     {
+      "type": "range",
+      "id": "rating_tenths",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "label": "Rating (tenths)",
+      "info": "In tenths of a star: 48 = 4.8. Set to 0 to hide the stars.",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Text beside the stars",
+      "info": "For example, 4.8/5 based on 43,893 reviews. Use your own figure."
+    },
+    {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_style",
+      "label": "Eyebrow style",
+      "options": [
+        { "value": "badge", "label": "Small caps, accent colour" },
+        { "value": "plain", "label": "A sentence leading into the headline" }
+      ],
+      "default": "badge"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Part of the headline to colour",
+      "info": "Type the words exactly as they appear in the headline."
     },
     {
       "type": "textarea",

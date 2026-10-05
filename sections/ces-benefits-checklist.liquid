@@ -2,9 +2,18 @@
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 {{ 'ces-benefits-checklist.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  /* The filled style puts a bare tick inside a solid disc rather than drawing
+     an outlined one, which reads at a glance from further down the page. The
+     icon itself is swapped below, so no second ring shows through. */
+  .ces-benefits-checklist--filled .ces-checklist-item > .ces-icon{
+    background:var(--ces-success);color:#fff;border-radius:50%;padding:.3rem;box-sizing:content-box;flex:0 0 auto}
+  .ces-benefits-checklist--filled .ces-checklist-item__text{font-weight:700}
+{%- endstyle -%}
+
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-benefits-checklist ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -19,10 +28,18 @@
 
     {%- if section.blocks.size > 0 -%}
       <ul class="ces-checklist ces-benefits-checklist__list" role="list">
+        {%- liquid
+          # A filled disc needs a bare tick inside it; the outlined style keeps
+          # whichever icon the merchant picked.
+          assign bc_icon = section.settings.icon
+          if section.settings.check_style == 'filled' and bc_icon == 'check-circle'
+            assign bc_icon = 'check'
+          endif
+        -%}
         {%- for block in section.blocks -%}
           {% render 'ces-checklist-item',
             text: block.settings.text,
-            icon: section.settings.icon,
+            icon: bc_icon,
             shopify_attributes: block.shopify_attributes
           %}
         {%- endfor -%}
@@ -32,6 +49,12 @@
     {%- if section.settings.disclaimer != blank -%}
       <div class="ces-disclaimer rte ces-rte">{{ section.settings.disclaimer }}</div>
     {%- endif -%}
+
+    {% render 'ces-cta-rail',
+       label: section.settings.cta_label,
+       url: section.settings.cta_url,
+       footnote: section.settings.cta_footnote,
+       id: section.id %}
   </div>
 </div>
 
@@ -75,6 +98,37 @@
       "id": "disclaimer",
       "label": "Disclaimer",
       "default": "<p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>"
+    },
+    {
+      "type": "select",
+      "id": "check_style",
+      "label": "Tick style",
+      "options": [
+        { "value": "outline", "label": "Outlined" },
+        { "value": "filled", "label": "Filled disc, bold text" }
+      ],
+      "default": "outline"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link",
+      "info": "Defaults to the product buy box (#ces-bundle)."
+    },
+    {
+      "type": "text",
+      "id": "cta_footnote",
+      "label": "Text under the button",
+      "info": "One line each as \"icon | label\" renders them with icons side by side."
     },
     {
       "type": "color_scheme",

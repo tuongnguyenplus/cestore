@@ -1,6 +1,6 @@
 {% comment %}
   The call-to-action rail that repeats down a long landing page: one button
-  back to the buy box, with the reassurance line under it.
+  back to the buy box, with the reassurance under it.
 
   Kept in one place so every rail on a page is the same shape — a page that
   asks for the sale six times should not ask for it six different ways.
@@ -8,7 +8,9 @@
   Accepts:
   - label: {String} Button text. Nothing renders without it.
   - url: {String} Where it goes. Defaults to the bundle anchor.
-  - footnote: {String} Optional small print under the button.
+  - footnote: {String} Reassurance under the button. One item per line as
+      "icon | label" renders each with its icon side by side; anything else is
+      printed as a plain line.
   - id: {String} The section id, for the scoped style rule.
 
   Usage:
@@ -20,19 +22,59 @@
 {% endcomment %}
 
 {%- if label != blank -%}
+  {%- liquid
+    assign rail_rows = footnote | newline_to_br | split: '<br />'
+    assign rail_structured = false
+    if footnote contains '|'
+      assign rail_structured = true
+    endif
+  -%}
+
   {%- style -%}
     .ces-cta-rail{margin:2.8rem 0 0;text-align:center}
     .ces-cta-rail__note{margin:1.2rem 0 0;font-size:1.3rem;line-height:1.45;opacity:.8}
+    /* The trust items sit on one line where they fit and wrap as a pair when
+       they do not, rather than stacking one per line on a narrow phone. */
+    .ces-cta-rail__trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+      gap:.8rem 2rem;margin:1.2rem 0 0;padding:0;list-style:none}
+    .ces-cta-rail__trust-item{display:inline-flex;align-items:center;gap:.6rem;
+      font-size:1.3rem;font-weight:600;line-height:1.3}
+    .ces-cta-rail__trust-icon{display:inline-flex;width:1.8rem;height:1.8rem;flex:0 0 auto}
+    .ces-cta-rail__trust-icon svg{width:100%;height:100%}
     @media screen and (min-width:750px){
       .ces-cta-rail{margin-top:3.2rem}
       .ces-cta-rail__note{font-size:1.4rem}
+      .ces-cta-rail__trust-item{font-size:1.5rem}
+      .ces-cta-rail__trust-icon{width:2rem;height:2rem}
     }
   {%- endstyle -%}
 
   <div class="ces-cta-rail">
     <a class="ces-button" href="{{ url | default: '#ces-bundle' }}">{{ label }}</a>
+
     {%- if footnote != blank -%}
-      <p class="ces-cta-rail__note">{{ footnote }}</p>
+      {%- if rail_structured -%}
+        <ul class="ces-cta-rail__trust" role="list">
+          {%- for row in rail_rows -%}
+            {%- liquid
+              assign parts = row | strip_newlines | strip | split: '|'
+              assign trust_icon = parts[0] | strip
+              assign trust_label = parts[1] | strip
+              if trust_label == blank
+                continue
+              endif
+            -%}
+            <li class="ces-cta-rail__trust-item">
+              <span class="ces-cta-rail__trust-icon" aria-hidden="true">
+                {% render 'ces-icon', icon: trust_icon %}
+              </span>
+              <span>{{ trust_label }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <p class="ces-cta-rail__note">{{ footnote }}</p>
+      {%- endif -%}
     {%- endif -%}
   </div>
 {%- endif -%}

@@ -2,6 +2,18 @@
 {{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 {{ 'ces-experience-list.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  .ces-experience-list__accent{color:var(--ces-accent)}
+  /* The photograph closes the list rather than illustrating any one line of
+     it, so it sits full width under the whole set. */
+  .ces-experience-list__figure{margin:2.4rem 0 0}
+  .ces-experience-list__figure img{display:block;width:100%;height:auto;border-radius:var(--ces-radius)}
+  .ces-experience-list__caption{margin:.8rem 0 0;font-size:1.3rem;line-height:1.45;text-align:center;color:var(--ces-muted)}
+  @media screen and (min-width:750px){
+    .ces-experience-list__figure{margin-top:3.2rem}
+  }
+{%- endstyle -%}
+
 {% render 'ces-section-padding' %}
 
 <div class="ces-section ces-experience-list ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
@@ -9,7 +21,19 @@
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
         {%- if section.settings.heading != blank -%}
-          <h2 class="ces-heading">{{ section.settings.heading }}</h2>
+          {%- liquid
+            assign xl_heading = section.settings.heading
+            assign xl_accent = section.settings.heading_accent | strip
+            if xl_accent != blank and xl_heading contains xl_accent
+              capture xl_wrapped
+                echo '<span class="ces-experience-list__accent">'
+                echo xl_accent
+                echo '</span>'
+              endcapture
+              assign xl_heading = xl_heading | replace: xl_accent, xl_wrapped
+            endif
+          -%}
+          <h2 class="ces-heading">{{ xl_heading }}</h2>
         {%- endif -%}
         {%- if section.settings.subheading != blank -%}
           <p class="ces-subheading">{{ section.settings.subheading }}</p>
@@ -33,6 +57,21 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
+
+    {%- if section.settings.image != blank -%}
+      <figure class="ces-experience-list__figure">
+        <img
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+        {%- if section.settings.image_caption != blank -%}
+          <figcaption class="ces-experience-list__caption">{{ section.settings.image_caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
   </div>
 </div>
 
@@ -52,6 +91,27 @@
       "type": "text",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Part of the heading to colour",
+      "info": "Type the words exactly as they appear in the heading."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image under the list"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Caption"
     },
     {
       "type": "color_scheme",

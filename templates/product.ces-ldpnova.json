@@ -92,12 +92,16 @@
         "subheading": "Tiny dissolving cones reach the deeper layer where eye bags actually start.",
         "author_name": "",
         "date_text": "",
-        "image_position": "below",
-        "cta_label": "Get Now & Save 70%",
+        "image_position": "above",
+        "cta_label": "",
         "cta_url": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 8
+        "padding_bottom": 0,
+        "rating_tenths": 48,
+        "rating_text": "",
+        "eyebrow_style": "plain",
+        "heading_accent": "Wake Up Looking Like Yourself Again"
       }
     },
     "herobullets": {
@@ -145,10 +149,14 @@
         "heading": "",
         "subheading": "",
         "icon": "check-circle",
-        "disclaimer": "<p>30 Day Money Back Guarantee · Free Shipping</p>",
+        "disclaimer": "",
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "check_style": "filled",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
       }
     },
     "recognition": {
@@ -255,7 +263,9 @@
         "subheading": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 24
+        "padding_bottom": 24,
+        "heading_accent": "Keep Reading",
+        "image_alt": "The products that stopped at the surface"
       }
     },
     "badges": {
@@ -360,60 +370,60 @@
           "type": "icon_item",
           "settings": {
             "icon_text": "",
-            "icon": "cross-circle",
+            "icon": "none",
             "icon_color": "",
             "heading": "Eye Creams",
-            "text": "Surface only"
+            "text": "Surface Only"
           }
         },
         "icon_item-2": {
           "type": "icon_item",
           "settings": {
             "icon_text": "",
-            "icon": "cross-circle",
+            "icon": "none",
             "icon_color": "",
             "heading": "Caffeine Serum",
-            "text": "Wears off"
+            "text": "Wears Off"
           }
         },
         "icon_item-3": {
           "type": "icon_item",
           "settings": {
             "icon_text": "",
-            "icon": "cross-circle",
+            "icon": "none",
             "icon_color": "",
             "heading": "Gel Patches",
-            "text": "Same wall"
+            "text": "Same Wall"
           }
         },
         "icon_item-4": {
           "type": "icon_item",
           "settings": {
             "icon_text": "",
-            "icon": "cross-circle",
+            "icon": "none",
             "icon_color": "",
             "heading": "Jade Roller",
-            "text": "Temporary drainage"
+            "text": "Temporary Drainage"
           }
         },
         "icon_item-5": {
           "type": "icon_item",
           "settings": {
             "icon_text": "",
-            "icon": "cross-circle",
+            "icon": "none",
             "icon_color": "",
             "heading": "Cold Compress",
-            "text": "Surface tightening"
+            "text": "Surface Tightening"
           }
         },
         "icon_item-6": {
           "type": "icon_item",
           "settings": {
             "icon_text": "",
-            "icon": "cross-circle",
+            "icon": "none",
             "icon_color": "",
             "heading": "Concealer",
-            "text": "Last resort, failed"
+            "text": "Last Resort Failed"
           }
         }
       },
@@ -426,8 +436,8 @@
         "icon_item-6"
       ],
       "settings": {
-        "heading": "You've Tried Everything. Here's Why Nothing Has Worked",
-        "highlight_words": "Nothing Has Worked",
+        "heading": "Here's Why Nothing Has Worked:",
+        "highlight_words": "",
         "subheading": "",
         "icon_color": "#c0392b",
         "icon_frame": "disc",
@@ -439,7 +449,10 @@
         "cta_footnote": "",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "eyebrow": "You've Tried Everything.",
+        "text_style": "pill",
+        "pill_color": "#c0392b"
       }
     },
     "mechanism": {
@@ -685,7 +698,7 @@
         "note": "<p>The overnight timing matters more than it sounds. When you sleep flat your face is horizontal for 6 to 8 hours. That is when fluid builds under your eyes, and when the tissue is most receptive. <strong>CEBEAM works during those exact hours</strong>, not in the morning when the damage is already done.</p>",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "color_scheme": "scheme-1",
         "padding_top": 32,
         "padding_bottom": 40
@@ -766,7 +779,7 @@
         "show_quotes": false,
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -928,7 +941,7 @@
         "image_ratio": "4/5",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "color_scheme": "scheme-2",
         "padding_top": 0,
         "padding_bottom": 40
