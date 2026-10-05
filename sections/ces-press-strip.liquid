@@ -1,0 +1,143 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign ps_logos = section.blocks | where: 'type', 'logo'
+  assign ps_mobile_height = section.settings.logo_height | times: 0.74 | round
+  assign ps_gap = section.settings.gap
+-%}
+
+{%- style -%}
+  .ces-press{color:rgb(var(--color-foreground));background:var(--gradient-background);overflow:hidden}
+  {%- if section.settings.show_rule_top -%}
+    .ces-press{border-top:.1rem solid {{ section.settings.rule_color }}}
+  {%- endif -%}
+  {%- if section.settings.show_rule_bottom -%}
+    .ces-press{border-bottom:.1rem solid {{ section.settings.rule_color }}}
+  {%- endif -%}
+  .ces-press__label{margin:0;text-align:center;font-size:1.3rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;line-height:1.2}
+  /* The strip is wider than the screen on purpose: the logos run off both
+     edges, which is what says the list carries on. */
+  .ces-press__scroller{display:flex;flex-wrap:nowrap;overflow:hidden;margin-top:1.2rem}
+  .ces-press__list{display:flex;flex-wrap:nowrap;align-items:center;flex-shrink:0;
+    margin:0;padding:0;list-style:none}
+  .ces-press__item{flex:0 0 auto;padding:0 {{ ps_gap }}px}
+  /* Fixed height, free width: a masthead keeps its own proportions, and forcing
+     them all into one box would squash the wide ones. */
+  .ces-press__item img{display:block;width:auto;height:{{ ps_mobile_height }}px;margin:0 auto}
+  {%- if section.settings.scroll_mode != 'never' -%}
+    /* One list travels its own full width while its twin takes its place. */
+    .ces-press__list{animation:ces-press-run {{ section.settings.duration }}s linear infinite}
+    @keyframes ces-press-run{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+    {%- if section.settings.pause_on_hover -%}
+      .ces-press__scroller:hover .ces-press__list,
+      .ces-press__scroller:focus-within .ces-press__list{animation-play-state:paused}
+    {%- endif -%}
+  {%- endif -%}
+  @media (prefers-reduced-motion:reduce){
+    .ces-press__list{animation:none !important}
+  }
+  @media screen and (min-width:750px){
+    .ces-press__label{font-size:1.4rem}
+    .ces-press__item img{height:{{ section.settings.logo_height }}px}
+    {%- if section.settings.scroll_mode == 'mobile' -%}
+      /* Wide enough to hold them all, so the strip settles into a static row
+         and the second copy would only repeat what is already on screen. */
+      .ces-press__list{animation:none;width:100%;justify-content:space-between}
+      .ces-press__list + .ces-press__list{display:none}
+      .ces-press__scroller{overflow:visible}
+    {%- endif -%}
+  }
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div class="ces-section ces-press ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner">
+    {%- if section.settings.label != blank -%}
+      <p class="ces-press__label">{{ section.settings.label }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if ps_logos.size > 0 -%}
+    {%- capture ps_group -%}
+      {%- for block in ps_logos -%}
+        {%- if block.settings.image != blank -%}
+          <li class="ces-press__item" {{ block.shopify_attributes }}>
+            <img
+              src="{{ block.settings.image | image_url: height: 160 }}"
+              alt="{{ block.settings.alt | escape }}"
+              loading="lazy"
+            >
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+
+    <div class="ces-press__scroller">
+      <ul class="ces-press__list" role="list">{{ ps_group }}</ul>
+      {%- comment -%}
+        The twin follows immediately, so translating one full width lands on an
+        identical frame. Hidden from assistive tech to avoid reading it twice.
+      {%- endcomment -%}
+      <ul class="ces-press__list" role="list" aria-hidden="true">{{ ps_group }}</ul>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "CES Press strip",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "A row of press logos that runs off both edges of the screen. Each logo keeps its own width; only the height is set." },
+    { "type": "text", "id": "label", "label": "Label", "default": "AS SEEN ON" },
+    { "type": "range", "id": "logo_height", "min": 24, "max": 96, "step": 2, "unit": "px", "label": "Logo height on desktop", "info": "Three quarters of this on a phone.", "default": 54 },
+    { "type": "range", "id": "gap", "min": 4, "max": 48, "step": 1, "unit": "px", "label": "Space either side of each logo", "default": 15 },
+    { "type": "header", "content": "Movement" },
+    {
+      "type": "select",
+      "id": "scroll_mode",
+      "label": "Scroll the strip",
+      "options": [
+        { "value": "mobile", "label": "On phones, static on desktop" },
+        { "value": "always", "label": "Always" },
+        { "value": "never", "label": "Never" }
+      ],
+      "default": "mobile"
+    },
+    { "type": "range", "id": "duration", "min": 10, "max": 120, "step": 5, "unit": "s", "label": "Seconds for one full pass", "default": 25 },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause while hovered", "default": true },
+    { "type": "header", "content": "Rules" },
+    { "type": "checkbox", "id": "show_rule_top", "label": "Rule above", "default": false },
+    { "type": "checkbox", "id": "show_rule_bottom", "label": "Rule below", "default": true },
+    { "type": "color", "id": "rule_color", "label": "Rule colour", "default": "#d1d1d1" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 12 }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo" },
+        { "type": "text", "id": "alt", "label": "Publication name", "info": "Read out by screen readers. Leave empty for a purely decorative strip." }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "presets": [
+    {
+      "name": "CES Press strip",
+      "blocks": [
+        { "type": "logo" }, { "type": "logo" }, { "type": "logo" }, { "type": "logo" },
+        { "type": "logo" }, { "type": "logo" }, { "type": "logo" }, { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

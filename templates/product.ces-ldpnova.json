@@ -165,57 +165,83 @@
       }
     },
     "recognition": {
-      "type": "ces-recognition",
+      "type": "ces-press-strip",
       "blocks": {
-        "image-1": {
-          "type": "image",
+        "logo-1": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/logo.webp",
-            "caption": ""
+            "alt": "",
+            "image": "shopify://shop_images/logo.webp"
           }
         },
-        "image-2": {
-          "type": "image",
+        "logo-2": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/logo.webp",
-            "caption": ""
+            "alt": "",
+            "image": "shopify://shop_images/logo.webp"
           }
         },
-        "image-3": {
-          "type": "image",
+        "logo-3": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/logo.webp",
-            "caption": ""
+            "alt": "",
+            "image": "shopify://shop_images/logo.webp"
           }
         },
-        "image-4": {
-          "type": "image",
+        "logo-4": {
+          "type": "logo",
           "settings": {
-            "caption": ""
+            "alt": ""
           }
         },
-        "image-5": {
-          "type": "image",
+        "logo-5": {
+          "type": "logo",
           "settings": {
-            "caption": ""
+            "alt": ""
+          }
+        },
+        "logo-6": {
+          "type": "logo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "logo-7": {
+          "type": "logo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "logo-8": {
+          "type": "logo",
+          "settings": {
+            "alt": ""
           }
         }
       },
       "block_order": [
-        "image-1",
-        "image-2",
-        "image-3",
-        "image-4",
-        "image-5"
+        "logo-1",
+        "logo-2",
+        "logo-3",
+        "logo-4",
+        "logo-5",
+        "logo-6",
+        "logo-7",
+        "logo-8"
       ],
       "settings": {
-        "heading": "As Seen On",
-        "subheading": "",
-        "closing": "",
-        "image_position": "below",
+        "label": "AS SEEN ON",
+        "logo_height": 54,
+        "gap": 15,
+        "scroll_mode": "mobile",
+        "duration": 25,
+        "pause_on_hover": true,
+        "show_rule_top": false,
+        "show_rule_bottom": true,
+        "rule_color": "#d1d1d1",
         "color_scheme": "scheme-1",
         "padding_top": 24,
-        "padding_bottom": 24
+        "padding_bottom": 12
       }
     },
     "qualify": {
