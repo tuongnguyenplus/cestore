@@ -49,7 +49,7 @@
 
         comment
           Resolve the tier's variant the easy way — no IDs needed.
-          1) exact variant title  2) title contains  3) position (1,2,3…)
+          1) exact variant title  2) position (1,2,3…)  3) title contains
           4) variant id (fallback for advanced users).
         endcomment
         for v in product.variants
@@ -58,20 +58,26 @@
             assign ces_v = v
           endif
         endfor
-        if ces_v == null
-          for v in product.variants
-            assign vt = v.title | downcase
-            if vt contains ces_key_dc and ces_v == null
-              assign ces_v = v
-            endif
-          endfor
-        endif
+        # Tried before the substring pass: a key of "2" means position 2, but it
+        # is also a substring of a variant titled "6 Packs (12 Patches)", so a
+        # substring pass running first resolves it to the wrong variant. A
+        # variant id is far larger than the variant count, so ids fall through.
         if ces_v == null
           assign ces_pos = ces_key | times: 1
           if ces_pos > 0 and ces_pos <= product.variants.size
             assign ces_idx = ces_pos | minus: 1
             assign ces_v = product.variants[ces_idx]
           endif
+        endif
+        if ces_v == null
+          for v in product.variants
+            assign vt = v.title | downcase
+            # Every string contains the empty string, so without this guard an
+            # unset variant key would resolve every tier to the first variant.
+            if ces_key_dc != blank and vt contains ces_key_dc and ces_v == null
+              assign ces_v = v
+            endif
+          endfor
         endif
         if ces_v == null
           assign ces_vid_num = ces_key | times: 1
