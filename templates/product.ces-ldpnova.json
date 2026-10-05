@@ -1055,6 +1055,7 @@
         },
         "highlight-1": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "eye-lift",
             "text": "Fades Dark Circles & Puffiness"
@@ -1062,6 +1063,7 @@
         },
         "highlight-2": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "smooth",
             "text": "Smooths Fine Lines & Crepey Skin"
@@ -1069,6 +1071,7 @@
         },
         "highlight-3": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "drop",
             "text": "Deep Hydration & Plumping"
@@ -1076,6 +1079,7 @@
         },
         "highlight-4": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "brighten",
             "text": "Firmer, Brighter Under-Eyes"
@@ -1083,6 +1087,7 @@
         },
         "highlight-5": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "patch",
             "text": "Painless — No Injections or Metal Needles"
@@ -1090,6 +1095,7 @@
         },
         "highlight-6": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "peel-clean",
             "text": "No Sticky Residue"
@@ -1097,6 +1103,7 @@
         },
         "highlight-7": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "moon-zzz",
             "text": "Stays Put All Night"
@@ -1104,6 +1111,7 @@
         },
         "highlight-8": {
           "type": "ces_highlight",
+          "disabled": true,
           "settings": {
             "icon": "patch-pair",
             "text": "Real Actives — Not Just a Cool Feel"
