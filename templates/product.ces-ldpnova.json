@@ -842,9 +842,95 @@
         "icon_size": 5,
         "columns_mobile": 1,
         "columns_desktop": 3,
+        "cta_label": "",
+        "cta_url": "",
+        "cta_footnote": "",
         "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 24
+      }
+    },
+    "photowall": {
+      "type": "ces-photo-wall",
+      "blocks": {
+        "photo-1": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/4897f3c7-ee59-4f22-a0ca-bbf657da9ca5.webp",
+            "alt": ""
+          }
+        },
+        "photo-2": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/250fd4af-1287-4044-8a0d-08e60285dd08.webp",
+            "alt": ""
+          }
+        },
+        "photo-3": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo-4": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/7962c422-b856-4238-b159-0476f7c688f8.webp",
+            "alt": ""
+          }
+        },
+        "photo-5": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo-6": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo-7": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo-8": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "photo-1",
+        "photo-2",
+        "photo-3",
+        "photo-4",
+        "photo-5",
+        "photo-6",
+        "photo-7",
+        "photo-8"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "subheading": "",
+        "columns": 2,
+        "height": 520,
+        "duration": 45,
+        "pause_on_hover": true,
+        "fade_edges": true,
+        "image_ratio": "4/5",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     },
     "compare": {
@@ -1709,86 +1795,6 @@
         "count_step_3": 2,
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
-      }
-    },
-    "photowall": {
-      "type": "ces-photo-wall",
-      "blocks": {
-        "photo-1": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-2": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-3": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-4": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-5": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-6": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-7": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo-8": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        }
-      },
-      "block_order": [
-        "photo-1",
-        "photo-2",
-        "photo-3",
-        "photo-4",
-        "photo-5",
-        "photo-6",
-        "photo-7",
-        "photo-8"
-      ],
-      "settings": {
-        "columns": 2,
-        "height": 520,
-        "duration": 45,
-        "pause_on_hover": true,
-        "fade_edges": true,
-        "image_ratio": "4/5",
-        "color_scheme": "scheme-2",
-        "padding_top": 0,
-        "padding_bottom": 40,
-        "eyebrow": "",
-        "heading": "",
-        "subheading": "",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
       }
     }
   },
