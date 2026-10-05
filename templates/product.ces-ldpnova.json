@@ -101,7 +101,8 @@
         "rating_tenths": 48,
         "rating_text": "",
         "eyebrow_style": "plain",
-        "heading_accent": "Wake Up Looking Like Yourself Again"
+        "heading_accent": "Wake Up Looking Like Yourself Again",
+        "text_align": "left"
       }
     },
     "herobullets": {
@@ -156,7 +157,9 @@
         "check_style": "filled",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "columns_desktop": 1,
+        "cta_width": "full"
       }
     },
     "recognition": {
@@ -701,7 +704,8 @@
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_width": "full"
       }
     },
     "timeline": {
@@ -782,7 +786,8 @@
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_width": "full"
       }
     },
     "mornings": {
@@ -860,7 +865,8 @@
         "cta_footnote": "",
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 24
+        "padding_bottom": 24,
+        "cta_width": "full"
       }
     },
     "photowall": {
@@ -944,7 +950,8 @@
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "color_scheme": "scheme-2",
         "padding_top": 0,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_width": "full"
       }
     },
     "compare": {

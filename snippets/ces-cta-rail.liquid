@@ -12,6 +12,9 @@
       "icon | label" renders each with its icon side by side; anything else is
       printed as a plain line.
   - id: {String} The section id, for the scoped style rule.
+  - width: {String} 'auto' (default) sizes the button to its label; 'full'
+      stretches it across the column, as a landing page's primary action.
+  - align: {String} 'center' (default), 'left' or 'right'.
 
   Usage:
   {% render 'ces-cta-rail',
@@ -32,6 +35,13 @@
 
   {%- style -%}
     .ces-cta-rail{margin:2.8rem 0 0;text-align:center}
+    .ces-cta-rail--left{text-align:left}
+    .ces-cta-rail--left .ces-cta-rail__trust{justify-content:flex-start}
+    .ces-cta-rail--right{text-align:right}
+    .ces-cta-rail--right .ces-cta-rail__trust{justify-content:flex-end}
+    /* A full-width button is the page's primary action rather than one link
+       among several, so the label stays centred inside it either way. */
+    .ces-cta-rail--full .ces-button{display:flex;width:100%;justify-content:center;text-align:center}
     .ces-cta-rail__note{margin:1.2rem 0 0;font-size:1.3rem;line-height:1.45;opacity:.8}
     /* The trust items sit on one line where they fit and wrap as a pair when
        they do not, rather than stacking one per line on a narrow phone. */
@@ -49,7 +59,11 @@
     }
   {%- endstyle -%}
 
-  <div class="ces-cta-rail">
+  {%- liquid
+    assign rail_align = align | default: 'center'
+    assign rail_width = width | default: 'auto'
+  -%}
+  <div class="ces-cta-rail ces-cta-rail--{{ rail_align }}{% if rail_width == 'full' %} ces-cta-rail--full{% endif %}">
     <a class="ces-button" href="{{ url | default: '#ces-bundle' }}">{{ label }}</a>
 
     {%- if footnote != blank -%}

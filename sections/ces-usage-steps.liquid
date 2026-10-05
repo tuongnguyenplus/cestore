@@ -53,6 +53,7 @@
        label: section.settings.cta_label,
        url: section.settings.cta_url,
        footnote: section.settings.cta_footnote,
+       width: section.settings.cta_width,
        id: section.id %}
   </div>
 </div>
@@ -86,7 +87,17 @@
       "id": "cta_footnote",
       "label": "Text under the button"
     },
-    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+
+    {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "Full width" }
+      ],
+      "default": "auto"
+    },    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
     { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 40 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }

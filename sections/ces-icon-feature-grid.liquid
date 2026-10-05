@@ -129,6 +129,7 @@
        label: section.settings.cta_label,
        url: section.settings.cta_url,
        footnote: section.settings.cta_footnote,
+       width: section.settings.cta_width,
        id: section.id %}
   </div>
 </div>
@@ -249,7 +250,17 @@
       "id": "cta_footnote",
       "label": "Text under the button"
     },
+
     {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "Full width" }
+      ],
+      "default": "auto"
+    },    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",

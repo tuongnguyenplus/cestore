@@ -3,6 +3,9 @@
 {{ 'ces-benefits-checklist.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  /* One column stacks the points as a single read; two sets them as a spec
+     sheet. Which one is right depends on how many there are. */
+  .ces-benefits-checklist--one-col .ces-benefits-checklist__list{grid-template-columns:minmax(0,1fr)}
   /* The filled style puts a bare tick inside a solid disc rather than drawing
      an outlined one, which reads at a glance from further down the page. The
      icon itself is swapped below, so no second ring shows through. */
@@ -13,7 +16,7 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %}{% if section.settings.columns_desktop == 1 %} ces-benefits-checklist--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -54,6 +57,7 @@
        label: section.settings.cta_label,
        url: section.settings.cta_url,
        footnote: section.settings.cta_footnote,
+       width: section.settings.cta_width,
        id: section.id %}
   </div>
 </div>
@@ -100,6 +104,16 @@
       "default": "<p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>"
     },
     {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Columns on desktop",
+      "info": "Always one on a phone.",
+      "default": 2
+    },
+    {
       "type": "select",
       "id": "check_style",
       "label": "Tick style",
@@ -130,7 +144,17 @@
       "label": "Text under the button",
       "info": "One line each as \"icon | label\" renders them with icons side by side."
     },
+
     {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "Full width" }
+      ],
+      "default": "auto"
+    },    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",

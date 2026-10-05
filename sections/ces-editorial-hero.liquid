@@ -4,6 +4,12 @@
 {%- style -%}
   .ces-edhero{color:rgb(var(--color-foreground));background:var(--gradient-background)}
   .ces-edhero__inner{text-align:center;max-width:78rem;margin:0 auto}
+  /* Left-aligned, the hero reads as the opening of an article rather than a
+     poster, which is what a long landing page wants. The rating row and the
+     byline follow the text rather than staying centred under it. */
+  .ces-edhero__inner--left{text-align:left}
+  .ces-edhero__inner--left .ces-edhero__rating,
+  .ces-edhero__inner--left .ces-edhero__byline{justify-content:flex-start}
   .ces-edhero__eyebrow{margin:0 0 1.2rem;font-size:1.2rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ces-accent)}
   /* The plain eyebrow is a sentence leading into the headline, not a label
      above it, so it keeps sentence case and the body colour. */
@@ -34,7 +40,7 @@
 
 <div class="ces-section ces-edhero ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner">
-    <div class="ces-edhero__inner">
+    <div class="ces-edhero__inner{% if section.settings.text_align == 'left' %} ces-edhero__inner--left{% endif %}">
       {%- capture edh_media -%}
         {%- if section.settings.image != blank -%}
           <figure class="ces-edhero__media"><img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.heading | escape }}" loading="lazy"></figure>
@@ -119,6 +125,16 @@
     {
       "type": "paragraph",
       "content": "Editorial-style opener for an advertorial product page: big listicle headline, author byline and a call to action."
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Alignment",
+      "options": [
+        { "value": "center", "label": "Centred" },
+        { "value": "left", "label": "Left" }
+      ],
+      "default": "center"
     },
     {
       "type": "range",
