@@ -64,3 +64,43 @@
 .ces-experience-list__text {
   padding-top: 0.1rem;
 }
+
+/* The outline style, measured off the reference it was built to match: an 18px
+   ring at 1.5px in the text colour, a thin tick inside it, and nothing filled.
+   Beside the filled disc it reads as a list someone is reading rather than a
+   set of claims being stamped. */
+.ces-experience-list--outline .ces-experience-list__check {
+  box-sizing: border-box;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: 0.3rem;
+  background: none;
+  border: 0.15rem solid currentColor;
+  color: rgb(var(--color-foreground));
+}
+
+.ces-experience-list--outline .ces-experience-list__check svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* Rules between the points fence each one off; the reference lets them run as
+   one list, which is most of why it reads lighter. */
+.ces-experience-list--no-rules .ces-experience-list__item {
+  border-top: none;
+  padding: 0;
+}
+
+.ces-experience-list--no-rules .ces-experience-list__grid {
+  gap: 1.6rem 2.8rem;
+}
+
+@media screen and (max-width: 749px) {
+  .ces-experience-list--no-rules .ces-experience-list__item:nth-child(2) {
+    border-top: none;
+  }
+}
+
+.ces-experience-list--one-col .ces-experience-list__grid {
+  grid-template-columns: 1fr;
+}

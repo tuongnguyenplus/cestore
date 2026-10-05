@@ -16,7 +16,7 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-experience-list ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-experience-list{% if section.settings.tick_style == 'outline' %} ces-experience-list--outline{% endif %}{% unless section.settings.show_dividers %} ces-experience-list--no-rules{% endunless %}{% if section.settings.columns_desktop == '1' %} ces-experience-list--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -91,6 +91,32 @@
       "type": "text",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "tick_style",
+      "label": "Tick style",
+      "options": [
+        { "value": "filled", "label": "Filled disc" },
+        { "value": "outline", "label": "Thin ring" }
+      ],
+      "default": "filled"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dividers",
+      "label": "Rule between the points",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "Two" },
+        { "value": "1", "label": "One" }
+      ],
+      "default": "2"
     },
     {
       "type": "text",

@@ -275,7 +275,10 @@
         "image_caption": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 24
+        "padding_bottom": 24,
+        "tick_style": "outline",
+        "show_dividers": false,
+        "columns_desktop": "1"
       }
     },
     "badges": {
