@@ -27,7 +27,7 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %}{% if section.settings.columns_desktop == 1 %} ces-benefits-checklist--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %}{% if section.settings.columns_desktop == '1' %} ces-benefits-checklist--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -115,14 +115,15 @@
       "default": "<p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>"
     },
     {
-      "type": "range",
+      "type": "select",
       "id": "columns_desktop",
-      "min": 1,
-      "max": 2,
-      "step": 1,
       "label": "Columns on desktop",
       "info": "Always one on a phone.",
-      "default": 2
+      "options": [
+        { "value": "2", "label": "Two" },
+        { "value": "1", "label": "One" }
+      ],
+      "default": "2"
     },
     {
       "type": "select",

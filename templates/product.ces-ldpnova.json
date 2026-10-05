@@ -159,7 +159,7 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
-        "columns_desktop": 1,
+        "columns_desktop": "1",
         "cta_width": "full"
       }
     },
