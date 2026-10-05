@@ -613,7 +613,10 @@
         "color_scheme": "scheme-1",
         "padding_top": 32,
         "padding_bottom": 40,
-        "subheading": ""
+        "subheading": "",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
       },
       "blocks": {
         "step-1": {
@@ -655,7 +658,10 @@
         "padding_top": 40,
         "padding_bottom": 40,
         "subheading": "",
-        "image_caption": ""
+        "image_caption": "",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
       },
       "blocks": {
         "stage-1": {
@@ -720,7 +726,10 @@
         "padding_top": 40,
         "padding_bottom": 40,
         "highlight_words": "",
-        "subheading": ""
+        "subheading": "",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "30 Day Money Back Guarantee · Free Shipping"
       },
       "blocks": {
         "icon_item-1": {

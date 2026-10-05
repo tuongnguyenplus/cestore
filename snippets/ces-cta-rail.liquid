@@ -1,0 +1,38 @@
+{% comment %}
+  The call-to-action rail that repeats down a long landing page: one button
+  back to the buy box, with the reassurance line under it.
+
+  Kept in one place so every rail on a page is the same shape — a page that
+  asks for the sale six times should not ask for it six different ways.
+
+  Accepts:
+  - label: {String} Button text. Nothing renders without it.
+  - url: {String} Where it goes. Defaults to the bundle anchor.
+  - footnote: {String} Optional small print under the button.
+  - id: {String} The section id, for the scoped style rule.
+
+  Usage:
+  {% render 'ces-cta-rail',
+     label: section.settings.cta_label,
+     url: section.settings.cta_url,
+     footnote: section.settings.cta_footnote,
+     id: section.id %}
+{% endcomment %}
+
+{%- if label != blank -%}
+  {%- style -%}
+    .ces-cta-rail{margin:2.8rem 0 0;text-align:center}
+    .ces-cta-rail__note{margin:1.2rem 0 0;font-size:1.3rem;line-height:1.45;opacity:.8}
+    @media screen and (min-width:750px){
+      .ces-cta-rail{margin-top:3.2rem}
+      .ces-cta-rail__note{font-size:1.4rem}
+    }
+  {%- endstyle -%}
+
+  <div class="ces-cta-rail">
+    <a class="ces-button" href="{{ url | default: '#ces-bundle' }}">{{ label }}</a>
+    {%- if footnote != blank -%}
+      <p class="ces-cta-rail__note">{{ footnote }}</p>
+    {%- endif -%}
+  </div>
+{%- endif -%}

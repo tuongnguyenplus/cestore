@@ -151,6 +151,11 @@
     {%- if rtl_has_media and section.settings.image_position == 'below_timeline' -%}
       <div class="ces-rtl__media ces-rtl__media--below">{{ rtl_media }}</div>
     {%- endif -%}
+    {% render 'ces-cta-rail',
+       label: section.settings.cta_label,
+       url: section.settings.cta_url,
+       footnote: section.settings.cta_footnote,
+       id: section.id %}
   </div>
 </div>
 
@@ -241,6 +246,26 @@
       "id": "show_quotes",
       "label": "Show customer quotes",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link",
+      "info": "Defaults to the product buy box (#ces-bundle)."
+    },
+    {
+      "type": "text",
+      "id": "cta_footnote",
+      "label": "Text under the button"
     },
     {
       "type": "color_scheme",
