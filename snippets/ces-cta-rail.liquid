@@ -42,6 +42,12 @@
     /* A full-width button is the page's primary action rather than one link
        among several, so the label stays centred inside it either way. */
     .ces-cta-rail--full .ces-button{display:flex;width:100%;justify-content:center;text-align:center}
+    /* A full-width button belongs to the block above it rather than floating
+       between two sections, so it sits closer than a free-standing one. */
+    .ces-cta-rail--full{margin-top:1.2rem}
+    @media screen and (min-width:750px){
+      .ces-cta-rail--full{margin-top:1.6rem}
+    }
     .ces-cta-rail__note{margin:1.2rem 0 0;font-size:1.3rem;line-height:1.45;opacity:.8}
     /* The trust items sit on one line where they fit and wrap as a pair when
        they do not, rather than stacking one per line on a narrow phone. */

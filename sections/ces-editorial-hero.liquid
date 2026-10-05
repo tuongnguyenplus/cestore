@@ -13,9 +13,11 @@
   .ces-edhero__eyebrow{margin:0 0 1.2rem;font-size:1.2rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ces-accent)}
   /* The plain eyebrow is a sentence leading into the headline, not a label
      above it, so it keeps sentence case and the body colour. */
-  .ces-edhero__eyebrow--plain{font-size:1.7rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ces-muted);line-height:1.4}
+  .ces-edhero__eyebrow--plain{font-size:2rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ces-muted);line-height:1.35}
   .ces-edhero__accent{color:var(--ces-accent)}
-  .ces-edhero__rating{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:0 0 1.6rem;flex-wrap:wrap}
+  /* The rating sits tight under the image as a caption on it, not as a band
+     of its own — 6px in the reference, measured. */
+  .ces-edhero__rating{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:0 0 .6rem;flex-wrap:wrap}
   .ces-edhero__stars{position:relative;display:inline-block;line-height:0;flex:0 0 auto}
   .ces-edhero__stars-track{display:block;color:rgba(var(--color-foreground),.18)}
   /* The fill is clipped to the score's width, so it must not be a flex
@@ -24,7 +26,14 @@
   .ces-edhero__stars svg{display:inline-block;vertical-align:top}
   .ces-edhero__rating-text{font-size:1.5rem;font-weight:700;line-height:1.3}
   .ces-edhero__heading{margin:0;font-size:clamp(2.6rem,4.4vw,4.2rem);line-height:1.15;font-weight:800}
+  /* The larger step is for a landing page, where the headline is the first
+     thing on the screen rather than one element in an article. Measured from
+     the reference: 34px at a 428px viewport, leading just over the type size. */
+  .ces-edhero__heading--large{font-size:clamp(3rem,8vw,4.4rem);line-height:1.08;letter-spacing:-.01em}
   .ces-edhero__sub{margin:1.6rem 0 0;font-size:1.7rem;line-height:1.55;color:var(--ces-muted)}
+  /* Scoped to the landing-page headline so the article pages already using
+     this hero keep the metrics they were set with. */
+  .ces-edhero__heading--large + .ces-edhero__sub{margin-top:2.2rem;font-size:1.8rem;line-height:1.5}
   .ces-edhero__byline{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2.4rem 0 0;flex-wrap:wrap}
   .ces-edhero__avatar{width:4.4rem;height:4.4rem;border-radius:50%;overflow:hidden;background:var(--ces-surface);flex:0 0 auto}
   .ces-edhero__avatar img{width:100%;height:100%;object-fit:cover;display:block}
@@ -89,7 +98,7 @@
             assign edh_heading = edh_heading | replace: edh_accent, edh_wrapped
           endif
         -%}
-        <h1 class="ces-edhero__heading">{{ edh_heading }}</h1>
+        <h1 class="ces-edhero__heading{% if section.settings.heading_size == 'large' %} ces-edhero__heading--large{% endif %}">{{ edh_heading }}</h1>
       {%- endif -%}
       {%- if section.settings.subheading != blank -%}<p class="ces-edhero__sub">{{ section.settings.subheading }}</p>{%- endif -%}
 
@@ -166,6 +175,16 @@
         { "value": "plain", "label": "A sentence leading into the headline" }
       ],
       "default": "badge"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Headline size",
+      "options": [
+        { "value": "default", "label": "Article" },
+        { "value": "large", "label": "Landing page" }
+      ],
+      "default": "default"
     },
     {
       "type": "text",

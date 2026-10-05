@@ -7,11 +7,22 @@
      sheet. Which one is right depends on how many there are. */
   .ces-benefits-checklist--one-col .ces-benefits-checklist__list{grid-template-columns:minmax(0,1fr)}
   /* The filled style puts a bare tick inside a solid disc rather than drawing
-     an outlined one, which reads at a glance from further down the page. The
-     icon itself is swapped below, so no second ring shows through. */
+     an outlined one. The icon is swapped below so no second ring shows through.
+
+     Measured off the reference: a 19px disc around a 13px tick, 12px of air
+     before the label, and a 38px pitch down the list. The disc is deliberately
+     smaller than the 20px the icons use elsewhere — at full size it outweighs
+     the line it belongs to and the list stops feeling light. */
   .ces-benefits-checklist--filled .ces-checklist-item > .ces-icon{
-    background:var(--ces-success);color:#fff;border-radius:50%;padding:.3rem;box-sizing:content-box;flex:0 0 auto}
-  .ces-benefits-checklist--filled .ces-checklist-item__text{font-weight:700}
+    --ces-icon-size:1.3rem;
+    width:1.9rem;height:1.9rem;margin-top:.2em;
+    background:var(--ces-success);color:#fff;border-radius:50%}
+  .ces-benefits-checklist--filled .ces-checklist-item{gap:1.2rem}
+  .ces-benefits-checklist--filled .ces-checklist-item__text{font-weight:700;line-height:1.5}
+  .ces-benefits-checklist--filled .ces-benefits-checklist__list{gap:1.6rem}
+  @media screen and (min-width:750px){
+    .ces-benefits-checklist--filled .ces-benefits-checklist__list{gap:1.6rem 3.2rem}
+  }
 {%- endstyle -%}
 
 {% render 'ces-section-padding' %}
