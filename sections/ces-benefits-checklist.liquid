@@ -21,7 +21,7 @@
   .ces-benefits-checklist--filled .ces-checklist-item > .ces-icon{
     width:1.9rem;height:1.9rem;margin-top:.2em;flex:0 0 auto;
     display:inline-flex;align-items:center;justify-content:center;
-    border-radius:50%;background:var(--ces-check-color,var(--ces-success));color:#fff}
+    border-radius:50%;background:var(--ces-check-color,var(--ces-accent));color:rgb(var(--color-background))}
   .ces-benefits-checklist--filled .ces-checklist-item > .ces-icon svg{
     width:1.1rem;height:1.1rem;display:block}
   .ces-benefits-checklist--filled .ces-checklist-item{gap:1.2rem}
@@ -138,8 +138,7 @@
       "type": "color",
       "id": "check_color",
       "label": "Tick colour",
-      "info": "Used by the filled style.",
-      "default": "#2db72a"
+      "info": "Used by the filled style. Leave empty to follow the theme's accent colour, so it matches the other ticks on the page."
     },
     {
       "type": "select",
