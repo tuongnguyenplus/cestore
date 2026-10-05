@@ -177,12 +177,14 @@
         "image-2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/logo.webp",
             "caption": ""
           }
         },
         "image-3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/logo.webp",
             "caption": ""
           }
         },
