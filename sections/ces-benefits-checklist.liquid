@@ -6,17 +6,24 @@
   /* One column stacks the points as a single read; two sets them as a spec
      sheet. Which one is right depends on how many there are. */
   .ces-benefits-checklist--one-col .ces-benefits-checklist__list{grid-template-columns:minmax(0,1fr)}
-  /* The filled style puts a bare tick inside a solid disc rather than drawing
-     an outlined one. The icon is swapped below so no second ring shows through.
+  /* The filled style puts a bare tick inside a solid disc. The icon is swapped
+     below so no second ring shows through.
 
-     Measured off the reference: a 19px disc around a 13px tick, 12px of air
+     The inner glyph has to be sized explicitly. Left alone it inherits the
+     shared rule that stretches an icon to the full wrapper, and the checkmark's
+     viewBox is 12 by 9, so fitting it to a 19px square ran its two ends past
+     the curve of the disc and bit notches out of the circle.
+
+     Measured off the reference: a 19px disc around an 11px tick, 12px of air
      before the label, and a 38px pitch down the list. The disc is deliberately
      smaller than the 20px the icons use elsewhere — at full size it outweighs
      the line it belongs to and the list stops feeling light. */
   .ces-benefits-checklist--filled .ces-checklist-item > .ces-icon{
-    --ces-icon-size:1.3rem;
-    width:1.9rem;height:1.9rem;margin-top:.2em;
-    background:var(--ces-success);color:#fff;border-radius:50%}
+    width:1.9rem;height:1.9rem;margin-top:.2em;flex:0 0 auto;
+    display:inline-flex;align-items:center;justify-content:center;
+    border-radius:50%;background:var(--ces-check-color,var(--ces-success));color:#fff}
+  .ces-benefits-checklist--filled .ces-checklist-item > .ces-icon svg{
+    width:1.1rem;height:1.1rem;display:block}
   .ces-benefits-checklist--filled .ces-checklist-item{gap:1.2rem}
   .ces-benefits-checklist--filled .ces-checklist-item__text{font-weight:700;line-height:1.5}
   .ces-benefits-checklist--filled .ces-benefits-checklist__list{gap:1.6rem}
@@ -27,7 +34,9 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %}{% if section.settings.columns_desktop == '1' %} ces-benefits-checklist--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div
+  style="{% if section.settings.check_color != blank %}--ces-check-color: {{ section.settings.check_color }};{% endif %}"
+  class="ces-section ces-benefits-checklist{% if section.settings.check_style == 'filled' %} ces-benefits-checklist--filled{% endif %}{% if section.settings.columns_desktop == '1' %} ces-benefits-checklist--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner ces-section__inner--narrow">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
@@ -124,6 +133,13 @@
         { "value": "1", "label": "One" }
       ],
       "default": "2"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "Tick colour",
+      "info": "Used by the filled style.",
+      "default": "#2db72a"
     },
     {
       "type": "select",
