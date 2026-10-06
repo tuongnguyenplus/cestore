@@ -101,71 +101,54 @@
         "date_text": "",
         "image": "shopify://shop_images/1_a1506dac-5f1f-4b64-a314-4410ff80eac6.webp",
         "image_position": "below",
-        "cta_label": "",
+        "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 0
-      }
-    },
-    "herobullets": {
-      "type": "ces-benefits-checklist",
+        "padding_bottom": 32,
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_width": "full",
+        "cta_arrow": true
+      },
       "blocks": {
-        "benefit_item-1": {
-          "type": "benefit_item",
+        "point-1": {
+          "type": "point",
           "settings": {
             "text": "Dermatologist-tested ingredients"
           }
         },
-        "benefit_item-2": {
-          "type": "benefit_item",
+        "point-2": {
+          "type": "point",
           "settings": {
             "text": "Works while you sleep"
           }
         },
-        "benefit_item-3": {
-          "type": "benefit_item",
+        "point-3": {
+          "type": "point",
           "settings": {
             "text": "Notice a difference from the very first use"
           }
         },
-        "benefit_item-4": {
-          "type": "benefit_item",
+        "point-4": {
+          "type": "point",
           "settings": {
             "text": "Completely painless"
           }
         },
-        "benefit_item-5": {
-          "type": "benefit_item",
+        "point-5": {
+          "type": "point",
           "settings": {
             "text": "No morning routine needed"
           }
         }
       },
       "block_order": [
-        "benefit_item-1",
-        "benefit_item-2",
-        "benefit_item-3",
-        "benefit_item-4",
-        "benefit_item-5"
-      ],
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "icon": "check-circle",
-        "disclaimer": "",
-        "columns_desktop": "1",
-        "check_color": "",
-        "check_style": "filled",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
-        "cta_arrow": true,
-        "cta_width": "full",
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 32
-      }
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4",
+        "point-5"
+      ]
     },
     "recognition": {
       "type": "ces-press-strip",
@@ -1904,7 +1887,6 @@
     "countdown",
     "nav",
     "hero",
-    "herobullets",
     "recognition",
     "qualify",
     "badges",

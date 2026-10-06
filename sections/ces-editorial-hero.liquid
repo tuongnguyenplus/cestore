@@ -39,6 +39,23 @@
   .ces-edhero__media{margin:2.8rem 0 0;border-radius:var(--ces-radius);overflow:hidden;border:.1rem solid var(--ces-border-color)}
   .ces-edhero__media img{width:100%;height:auto;display:block}
   .ces-edhero__cta{margin:2.4rem 0 0}
+  /* The points sit in the copy column, sharing its left edge with the
+     headline. Held in a section of their own they centred in their own
+     container and stopped lining up with anything above them. */
+  .ces-edhero__points{margin:2.4rem 0 0;padding:0;list-style:none;display:grid;gap:1.6rem}
+  .ces-edhero__point{display:flex;align-items:flex-start;gap:1.2rem;
+    font-size:1.5rem;font-weight:700;line-height:1.5;text-align:left}
+  .ces-edhero__tick{flex:0 0 auto;width:1.9rem;height:1.9rem;margin-top:.2em;
+    display:inline-flex;align-items:center;justify-content:center;border-radius:50%;
+    background:var(--ces-tick-color,var(--ces-accent));color:rgb(var(--color-background))}
+  .ces-edhero__tick svg{width:1.1rem;height:1.1rem;display:block}
+  /* The rail centres its own button; inside a left-aligned hero it should
+     start at the same margin as everything above it. The rail's own rule has
+     the same specificity and is emitted after this one, so the modifier class
+     is named here too in order to outweigh it. */
+  .ces-edhero__inner--left .ces-cta-rail,
+  .ces-edhero__inner--left .ces-cta-rail__trust{justify-content:flex-start;text-align:left}
+  .ces-edhero__inner--left .ces-cta-rail--full .ces-cta-rail__box{margin-left:0;margin-right:auto}
   /* Split: the copy takes the left column and the picture the right, which is
      how the reference runs on a wide screen. Narrow, the two stack with the
      picture on top — column-reverse, as the reference does it, so the markup
@@ -68,7 +85,9 @@
 
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-edhero ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div
+  style="{% if section.settings.tick_color != blank %}--ces-tick-color: {{ section.settings.tick_color }};{% endif %}"
+  class="ces-section ces-edhero ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner">
     <div class="ces-edhero__inner{% if section.settings.text_align == 'left' %} ces-edhero__inner--left{% endif %}{% if section.settings.layout == 'split' %} ces-edhero__inner--split{% endif %}">
       {%- capture edh_media -%}
@@ -135,20 +154,43 @@
       {%- endif -%}
       {%- endcapture -%}
 
+      {%- capture edh_points -%}
+        {%- assign edh_list = section.blocks | where: 'type', 'point' -%}
+        {%- if edh_list.size > 0 -%}
+          <ul class="ces-edhero__points" role="list">
+            {%- for block in edh_list -%}
+              {%- if block.settings.text != blank -%}
+                <li class="ces-edhero__point" {{ block.shopify_attributes }}>
+                  <span class="ces-edhero__tick" aria-hidden="true">
+                    {% render 'ces-icon', icon: 'check' %}
+                  </span>
+                  <span>{{ block.settings.text }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      {%- endcapture -%}
+
       {%- capture edh_cta -%}
-        {%- if section.settings.cta_label != blank -%}
-        <p class="ces-edhero__cta">
-          <a class="ces-button" href="{{ section.settings.cta_url | default: '#ces-bundle' }}">{{ section.settings.cta_label }}</a>
-        </p>
-      {%- endif -%}
+        <div class="ces-edhero__cta">
+          {% render 'ces-cta-rail',
+             label: section.settings.cta_label,
+             url: section.settings.cta_url,
+             footnote: section.settings.cta_footnote,
+             width: section.settings.cta_width,
+             arrow: section.settings.cta_arrow,
+             id: section.id %}
+        </div>
       {%- endcapture -%}
 
       {%- if section.settings.layout == 'split' -%}
-        <div class="ces-edhero__col">{{ edh_body }}{{ edh_cta }}</div>
+        <div class="ces-edhero__col">{{ edh_body }}{{ edh_points }}{{ edh_cta }}</div>
         {{ edh_media }}
       {%- else -%}
         {%- if section.settings.image_position == 'above' -%}{{ edh_media }}{%- endif -%}
         {{ edh_body }}
+        {{ edh_points }}
         {%- unless section.settings.image_position == 'above' -%}{{ edh_media }}{%- endunless -%}
         {{ edh_cta }}
       {%- endif -%}
@@ -296,6 +338,24 @@
       "info": "Defaults to the product buy box (#ces-bundle)."
     },
     {
+      "type": "text",
+      "id": "cta_footnote",
+      "label": "Text under the button",
+      "info": "One line each as \"icon | label\" renders them with icons side by side."
+    },
+    {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "One size" }
+      ],
+      "default": "auto"
+    },
+    { "type": "checkbox", "id": "cta_arrow", "label": "Arrow after the label", "default": false },
+    { "type": "color", "id": "tick_color", "label": "Tick colour", "info": "Leave empty to follow the theme's accent." },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
@@ -326,6 +386,16 @@
       "default": 32
     }
   ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
   "presets": [
     {
       "name": "CES Editorial hero"
