@@ -87,7 +87,8 @@
 
       {%- if ces_v != null -%}
         {%- liquid
-          assign nkey  = 'tier_' | append: ces_i | append: '_name'
+          assign imkey = 'tier_' | append: ces_i | append: '_image'
+        assign nkey  = 'tier_' | append: ces_i | append: '_name'
           assign bkey  = 'tier_' | append: ces_i | append: '_badge'
           assign stkey = 'tier_' | append: ces_i | append: '_subtitle'
           assign mtkey = 'tier_' | append: ces_i | append: '_meta'
@@ -202,6 +203,24 @@
               {% if ces_checked %}checked{% endif %}
             >
             <span class="ces-b2__dot" aria-hidden="true"></span>
+
+            {%- if block.settings.show_variant_image -%}
+              {%- liquid
+                # The tier's own picture wins; otherwise the variant's, and the
+                # product's as a last resort, so a tier is never left with a hole
+                # where the others have a thumbnail.
+                assign ces_tier_img = block.settings[imkey]
+                if ces_tier_img == blank
+                  assign ces_tier_img = ces_v.featured_image | default: product.featured_image
+                endif
+              -%}
+              {%- if ces_tier_img != blank -%}
+                <span class="ces-b2__thumb-variant">
+                  <img src="{{ ces_tier_img | image_url: width: 120 }}" alt="" loading="lazy" width="40" height="40">
+                </span>
+              {%- endif -%}
+            {%- endif -%}
+
             <span class="ces-b2__titles">
               <span class="ces-b2__name">{{ block.settings[nkey] | default: ces_v.title }}</span>
               {%- if block.settings[stkey] != blank -%}

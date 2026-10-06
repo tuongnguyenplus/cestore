@@ -156,19 +156,34 @@
         {%- assign ces_clin_top = block -%}
       {%- endif -%}
     {%- endfor -%}
+    {%- liquid
+      # A page that leads with its own imagery further up does not need the
+      # gallery again; hiding it hands the whole width to the buy box, which is
+      # what Dawn already does when a product has no media at all.
+      assign ces_show_media = false
+      if section.settings.show_media and product.media.size > 0
+        assign ces_show_media = true
+      endif
+    -%}
     <div class="page-width">
-      <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-        <div class="grid__item product__media-wrapper{% if ces_clin_top %} ces-clin-anchor{% endif %}">
-          {% render 'product-media-gallery', variant_images: variant_images %}
-          {%- if ces_clin_top -%}
-            {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
-          {%- endif -%}
-        </div>
+      <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if ces_show_media %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+        {%- if ces_show_media -%}
+          <div class="grid__item product__media-wrapper{% if ces_clin_top %} ces-clin-anchor{% endif %}">
+            {% render 'product-media-gallery', variant_images: variant_images %}
+            {%- if ces_clin_top -%}
+              {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
         <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <section
             id="ProductInfo-{{ section.id }}"
             class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
           >
+            {%- if ces_clin_top and ces_show_media == false -%}
+              {%- render 'ces-clinicians-badge', block: ces_clin_top, variant: 'top' -%}
+            {%- endif -%}
+
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
             {%- comment -%}
@@ -4353,6 +4368,18 @@
           "content": "Tier 1"
         },
         {
+          "type": "checkbox",
+          "id": "show_variant_image",
+          "label": "Show a picture on each tier",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_1_image",
+          "label": "Tier 1 picture",
+          "info": "Overrides the variant's own image."
+        },
+        {
           "type": "text",
           "id": "tier_1_variant",
           "label": "Variant",
@@ -4481,6 +4508,12 @@
         {
           "type": "header",
           "content": "Tier 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_2_image",
+          "label": "Tier 2 picture",
+          "info": "Overrides the variant's own image."
         },
         {
           "type": "text",
@@ -4613,6 +4646,12 @@
           "content": "Tier 3"
         },
         {
+          "type": "image_picker",
+          "id": "tier_3_image",
+          "label": "Tier 3 picture",
+          "info": "Overrides the variant's own image."
+        },
+        {
           "type": "text",
           "id": "tier_3_variant",
           "label": "Variant",
@@ -4741,6 +4780,12 @@
         {
           "type": "header",
           "content": "Tier 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "tier_4_image",
+          "label": "Tier 4 picture",
+          "info": "Overrides the variant's own image."
         },
         {
           "type": "text",
@@ -4970,6 +5015,13 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_media",
+      "label": "Show the picture gallery",
+      "info": "Turn off on a page that already leads with its own imagery; the buy box then takes the full width.",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",
