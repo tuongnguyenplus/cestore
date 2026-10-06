@@ -592,6 +592,7 @@
         "card-1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/6_1.webp",
             "alt": "",
             "title": "Hundreds Of Tiny Dissolving Cones",
             "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
@@ -600,6 +601,7 @@
         "card-2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/6_2.webp",
             "alt": "",
             "title": "Painless Delivery Beneath The Surface",
             "text": "<p>The cones dissolve beneath the surface, reaching the deeper tissue where eye bags actually form. Not the first layer. Not the second. The layer where the problem lives.</p><p>You feel a light tingle for a few seconds. That's it.</p>"
@@ -608,6 +610,7 @@
         "card-3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/6_3.webp",
             "alt": "",
             "title": "You Sleep. They Work. You Wake Up Different.",
             "text": "<p>While you rest the ingredients release slowly into the deeper tissue over several hours. By morning the work is already done.</p><p>Not sitting on top of your skin waiting to evaporate. Inside it, where it actually counts.</p>"
@@ -626,7 +629,7 @@
         "subheading": "",
         "columns": 3,
         "mobile_layout": "scroll",
-        "image_ratio": "landscape",
+        "image_ratio": "square",
         "card_style": "framed",
         "frame_color": "",
         "text_align": "left",
