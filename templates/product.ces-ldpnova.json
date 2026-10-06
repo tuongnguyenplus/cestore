@@ -660,56 +660,63 @@
       }
     },
     "results": {
-      "type": "ces-before-after",
+      "type": "ces-review-cards",
       "blocks": {
-        "pair-1": {
-          "type": "pair",
+        "review-1": {
+          "type": "review",
           "settings": {
-            "rating_tenths": 50,
-            "quote": "",
-            "name": "",
             "verified": true,
-            "progress": ""
+            "rating_tenths": 50,
+            "image": "",
+            "tag": "AFTER",
+            "quote": "",
+            "name": ""
           }
         },
-        "pair-2": {
-          "type": "pair",
+        "review-2": {
+          "type": "review",
           "settings": {
-            "rating_tenths": 50,
-            "quote": "",
-            "name": "",
             "verified": true,
-            "progress": ""
+            "rating_tenths": 50,
+            "image": "",
+            "tag": "AFTER",
+            "quote": "",
+            "name": ""
           }
         },
-        "pair-3": {
-          "type": "pair",
+        "review-3": {
+          "type": "review",
           "settings": {
-            "rating_tenths": 50,
-            "quote": "",
-            "name": "",
             "verified": true,
-            "progress": ""
+            "rating_tenths": 50,
+            "image": "",
+            "tag": "AFTER",
+            "quote": "",
+            "name": ""
           }
         }
       },
       "block_order": [
-        "pair-1",
-        "pair-2",
-        "pair-3"
+        "review-1",
+        "review-2",
+        "review-3"
       ],
       "settings": {
+        "rating_tenths": 48,
         "heading": "Visible Changes Our Customers Love",
-        "subheading": "See how CEBEAM patches made all the difference.",
-        "before_label": "Before",
-        "after_label": "After",
-        "verified_label": "Verified customer",
-        "star_style": "classic",
-        "columns": 2,
+        "columns": 3,
+        "image_height": 320,
+        "card_border_style": "dashed",
+        "verified_label": "Verified Buyer",
+        "prev_label": "Previous reviews",
+        "next_label": "Next reviews",
+        "page_label": "Page",
         "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "rating_text": "",
+        "subheading": "See how CEBEAM patches made all the difference."
       }
     },
     "howto": {
@@ -840,90 +847,48 @@
       }
     },
     "mornings": {
-      "type": "ces-icon-feature-grid",
+      "type": "ces-photo-wall",
       "blocks": {
-        "icon_item-1": {
-          "type": "icon_item",
+        "point-1": {
+          "type": "point",
           "settings": {
-            "icon_text": "",
             "icon": "eye",
-            "icon_color": "",
-            "heading": "Wake Up And Actually Look In The Mirror",
+            "title": "Wake Up And Actually Look In The Mirror",
             "text": "No more avoiding your reflection before 10am."
           }
         },
-        "icon_item-2": {
-          "type": "icon_item",
+        "point-2": {
+          "type": "point",
           "settings": {
-            "icon_text": "",
             "icon": "brighten",
-            "icon_color": "",
-            "heading": "Leave The House Without Concealer",
+            "title": "Leave The House Without Concealer",
             "text": "The first time this happens you will remember it."
           }
         },
-        "icon_item-3": {
-          "type": "icon_item",
+        "point-3": {
+          "type": "point",
           "settings": {
-            "icon_text": "",
             "icon": "stopwatch",
-            "icon_color": "",
-            "heading": "Stop Spending 20 Minutes Depuffing",
+            "title": "Stop Spending 20 Minutes Depuffing",
             "text": "Those 20 minutes are yours again."
           }
         },
-        "icon_item-4": {
-          "type": "icon_item",
+        "point-4": {
+          "type": "point",
           "settings": {
-            "icon_text": "",
             "icon": "heart",
-            "icon_color": "",
-            "heading": "Stop Hearing “Are You Okay? You Look Tired”",
+            "title": "Stop Hearing “Are You Okay? You Look Tired”",
             "text": "You were always fine. Now you look it too."
           }
         },
-        "icon_item-5": {
-          "type": "icon_item",
+        "point-5": {
+          "type": "point",
           "settings": {
-            "icon_text": "",
             "icon": "sparkle",
-            "icon_color": "",
-            "heading": "Be In Photos Without Planning The Angle",
+            "title": "Be In Photos Without Planning The Angle",
             "text": "Front on. Natural light. No problem."
           }
-        }
-      },
-      "block_order": [
-        "icon_item-1",
-        "icon_item-2",
-        "icon_item-3",
-        "icon_item-4",
-        "icon_item-5"
-      ],
-      "settings": {
-        "eyebrow": "",
-        "text_style": "text",
-        "pill_color": "#c0392b",
-        "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
-        "highlight_words": "",
-        "subheading": "",
-        "icon_color": "#1d5c5c",
-        "icon_frame": "disc",
-        "icon_size": 5,
-        "columns_mobile": 1,
-        "columns_desktop": 3,
-        "cta_label": "",
-        "cta_url": "",
-        "cta_footnote": "",
-        "cta_width": "full",
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 24
-      }
-    },
-    "photowall": {
-      "type": "ces-photo-wall",
-      "blocks": {
+        },
         "photo-1": {
           "type": "photo",
           "settings": {
@@ -978,6 +943,11 @@
         }
       },
       "block_order": [
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4",
+        "point-5",
         "photo-1",
         "photo-2",
         "photo-3",
@@ -988,23 +958,24 @@
         "photo-8"
       ],
       "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "subheading": "",
+        "layout": "split",
         "columns": 2,
         "height": 520,
         "duration": 45,
         "pause_on_hover": true,
         "fade_edges": true,
         "image_ratio": "4/5",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-2",
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 40,
-        "cta_arrow": true
+        "eyebrow": "No More Morning Routine",
+        "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
+        "heading_accent": "Once The Eye Bags Are Gone",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
       }
     },
     "compare": {
@@ -1137,20 +1108,53 @@
       }
     },
     "guarantee": {
-      "type": "ces-bullet-cta",
+      "type": "ces-guarantee",
+      "blocks": {
+        "promise-1": {
+          "type": "promise",
+          "settings": {
+            "icon": "stopwatch",
+            "title": "Try It For A Full Month",
+            "text": "Not just one use. A full 30 days of twice-weekly use before you decide."
+          }
+        },
+        "promise-2": {
+          "type": "promise",
+          "settings": {
+            "icon": "shield",
+            "title": "Full Refund. No Complications.",
+            "text": "If you don't see a visible difference contact us. We process your refund immediately. No forms. No hoops."
+          }
+        },
+        "promise-3": {
+          "type": "promise",
+          "settings": {
+            "icon": "sparkle",
+            "title": "Your Product Graveyard Ends Here",
+            "text": "You have spent enough on things that stopped at the surface. This one doesn't. But if it doesn't work for you, you pay nothing."
+          }
+        }
+      },
+      "block_order": [
+        "promise-1",
+        "promise-2",
+        "promise-3"
+      ],
       "settings": {
-        "image_position": "left",
+        "seal_alt": "30 day money back guarantee",
         "heading": "Try CEBEAM Patches Completely Risk Free For 30 Days",
-        "bullets": "<ul><li><strong>Try it for a full month.</strong> Not just one use. A full 30 days of twice-weekly use before you decide.</li><li><strong>Full refund, no complications.</strong> If you don't see a visible difference, contact us. We process your refund immediately. No forms. No hoops.</li><li><strong>Your product graveyard ends here.</strong> You have spent enough on things that stopped at the surface. This one doesn't &mdash; and if it doesn't work for you, you pay nothing.</li></ul>",
-        "button_label": "Get Now & Save 70%",
-        "button_link": "#shopify-section-main",
-        "button_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
-        "show_frame": true,
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "why_title": "Why do we offer this?",
         "cta_width": "full",
-        "cta_arrow": true
+        "cta_arrow": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "heading_accent": "Completely Risk Free",
+        "subheading": "Use them. Sleep in them. Peel them off every morning for a full month.",
+        "why_text": "<p>Because the mechanism is real. We are confident enough to let you be the judge.</p>",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
       }
     },
     "main": {
@@ -1894,7 +1898,6 @@
     "howto",
     "timeline",
     "mornings",
-    "photowall",
     "compare",
     "guarantee",
     "main",
