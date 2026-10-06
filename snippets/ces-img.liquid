@@ -57,25 +57,39 @@
       assign ces_img_loading = 'eager'
     endif
 
-    assign ces_img_priority = 'auto'
-    if priority
-      assign ces_img_priority = 'high'
-    endif
-
     assign ces_img_sizes = sizes | default: '100vw'
     assign ces_img_alt = alt | default: image.alt | escape
     assign ces_img_class = class | default: ''
   -%}
-  {{
-    image
-    | image_url: width: ces_img_max
-    | image_tag:
-      loading: ces_img_loading,
-      fetchpriority: ces_img_priority,
-      decoding: 'async',
-      sizes: ces_img_sizes,
-      widths: ces_img_widths,
-      class: ces_img_class,
-      alt: ces_img_alt
-  }}
+  {%- comment -%}
+    fetchpriority is only worth writing when it is "high" — "auto" is the
+    default the browser already uses, so passing it would add an attribute to
+    every picture on the page and say nothing.
+  {%- endcomment -%}
+  {%- if priority -%}
+    {{
+      image
+      | image_url: width: ces_img_max
+      | image_tag:
+        loading: ces_img_loading,
+        fetchpriority: 'high',
+        decoding: 'async',
+        sizes: ces_img_sizes,
+        widths: ces_img_widths,
+        class: ces_img_class,
+        alt: ces_img_alt
+    }}
+  {%- else -%}
+    {{
+      image
+      | image_url: width: ces_img_max
+      | image_tag:
+        loading: ces_img_loading,
+        decoding: 'async',
+        sizes: ces_img_sizes,
+        widths: ces_img_widths,
+        class: ces_img_class,
+        alt: ces_img_alt
+    }}
+  {%- endif -%}
 {%- endif -%}
