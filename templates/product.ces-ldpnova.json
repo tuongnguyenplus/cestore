@@ -485,7 +485,7 @@
         "subheading": "",
         "icon_color": "#c0392b",
         "icon_frame": "disc",
-        "icon_size": 5,
+        "icon_size": 7,
         "columns_mobile": 2,
         "columns_desktop": 3,
         "cta_label": "",
@@ -495,7 +495,8 @@
         "cta_width": "auto",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "image_scale": 70
       }
     },
     "mechanism": {

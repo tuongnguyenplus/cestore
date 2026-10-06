@@ -75,7 +75,7 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="ces-icon-feature-grid__grid" style="--ces-icon-frame: {{ section.settings.icon_size }}rem;">
+      <div class="ces-icon-feature-grid__grid" style="--ces-icon-frame: {{ section.settings.icon_size }}rem;--ces-icon-image-scale: {{ section.settings.image_scale | default: 50 }}%;">
         {%- for block in section.blocks -%}
           <div class="ces-icon-feature-grid__item" {{ block.shopify_attributes }}>
             <span
@@ -212,6 +212,17 @@
       "unit": "rem",
       "label": "Icon size",
       "default": 6
+    },
+    {
+      "type": "range",
+      "id": "image_scale",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "How much of the disc the picture fills",
+      "info": "Only applies when the icon frame is a tinted disc.",
+      "default": 60
     },
     {
       "type": "range",
