@@ -102,15 +102,26 @@
 
   /* ---- Desktop: every stage side by side, rail through the pills ---- */
   @media screen and (min-width:750px){
-    .ces-rtl__tabs{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);gap:0;justify-items:stretch}
+    /* The pills and the panels below them are two separate grids, so they only
+       line up while their columns are the same width. With no gap here and a
+       2.4rem one below, each pill drifted 4.8px further left of its stage than
+       the last — 19px by the fifth. Same gap, same columns. */
+    .ces-rtl__tabs{display:grid;grid-template-columns:repeat({{ rtl_cols }},minmax(0,1fr));
+      column-gap:2.4rem;row-gap:0;justify-items:stretch}
     .ces-rtl__pill{cursor:default;flex:0 0 auto}
     .ces-rtl__pill[aria-selected="true"]{background:var(--ces-accent)}
     /* The rail is drawn per step, from the pill's edge to the start of the
        next column, so nothing trails off past the last pill. */
-    .ces-rtl__step::after{content:"";flex:1 1 auto;height:.2rem;background:var(--ces-accent);opacity:.45}
+    /* The rail has to cross the gap as well, or it would stop short of the
+       next pill and read as five dashes. */
+    .ces-rtl__step::after{content:"";flex:1 1 auto;height:.2rem;margin-right:-2.4rem;
+      background:var(--ces-accent);opacity:.45}
     .ces-rtl__step:last-child::after{display:none}
 
-    .ces-rtl__panels{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);
+    /* minmax(0,1fr), not 1fr: a plain 1fr floors each column at its content's
+       min-content width, so a stage holding a long word took more than its
+       fifth and pushed the rest out of step with the pills above. */
+    .ces-rtl__panels{display:grid;grid-template-columns:repeat({{ rtl_cols }},minmax(0,1fr));
       grid-template-rows:auto auto auto;column-gap:2.4rem;row-gap:0;align-items:stretch}
     /* Each panel borrows the three rows of the grid above it, so a title that
        wraps lifts every column's title row together and the cards below still
