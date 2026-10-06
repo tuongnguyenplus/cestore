@@ -7,9 +7,10 @@
     - variant: 'inline' (default, sits in the product info column) or
                'top' (a dismissible floating card above the media gallery)
 
-  The "top" variant has an expanded and a collapsed state; the close (x)
-  button collapses it, clicking the collapsed pill expands it again, and the
-  choice is remembered per-browser. Both variants open the shared Clinician
+  The "top" variant opens expanded on every page load; the close (x) button
+  collapses it to a small ribbon and clicking that ribbon expands it again.
+  The collapsed state lasts for the page only — it is not remembered, so the
+  badge is never hidden on arrival. Both variants open the shared Clinician
   reviews modal via the `ces:open-clinreviews` event.
 {%- endcomment -%}
 {%- assign ces_variant = variant | default: 'inline' -%}
@@ -18,7 +19,6 @@
   <div
     class="ces-clinicians ces-clinicians--top"
     data-ces-clin-card
-    data-storage-key="cesClinBadge-{{ block.id }}"
     {{ block.shopify_attributes }}
   >
     <button type="button" class="ces-clinicians__close" data-ces-clin-min aria-label="Minimize">

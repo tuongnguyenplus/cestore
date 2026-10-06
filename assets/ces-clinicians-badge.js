@@ -1,25 +1,23 @@
 /*
  * ces-clinicians-badge
  * The "Above gallery" Clinicians' Choice card (FrontrowMD-style ribbon):
- *   - The (x) button MINIMIZES to a small ribbon card (just the mark);
- *     clicking that small card maximizes it again. The state is remembered.
+ *   - The card opens expanded on every page load. The (x) button MINIMIZES it
+ *     to a small ribbon card (just the mark); clicking that small card
+ *     maximizes it again.
+ *   - The minimized state is deliberately NOT remembered. It used to be kept
+ *     in localStorage, which meant one click of the (x) left the card minimized
+ *     for that shopper for good — every later visit opened on the small ribbon
+ *     and the badge read as hidden by default.
  *   - The whole card shows only while the FIRST gallery image is active
  *     (Dawn keeps `is-active` on the shown `.product__media-item`).
  */
 (function () {
   function initCard(card) {
-    var key = card.getAttribute('data-storage-key') || 'cesClinBadge';
     var expanded = card.querySelector('.ces-clinicians__expanded');
     var min = card.querySelector('.ces-clinicians__min');
     var closeBtn = card.querySelector('[data-ces-clin-min]');
 
-    var minimized = false;
-    try {
-      minimized = localStorage.getItem(key) === 'min';
-    } catch (e) {}
-
     function setMinimized(state) {
-      minimized = state;
       if (expanded) expanded.hidden = state;
       if (min) min.hidden = !state;
       if (closeBtn) closeBtn.hidden = state;
@@ -27,21 +25,15 @@
     }
 
     if (min) {
-      setMinimized(minimized);
+      setMinimized(false);
       if (closeBtn) {
         closeBtn.addEventListener('click', function (e) {
           e.stopPropagation();
           setMinimized(true);
-          try {
-            localStorage.setItem(key, 'min');
-          } catch (err) {}
         });
       }
       min.addEventListener('click', function () {
         setMinimized(false);
-        try {
-          localStorage.setItem(key, 'max');
-        } catch (err) {}
       });
     }
 
