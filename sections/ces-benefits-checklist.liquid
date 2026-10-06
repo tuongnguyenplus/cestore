@@ -78,6 +78,7 @@
        url: section.settings.cta_url,
        footnote: section.settings.cta_footnote,
        width: section.settings.cta_width,
+       arrow: section.settings.cta_arrow,
        id: section.id %}
   </div>
 </div>
@@ -172,6 +173,12 @@
       "info": "One line each as \"icon | label\" renders them with icons side by side."
     },
 
+    {
+      "type": "checkbox",
+      "id": "cta_arrow",
+      "label": "Arrow after the label",
+      "default": false
+    },
     {
       "type": "select",
       "id": "cta_width",

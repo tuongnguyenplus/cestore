@@ -1,0 +1,242 @@
+{{ 'ces-base.css' | asset_url | stylesheet_tag }}
+{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign cr_cards = section.blocks | where: 'type', 'card'
+  assign cr_cols = section.settings.columns
+  if cr_cards.size < cr_cols
+    assign cr_cols = cr_cards.size
+  endif
+-%}
+
+{%- style -%}
+  .ces-cardrow{color:rgb(var(--color-foreground));background:var(--gradient-background)}
+  .ces-cardrow__head{text-align:center}
+  .ces-cardrow__accent{color:var(--ces-accent)}
+  /* On a phone the row keeps its shape and slides sideways: stacking four
+     cards turns a glanceable row into a page of scrolling. */
+  .ces-cardrow__track{display:grid;grid-auto-flow:column;gap:1.6rem;margin-top:2.8rem;
+    grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding-bottom:.8rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .ces-cardrow__track::-webkit-scrollbar{display:none}
+  .ces-cardrow__track--stack{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;
+    scroll-snap-type:none}
+  .ces-cardrow__card{scroll-snap-align:start;display:flex;flex-direction:column;min-width:0;
+    border-radius:1.4rem;overflow:hidden;background:rgb(var(--color-background));
+    border:.1rem solid var(--ces-border-color)}
+  .ces-cardrow--plain .ces-cardrow__card{border:0;background:none;border-radius:0}
+  .ces-cardrow__media{margin:0;position:relative;background:var(--ces-surface)}
+  .ces-cardrow__media img{display:block;width:100%;height:100%;object-fit:cover}
+  .ces-cardrow--square .ces-cardrow__media{aspect-ratio:1/1}
+  .ces-cardrow--landscape .ces-cardrow__media{aspect-ratio:4/3}
+  .ces-cardrow__badge{position:absolute;top:1.2rem;left:1.2rem;width:3.4rem;height:3.4rem;
+    border-radius:50%;background:var(--ces-accent);color:rgb(var(--color-background));
+    display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;z-index:2}
+  .ces-cardrow__body{padding:1.6rem}
+  .ces-cardrow--plain .ces-cardrow__body{padding:1.6rem 0 0}
+  .ces-cardrow__title{margin:0 0 1rem;font-size:1.9rem;font-weight:700;line-height:1.3}
+  .ces-cardrow__text{margin:0;font-size:1.55rem;line-height:1.55}
+  .ces-cardrow__text > :first-child{margin-top:0}
+  .ces-cardrow__text > :last-child{margin-bottom:0}
+  .ces-cardrow__footnote{margin:2.4rem auto 0;max-width:76rem;text-align:center;
+    font-size:1.5rem;line-height:1.6}
+  /* A screenshot of the source, boxed so it reads as evidence quoted rather
+     than as another picture in the row. */
+  .ces-cardrow__proof{margin:2rem auto 0;max-width:62rem;padding:1.2rem;
+    border-radius:1.4rem;border:.1rem solid var(--ces-border-color);
+    background:rgb(var(--color-background))}
+  .ces-cardrow__proof img{display:block;width:100%;height:auto;border-radius:.6rem}
+  .ces-cardrow__proof figcaption{margin:1rem 0 0;text-align:center;font-size:1.3rem;
+    line-height:1.45;font-style:italic;opacity:.8}
+  @media screen and (min-width:750px){
+    .ces-cardrow__track{grid-auto-flow:row;grid-template-columns:repeat({{ cr_cols | at_least: 1 }},minmax(0,1fr));
+      gap:2.4rem;overflow:visible;scroll-snap-type:none;padding-bottom:0}
+    .ces-cardrow__body{padding:2rem}
+    .ces-cardrow--plain .ces-cardrow__body{padding:2rem 0 0}
+    .ces-cardrow__title{font-size:2rem}
+    .ces-cardrow__text{font-size:1.6rem}
+    .ces-cardrow__footnote{margin-top:3.2rem;font-size:1.6rem}
+  }
+{%- endstyle -%}
+
+{% render 'ces-section-padding' %}
+
+<div
+  class="ces-section ces-cardrow ces-cardrow--{{ section.settings.image_ratio }}{% if section.settings.card_style == 'plain' %} ces-cardrow--plain{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+>
+  <div class="ces-section__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ces-cardrow__head">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ces-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          {%- liquid
+            assign cr_heading = section.settings.heading
+            assign cr_accent = section.settings.heading_accent | strip
+            if cr_accent != blank and cr_heading contains cr_accent
+              capture cr_wrapped
+                echo '<span class="ces-cardrow__accent">'
+                echo cr_accent
+                echo '</span>'
+              endcapture
+              assign cr_heading = cr_heading | replace: cr_accent, cr_wrapped
+            endif
+          -%}
+          <h2 class="ces-heading">{{ cr_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ces-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if cr_cards.size > 0 -%}
+      <div class="ces-cardrow__track{% if section.settings.mobile_layout == 'stack' %} ces-cardrow__track--stack{% endif %}">
+        {%- for block in cr_cards -%}
+          <div class="ces-cardrow__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <figure class="ces-cardrow__media">
+                {%- if section.settings.show_numbers -%}
+                  <span class="ces-cardrow__badge" aria-hidden="true">{{ forloop.index }}</span>
+                {%- endif -%}
+                <img
+                  src="{{ block.settings.image | image_url: width: 800 }}"
+                  alt="{{ block.settings.alt | escape }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                  loading="lazy"
+                >
+              </figure>
+            {%- endif -%}
+            <div class="ces-cardrow__body">
+              {%- if block.settings.title != blank -%}
+                <h3 class="ces-cardrow__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <div class="ces-cardrow__text ces-rte">{{ block.settings.text }}</div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.footnote != blank -%}
+      <div class="ces-cardrow__footnote ces-rte">{{ section.settings.footnote }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.proof_image != blank -%}
+      <figure class="ces-cardrow__proof">
+        <img
+          src="{{ section.settings.proof_image | image_url: width: 1240 }}"
+          alt="{{ section.settings.proof_alt | escape }}"
+          loading="lazy"
+        >
+        {%- if section.settings.proof_caption != blank -%}
+          <figcaption>{{ section.settings.proof_caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+
+    {% render 'ces-cta-rail',
+       label: section.settings.cta_label,
+       url: section.settings.cta_url,
+       footnote: section.settings.cta_footnote,
+       width: section.settings.cta_width,
+       arrow: section.settings.cta_arrow,
+       id: section.id %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CES Card row",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "A row of picture-led cards. On a phone the row slides sideways rather than stacking, so it still reads as a row." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "heading_accent", "label": "Part of the heading to colour", "info": "Type the words exactly as they appear in the heading." },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "header", "content": "The cards" },
+    { "type": "range", "id": "columns", "min": 2, "max": 5, "step": 1, "label": "Columns on desktop", "default": 3 },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "On a phone",
+      "options": [
+        { "value": "scroll", "label": "Slide sideways" },
+        { "value": "stack", "label": "Stack" }
+      ],
+      "default": "scroll"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Picture shape",
+      "options": [
+        { "value": "square", "label": "Square" },
+        { "value": "landscape", "label": "Landscape" },
+        { "value": "natural", "label": "As uploaded" }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "select",
+      "id": "card_style",
+      "label": "Card style",
+      "options": [
+        { "value": "framed", "label": "Framed" },
+        { "value": "plain", "label": "No frame" }
+      ],
+      "default": "framed"
+    },
+    { "type": "checkbox", "id": "show_numbers", "label": "Number the cards", "default": false },
+    { "type": "header", "content": "Below the cards" },
+    { "type": "richtext", "id": "footnote", "label": "Footnote" },
+    { "type": "image_picker", "id": "proof_image", "label": "Screenshot of the source", "info": "For quoting the paper or page a figure in the footnote comes from." },
+    { "type": "text", "id": "proof_alt", "label": "Screenshot description" },
+    { "type": "text", "id": "proof_caption", "label": "Caption under the screenshot" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta_label", "label": "Button label" },
+    { "type": "url", "id": "cta_url", "label": "Button link", "info": "Defaults to the product buy box (#ces-bundle)." },
+    { "type": "text", "id": "cta_footnote", "label": "Text under the button", "info": "One line each as \"icon | label\" renders them with icons side by side." },
+    {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "One size, centred" }
+      ],
+      "default": "auto"
+    },
+    { "type": "checkbox", "id": "cta_arrow", "label": "Arrow after the label", "default": false },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Picture" },
+        { "type": "text", "id": "alt", "label": "Picture description" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "CES Card row",
+      "blocks": [{ "type": "card" }, { "type": "card" }, { "type": "card" }]
+    }
+  ]
+}
+{% endschema %}

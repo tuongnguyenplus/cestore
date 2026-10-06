@@ -34,23 +34,13 @@
         <div class="ces-bullet-cta__bullets rte ces-rte">{{ section.settings.bullets }}</div>
       {%- endif -%}
 
-      {%- if section.settings.button_label != blank -%}
-        <a
-          class="ces-button ces-bullet-cta__button"
-          {% if section.settings.button_link != blank %}
-            href="{{ section.settings.button_link }}"
-          {% else %}
-            href="#"
-            aria-disabled="true"
-          {% endif %}
-        >
-          {{ section.settings.button_label }}
-        </a>
-      {%- endif -%}
-
-      {%- if section.settings.button_footnote != blank -%}
-        <p class="ces-bullet-cta__footnote">{{ section.settings.button_footnote }}</p>
-      {%- endif -%}
+      {% render 'ces-cta-rail',
+   label: section.settings.button_label,
+   url: section.settings.button_link,
+   footnote: section.settings.button_footnote,
+   width: section.settings.cta_width,
+   arrow: section.settings.cta_arrow,
+   id: section.id %}
       </div>
     </div>
   </div>
@@ -99,6 +89,22 @@
       "id": "bullets",
       "label": "Bullets",
       "default": "<ul><li>12mg of natural astaxanthin — the dose used in published trials</li><li>Grown from microalgae, never synthesised</li><li>Carried in cold-pressed oil so your body can actually absorb it</li><li>Third-party tested for potency and purity, every batch</li></ul>"
+    },
+    {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "One size, centred" }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_arrow",
+      "label": "Arrow after the label",
+      "default": false
     },
     {
       "type": "text",

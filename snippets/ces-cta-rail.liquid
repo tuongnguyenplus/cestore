@@ -13,8 +13,10 @@
       printed as a plain line.
   - id: {String} The section id, for the scoped style rule.
   - width: {String} 'auto' (default) sizes the button to its label; 'full'
-      stretches it across the column, as a landing page's primary action.
+      stretches it across the column up to a readable maximum, as a landing
+      page's primary action.
   - align: {String} 'center' (default), 'left' or 'right'.
+  - arrow: {Boolean} Adds an arrow after the label.
 
   Usage:
   {% render 'ces-cta-rail',
@@ -39,9 +41,21 @@
     .ces-cta-rail--left .ces-cta-rail__trust{justify-content:flex-start}
     .ces-cta-rail--right{text-align:right}
     .ces-cta-rail--right .ces-cta-rail__trust{justify-content:flex-end}
-    /* A full-width button is the page's primary action rather than one link
-       among several, so the label stays centred inside it either way. */
-    .ces-cta-rail--full .ces-button{display:flex;width:100%;justify-content:center;text-align:center}
+    /* The primary action is the same block wherever it appears, so it is given
+       one size rather than taking the width of whatever label it carries.
+       Measured off the reference: 440px at most, centred, 65px tall and 60px
+       on a phone. */
+    .ces-cta-rail--full .ces-cta-rail__box{width:100%;max-width:44rem;margin:0 auto}
+    .ces-cta-rail--full .ces-button{display:flex;width:100%;min-height:6rem;
+      justify-content:center;align-items:center;gap:1rem;text-align:center;font-size:2rem}
+    @media screen and (min-width:750px){
+      .ces-cta-rail--full .ces-button{min-height:6.5rem;font-size:2.4rem}
+    }
+    .ces-cta-rail__arrow{display:inline-flex;width:2rem;flex:0 0 auto}
+    .ces-cta-rail__arrow svg{width:100%;height:auto}
+    @media screen and (min-width:750px){
+      .ces-cta-rail__arrow{width:2.6rem}
+    }
     /* A full-width button belongs to the block above it rather than floating
        between two sections, so it sits closer than a free-standing one. */
     .ces-cta-rail--full{margin-top:1.2rem}
@@ -70,7 +84,18 @@
     assign rail_width = width | default: 'auto'
   -%}
   <div class="ces-cta-rail ces-cta-rail--{{ rail_align }}{% if rail_width == 'full' %} ces-cta-rail--full{% endif %}">
-    <a class="ces-button" href="{{ url | default: '#ces-bundle' }}">{{ label }}</a>
+    <div class="ces-cta-rail__box">
+      <a class="ces-button" href="{{ url | default: '#ces-bundle' }}">
+        <span>{{ label }}</span>
+        {%- if arrow -%}
+          <span class="ces-cta-rail__arrow" aria-hidden="true">
+            <svg viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 7h22M17 1.5 23.5 7 17 12.5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        {%- endif -%}
+      </a>
 
     {%- if footnote != blank -%}
       {%- if rail_structured -%}
@@ -96,5 +121,6 @@
         <p class="ces-cta-rail__note">{{ footnote }}</p>
       {%- endif -%}
     {%- endif -%}
+    </div>
   </div>
 {%- endif -%}

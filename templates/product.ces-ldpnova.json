@@ -163,7 +163,8 @@
         "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "cta_arrow": true
       }
     },
     "recognition": {
@@ -394,7 +395,7 @@
         "heading": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One.",
         "subheading": "",
         "body": "<p>Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.</p><p>Eye bags don't start at the surface. They start deeper — in the tissue where fluid builds overnight, where skin gets thinner with age, where the hollow that makes you look tired actually forms.</p><p>Creams sit on top. Serums sit on top. Even the gel patches you have already tried sit on top.</p><p>Your skin is designed to keep things out and it is very good at its job. That is not a quality problem with the products you chose. It is a physics problem. Nothing applied to the surface can cross that barrier.</p><p>That is the only reason nothing has worked. Not because you did not try hard enough. Because everything stopped at the same wall.</p>",
-        "image_position": "below_body",
+        "image_position": "beside_body",
         "image_alt": "",
         "image_caption": "",
         "callout_label": "Industry Insight",
@@ -406,7 +407,9 @@
         "button_link": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "callout_bg": "#fff8bd",
+        "callout_border": "#000000"
       }
     },
     "failures": {
@@ -518,124 +521,122 @@
         "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_width": "full",
+        "cta_arrow": true,
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
       }
     },
     "preqa": {
-      "type": "ces-faq-accordion",
+      "type": "ces-card-row",
       "blocks": {
-        "faq_item-1": {
-          "type": "faq_item",
+        "card-1": {
+          "type": "card",
           "settings": {
-            "group_label": "",
-            "question": "Will it work on my type of eye bags?",
-            "answer": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>",
-            "open": false
+            "title": "Will it work on my type of eye bags?",
+            "text": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>",
+            "alt": ""
           }
         },
-        "faq_item-2": {
-          "type": "faq_item",
+        "card-2": {
+          "type": "card",
           "settings": {
-            "group_label": "",
-            "question": "How quickly will I notice a difference?",
-            "answer": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>",
-            "open": false
+            "title": "How quickly will I notice a difference?",
+            "text": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>",
+            "alt": ""
           }
         },
-        "faq_item-3": {
-          "type": "faq_item",
+        "card-3": {
+          "type": "card",
           "settings": {
-            "group_label": "",
-            "question": "Does it hurt?",
-            "answer": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>",
-            "open": false
+            "title": "Does it hurt?",
+            "text": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>",
+            "alt": ""
           }
         },
-        "faq_item-4": {
-          "type": "faq_item",
+        "card-4": {
+          "type": "card",
           "settings": {
-            "group_label": "",
-            "question": "Is it safe near the eye area?",
-            "answer": "<p>The dissolving cones are designed specifically for the delicate under-eye area. Follow the application instructions and avoid applying the patches to irritated or damaged skin.</p>",
-            "open": false
+            "title": "Is it safe near the eye area?",
+            "text": "<p>The dissolving cones are designed specifically for the delicate under-eye area. Follow the application instructions and avoid applying the patches to irritated or damaged skin.</p>",
+            "alt": ""
           }
         }
       },
       "block_order": [
-        "faq_item-1",
-        "faq_item-2",
-        "faq_item-3",
-        "faq_item-4"
+        "card-1",
+        "card-2",
+        "card-3",
+        "card-4"
       ],
       "settings": {
-        "heading": "Before You Go Further, Here's What Most Women Ask",
-        "subheading": "",
-        "exclusive": true,
-        "footer_text": "",
+        "columns": 4,
+        "mobile_layout": "scroll",
+        "image_ratio": "square",
+        "card_style": "framed",
+        "show_numbers": false,
+        "cta_width": "auto",
+        "cta_arrow": false,
         "color_scheme": "scheme-1",
         "padding_top": 24,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "eyebrow": "",
+        "heading": "Before You Go Further, Here's What Most Women Ask"
       }
     },
     "howitworks": {
-      "type": "ces-reason-rows",
+      "type": "ces-card-row",
       "blocks": {
-        "reason-1": {
-          "type": "reason",
+        "card-1": {
+          "type": "card",
           "settings": {
-            "number_label": "1",
             "title": "Hundreds Of Tiny Dissolving Cones",
             "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>",
-            "pull_quote": "",
-            "pull_quote_author": "",
-            "show_benefits": false,
-            "benefits": ""
+            "alt": ""
           }
         },
-        "reason-2": {
-          "type": "reason",
+        "card-2": {
+          "type": "card",
           "settings": {
-            "number_label": "2",
             "title": "Painless Delivery Beneath The Surface",
             "text": "<p>The cones dissolve beneath the surface, reaching the deeper tissue where eye bags actually form. Not the first layer. Not the second. The layer where the problem lives.</p><p>You feel a light tingle for a few seconds. That's it.</p>",
-            "pull_quote": "",
-            "pull_quote_author": "",
-            "show_benefits": false,
-            "benefits": ""
+            "alt": ""
           }
         },
-        "reason-3": {
-          "type": "reason",
+        "card-3": {
+          "type": "card",
           "settings": {
-            "number_label": "3",
             "title": "You Sleep. They Work. You Wake Up Different.",
             "text": "<p>While you rest the ingredients release slowly into the deeper tissue over several hours. By morning the work is already done.</p><p>Not sitting on top of your skin waiting to evaporate. Inside it, where it actually counts.</p>",
-            "pull_quote": "",
-            "pull_quote_author": "",
-            "show_benefits": false,
-            "benefits": ""
+            "alt": ""
           }
         }
       },
       "block_order": [
-        "reason-1",
-        "reason-2",
-        "reason-3"
+        "card-1",
+        "card-2",
+        "card-3"
       ],
       "settings": {
-        "heading": "This is What Happens Under Your Eye While You Sleep",
-        "subheading": "",
-        "number_prefix": "Step",
-        "cta_label": "",
-        "cta_url": "#shopify-section-main",
+        "columns": 3,
+        "mobile_layout": "scroll",
+        "image_ratio": "landscape",
+        "card_style": "framed",
+        "show_numbers": false,
+        "cta_width": "auto",
+        "cta_arrow": false,
         "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "heading": "This is What Happens Under Your Eye While You Sleep",
+        "heading_accent": "This is What Happens",
+        "footnote": "<p>A study indexed on <strong>PubMed, the US National Library of Medicine</strong> database found that dissolving hyaluronic acid microneedle patches delivered ingredients <strong>12.5 times more effectively</strong> beneath the skin than needleless patches.</p>",
+        "proof_caption": "Source: National Institutes of Health, PubMed — PMC11854821.",
+        "proof_alt": "The passage on PubMed reporting 12.5 times superior drug permeability"
       }
     },
     "pubmed": {
       "type": "ces-stat-proof",
-      "disabled": true,
       "settings": {
         "eyebrow": "",
         "heading": "",
@@ -644,16 +645,18 @@
         "image_position": "below_body",
         "image_alt": "",
         "image_caption": "",
-        "callout_label": "Published Research",
-        "callout_lead": "A study indexed on PubMed, the US National Library of Medicine database, found that dissolving hyaluronic acid patches deliver ingredients",
-        "callout_figure": "",
-        "callout_text": "<p>beneath the skin more effectively than standard patches.</p>",
-        "callout_source": "",
+        "callout_label": "Published research",
+        "callout_lead": "Dissolving hyaluronic acid microneedle patches delivered",
+        "callout_figure": "12.5x",
+        "callout_text": "<p>more drug permeability through human skin than needleless patches, in the study's ex vivo test.</p>",
+        "callout_source": "Source: National Institutes of Health, PubMed — PMC11854821.",
         "button_label": "",
         "button_link": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 24,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "callout_bg": "#fff8bd",
+        "callout_border": "#000000"
       }
     },
     "results": {
@@ -749,7 +752,8 @@
         "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_arrow": true
       }
     },
     "timeline": {
@@ -831,7 +835,8 @@
         "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_arrow": true
       }
     },
     "mornings": {
@@ -998,7 +1003,8 @@
         "cta_width": "full",
         "color_scheme": "scheme-2",
         "padding_top": 0,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_arrow": true
       }
     },
     "compare": {
@@ -1138,11 +1144,13 @@
         "bullets": "<ul><li><strong>Try it for a full month.</strong> Not just one use. A full 30 days of twice-weekly use before you decide.</li><li><strong>Full refund, no complications.</strong> If you don't see a visible difference, contact us. We process your refund immediately. No forms. No hoops.</li><li><strong>Your product graveyard ends here.</strong> You have spent enough on things that stopped at the surface. This one doesn't &mdash; and if it doesn't work for you, you pay nothing.</li></ul>",
         "button_label": "Get Now & Save 70%",
         "button_link": "#shopify-section-main",
-        "button_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "button_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "show_frame": true,
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "cta_width": "full",
+        "cta_arrow": true
       }
     },
     "main": {
@@ -1838,11 +1846,13 @@
         "bullets": "<ul><li>Two minutes tonight. Nothing to do in the morning.</li><li>Twice a week, not twice a day.</li><li>30 days to decide, with a full refund if it isn't for you.</li></ul>",
         "button_label": "Get Now & Save 70%",
         "button_link": "#shopify-section-main",
-        "button_footnote": "30 Day Money Back Guarantee · Free Shipping",
+        "button_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "show_frame": false,
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "cta_width": "full",
+        "cta_arrow": true
       }
     },
     "sticky": {

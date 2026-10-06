@@ -54,6 +54,7 @@
        url: section.settings.cta_url,
        footnote: section.settings.cta_footnote,
        width: section.settings.cta_width,
+       arrow: section.settings.cta_arrow,
        id: section.id %}
   </div>
 </div>
@@ -88,6 +89,12 @@
       "label": "Text under the button"
     },
 
+    {
+      "type": "checkbox",
+      "id": "cta_arrow",
+      "label": "Arrow after the label",
+      "default": false
+    },
     {
       "type": "select",
       "id": "cta_width",

@@ -68,19 +68,13 @@
           <div class="ces-image-text-banner__text rte ces-rte">{{ section.settings.text }}</div>
         {%- endif -%}
 
-        {%- if section.settings.button_label != blank -%}
-          <a
-            class="ces-button ces-image-text-banner__button"
-            {% if section.settings.button_link != blank %}
-              href="{{ section.settings.button_link }}"
-            {% else %}
-              href="#"
-              aria-disabled="true"
-            {% endif %}
-          >
-            {{ section.settings.button_label }}
-          </a>
-        {%- endif -%}
+        {% render 'ces-cta-rail',
+   label: section.settings.button_label,
+   url: section.settings.button_link,
+   footnote: section.settings.cta_footnote,
+   width: section.settings.cta_width,
+   arrow: section.settings.cta_arrow,
+   id: section.id %}
       </div>
     </div>
 
@@ -220,6 +214,28 @@
       "id": "text",
       "label": "Text",
       "default": "<p>Every batch of Sunglow is made to the dose used in published human trials, then tested again by an independent lab before it reaches you.</p>"
+    },
+    {
+      "type": "select",
+      "id": "cta_width",
+      "label": "Button width",
+      "options": [
+        { "value": "auto", "label": "As wide as its label" },
+        { "value": "full", "label": "One size, centred" }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_arrow",
+      "label": "Arrow after the label",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_footnote",
+      "label": "Text under the button",
+      "info": "One line each as \"icon | label\" renders them with icons side by side."
     },
     {
       "type": "text",

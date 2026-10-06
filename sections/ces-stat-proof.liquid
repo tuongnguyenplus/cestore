@@ -19,25 +19,38 @@
   .ces-sp__figure img{display:block;width:100%;height:auto;border-radius:var(--ces-radius)}
   .ces-sp__caption{margin:.8rem 0 0;font-size:1.3rem;line-height:1.45;text-align:center;opacity:.8}
 
-  /* The callout is the one thing in the section that is allowed to shout, so it
-     gets the accent rule and the only oversized type. */
-  .ces-sp__callout{margin:2.8rem auto 0;max-width:60rem;padding:2rem 1.8rem;text-align:center;
-    border-radius:var(--ces-radius);border:var(--ces-border);background:var(--ces-surface);
-    border-left:.4rem solid var(--ces-accent)}
-  .ces-sp__callout-label{display:block;margin:0 0 .8rem;font-size:1.15rem;font-weight:700;
-    letter-spacing:.1em;text-transform:uppercase;line-height:1.2;color:var(--ces-accent)}
-  .ces-sp__callout-lead{display:block;margin:0 0 .4rem;font-size:1.5rem;line-height:1.45}
-  .ces-sp__figure-value{display:block;margin:0;font-size:3.2rem;font-weight:700;line-height:1.1;
-    letter-spacing:-.01em;color:var(--ces-accent)}
-  .ces-sp__callout-text{margin:1rem 0 0;font-size:1.45rem;line-height:1.5}
+  /* Split: the argument runs down the left and the picture sits beside it, as
+     the reference has it; narrow, they stack. */
+  .ces-sp__split{display:flex;flex-direction:column;gap:2rem;margin-top:2rem}
+  .ces-sp__split .ces-sp__body{margin:0;max-width:none}
+  .ces-sp__split .ces-sp__figure{margin:0;max-width:none}
+  @media screen and (min-width:768px){
+    .ces-sp__split{flex-direction:row;flex-wrap:wrap;justify-content:space-between;
+      align-items:center;gap:0;margin-top:2.8rem}
+    .ces-sp__split .ces-sp__body{width:44%}
+    .ces-sp__split .ces-sp__figure{width:53.2%}
+  }
+
+  /* The callout is a note pinned to the argument rather than part of it, so it
+     is boxed and tinted. Measured off the reference: 585px at most, a 1px rule
+     all round, a 10px radius and the mark top right. */
+  .ces-sp__callout{margin:2.8rem auto 0;max-width:58.5rem;padding:2rem;text-align:left;
+    border-radius:1rem;border:.1rem solid var(--ces-callout-border,rgb(var(--color-foreground)));
+    background:var(--ces-callout-bg,var(--ces-surface))}
+  .ces-sp__callout-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1.6rem}
+  .ces-sp__callout-mark{width:4.5rem;flex-shrink:0}
+  .ces-sp__callout-mark img{display:block;max-width:100%;height:auto}
+  .ces-sp__callout-label{display:block;margin:0 0 2rem;font-size:1.8rem;font-weight:600;line-height:1.45}
+  .ces-sp__callout-lead{display:block;margin:0;font-size:2rem;font-weight:700;line-height:1.3;
+    text-transform:uppercase}
+  .ces-sp__figure-value{display:block;margin:.5rem 0 0;font-size:3rem;font-weight:700;line-height:1.2;
+    text-transform:uppercase}
+  .ces-sp__callout-text{margin:1.5rem 0 0;font-size:1.6rem;line-height:1.5}
   .ces-sp__source{display:block;margin:1.2rem 0 0;font-size:1.15rem;line-height:1.4;opacity:.7}
   .ces-sp__cta{margin-top:2.4rem;text-align:center}
   @media screen and (min-width:750px){
     .ces-sp__body{margin-top:2.4rem;font-size:1.7rem;line-height:1.65}
-    .ces-sp__callout{margin-top:3.2rem;padding:2.8rem 3.2rem}
-    .ces-sp__figure-value{font-size:4.8rem}
-    .ces-sp__callout-lead{font-size:1.7rem}
-    .ces-sp__callout-text{font-size:1.6rem}
+    .ces-sp__callout{margin-top:4.5rem;padding:2.4rem}
   }
 {%- endstyle -%}
 
@@ -59,51 +72,58 @@
       </div>
     {%- endif -%}
 
-    {%- if section.settings.image != blank and section.settings.image_position == 'above_body' -%}
-      <figure class="ces-sp__figure">
-        <img
-          src="{{ section.settings.image | image_url: width: 1040 }}"
-          alt="{{ section.settings.image_alt | escape }}"
-          width="{{ section.settings.image.width }}"
-          height="{{ section.settings.image.height }}"
-          loading="lazy"
-        >
-        {%- if section.settings.image_caption != blank -%}
-          <figcaption class="ces-sp__caption">{{ section.settings.image_caption }}</figcaption>
-        {%- endif -%}
-      </figure>
-    {%- endif -%}
+    {%- capture sp_figure -%}
+      {%- if section.settings.image != blank -%}
+        <figure class="ces-sp__figure">
+          <img
+            src="{{ section.settings.image | image_url: width: 1040 }}"
+            alt="{{ section.settings.image_alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            loading="lazy"
+          >
+          {%- if section.settings.image_caption != blank -%}
+            <figcaption class="ces-sp__caption">{{ section.settings.image_caption }}</figcaption>
+          {%- endif -%}
+        </figure>
+      {%- endif -%}
+    {%- endcapture -%}
 
-    {%- if section.settings.body != blank -%}
-      <div class="ces-sp__body ces-rte">{{ section.settings.body }}</div>
-    {%- endif -%}
+    {%- capture sp_copy -%}
+      {%- if section.settings.body != blank -%}
+        <div class="ces-sp__body ces-rte">{{ section.settings.body }}</div>
+      {%- endif -%}
+    {%- endcapture -%}
 
-    {%- if section.settings.image != blank and section.settings.image_position == 'below_body' -%}
-      <figure class="ces-sp__figure">
-        <img
-          src="{{ section.settings.image | image_url: width: 1040 }}"
-          alt="{{ section.settings.image_alt | escape }}"
-          width="{{ section.settings.image.width }}"
-          height="{{ section.settings.image.height }}"
-          loading="lazy"
-        >
-        {%- if section.settings.image_caption != blank -%}
-          <figcaption class="ces-sp__caption">{{ section.settings.image_caption }}</figcaption>
-        {%- endif -%}
-      </figure>
+    {%- if section.settings.image_position == 'beside_body' -%}
+      <div class="ces-sp__split">{{ sp_copy }}{{ sp_figure }}</div>
+    {%- else -%}
+      {%- if section.settings.image_position == 'above_body' -%}{{ sp_figure }}{%- endif -%}
+      {{ sp_copy }}
+      {%- unless section.settings.image_position == 'above_body' -%}{{ sp_figure }}{%- endunless -%}
     {%- endif -%}
 
     {%- if sp_has_callout -%}
-      <aside class="ces-sp__callout">
-        {%- if section.settings.callout_label != blank -%}
-          <span class="ces-sp__callout-label">{{ section.settings.callout_label }}</span>
-        {%- endif -%}
-        {%- if section.settings.callout_lead != blank -%}
-          <span class="ces-sp__callout-lead">{{ section.settings.callout_lead }}</span>
-        {%- endif -%}
-        {%- if section.settings.callout_figure != blank -%}
-          <p class="ces-sp__figure-value">{{ section.settings.callout_figure }}</p>
-        {%- endif -%}
+      <aside class="ces-sp__callout"
+        style="{% if section.settings.callout_bg != blank %}--ces-callout-bg: {{ section.settings.callout_bg }};{% endif %}{% if section.settings.callout_border != blank %}--ces-callout-border: {{ section.settings.callout_border }};{% endif %}">
+        <div class="ces-sp__callout-top">
+          <div>
+            {%- if section.settings.callout_label != blank -%}
+              <span class="ces-sp__callout-label">{{ section.settings.callout_label }}</span>
+            {%- endif -%}
+            {%- if section.settings.callout_lead != blank -%}
+              <span class="ces-sp__callout-lead">{{ section.settings.callout_lead }}</span>
+            {%- endif -%}
+            {%- if section.settings.callout_figure != blank -%}
+              <p class="ces-sp__figure-value">{{ section.settings.callout_figure }}</p>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.callout_mark != blank -%}
+            <div class="ces-sp__callout-mark">
+              <img src="{{ section.settings.callout_mark | image_url: width: 180 }}" alt="" loading="lazy">
+            </div>
+          {%- endif -%}
+        </div>
         {%- if section.settings.callout_text != blank -%}
           <div class="ces-sp__callout-text ces-rte">{{ section.settings.callout_text }}</div>
         {%- endif -%}
@@ -139,6 +159,7 @@
       "id": "image_position",
       "label": "Image position",
       "options": [
+        { "value": "beside_body", "label": "Beside the body" },
         { "value": "above_body", "label": "Above the body" },
         { "value": "below_body", "label": "Below the body" }
       ],
@@ -153,6 +174,9 @@
     { "type": "text", "id": "callout_figure", "label": "The figure" },
     { "type": "richtext", "id": "callout_text", "label": "Text under the figure" },
     { "type": "text", "id": "callout_source", "label": "Source", "info": "Name the publication or database the figure comes from." },
+    { "type": "image_picker", "id": "callout_mark", "label": "Mark in the corner" },
+    { "type": "color", "id": "callout_bg", "label": "Callout background", "default": "#fff8bd" },
+    { "type": "color", "id": "callout_border", "label": "Callout border", "default": "#000000" },
     { "type": "header", "content": "Button" },
     { "type": "text", "id": "button_label", "label": "Button label" },
     { "type": "text", "id": "button_link", "label": "Button link", "default": "#ces-bundle" },
