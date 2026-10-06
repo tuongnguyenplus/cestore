@@ -134,6 +134,14 @@
     const modal = document.querySelector('.ces-clinreviews__modal');
     if (modal && typeof modal._cesOpen === 'function') {
       modal._cesOpen((e && e.detail) || { view: 'main' });
+      return;
     }
+    // The clinicians badge can be switched on in the product section while
+    // this section is not on the template at all. The click then did nothing
+    // whatsoever and raised nothing, which is a slow thing to work out from
+    // the outside, so say what is missing.
+    console.warn(
+      '[ces] A clinicians badge asked to open the reviews modal, but no "CES Clinician reviews" section is on this page. Add one to the template.'
+    );
   });
 })();
