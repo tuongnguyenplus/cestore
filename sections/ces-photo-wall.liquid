@@ -8,6 +8,21 @@
   if pw_photos.size < pw_cols
     assign pw_cols = pw_photos.size
   endif
+
+  comment
+    What goes between a point's title and the sentence under it. Left blank,
+    the sentence drops to its own line instead.
+  endcomment
+  case section.settings.point_separator
+    when 'dash'
+      assign pw_sep = '—'
+    when 'pipe'
+      assign pw_sep = '|'
+    when 'break'
+      assign pw_sep = ''
+    else
+      assign pw_sep = '·'
+  endcase
 -%}
 
 {%- style -%}
@@ -26,7 +41,12 @@
   .ces-pw__point:first-child{border-top:0;padding-top:0}
   .ces-pw__point-mark{flex:0 0 auto;width:2rem;height:2rem;margin-top:.2rem;color:var(--ces-accent)}
   .ces-pw__point-title{margin:0;font-size:1.65rem;font-weight:700;line-height:1.35}
-  .ces-pw__point-text{margin:.4rem 0 0;font-size:1.5rem;line-height:1.45;color:var(--ces-muted)}
+  .ces-pw__point-text{font-size:1.5rem;line-height:1.45;color:var(--ces-muted)}
+  /* Title and text are both inline, so without something between them they
+     run straight into each other. The separator keeps them on one line; the
+     "break" style puts the text on its own line instead. */
+  .ces-pw__point-sep{margin:0 .35rem;color:var(--ces-muted)}
+  .ces-pw__point--stacked .ces-pw__point-text{display:block;margin-top:.4rem}
   @media screen and (min-width:900px){
     .ces-pw__split{flex-direction:row;align-items:center;gap:5rem}
     .ces-pw__split > .ces-pw__copy{flex:1 1 52%;min-width:0}
@@ -98,7 +118,7 @@
       {%- if pw_points.size > 0 -%}
         <ul class="ces-pw__points" role="list">
           {%- for block in pw_points -%}
-            <li class="ces-pw__point" {{ block.shopify_attributes }}>
+            <li class="ces-pw__point{% if pw_sep == blank %} ces-pw__point--stacked{% endif %}" {{ block.shopify_attributes }}>
               <span class="ces-pw__point-mark" aria-hidden="true">
                 {% render 'ces-icon', icon: block.settings.icon %}
               </span>
@@ -106,8 +126,11 @@
                 {%- if block.settings.title != blank -%}
                   <span class="ces-pw__point-title">{{ block.settings.title }}</span>
                 {%- endif -%}
+                {%- if block.settings.title != blank and block.settings.text != blank and pw_sep != blank %}
+                  <span class="ces-pw__point-sep">{{ pw_sep }}</span>
+                {% endif -%}
                 {%- if block.settings.text != blank -%}
-                  <span class="ces-pw__point-text">{{ block.settings.text }}</span>
+                  {{ ' ' }}<span class="ces-pw__point-text">{{ block.settings.text }}</span>
                 {%- endif -%}
               </span>
             </li>
@@ -240,7 +263,20 @@
         { "value": "full", "label": "Full width" }
       ],
       "default": "auto"
-    },    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
+    },
+    {
+      "type": "select",
+      "id": "point_separator",
+      "label": "Between a point's title and its text",
+      "options": [
+        { "value": "dot", "label": "Middle dot" },
+        { "value": "dash", "label": "Dash" },
+        { "value": "pipe", "label": "Bar" },
+        { "value": "break", "label": "Nothing - text on its own line" }
+      ],
+      "default": "dot"
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-1" },
     { "type": "header", "content": "t:sections.all.padding.section_padding_heading" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_top", "default": 24 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.padding.padding_bottom", "default": 40 }
