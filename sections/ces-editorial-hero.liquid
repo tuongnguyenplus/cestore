@@ -26,10 +26,6 @@
   .ces-edhero__stars svg{display:inline-block;vertical-align:top}
   .ces-edhero__rating-text{font-size:1.5rem;font-weight:700;line-height:1.3}
   .ces-edhero__heading{margin:0;font-size:clamp(2.6rem,4.4vw,4.2rem);line-height:1.15;font-weight:800}
-  /* The larger step is for a landing page, where the headline is the first
-     thing on the screen rather than one element in an article. Measured from
-     the reference: 34px at a 428px viewport, leading just over the type size. */
-  .ces-edhero__heading--large{font-size:clamp(3rem,8vw,4.4rem);line-height:1.08;letter-spacing:-.01em}
   .ces-edhero__sub{margin:1.6rem 0 0;font-size:1.7rem;line-height:1.55;color:var(--ces-muted)}
   /* Scoped to the landing-page headline so the article pages already using
      this hero keep the metrics they were set with. */
@@ -43,22 +39,46 @@
   .ces-edhero__media{margin:2.8rem 0 0;border-radius:var(--ces-radius);overflow:hidden;border:.1rem solid var(--ces-border-color)}
   .ces-edhero__media img{width:100%;height:auto;display:block}
   .ces-edhero__cta{margin:2.4rem 0 0}
+  /* Split: the copy takes the left column and the picture the right, which is
+     how the reference runs on a wide screen. Narrow, the two stack with the
+     picture on top — column-reverse, as the reference does it, so the markup
+     still reads copy-then-picture. */
+  .ces-edhero__inner--split{display:flex;flex-direction:column-reverse;align-items:stretch;
+    gap:2.4rem;max-width:none;text-align:left}
+  .ces-edhero__inner--split .ces-edhero__media{margin:0}
+  @media screen and (min-width:769px){
+    .ces-edhero__inner--split{flex-direction:row;flex-wrap:wrap;justify-content:space-between;
+      align-items:center;gap:4rem}
+    .ces-edhero__inner--split .ces-edhero__col{width:56%}
+    .ces-edhero__inner--split .ces-edhero__media{width:40%;flex:0 0 auto}
+  }
+  /* The reference steps its headline rather than scaling it smoothly, and the
+     steps are what keep it from running over three lines at each width. */
+  .ces-edhero__heading--large{font-size:3.2rem;line-height:1.125;letter-spacing:-.03rem}
+  @media screen and (min-width:768px){
+    .ces-edhero__heading--large{font-size:3.6rem;line-height:1.167}
+  }
+  @media screen and (min-width:1022px){
+    .ces-edhero__heading--large{font-size:4.9rem;line-height:1.122}
+  }
+  @media screen and (min-width:1201px){
+    .ces-edhero__heading--large{font-size:5.6rem;line-height:1.071}
+  }
 {%- endstyle -%}
 
 {% render 'ces-section-padding' %}
 
 <div class="ces-section ces-edhero ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="ces-section__inner">
-    <div class="ces-edhero__inner{% if section.settings.text_align == 'left' %} ces-edhero__inner--left{% endif %}">
+    <div class="ces-edhero__inner{% if section.settings.text_align == 'left' %} ces-edhero__inner--left{% endif %}{% if section.settings.layout == 'split' %} ces-edhero__inner--split{% endif %}">
       {%- capture edh_media -%}
         {%- if section.settings.image != blank -%}
           <figure class="ces-edhero__media"><img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.heading | escape }}" loading="lazy"></figure>
         {%- endif -%}
       {%- endcapture -%}
 
-      {%- if section.settings.image_position == 'above' -%}{{ edh_media }}{%- endif -%}
-
-      {%- liquid
+      {%- capture edh_body -%}
+{%- liquid
         assign edh_rating = section.settings.rating_tenths | default: 0
         assign edh_pct = edh_rating | times: 2
         assign edh_stars = edh_rating | divided_by: 10.0
@@ -113,13 +133,24 @@
           </span>
         </div>
       {%- endif -%}
+      {%- endcapture -%}
 
-      {%- unless section.settings.image_position == 'above' -%}{{ edh_media }}{%- endunless -%}
-
-      {%- if section.settings.cta_label != blank -%}
+      {%- capture edh_cta -%}
+        {%- if section.settings.cta_label != blank -%}
         <p class="ces-edhero__cta">
           <a class="ces-button" href="{{ section.settings.cta_url | default: '#ces-bundle' }}">{{ section.settings.cta_label }}</a>
         </p>
+      {%- endif -%}
+      {%- endcapture -%}
+
+      {%- if section.settings.layout == 'split' -%}
+        <div class="ces-edhero__col">{{ edh_body }}{{ edh_cta }}</div>
+        {{ edh_media }}
+      {%- else -%}
+        {%- if section.settings.image_position == 'above' -%}{{ edh_media }}{%- endif -%}
+        {{ edh_body }}
+        {%- unless section.settings.image_position == 'above' -%}{{ edh_media }}{%- endunless -%}
+        {{ edh_cta }}
       {%- endif -%}
     </div>
   </div>
@@ -134,6 +165,17 @@
     {
       "type": "paragraph",
       "content": "Editorial-style opener for an advertorial product page: big listicle headline, author byline and a call to action."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "stacked", "label": "One column" },
+        { "value": "split", "label": "Copy left, picture right" }
+      ],
+      "info": "Split stacks on a phone with the picture on top.",
+      "default": "stacked"
     },
     {
       "type": "select",
