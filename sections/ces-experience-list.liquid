@@ -11,13 +11,36 @@
   .ces-experience-list__caption{margin:.8rem 0 0;font-size:1.3rem;line-height:1.45;text-align:center;color:var(--ces-muted)}
   @media screen and (min-width:750px){
     .ces-experience-list__figure{margin-top:3.2rem}
+    /* Beside the list, the picture is a column of its own rather than a full
+       stop under the set, so it loses that top margin and the two centre on
+       each other. The list keeps slightly more room than the picture, which is
+       the balance the reference strikes. */
+    .ces-experience-list__body--side{display:grid;grid-template-columns:1.15fr .85fr;
+      gap:4.8rem;align-items:center}
+    .ces-experience-list__body--side .ces-experience-list__figure{margin-top:0}
+    .ces-experience-list__body--left .ces-experience-list__grid{order:2}
   }
 {%- endstyle -%}
 
+{%- liquid
+  comment
+    The picture only takes a column of its own when there is one to show;
+    otherwise the section stays exactly as it was, stacked and narrow.
+  endcomment
+  assign xl_side = false
+  if section.settings.image != blank and section.settings.image_position != 'below'
+    assign xl_side = true
+  endif
+  assign xl_cols = section.settings.columns_desktop
+  if xl_side
+    assign xl_cols = '1'
+  endif
+-%}
+
 {% render 'ces-section-padding' %}
 
-<div class="ces-section ces-experience-list{% if section.settings.tick_style == 'outline' %} ces-experience-list--outline{% endif %}{% unless section.settings.show_dividers %} ces-experience-list--no-rules{% endunless %}{% if section.settings.columns_desktop == '1' %} ces-experience-list--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
-  <div class="ces-section__inner ces-section__inner--narrow">
+<div class="ces-section ces-experience-list{% if section.settings.tick_style == 'outline' %} ces-experience-list--outline{% endif %}{% unless section.settings.show_dividers %} ces-experience-list--no-rules{% endunless %}{% if xl_cols == '1' %} ces-experience-list--one-col{% endif %} ces-section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="ces-section__inner{% unless xl_side %} ces-section__inner--narrow{% endunless %}">
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="ces-section__header">
         {%- if section.settings.heading != blank -%}
@@ -41,6 +64,7 @@
       </div>
     {%- endif -%}
 
+    <div class="ces-experience-list__body{% if xl_side %} ces-experience-list__body--side ces-experience-list__body--{{ section.settings.image_position }}{% endif %}">
     {%- if section.blocks.size > 0 -%}
       <ul class="ces-experience-list__grid">
         {%- for block in section.blocks -%}
@@ -72,6 +96,7 @@
         {%- endif -%}
       </figure>
     {%- endif -%}
+    </div>
   </div>
 </div>
 
@@ -127,7 +152,19 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image under the list"
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "info": "Beside the list, the points run in one column on desktop. The image always sits under the list on mobile.",
+      "options": [
+        { "value": "below", "label": "Under the list" },
+        { "value": "right", "label": "Right of the list" },
+        { "value": "left", "label": "Left of the list" }
+      ],
+      "default": "below"
     },
     {
       "type": "text",

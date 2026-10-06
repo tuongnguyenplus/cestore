@@ -104,3 +104,13 @@
 .ces-experience-list--one-col .ces-experience-list__grid {
   grid-template-columns: 1fr;
 }
+
+/* In one column the first two points are no longer a top row together, so the
+   second one needs its rule back — unless rules are off altogether. */
+.ces-experience-list--one-col .ces-experience-list__item:nth-child(2) {
+  border-top: 0.1rem dashed var(--ces-border-color);
+}
+
+.ces-experience-list--one-col.ces-experience-list--no-rules .ces-experience-list__item:nth-child(2) {
+  border-top: none;
+}

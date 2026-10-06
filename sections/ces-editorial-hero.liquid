@@ -45,10 +45,12 @@
   .ces-edhero__points{margin:2.4rem 0 0;padding:0;list-style:none;display:grid;gap:1.6rem}
   .ces-edhero__point{display:flex;align-items:flex-start;gap:1.2rem;
     font-size:1.5rem;font-weight:700;line-height:1.5;text-align:left}
-  .ces-edhero__tick{flex:0 0 auto;width:1.9rem;height:1.9rem;margin-top:.2em;
-    display:inline-flex;align-items:center;justify-content:center;border-radius:50%;
-    background:var(--ces-tick-color,var(--ces-accent));color:rgb(var(--color-background))}
-  .ces-edhero__tick svg{width:1.1rem;height:1.1rem;display:block}
+  /* The disc and the tick are one 20x20 glyph rather than a CSS circle holding
+     a 12x9 one: fitted into a square the old mark letterboxed, which pushed it
+     up and to the left of the disc's centre and left a wedge of empty teal at
+     the bottom right. Drawn together, the tick is centred and round-capped. */
+  .ces-edhero__tick{flex:0 0 auto;margin-top:.2em;display:block;line-height:0;
+    color:var(--ces-tick-color,var(--ces-accent))}
   /* The rail centres its own button; inside a left-aligned hero it should
      start at the same margin as everything above it. The rail's own rule has
      the same specificity and is emitted after this one, so the modifier class
@@ -162,7 +164,7 @@
               {%- if block.settings.text != blank -%}
                 <li class="ces-edhero__point" {{ block.shopify_attributes }}>
                   <span class="ces-edhero__tick" aria-hidden="true">
-                    {% render 'ces-icon', icon: 'check' %}
+                    {% render 'ces-icon', icon: 'check-circle', size: '1.9rem' %}
                   </span>
                   <span>{{ block.settings.text }}</span>
                 </li>

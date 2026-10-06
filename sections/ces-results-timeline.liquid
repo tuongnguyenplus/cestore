@@ -8,6 +8,31 @@
   if section.settings.image != blank
     assign rtl_has_media = true
   endif
+
+  comment
+    The rail, the dots and the ticks beside the cards are there to tie several
+    points together. When no stage has more than one point they tie nothing,
+    and five columns of them beside five lone cards is just furniture, so the
+    section counts first and leaves them out.
+  endcomment
+  assign rtl_max_points = 0
+  for b in rtl_stages
+    assign rtl_n = 0
+    assign rtl_lines = b.settings.points | newline_to_br | split: '<br />'
+    for rtl_line in rtl_lines
+      assign rtl_l = rtl_line | strip
+      if rtl_l != blank
+        assign rtl_n = rtl_n | plus: 1
+      endif
+    endfor
+    if rtl_n > rtl_max_points
+      assign rtl_max_points = rtl_n
+    endif
+  endfor
+  assign rtl_rail = true
+  if rtl_max_points < 2
+    assign rtl_rail = false
+  endif
 -%}
 
 {%- style -%}
@@ -25,24 +50,36 @@
 
   /* ---- Day pills ---- */
   .ces-rtl__tabs{position:relative;display:flex;gap:.8rem;margin:2.8rem 0 0;flex-wrap:wrap}
+  .ces-rtl__step{display:flex;align-items:center;min-width:0}
   .ces-rtl__pill{position:relative;z-index:1;display:inline-block;border:0;cursor:pointer;
     background:var(--ces-accent);color:rgb(var(--color-background));
     font-weight:800;font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;
     padding:.8rem 1.6rem;border-radius:.6rem;font-family:inherit;line-height:1.2}
   .ces-rtl__pill[aria-selected="true"]{background:rgb(var(--color-foreground))}
 
-  /* ---- Stage panels ---- */
+  /* ---- Stage panels ----
+     The ring, the rail and the dots are all struck off the same vertical line
+     .7rem in from the panel, and the copy off the same 2.3rem indent, so the
+     columns read as one ruled grid rather than five separate drawings. */
   .ces-rtl__panels{margin-top:2.4rem}
-  .ces-rtl__title{display:flex;align-items:center;gap:.9rem;margin:0 0 1.4rem;font-size:1.7rem;font-weight:800}
-  .ces-rtl__ring{flex:0 0 auto;width:1.4rem;height:1.4rem;border-radius:50%;
+  .ces-rtl__title{display:flex;align-items:flex-start;gap:.9rem;margin:0 0 1.4rem;
+    font-size:1.7rem;line-height:1.3;font-weight:800}
+  /* Centred on the title's FIRST line, not on the whole block: a title that
+     wraps to two lines would otherwise drop its ring half a line lower than
+     its neighbours. */
+  .ces-rtl__ring{flex:0 0 auto;width:1.4rem;height:1.4rem;margin-top:.4rem;border-radius:50%;
     border:.35rem solid var(--ces-accent);background:rgb(var(--color-background))}
-  .ces-rtl__points{position:relative;margin:0;padding:0 0 0 2.4rem;list-style:none;display:grid;gap:1rem}
+  .ces-rtl__points{position:relative;margin:0;padding:0 0 0 2.3rem;list-style:none;display:grid;gap:1rem}
   /* vertical rail running down beside the cards */
-  .ces-rtl__points::before{content:"";position:absolute;left:.6rem;top:0;bottom:1.6rem;width:.2rem;background:var(--ces-accent);opacity:.45}
+  .ces-rtl__points::before{content:"";position:absolute;left:.6rem;top:0;bottom:0;width:.2rem;background:var(--ces-accent);opacity:.45}
   .ces-rtl__point{position:relative;padding:.9rem 1.2rem;border:.1rem solid var(--ces-border-color);
     border-radius:.8rem;background:rgb(var(--color-background));font-size:1.45rem;line-height:1.45}
-  .ces-rtl__point::before{content:"";position:absolute;left:-2.15rem;top:1.35rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--ces-accent)}
-  .ces-rtl__point::after{content:"";position:absolute;left:-1.6rem;top:1.72rem;width:1.6rem;height:.16rem;background:var(--ces-accent);opacity:.45}
+  .ces-rtl__point::before{content:"";position:absolute;left:-2.05rem;top:1.5rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--ces-accent)}
+  .ces-rtl__point::after{content:"";position:absolute;left:-1.6rem;top:1.87rem;width:1.6rem;height:.16rem;background:var(--ces-accent);opacity:.45}
+  /* Indent kept so the card still starts where the title's words do. */
+  .ces-rtl__points--plain::before,
+  .ces-rtl__points--plain .ces-rtl__point::before,
+  .ces-rtl__points--plain .ces-rtl__point::after{display:none}
 
   /* ---- Quote card ---- */
   .ces-rtl__quote{margin:1.8rem 0 0;border:.15rem solid var(--ces-accent);border-radius:var(--ces-radius);padding:1.6rem;background:rgb(var(--color-background))}
@@ -56,7 +93,8 @@
 
   /* ---- Mobile: the pills are tabs, one stage at a time ---- */
   @media screen and (max-width:749px){
-    .ces-rtl__pill{background:var(--ces-accent);opacity:.85;flex:1 1 auto;text-align:center;padding:.8rem .9rem;font-size:1.25rem}
+    .ces-rtl__step{flex:1 1 auto}
+    .ces-rtl__pill{background:var(--ces-accent);opacity:.85;width:100%;text-align:center;padding:.8rem .9rem;font-size:1.25rem}
     .ces-rtl__pill[aria-selected="true"]{opacity:1}
     .ces-rtl__panel{display:none}
     .ces-rtl__panel.is-active{display:block}
@@ -64,12 +102,26 @@
 
   /* ---- Desktop: every stage side by side, rail through the pills ---- */
   @media screen and (min-width:750px){
-    .ces-rtl__tabs{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);gap:0;justify-items:start}
-    .ces-rtl__tabs::before{content:"";position:absolute;left:0;right:0;top:50%;height:.2rem;background:var(--ces-accent);opacity:.45;transform:translateY(-50%);z-index:0}
-    .ces-rtl__pill{cursor:default}
+    .ces-rtl__tabs{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);gap:0;justify-items:stretch}
+    .ces-rtl__pill{cursor:default;flex:0 0 auto}
     .ces-rtl__pill[aria-selected="true"]{background:var(--ces-accent)}
-    .ces-rtl__panels{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);gap:2.4rem;align-items:start}
-    .ces-rtl__panel{display:block}
+    /* The rail is drawn per step, from the pill's edge to the start of the
+       next column, so nothing trails off past the last pill. */
+    .ces-rtl__step::after{content:"";flex:1 1 auto;height:.2rem;background:var(--ces-accent);opacity:.45}
+    .ces-rtl__step:last-child::after{display:none}
+
+    .ces-rtl__panels{display:grid;grid-template-columns:repeat({{ rtl_cols }},1fr);
+      grid-template-rows:auto auto auto;column-gap:2.4rem;row-gap:0;align-items:stretch}
+    /* Each panel borrows the three rows of the grid above it, so a title that
+       wraps lifts every column's title row together and the cards below still
+       start — and finish — on the same lines. */
+    .ces-rtl__panel{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}
+    @supports not (grid-template-rows:subgrid){
+      /* Without subgrid, hold two lines for every title so the cards at least
+         start level; two is what the longest stage titles need. */
+      .ces-rtl__panel{display:block}
+      .ces-rtl__title{min-height:4.42rem}
+    }
   }
 {%- endstyle -%}
 
@@ -103,11 +155,13 @@
     {%- if rtl_stages.size > 0 -%}
       <div class="ces-rtl__tabs" role="tablist">
         {%- for block in rtl_stages -%}
-          <button type="button" class="ces-rtl__pill" role="tab"
-            id="rtl-tab-{{ section.id }}-{{ forloop.index0 }}"
-            aria-controls="rtl-panel-{{ section.id }}-{{ forloop.index0 }}"
-            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-            data-ces-rtl-tab="{{ forloop.index0 }}">{{ block.settings.time_label }}</button>
+          <span class="ces-rtl__step" role="presentation">
+            <button type="button" class="ces-rtl__pill" role="tab"
+              id="rtl-tab-{{ section.id }}-{{ forloop.index0 }}"
+              aria-controls="rtl-panel-{{ section.id }}-{{ forloop.index0 }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              data-ces-rtl-tab="{{ forloop.index0 }}">{{ block.settings.time_label }}</button>
+          </span>
         {%- endfor -%}
       </div>
 
@@ -121,7 +175,7 @@
               <p class="ces-rtl__title"><span class="ces-rtl__ring" aria-hidden="true"></span>{{ block.settings.title }}</p>
             {%- endif -%}
             {%- if block.settings.points != blank -%}
-              <ul class="ces-rtl__points">
+              <ul class="ces-rtl__points{% unless rtl_rail %} ces-rtl__points--plain{% endunless %}">
                 {%- assign pts = block.settings.points | newline_to_br | split: '<br />' -%}
                 {%- for line in pts -%}{%- assign l = line | strip -%}{%- if l != blank -%}
                   <li class="ces-rtl__point">{{ l }}</li>
