@@ -404,6 +404,7 @@
         "icon_item-1": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/10273423.png",
             "icon_text": "",
             "icon": "none",
             "icon_color": "",
@@ -414,6 +415,7 @@
         "icon_item-2": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/2323037.png",
             "icon_text": "",
             "icon": "none",
             "icon_color": "",
@@ -424,6 +426,7 @@
         "icon_item-3": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/depositphotos_312790046-stock-illustration-hydrogel-golden-cosmetic-eye-patch.webp",
             "icon_text": "",
             "icon": "none",
             "icon_color": "",
@@ -434,6 +437,7 @@
         "icon_item-4": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/green-jade-facial-roller-isolated-on-transparent-background-png.webp",
             "icon_text": "",
             "icon": "none",
             "icon_color": "",
@@ -444,6 +448,7 @@
         "icon_item-5": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/pngtree-blue-gel-cooling-eye-mask-for-spa-and-relaxation-png-image_19852423.webp",
             "icon_text": "",
             "icon": "none",
             "icon_color": "",
@@ -454,6 +459,7 @@
         "icon_item-6": {
           "type": "icon_item",
           "settings": {
+            "image": "shopify://shop_images/1414907.png",
             "icon_text": "",
             "icon": "none",
             "icon_color": "",
@@ -991,6 +997,7 @@
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_arrow": true,
         "cta_width": "full",
+        "point_separator": "dot",
         "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 40
