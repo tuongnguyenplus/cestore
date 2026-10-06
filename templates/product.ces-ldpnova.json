@@ -321,14 +321,14 @@
           "settings": {
             "text": "Dissolves Overnight",
             "icon_image": "shopify://shop_images/dfdg.png",
-            "icon": "none"
+            "icon": ""
           }
         },
         "marquee_item-2": {
           "type": "marquee_item",
           "settings": {
             "text": "No Morning Routine",
-            "icon": "none"
+            "icon": ""
           }
         },
         "marquee_item-3": {
@@ -342,29 +342,28 @@
           "type": "marquee_item",
           "settings": {
             "text": "Dermatologist-tested",
-            "icon_image": "shopify://shop_images/molecule_d1432f5f-d28f-4a0c-8ee9-c2db2dd55646.webp",
-            "icon": "none"
+            "icon": ""
           }
         },
         "marquee_item-5": {
           "type": "marquee_item",
           "settings": {
             "text": "Twice A Week",
-            "icon": "none"
+            "icon": ""
           }
         },
         "marquee_item-6": {
           "type": "marquee_item",
           "settings": {
             "text": "30-Day Guarantee",
-            "icon": "none"
+            "icon": ""
           }
         },
         "marquee_item-7": {
           "type": "marquee_item",
           "settings": {
             "text": "Works Beneath The Surface",
-            "icon": "none"
+            "icon": ""
           }
         }
       },
@@ -394,7 +393,7 @@
         "eyebrow": "",
         "heading": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One.",
         "subheading": "",
-        "body": "<p>Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.</p><p>Eye bags don't start at the surface. They start deeper &mdash; in the tissue where fluid builds overnight, where skin gets thinner with age, where the hollow that makes you look tired actually forms.</p><p>Creams sit on top. Serums sit on top. Even the gel patches you have already tried sit on top.</p><p>Your skin is designed to keep things out and it is very good at its job. That is not a quality problem with the products you chose. It is a physics problem. Nothing applied to the surface can cross that barrier.</p><p>That is the only reason nothing has worked. Not because you did not try hard enough. Because everything stopped at the same wall.</p>",
+        "body": "<p>Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.</p><p>Eye bags don't start at the surface. They start deeper — in the tissue where fluid builds overnight, where skin gets thinner with age, where the hollow that makes you look tired actually forms.</p><p>Creams sit on top. Serums sit on top. Even the gel patches you have already tried sit on top.</p><p>Your skin is designed to keep things out and it is very good at its job. That is not a quality problem with the products you chose. It is a physics problem. Nothing applied to the surface can cross that barrier.</p><p>That is the only reason nothing has worked. Not because you did not try hard enough. Because everything stopped at the same wall.</p>",
         "image_position": "below_body",
         "image_alt": "",
         "image_caption": "",
