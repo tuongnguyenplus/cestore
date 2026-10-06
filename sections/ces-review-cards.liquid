@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'ces-review-carousel.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
@@ -132,11 +130,12 @@
                     {%- if block.settings.tag != blank -%}
                       <span class="ces-rc__tag">{{ block.settings.tag }}</span>
                     {%- endif -%}
-                    <img
-                      src="{{ block.settings.image | image_url: width: 900 }}"
-                      alt="{{ block.settings.name | escape }}"
-                      loading="lazy"
-                    >
+                    {%- assign rc_img_alt = block.settings.name | escape -%}
+                    {% render 'ces-img',
+                       image: block.settings.image,
+                       alt: rc_img_alt,
+                       sizes: '(min-width: 750px) 33vw, 85vw',
+                       max: 860 %}
                   </figure>
                 {%- endif -%}
 

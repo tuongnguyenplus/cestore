@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'ces-scroll.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
@@ -53,8 +51,12 @@
       <div class="ces-gt__head">
         {%- if section.settings.seal != blank -%}
           <div class="ces-gt__seal">
-            <img src="{{ section.settings.seal | image_url: width: 480 }}"
-                 alt="{{ section.settings.seal_alt | escape }}" loading="lazy">
+            {%- assign g_seal_alt = section.settings.seal_alt | escape -%}
+            {% render 'ces-img',
+               image: section.settings.seal,
+               alt: g_seal_alt,
+               sizes: '(min-width: 750px) 160px, 120px',
+               max: 420 %}
           </div>
         {%- endif -%}
         <div>

@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign recog_images = section.blocks | where: 'type', 'image'
@@ -83,7 +81,12 @@
   {%- for block in recog_images -%}
     {%- if block.settings.image != blank -%}
       <figure class="ces-recog__fig" {{ block.shopify_attributes }}>
-        <img src="{{ block.settings.image | image_url: width: 1400 }}" alt="{{ block.settings.caption | default: section.settings.heading | escape }}" loading="lazy">
+        {%- assign recog_alt = block.settings.caption | default: section.settings.heading | escape -%}
+        {% render 'ces-img',
+           image: block.settings.image,
+           alt: recog_alt,
+           sizes: '(min-width: 750px) 90vw, 100vw',
+           max: 1280 %}
         {%- if block.settings.caption != blank -%}<figcaption class="ces-recog__cap">{{ block.settings.caption }}</figcaption>{%- endif -%}
       </figure>
     {%- endif -%}

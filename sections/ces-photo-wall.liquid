@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign pw_photos = section.blocks | where: 'type', 'photo'
@@ -8,6 +6,17 @@
   if pw_photos.size < pw_cols
     assign pw_cols = pw_photos.size
   endif
+
+  comment
+    Each photo is one column of the wall, and the wall takes about half a wide
+    screen in the split layout and all of it otherwise.
+  endcomment
+  assign pw_wall_vw = 94
+  if section.settings.layout == 'split'
+    assign pw_wall_vw = 48
+  endif
+  assign pw_photo_vw = pw_wall_vw | divided_by: pw_cols | at_least: 1
+  assign pw_img_sizes = '(min-width: 750px) ' | append: pw_photo_vw | append: 'vw, ' | append: pw_wall_vw | append: 'vw'
 
   comment
     What goes between a point's title and the sentence under it. Left blank,
@@ -176,13 +185,21 @@
                       class="ces-pw__item"
                       {% if pass == 1 %}{{ block.shopify_attributes }}{% else %}aria-hidden="true"{% endif %}
                     >
-                      <img
-                        src="{{ block.settings.image | image_url: width: 600 }}"
-                        alt="{% if pass == 1 %}{{ block.settings.alt | escape }}{% endif %}"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
-                        loading="lazy"
-                      >
+                      {%- liquid
+                        comment
+                          The wall is drawn twice so the marquee can loop; the
+                          second pass is decorative, so it carries no alt text.
+                        endcomment
+                        assign pw_img_alt = ''
+                        if pass == 1
+                          assign pw_img_alt = block.settings.alt | escape
+                        endif
+                      -%}
+                      {% render 'ces-img',
+                         image: block.settings.image,
+                         alt: pw_img_alt,
+                         sizes: pw_img_sizes,
+                         max: 540 %}
                     </figure>
                   {%- endif -%}
                 {%- endfor -%}

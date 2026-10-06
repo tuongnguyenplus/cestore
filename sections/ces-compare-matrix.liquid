@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   # Only the alternative columns that have been named are drawn, so the same
@@ -88,14 +86,13 @@
               <td></td>
               <th class="ces-cm__col ces-cm__col--brand" scope="col">
                 {%- if section.settings.brand_image != blank -%}
-                  <img
-                    class="ces-cm__brand-logo"
-                    src="{{ section.settings.brand_image | image_url: width: 240 }}"
-                    alt="{{ section.settings.brand_label | escape }}"
-                    width="120"
-                    height="40"
-                    loading="lazy"
-                  >
+                  {%- assign cm_logo_alt = section.settings.brand_label | escape -%}
+                  {% render 'ces-img',
+                     image: section.settings.brand_image,
+                     alt: cm_logo_alt,
+                     class: 'ces-cm__brand-logo',
+                     sizes: '120px',
+                     max: 320 %}
                 {%- endif -%}
                 {{ section.settings.brand_label }}
               </th>

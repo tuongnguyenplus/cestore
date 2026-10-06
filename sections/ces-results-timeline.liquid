@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign rtl_stages = section.blocks | where: 'type', 'stage'
@@ -142,7 +140,12 @@
   <div class="ces-section__inner">
     {%- capture rtl_media -%}
       <figure class="ces-rtl__fig">
-        <img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.image_caption | default: section.settings.heading | escape }}" loading="lazy">
+        {%- assign rtl_img_alt = section.settings.image_caption | default: section.settings.heading | escape -%}
+        {% render 'ces-img',
+           image: section.settings.image,
+           alt: rtl_img_alt,
+           sizes: '(min-width: 750px) 90vw, 100vw',
+           max: 1280 %}
         {%- if section.settings.image_caption != blank -%}<figcaption class="ces-rtl__cap">{{ section.settings.image_caption }}</figcaption>{%- endif -%}
       </figure>
     {%- endcapture -%}
@@ -197,7 +200,12 @@
               <div class="ces-rtl__quote">
                 <div class="ces-rtl__who">
                   {%- if block.settings.quote_image != blank -%}
-                    <span class="ces-rtl__avatar"><img src="{{ block.settings.quote_image | image_url: width: 120 }}" alt="{{ block.settings.quote_name | escape }}" loading="lazy"></span>
+                    <span class="ces-rtl__avatar">{%- assign rtl_quote_alt = block.settings.quote_name | escape -%}
+{% render 'ces-img',
+   image: block.settings.quote_image,
+   alt: rtl_quote_alt,
+   sizes: '36px',
+   max: 160 %}</span>
                   {%- endif -%}
                   <span>
                     <span class="ces-rtl__stars">★★★★★</span>

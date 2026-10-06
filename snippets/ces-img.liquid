@@ -1,0 +1,81 @@
+{%- comment -%}
+  ces-img — one responsive <img> for the ces-* sections.
+
+  Every ces section used to write its own `<img src="{{ image | image_url:
+  width: 1600 }}">`. That ships one desktop-sized file to every phone: a
+  390px screen downloaded the 1600px copy of each picture and threw most of
+  the pixels away. A srcset plus a `sizes` describing the slot lets the
+  browser pick, and the intrinsic width/height keep the page from jumping as
+  each one lands.
+
+  Accepts:
+    - image     {Image}   required; nothing is rendered without one
+    - sizes     {String}  CSS width of the slot, e.g.
+                          '(min-width: 750px) 40vw, 100vw'. Default '100vw'.
+    - max       {Number}  widest source worth generating. Default 1600.
+    - alt       {String}
+    - class     {String}
+    - eager     {Boolean} true for a picture above the fold — it then loads
+                          straight away instead of waiting for the scroll
+    - priority  {Boolean} fetchpriority="high"; use on the LCP image only
+
+  The shape is left to the section: they set aspect-ratio and object-fit in
+  their own CSS, so cropping here would only fight them.
+
+  Filters are not allowed in {% render %} arguments, so assign first:
+    {%- assign img_alt = block.settings.title | escape -%}
+    {% render 'ces-img', image: block.settings.image, alt: img_alt,
+       sizes: '(min-width: 750px) 25vw, 80vw', max: 800 %}
+{%- endcomment -%}
+
+{%- if image != blank -%}
+  {%- liquid
+    assign ces_img_max = max | default: 1600
+
+    comment
+      Only the steps up to `max` — asking Shopify for a source wider than the
+      slot ever gets is what this snippet exists to stop.
+    endcomment
+    assign ces_img_pool = '160,240,320,420,540,680,860,1080,1280,1600,1920,2200' | split: ','
+    assign ces_img_widths = ''
+    for ces_img_w in ces_img_pool
+      assign ces_img_n = ces_img_w | times: 1
+      if ces_img_n <= ces_img_max
+        if ces_img_widths == blank
+          assign ces_img_widths = ces_img_w
+        else
+          assign ces_img_widths = ces_img_widths | append: ',' | append: ces_img_w
+        endif
+      endif
+    endfor
+    if ces_img_widths == blank
+      assign ces_img_widths = ces_img_max | append: ''
+    endif
+
+    assign ces_img_loading = 'lazy'
+    if eager
+      assign ces_img_loading = 'eager'
+    endif
+
+    assign ces_img_priority = 'auto'
+    if priority
+      assign ces_img_priority = 'high'
+    endif
+
+    assign ces_img_sizes = sizes | default: '100vw'
+    assign ces_img_alt = alt | default: image.alt | escape
+    assign ces_img_class = class | default: ''
+  -%}
+  {{
+    image
+    | image_url: width: ces_img_max
+    | image_tag:
+      loading: ces_img_loading,
+      fetchpriority: ces_img_priority,
+      decoding: 'async',
+      sizes: ces_img_sizes,
+      widths: ces_img_widths,
+      class: ces_img_class,
+      alt: ces_img_alt
+  }}
+{%- endif -%}

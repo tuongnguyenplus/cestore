@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'ces-scroll.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
@@ -75,13 +73,12 @@
     {%- capture sp_figure -%}
       {%- if section.settings.image != blank -%}
         <figure class="ces-sp__figure">
-          <img
-            src="{{ section.settings.image | image_url: width: 1040 }}"
-            alt="{{ section.settings.image_alt | escape }}"
-            width="{{ section.settings.image.width }}"
-            height="{{ section.settings.image.height }}"
-            loading="lazy"
-          >
+          {%- assign sp_img_alt = section.settings.image_alt | escape -%}
+          {% render 'ces-img',
+             image: section.settings.image,
+             alt: sp_img_alt,
+             sizes: '(min-width: 750px) 50vw, 100vw',
+             max: 1080 %}
           {%- if section.settings.image_caption != blank -%}
             <figcaption class="ces-sp__caption">{{ section.settings.image_caption }}</figcaption>
           {%- endif -%}
@@ -120,7 +117,7 @@
           </div>
           {%- if section.settings.callout_mark != blank -%}
             <div class="ces-sp__callout-mark">
-              <img src="{{ section.settings.callout_mark | image_url: width: 180 }}" alt="" loading="lazy">
+              {% render 'ces-img', image: section.settings.callout_mark, alt: '', sizes: '48px', max: 160 %}
             </div>
           {%- endif -%}
         </div>

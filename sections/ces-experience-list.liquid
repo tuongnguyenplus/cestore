@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 {{ 'ces-experience-list.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -34,6 +32,15 @@
   assign xl_cols = section.settings.columns_desktop
   if xl_side
     assign xl_cols = '1'
+  endif
+
+  comment
+    Beside the list the picture takes about 40% of a wide screen; under it,
+    the full column. Either way it is full width on a phone.
+  endcomment
+  assign xl_img_sizes = '(min-width: 750px) 86vw, 100vw'
+  if xl_side
+    assign xl_img_sizes = '(min-width: 750px) 40vw, 100vw'
   endif
 -%}
 
@@ -84,13 +91,12 @@
 
     {%- if section.settings.image != blank -%}
       <figure class="ces-experience-list__figure">
-        <img
-          src="{{ section.settings.image | image_url: width: 1200 }}"
-          alt="{{ section.settings.image_alt | escape }}"
-          width="{{ section.settings.image.width }}"
-          height="{{ section.settings.image.height }}"
-          loading="lazy"
-        >
+        {%- assign xl_img_alt = section.settings.image_alt | escape -%}
+        {% render 'ces-img',
+           image: section.settings.image,
+           alt: xl_img_alt,
+           sizes: xl_img_sizes,
+           max: 1080 %}
         {%- if section.settings.image_caption != blank -%}
           <figcaption class="ces-experience-list__caption">{{ section.settings.image_caption }}</figcaption>
         {%- endif -%}

@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .ces-edhero{color:rgb(var(--color-foreground));background:var(--gradient-background)}
@@ -94,7 +92,22 @@
     <div class="ces-edhero__inner{% if section.settings.text_align == 'left' %} ces-edhero__inner--left{% endif %}{% if section.settings.layout == 'split' %} ces-edhero__inner--split{% endif %}">
       {%- capture edh_media -%}
         {%- if section.settings.image != blank -%}
-          <figure class="ces-edhero__media"><img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.heading | escape }}" loading="lazy"></figure>
+          {%- liquid
+            assign edh_img_alt = section.settings.heading | escape
+            comment
+              The hero picture is this page's largest paint, so it is the one
+              image that loads straight away and asks for priority.
+            endcomment
+          -%}
+          <figure class="ces-edhero__media">
+            {% render 'ces-img',
+               image: section.settings.image,
+               alt: edh_img_alt,
+               sizes: '(min-width: 769px) 40vw, 100vw',
+               max: 1280,
+               eager: true,
+               priority: true %}
+          </figure>
         {%- endif -%}
       {%- endcapture -%}
 
@@ -146,7 +159,15 @@
       {%- if section.settings.author_name != blank or section.settings.date_text != blank -%}
         <div class="ces-edhero__byline">
           {%- if section.settings.author_image != blank -%}
-            <span class="ces-edhero__avatar"><img src="{{ section.settings.author_image | image_url: width: 160 }}" alt="{{ section.settings.author_name | escape }}" loading="lazy"></span>
+            {%- assign edh_author_alt = section.settings.author_name | escape -%}
+            <span class="ces-edhero__avatar">
+              {% render 'ces-img',
+                 image: section.settings.author_image,
+                 alt: edh_author_alt,
+                 sizes: '44px',
+                 max: 160,
+                 eager: true %}
+            </span>
           {%- endif -%}
           <span class="ces-edhero__by">
             {%- if section.settings.author_name != blank -%}<strong>{{ section.settings.author_name }}</strong>{%- endif -%}

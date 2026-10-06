@@ -1,5 +1,3 @@
-{{ 'ces-base.css' | asset_url | stylesheet_tag }}
-{{ 'ces-theme.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign cr_cards = section.blocks | where: 'type', 'card'
@@ -7,6 +5,18 @@
   if cr_cards.size < cr_cols
     assign cr_cols = cr_cards.size
   endif
+
+  comment
+    What slice of the viewport a card takes, so the browser can pick a source
+    instead of downloading the desktop one on a phone. On mobile the row
+    either slides sideways (a card is ~80% wide) or stacks full width.
+  endcomment
+  assign cr_desktop_vw = 92 | divided_by: cr_cols | at_least: 1
+  assign cr_mobile_vw = 80
+  if section.settings.mobile_layout == 'stack'
+    assign cr_mobile_vw = 94
+  endif
+  assign cr_img_sizes = '(min-width: 750px) ' | append: cr_desktop_vw | append: 'vw, ' | append: cr_mobile_vw | append: 'vw'
 -%}
 
 {%- style -%}
@@ -110,13 +120,12 @@
                 {%- if section.settings.show_numbers -%}
                   <span class="ces-cardrow__badge" aria-hidden="true">{{ forloop.index }}</span>
                 {%- endif -%}
-                <img
-                  src="{{ block.settings.image | image_url: width: 800 }}"
-                  alt="{{ block.settings.alt | escape }}"
-                  width="{{ block.settings.image.width }}"
-                  height="{{ block.settings.image.height }}"
-                  loading="lazy"
-                >
+                {%- assign cr_img_alt = block.settings.alt | escape -%}
+                {% render 'ces-img',
+                   image: block.settings.image,
+                   alt: cr_img_alt,
+                   sizes: cr_img_sizes,
+                   max: 860 %}
               </figure>
             {%- endif -%}
             <div class="ces-cardrow__body">
@@ -138,11 +147,12 @@
 
     {%- if section.settings.proof_image != blank -%}
       <figure class="ces-cardrow__proof">
-        <img
-          src="{{ section.settings.proof_image | image_url: width: 1240 }}"
-          alt="{{ section.settings.proof_alt | escape }}"
-          loading="lazy"
-        >
+        {%- assign cr_proof_alt = section.settings.proof_alt | escape -%}
+        {% render 'ces-img',
+           image: section.settings.proof_image,
+           alt: cr_proof_alt,
+           sizes: '(min-width: 750px) 90vw, 100vw',
+           max: 1280 %}
         {%- if section.settings.proof_caption != blank -%}
           <figcaption>{{ section.settings.proof_caption }}</figcaption>
         {%- endif -%}
