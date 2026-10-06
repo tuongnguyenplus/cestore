@@ -320,7 +320,6 @@
           "type": "marquee_item",
           "settings": {
             "text": "Dissolves Overnight",
-            "icon_image": "shopify://shop_images/dfdg.png",
             "icon": ""
           }
         },
@@ -335,7 +334,7 @@
           "type": "marquee_item",
           "settings": {
             "text": "Completely Painless",
-            "icon": "none"
+            "icon": ""
           }
         },
         "marquee_item-4": {
@@ -377,7 +376,7 @@
         "marquee_item-7"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "speed": 40,
         "direction": "left",
         "pause_on_hover": true,
