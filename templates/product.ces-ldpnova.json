@@ -635,6 +635,7 @@
         "text_align": "left",
         "show_numbers": false,
         "footnote": "<p>A study indexed on <strong>PubMed, the US National Library of Medicine</strong> database found that dissolving hyaluronic acid microneedle patches delivered ingredients <strong>12.5 times more effectively</strong> beneath the skin than needleless patches.</p>",
+        "proof_image": "shopify://shop_images/Picture2.png",
         "proof_alt": "The passage on PubMed reporting 12.5 times superior drug permeability",
         "proof_caption": "Source: National Institutes of Health, PubMed — PMC11854821.",
         "cta_label": "",
@@ -649,11 +650,13 @@
     },
     "pubmed": {
       "type": "ces-stat-proof",
+      "disabled": true,
       "settings": {
         "eyebrow": "",
         "heading": "",
         "subheading": "",
         "body": "",
+        "image": "shopify://shop_images/Picture2.png",
         "image_position": "below_body",
         "image_alt": "",
         "image_caption": "",
@@ -677,9 +680,10 @@
         "review-1": {
           "type": "review",
           "settings": {
-            "tag": "AFTER",
-            "quote": "",
-            "name": "",
+            "image": "shopify://shop_images/T1_d8bc01b1-a3c4-4a1a-a74a-720a245c89ca.webp",
+            "tag": "",
+            "quote": "<p>I had been waking up with eye bags every single morning for 3 years. Tried every caffeine serum, every gel patch, every cold tool I could find. They all worked for about an hour. The first morning I peeled one off the area felt different under my finger. Softer somehow. <strong>Two weeks in and my husband asked if I had slept somewhere more comfortable because I looked so rested. I had not changed anything except these, twice a week.</strong> I cried a little honestly.<br/><br/></p>",
+            "name": "–Amanda K. — Chicago, IL",
             "verified": true,
             "rating_tenths": 50
           }
@@ -687,9 +691,10 @@
         "review-2": {
           "type": "review",
           "settings": {
-            "tag": "AFTER",
-            "quote": "",
-            "name": "",
+            "image": "shopify://shop_images/T2_3424d990-36fd-47ce-9d6e-c938a2f1dc95.webp",
+            "tag": "",
+            "quote": "<p>I spent close to $600 on eye creams over 2 years. None of them touched the bags. I was starting to research fillers when a friend sent me these. The first morning I peeled one off I could already tell something was different. <strong>Six weeks in and the hollow under my left eye, which has always been the worse one, looks noticeably less deep.</strong> I have not booked the filler consultation. Right now I don't feel like I need to.<br/><br/></p>",
+            "name": "–Jennifer R. — Austin, TX",
             "verified": true,
             "rating_tenths": 50
           }
@@ -697,9 +702,10 @@
         "review-3": {
           "type": "review",
           "settings": {
-            "tag": "AFTER",
-            "quote": "",
-            "name": "",
+            "image": "shopify://shop_images/T3_68bc83b1-a84b-48f1-a380-0d601022d762.webp",
+            "tag": "",
+            "quote": "<p>My phone used to not recognize me for the first hour after I woke up. That sounds funny but it was genuinely embarrassing. <strong>Four weeks in and I walked out of the house one morning without doing a single thing to my under-eye area first. First time that has happened in longer than I can remember.</strong> My coworker asked if I had done something different. I told her I finally found something that works at night instead of in the morning.<br/><br/></p>",
+            "name": "–Michelle T. — Seattle, WA",
             "verified": true,
             "rating_tenths": 50
           }
