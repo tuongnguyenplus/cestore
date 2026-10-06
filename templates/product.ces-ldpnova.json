@@ -87,6 +87,7 @@
     "hero": {
       "type": "ces-editorial-hero",
       "settings": {
+        "layout": "split",
         "text_align": "left",
         "rating_tenths": 48,
         "rating_text": "",
@@ -104,8 +105,7 @@
         "cta_url": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 0,
-        "layout": "split"
+        "padding_bottom": 0
       }
     },
     "herobullets": {
@@ -160,11 +160,11 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 32,
-        "cta_arrow": true
+        "padding_bottom": 32
       }
     },
     "recognition": {
@@ -307,7 +307,7 @@
         "show_dividers": false,
         "columns_desktop": "1",
         "heading_accent": "Keep Reading",
-        "image": "shopify://shop_images/gfdg.webp",
+        "image": "shopify://shop_images/2_6e9b5e1f-a4d7-486e-a9cb-415cfa3193f9.webp",
         "image_alt": "The products that stopped at the surface",
         "image_caption": "Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.",
         "color_scheme": "scheme-1",
@@ -395,6 +395,7 @@
         "heading": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One.",
         "subheading": "",
         "body": "<p>Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.</p><p>Eye bags don't start at the surface. They start deeper — in the tissue where fluid builds overnight, where skin gets thinner with age, where the hollow that makes you look tired actually forms.</p><p>Creams sit on top. Serums sit on top. Even the gel patches you have already tried sit on top.</p><p>Your skin is designed to keep things out and it is very good at its job. That is not a quality problem with the products you chose. It is a physics problem. Nothing applied to the surface can cross that barrier.</p><p>That is the only reason nothing has worked. Not because you did not try hard enough. Because everything stopped at the same wall.</p>",
+        "image": "shopify://shop_images/6_2.webp",
         "image_position": "beside_body",
         "image_alt": "",
         "image_caption": "",
@@ -403,13 +404,13 @@
         "callout_figure": "$2.8B / Year",
         "callout_text": "<p>Built to keep you buying. Not to reach where the problem starts.</p>",
         "callout_source": "",
+        "callout_bg": "#fff8bd",
+        "callout_border": "#000000",
         "button_label": "",
         "button_link": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "callout_bg": "#fff8bd",
-        "callout_border": "#000000"
+        "padding_bottom": 40
       }
     },
     "failures": {
@@ -499,6 +500,7 @@
         "cta_label": "",
         "cta_url": "",
         "cta_footnote": "",
+        "cta_arrow": false,
         "cta_width": "auto",
         "color_scheme": "scheme-1",
         "padding_top": 32,
@@ -516,15 +518,15 @@
         "heading_accent": "",
         "heading": "Meet The Patch That Crosses The Wall",
         "text": "<p>CEBEAM Patches don't sit on your skin. They dissolve into it.</p><p>Each patch carries hundreds of tiny cones made from hyaluronic acid and peptides. Press one under your eye before bed. The cones dissolve painlessly beneath the surface over several hours, reaching the deeper layer where eye bags actually form.</p><p>You sleep. They work. Peel them off in the morning.</p><p>That is it. No routine. No reapplying. No waiting for something to soak in that never will.</p>",
+        "cta_width": "full",
+        "cta_arrow": true,
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "button_label": "Get Now & Save 70%",
         "button_link": "#shopify-section-main",
         "badge_speed": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "cta_width": "full",
-        "cta_arrow": true,
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
+        "padding_bottom": 40
       }
     },
     "preqa": {
@@ -533,33 +535,33 @@
         "card-1": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "Will it work on my type of eye bags?",
-            "text": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>",
-            "alt": ""
+            "text": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>"
           }
         },
         "card-2": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "How quickly will I notice a difference?",
-            "text": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>",
-            "alt": ""
+            "text": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>"
           }
         },
         "card-3": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "Does it hurt?",
-            "text": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>",
-            "alt": ""
+            "text": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>"
           }
         },
         "card-4": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "Is it safe near the eye area?",
-            "text": "<p>The dissolving cones are designed specifically for the delicate under-eye area. Follow the application instructions and avoid applying the patches to irritated or damaged skin.</p>",
-            "alt": ""
+            "text": "<p>The dissolving cones are designed specifically for the delicate under-eye area. Follow the application instructions and avoid applying the patches to irritated or damaged skin.</p>"
           }
         }
       },
@@ -570,18 +572,26 @@
         "card-4"
       ],
       "settings": {
+        "eyebrow": "",
+        "heading": "Before You Go Further, Here's What Most Women Ask",
+        "heading_accent": "",
+        "subheading": "",
         "columns": 4,
         "mobile_layout": "scroll",
         "image_ratio": "square",
         "card_style": "framed",
         "show_numbers": false,
+        "footnote": "",
+        "proof_alt": "",
+        "proof_caption": "",
+        "cta_label": "",
+        "cta_url": "",
+        "cta_footnote": "",
         "cta_width": "auto",
         "cta_arrow": false,
         "color_scheme": "scheme-1",
         "padding_top": 24,
-        "padding_bottom": 40,
-        "eyebrow": "",
-        "heading": "Before You Go Further, Here's What Most Women Ask"
+        "padding_bottom": 40
       }
     },
     "howitworks": {
@@ -590,25 +600,25 @@
         "card-1": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "Hundreds Of Tiny Dissolving Cones",
-            "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>",
-            "alt": ""
+            "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
           }
         },
         "card-2": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "Painless Delivery Beneath The Surface",
-            "text": "<p>The cones dissolve beneath the surface, reaching the deeper tissue where eye bags actually form. Not the first layer. Not the second. The layer where the problem lives.</p><p>You feel a light tingle for a few seconds. That's it.</p>",
-            "alt": ""
+            "text": "<p>The cones dissolve beneath the surface, reaching the deeper tissue where eye bags actually form. Not the first layer. Not the second. The layer where the problem lives.</p><p>You feel a light tingle for a few seconds. That's it.</p>"
           }
         },
         "card-3": {
           "type": "card",
           "settings": {
+            "alt": "",
             "title": "You Sleep. They Work. You Wake Up Different.",
-            "text": "<p>While you rest the ingredients release slowly into the deeper tissue over several hours. By morning the work is already done.</p><p>Not sitting on top of your skin waiting to evaporate. Inside it, where it actually counts.</p>",
-            "alt": ""
+            "text": "<p>While you rest the ingredients release slowly into the deeper tissue over several hours. By morning the work is already done.</p><p>Not sitting on top of your skin waiting to evaporate. Inside it, where it actually counts.</p>"
           }
         }
       },
@@ -618,21 +628,26 @@
         "card-3"
       ],
       "settings": {
+        "eyebrow": "",
+        "heading": "This is What Happens Under Your Eye While You Sleep",
+        "heading_accent": "This is What Happens",
+        "subheading": "",
         "columns": 3,
         "mobile_layout": "scroll",
         "image_ratio": "landscape",
         "card_style": "framed",
         "show_numbers": false,
+        "footnote": "<p>A study indexed on <strong>PubMed, the US National Library of Medicine</strong> database found that dissolving hyaluronic acid microneedle patches delivered ingredients <strong>12.5 times more effectively</strong> beneath the skin than needleless patches.</p>",
+        "proof_alt": "The passage on PubMed reporting 12.5 times superior drug permeability",
+        "proof_caption": "Source: National Institutes of Health, PubMed — PMC11854821.",
+        "cta_label": "",
+        "cta_url": "",
+        "cta_footnote": "",
         "cta_width": "auto",
         "cta_arrow": false,
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "heading": "This is What Happens Under Your Eye While You Sleep",
-        "heading_accent": "This is What Happens",
-        "footnote": "<p>A study indexed on <strong>PubMed, the US National Library of Medicine</strong> database found that dissolving hyaluronic acid microneedle patches delivered ingredients <strong>12.5 times more effectively</strong> beneath the skin than needleless patches.</p>",
-        "proof_caption": "Source: National Institutes of Health, PubMed — PMC11854821.",
-        "proof_alt": "The passage on PubMed reporting 12.5 times superior drug permeability"
+        "padding_bottom": 40
       }
     },
     "pubmed": {
@@ -650,13 +665,13 @@
         "callout_figure": "12.5x",
         "callout_text": "<p>more drug permeability through human skin than needleless patches, in the study's ex vivo test.</p>",
         "callout_source": "Source: National Institutes of Health, PubMed — PMC11854821.",
+        "callout_bg": "#fff8bd",
+        "callout_border": "#000000",
         "button_label": "",
         "button_link": "#shopify-section-main",
         "color_scheme": "scheme-1",
         "padding_top": 24,
-        "padding_bottom": 40,
-        "callout_bg": "#fff8bd",
-        "callout_border": "#000000"
+        "padding_bottom": 40
       }
     },
     "results": {
@@ -665,34 +680,31 @@
         "review-1": {
           "type": "review",
           "settings": {
-            "verified": true,
-            "rating_tenths": 50,
-            "image": "",
             "tag": "AFTER",
             "quote": "",
-            "name": ""
+            "name": "",
+            "verified": true,
+            "rating_tenths": 50
           }
         },
         "review-2": {
           "type": "review",
           "settings": {
-            "verified": true,
-            "rating_tenths": 50,
-            "image": "",
             "tag": "AFTER",
             "quote": "",
-            "name": ""
+            "name": "",
+            "verified": true,
+            "rating_tenths": 50
           }
         },
         "review-3": {
           "type": "review",
           "settings": {
-            "verified": true,
-            "rating_tenths": 50,
-            "image": "",
             "tag": "AFTER",
             "quote": "",
-            "name": ""
+            "name": "",
+            "verified": true,
+            "rating_tenths": 50
           }
         }
       },
@@ -703,9 +715,13 @@
       ],
       "settings": {
         "rating_tenths": 48,
+        "rating_text": "",
         "heading": "Visible Changes Our Customers Love",
+        "subheading": "See how CEBEAM patches made all the difference.",
         "columns": 3,
         "image_height": 320,
+        "card_bg": "",
+        "card_border": "",
         "card_border_style": "dashed",
         "verified_label": "Verified Buyer",
         "prev_label": "Previous reviews",
@@ -714,9 +730,7 @@
         "disclaimer": "Real customers, unretouched, shared with permission. Individual results vary.",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "rating_text": "",
-        "subheading": "See how CEBEAM patches made all the difference."
+        "padding_bottom": 40
       }
     },
     "howto": {
@@ -756,11 +770,11 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40,
-        "cta_arrow": true
+        "padding_bottom": 40
       }
     },
     "timeline": {
@@ -839,11 +853,11 @@
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
         "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "cta_arrow": true
+        "padding_bottom": 40
       }
     },
     "mornings": {
@@ -959,23 +973,24 @@
       ],
       "settings": {
         "layout": "split",
+        "eyebrow": "No More Morning Routine",
+        "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
+        "heading_accent": "Once The Eye Bags Are Gone",
+        "subheading": "",
         "columns": 2,
         "height": 520,
         "duration": 45,
         "pause_on_hover": true,
         "fade_edges": true,
         "image_ratio": "4/5",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "eyebrow": "No More Morning Routine",
-        "heading": "What Your Mornings Look Like Once The Eye Bags Are Gone",
-        "heading_accent": "Once The Eye Bags Are Gone",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
+        "padding_bottom": 40
       }
     },
     "compare": {
@@ -1143,18 +1158,20 @@
       "settings": {
         "seal_alt": "30 day money back guarantee",
         "heading": "Try CEBEAM Patches Completely Risk Free For 30 Days",
+        "heading_accent": "Completely Risk Free",
+        "subheading": "Use them. Sleep in them. Peel them off every morning for a full month.",
+        "card_bg": "",
         "why_title": "Why do we offer this?",
+        "why_text": "<p>Because the mechanism is real. We are confident enough to let you be the judge.</p>",
+        "why_bg": "",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_width": "full",
         "cta_arrow": true,
         "color_scheme": "scheme-1",
         "padding_top": 48,
-        "padding_bottom": 48,
-        "heading_accent": "Completely Risk Free",
-        "subheading": "Use them. Sleep in them. Peel them off every morning for a full month.",
-        "why_text": "<p>Because the mechanism is real. We are confident enough to let you be the judge.</p>",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping"
+        "padding_bottom": 48
       }
     },
     "main": {
@@ -1308,6 +1325,7 @@
             "gift_more_label": "See details",
             "gift_sub_mode": "auto",
             "gift_sub_template": "[value] value · [count] [items]",
+            "show_variant_image": false,
             "tier_1_variant": "67585919418517",
             "tier_1_name": "7-Day Starter",
             "tier_1_subtitle": "For first-time users or newly noticeable puffiness",
@@ -1732,6 +1750,7 @@
         "trust-panel"
       ],
       "settings": {
+        "show_media": true,
         "enable_sticky_info": true,
         "color_scheme": "scheme-781a4efc-d242-49b9-97fc-9550c39c73cb",
         "media_size": "medium",
@@ -1848,15 +1867,15 @@
         "image_position": "right",
         "heading": "What Tomorrow Morning Could Look Like",
         "bullets": "<ul><li>Two minutes tonight. Nothing to do in the morning.</li><li>Twice a week, not twice a day.</li><li>30 days to decide, with a full refund if it isn't for you.</li></ul>",
+        "cta_width": "full",
+        "cta_arrow": true,
         "button_label": "Get Now & Save 70%",
         "button_link": "#shopify-section-main",
         "button_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
         "show_frame": false,
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 48,
-        "cta_width": "full",
-        "cta_arrow": true
+        "padding_bottom": 48
       }
     },
     "sticky": {
