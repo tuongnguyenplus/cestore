@@ -86,30 +86,6 @@
     },
     "hero": {
       "type": "ces-editorial-hero",
-      "settings": {
-        "layout": "split",
-        "text_align": "left",
-        "rating_tenths": 48,
-        "rating_text": "",
-        "eyebrow": "Still Waking Up With Eye Bags No Matter What You Try?",
-        "eyebrow_style": "plain",
-        "heading_size": "large",
-        "heading_accent": "Wake Up Looking Like Yourself Again",
-        "heading": "Finally, The Micro-Needle Patch To Wake Up Looking Like Yourself Again",
-        "subheading": "Tiny dissolving cones reach the deeper layer where eye bags actually start.",
-        "author_name": "",
-        "date_text": "",
-        "image": "shopify://shop_images/1_a1506dac-5f1f-4b64-a314-4410ff80eac6.webp",
-        "image_position": "below",
-        "cta_label": "Get Now & Save 70%",
-        "cta_url": "#shopify-section-main",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
-        "cta_width": "full",
-        "cta_arrow": true
-      },
       "blocks": {
         "point-1": {
           "type": "point",
@@ -148,7 +124,32 @@
         "point-3",
         "point-4",
         "point-5"
-      ]
+      ],
+      "settings": {
+        "layout": "split",
+        "text_align": "left",
+        "rating_tenths": 48,
+        "rating_text": "",
+        "eyebrow": "Still Waking Up With Eye Bags No Matter What You Try?",
+        "eyebrow_style": "plain",
+        "heading_size": "large",
+        "heading_accent": "Wake Up Looking Like Yourself Again",
+        "heading": "Finally, The Micro-Needle Patch To Wake Up Looking Like Yourself Again",
+        "subheading": "Tiny dissolving cones reach the deeper layer where eye bags actually start.",
+        "author_name": "",
+        "date_text": "",
+        "image": "shopify://shop_images/1_a1506dac-5f1f-4b64-a314-4410ff80eac6.webp",
+        "image_position": "below",
+        "cta_label": "Get Now & Save 70%",
+        "cta_url": "#shopify-section-main",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_width": "full",
+        "cta_arrow": true,
+        "tick_color": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "recognition": {
       "type": "ces-press-strip",
@@ -291,6 +292,7 @@
         "columns_desktop": "1",
         "heading_accent": "Keep Reading",
         "image": "shopify://shop_images/2_6e9b5e1f-a4d7-486e-a9cb-415cfa3193f9.webp",
+        "image_position": "right",
         "image_alt": "The products that stopped at the surface",
         "image_caption": "Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.",
         "color_scheme": "scheme-1",
@@ -519,6 +521,7 @@
         "card-1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/img_-_1.jpg",
             "alt": "",
             "title": "Will it work on my type of eye bags?",
             "text": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>"
@@ -527,6 +530,7 @@
         "card-2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/img_-_2.jpg",
             "alt": "",
             "title": "How quickly will I notice a difference?",
             "text": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>"
@@ -535,6 +539,7 @@
         "card-3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/img_-_3.jpg",
             "alt": "",
             "title": "Does it hurt?",
             "text": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>"
@@ -543,6 +548,7 @@
         "card-4": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/img_-_4.jpg",
             "alt": "",
             "title": "Is it safe near the eye area?",
             "text": "<p>The dissolving cones are designed specifically for the delicate under-eye area. Follow the application instructions and avoid applying the patches to irritated or damaged skin.</p>"
@@ -564,6 +570,8 @@
         "mobile_layout": "scroll",
         "image_ratio": "square",
         "card_style": "media",
+        "frame_color": "#f3cfc6",
+        "text_align": "center",
         "show_numbers": false,
         "footnote": "",
         "proof_alt": "",
@@ -575,9 +583,7 @@
         "cta_arrow": false,
         "color_scheme": "scheme-1",
         "padding_top": 24,
-        "padding_bottom": 40,
-        "text_align": "center",
-        "frame_color": "#f3cfc6"
+        "padding_bottom": 40
       }
     },
     "howitworks": {
@@ -622,6 +628,8 @@
         "mobile_layout": "scroll",
         "image_ratio": "landscape",
         "card_style": "framed",
+        "frame_color": "",
+        "text_align": "left",
         "show_numbers": false,
         "footnote": "<p>A study indexed on <strong>PubMed, the US National Library of Medicine</strong> database found that dissolving hyaluronic acid microneedle patches delivered ingredients <strong>12.5 times more effectively</strong> beneath the skin than needleless patches.</p>",
         "proof_alt": "The passage on PubMed reporting 12.5 times superior drug permeability",
@@ -633,8 +641,7 @@
         "cta_arrow": false,
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "text_align": "left"
+        "padding_bottom": 40
       }
     },
     "pubmed": {
