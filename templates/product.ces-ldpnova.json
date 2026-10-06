@@ -486,6 +486,7 @@
         "icon_color": "#c0392b",
         "icon_frame": "disc",
         "icon_size": 7,
+        "image_scale": 70,
         "columns_mobile": 2,
         "columns_desktop": 3,
         "cta_label": "",
@@ -495,8 +496,7 @@
         "cta_width": "auto",
         "color_scheme": "scheme-1",
         "padding_top": 32,
-        "padding_bottom": 40,
-        "image_scale": 70
+        "padding_bottom": 40
       }
     },
     "mechanism": {
@@ -1170,6 +1170,7 @@
         "promise-3"
       ],
       "settings": {
+        "seal": "shopify://shop_images/1733673742-image_7_fae043e5-b564-4189-89be-488930137256.webp",
         "seal_alt": "30 day money back guarantee",
         "heading": "Try CEBEAM Patches Completely Risk Free For 30 Days",
         "heading_accent": "Completely Risk Free",
@@ -1180,7 +1181,7 @@
         "why_bg": "",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_footnote": "shield | 30 Day Money Back Guarantee truck | Free Shipping",
         "cta_width": "full",
         "cta_arrow": true,
         "color_scheme": "scheme-1",
