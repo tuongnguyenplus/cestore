@@ -303,8 +303,8 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "Days 1-7",
-            "heading": "7-Day Starter",
+            "time_label": "Weeks 1-3",
+            "heading": "21-Day Eye Reset",
             "bullets": "Antioxidant activity begins working at the cellular level\nBody starts adapting to daily intake\nMost people feel no dramatic change yet",
             "content": "<p>Two treatments in your first week as skin adjusts to the new delivery. Immediate hydration and de-puffing — the under-eye looks smoother and more awake on waking.</p>",
             "open": true
@@ -314,8 +314,8 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "Days 8-21",
-            "heading": "21-Day Eye Reset",
+            "time_label": "Weeks 4-6",
+            "heading": "6-Week Eye Rebuild",
             "bullets": "Antioxidant activity begins working at the cellular level\nBody starts adapting to daily intake\nMost people feel no dramatic change yet",
             "content": "<p>Peptides accumulate and the repair response ramps up. Fine lines soften and dark circles start to lift as circulation and collagen improve.</p>",
             "open": false
@@ -325,8 +325,8 @@
           "type": "timeline_step",
           "settings": {
             "state": "auto",
-            "time_label": "Days 22-45",
-            "heading": "45-Day Eye Rebuild",
+            "time_label": "Weeks 7-9",
+            "heading": "9-Week Complete Rebuild",
             "bullets": "Antioxidant activity begins working at the cellular level\nBody starts adapting to daily intake\nMost people feel no dramatic change yet",
             "content": "<p>New collagen and elastin rebuild firmness. Crepiness and hollowing visibly reduce for a lifted, rested, younger-looking eye area.</p>",
             "open": false
@@ -342,7 +342,7 @@
         "display": "open",
         "image_position": "start",
         "image_ratio": "3 / 4",
-        "heading": "Your 45-Day Eye Rebuild",
+        "heading": "Your 9-Week Complete Rebuild",
         "subheading": "Results compound with consistency — here's what to expect.",
         "fill_speed": 900,
         "meta_opacity": 100,
