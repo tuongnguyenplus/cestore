@@ -157,7 +157,7 @@
           "settings": {
             "number_label": "",
             "title": "Because these dissolve into the skin instead of sitting on it",
-            "text": "<p>The word microneedle puts people off, so here is exactly what happens. Each patch is lined with hundreds of cones too small to feel, made from the actives themselves rather than metal. They pass the outer layer, then dissolve through the night and release where the puffiness and shadows form.</p><p>Most women describe it as a patch that feels slightly firm for a minute. That is all.</p>",
+            "text": "<p>The word microneedle puts people off, so here is exactly what happens. Each patch is lined with 2,600 cones too small to feel, made from the actives themselves rather than metal. They pass the outer layer, then dissolve through the night and release where the puffiness and shadows form.</p><p>Most women describe it as a patch that feels slightly firm for a minute. That is all.</p>",
             "pull_quote": "",
             "pull_quote_author": "",
             "image": "shopify://shop_images/fnpnf.webp",
@@ -170,7 +170,7 @@
           "settings": {
             "number_label": "",
             "title": "Because the routine survives contact with real life",
-            "text": "<p>Fifteen seconds before bed. One fresh two-patch treatment, four nights a week through your reset, then two nights a week to hold it.</p><p>They stay where you put them through a night of turning over, and they lift off clean in the morning — no tacky film to wash off before your moisturiser, no half-peeled patch on the pillow. The routine you actually keep is the only one that does anything.</p>",
+            "text": "<p>Fifteen seconds before bed. One fresh two-patch treatment, twice a week — through your reset and to hold it.</p><p>They stay where you put them through a night of turning over, and they lift off clean in the morning — no tacky film to wash off before your moisturiser, no half-peeled patch on the pillow. The routine you actually keep is the only one that does anything.</p>",
             "pull_quote": "\"I love how well they stay in place. I can sleep with them on without them moving. The skin under my eyes feels firmer and the eye bags I've had for years are FINALLY starting to go\"",
             "pull_quote_author": "Melisa H.",
             "image": "shopify://shop_images/08114sdfsdfa85-922a-48a1-ae5f-2132c52bc52e.webp",
@@ -393,7 +393,7 @@
             "tier_1_cta": "Try the 7-Day Starter",
             "tier_1_meta": "4 treatments · $9.99/treatment",
             "tier_1_treatments": 4,
-            "tier_1_quote": "4 treatments over 1 week",
+            "tier_1_quote": "4 treatments over 2 weeks",
             "tier_1_role": "Try the routine before committing",
             "tier_1_price": "",
             "tier_1_unit": "",
@@ -415,7 +415,7 @@
             "tier_2_cta": "Start My 21-Day Reset",
             "tier_2_meta": "12 treatments · $5.41/treatment",
             "tier_2_treatments": 12,
-            "tier_2_quote": "4 treatments a week for 3 weeks",
+            "tier_2_quote": "2 treatments a week for 6 weeks",
             "tier_2_role": "Recommended full routine",
             "tier_2_price": "",
             "tier_2_unit": "",
@@ -439,7 +439,7 @@
             "tier_3_cta": "Start My 45-Day Rebuild",
             "tier_3_meta": "24 treatments · $4.16/treatment",
             "tier_3_treatments": 24,
-            "tier_3_quote": "4 treatments a week for 6 weeks",
+            "tier_3_quote": "2 treatments a week for 12 weeks",
             "tier_3_role": "Some concerns need a longer runway",
             "tier_3_price": "",
             "tier_3_unit": "",
@@ -637,7 +637,7 @@
           "settings": {
             "heading": "What’s Included?",
             "icon": "none",
-            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, four nights a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on four nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on four nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through 2,600 painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, twice a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on two nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on two nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
             "page": ""
           }
         },
@@ -682,7 +682,7 @@
           "settings": {
             "heading": "How do I apply them?",
             "icon": "none",
-            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment on four nights a week during your reset, then two treatment nights a week to maintain.</p>",
+            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment twice a week during your reset, and keep to the same two nights a week to maintain.</p>",
             "page": ""
           }
         },
@@ -1082,7 +1082,7 @@
       "settings": {
         "heading": "How to use it — the whole method takes about 15 seconds",
         "subheading": "",
-        "note": "During the 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain your routine with two treatment nights per week.",
+        "note": "During the 21-Day Eye Reset, use one fresh two-patch treatment twice per week. After completing the reset, keep to the same two treatment nights per week.",
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 48,
         "padding_bottom": 48
@@ -1630,7 +1630,7 @@
           "settings": {
             "group_label": "",
             "question": "How often should I use them?",
-            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
+            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment twice per week. After completing the reset, keep to the same two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
             "open": false
           }
         },

@@ -142,7 +142,7 @@
         "image_position": "below",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_footnote": "shield | 90 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_width": "full",
         "cta_arrow": true,
         "tick_color": "",
@@ -341,7 +341,7 @@
         "marquee_item-6": {
           "type": "marquee_item",
           "settings": {
-            "text": "30-Day Guarantee",
+            "text": "90-Day Guarantee",
             "icon": ""
           }
         },
@@ -510,10 +510,10 @@
         "eyebrow": "How it Works",
         "heading_accent": "",
         "heading": "Meet The Patch That Crosses The Wall",
-        "text": "<p>CEBEAM Patches don't sit on your skin. They dissolve into it.</p><p>Each patch carries hundreds of tiny cones made from hyaluronic acid and peptides. Press one under your eye before bed. The cones dissolve painlessly beneath the surface over several hours, reaching the deeper layer where eye bags actually form.</p><p>You sleep. They work. Peel them off in the morning.</p><p>That is it. No routine. No reapplying. No waiting for something to soak in that never will.</p>",
+        "text": "<p>CEBEAM Patches don't sit on your skin. They dissolve into it.</p><p>Each patch carries 2,600 tiny cones made from hyaluronic acid and peptides. Press one under your eye before bed. The cones dissolve painlessly beneath the surface over several hours, reaching the deeper layer where eye bags actually form.</p><p>You sleep. They work. Peel them off in the morning.</p><p>That is it. No routine. No reapplying. No waiting for something to soak in that never will.</p>",
         "cta_width": "full",
         "cta_arrow": true,
-        "cta_footnote": "shield | 30 Day Money Back Guarantee truck | Free Shipping",
+        "cta_footnote": "shield | 90 Day Money Back Guarantee truck | Free Shipping",
         "button_label": "Get Now & Save 70%",
         "button_link": "#shopify-section-main",
         "badge_speed": 40,
@@ -601,8 +601,8 @@
           "settings": {
             "image": "shopify://shop_images/6_1.webp",
             "alt": "",
-            "title": "Hundreds Of Tiny Dissolving Cones",
-            "text": "<p>Each CEBEAM patch carries hundreds of microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
+            "title": "2,600 Tiny Dissolving Cones",
+            "text": "<p>Each CEBEAM patch carries 2,600 microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
           }
         },
         "card-2": {
@@ -782,7 +782,7 @@
         "note": "<p>The overnight timing matters more than it sounds. When you sleep flat your face is horizontal for 6 to 8 hours. That is when fluid builds under your eyes, and when the tissue is most receptive. <strong>CEBEAM works during those exact hours</strong>, not in the morning when the damage is already done.</p>",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_footnote": "shield | 90 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-1",
@@ -865,7 +865,7 @@
         "show_quotes": false,
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_footnote": "shield | 90 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_arrow": true,
         "cta_width": "full",
         "color_scheme": "scheme-1",
@@ -998,7 +998,7 @@
         "image_ratio": "4/5",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "cta_footnote": "shield | 90 Day Money Back Guarantee\ntruck | Free Shipping",
         "cta_arrow": true,
         "cta_width": "full",
         "point_separator": "dot",
@@ -1171,7 +1171,7 @@
       ],
       "settings": {
         "seal": "shopify://shop_images/1733673742-image_7_fae043e5-b564-4189-89be-488930137256.webp",
-        "seal_alt": "30 day money back guarantee",
+        "seal_alt": "90 day money back guarantee",
         "heading": "Try CEBEAM Patches Completely Risk Free For 30 Days",
         "heading_accent": "Completely Risk Free",
         "subheading": "Use them. Sleep in them. Peel them off every morning for a full month.",
@@ -1181,7 +1181,7 @@
         "why_bg": "",
         "cta_label": "Get Now & Save 70%",
         "cta_url": "#shopify-section-main",
-        "cta_footnote": "shield | 30 Day Money Back Guarantee truck | Free Shipping",
+        "cta_footnote": "shield | 90 Day Money Back Guarantee truck | Free Shipping",
         "cta_width": "full",
         "cta_arrow": true,
         "color_scheme": "scheme-1",
@@ -1348,7 +1348,7 @@
             "tier_1_cta": "Try the 7-Day Starter",
             "tier_1_meta": "4 treatments · $9.99/treatment",
             "tier_1_treatments": 4,
-            "tier_1_quote": "4 treatments over 1 week",
+            "tier_1_quote": "4 treatments over 2 weeks",
             "tier_1_role": "Try the routine before committing",
             "tier_1_price": "",
             "tier_1_unit": "",
@@ -1370,7 +1370,7 @@
             "tier_2_cta": "Start My 21-Day Reset",
             "tier_2_meta": "12 treatments · $5.41/treatment",
             "tier_2_treatments": 12,
-            "tier_2_quote": "4 treatments a week for 3 weeks",
+            "tier_2_quote": "2 treatments a week for 6 weeks",
             "tier_2_role": "Recommended full routine",
             "tier_2_price": "",
             "tier_2_unit": "",
@@ -1394,7 +1394,7 @@
             "tier_3_cta": "Start My 45-Day Rebuild",
             "tier_3_meta": "24 treatments · $4.16/treatment",
             "tier_3_treatments": 24,
-            "tier_3_quote": "4 treatments a week for 6 weeks",
+            "tier_3_quote": "2 treatments a week for 12 weeks",
             "tier_3_role": "Some concerns need a longer runway",
             "tier_3_price": "",
             "tier_3_unit": "",
@@ -1592,7 +1592,7 @@
           "settings": {
             "heading": "What’s Included?",
             "icon": "none",
-            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, four nights a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on four nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on four nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through 2,600 painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, twice a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on two nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on two nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
             "page": ""
           }
         },
@@ -1637,7 +1637,7 @@
           "settings": {
             "heading": "How do I apply them?",
             "icon": "none",
-            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment on four nights a week during your reset, then two treatment nights a week to maintain.</p>",
+            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment twice a week during your reset, and keep to the same two nights a week to maintain.</p>",
             "page": ""
           }
         },
@@ -1798,7 +1798,7 @@
           "settings": {
             "group_label": "",
             "question": "How is this different from the gel eye patches I have already tried?",
-            "answer": "<p>Most eye patches are hydrogel. They sit on the surface of your skin and deliver moisture to the top layer. When you take them off, whatever they delivered evaporates or rubs off within a few hours.</p><p>CEBEAM Patches have hundreds of tiny dissolving cones that press painlessly into your skin when you apply them. The cones dissolve over several hours, carrying the ingredients beneath the surface. That is a physically different process from a gel patch sitting on top. It is not a better version of the same thing. It is a different way of delivering entirely.</p>",
+            "answer": "<p>Most eye patches are hydrogel. They sit on the surface of your skin and deliver moisture to the top layer. When you take them off, whatever they delivered evaporates or rubs off within a few hours.</p><p>CEBEAM Patches have 2,600 tiny dissolving cones that press painlessly into your skin when you apply them. The cones dissolve over several hours, carrying the ingredients beneath the surface. That is a physically different process from a gel patch sitting on top. It is not a better version of the same thing. It is a different way of delivering entirely.</p>",
             "open": false
           }
         },
@@ -1807,7 +1807,7 @@
           "settings": {
             "group_label": "",
             "question": "How quickly will I notice a difference in my eye bags?",
-            "answer": "<p>You will likely notice something different the first morning you peel the patches off — the area feels softer or less swollen. Visible improvement in the appearance of eye bags typically shows within 1 to 2 weeks of twice-weekly use, and builds over 4 weeks. If you don't see a difference within 30 days you can request a full refund.</p>",
+            "answer": "<p>You will likely notice something different the first morning you peel the patches off — the area feels softer or less swollen. Visible improvement in the appearance of eye bags typically shows within 1 to 2 weeks of twice-weekly use, and builds over 4 weeks. If you don't see a difference within 90 days you can request a full refund.</p>",
             "open": false
           }
         },
@@ -1881,12 +1881,12 @@
       "settings": {
         "image_position": "right",
         "heading": "What Tomorrow Morning Could Look Like",
-        "bullets": "<ul><li>Two minutes tonight. Nothing to do in the morning.</li><li>Twice a week, not twice a day.</li><li>30 days to decide, with a full refund if it isn't for you.</li></ul>",
+        "bullets": "<ul><li>Two minutes tonight. Nothing to do in the morning.</li><li>Twice a week, not twice a day.</li><li>90 days to decide, with a full refund if it isn't for you.</li></ul>",
         "cta_width": "full",
         "cta_arrow": true,
         "button_label": "Get Now & Save 70%",
         "button_link": "#shopify-section-main",
-        "button_footnote": "shield | 30 Day Money Back Guarantee\ntruck | Free Shipping",
+        "button_footnote": "shield | 90 Day Money Back Guarantee\ntruck | Free Shipping",
         "show_frame": false,
         "color_scheme": "scheme-2",
         "padding_top": 40,

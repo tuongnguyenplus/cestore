@@ -191,21 +191,21 @@
             "tier_1_supply": "For first-time users or newly noticeable puffiness",
             "tier_1_image": "shopify://shop_images/sta.png",
             "tier_1_badge": "",
-            "tier_1_inclusions": "patches | 4 treatments · $9.99/treatment |\nclock | 4 treatments over 1 week |\ndoc | Try the routine before committing |",
+            "tier_1_inclusions": "patches | 4 treatments · $9.99/treatment |\nclock | 4 treatments over 2 weeks |\ndoc | Try the routine before committing |",
             "tier_1_free_products": [],
             "tier_2_variant": "47849253994645",
             "tier_2_name": "21-Day Eye Reset™",
             "tier_2_supply": "For recurring puffiness & visible texture",
             "tier_2_image": "shopify://shop_images/reset.png",
             "tier_2_badge": "MOST POPULAR",
-            "tier_2_inclusions": "patches | 12 treatments · $5.41/treatment |\nclock | 4 treatments a week for 3 weeks |\nstar | Recommended full routine |",
+            "tier_2_inclusions": "patches | 12 treatments · $5.41/treatment |\nclock | 2 treatments a week for 6 weeks |\nstar | Recommended full routine |",
             "tier_2_free_products": [],
             "tier_3_variant": "47849254027413",
             "tier_3_name": "45-Day Eye Rebuild™",
             "tier_3_supply": "For stubborn puffiness & more noticeable texture",
             "tier_3_image": "shopify://shop_images/re.png",
             "tier_3_badge": "BEST VALUE",
-            "tier_3_inclusions": "patches | 24 treatments · $4.16/treatment |\nclock | 4 treatments a week for 6 weeks |\nleaf | Some concerns need a longer runway |",
+            "tier_3_inclusions": "patches | 24 treatments · $4.16/treatment |\nclock | 2 treatments a week for 12 weeks |\nleaf | Some concerns need a longer runway |",
             "tier_3_free_products": [
               "hydrolyzed-collagen-anti-wrinkle-cream"
             ],
@@ -322,7 +322,7 @@
           "settings": {
             "heading": "What’s Included?",
             "icon": "none",
-            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through hundreds of painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, four nights a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on four nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on four nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
+            "content": "<p>Cebeam dissolving microneedle patches sit under each eye and release concentrated actives through 2,600 painless micro-cones that dissolve overnight — reaching just below the skin barrier where creams cannot. One fresh two-patch treatment, twice a week during your reset, for visibly fresher, smoother, brighter under-eyes.</p><p><br/><strong>What’s Included</strong></p><p>Every treatment comes in one individually sealed pouch containing two microneedle patches—one patch for each under-eye.</p><h3>7-Day Starter</h3><p><strong>4 treatments · 4 sealed pouches · 8 patches total</strong></p><p>A one-week introduction to CEBEAM™. Use one treatment on four nights during your first week.</p><h3>21-Day Eye Reset™</h3><p><strong>12 treatments · 12 sealed pouches · 24 patches total</strong></p><p>The complete three-week reset: one treatment on two nights per week, for three weeks.</p><h3>45-Day Eye Rebuild™</h3><p><strong>24 treatments · 24 sealed pouches · 48 patches total</strong></p><p>An extended six-week routine for more persistent bags, dark circles and fine lines: one treatment on two nights per week, for six weeks.</p><p><strong>1 treatment = 1 sealed pouch = 2 patches (one for each eye), used once.</strong><br/><br/></p>",
             "page": ""
           }
         },
@@ -367,7 +367,7 @@
           "settings": {
             "heading": "How do I apply them?",
             "icon": "none",
-            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment on four nights a week during your reset, then two treatment nights a week to maintain.</p>",
+            "content": "<p>On clean, completely dry skin, place one patch under each eye and press firmly for 5–10 seconds. Leave on for at least 2 hours — overnight is best. Remove in the morning and gently press in any residue. Use one fresh treatment twice a week during your reset, and keep to the same two nights a week to maintain.</p>",
             "page": ""
           }
         },
@@ -652,7 +652,7 @@
           "settings": {
             "image": "shopify://shop_images/US_c42881f4-c502-4b96-b510-c1c4ee1bc96f.webp",
             "heading": "Dissolving Micro-Cones",
-            "text": "<p>Hundreds of painless micro-cones dissolve into the skin, delivering actives just below the surface — where creams can’t reach.</p>"
+            "text": "<p>2,600 painless micro-cones dissolve into the skin, delivering actives just below the surface — where creams can’t reach.</p>"
           }
         },
         "card2": {
@@ -986,7 +986,7 @@
       "settings": {
         "heading": "How to use it — the whole method takes about 15 seconds",
         "subheading": "",
-        "note": "During the 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain your routine with two treatment nights per week.",
+        "note": "During the 21-Day Eye Reset, use one fresh two-patch treatment twice per week. After completing the reset, keep to the same two treatment nights per week.",
         "color_scheme": "scheme-635f3633-af8d-4bb2-9cd0-d06ec600252e",
         "padding_top": 48,
         "padding_bottom": 48
@@ -1650,7 +1650,7 @@
           "settings": {
             "group_label": "",
             "question": "How often should I use them?",
-            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment four nights per week. After completing the reset, maintain with two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
+            "answer": "<p>During your 21-Day Eye Reset, use one fresh two-patch treatment twice per week. After completing the reset, keep to the same two treatment nights per week. Each treatment is single use — a new sealed pouch every time.</p>",
             "open": false
           }
         },
