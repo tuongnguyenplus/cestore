@@ -1537,7 +1537,7 @@
           "type": "ces_shipping_item",
           "settings": {
             "icon": "check-circle",
-            "text": "4 treatment nights a week, then 2 to maintain",
+            "text": "2 treatment nights a week, every week",
             "standalone": false,
             "align": "center"
           }
@@ -1610,7 +1610,7 @@
           "settings": {
             "heading": "Does it actually work?",
             "icon": "none",
-            "content": "<p>Hydration and a plumping effect are often visible from the very first uses. Deeper changes to dark circles, bags and fine lines typically build over 1–2 weeks of regular use. Consistency — four treatment nights a week through your reset — is what matters most.</p>",
+            "content": "<p>Hydration and a plumping effect are often visible from the very first uses. Deeper changes to dark circles, bags and fine lines typically build over 1–2 weeks of regular use. Consistency — two treatment nights a week — is what matters most.</p>",
             "page": ""
           }
         },
@@ -1715,7 +1715,7 @@
             "overlay_opacity": 0,
             "heading": "Why Trust Cebeam for Your Under-Eyes?",
             "icon": "check-circle",
-            "items": "Dissolving Microneedle Technology\n4 Treatment Nights / Week (Reset)\n2+ Hours or Overnight\nMade for Mature Under-Eyes\nNo Injections. No Metal Needles. No Downtime.\n90-Day Money-Back Guarantee",
+            "items": "Dissolving Microneedle Technology\n2 Treatment Nights / Week\n2+ Hours or Overnight\nMade for Mature Under-Eyes\nNo Injections. No Metal Needles. No Downtime.\n90-Day Money-Back Guarantee",
             "footnote": "Dermatologist-Tested, Clean Formula",
             "text_alignment": "center"
           }
