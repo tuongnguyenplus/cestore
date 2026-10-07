@@ -97,6 +97,10 @@
       // The labels come from the section so there is one copy of each, rather
       // than a second English set living in here.
       const L = data.dataset;
+      // A roster photo may be a full https URL or just a file name, which is
+      // hung off the folder set once on the section — 200-odd lines are much
+      // easier to write and read that way.
+      const photoBase = (L.photoBase || '').replace(/\/+$/, '');
       const rows = document.createDocumentFragment();
       const panels = document.createDocumentFragment();
 
@@ -112,6 +116,30 @@
       // The same arrow the blocks' rows and links carry. It is a constant in
       // here, never anything off a roster line, so insertAdjacentHTML is only
       // ever handed this string.
+      // Shopify's CDN resizes on request, so a 40px avatar need not be the
+      // full upload. Anything hosted elsewhere is left exactly as given.
+      const sized = (href, px) => {
+        try {
+          const u = new URL(href, window.location.href);
+          if (/(^|\.)shopify\.com$/i.test(u.hostname) || /\/s\/files\//.test(u.pathname)) {
+            u.searchParams.set('width', String(px));
+          }
+          return u.href;
+        } catch (err) {
+          return href;
+        }
+      };
+      const avatarImg = (href, px, cls, alt) => {
+        const img = document.createElement('img');
+        img.className = cls;
+        img.src = sized(href, px * 2);
+        img.alt = alt;
+        img.width = px;
+        img.height = px;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        return img;
+      };
       const ARROW =
         '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
         '<path d="M6 3h7v7M13 3 6.5 9.5M11 9v4H3V5h4" stroke="currentColor" stroke-width="1.4" ' +
@@ -123,8 +151,19 @@
         const f = line.split('|').map((x) => x.trim());
         const name = f[0];
         if (!name) return;
-        const [, place, site, expertise, npi, practice, joined, years] = f;
+        const [, place, site, expertise, npi, practice, joined, years, photo] = f;
         const href = safeHref(site);
+        let photoHref = '';
+        if (photo) {
+          if (/:/.test(photo)) {
+            // Anything carrying a scheme is judged as an address on its own.
+            photoHref = safeHref(photo);
+          } else if (photoBase) {
+            // Otherwise it is a file name, and only a file name: a colon or a
+            // leading // would make the join produce some other address.
+            photoHref = safeHref(photoBase + '/' + photo.replace(/^\/+/, ''));
+          }
+        }
 
         // Anything beyond the name is worth a panel of its own.
         const details = [
@@ -141,8 +180,13 @@
         const id = (root.id || 'ClinReviews') + '-roster-' + i;
 
         const li = el('li', 'ces-clinreviews__shared-item ces-clinreviews__shared-item--plain');
-        const avatar = el('span', 'ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder');
-        avatar.setAttribute('aria-hidden', 'true');
+        let avatar;
+        if (photoHref) {
+          avatar = avatarImg(photoHref, 40, 'ces-clinreviews__shared-avatar', name);
+        } else {
+          avatar = el('span', 'ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder');
+          avatar.setAttribute('aria-hidden', 'true');
+        }
         const info = el('span', 'ces-clinreviews__shared-info');
 
         let nameEl;
@@ -175,8 +219,13 @@
           panel.id = id;
           panel.hidden = true;
           const head = el('div', 'ces-clinreviews__profile-head');
-          const pa = el('span', 'ces-clinreviews__profile-avatar ces-clinreviews__avatar--placeholder');
-          pa.setAttribute('aria-hidden', 'true');
+          let pa;
+          if (photoHref) {
+            pa = avatarImg(photoHref, 72, 'ces-clinreviews__profile-avatar', name);
+          } else {
+            pa = el('span', 'ces-clinreviews__profile-avatar ces-clinreviews__avatar--placeholder');
+            pa.setAttribute('aria-hidden', 'true');
+          }
           head.appendChild(pa);
           head.appendChild(el('p', 'ces-clinreviews__profile-name', name));
           panel.appendChild(head);

@@ -288,6 +288,7 @@
                   data-label-joined="{{ roster_joined_label | escape }}"
                   data-label-years="Years in practice"
                   data-label-preview="{{ roster_preview_label | escape }}"
+                  data-photo-base="{{ section.settings.roster_photo_base | escape }}"
                 >{{ section.settings.roster | json | replace: '</', '<\/' }}</script>
                 <p class="ces-clinreviews__roster-note" data-ces-roster-empty hidden>
                   {{ section.settings.roster_fallback | default: 'The full list could not be loaded.' }}
@@ -518,7 +519,13 @@
       "type": "textarea",
       "id": "roster",
       "label": "The rest of the clinicians, one per line",
-      "info": "Name | Location | Website | Expertise | NPI | Practice type | Joined | Years in practice. Only the name is needed — leave a field empty to drop that row from the profile, and stop early if you have no more. \"Dr. Jane Doe, MD | Austin, TX\" is a valid line. These need no block; whatever you give them shows behind Preview."
+      "info": "Name | Location | Website | Expertise | NPI | Practice type | Joined | Years | Photo. Only the name is needed — leave a field empty to drop that row from the profile, and stop early if you have no more. \"Dr. Jane Doe, MD | Austin, TX\" is a valid line. These need no block; whatever you give them shows behind Preview."
+    },
+    {
+      "type": "text",
+      "id": "roster_photo_base",
+      "label": "Photo folder for those",
+      "info": "Upload the photos under Settings > Files, then paste the part of the address they share, up to and including the last slash. A line can then give just the file name (jane.jpg); a full https address in that field is used as-is and ignores this."
     },
     {
       "type": "text",
