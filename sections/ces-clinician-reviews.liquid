@@ -271,7 +271,24 @@
                   The replace escapes any "</" the typist left in, which would
                   otherwise end the script element early whatever JSON says.
                 {%- endcomment -%}
-                <script type="application/json" data-ces-roster>{{ section.settings.roster | json | replace: '</', '<\/' }}</script>
+                {%- liquid
+                  assign roster_joined_label = 'Joined ' | append: section.settings.modal_title | default: 'Joined FrontrowMD'
+                  assign roster_link_label = section.settings.roster_link_label | default: 'Go to clinician website'
+                  assign roster_preview_label = section.settings.roster_preview_label | default: 'Preview'
+                -%}
+                <script
+                  type="application/json"
+                  data-ces-roster
+                  data-label-website="Website"
+                  data-label-link="{{ roster_link_label | escape }}"
+                  data-label-expertise="Expertise"
+                  data-label-location="Location"
+                  data-label-npi="NPI Number"
+                  data-label-practice="Practice Type"
+                  data-label-joined="{{ roster_joined_label | escape }}"
+                  data-label-years="Years in practice"
+                  data-label-preview="{{ roster_preview_label | escape }}"
+                >{{ section.settings.roster | json | replace: '</', '<\/' }}</script>
                 <p class="ces-clinreviews__roster-note" data-ces-roster-empty hidden>
                   {{ section.settings.roster_fallback | default: 'The full list could not be loaded.' }}
                 </p>
@@ -501,7 +518,19 @@
       "type": "textarea",
       "id": "roster",
       "label": "The rest of the clinicians, one per line",
-      "info": "Name | Location | Link. Location and link are optional, so \"Dr. Jane Doe, MD | Austin, TX\" is enough. These are listed under the ones above but have no profile of their own, so they need no block."
+      "info": "Name | Location | Website | Expertise | NPI | Practice type | Joined | Years in practice. Only the name is needed — leave a field empty to drop that row from the profile, and stop early if you have no more. \"Dr. Jane Doe, MD | Austin, TX\" is a valid line. These need no block; whatever you give them shows behind Preview."
+    },
+    {
+      "type": "text",
+      "id": "roster_preview_label",
+      "label": "Preview button label for those",
+      "default": "Preview"
+    },
+    {
+      "type": "text",
+      "id": "roster_link_label",
+      "label": "Website link label for those",
+      "default": "Go to clinician website"
     },
     {
       "type": "text",

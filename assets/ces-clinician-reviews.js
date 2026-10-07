@@ -84,6 +84,7 @@
       rosterDone = true;
       const data = modal.querySelector('[data-ces-roster]');
       const list = modal.querySelector('.ces-clinreviews__shared-list');
+      const profiles = modal.querySelector('[data-ces-view="profile"]');
       const note = modal.querySelector('[data-ces-roster-empty]');
       if (!data || !list) return;
       let lines;
@@ -93,51 +94,120 @@
         if (note) note.hidden = false;
         return;
       }
-      const frag = document.createDocumentFragment();
-      lines.forEach((raw) => {
+      // The labels come from the section so there is one copy of each, rather
+      // than a second English set living in here.
+      const L = data.dataset;
+      const rows = document.createDocumentFragment();
+      const panels = document.createDocumentFragment();
+
+      const el = (tag, cls, text) => {
+        const n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text != null) n.textContent = text;
+        return n;
+      };
+      // Only http(s) is followed: a line comes from a theme setting, and
+      // javascript: in that slot would otherwise become a live link.
+      const safeHref = (h) => (h && /^https?:\/\//i.test(h) ? h : '');
+      // The same arrow the blocks' rows and links carry. It is a constant in
+      // here, never anything off a roster line, so insertAdjacentHTML is only
+      // ever handed this string.
+      const ARROW =
+        '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+        '<path d="M6 3h7v7M13 3 6.5 9.5M11 9v4H3V5h4" stroke="currentColor" stroke-width="1.4" ' +
+        'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      lines.forEach((raw, i) => {
         const line = raw.trim();
         if (!line) return;
-        // "Name | Location | Link", of which only the name is required.
-        const [name, place, href] = line.split('|').map((x) => x.trim());
+        const f = line.split('|').map((x) => x.trim());
+        const name = f[0];
         if (!name) return;
+        const [, place, site, expertise, npi, practice, joined, years] = f;
+        const href = safeHref(site);
 
-        const li = document.createElement('li');
-        li.className = 'ces-clinreviews__shared-item ces-clinreviews__shared-item--plain';
+        // Anything beyond the name is worth a panel of its own.
+        const details = [
+          [L.labelWebsite, href, true],
+          [L.labelExpertise, expertise],
+          [L.labelLocation, place],
+          [L.labelNpi, npi],
+          [L.labelPractice, practice],
+          [L.labelJoined, joined],
+          [L.labelYears, years],
+        ].filter((d) => d[1]);
+        // Keyed off the section element, which carries ClinReviews-<section id>,
+        // so two of these sections on one page cannot collide.
+        const id = (root.id || 'ClinReviews') + '-roster-' + i;
 
-        const avatar = document.createElement('span');
-        avatar.className = 'ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder';
+        const li = el('li', 'ces-clinreviews__shared-item ces-clinreviews__shared-item--plain');
+        const avatar = el('span', 'ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder');
         avatar.setAttribute('aria-hidden', 'true');
+        const info = el('span', 'ces-clinreviews__shared-info');
 
-        const info = document.createElement('span');
-        info.className = 'ces-clinreviews__shared-info';
-
-        // Only http(s) links are followed: a line comes from a theme setting,
-        // and javascript: in that slot would otherwise become a live link.
         let nameEl;
-        if (href && /^https?:\/\//i.test(href)) {
-          nameEl = document.createElement('a');
+        if (details.length) {
+          nameEl = el('button', 'ces-clinreviews__shared-name', name);
+          nameEl.type = 'button';
+          nameEl.addEventListener('click', () => open({ target: id }));
+        } else if (href) {
+          nameEl = el('a', 'ces-clinreviews__shared-name', name);
           nameEl.href = href;
           nameEl.target = '_blank';
           nameEl.rel = 'noopener nofollow';
         } else {
-          nameEl = document.createElement('span');
+          nameEl = el('span', 'ces-clinreviews__shared-name', name);
         }
-        nameEl.className = 'ces-clinreviews__shared-name';
-        nameEl.textContent = name;
         info.appendChild(nameEl);
-
-        if (place) {
-          const loc = document.createElement('span');
-          loc.className = 'ces-clinreviews__shared-loc';
-          loc.textContent = place;
-          info.appendChild(loc);
-        }
+        if (place) info.appendChild(el('span', 'ces-clinreviews__shared-loc', place));
 
         li.appendChild(avatar);
         li.appendChild(info);
-        frag.appendChild(li);
+
+        if (details.length) {
+          const prev = el('button', 'ces-clinreviews__preview', L.labelPreview || 'Preview');
+          prev.type = 'button';
+          prev.insertAdjacentHTML('beforeend', ARROW);
+          prev.addEventListener('click', () => open({ target: id }));
+          li.appendChild(prev);
+
+          const panel = el('div', 'ces-clinreviews__profile');
+          panel.id = id;
+          panel.hidden = true;
+          const head = el('div', 'ces-clinreviews__profile-head');
+          const pa = el('span', 'ces-clinreviews__profile-avatar ces-clinreviews__avatar--placeholder');
+          pa.setAttribute('aria-hidden', 'true');
+          head.appendChild(pa);
+          head.appendChild(el('p', 'ces-clinreviews__profile-name', name));
+          panel.appendChild(head);
+
+          const dl = el('dl', 'ces-clinreviews__info');
+          details.forEach(([label, value, isLink]) => {
+            const row = el('div', 'ces-clinreviews__info-row');
+            row.appendChild(el('dt', null, label));
+            const dd = el('dd');
+            if (isLink) {
+              const a = el('a', 'ces-clinreviews__info-link', L.labelLink || value);
+              a.href = value;
+              a.target = '_blank';
+              a.rel = 'noopener nofollow';
+              a.insertAdjacentHTML('beforeend', ARROW);
+              dd.appendChild(a);
+            } else {
+              dd.textContent = value;
+            }
+            row.appendChild(dd);
+            dl.appendChild(row);
+          });
+          panel.appendChild(dl);
+          panels.appendChild(panel);
+        }
+
+        rows.appendChild(li);
       });
-      list.appendChild(frag);
+
+      list.appendChild(rows);
+      if (profiles) profiles.appendChild(panels);
     };
 
     // opts: {view:'main'|'reviews'} or {target:'ClinProf-..'} or a target string
