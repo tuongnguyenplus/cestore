@@ -259,6 +259,23 @@
                   </li>
                 {%- endfor -%}
               </ul>
+              {%- if section.settings.roster != blank -%}
+                {%- comment -%}
+                  The rest of the roster. It is handed over as data and the
+                  rows are built when the modal is first opened, rather than
+                  written into the page: a couple of hundred names is a few
+                  hundred <li> elements that every shopper would otherwise
+                  download and parse whether or not they ever open this.
+                {%- endcomment -%}
+                {%- comment -%}
+                  The replace escapes any "</" the typist left in, which would
+                  otherwise end the script element early whatever JSON says.
+                {%- endcomment -%}
+                <script type="application/json" data-ces-roster>{{ section.settings.roster | json | replace: '</', '<\/' }}</script>
+                <p class="ces-clinreviews__roster-note" data-ces-roster-empty hidden>
+                  {{ section.settings.roster_fallback | default: 'The full list could not be loaded.' }}
+                </p>
+              {%- endif -%}
             </div>
           </div>
 
@@ -479,6 +496,19 @@
       "id": "clinicians_intro",
       "label": "Clinicians list intro",
       "default": "<p>For the complete list, click here. Numbers below indicate how many clinicians collaborate to share products on a single page at a medical practice.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "roster",
+      "label": "The rest of the clinicians, one per line",
+      "info": "Name | Location | Link. Location and link are optional, so \"Dr. Jane Doe, MD | Austin, TX\" is enough. These are listed under the ones above but have no profile of their own, so they need no block."
+    },
+    {
+      "type": "text",
+      "id": "roster_fallback",
+      "label": "If that list cannot be shown",
+      "info": "Shown in its place if the browser cannot read it.",
+      "default": "The full list could not be loaded."
     },
     {
       "type": "richtext",

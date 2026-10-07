@@ -71,9 +71,79 @@
       if (body) body.scrollTop = 0;
     };
 
+    /*
+     * The roster — every clinician beyond the few with a full profile — is
+     * handed over as JSON and turned into rows the first time the modal is
+     * opened. Written into the page instead, a couple of hundred names would
+     * be a few hundred elements that every shopper downloads and parses
+     * whether or not they ever open this.
+     */
+    let rosterDone = false;
+    const buildRoster = () => {
+      if (rosterDone) return;
+      rosterDone = true;
+      const data = modal.querySelector('[data-ces-roster]');
+      const list = modal.querySelector('.ces-clinreviews__shared-list');
+      const note = modal.querySelector('[data-ces-roster-empty]');
+      if (!data || !list) return;
+      let lines;
+      try {
+        lines = String(JSON.parse(data.textContent) || '').split('\n');
+      } catch (err) {
+        if (note) note.hidden = false;
+        return;
+      }
+      const frag = document.createDocumentFragment();
+      lines.forEach((raw) => {
+        const line = raw.trim();
+        if (!line) return;
+        // "Name | Location | Link", of which only the name is required.
+        const [name, place, href] = line.split('|').map((x) => x.trim());
+        if (!name) return;
+
+        const li = document.createElement('li');
+        li.className = 'ces-clinreviews__shared-item ces-clinreviews__shared-item--plain';
+
+        const avatar = document.createElement('span');
+        avatar.className = 'ces-clinreviews__shared-avatar ces-clinreviews__avatar--placeholder';
+        avatar.setAttribute('aria-hidden', 'true');
+
+        const info = document.createElement('span');
+        info.className = 'ces-clinreviews__shared-info';
+
+        // Only http(s) links are followed: a line comes from a theme setting,
+        // and javascript: in that slot would otherwise become a live link.
+        let nameEl;
+        if (href && /^https?:\/\//i.test(href)) {
+          nameEl = document.createElement('a');
+          nameEl.href = href;
+          nameEl.target = '_blank';
+          nameEl.rel = 'noopener nofollow';
+        } else {
+          nameEl = document.createElement('span');
+        }
+        nameEl.className = 'ces-clinreviews__shared-name';
+        nameEl.textContent = name;
+        info.appendChild(nameEl);
+
+        if (place) {
+          const loc = document.createElement('span');
+          loc.className = 'ces-clinreviews__shared-loc';
+          loc.textContent = place;
+          info.appendChild(loc);
+        }
+
+        li.appendChild(avatar);
+        li.appendChild(info);
+        frag.appendChild(li);
+      });
+      list.appendChild(frag);
+    };
+
     // opts: {view:'main'|'reviews'} or {target:'ClinProf-..'} or a target string
     const open = (opts) => {
       lastFocus = document.activeElement;
+      buildRoster();
       modal.hidden = false;
       document.body.classList.add('overflow-hidden');
       if (typeof opts === 'string') {

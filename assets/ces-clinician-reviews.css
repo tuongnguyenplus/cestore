@@ -831,3 +831,21 @@ clinician-reviews { display: block; }
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
+
+/* A roster row has no profile behind it, so its name is not a button: it is
+   either plain text or a link out to the clinician's own page. */
+.ces-clinreviews__shared-item--plain .ces-clinreviews__shared-name {
+  cursor: auto;
+  text-decoration: none;
+}
+
+.ces-clinreviews__shared-item--plain a.ces-clinreviews__shared-name {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.ces-clinreviews__roster-note {
+  margin: 1.6rem 0 0;
+  font-size: 1.4rem;
+  color: #757575;
+}
