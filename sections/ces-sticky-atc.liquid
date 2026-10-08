@@ -59,6 +59,13 @@
       assign sticky_inner = 'variant-selects, .product-form__input'
     when 'rating'
       assign sticky_inner = '.ces-main-product__rating'
+    when 'clinicians'
+      comment
+        The card in the info column first; the floating badge above the gallery
+        only if there is no card, since that one sits at the top of the section
+        anyway and scrolling to it is the same as not choosing a block at all.
+      endcomment
+      assign sticky_inner = '.ces-clinicians--card, .ces-clinicians'
     when 'custom'
       assign sticky_inner = section.settings.target_selector
   endcase
@@ -201,7 +208,7 @@
       "type": "select",
       "id": "target_block",
       "label": "Scroll to which part of it",
-      "info": "The top of the section unless you pick a block. If the chosen block is not in the section, the button lands at the top and says so in the browser console.",
+      "info": "The top of the section unless you pick a block. A choice that names more than one thing takes them in order, so the first one present wins. If none is in the section, the button lands at the top and says so in the browser console.",
       "options": [
         { "value": "none", "label": "Top of the section" },
         { "value": "bundle", "label": "Bundle selector" },
@@ -211,6 +218,7 @@
         { "value": "price", "label": "Price" },
         { "value": "variant", "label": "Variant picker" },
         { "value": "rating", "label": "Rating bar" },
+        { "value": "clinicians", "label": "Clinicians' choice" },
         { "value": "custom", "label": "Custom selector below" }
       ],
       "default": "none"

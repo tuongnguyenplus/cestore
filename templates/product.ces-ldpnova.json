@@ -2052,6 +2052,7 @@
       "type": "ces-sticky-atc",
       "settings": {
         "target_id": "shopify-section-main",
+        "target_block": "clinicians",
         "position": "bottom",
         "reveal_id": "shopify-section-hero",
         "button_label": "Start My 6-Week Rebuild",

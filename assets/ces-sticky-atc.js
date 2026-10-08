@@ -26,11 +26,20 @@ if (!customElements.get('ces-sticky-atc')) {
       // for the sticky header exactly as it does everywhere else.
       const inner = this.dataset.targetInner;
       if (this.section && inner) {
+        // Tried one at a time rather than as one selector list, so the order
+        // written in the setting is the order of preference. A list hands back
+        // whichever match comes first in the page, which for "the card, or the
+        // badge if there is no card" is the wrong way round.
         let block = null;
-        try {
-          block = this.section.querySelector(inner);
-        } catch (e) {
-          block = null;
+        const parts = inner.split(',');
+        for (let i = 0; i < parts.length && !block; i += 1) {
+          const selector = parts[i].trim();
+          if (!selector) continue;
+          try {
+            block = this.section.querySelector(selector);
+          } catch (e) {
+            block = null;
+          }
         }
         if (block) {
           if (!block.id) block.id = 'ces-sticky-atc-target';
