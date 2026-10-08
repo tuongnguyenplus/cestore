@@ -37,6 +37,7 @@ if (!customElements.get('ces-sticky-atc')) {
         document.querySelector('#MainContent .shopify-section, main .shopify-section, .shopify-section');
 
       this.initialised = true;
+      this.watchEditor();
 
       if (revealTarget && typeof IntersectionObserver === 'function') {
         this.observer = new IntersectionObserver(
@@ -57,6 +58,27 @@ if (!customElements.get('ces-sticky-atc')) {
       this.onScroll = () => this.toggle(window.scrollY > window.innerHeight * 0.9);
       window.addEventListener('scroll', this.onScroll, { passive: true });
       this.onScroll();
+    }
+
+    /*
+     * In the theme editor the bar is pinned and starts hidden, so a merchant
+     * who clicks it in the sidebar is shown the page with nothing on it and
+     * reasonably concludes it is broken. Shopify announces that click, so the
+     * bar answers it: visible while it is the section being edited, back to
+     * its scroll rule as soon as something else is.
+     */
+    watchEditor() {
+      if (!window.Shopify || !window.Shopify.designMode) return;
+
+      const section = this.closest('.shopify-section');
+      if (!section) return;
+
+      document.addEventListener('shopify:section:select', (event) => {
+        if (event.target === section) this.toggle(true);
+      });
+      document.addEventListener('shopify:section:deselect', (event) => {
+        if (event.target === section) this.toggle(false);
+      });
     }
 
     disconnectedCallback() {

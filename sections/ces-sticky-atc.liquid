@@ -22,6 +22,12 @@
   if section.settings.show_info == false
     assign sticky_info = false
   endif
+  comment
+    The rail renders nothing without a label, which with the product hidden
+    would leave the bar as an empty strip across the foot of the page. A
+    merchant who clears the field wants a different word, not no button.
+  endcomment
+  assign sticky_label = section.settings.button_label | default: 'Order Now'
 -%}
 
 {%- if product != blank -%}
@@ -114,14 +120,14 @@
           not hide this one too.
         {%- endcomment -%}
         {%- render 'ces-cta-rail',
-          label: section.settings.button_label,
+          label: sticky_label,
           url: sticky_url,
           width: 'full',
           show: true
         -%}
       {%- else -%}
         <a class="ces-button ces-sticky-atc__button" href="{{ sticky_url }}">
-          {{ section.settings.button_label }}
+          {{ sticky_label }}
         </a>
       {%- endif -%}
     </div>
