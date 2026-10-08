@@ -16,11 +16,14 @@
   .ces-gt__grid{display:grid;grid-template-columns:1fr;gap:1.6rem;margin-top:3.2rem}
   .ces-gt__card{padding:2rem;border-radius:1.6rem;border:.1rem solid var(--ces-border-color);
     background:var(--ces-card-bg,var(--ces-surface))}
-  .ces-gt__icon{display:inline-flex;align-items:center;justify-content:center;
-    width:4.4rem;height:4.4rem;margin-bottom:1.6rem;border-radius:1.2rem;
+  /* The mark and the promise are one line: stacked, each card spent a whole
+     row on a 44px square before it said anything. */
+  .ces-gt__card-head{display:flex;align-items:center;gap:1.2rem;margin:0 0 1rem}
+  .ces-gt__icon{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+    width:4rem;height:4rem;border-radius:1.1rem;
     background:var(--ces-accent);color:rgb(var(--color-background))}
-  .ces-gt__icon .ces-icon{width:2.2rem;height:2.2rem}
-  .ces-gt__card-title{margin:0 0 .8rem;font-size:1.75rem;font-weight:700;line-height:1.35}
+  .ces-gt__icon .ces-icon{width:2rem;height:2rem}
+  .ces-gt__card-title{margin:0;font-size:1.75rem;font-weight:700;line-height:1.3}
   .ces-gt__card-text{margin:0;font-size:1.5rem;line-height:1.55;color:var(--ces-muted)}
   /* An aside answering the obvious question, marked by a rule down its edge
      rather than boxed again. */
@@ -86,12 +89,14 @@
       <div class="ces-gt__grid">
         {%- for block in gt_cards -%}
           <div class="ces-gt__card" {{ block.shopify_attributes }}>
-            <span class="ces-gt__icon" aria-hidden="true">
-              {% render 'ces-icon', icon: block.settings.icon %}
-            </span>
-            {%- if block.settings.title != blank -%}
-              <h3 class="ces-gt__card-title">{{ block.settings.title }}</h3>
-            {%- endif -%}
+            <div class="ces-gt__card-head">
+              <span class="ces-gt__icon" aria-hidden="true">
+                {% render 'ces-icon', icon: block.settings.icon %}
+              </span>
+              {%- if block.settings.title != blank -%}
+                <h3 class="ces-gt__card-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+            </div>
             {%- if block.settings.text != blank -%}
               <p class="ces-gt__card-text">{{ block.settings.text }}</p>
             {%- endif -%}
