@@ -137,3 +137,24 @@
   object-fit: cover;
   display: block;
 }
+
+/*
+ * An unselected tier shows what comes free, collapsed: the thumbnails and the
+ * value, so the three offers can be compared without clicking through them.
+ * What it does not show is the opened-out list, which belongs to the tier the
+ * shopper has actually chosen.
+ */
+.ces-b2__tier:not(.is-selected) .ces-b2__gift-thumbs { display: flex; }
+.ces-b2__tier:not(.is-selected) .ces-b2__gift-panel,
+.ces-b2__tier:not(.is-selected) .ces-b2__gift-chev,
+.ces-b2__tier:not(.is-selected) .ces-b2__gift-more { display: none; }
+
+/*
+ * The toggle is a <button> inside the tier's <label> and stops the click from
+ * bubbling, so on an unselected tier it would swallow the tap that was meant
+ * to choose that tier. Letting the click through makes the whole card select.
+ */
+.ces-b2__tier:not(.is-selected) .ces-b2__gift-bar {
+  pointer-events: none;
+  cursor: default;
+}

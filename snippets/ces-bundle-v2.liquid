@@ -278,92 +278,98 @@
               </span>
             {%- endif -%}
 
-            {%- if block.settings[gtkey] != blank and ces_free_list.size > 0 or block.settings[gtkey] != blank and ces_extra_rows.size > 0 -%}
-              <span class="ces-b2__gift is-open" data-ces-gift>
-                <button type="button" class="ces-b2__gift-bar" aria-expanded="true" data-ces-gift-toggle>
-                  <span class="ces-b2__gift-thumbs" aria-hidden="true">
-                    {%- for fp in ces_free_list limit: 3 -%}
-                      <span class="ces-b2__thumb">
-                        {%- if fp.featured_image -%}
-                          <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="" loading="lazy">
-                        {%- endif -%}
-                        {%- if block.settings.show_gift_prices -%}
-                          <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
-                        {%- endif -%}
-                      </span>
-                    {%- endfor -%}
-                    {%- for xrow in ces_extra_rows -%}
-                      {%- assign xparts = xrow | split: '|' -%}
-                      {%- assign xicon = xparts[0] | strip | downcase -%}
-                      {%- if xparts[1] != blank -%}
-                        <span class="ces-b2__thumb">
-                          <span class="ces-b2__thumb-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
-                          {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
-                          {%- if xcents > 0 and block.settings.show_gift_prices -%}
-                            <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
-                          {%- endif -%}
-                        </span>
-                      {%- endif -%}
-                    {%- endfor -%}
-                  </span>
-                  <span class="ces-b2__gift-text">
-                    <span class="ces-b2__gift-title">{{ block.settings[gtkey] }}</span>
-                    {%- if ces_gift_sub != blank -%}<span class="ces-b2__gift-sub">{{ ces_gift_sub }}</span>{%- endif -%}
-                  </span>
-                  <svg class="ces-b2__gift-chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="m5 12.5 5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  {%- comment -%}
-                    Always rendered: with no label the chevron alone still shows
-                    the bar opens, and without it the block looks inert.
-                  {%- endcomment -%}
-                  <span class="ces-b2__gift-more">
-                    {%- if block.settings.gift_more_label != blank -%}
-                      <span>{{ block.settings.gift_more_label }}</span>
-                    {%- endif -%}
-                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                </button>
-
-                <span class="ces-b2__gift-panel" data-ces-gift-panel>
-                  {%- if block.settings[glkey] != blank -%}
-                    <span class="ces-b2__gift-label">{{ block.settings[glkey] }}</span>
-                  {%- endif -%}
-                  <span class="ces-b2__gift-grid">
-                    {%- for fp in ces_free_list limit: 3 -%}
-                      <span class="ces-b2__gift-item">
-                        {%- if fp.featured_image -%}
-                          <img src="{{ fp.featured_image | image_url: width: 300 }}" alt="{{ fp.title | escape }}" loading="lazy">
-                        {%- endif -%}
-                        {%- if block.settings.show_gift_prices -%}
-                          <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
-                        {%- endif -%}
-                        <span class="ces-b2__gift-name">{{ fp.title }}</span>
-                      </span>
-                    {%- endfor -%}
-                    {%- for xrow in ces_extra_rows -%}
-                      {%- assign xparts = xrow | split: '|' -%}
-                      {%- assign xicon = xparts[0] | strip | downcase -%}
-                      {%- if xparts[1] != blank -%}
-                        <span class="ces-b2__gift-item">
-                          <span class="ces-b2__gift-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
-                          {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
-                          {%- if xcents > 0 and block.settings.show_gift_prices -%}
-                            <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
-                          {%- endif -%}
-                          <span class="ces-b2__gift-name">{{ xparts[1] | strip }}</span>
-                        </span>
-                      {%- endif -%}
-                    {%- endfor -%}
-                  </span>
-                </span>
-              </span>
-            {%- endif -%}
 
             {%- if block.settings[ftkey] != blank -%}<span class="ces-b2__foot">{{ block.settings[ftkey] }}</span>{%- endif -%}
           </span>
+          {%- comment -%}
+            The gift sits outside the detail block, which is hidden on a tier the
+            shopper has not chosen. What comes free is part of the offer being
+            compared, not a detail of the one already picked, so every tier shows
+            it; only the opened-out list belongs to the chosen one.
+          {%- endcomment -%}
+          {%- if block.settings[gtkey] != blank and ces_free_list.size > 0 or block.settings[gtkey] != blank and ces_extra_rows.size > 0 -%}
+            <span class="ces-b2__gift is-open" data-ces-gift>
+              <button type="button" class="ces-b2__gift-bar" aria-expanded="true" data-ces-gift-toggle>
+                <span class="ces-b2__gift-thumbs" aria-hidden="true">
+                  {%- for fp in ces_free_list limit: 3 -%}
+                    <span class="ces-b2__thumb">
+                      {%- if fp.featured_image -%}
+                        <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="" loading="lazy">
+                      {%- endif -%}
+                      {%- if block.settings.show_gift_prices -%}
+                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                      {%- endif -%}
+                    </span>
+                  {%- endfor -%}
+                  {%- for xrow in ces_extra_rows -%}
+                    {%- assign xparts = xrow | split: '|' -%}
+                    {%- assign xicon = xparts[0] | strip | downcase -%}
+                    {%- if xparts[1] != blank -%}
+                      <span class="ces-b2__thumb">
+                        <span class="ces-b2__thumb-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
+                        {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
+                        {%- if xcents > 0 and block.settings.show_gift_prices -%}
+                          <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
+                        {%- endif -%}
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </span>
+                <span class="ces-b2__gift-text">
+                  <span class="ces-b2__gift-title">{{ block.settings[gtkey] }}</span>
+                  {%- if ces_gift_sub != blank -%}<span class="ces-b2__gift-sub">{{ ces_gift_sub }}</span>{%- endif -%}
+                </span>
+                <svg class="ces-b2__gift-chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="m5 12.5 5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {%- comment -%}
+                  Always rendered: with no label the chevron alone still shows
+                  the bar opens, and without it the block looks inert.
+                {%- endcomment -%}
+                <span class="ces-b2__gift-more">
+                  {%- if block.settings.gift_more_label != blank -%}
+                    <span>{{ block.settings.gift_more_label }}</span>
+                  {%- endif -%}
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+
+              <span class="ces-b2__gift-panel" data-ces-gift-panel>
+                {%- if block.settings[glkey] != blank -%}
+                  <span class="ces-b2__gift-label">{{ block.settings[glkey] }}</span>
+                {%- endif -%}
+                <span class="ces-b2__gift-grid">
+                  {%- for fp in ces_free_list limit: 3 -%}
+                    <span class="ces-b2__gift-item">
+                      {%- if fp.featured_image -%}
+                        <img src="{{ fp.featured_image | image_url: width: 300 }}" alt="{{ fp.title | escape }}" loading="lazy">
+                      {%- endif -%}
+                      {%- if block.settings.show_gift_prices -%}
+                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                      {%- endif -%}
+                      <span class="ces-b2__gift-name">{{ fp.title }}</span>
+                    </span>
+                  {%- endfor -%}
+                  {%- for xrow in ces_extra_rows -%}
+                    {%- assign xparts = xrow | split: '|' -%}
+                    {%- assign xicon = xparts[0] | strip | downcase -%}
+                    {%- if xparts[1] != blank -%}
+                      <span class="ces-b2__gift-item">
+                        <span class="ces-b2__gift-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
+                        {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
+                        {%- if xcents > 0 and block.settings.show_gift_prices -%}
+                          <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
+                        {%- endif -%}
+                        <span class="ces-b2__gift-name">{{ xparts[1] | strip }}</span>
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </span>
+              </span>
+            </span>
+          {%- endif -%}
         </label>
       {%- endif -%}
     {%- endfor -%}
