@@ -20,26 +20,48 @@ if (!customElements.get('ces-sticky-atc')) {
       this.target = targetId ? document.getElementById(targetId) : null;
 
       const revealId = this.dataset.reveal;
-      const revealTarget = (revealId && document.getElementById(revealId)) || this.target;
+      let revealTarget = revealId ? document.getElementById(revealId) : null;
 
-      if (!revealTarget || typeof IntersectionObserver !== 'function') return;
+      if (revealId && !revealTarget) {
+        // An id typed into a theme setting is the one thing here that can be
+        // wrong, and the bar used to answer that by doing nothing at all.
+        console.warn(
+          '[ces] Sticky bar: no element with id "' + revealId + '". Falling back to the first section.'
+        );
+      }
+
+      // Then the buy box it scrolls to, then whatever the page opens with.
+      revealTarget =
+        revealTarget ||
+        this.target ||
+        document.querySelector('#MainContent .shopify-section, main .shopify-section, .shopify-section');
 
       this.initialised = true;
 
-      this.observer = new IntersectionObserver(
-        ([entry]) => {
-          // Show once the trigger has been scrolled up out of the viewport, not
-          // while it is still below the fold on the way down.
-          const scrolledPast = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-          this.toggle(scrolledPast);
-        },
-        { threshold: 0 }
-      );
-      this.observer.observe(revealTarget);
+      if (revealTarget && typeof IntersectionObserver === 'function') {
+        this.observer = new IntersectionObserver(
+          ([entry]) => {
+            // Show once the trigger has been scrolled up out of the viewport,
+            // not while it is still below the fold on the way down.
+            const scrolledPast = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            this.toggle(scrolledPast);
+          },
+          { threshold: 0 }
+        );
+        this.observer.observe(revealTarget);
+        return;
+      }
+
+      // Nothing to watch: show the bar once a screenful has been scrolled.
+      // A bar that never appears is worse than one that appears a little early.
+      this.onScroll = () => this.toggle(window.scrollY > window.innerHeight * 0.9);
+      window.addEventListener('scroll', this.onScroll, { passive: true });
+      this.onScroll();
     }
 
     disconnectedCallback() {
       if (this.observer) this.observer.disconnect();
+      if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
     }
 
     toggle(show) {

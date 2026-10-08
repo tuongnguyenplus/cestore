@@ -197,12 +197,20 @@
 
       {%- capture edh_cta -%}
         <div class="ces-edhero__cta">
+          {%- comment -%}
+            The hero's button is exempt from the theme switch that hides the
+            in-page buttons. The sticky bar only appears once the hero has
+            scrolled past, so hiding this one would leave the first screen —
+            the only one some visitors see — with nothing to click. Clearing
+            its label still removes it.
+          {%- endcomment -%}
           {% render 'ces-cta-rail',
              label: section.settings.cta_label,
              url: section.settings.cta_url,
              footnote: section.settings.cta_footnote,
              width: section.settings.cta_width,
              arrow: section.settings.cta_arrow,
+             show: true,
              id: section.id %}
         </div>
       {%- endcapture -%}
