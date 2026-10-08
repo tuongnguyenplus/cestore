@@ -20,6 +20,27 @@
   transform: translateY(0);
 }
 
+/*
+ * Pinned to the top instead. It slides down rather than up, so the hidden
+ * state is above the viewport, and the border and shadow move to the edge the
+ * page is actually on. The z-index clears a sticky in-page nav, which sits at
+ * 4 — a bar the shopper cannot see under is worth less than the nav it hides.
+ */
+.ces-sticky-atc--top {
+  top: 0;
+  bottom: auto;
+  z-index: 5;
+  padding: calc(1rem + env(safe-area-inset-top)) 1.5rem 1rem;
+  border-top: 0;
+  border-bottom: 0.1rem solid var(--ces-border-color);
+  box-shadow: 0 0.4rem 1.6rem rgba(var(--color-shadow), 0.12);
+  transform: translateY(-100%);
+}
+
+.ces-sticky-atc--top.ces-sticky-atc--visible {
+  transform: translateY(0);
+}
+
 .ces-sticky-atc__inner {
   display: flex;
   flex-direction: row;

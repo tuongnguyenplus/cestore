@@ -1622,6 +1622,17 @@
         "label": "Gift icon",
         "info": "The icon that opens the line: gift, bottle, drop, leaf, sparkle. \"none\" leaves it off.",
         "default": "gift"
+      },
+      {
+        "type": "header",
+        "content": "In-page call-to-action buttons"
+      },
+      {
+        "type": "checkbox",
+        "id": "ces_hide_inline_ctas",
+        "label": "Hide them and use only the sticky bar",
+        "info": "The buttons down the page stop rendering entirely. The sticky add-to-cart bar, which appears once the hero has scrolled past, then carries the only call to action.",
+        "default": false
       }
     ]
   }

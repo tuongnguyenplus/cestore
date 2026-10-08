@@ -16,7 +16,7 @@
     and, with a bundle selector, the only correct behaviour.
   {%- endcomment -%}
   <ces-sticky-atc
-    class="ces-section ces-sticky-atc color-{{ section.settings.color_scheme }} gradient"
+    class="ces-section ces-sticky-atc ces-sticky-atc--{{ section.settings.position | default: 'bottom' }} color-{{ section.settings.color_scheme }} gradient"
     data-target="{{ target }}"
     {% if section.settings.reveal_id != blank %}data-reveal="{{ section.settings.reveal_id | handleize }}"{% endif %}
     {% if section.settings.hide_on_desktop %}
@@ -114,6 +114,17 @@
       "label": "Scroll target element ID",
       "info": "Where the button scrolls to. Usually the CES App slot's ID.",
       "default": "ces-app-price-slot"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Pin the bar to",
+      "info": "Pinned to the top it covers a sticky in-page nav while it is showing.",
+      "options": [
+        { "value": "bottom", "label": "Bottom of the screen" },
+        { "value": "top", "label": "Top of the screen" }
+      ],
+      "default": "bottom"
     },
     {
       "type": "text",

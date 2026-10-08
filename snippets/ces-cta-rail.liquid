@@ -17,6 +17,8 @@
       page's primary action.
   - align: {String} 'center' (default), 'left' or 'right'.
   - arrow: {Boolean} Adds an arrow after the label.
+  - show: {Boolean} Overrides the theme switch that hides every in-page rail,
+      for a rail that should appear either way.
   - gift: {String} A second line inside the button, for a gift that comes with
       every order. Falls back to the theme setting so one edit changes every
       rail on the page; pass 'none' to leave it off a particular rail.
@@ -32,7 +34,22 @@
      id: section.id %}
 {% endcomment %}
 
-{%- if label != blank -%}
+{%- liquid
+  comment
+    A page can be set to carry its call to action only in the sticky bar. The
+    rails then render nothing at all rather than being hidden with CSS, so
+    they cost no markup and leave no gap where they used to sit. A single rail
+    can still be silenced on its own by clearing its button label.
+  endcomment
+  assign rail_off = settings.ces_hide_inline_ctas
+  if show == false
+    assign rail_off = true
+  endif
+  if show == true
+    assign rail_off = false
+  endif
+-%}
+{%- if label != blank and rail_off != true -%}
   {%- liquid
     comment
       The gift is the same on every rail, so it is a theme setting rather than
