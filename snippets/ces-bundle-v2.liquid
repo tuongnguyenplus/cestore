@@ -114,6 +114,12 @@
           else
             assign ces_price = ces_v.price | money
           endif
+          comment
+            A tier's button can carry its own price with [price], so the label
+            cannot fall out of step with what the shopper is about to pay.
+          endcomment
+          assign ces_cta_label = block.settings[ctakey] | replace: '[price]', ces_price
+
           assign ces_checked = false
           if ces_i == ces_default_tier
             assign ces_checked = true
@@ -198,7 +204,7 @@
               data-quantity="1"
               data-free-ids="{{ ces_free_ids | strip }}"
               data-price-label="{{ ces_v.price | money_with_currency | strip }}"
-              data-add-label="{{ block.settings[ctakey] | escape }}"
+              data-add-label="{{ ces_cta_label | escape }}"
               {% unless ces_v.available %}data-unavailable="true"{% endunless %}
               {% if ces_checked %}checked{% endif %}
             >
@@ -281,7 +287,9 @@
                         {%- if fp.featured_image -%}
                           <img src="{{ fp.featured_image | image_url: width: 160 }}" alt="" loading="lazy">
                         {%- endif -%}
-                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                        {%- if block.settings.show_gift_prices -%}
+                          <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                        {%- endif -%}
                       </span>
                     {%- endfor -%}
                     {%- for xrow in ces_extra_rows -%}
@@ -291,7 +299,7 @@
                         <span class="ces-b2__thumb">
                           <span class="ces-b2__thumb-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
                           {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
-                          {%- if xcents > 0 -%}
+                          {%- if xcents > 0 and block.settings.show_gift_prices -%}
                             <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
                           {%- endif -%}
                         </span>
@@ -329,7 +337,9 @@
                         {%- if fp.featured_image -%}
                           <img src="{{ fp.featured_image | image_url: width: 300 }}" alt="{{ fp.title | escape }}" loading="lazy">
                         {%- endif -%}
-                        <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                        {%- if block.settings.show_gift_prices -%}
+                          <span class="ces-b2__thumb-price">{{ fp.price | money }}</span>
+                        {%- endif -%}
                         <span class="ces-b2__gift-name">{{ fp.title }}</span>
                       </span>
                     {%- endfor -%}
@@ -340,7 +350,7 @@
                         <span class="ces-b2__gift-item">
                           <span class="ces-b2__gift-icon">{% render 'ces-bundle-icon', name: xicon %}</span>
                           {%- assign xcents = xparts[2] | strip | times: 100 | round -%}
-                          {%- if xcents > 0 -%}
+                          {%- if xcents > 0 and block.settings.show_gift_prices -%}
                             <span class="ces-b2__thumb-price">{{ xcents | money_without_trailing_zeros }}</span>
                           {%- endif -%}
                           <span class="ces-b2__gift-name">{{ xparts[1] | strip }}</span>
