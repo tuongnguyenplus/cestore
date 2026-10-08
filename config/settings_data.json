@@ -136,7 +136,7 @@
     "customer_account_menu": "customer-account-main-menu",
     "ces_cta_gift": "🎁 Get FREE Lymphatic Drainage — $49 value",
     "ces_cta_gift_icon": "none",
-    "ces_hide_inline_ctas": true,
+    "ces_hide_inline_ctas": false,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",

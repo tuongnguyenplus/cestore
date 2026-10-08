@@ -1396,8 +1396,8 @@
             "tier_3_fine": "",
             "tier_3_benefits": "",
             "tier_3_free_products": [
-              "hydrolyzed-collagen-anti-wrinkle-cream",
-              "ebook-the-21-day-under-eye-reset-guide-for-women-45"
+              "ebook-the-21-day-under-eye-reset-guide-for-women-45",
+              "lymphatic-drainage-drops"
             ],
             "tier_3_extra_gifts": "truck | Free Express Shipping |",
             "tier_3_gift_title": "🎁 Free Gift",
@@ -2009,6 +2009,7 @@
       "type": "ces-sticky-atc",
       "settings": {
         "target_id": "shopify-section-main",
+        "position": "bottom",
         "reveal_id": "shopify-section-hero",
         "button_label": "Order Now",
         "show_image": true,
