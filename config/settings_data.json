@@ -134,6 +134,8 @@
     ],
     "cart_color_scheme": "scheme-1",
     "customer_account_menu": "customer-account-main-menu",
+    "ces_cta_gift": "🎁 Get FREE Lymphatic Drainage — $49 value",
+    "ces_cta_gift_icon": "none",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -271,9 +273,7 @@
           "shadow": "#121212"
         }
       }
-    },
-    "ces_cta_gift": "[gift] Get FREE Lymphatic Drainage Support [bottle] — $49 value",
-    "ces_cta_gift_icon": "none"
+    }
   },
   "presets": {
     "Dawn": {
