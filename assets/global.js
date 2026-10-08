@@ -768,6 +768,12 @@ class SliderComponent extends HTMLElement {
     // This should be refactored as part of https://github.com/Shopify/dawn/issues/2057
     if (!this.slider || !this.nextButton) return;
 
+    // A slider whose slides are all hidden — the product gallery's thumbnails
+    // on a phone, for one — measures no slides to show, and the checks below
+    // then read offsetLeft off nothing and throw on every scroll event. There
+    // is no page state worth updating for a slider nobody can see.
+    if (!this.sliderItemsToShow || this.sliderItemsToShow.length === 0) return;
+
     const previousPage = this.currentPage;
     this.currentPage = Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
 
