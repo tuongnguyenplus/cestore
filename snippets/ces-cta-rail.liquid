@@ -17,6 +17,10 @@
       page's primary action.
   - align: {String} 'center' (default), 'left' or 'right'.
   - arrow: {Boolean} Adds an arrow after the label.
+  - gift: {String} A second line inside the button, for a gift that comes with
+      every order. Falls back to the theme setting so one edit changes every
+      rail on the page; pass 'none' to leave it off a particular rail.
+  - gift_icon: {String} Icon name for that line. Default 'bottle'.
 
   Usage:
   {% render 'ces-cta-rail',
@@ -28,6 +32,16 @@
 
 {%- if label != blank -%}
   {%- liquid
+    comment
+      The gift is the same on every rail, so it is a theme setting rather than
+      a field repeated in fifteen sections. A rail can still opt out.
+    endcomment
+    assign rail_gift = gift | default: settings.ces_cta_gift
+    if gift == 'none'
+      assign rail_gift = ''
+    endif
+    assign rail_gift_icon = gift_icon | default: settings.ces_cta_gift_icon | default: 'bottle'
+
     assign rail_rows = footnote | newline_to_br | split: '<br />'
     assign rail_structured = false
     if footnote contains '|'
@@ -50,6 +64,35 @@
       justify-content:center;align-items:center;gap:1rem;text-align:center;font-size:2rem}
     @media screen and (min-width:750px){
       .ces-cta-rail--full .ces-button{min-height:6.5rem;font-size:2.4rem}
+    }
+    /* With a gift the button carries two lines: the action, then what comes
+       with it. Stacked inside the one target rather than printed beneath it,
+       so the offer cannot be read as belonging to the next block. */
+    /* The gift line must be allowed to wrap. A flex item will not shrink below
+       its content, so a nowrap line here set the button's minimum width and
+       pushed it past the screen on a phone. */
+    /* The icon stays on the line: left to wrap it went above the words and the
+       second line of the button read as two. The words shrink instead, which
+       needs min-width:0 because a flex item will not go below its content. */
+    .ces-cta-rail__gift{display:inline-flex;flex-wrap:nowrap;align-items:center;
+      justify-content:center;max-width:100%;min-width:0;
+      gap:.6rem;font-size:1.3rem;font-weight:600;line-height:1.3;opacity:.92;
+      letter-spacing:.01em}
+    .ces-cta-rail__gift > span:last-child{min-width:0}
+    .ces-cta-rail__gift-icon{display:inline-flex;width:1.6rem;height:1.6rem;flex:0 0 auto}
+    .ces-cta-rail__gift-icon svg{width:100%;height:100%}
+    .ces-cta-rail__main{display:inline-flex;flex-wrap:wrap;align-items:center;
+      justify-content:center;max-width:100%;gap:.2rem 1rem}
+    /* display:flex here as well as the column: a rail that is not full-width
+       never got the flex rule, so the two lines ran together on one. */
+    .ces-cta-rail--gift .ces-button{display:flex;flex-direction:column;
+      align-items:center;justify-content:center;gap:.4rem;min-width:0;max-width:100%;
+      padding:1.1rem 1.6rem;line-height:1.2}
+    .ces-cta-rail--gift.ces-cta-rail--full .ces-button{min-height:7.2rem}
+    @media screen and (min-width:750px){
+      .ces-cta-rail__gift{font-size:1.45rem}
+      .ces-cta-rail__gift-icon{width:1.8rem;height:1.8rem}
+      .ces-cta-rail--gift.ces-cta-rail--full .ces-button{min-height:8rem}
     }
     .ces-cta-rail__arrow{display:inline-flex;width:2rem;flex:0 0 auto}
     .ces-cta-rail__arrow svg{width:100%;height:auto}
@@ -83,16 +126,26 @@
     assign rail_align = align | default: 'center'
     assign rail_width = width | default: 'auto'
   -%}
-  <div class="ces-cta-rail ces-cta-rail--{{ rail_align }}{% if rail_width == 'full' %} ces-cta-rail--full{% endif %}">
+  <div class="ces-cta-rail ces-cta-rail--{{ rail_align }}{% if rail_width == 'full' %} ces-cta-rail--full{% endif %}{% if rail_gift != blank %} ces-cta-rail--gift{% endif %}">
     <div class="ces-cta-rail__box">
       <a class="ces-button" href="{{ url | default: '#ces-bundle' }}">
-        <span>{{ label }}</span>
-        {%- if arrow -%}
-          <span class="ces-cta-rail__arrow" aria-hidden="true">
-            <svg viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 7h22M17 1.5 23.5 7 17 12.5" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <span class="ces-cta-rail__main">
+          <span>{{ label }}</span>
+          {%- if arrow and rail_gift == blank -%}
+            <span class="ces-cta-rail__arrow" aria-hidden="true">
+              <svg viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 7h22M17 1.5 23.5 7 17 12.5" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          {%- endif -%}
+        </span>
+        {%- if rail_gift != blank -%}
+          <span class="ces-cta-rail__gift">
+            <span class="ces-cta-rail__gift-icon" aria-hidden="true">
+              {% render 'ces-icon', icon: rail_gift_icon %}
+            </span>
+            <span>{{ rail_gift }}</span>
           </span>
         {%- endif -%}
       </a>

@@ -7,7 +7,7 @@
 
   Accepts:
   - icon: {String} Icon name. One of: check, check-circle, cross, cross-circle,
-      check-ring, shield, star, star-filled, star-half, caret, chevron-left, chevron-right, truck, lock, return, leaf,
+      bottle, check-ring, gift, shield, star, star-filled, star-half, caret, chevron-left, chevron-right, truck, lock, return, leaf,
       plane, plant, recycle, heart, stopwatch, lightning, fire, info,
       question-mark, gluten-free, dairy-free, nut-free, play, pause.
   - size: {String} Optional CSS length for width/height. Default 2rem.
@@ -81,6 +81,19 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
           <circle cx="10" cy="10" r="10" fill="currentColor"/>
           <path class="ces-icon__mark" d="m5.8 10.3 2.6 2.6 5.8-5.8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'gift' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+          <path d="M3 9.2h14V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M1.8 6.2h16.4v3H1.8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M10 6.2V18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M10 6.2H6.8a2.1 2.1 0 1 1 0-4.2C8.7 2 10 6.2 10 6.2Zm0 0h3.2a2.1 2.1 0 1 0 0-4.2C11.3 2 10 6.2 10 6.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      {%- when 'bottle' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+          <path d="M8.2 2h3.6v2.6l1.5 2.2a3 3 0 0 1 .5 1.7V16a2 2 0 0 1-2 2H8.2a2 2 0 0 1-2-2V8.5a3 3 0 0 1 .5-1.7l1.5-2.2V2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M7.6 4.6h4.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M6.2 10.6h7.6" stroke="currentColor" stroke-width="1.5"/>
         </svg>
       {%- when 'star-half' -%}
         {%- comment -%} Left half solid, right half outlined — for a x.5 rating. {%- endcomment -%}

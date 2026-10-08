@@ -1598,5 +1598,31 @@
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
       }
     ]
+  },
+  {
+    "name": "CES landing pages",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Gift shown on every call to action"
+      },
+      {
+        "type": "paragraph",
+        "content": "The second line inside each CTA button down a landing page. One edit here changes all of them. Leave empty for a single-line button."
+      },
+      {
+        "type": "text",
+        "id": "ces_cta_gift",
+        "label": "Gift line",
+        "info": "e.g. + Free Lymphatic Drainage Serum ($49 value)"
+      },
+      {
+        "type": "text",
+        "id": "ces_cta_gift_icon",
+        "label": "Gift icon",
+        "info": "Icon name: bottle, gift, drop, leaf, sparkle. Defaults to bottle.",
+        "default": "bottle"
+      }
+    ]
   }
 ]
