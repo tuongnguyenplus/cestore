@@ -272,8 +272,8 @@
         }
       }
     },
-    "ces_cta_gift": "+ Free Lymphatic Drainage · $49",
-    "ces_cta_gift_icon": "bottle"
+    "ces_cta_gift": "[gift] Get FREE Lymphatic Drainage Support [bottle] — $49 value",
+    "ces_cta_gift_icon": "none"
   },
   "presets": {
     "Dawn": {

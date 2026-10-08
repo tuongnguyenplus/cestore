@@ -20,7 +20,9 @@
   - gift: {String} A second line inside the button, for a gift that comes with
       every order. Falls back to the theme setting so one edit changes every
       rail on the page; pass 'none' to leave it off a particular rail.
-  - gift_icon: {String} Icon name for that line. Default 'bottle'.
+  - gift_icon: {String} The icon that opens that line. Default 'gift'.
+      Inside the text itself, [name] becomes that icon where it stands, so a
+      line can read "Get FREE X [bottle] - $49 value".
 
   Usage:
   {% render 'ces-cta-rail',
@@ -40,7 +42,19 @@
     if gift == 'none'
       assign rail_gift = ''
     endif
-    assign rail_gift_icon = gift_icon | default: settings.ces_cta_gift_icon | default: 'bottle'
+    comment
+      The opening icon defaults to none because an icon written into the text
+      flows and centres with the words; one held outside as a flex item sits
+      hard left of a sentence that has wrapped.
+    endcomment
+    assign rail_gift_icon = gift_icon | default: settings.ces_cta_gift_icon | default: 'none'
+
+    comment
+      An icon can also stand inside the sentence, written as [name]. Splitting
+      on '[' leaves each later chunk as "name]rest", so the chunk is split
+      again on ']' to separate the two.
+    endcomment
+    assign rail_gift_chunks = rail_gift | split: '['
 
     assign rail_rows = footnote | newline_to_br | split: '<br />'
     assign rail_structured = false
@@ -79,6 +93,12 @@
       gap:.6rem;font-size:1.3rem;font-weight:600;line-height:1.3;opacity:.92;
       letter-spacing:.01em}
     .ces-cta-rail__gift > span:last-child{min-width:0}
+    /* An icon standing inside the sentence sits on the text's own baseline
+       rather than being a flex item of the row. */
+    .ces-cta-rail__gift-icon--inline{display:inline-flex;vertical-align:-.25em;margin:0 .1rem}
+    /* Centre the text block itself, so a wrapped second line stays under the
+       first rather than ranging left inside a full-width span. */
+    .ces-cta-rail__gift > span:last-child{text-align:center}
     .ces-cta-rail__gift-icon{display:inline-flex;width:1.6rem;height:1.6rem;flex:0 0 auto}
     .ces-cta-rail__gift-icon svg{width:100%;height:100%}
     .ces-cta-rail__main{display:inline-flex;flex-wrap:wrap;align-items:center;
@@ -142,10 +162,25 @@
         </span>
         {%- if rail_gift != blank -%}
           <span class="ces-cta-rail__gift">
-            <span class="ces-cta-rail__gift-icon" aria-hidden="true">
-              {% render 'ces-icon', icon: rail_gift_icon %}
+            {%- if rail_gift_icon != 'none' -%}
+              <span class="ces-cta-rail__gift-icon" aria-hidden="true">
+                {% render 'ces-icon', icon: rail_gift_icon %}
+              </span>
+            {%- endif -%}
+            <span>
+              {%- for chunk in rail_gift_chunks -%}
+                {%- if chunk contains ']' -%}
+                  {%- assign rail_bits = chunk | split: ']' -%}
+                  {%- assign rail_inline_icon = rail_bits[0] | strip -%}
+                  <span class="ces-cta-rail__gift-icon ces-cta-rail__gift-icon--inline" aria-hidden="true">
+                    {% render 'ces-icon', icon: rail_inline_icon %}
+                  </span>
+                  {{- rail_bits[1] -}}
+                {%- else -%}
+                  {{- chunk -}}
+                {%- endif -%}
+              {%- endfor -%}
             </span>
-            <span>{{ rail_gift }}</span>
           </span>
         {%- endif -%}
       </a>

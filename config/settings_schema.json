@@ -1614,14 +1614,14 @@
         "type": "text",
         "id": "ces_cta_gift",
         "label": "Gift line",
-        "info": "e.g. + Free Lymphatic Drainage Serum ($49 value)"
+        "info": "e.g. Get FREE Lymphatic Drainage Support [bottle] — $49 value. Writing [bottle], [gift], [drop] or any other icon name puts that icon where it stands."
       },
       {
         "type": "text",
         "id": "ces_cta_gift_icon",
         "label": "Gift icon",
-        "info": "Icon name: bottle, gift, drop, leaf, sparkle. Defaults to bottle.",
-        "default": "bottle"
+        "info": "The icon that opens the line: gift, bottle, drop, leaf, sparkle. \"none\" leaves it off.",
+        "default": "gift"
       }
     ]
   }
