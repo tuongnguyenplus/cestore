@@ -28,6 +28,15 @@
     merchant who clears the field wants a different word, not no button.
   endcomment
   assign sticky_label = section.settings.button_label | default: 'Order Now'
+  comment
+    Same long way round, same reason: a bar saved before this setting existed
+    carries no value for it, and standing down over the buy box is what it
+    should do unless someone says otherwise.
+  endcomment
+  assign sticky_over = 'hide'
+  if section.settings.hide_over_target == false
+    assign sticky_over = 'show'
+  endif
 -%}
 
 {%- if product != blank -%}
@@ -41,6 +50,7 @@
   <ces-sticky-atc
     class="ces-section ces-sticky-atc ces-sticky-atc--{{ section.settings.position | default: 'bottom' }} ces-sticky-atc--{{ sticky_style }} color-{{ section.settings.color_scheme }} gradient"
     data-target="{{ target }}"
+    data-over-target="{{ sticky_over }}"
     {% if section.settings.reveal_id != blank %}data-reveal="{{ section.settings.reveal_id | handleize }}"{% endif %}
     {% if section.settings.hide_on_desktop %}
       data-mobile-only
@@ -277,6 +287,13 @@
       "id": "count_step_3",
       "label": "Add every 3 seconds",
       "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_over_target",
+      "label": "Hide while the buy box is on screen",
+      "info": "The bar stands down for as long as any part of the scroll target is in view, so it never covers the real add-to-cart.",
+      "default": true
     },
     {
       "type": "checkbox",

@@ -56,13 +56,18 @@ if (!customElements.get('ces-sticky-atc')) {
       this.initialised = true;
       this.watchEditor();
 
+      // The bar is a reminder of the buy box, so it stands down while the buy
+      // box itself is on the screen: two of the same call to action at once,
+      // one of them covering the real one, is worse than none.
+      this.watchBuyBox();
+
       if (revealTarget && typeof IntersectionObserver === 'function') {
         this.observer = new IntersectionObserver(
           ([entry]) => {
             // Show once the trigger has been scrolled up out of the viewport,
             // not while it is still below the fold on the way down.
-            const scrolledPast = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-            this.toggle(scrolledPast);
+            this.revealed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            this.refresh();
           },
           { threshold: 0 }
         );
@@ -72,9 +77,38 @@ if (!customElements.get('ces-sticky-atc')) {
 
       // Nothing to watch: show the bar once a screenful has been scrolled.
       // A bar that never appears is worse than one that appears a little early.
-      this.onScroll = () => this.toggle(window.scrollY > window.innerHeight * 0.9);
+      this.onScroll = () => {
+        this.revealed = window.scrollY > window.innerHeight * 0.9;
+        this.refresh();
+      };
       window.addEventListener('scroll', this.onScroll, { passive: true });
       this.onScroll();
+    }
+
+    /*
+     * Watches the buy box — the element the bar's own button scrolls to — and
+     * keeps the bar out of the way for as long as any part of it is in view.
+     * Without this the bar sits over the thing it is pointing at, hiding the
+     * variant picker or the add-to-cart button on a phone.
+     */
+    watchBuyBox() {
+      if (this.dataset.overTarget === 'show') return;
+      if (!this.target || this.target === this || this.target.contains(this)) return;
+      if (typeof IntersectionObserver !== 'function') return;
+
+      this.buyBoxObserver = new IntersectionObserver(
+        ([entry]) => {
+          this.overBuyBox = entry.isIntersecting;
+          this.refresh();
+        },
+        { threshold: 0 }
+      );
+      this.buyBoxObserver.observe(this.target);
+    }
+
+    // One place decides, so the two observers cannot argue about it.
+    refresh() {
+      this.toggle(this.revealed === true && this.overBuyBox !== true);
     }
 
     /*
@@ -139,6 +173,7 @@ if (!customElements.get('ces-sticky-atc')) {
 
     disconnectedCallback() {
       if (this.observer) this.observer.disconnect();
+      if (this.buyBoxObserver) this.buyBoxObserver.disconnect();
       if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
     }
 
