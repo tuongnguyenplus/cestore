@@ -17,8 +17,11 @@
       page's primary action.
   - align: {String} 'center' (default), 'left' or 'right'.
   - arrow: {Boolean} Adds an arrow after the label.
-  - show: {Boolean} Overrides the theme switch that hides every in-page rail,
-      for a rail that should appear either way.
+  - show: {Boolean|String} Overrides the theme switch that hides every in-page
+      rail, for a rail that should appear either way. true or 'always' keeps it;
+      false or 'never' drops it. The strings are there because a caller whose
+      boolean arrives as text would otherwise be read as "no opinion" and
+      silently lose its button.
   - gift: {String} A second line inside the button, for a gift that comes with
       every order. Falls back to the theme setting so one edit changes every
       rail on the page; pass 'none' to leave it off a particular rail.
@@ -42,10 +45,10 @@
     can still be silenced on its own by clearing its button label.
   endcomment
   assign rail_off = settings.ces_hide_inline_ctas
-  if show == false
+  if show == false or show == 'never' or show == 'false'
     assign rail_off = true
   endif
-  if show == true
+  if show == true or show == 'always' or show == 'true'
     assign rail_off = false
   endif
 -%}

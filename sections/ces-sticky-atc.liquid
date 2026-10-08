@@ -113,18 +113,25 @@
       </div>
       {%- endif -%}
 
-      {%- if sticky_style == 'gift' -%}
-        {%- comment -%}
-          show: true because the bar is the page's remaining call to action when
-          the in-page rails are switched off — the switch that hides them must
-          not hide this one too.
-        {%- endcomment -%}
-        {%- render 'ces-cta-rail',
-          label: sticky_label,
-          url: sticky_url,
-          width: 'full',
-          show: true
-        -%}
+      {%- liquid
+        comment
+          show: 'always' because the bar is the page's remaining call to action
+          when the in-page rails are switched off — the switch that hides them
+          must not hide this one too.
+
+          Captured rather than printed straight out so the bar can see whether
+          it got a button. The rail answers to a theme switch and to its own
+          rules, and a bar pinned across the foot of the page with nothing in
+          it is worse than one that has quietly gone back to a plain button.
+        endcomment
+        if sticky_style == 'gift'
+          capture sticky_cta
+            render 'ces-cta-rail', label: sticky_label, url: sticky_url, width: 'full', show: 'always'
+          endcapture
+        endif
+      -%}
+      {%- if sticky_cta contains '<a' -%}
+        {{ sticky_cta }}
       {%- else -%}
         <a class="ces-button ces-sticky-atc__button" href="{{ sticky_url }}">
           {{ sticky_label }}
