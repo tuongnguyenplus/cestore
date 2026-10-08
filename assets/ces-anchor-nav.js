@@ -13,6 +13,30 @@
  * so the nav is fully usable before this file loads.
  */
 if (!customElements.get('ces-anchor-nav')) {
+  /*
+   * Shopify renders a section of a JSON template with a generated id:
+   * the key "mechanism" becomes shopify-section-template--1234567__mechanism.
+   * Links are written with the short form, so the short form has to find it.
+   * (The sticky bar carries its own copy of this: one small function repeated
+   * beats three files loading a fourth to share it.)
+   */
+  function cesSectionById(value) {
+    if (!value) return null;
+
+    var raw = String(value).replace(/^#/, '');
+    var key = raw.replace(/^shopify-section-/, '');
+    if (!key) return null;
+
+    var el = document.getElementById(raw) || document.getElementById('shopify-section-' + key);
+    if (el) return el;
+
+    try {
+      return document.querySelector('[id^="shopify-section-"][id$="__' + CSS.escape(key) + '"]');
+    } catch (e) {
+      return null;
+    }
+  }
+
   class CesAnchorNav extends HTMLElement {
     connectedCallback() {
       if (this.observer) return;
@@ -30,7 +54,7 @@ if (!customElements.get('ces-anchor-nav')) {
         if (!id) return;
         let target = null;
         try {
-          target = document.getElementById(id);
+          target = cesSectionById(id);
         } catch (e) {
           target = null;
         }
