@@ -239,28 +239,22 @@
     "qualify": {
       "type": "ces-experience-list",
       "blocks": {
+        "item_w7rTrX": {
+          "type": "item",
+          "settings": {
+            "text": "You've had the same skincare routine for years, and somewhere after 45 your under-eyes stopped responding to it"
+          }
+        },
+        "item_nBRKBP": {
+          "type": "item",
+          "settings": {
+            "text": "The gel patches slid down your cheek before you'd finished brushing your teeth"
+          }
+        },
         "item-1": {
           "type": "item",
           "settings": {
-            "text": "Slept 8 hours and still woke up with eye bags"
-          }
-        },
-        "item-2": {
-          "type": "item",
-          "settings": {
-            "text": "Tried every caffeine serum and nothing lasted past noon"
-          }
-        },
-        "item-3": {
-          "type": "item",
-          "settings": {
-            "text": "Cold spoon worked for 40 minutes then it all came back"
-          }
-        },
-        "item-4": {
-          "type": "item",
-          "settings": {
-            "text": "Shelf full of products that all stopped at the surface"
+            "text": "Slept 8 hours. Woke up at 7 AM. Still looked exhausted in the mirror: \" I wasn’t tired. But my eyes made me look like I was.\""
           }
         },
         "item-5": {
@@ -269,19 +263,70 @@
             "text": "Concealer settles into the bags and makes everything look worse"
           }
         },
+        "item_7Ekc4w": {
+          "type": "item",
+          "settings": {
+            "text": "Someone close to you asked if you'd been sleeping badly, and you'd slept fine"
+          }
+        },
+        "item_j8TEjd": {
+          "type": "item",
+          "settings": {
+            "text": "You're not trying to look thirty. You'd settle for looking as rested as you actually feel"
+          }
+        },
+        "item_rFPKjq": {
+          "type": "item",
+          "settings": {
+            "text": "You're not trying to look 25. You'd settle for looking as rested as you actually feel"
+          }
+        },
+        "item_Cq6783": {
+          "type": "item",
+          "settings": {
+            "text": "You've had these since your twenties and they've only gone deeper"
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "text": "Tried every caffeine serum and nothing lasted past noon"
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "text": "Cold spoon worked for 40 minutes then it all came back"
+          }
+        },
+        "item-4": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "text": "Shelf full of products that all stopped at the surface"
+          }
+        },
         "item-6": {
           "type": "item",
           "settings": {
-            "text": "Someone asked if you were okay this morning and you were completely fine"
+            "text": "There's a wedding, a reunion, a set of photographs coming, and you'd like to look well in them"
           }
         }
       },
       "block_order": [
+        "item_w7rTrX",
+        "item_nBRKBP",
         "item-1",
+        "item-5",
+        "item_7Ekc4w",
+        "item_j8TEjd",
+        "item_rFPKjq",
+        "item_Cq6783",
         "item-2",
         "item-3",
         "item-4",
-        "item-5",
         "item-6"
       ],
       "settings": {
