@@ -37,6 +37,31 @@
   if section.settings.hide_over_target == false
     assign sticky_over = 'show'
   endif
+  comment
+    Where inside the section the button lands. A block has no id of its own on
+    a live page — Shopify only writes block attributes in the theme editor — so
+    each choice is a selector for what that block actually renders, kept here
+    where it can be read rather than buried in the script.
+  endcomment
+  assign sticky_inner = ''
+  case section.settings.target_block
+    when 'bundle'
+      assign sticky_inner = '.ces-b2, .ces-bundle'
+    when 'offer'
+      assign sticky_inner = '.ces-offer--block'
+    when 'buy_buttons'
+      assign sticky_inner = '.product-form__buttons'
+    when 'app_slot'
+      assign sticky_inner = '.ces-app-price-slot, [data-ces-app-slot]'
+    when 'price'
+      assign sticky_inner = '.price'
+    when 'variant'
+      assign sticky_inner = 'variant-selects, .product-form__input'
+    when 'rating'
+      assign sticky_inner = '.ces-main-product__rating'
+    when 'custom'
+      assign sticky_inner = section.settings.target_selector
+  endcase
 -%}
 
 {%- if product != blank -%}
@@ -51,6 +76,7 @@
     class="ces-section ces-sticky-atc ces-sticky-atc--{{ section.settings.position | default: 'bottom' }} ces-sticky-atc--{{ sticky_style }} color-{{ section.settings.color_scheme }} gradient"
     data-target="{{ target }}"
     data-over-target="{{ sticky_over }}"
+    {% if sticky_inner != blank %}data-target-inner="{{ sticky_inner | escape }}"{% endif %}
     {% if section.settings.reveal_id != blank %}data-reveal="{{ section.settings.reveal_id | handleize }}"{% endif %}
     {% if section.settings.hide_on_desktop %}
       data-mobile-only
@@ -170,6 +196,30 @@
       "label": "Scroll target element ID",
       "info": "Where the button scrolls to. Usually the CES App slot's ID, or the name of the section holding it.",
       "default": "ces-app-price-slot"
+    },
+    {
+      "type": "select",
+      "id": "target_block",
+      "label": "Scroll to which part of it",
+      "info": "The top of the section unless you pick a block. If the chosen block is not in the section, the button lands at the top and says so in the browser console.",
+      "options": [
+        { "value": "none", "label": "Top of the section" },
+        { "value": "bundle", "label": "Bundle selector" },
+        { "value": "offer", "label": "Offer bundle" },
+        { "value": "buy_buttons", "label": "Add to cart button" },
+        { "value": "app_slot", "label": "App price slot" },
+        { "value": "price", "label": "Price" },
+        { "value": "variant", "label": "Variant picker" },
+        { "value": "rating", "label": "Rating bar" },
+        { "value": "custom", "label": "Custom selector below" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "text",
+      "id": "target_selector",
+      "label": "Custom selector",
+      "info": "Used only by the choice above. Any CSS selector inside the section, e.g. .ces-b2 or #my-anchor."
     },
     {
       "type": "select",

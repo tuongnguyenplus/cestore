@@ -16,7 +16,29 @@ if (!customElements.get('ces-sticky-atc')) {
       // The bar always scrolls back to the buy box (data-target). What makes it
       // appear can be a different element (data-reveal) — e.g. a "Try risk-free"
       // button — so a merchant can choose exactly how far down the bar kicks in.
-      this.target = this.resolveSection(this.dataset.target);
+      this.section = this.resolveSection(this.dataset.target);
+      this.target = this.section;
+
+      // The button can be aimed at one block inside that section — the bundle
+      // selector rather than the top of the buy box, say. The block is found by
+      // a selector the section setting chose, and given an id if it has none,
+      // so the page's own scroll script can take the click from there and allow
+      // for the sticky header exactly as it does everywhere else.
+      const inner = this.dataset.targetInner;
+      if (this.section && inner) {
+        let block = null;
+        try {
+          block = this.section.querySelector(inner);
+        } catch (e) {
+          block = null;
+        }
+        if (block) {
+          if (!block.id) block.id = 'ces-sticky-atc-target';
+          this.target = block;
+        } else {
+          console.warn('[ces] Sticky bar: nothing matching "' + inner + '" inside the scroll target.');
+        }
+      }
 
       const revealId = this.dataset.reveal;
       let revealTarget = this.resolveSection(revealId);
@@ -34,7 +56,7 @@ if (!customElements.get('ces-sticky-atc')) {
       // often the header, and a sticky header never scrolls out of view, so a
       // bar waiting for it to leave waits for ever.
       if (!this.canReveal(revealTarget)) revealTarget = null;
-      if (!revealTarget && this.canReveal(this.target)) revealTarget = this.target;
+      if (!revealTarget && this.canReveal(this.section)) revealTarget = this.section;
       if (!revealTarget) {
         const sections = document.querySelectorAll('#MainContent .shopify-section, main .shopify-section');
         for (let i = 0; i < sections.length; i += 1) {
@@ -93,7 +115,7 @@ if (!customElements.get('ces-sticky-atc')) {
      */
     watchBuyBox() {
       if (this.dataset.overTarget === 'show') return;
-      if (!this.target || this.target === this || this.target.contains(this)) return;
+      if (!this.section || this.section === this || this.section.contains(this)) return;
       if (typeof IntersectionObserver !== 'function') return;
 
       this.buyBoxObserver = new IntersectionObserver(
@@ -103,7 +125,9 @@ if (!customElements.get('ces-sticky-atc')) {
         },
         { threshold: 0 }
       );
-      this.buyBoxObserver.observe(this.target);
+      // The whole section, not the block the button aims at: the bar is in the
+      // way of all of it, not just the part it points to.
+      this.buyBoxObserver.observe(this.section);
     }
 
     // One place decides, so the two observers cannot argue about it.
