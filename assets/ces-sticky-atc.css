@@ -140,6 +140,63 @@
   white-space: nowrap;
 }
 
+/*
+ * The two-line button. The bar borrows the page's own call to action from the
+ * shared rail snippet, so what is pinned is the button the shopper has already
+ * been reading past — label on top, the free gift underneath. The rail's own
+ * page spacing and type scale are the wrong size for a bar one thumb tall, so
+ * they are taken back here: no outer margin, and a height set by the two lines
+ * rather than the 80px a landing-page hero button wants.
+ */
+.ces-sticky-atc .ces-cta-rail {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.ces-sticky-atc .ces-cta-rail--full .ces-cta-rail__box {
+  max-width: 44rem;
+}
+
+.ces-sticky-atc .ces-cta-rail--full .ces-button {
+  min-height: 5.2rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.6rem;
+}
+
+/* The gift line is kept to one line on a phone: wrapped it makes a two-line
+   button three lines tall, and the bar then eats a quarter of the screen. */
+.ces-sticky-atc .ces-cta-rail__gift {
+  font-size: 1.2rem;
+}
+
+.ces-sticky-atc .ces-cta-rail--gift.ces-cta-rail--full .ces-button {
+  min-height: 5.6rem;
+}
+
+/* With the product and rating hidden the button is the bar, so it centres in
+   it. Beside them it keeps to its own end of the row, as the one-line button
+   does — centring the pair left a hole on the right. */
+.ces-sticky-atc__inner > .ces-cta-rail:only-child {
+  margin-inline: auto;
+}
+
+/* Narrower than a modern phone the gift line runs a word over. The bar gives
+   up some of its side padding before the words give up any size. */
+@media screen and (max-width: 389px) {
+  .ces-sticky-atc--gift {
+    padding-inline: 1rem;
+  }
+
+  .ces-sticky-atc .ces-cta-rail--full .ces-button {
+    padding-inline: 1rem;
+  }
+
+  .ces-sticky-atc .ces-cta-rail__gift {
+    font-size: 1.15rem;
+  }
+}
+
 /* On the narrowest phones give the button room by letting it take the row width
    below the info, rather than squeezing the title to nothing. */
 @media screen and (max-width: 419px) {
@@ -151,7 +208,8 @@
     flex: 1 1 100%;
   }
 
-  .ces-sticky-atc__button {
+  .ces-sticky-atc__button,
+  .ces-sticky-atc .ces-cta-rail {
     flex: 1 1 100%;
   }
 }
@@ -177,6 +235,29 @@
   .ces-sticky-atc__button {
     width: auto;
     min-width: 28rem;
+  }
+
+  /* Beside the product the button takes its own width; alone it keeps the
+     readable maximum it has on a phone. */
+  .ces-sticky-atc .ces-cta-rail {
+    flex: 0 1 auto;
+  }
+
+  .ces-sticky-atc .ces-cta-rail--full .ces-cta-rail__box {
+    width: 36rem;
+  }
+
+  .ces-sticky-atc__inner > .ces-cta-rail:only-child .ces-cta-rail__box {
+    width: 44rem;
+  }
+
+  .ces-sticky-atc .ces-cta-rail--full .ces-button {
+    min-height: 5.6rem;
+    font-size: 1.8rem;
+  }
+
+  .ces-sticky-atc .ces-cta-rail--gift.ces-cta-rail--full .ces-button {
+    min-height: 6rem;
   }
 }
 

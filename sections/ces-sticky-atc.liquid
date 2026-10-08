@@ -5,6 +5,23 @@
 {%- liquid
   assign target = section.settings.target_id | default: 'ces-app-price-slot' | handleize
   assign thumb = section.settings.image | default: product.featured_image
+  comment
+    Two shapes for the one bar. 'compact' is the single-line button beside the
+    product; 'gift' hands the call to action to the shared rail snippet, so the
+    bar carries the very button the page carries — label on the first line, the
+    free gift on the second — and one theme setting still edits the gift
+    everywhere it is offered.
+  endcomment
+  assign sticky_style = section.settings.button_style | default: 'compact'
+  assign sticky_url = '#' | append: target
+  comment
+    Written the long way round so a bar saved before this setting existed, and
+    so carrying no value for it, still shows what it always showed.
+  endcomment
+  assign sticky_info = true
+  if section.settings.show_info == false
+    assign sticky_info = false
+  endif
 -%}
 
 {%- if product != blank -%}
@@ -16,7 +33,7 @@
     and, with a bundle selector, the only correct behaviour.
   {%- endcomment -%}
   <ces-sticky-atc
-    class="ces-section ces-sticky-atc ces-sticky-atc--{{ section.settings.position | default: 'bottom' }} color-{{ section.settings.color_scheme }} gradient"
+    class="ces-section ces-sticky-atc ces-sticky-atc--{{ section.settings.position | default: 'bottom' }} ces-sticky-atc--{{ sticky_style }} color-{{ section.settings.color_scheme }} gradient"
     data-target="{{ target }}"
     {% if section.settings.reveal_id != blank %}data-reveal="{{ section.settings.reveal_id | handleize }}"{% endif %}
     {% if section.settings.hide_on_desktop %}
@@ -25,6 +42,7 @@
     hidden
   >
     <div class="ces-sticky-atc__inner">
+      {%- if sticky_info -%}
       <div class="ces-sticky-atc__info">
         {%- if section.settings.show_image and thumb != blank -%}
           <div class="ces-sticky-atc__thumb">
@@ -87,10 +105,25 @@
           {%- endif -%}
         </div>
       </div>
+      {%- endif -%}
 
-      <a class="ces-button ces-sticky-atc__button" href="#{{ target }}">
-        {{ section.settings.button_label }}
-      </a>
+      {%- if sticky_style == 'gift' -%}
+        {%- comment -%}
+          show: true because the bar is the page's remaining call to action when
+          the in-page rails are switched off — the switch that hides them must
+          not hide this one too.
+        {%- endcomment -%}
+        {%- render 'ces-cta-rail',
+          label: section.settings.button_label,
+          url: sticky_url,
+          width: 'full',
+          show: true
+        -%}
+      {%- else -%}
+        <a class="ces-button ces-sticky-atc__button" href="{{ sticky_url }}">
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
     </div>
   </ces-sticky-atc>
 {%- endif -%}
@@ -137,6 +170,24 @@
       "id": "button_label",
       "label": "Button label",
       "default": "ADD TO CART"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "info": "The two-line button is the same one the page uses: the label, then the free gift from Theme settings \u203a CES landing pages.",
+      "options": [
+        { "value": "compact", "label": "One line, beside the product" },
+        { "value": "gift", "label": "Two lines, with the free gift" }
+      ],
+      "default": "compact"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_info",
+      "label": "Show the product and rating",
+      "info": "Turn off to give the bar to the button alone.",
+      "default": true
     },
     {
       "type": "checkbox",
