@@ -369,9 +369,13 @@
     {%- endfor -%}
   </div>
 
-  {%- if block.settings.trust_line != blank -%}
-    <p class="ces-b2__trust">{{ block.settings.trust_line }}</p>
-  {%- endif -%}
+  {%- capture ces_trust_row -%}
+    {%- if block.settings.trust_line != blank -%}
+      <p class="ces-b2__trust">{{ block.settings.trust_line }}</p>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- unless block.settings.trust_position == 'below' -%}{{ ces_trust_row }}{%- endunless -%}
 
   {%- if block.settings.onetime_label != blank -%}
     <a class="ces-b2__onetime" href="{{ block.settings.onetime_url | default: '#' }}">{{ block.settings.onetime_label }}</a>
@@ -421,6 +425,8 @@
   {%- if block.settings.sub_note != blank -%}
     <p class="ces-bundle__note">{{ block.settings.sub_note }}</p>
   {%- endif -%}
+
+  {%- if block.settings.trust_position == 'below' -%}{{ ces_trust_row }}{%- endif -%}
 </ces-bundle>
 
 <script>

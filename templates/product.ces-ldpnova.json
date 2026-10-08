@@ -1321,9 +1321,9 @@
             "delivery_days": 1,
             "date_format": "%b. %-d",
             "delivery_icon": "🟢",
-            "origin_text": "USA warehouse",
-            "origin_icon": "us",
-            "trust_line": "🔒 Secure Checkout · 🇺🇸 Ships from USA · ✓ 90-Day Money-Back Guarantee",
+            "origin_text": "Arrives in 3-5 business days",
+            "origin_icon": "🚚",
+            "trust_line": "🔒 Secure checkout · 🇺🇸 Ships from USA",
             "meta_template": "[count] treatments · [unit]/treatment",
             "gift_more_label": "See details",
             "gift_sub_mode": "manual",
@@ -1333,7 +1333,7 @@
             "tier_1_name": "21-Day Eye Reset™",
             "tier_1_subtitle": "",
             "tier_1_badge": "",
-            "tier_1_cta": "Start My 21-Day Reset · [price]",
+            "tier_1_cta": "Start My 21-Day Reset",
             "tier_1_meta": "",
             "tier_1_treatments": 6,
             "tier_1_quote": "2 treatments a week for 3 weeks",
@@ -1357,7 +1357,7 @@
             "tier_2_name": "6-Week Eye Rebuild™",
             "tier_2_subtitle": "",
             "tier_2_badge": "MOST POPULAR",
-            "tier_2_cta": "Start My 6-Week Rebuild · [price]",
+            "tier_2_cta": "Start My 6-Week Rebuild",
             "tier_2_meta": "",
             "tier_2_treatments": 12,
             "tier_2_quote": "2 treatments a week for 6 weeks",
@@ -1381,7 +1381,7 @@
             "tier_3_name": "9-Week Complete Rebuild™",
             "tier_3_subtitle": "",
             "tier_3_badge": "BEST VALUE",
-            "tier_3_cta": "Start My 9-Week Rebuild · [price]",
+            "tier_3_cta": "Start My 9-Week Rebuild",
             "tier_3_meta": "",
             "tier_3_treatments": 18,
             "tier_3_quote": "2 treatments a week for 9 weeks",
@@ -1423,7 +1423,8 @@
             "tier_4_gift_sub": "",
             "tier_4_gift_label": "",
             "tier_4_foot": "",
-            "show_gift_prices": false
+            "show_gift_prices": false,
+            "trust_position": "below"
           }
         },
         "ces_bundle_8Rq63G": {
@@ -1522,7 +1523,8 @@
             "text": "<em>Estimated delivery date: 3-5 business days</em> &nbsp;",
             "standalone": true,
             "align": "center"
-          }
+          },
+          "disabled": true
         },
         "ship-1": {
           "type": "ces_shipping_item",
