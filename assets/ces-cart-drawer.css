@@ -30,7 +30,13 @@
 }
 
 /* Sale badge under the product title (from line-level discounts). */
+/* A line can carry more than one discount, and a discount is named by whoever
+   set it up, so the row wraps and a long name wraps inside its own badge
+   rather than running out of the drawer. */
 #CartDrawer .discounts--badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   margin: 0.4rem 0 0;
 }
 #CartDrawer .discounts__discount--badge {
@@ -45,7 +51,8 @@
   font-weight: 600;
   letter-spacing: 0.02rem;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.2;
+  max-width: 100%;
 }
 #CartDrawer .discounts__discount--badge .icon,
 #CartDrawer .discounts__discount--badge svg {

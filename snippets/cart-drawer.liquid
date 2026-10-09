@@ -172,17 +172,32 @@
                             -%}
                           </div>
 
-                          {%- comment -%} Only the genuinely-free ($0) gift lines get the GIFT badge. {%- endcomment -%}
-                          {%- if item.final_line_price == 0 -%}
+                          {%- comment -%}
+                            The badge names whatever Shopify says took money off
+                            the line, so a gift shows the discount that gave it
+                            rather than one word the theme made up — which was
+                            the same word whichever discount was running, and
+                            stayed put when that discount was deleted. A line
+                            that is free with no named discount behind it still
+                            says GIFT, since something plainly gave it away.
+                          {%- endcomment -%}
+                          {%- if item.line_level_discount_allocations != blank or item.final_line_price == 0 -%}
                             <ul
                               class="discounts discounts--badges list-unstyled"
                               role="list"
                               aria-label="{{ 'customer.order.discount' | t }}"
                             >
-                              <li class="discounts__discount discounts__discount--badge">
-                                {{- 'icon-discount.svg' | inline_asset_content -}}
-                                GIFT
-                              </li>
+                              {%- for discount in item.line_level_discount_allocations -%}
+                                <li class="discounts__discount discounts__discount--badge">
+                                  {{- 'icon-discount.svg' | inline_asset_content -}}
+                                  {{ discount.discount_application.title | escape }}
+                                </li>
+                              {%- else -%}
+                                <li class="discounts__discount discounts__discount--badge">
+                                  {{- 'icon-discount.svg' | inline_asset_content -}}
+                                  GIFT
+                                </li>
+                              {%- endfor -%}
                             </ul>
                           {%- endif -%}
 
