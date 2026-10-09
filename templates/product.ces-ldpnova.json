@@ -65,7 +65,7 @@
           "type": "link",
           "settings": {
             "label": "FAQ",
-            "target_id": "shopify-section-faq"
+            "target_id": "shopify-section-main"
           }
         }
       },
