@@ -555,7 +555,7 @@
         "eyebrow": "How it Works",
         "heading_accent": "",
         "heading": "Meet The Patch That Crosses The Wall",
-        "text": "<p>CEBEAM Microneedle Under-Eye Patches does not sit on your skin. It goes through.<br/><br/>Each patch holds 2600 micro-cones, pressed from the actives themselves — hyaluronic acid, peptides, niacinamide. Not metal. Not needles in any sense you would recognise. Cones so fine you feel a light prickle for about ten seconds and then nothing at all.<br/><br/>You press one under each eye before bed. The cones dissolve painlessly beneath the surface over several hours, reaching the deeper layer where eye bags actually form.<br/><br/>You sleep. Peel them off in the morning. Nothing to rinse, nothing on your face by breakfast.<br/>And if you are reading this thinking you have heard a version of this before — fair. Read what the clinicians below say about it, including what they say it will not do.</p>",
+        "text": "<p>CEBEAM™ Microneedle Under-Eye Patches does not sit on your skin. It goes through.<br/><br/>Each patch holds 2600 micro-cones, pressed from the actives themselves — hyaluronic acid, peptides, niacinamide. Not metal. Not needles in any sense you would recognise. Cones so fine you feel a light prickle for about ten seconds and then nothing at all.<br/><br/>You press one under each eye before bed. The cones dissolve painlessly beneath the surface over several hours, reaching the deeper layer where eye bags actually form.<br/><br/>You sleep. Peel them off in the morning. Nothing to rinse, nothing on your face by breakfast.<br/>And if you are reading this thinking you have heard a version of this before — fair. Read what the clinicians below say about it, including what they say it will not do.</p>",
         "cta_width": "full",
         "cta_arrow": true,
         "cta_footnote": "shield | 90 Day Money Back Guarantee\ntruck | Free Shipping",
@@ -576,7 +576,7 @@
             "image": "shopify://shop_images/img_-_1.jpg",
             "alt": "",
             "title": "Will it work on my type of eye bags?",
-            "text": "<p>CEBEAM is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>"
+            "text": "<p>CEBEAM™ Microneedle Under-Eye Patches is designed to address both fluid-based puffiness and volume loss beneath the eye, helping improve the appearance of different types of eye bags.</p>"
           }
         },
         "card-2": {
@@ -647,7 +647,7 @@
             "image": "shopify://shop_images/6_1.webp",
             "alt": "",
             "title": "80 Tiny Dissolving Cones",
-            "text": "<p>Each CEBEAM patch carries 80 microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
+            "text": "<p>Each CEBEAM™ Microneedle Under-Eye Patches carries 80 microscopic cones made entirely from hyaluronic acid and peptides. Not plastic. Not metal.</p><p>The moment you press them in they start dissolving into your skin, carrying everything with them.</p>"
           }
         },
         "card-2": {
@@ -1153,10 +1153,11 @@
       ],
       "settings": {
         "eyebrow": "How We Compare",
-        "heading": "How CEBEAM Patches Compare To What You Have Already Tried",
+        "heading": "How CEBEAM™ Microneedle Patches  Compare To What You Have Already Tried",
         "subheading": "",
         "table_caption": "CEBEAM compared with eye creams, fillers and eye surgery",
-        "brand_label": "CEBEAM",
+        "brand_label": "",
+        "brand_image": "shopify://shop_images/logo.webp",
         "col_1_label": "Eye Creams",
         "col_2_label": "Fillers",
         "col_3_label": "Eye Surgery",
@@ -2021,6 +2022,7 @@
         "faq_item-6",
         "faq_item-7"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Frequently Asked Questions",
         "subheading": "We've Got Answers",
