@@ -180,8 +180,14 @@
                             stayed put when that discount was deleted. A line
                             that is free with no named discount behind it still
                             says GIFT, since something plainly gave it away.
+
+                            Only the free lines carry it. A Buy X get Y discount
+                            is listed against the line that qualified for it as
+                            well as the ones it gave away, and a badge on the
+                            product being paid for reads as if that line were
+                            the gift.
                           {%- endcomment -%}
-                          {%- if item.line_level_discount_allocations != blank or item.final_line_price == 0 -%}
+                          {%- if item.final_line_price == 0 -%}
                             <ul
                               class="discounts discounts--badges list-unstyled"
                               role="list"
