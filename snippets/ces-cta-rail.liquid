@@ -44,7 +44,16 @@
     they cost no markup and leave no gap where they used to sit. A single rail
     can still be silenced on its own by clearing its button label.
   endcomment
-  assign rail_off = settings.ces_hide_inline_ctas
+  comment
+    The switch belongs to the product page, because the sticky bar that is
+    meant to replace these buttons is a product-template section. Applied
+    everywhere it took the call to action off the home page and left nothing
+    in its place.
+  endcomment
+  assign rail_off = false
+  if settings.ces_hide_inline_ctas and request.page_type == 'product'
+    assign rail_off = true
+  endif
   if show == false or show == 'never' or show == 'false'
     assign rail_off = true
   endif

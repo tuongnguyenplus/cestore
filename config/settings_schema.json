@@ -1631,7 +1631,7 @@
         "type": "checkbox",
         "id": "ces_hide_inline_ctas",
         "label": "Hide them and use only the sticky bar",
-        "info": "The buttons down the page stop rendering entirely. The sticky add-to-cart bar, which appears once the hero has scrolled past, then carries the only call to action.",
+        "info": "On product pages only, the buttons down the page stop rendering entirely and the sticky add-to-cart bar carries the only call to action. Other pages keep their buttons, since the bar is not on them.",
         "default": false
       }
     ]
