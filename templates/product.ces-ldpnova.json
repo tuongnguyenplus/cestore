@@ -567,9 +567,135 @@
         "padding_bottom": 40
       }
     },
+    "actives": {
+      "type": "ces-icon-feature-grid",
+      "blocks": {
+        "g1": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "sparkle",
+            "icon_color": "",
+            "heading": "Hyaluronic Acid",
+            "text": "Holds water in the tissue — the immediate effect."
+          }
+        },
+        "g2": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "molecule",
+            "icon_color": "",
+            "heading": "Niacinamide",
+            "text": "Works on tone and barrier strength over weeks."
+          }
+        },
+        "g3": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "leaf",
+            "icon_color": "",
+            "heading": "Peptides",
+            "text": "Signal toward firmness — the slower work."
+          }
+        },
+        "g4": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "shield",
+            "icon_color": "",
+            "heading": "Collagen",
+            "text": "Supports firmer-looking under-eyes."
+          }
+        },
+        "g5": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "cell-defense",
+            "icon_color": "",
+            "heading": "Vitamin C",
+            "text": "Targets dullness; dried, so it won’t oxidise."
+          }
+        },
+        "g6": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "heart-plus",
+            "icon_color": "",
+            "heading": "Retinol",
+            "text": "Smooths fine lines and texture."
+          }
+        },
+        "g7": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "leaf",
+            "icon_color": "",
+            "heading": "Ceramides",
+            "text": "Rebuild the barrier that thins with age."
+          }
+        },
+        "g8": {
+          "type": "icon_item",
+          "settings": {
+            "icon_text": "",
+            "icon": "sparkle",
+            "icon_color": "",
+            "heading": "Microdart Delivery",
+            "text": "Starts below the barrier, not on top of it."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g7",
+        "g8"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "text_style": "text",
+        "pill_color": "#c0392b",
+        "heading": "Actives That Actually Get In",
+        "highlight_words": "",
+        "subheading": "The micro-cones are made from the actives themselves — delivered below the skin barrier, where a cream stops.",
+        "icon_color": "#1d5c5c",
+        "icon_frame": "disc",
+        "icon_size": 6,
+        "image_scale": 60,
+        "columns_mobile": 2,
+        "columns_desktop": 4,
+        "cta_label": "",
+        "cta_url": "",
+        "cta_footnote": "",
+        "cta_arrow": false,
+        "cta_width": "auto",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "preqa": {
       "type": "ces-card-row",
       "blocks": {
+        "card-3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/img_-_3.jpg",
+            "alt": "",
+            "title": "Does it hurt?",
+            "text": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>"
+          }
+        },
         "card-1": {
           "type": "card",
           "settings": {
@@ -588,15 +714,6 @@
             "text": "<p>Some women notice the under-eye area looks fresher or less puffy the next morning. More visible changes typically develop with consistent twice-weekly use over the following weeks.</p>"
           }
         },
-        "card-3": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/img_-_3.jpg",
-            "alt": "",
-            "title": "Does it hurt?",
-            "text": "<p>You may feel a light tingling sensation for a few seconds when the patches are first applied. Once that passes, you shouldn't feel them while you sleep.</p>"
-          }
-        },
         "card-4": {
           "type": "card",
           "settings": {
@@ -608,9 +725,9 @@
         }
       },
       "block_order": [
+        "card-3",
         "card-1",
         "card-2",
-        "card-3",
         "card-4"
       ],
       "settings": {
@@ -2074,114 +2191,6 @@
         "hide_over_target": true,
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
-      }
-    },
-    "actives": {
-      "type": "ces-icon-feature-grid",
-      "blocks": {
-        "g1": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "sparkle",
-            "icon_color": "",
-            "heading": "Hyaluronic Acid",
-            "text": "Holds water in the tissue — the immediate effect."
-          }
-        },
-        "g2": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "molecule",
-            "icon_color": "",
-            "heading": "Niacinamide",
-            "text": "Works on tone and barrier strength over weeks."
-          }
-        },
-        "g3": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "leaf",
-            "icon_color": "",
-            "heading": "Peptides",
-            "text": "Signal toward firmness — the slower work."
-          }
-        },
-        "g4": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "shield",
-            "icon_color": "",
-            "heading": "Collagen",
-            "text": "Supports firmer-looking under-eyes."
-          }
-        },
-        "g5": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "cell-defense",
-            "icon_color": "",
-            "heading": "Vitamin C",
-            "text": "Targets dullness; dried, so it won’t oxidise."
-          }
-        },
-        "g6": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "heart-plus",
-            "icon_color": "",
-            "heading": "Retinol",
-            "text": "Smooths fine lines and texture."
-          }
-        },
-        "g7": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "leaf",
-            "icon_color": "",
-            "heading": "Ceramides",
-            "text": "Rebuild the barrier that thins with age."
-          }
-        },
-        "g8": {
-          "type": "icon_item",
-          "settings": {
-            "icon_text": "",
-            "icon": "sparkle",
-            "icon_color": "",
-            "heading": "Microdart Delivery",
-            "text": "Starts below the barrier, not on top of it."
-          }
-        }
-      },
-      "block_order": [
-        "g1",
-        "g2",
-        "g3",
-        "g4",
-        "g5",
-        "g6",
-        "g7",
-        "g8"
-      ],
-      "settings": {
-        "heading": "Actives That Actually Get In",
-        "highlight_words": "",
-        "subheading": "The micro-cones are made from the actives themselves — delivered below the skin barrier, where a cream stops.",
-        "icon_color": "#1d5c5c",
-        "icon_frame": "disc",
-        "icon_size": 6,
-        "columns_mobile": 2,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
       }
     }
   },
