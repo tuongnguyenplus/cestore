@@ -424,7 +424,7 @@
         "eyebrow": "",
         "heading": "Your Skin Has 5 Layers. Everything You Have Tried Only Reached The First One.",
         "subheading": "",
-        "body": "<p>Here is the thing none of those products will tell you. They all stopped at the same place. The surface of your skin. Eye bags don't live there.</p><p>Eye bags don't start at the surface. They start deeper — in the tissue where fluid builds overnight, where skin gets thinner with age, where the hollow that makes you look tired actually forms.</p><p>Creams sit on top. Serums sit on top. Even the gel patches you have already tried sit on top.</p><p>Your skin is designed to keep things out and it is very good at its job. That is not a quality problem with the products you chose. It is a physics problem. Nothing applied to the surface can cross that barrier.</p><p>That is the only reason nothing has worked. Not because you did not try hard enough. Because everything stopped at the same wall.</p>",
+        "body": "<p>Every one of those products had the same thing wrong with it, and none of them were going to tell you.</p><p>Your skin's outer layer is about 15 to 20 micrometres thick. It is not skin, exactly — it is a barrier. Its entire job is to stop things getting in. Bacteria, water, pollution. It does not make an exception for the $60 serum you bought.</p><p>So the cream went on. Most of it evaporated before morning. The small amount that stayed sat on top of a wall it was never built to cross.</p><p>The gel patches did the same thing, just wetter.</p><p>Here is what that means, and it is worth sitting with for a second: <strong>there was nothing wrong with what you were buying.</strong> The niacinamide was real niacinamide. The peptides were real peptides. You did not pick badly, you did not give up too early, you were not imagining the lack of change.</p><p>They simply never arrived.</p><p>Every one of those jars is still a jar of good ingredients that stopped two hundred micrometres short of anywhere useful. That is not a skincare problem. It is a delivery problem, and no amount of trying again with a different label was ever going to solve it.</p>",
         "image": "shopify://shop_images/6_2.webp",
         "image_position": "beside_body",
         "image_alt": "",
@@ -2053,6 +2053,7 @@
       "settings": {
         "target_id": "shopify-section-main",
         "target_block": "clinicians",
+        "target_selector": "",
         "position": "bottom",
         "reveal_id": "shopify-section-hero",
         "button_label": "Start My 6-Week Rebuild",
@@ -2068,6 +2069,7 @@
         "count_step_1": 1,
         "count_step_2": 1,
         "count_step_3": 2,
+        "hide_over_target": true,
         "hide_on_desktop": false,
         "color_scheme": "scheme-1"
       }
