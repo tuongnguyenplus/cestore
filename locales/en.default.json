@@ -542,7 +542,7 @@
   "shopify": {
     "checkout": {
       "general": {
-        "pay_now_button_label": "Complete Purchase"
+        "pay_now_button_label": "Review order"
       }
     }
   }
