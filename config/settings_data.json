@@ -129,9 +129,9 @@
     "cart_drawer_collection": "",
     "cart_guarantee_text": "90 Days Money-Back Guarantee",
     "cart_social_text": "17 people are checking out now",
-    "cart_upsell_products": [
-      "eye-bag-cream"
-    ],
+    "cart_upsell_heading": "",
+    "cart_upsell_subheading": "",
+    "cart_upsell_products": [],
     "cart_color_scheme": "scheme-1",
     "customer_account_menu": "customer-account-main-menu",
     "ces_cta_gift": "🎁 Get FREE Lymphatic Drainage — $49 value",
