@@ -1481,7 +1481,7 @@
             "show_shipping": true,
             "ship_position": "above",
             "delivery_text": "Arrives by",
-            "delivery_days": 1,
+            "delivery_days": 5,
             "date_format": "%b. %-d",
             "delivery_icon": "🟢",
             "origin_text": "Ships from USA",
